@@ -1,0 +1,142 @@
+<main class="contentWithSidebar__content">
+<div class="relative js-sidebar-container">
+<div class="static">
+<h2 itemprop="name" data-part-title="Découvrez la projection et la restriction" class="part-title">Découvrez la projection et la restriction</h2>
+<section class="row space-bottom js-desktop-sticky-container">
+<div class="col9 col11-s col__small-padding--right">
+<div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/decouvrez-la-projection-et-la-restriction" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
+<div class="userContent js-userContent">
+<p id="r-4568911" data-claire-element-id="8198171">Dans les précédents chapitres, nous avons vu que le modèle relationnel permettait de représenter et de manipuler des données. Nous y avons abordé la partie représentation, avec les concepts de relation et de clé étrangère.</p><p id="r-4568912" data-claire-element-id="8198172">Maintenant, passons donc à la partie manipulation ! Dans le modèle relationnel, tout ce qui concerne la manipulation des relations est appelé<strong> l'algèbre relationnelle.</strong> Peut être que le mot algèbre vous procure des frissons, et fait remonter en vous de vieux souvenirs de cours de mathématiques. Laissez-moi vous rassurer, l'algèbre relationnelle, c'est bien plus fun !</p><aside id="r-4702867" data-claire-element-id="8543962" data-claire-semantic="warning"><p id="r-4702866" data-claire-element-id="8543961">Pour répondre à l'évaluation de fin de partie, il vous faudra en plus de la vidéo, consulter la section <em>Notations</em> ci dessous.</p></aside><video id="r-4709405" data-claire-element-id="8559266" src="https://vimeo.com/233477671"><a href="https://vimeo.com/233477671">https://vimeo.com/233477671</a></video><p id="r-4568915" data-claire-element-id="8543904"> </p><p id="r-4702869" data-claire-element-id="8543905">Sans plus tarder, passons aux deux premières opérations de l'algèbre relationnelle : la <strong>projection</strong> et la <strong>restriction</strong>.</p><p id="r-4568916" data-claire-element-id="8334823">Ces deux opérations portent sur une seule relation. Reprenons ici notre relation <strong>pomme</strong> :</p><table id="r-4568973" data-claire-element-id="8373545"><tbody id="r-4568972" data-claire-element-id="8373544"><tr id="r-4568927" data-claire-element-id="8373441"><td id="r-4568918" data-claire-element-id="8198178"><p id="r-4568917" data-claire-element-id="8198177"><strong>identifiant</strong></p></td><td id="r-4568920" data-claire-element-id="8198180"><p id="r-4568919" data-claire-element-id="8198179"><strong>masse</strong></p></td><td id="r-4568922" data-claire-element-id="8198182"><p id="r-4568921" data-claire-element-id="8198181"><strong>diamètre</strong></p></td><td id="r-4568924" data-claire-element-id="8198184"><p id="r-4568923" data-claire-element-id="8198183"><strong>couleur</strong></p></td></tr><tr id="r-4568938" data-claire-element-id="8373448"><td id="r-4568929" data-claire-element-id="8373443"><p id="r-4568928" data-claire-element-id="8373442">1</p></td><td id="r-4568931" data-claire-element-id="8373445"><p id="r-4568930" data-claire-element-id="8373444">151 g</p></td><td id="r-4568933" data-claire-element-id="8373447"><p id="r-4568932" data-claire-element-id="8373446">8.3 cm</p></td><td id="r-4568935" data-claire-element-id="8198195"><p id="r-4568934" data-claire-element-id="8198194">rouge</p></td></tr><tr id="r-4568949" data-claire-element-id="8373449"><td id="r-4568940" data-claire-element-id="8198200"><p id="r-4568939" data-claire-element-id="8198199">25</p></td><td id="r-4568942" data-claire-element-id="8198202"><p id="r-4568941" data-claire-element-id="8198201">182 g</p></td><td id="r-4568944" data-claire-element-id="8198204"><p id="r-4568943" data-claire-element-id="8198203">7.5 cm</p></td><td id="r-4568946" data-claire-element-id="8198206"><p id="r-4568945" data-claire-element-id="8198205">rouge</p></td></tr><tr id="r-4568960" data-claire-element-id="8373543"><td id="r-4568951" data-claire-element-id="8198211"><p id="r-4568950" data-claire-element-id="8198210">16</p></td><td id="r-4568953" data-claire-element-id="8198213"><p id="r-4568952" data-claire-element-id="8198212">140 g</p></td><td id="r-4568955" data-claire-element-id="8373542"><p id="r-4568954" data-claire-element-id="8373541">5.9 cm</p></td><td id="r-4568957" data-claire-element-id="8198217"><p id="r-4568956" data-claire-element-id="8198216">rouge</p></td></tr></tbody></table><p id="r-4568974" data-claire-element-id="8198234"> </p><h3 id="r-4569003" data-claire-element-id="8373556">La projection</h3><p id="r-4568975" data-claire-element-id="8198235">La projection, c'est simplement le fait de sélectionner les attributs d'une relation que l'on souhaite, en éliminant les autres.</p><p id="r-4568976" data-claire-element-id="8373531">Sur notre exemple des pommes, la projection de la relation <strong>pomme</strong> sur ses attributs <em>diamètre</em> et <em>couleur</em> donne comme résultat une nouvelle relation ne contant que deux attributs : <em>diamètre</em> et <em>couleur</em>, et contenant les mêmes tuples que la relation <strong>pomme</strong>.</p><p id="r-4568977" data-claire-element-id="8198237">Voici le résultat de cette projection :</p><table id="r-4568999" data-claire-element-id="8373555"><tbody id="r-4568998" data-claire-element-id="8373554"><tr id="r-4568982" data-claire-element-id="8373503"><td id="r-4568979" data-claire-element-id="8373502"><p id="r-4568978" data-claire-element-id="8373501"><strong>diamètre</strong></p></td><td id="r-4568981" data-claire-element-id="8198241"><p id="r-4568980" data-claire-element-id="8198240"><strong>couleur</strong></p></td></tr><tr id="r-4568987" data-claire-element-id="8373506"><td id="r-4568984" data-claire-element-id="8373505"><p id="r-4568983" data-claire-element-id="8373504">8.3 cm</p></td><td id="r-4568986" data-claire-element-id="8198246"><p id="r-4568985" data-claire-element-id="8198245">rouge</p></td></tr><tr id="r-4568992" data-claire-element-id="8373509"><td id="r-4568989" data-claire-element-id="8373508"><p id="r-4568988" data-claire-element-id="8373507">7.5 cm</p></td><td id="r-4568991" data-claire-element-id="8198251"><p id="r-4568990" data-claire-element-id="8198250">rouge</p></td></tr><tr id="r-4568997" data-claire-element-id="8373553"><td id="r-4568994" data-claire-element-id="8373552"><p id="r-4568993" data-claire-element-id="8373551">5.9 cm</p></td><td id="r-4568996" data-claire-element-id="8198256"><p id="r-4568995" data-claire-element-id="8198255">rouge</p></td></tr></tbody></table><aside id="r-4569001" data-claire-element-id="8373533" data-claire-semantic="warning"><p id="r-4569000" data-claire-element-id="8373532">Bon, tout cela est exprimé en termes un peu pompeux, mais au final, on a juste supprimé les colonnes <em>identifiant </em>et <em>masse</em> !</p></aside><p id="r-4569002" data-claire-element-id="8198262"> </p><h3 id="r-4569049" data-claire-element-id="8537705">La restriction</h3><p id="r-4569004" data-claire-element-id="8198264">Avec la projection, on se contentait de sélectionner les colonnes qui nous intéressaient. La restriction, c'est l'équivalent de la projection, mais pour les lignes.</p><aside id="r-4569006" data-claire-element-id="8537693" data-claire-semantic="error"><p id="r-4569005" data-claire-element-id="8537692">Cependant, dans une base de données, nous connaissons les noms des colonnes, car ils ne varient pas. En ce qui concerne les lignes, on ne les connaît pas à l'avance, et elles varient au cours du temps. C'est bien là la vocation d'une base de données : stocker des données dynamiques, que l'on ajoute, que l'on supprime, ou que l'on modifie au fil de l'utilisation de l'application !</p></aside><p id="r-4569007" data-claire-element-id="8198267">Comme les lignes à garder (ou enlever) sont dynamiques, il nous faut donc établir une condition qui nous permette de <em>restreindre</em> les lignes.</p><p id="r-4569008" data-claire-element-id="8537702">Voici un exemple : la restriction de la relation <strong>pomme</strong>, étant donnée la condition C : <code data-claire-semantic="text">diamètre &gt; 6 cm</code> donne une relation contenant contenant les tuples vérifiant C.</p><p id="r-4569009" data-claire-element-id="8537703">Voici le résultat de cette restriction, une relation avec 2 lignes :</p><table id="r-4569044" data-claire-element-id="8373571"><tbody id="r-4569043" data-claire-element-id="8373570"><tr id="r-4569020" data-claire-element-id="8373561"><td id="r-4569011" data-claire-element-id="8198271"><p id="r-4569010" data-claire-element-id="8198270"><strong>identifiant</strong></p></td><td id="r-4569013" data-claire-element-id="8198273"><p id="r-4569012" data-claire-element-id="8198272"><strong>masse</strong></p></td><td id="r-4569015" data-claire-element-id="8198275"><p id="r-4569014" data-claire-element-id="8198274"><strong>diamètre</strong></p></td><td id="r-4569017" data-claire-element-id="8198277"><p id="r-4569016" data-claire-element-id="8198276"><strong>couleur</strong></p></td></tr><tr id="r-4569031" data-claire-element-id="8373568"><td id="r-4569022" data-claire-element-id="8373563"><p id="r-4569021" data-claire-element-id="8373562">1</p></td><td id="r-4569024" data-claire-element-id="8373565"><p id="r-4569023" data-claire-element-id="8373564">151 g</p></td><td id="r-4569026" data-claire-element-id="8373567"><p id="r-4569025" data-claire-element-id="8373566">8.3 cm</p></td><td id="r-4569028" data-claire-element-id="8198288"><p id="r-4569027" data-claire-element-id="8198287">rouge</p></td></tr><tr id="r-4569042" data-claire-element-id="8373569"><td id="r-4569033" data-claire-element-id="8198293"><p id="r-4569032" data-claire-element-id="8198292">25</p></td><td id="r-4569035" data-claire-element-id="8198295"><p id="r-4569034" data-claire-element-id="8198294">182 g</p></td><td id="r-4569037" data-claire-element-id="8198297"><p id="r-4569036" data-claire-element-id="8198296">7.5 cm</p></td><td id="r-4569039" data-claire-element-id="8198299"><p id="r-4569038" data-claire-element-id="8198298">rouge</p></td></tr></tbody></table><p id="r-4569045" data-claire-element-id="8537704">Une restriction peut également porter sur plusieurs colonnes, par exemple <code data-claire-semantic="text">diamètre &gt; 2 * masse</code>. Cet exemple n'a aucun sens, je vous l'accorde, mais sachez que c'est possible.</p><aside id="r-4569047" data-claire-element-id="8198307" data-claire-semantic="warning"><p id="r-4569046" data-claire-element-id="8198306">En résumé, une restriction, c'est juste un "filtrage" de lignes selon une condition !</p></aside><p id="r-4569048" data-claire-element-id="8198308"> </p><h3 id="r-4569059" data-claire-element-id="8537713">Notations</h3><p id="r-4569050" data-claire-element-id="8537712">Pour décrire les opérations que nous étudions, il existe plusieurs notations possibles. Mettons-nous d'accord sur l'une d'entre elles. (En fait je ne vous laisse pas le choix, désolé. :-° )</p><p id="r-4569051" data-claire-element-id="8198311">Pour les deux opérations que nous venons d'effectuer, nous pouvons utiliser cette notation :</p><p id="r-4569052" data-claire-element-id="8198312"><code data-claire-semantic="text">pomme_proj = Projection (pomme, masse, couleur)</code></p><p id="r-4569054" data-claire-element-id="8198314"><code data-claire-semantic="text">pomme_restr = Restriction(pomme, masse &gt; 141 g)</code></p><aside id="r-4569056" data-claire-element-id="8198316" data-claire-semantic="information"><p id="r-4569055" data-claire-element-id="8198315">Ces notations ne sont pas officielles, et ne serviront qu'à communiquer entre nous lors du quiz de fin de partie. Pas besoin de les retenir très longtemps ! ;)</p></aside><p id="r-4620103" data-claire-element-id="8334911"> Voilà ! C'est plutôt simple pour le moment, n'est-ce-pas ? On continue dans le prochain chapitre !</p><p id="r-4569058" data-claire-element-id="8198318"> </p><h3 id="r-4620211" data-claire-element-id="8334918">En résumé</h3><ul id="r-4620210" data-claire-element-id="8334917"><li id="r-4620207" data-claire-element-id="8334914"><p id="r-4620206" data-claire-element-id="8334913">La <strong>projection</strong>, c'est sélectionner certaines colonnes d'une table en supprimant les autres.</p></li><li id="r-4620209" data-claire-element-id="8334916"><p id="r-4620208" data-claire-element-id="8334915">La <strong>restriction</strong>, c'est filtrer certaines lignes d'une table selon une certaine condition.</p></li></ul>
+</div>
+<div class="js-courseSelementActions sideActions">
+<ul class="sideActions__container">
+<li>
+<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+#
+</a>
+</li>
+</ul>
+</div>
+</div>
+<nav class="course-pagination    clearfix">
+<a href="/courses/4449026/exercises/1718?status=draft" class="button course-pagination__btn course-pagination__btn--previous">
+<i class="icon-previous"></i>
+<span>Quiz : Le modèle relationnel</span>
+</a>
+<span class="course-pagination__separator"></span>
+<a href="/courses/4449026/4568756?status=draft" class="button course-pagination__btn course-pagination__btn--next">
+<span>Découvrez les opérateurs ensemblistes</span>
+<i class="icon-next"></i>
+</a>
+</nav>
+<aside tabindex="-1" role="dialog" aria-labelledby="popin-view-restriction_popin_title" class="popin popin--illustrated  js-popin" id="popin-view-restriction">
+<i class="popin__close-button icon-close js-close-button"></i>
+<div class="popin__inner">
+<div class="popin__illustrationWrapper">
+<div class="popin__illustration illustration--balloon"></div>
+</div>
+<div class="popin__mainContainer">
+<h3 id="popin-view-restriction_popin_title" class="popin__title  js-popin-title">Waouh !</h3>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+Très heureux de voir que nos cours vous plaisent, déjà 5 pages lues aujourd'hui ! Vous pouvez continuer la lecture de nos cours en devenant un membre de la communauté d'OpenClassrooms. C'est gratuit !
+</p>
+<p>
+Vous pourrez aussi suivre votre avancement dans le cours, faire les exercices et discuter avec les autres membres.
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<span class="u--inlineBlock">
+<a class="button button--primary " href="/register">S'inscrire</a>
+</span>
+<span class="u--inlineBlock">
+<a class="button button " href="/login">Se connecter</a>
+</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</section>
+</div>
+</div>
+<script type="text/template" class="js-single-video-download-info">
+            <div class="videoDownload js-download-video-popin-link">
+                <a href="#popin-download-video" class="js-popin-activator">
+                    <i class="icon-download videoDownload__icon"></i> Télécharger la vidéo
+                </a>
+            </div>
+        </script>
+<script type="text/template" class="js-video-download-forbidden">
+            <div class="videoDownload">
+                <i class="icon-info videoDownload__icon videoDownload__icon--rounded"></i> Pour télécharger les vidéos de ce cours, <a href="/premium">devenez Premium</a>
+            </div>
+        </script>
+<script type="text/template" class="js-all-video-download-info">
+            <div class="videoDownload js-download-video-popin-link">
+                <a href="#popin-download-all-videos" class="js-popin-activator">
+                    <i class="icon-download videoDownload__icon"></i> Télécharger toutes les vidéos de ce cours
+                </a>
+            </div>
+        </script>
+<div id="popin-not-certifying-yet_173336" class="popin" data-popin-title="Vous ne pouvez pas encore obtenir de certificat de réussite à l'issue de ce cours.
+                    ">
+<img alt="Exemple de certificat de réussite" src="//static.oc-static.com/prod/images/courses/certif.jpg">
+</div>
+<aside tabindex="-1" role="dialog" class="popin popin--small  js-popin" id="popin-download-all-videos">
+<i class="popin__close-button icon-close js-close-button"></i>
+<div class="popin__inner">
+<div class="popin__mainContainer">
+<i class="icon-video popin__icon  js-popin-icon"></i>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+Vous allez télécharger un fichier zip de 2 050 Mo contenant toutes les vidéos de ce cours en haute définition.
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<a class="button button--primary js-close-button" target="_blank" href="/components/courses/4449026/videos">Télécharger</a>
+</div>
+</div>
+</div>
+</aside>
+<div id="popin-not-certifying-yet_616646" class="popin" data-popin-title="Vous ne pouvez pas encore obtenir de certificat de réussite à l'issue de ce cours.
+                    ">
+<img alt="Exemple de certificat de réussite" src="//static.oc-static.com/prod/images/courses/certif.jpg">
+</div>
+<aside tabindex="-1" role="dialog" class="popin popin--small  js-popin" id="popin-download-video">
+<i class="popin__close-button icon-close js-close-button"></i>
+<div class="popin__inner">
+<div class="popin__mainContainer">
+ <i class="icon-video popin__icon  js-popin-icon"></i>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+Choisissez la définition de votre vidéo :
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-ld " href="#">Basse</a>
+<br>
+<small class="js-download-video-popin-button-legend-ld"></small>
+</span>
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-md " href="#">Moyenne</a>
+<br>
+<small class="js-download-video-popin-button-legend-md"></small>
+</span>
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-hd " href="#">Haute</a>
+<br>
+<small class="js-download-video-popin-button-legend-hd"></small>
+</span>
+</div>
+</div>
+</div>
+</aside>
+</main>

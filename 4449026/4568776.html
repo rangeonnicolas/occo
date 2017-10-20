@@ -1,0 +1,142 @@
+<main class="contentWithSidebar__content">
+<div class="relative js-sidebar-container">
+<div class="static">
+<h2 itemprop="name" data-part-title="N'oubliez pas l'agrégation !" class="part-title">N'oubliez pas l'agrégation !</h2>
+<section class="row space-bottom js-desktop-sticky-container">
+<div class="col9 col11-s col__small-padding--right">
+<div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/noubliez-pas-lagregation" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
+<div class="userContent js-userContent">
+<p id="r-4703001" data-claire-element-id="8544201">Oh non, il ne faut surtout pas oublier <strong>l’agrégation</strong> !  Pourquoi ? Parce que l'agrégation n'est pas une opération faisant partie de l'algèbre relationnelle. </p><p id="r-4703002" data-claire-element-id="8544202">Néanmoins, elle est extrêmement importante ! ;)</p><aside id="r-4703027" data-claire-element-id="8544272" data-claire-semantic="information"><p id="r-4703026" data-claire-element-id="8544271">Ce chapitre est un peu technique, et la vidéo pourra vous aider (mieux que le texte) à y voir plus clair.</p></aside><video id="r-4709425" data-claire-element-id="8559315" src="https://vimeo.com/233478394"><a href="https://vimeo.com/233478394">https://vimeo.com/233478394</a></video><p id="r-4569326" data-claire-element-id="8544204"> </p><h3 id="r-4569351" data-claire-element-id="8538111">A quoi sert l'agrégation ?</h3><p id="r-4569328" data-claire-element-id="8198903">On utilise l'agrégation lorsque l'on veut calculer un résultat qui porte sur plusieurs lignes d'une table. On dit que l'on <em>agrège</em> ces lignes, c'est-à-dire que l'on forme des <em>agrégats</em> pour effectuer sur eux une opération.</p><p id="r-4569329" data-claire-element-id="8198904">Par exemple, si je pose la question suivante...</p><div id="r-4569331" data-claire-element-id="8198906" data-claire-semantic="question"><p id="r-4569330" data-claire-element-id="8198905">Quelle est la masse moyenne de chaque couleur de pomme ?</p></div><p id="r-4569332" data-claire-element-id="8198907">... il s'agit de calculer une valeur pour chaque agrégat :</p><ul id="r-4569341" data-claire-element-id="8198916"><li id="r-4569334" data-claire-element-id="8198909"><p id="r-4569333" data-claire-element-id="8198908"><strong>une</strong> valeur (la masse moyenne) qui porte sur <strong>plusieurs</strong> pommes (<strong>toutes</strong> les pommes <em>vertes</em>)</p></li><li id="r-4569336" data-claire-element-id="8198911"><p id="r-4569335" data-claire-element-id="8198910"><strong>la</strong> valeur de la masse moyenne portant sur <strong>les</strong> pommes <em>jaunes</em></p></li><li id="r-4569338" data-claire-element-id="8198913"><p id="r-4569337" data-claire-element-id="8198912"><strong>la</strong> valeur de la masse moyenne portant sur <strong>les</strong> pommes <em>rouges</em></p></li><li id="r-4569340" data-claire-element-id="8198915"><p id="r-4569339" data-claire-element-id="8198914">etc.</p></li></ul><p id="r-4569342" data-claire-element-id="8538104">Vous aurez compris qu'il y aura autant de valeurs de <em>masse moyenne</em> calculées que de couleurs de pommes.</p><p id="r-4569343" data-claire-element-id="8538105">Vous sentez déjà l'importance de l'agrégation, n'est-ce-pas ?</p><p id="r-4569344" data-claire-element-id="8198919">Pour faire une belle agrégation, il faut deux étapes, et donc deux ingrédients :</p><ol id="r-4569349" data-claire-element-id="8538110"><li id="r-4569346" data-claire-element-id="8538107"><p id="r-4569345" data-claire-element-id="8538106">un groupe d'<strong>attributs de partitionnement,</strong></p></li><li id="r-4569348" data-claire-element-id="8538109"><p id="r-4569347" data-claire-element-id="8538108">une (ou des)<strong> fonction(s) d'agrégation.</strong></p></li></ol><p id="r-4569350" data-claire-element-id="8198925"> </p><h3 id="r-4569387" data-claire-element-id="8559325">Les deux éléments qui constituent l'agrégation</h3><h4 id="r-4569358" data-claire-element-id="8559318">Le partitionnement</h4><p id="r-4569353" data-claire-element-id="8332461">Si je choisis de partitionner mes pommes par couleur, cela signifie que je veux former des groupes de pommes (on appelle ces groupes des <strong>agrégats</strong>), toutes les pommes d'un même groupe devant avoir la même couleur.</p><aside id="r-4619279" data-claire-element-id="8332465" data-claire-semantic="information"><p id="r-4619276" data-claire-element-id="8332462">Plus formellement :</p><blockquote id="r-4619278" data-claire-element-id="8332464"><p id="r-4619277" data-claire-element-id="8332463">Le partitionnement a pour but de créer des groupes de lignes de telle manière à ce que deux lignes se trouvant dans un même groupe aient les mêmes valeurs pour les attributs de partitionnement.</p></blockquote></aside><p id="r-4569354" data-claire-element-id="8538132">Je peux également partitionner sur plusieurs attributs. Par exemple, disons que j'ajoute à ma table pomme un attribut <em>abîmée</em>, attribut booléen qui vaut <code data-claire-semantic="text">VRAI</code> si la pomme est abîmée. Je peux partitionner mes pommes par les attributs <em>couleur</em> et <em>abîmée</em>. Ainsi, au sein d'un même groupe de pommes, la couleur de celles-ci et la valeur de leur attribut <em>abîmée</em> seront identiques :</p><figure id="r-4569357" data-claire-element-id="8559317"><img id="r-4569355" data-claire-element-id="8198930" src="https://user.oc-static.com/upload/2017/06/26/14984793735677_PARTITIONNEMENT.png" alt="Partitionnemennt selon les attributs [ couleur, abîmée ]"><figcaption>Partitionnement selon les attributs [ couleur, abîmée ]</figcaption></figure><h4 id="r-4569372" data-claire-element-id="8332470"> </h4><h4 id="r-4619285" data-claire-element-id="8559321">La fonction d'agrégation</h4><p id="r-4569359" data-claire-element-id="8198934">Une fois les agrégats formés, il faut bien en faire quelque chose !</p><p id="r-4569360" data-claire-element-id="8198935">C'est là qu'intervient la fonction d'agrégation. :zorro: Son rôle est de prendre en entrée un groupe de plusieurs lignes, d'effectuer un calcul sur celles-ci, puis de retourner <em>une unique valeur pour chacun des groupes</em>.</p><p id="r-4569361" data-claire-element-id="8332471">Par exemple, on peut appliquer la fonction qui calculera la masse moyenne de chaque groupe de pommes : d'abord le groupe des pommes jaunes abîmées, puis le groupe des pommes jaunes non abîmées, etc.</p><figure id="r-4619283" data-claire-element-id="8559320"><img id="r-4619281" data-claire-element-id="8332472" src="https://user.oc-static.com/upload/2017/06/26/14984836381474_FONCTION_AGREG.png" alt="La fonction d'agrégation MOYENNE qui s'applique à chacun des agrégats"><figcaption>La fonction d'agrégation MOYENNE qui s'applique à chacun des agrégats</figcaption></figure><p id="r-4569365" data-claire-element-id="8332516"> </p><p id="r-4619298" data-claire-element-id="8538157">En général, une fonction d'agrégation prend en entrée une <strong>liste</strong> et renvoie une unique valeur. Par exemple, pour calculer le prix moyen au kilo des pommes, la fonction <code data-claire-semantic="text">moyenne</code> prendra en entrée la liste des masses des pommes de l'agrégat, et retournera la moyenne de cette liste. C'est ce qui se passe sur l'image ci-dessus.</p><figure id="r-4569368" data-claire-element-id="8332518"></figure><aside id="r-4619299" data-claire-element-id="8538159" data-claire-semantic="information"><p id="r-4569369" data-claire-element-id="8538158">La liste en entrée correspond à 1 attribut (ici, l'attribut <em>masse</em>). Mais il est également possible de trouver des fonctions d'agrégation qui prennent plusieurs attributs en entrée (donc plusieurs listes) ou parfois même l'<em>ensemble</em> des attributs d'une table.</p></aside><h4 id="r-4569386" data-claire-element-id="8332522"> </h4><h4 id="r-4619306" data-claire-element-id="8559324">Le résultat</h4><p id="r-4569373" data-claire-element-id="8198948">Voici donc le résultat d'une agrégation avec partitionnement selon les attributs <em>couleur</em> et <em>abîmée</em>, en appliquant deux fonctions d'agrégation :</p><ol id="r-4569378" data-claire-element-id="8538165"><li id="r-4569375" data-claire-element-id="8538162"><p id="r-4569374" data-claire-element-id="8538161">la fonction <code data-claire-semantic="text">moyenne</code> (en anglais <em>average</em>, notée <em>avg</em>) sur la masse des pommes,</p></li><li id="r-4569377" data-claire-element-id="8538164"><p id="r-4569376" data-claire-element-id="8538163">la fonction <code data-claire-semantic="text">compter</code> (en anglais <em>count</em>), qui compte le nombre de pommes de l'agrégat.</p></li></ol><figure id="r-4569382" data-claire-element-id="8559323"><img id="r-4569380" data-claire-element-id="8198955" src="https://user.oc-static.com/upload/2017/06/26/14984811023413_AGREGATION.png" alt="Le résultat de l'agrégation"><figcaption>Le résultat de l'agrégation</figcaption></figure><p id="r-4569383" data-claire-element-id="8198958">Grâce à ce résultat, on peut dire que la masse moyenne des 2 pommes jaunes non abîmées est de 151.5 grammes. C'est la classe, non ? :soleil:</p><aside id="r-4619302" data-claire-element-id="8332526" data-claire-semantic="warning"><p id="r-4619301" data-claire-element-id="8332525">Comme la fonction d'agrégation retourne une valeur pour chacun des agrégats, la table qui résultera de l'agrégation aura autant de lignes que d'agrégats.</p></aside><aside id="r-4619304" data-claire-element-id="8538169" data-claire-semantic="information"><p id="r-4619303" data-claire-element-id="8538168">La nature des objets représentés par une ligne <em>avant</em> l'agrégation (ici : une pomme) ne sera pas la même qu'une ligne <em>après</em> agrégation (ici : un <em>ensemble</em> de pommes).</p></aside><p id="r-4619305" data-claire-element-id="8332529"> </p><h3 id="r-4569421" data-claire-element-id="8538236">Aller (beaucoup) plus loin : le Map Reduce</h3><p id="r-4569388" data-claire-element-id="8198963">Dans cette section, on va aller beaucoup plus loin que nécessaire ! On anticipe, pour le jour où vous serez confronté au problème du <em>Big Data</em>, dans lequel les données à traiter sont très volumineuses.</p><p id="r-4569389" data-claire-element-id="8538232">Lorsque les données sont trop volumineuses, on demande souvent à plusieurs ordinateurs (des serveurs) de les traiter en parallèle, pour que cela aille plus vite ! Seulement, il faut bien un serveur qui se charge de coordonner les autres, et de répartir les données de manière intelligente vers les serveurs parallélisés. L'une des manières de faire, c'est d'utiliser la technique du <a href="https://fr.wikipedia.org/wiki/MapReduce">Map Reduce</a>.</p><p id="r-4569390" data-claire-element-id="8332572">En Map Reduce, on découpe l'information en petits morceaux. Chacune de ces parties contient une clé et une valeur. On définit ensuite une fonction appelée <em>reduce</em>. Au moment de l'exécution du calcul, tous les morceaux d'informations qui ont la même clé seront dirigés vers un même serveur parallélisé. Ce serveur applique ensuite la fonction <em>reduce</em> à toutes les valeurs des morceaux qui lui sont parvenues avec la même clé.</p><p id="r-4569391" data-claire-element-id="8198966">Sachez que le Map Reduce fonctionne exactement de la même manière qu'une agrégation, selon cette correspondance :</p><table id="r-4569418" data-claire-element-id="8198993"><tbody id="r-4569417" data-claire-element-id="8198992"><tr id="r-4569396" data-claire-element-id="8198971"><td id="r-4569393" data-claire-element-id="8198968"><p id="r-4569392" data-claire-element-id="8198967"><strong>Map Reduce</strong></p></td><td id="r-4569395" data-claire-element-id="8198970"><p id="r-4569394" data-claire-element-id="8198969"><strong>Agrégation</strong></p></td></tr><tr id="r-4569401" data-claire-element-id="8198976"><td id="r-4569398" data-claire-element-id="8198973"><p id="r-4569397" data-claire-element-id="8198972">Morceau d'information</p></td><td id="r-4569400" data-claire-element-id="8198975"><p id="r-4569399" data-claire-element-id="8198974">1 ligne d'une table</p></td></tr><tr id="r-4569406" data-claire-element-id="8198981"><td id="r-4569403" data-claire-element-id="8198978"><p id="r-4569402" data-claire-element-id="8198977">Clé</p></td><td id="r-4569405" data-claire-element-id="8198980"><p id="r-4569404" data-claire-element-id="8198979">Attributs de partitionnement</p></td></tr><tr id="r-4569411" data-claire-element-id="8198986"><td id="r-4569408" data-claire-element-id="8198983"><p id="r-4569407" data-claire-element-id="8198982">Valeur</p></td><td id="r-4569410" data-claire-element-id="8198985"><p id="r-4569409" data-claire-element-id="8198984">Attributs envoyés à la fonction d'agrégation</p></td></tr><tr id="r-4569416" data-claire-element-id="8198991"><td id="r-4569413" data-claire-element-id="8198988"><p id="r-4569412" data-claire-element-id="8198987">Fonction <em>Reduce</em></p></td><td id="r-4569415" data-claire-element-id="8198990"><p id="r-4569414" data-claire-element-id="8198989">Fonction d'agrégation</p></td></tr></tbody></table><p id="r-4569419" data-claire-element-id="8538233">Jetez à nouveau un coup d’œil sur le <a href="#r-4619281">graphique ci-dessus</a> qui explique le partitionnement selon les attributs. La partie droite de ce graphique montre une table fractionnée en plusieurs parties. En Map Reduce, chacune de ces parties est envoyée sur un serveur différent. Ensuite, chaque serveur appliquera la fonction <em>reduce</em>, qui est, par exemple, la fonction <em>moyenne</em>.</p><p id="r-4569420" data-claire-element-id="8198995">C'est aussi simple que cela !</p><aside id="r-4619409" data-claire-element-id="8538235" data-claire-semantic="information"><p id="r-4619374" data-claire-element-id="8538234">Envie d'aller plus loin dans le Big Data ? Passez voir le parcours <a href="/paths/data-architect">Data Architect</a>. Pour approfondir le Map Reduce, je vous conseille le cours <a href="/courses/realisez-des-calculs-distribues-sur-des-donnees-massives">Réalisez des calculs distribués sur des données massives</a>.</p></aside><p id="r-4619410" data-claire-element-id="8332842"> </p><h3 id="r-4619426" data-claire-element-id="8538244">En résumé</h3><ul id="r-4619424" data-claire-element-id="8538243"><li id="r-4619419" data-claire-element-id="8538240"><p id="r-4619413" data-claire-element-id="8332846">Les deux composantes de l'agrégation sont :</p><ul id="r-4619418" data-claire-element-id="8538239"><li id="r-4619415" data-claire-element-id="8332848"><p id="r-4619414" data-claire-element-id="8332847">les <strong>attributs de partitionnement</strong>,</p></li><li id="r-4619417" data-claire-element-id="8538238"><p id="r-4619416" data-claire-element-id="8538237">la/les <strong>fonction(s) d'agrégation</strong>.</p></li></ul></li><li id="r-4619421" data-claire-element-id="8332854"><p id="r-4619420" data-claire-element-id="8332853">Une fonction d'agrégation basique prend plusieurs valeurs en entrée, et renvoie une unique valeur.</p></li><li id="r-4619423" data-claire-element-id="8538242"><p id="r-4619422" data-claire-element-id="8538241">Le résultat d'une agrégation donne une table avec moins de lignes (autant de lignes que d'agrégats)...</p></li><li id="r-4619445" data-claire-element-id="8332934"><p id="r-4619444" data-claire-element-id="8332933">... et ces lignes ne représentent pas les mêmes objets.</p></li></ul><p id="r-4619425" data-claire-element-id="8332858"> </p>
+</div>
+<div class="js-courseSelementActions sideActions">
+<ul class="sideActions__container">
+<li>
+<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+#
+</a>
+</li>
+</ul>
+</div>
+</div>
+<nav class="course-pagination    clearfix">
+<a href="/courses/4449026/4568771?status=draft" class="button course-pagination__btn course-pagination__btn--previous">
+<i class="icon-previous"></i>
+<span>Liez des relations grâce aux jointures</span>
+</a>
+<span class="course-pagination__separator"></span>
+<a href="/courses/4449026/4568781?status=draft" class="button course-pagination__btn course-pagination__btn--next">
+<span>Ne perdez pas de vue vos clés !</span>
+<i class="icon-next"></i>
+</a>
+</nav>
+<aside tabindex="-1" role="dialog" aria-labelledby="popin-view-restriction_popin_title" class="popin popin--illustrated  js-popin" id="popin-view-restriction">
+<i class="popin__close-button icon-close js-close-button"></i>
+<div class="popin__inner">
+<div class="popin__illustrationWrapper">
+<div class="popin__illustration illustration--balloon"></div>
+</div>
+<div class="popin__mainContainer">
+<h3 id="popin-view-restriction_popin_title" class="popin__title  js-popin-title">Waouh !</h3>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+Très heureux de voir que nos cours vous plaisent, déjà 5 pages lues aujourd'hui ! Vous pouvez continuer la lecture de nos cours en devenant un membre de la communauté d'OpenClassrooms. C'est gratuit !
+</p>
+<p>
+Vous pourrez aussi suivre votre avancement dans le cours, faire les exercices et discuter avec les autres membres.
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<span class="u--inlineBlock">
+<a class="button button--primary " href="/register">S'inscrire</a>
+</span>
+<span class="u--inlineBlock">
+<a class="button button " href="/login">Se connecter</a>
+</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</section>
+</div>
+</div>
+<script type="text/template" class="js-single-video-download-info">
+            <div class="videoDownload js-download-video-popin-link">
+                <a href="#popin-download-video" class="js-popin-activator">
+                    <i class="icon-download videoDownload__icon"></i> Télécharger la vidéo
+                </a>
+            </div>
+        </script>
+<script type="text/template" class="js-video-download-forbidden">
+            <div class="videoDownload">
+                <i class="icon-info videoDownload__icon videoDownload__icon--rounded"></i> Pour télécharger les vidéos de ce cours, <a href="/premium">devenez Premium</a>
+            </div>
+        </script>
+<script type="text/template" class="js-all-video-download-info">
+            <div class="videoDownload js-download-video-popin-link">
+                <a href="#popin-download-all-videos" class="js-popin-activator">
+                    <i class="icon-download videoDownload__icon"></i> Télécharger toutes les vidéos de ce cours
+                </a>
+            </div>
+        </script>
+<div id="popin-not-certifying-yet_97969" class="popin" data-popin-title="Vous ne pouvez pas encore obtenir de certificat de réussite à l'issue de ce cours.
+                    ">
+<img alt="Exemple de certificat de réussite" src="//static.oc-static.com/prod/images/courses/certif.jpg">
+</div>
+<aside tabindex="-1" role="dialog" class="popin popin--small  js-popin" id="popin-download-all-videos">
+<i class="popin__close-button icon-close js-close-button"></i>
+<div class="popin__inner">
+<div class="popin__mainContainer">
+<i class="icon-video popin__icon  js-popin-icon"></i>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+Vous allez télécharger un fichier zip de 2 050 Mo contenant toutes les vidéos de ce cours en haute définition.
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<a class="button button--primary js-close-button" target="_blank" href="/components/courses/4449026/videos">Télécharger</a>
+</div>
+</div>
+</div>
+</aside>
+<div id="popin-not-certifying-yet_65450" class="popin" data-popin-title="Vous ne pouvez pas encore obtenir de certificat de réussite à l'issue de ce cours.
+                    ">
+<img alt="Exemple de certificat de réussite" src="//static.oc-static.com/prod/images/courses/certif.jpg">
+</div>
+<aside tabindex="-1" role="dialog" class="popin popin--small  js-popin" id="popin-download-video">
+<i class="popin__close-button icon-close js-close-button"></i>
+<div class="popin__inner">
+<div class="popin__mainContainer">
+<i class="icon-video popin__icon  js-popin-icon"></i>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+Choisissez la définition de votre vidéo :
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-ld " href="#">Basse</a>
+<br>
+<small class="js-download-video-popin-button-legend-ld"></small>
+</span>
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-md " href="#">Moyenne</a>
+<br>
+<small class="js-download-video-popin-button-legend-md"></small>
+</span>
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-hd " href="#">Haute</a>
+ <br>
+<small class="js-download-video-popin-button-legend-hd"></small>
+</span>
+</div>
+</div>
+</div>
+</aside>
+</main>

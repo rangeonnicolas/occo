@@ -1,0 +1,142 @@
+<main class="contentWithSidebar__content">
+<div class="relative js-sidebar-container">
+<div class="static">
+<h2 itemprop="name" data-part-title="Utilisez les tables d'association" class="part-title">Utilisez les tables d'association</h2>
+<section class="row space-bottom js-desktop-sticky-container">
+<div class="col9 col11-s col__small-padding--right">
+<div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/utilisez-les-tables-dassociation" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
+<div class="userContent js-userContent">
+<video id="r-4709400" data-claire-element-id="8559252" src="https://vimeo.com/233477539"><a href="https://vimeo.com/233477539">https://vimeo.com/233477539</a></video><h3 id="r-4569671" data-claire-element-id="8559257">Réfléchissons...</h3><p id="r-4569631" data-claire-element-id="8199371">Nous avons créé un lien entre <strong>pomme</strong> et <strong>variété</strong> à l'aide d'une clé étrangère.</p><p id="r-4569632" data-claire-element-id="8199372">Cela fonctionne plutôt bien, car une pomme n'a qu'une seule variété. Mais que se passerait-il si, dans un monde imaginaire, une pomme pouvait avoir plusieurs variétés ?</p><div id="r-4569634" data-claire-element-id="8199374" data-claire-semantic="question"><p id="r-4569633" data-claire-element-id="8199373">C'est un peu bizarre ton truc là ! :'(</p></div><p id="r-4569635" data-claire-element-id="8199375">C'est vrai. Oublions la variété, et prenons un meilleur exemple.</p><p id="r-4569636" data-claire-element-id="8199376">Disons qu'une pomme peut être mangée par quelqu'un. Du coup, j'introduis ici une table <strong>personne</strong>, qui contient des gens susceptibles de manger des pommes.</p><p id="r-4569637" data-claire-element-id="8537492">Une personne peut manger plusieurs pommes, mais plusieurs personnes peuvent se partager une même pomme (s'ils n'ont pas très faim, ou si la pomme est très grosse !).</p><p id="r-4569638" data-claire-element-id="8199378">Dans la table <strong>pomme</strong>, mettons une colonne <em>mangé_par</em>  qui est une clé étrangère vers la table <strong>personne</strong>.</p><figure id="r-4569641" data-claire-element-id="8559254"><img id="r-4569639" data-claire-element-id="8199379" src="https://user.oc-static.com/upload/2017/07/27/1501152219655_ASSOC1.png" alt="Clé étrangère de Pomme vers Personne"><figcaption>Clé étrangère de Pomme vers Personne</figcaption></figure><div id="r-4569643" data-claire-element-id="8199383" data-claire-semantic="question"><p id="r-4569642" data-claire-element-id="8199382">Mais si la pomme est mangée par 2 personnes, que fait-on ?</p></div><p id="r-4569644" data-claire-element-id="8199384">On pourrait mettre 2 colonnes dans <strong>pomme</strong> : <em>mangé_par_1</em>, et <em>mangé_par_2</em>. Elles seraient toutes deux clés étrangères vers <strong>personne</strong>.</p><div id="r-4569646" data-claire-element-id="8199386" data-claire-semantic="question"><p id="r-4569645" data-claire-element-id="8199385">Mais si la pomme est mangée par plus de deux personnes, combien de colonnes doit-on mettre ? Doit-on en prévoir 1000, au cas où ?</p></div><p id="r-4569647" data-claire-element-id="8543314">Malheureusement, ce raisonnement est plutôt mauvais. En effet, une table avec plus de 1000 colonnes, c'est volumineux, et pas très pratique à manipuler. De plus, nous ne pouvons pas être certains qu'un jour, nous n'aurons pas besoin d'ajouter une 1001ième clé étrangère.</p><div id="r-4569649" data-claire-element-id="8199389" data-claire-semantic="question"><p id="r-4569648" data-claire-element-id="8199388">Bon. Et si on essayait autre chose. Plutôt que de mettre une clé étrangère de <strong>pomme</strong> vers <strong>personne</strong>, pourquoi ne pas en mettre une de <strong>personne</strong> vers <strong>pomme</strong> ?</p></div><p id="r-4569650" data-claire-element-id="8199390">Pourquoi pas, cela donnerait cela :</p><figure id="r-4569653" data-claire-element-id="8559256"><img id="r-4569651" data-claire-element-id="8199391" src="https://user.oc-static.com/upload/2017/07/27/15011521940555_ASSOC3.png" alt="Clé étrangère de Personne vers Pomme"><figcaption>Clé étrangère de Personne vers Pomme</figcaption></figure><p id="r-4569654" data-claire-element-id="8199394">On voit qu'une pomme peut être mangée par plusieurs personnes.</p><p id="r-4569655" data-claire-element-id="8199395">Mais... :'( Inverser le sens de la clé étrangère n'a fait qu'inverser le problème ! Certes, une pomme peut être mangée par plusieurs personnes, mais avec notre nouveau modèle, une personne ne peut plus manger qu'une seule pomme !</p><p id="r-4569656" data-claire-element-id="8537516">Or dans la réalité, une seule personne a le droit de manger plusieurs pommes, non ?</p><aside id="r-4569668" data-claire-element-id="8537524" data-claire-semantic="warning"><p id="r-4569657" data-claire-element-id="8199397">Se poser la question <em>"Combien de pommes peut manger une personne, et par combien de personnes peut être mangée une pomme"</em>, c'est se poser la question de la <em>cardinalité</em> du lien entre <strong>pomme</strong> et <strong>personne</strong>.</p><p id="r-4569658" data-claire-element-id="8199398">Plusieurs cardinalités sont possibles :</p><ul id="r-4569667" data-claire-element-id="8537523"><li id="r-4569660" data-claire-element-id="8537518"><p id="r-4569659" data-claire-element-id="8537517"><strong>de 1 à plusieurs</strong> (ex : une pomme pour plusieurs personnes)</p></li><li id="r-4569662" data-claire-element-id="8199402"><p id="r-4569661" data-claire-element-id="8199401"><strong>de plusieurs à 1</strong></p></li><li id="r-4569664" data-claire-element-id="8537520"><p id="r-4569663" data-claire-element-id="8537519"><strong>de plusieurs à plusieurs</strong> (ex : plusieurs pommes pour 1 personne, plusieurs personnes sur 1 pomme)</p></li><li id="r-4569666" data-claire-element-id="8537522"><p id="r-4569665" data-claire-element-id="8537521"><strong>de 1 à 1</strong> (ex : une pomme par personne, et basta !)</p></li></ul></aside><p id="r-4569669" data-claire-element-id="8336475">La solution à notre problème est de créer une troisième table, que l'on appelle parfois <em>table d'association</em>, ou <em>table de composition</em>, ou bien d'un tout autre nom si vous en avez envie (pourquoi pas "mange" dans notre cas) !</p><p id="r-4569670" data-claire-element-id="8199410"> </p><h3 id="r-4569679" data-claire-element-id="8559260">La table d'association pour une cardinalité plusieurs-à-plusieurs</h3><p id="r-4569672" data-claire-element-id="8537547">La table d'association est utilisée dans le cadre d'une cardinalité plusieurs-à-plusieurs entre deux objets. Elle est composée d'au moins 2 clés étrangères, référençant chacune l'un des 2 objets.</p><p id="r-4569673" data-claire-element-id="8199413">Voici un exemple dans le cas d'une pomme pouvant être mangée par plusieurs personnes, où chacune de ces personnes peut également manger plusieurs pommes différentes :</p><figure id="r-4569676" data-claire-element-id="8559259"><img id="r-4569674" data-claire-element-id="8199414" src="https://user.oc-static.com/upload/2017/07/27/15011520389926_ASSOC4.png" alt="Table d'association"><figcaption>Table d'association</figcaption></figure><p id="r-4569677" data-claire-element-id="8199417">On remarque ici que Jeanne mange à la fois la pomme 1 et la pomme 2, mais que la pomme 2 est également mangée par Thanh !</p><p id="r-4569678" data-claire-element-id="8199418"> </p><h3 id="r-4569686" data-claire-element-id="8559263">Aller plus loin : Quelle clé primaire pour une table d'association ?</h3><p id="r-4569680" data-claire-element-id="8199420">La clé primaire d'une telle table est composée <em>au moins</em> des 2 clés étrangères. Mais il est parfois nécessaire d'ajouter des colonnes supplémentaires à la clé.</p><p id="r-4569681" data-claire-element-id="8199421">Par exemple, si nous avions ajouté la notion de date dans notre table d'association, on pourrait dire "Heri a mangé la pomme 2 le 21 avril". Mais il aurait également pu manger la même pomme à une autre date (s'il ne l'a pas mangée en entier le 21 avril, il peut la finir le 22 avril). Ainsi, la clé primaire aurait été<code data-claire-semantic="text">[pomme, date, personne]</code>.</p><figure id="r-4569684" data-claire-element-id="8559262"><img id="r-4569682" data-claire-element-id="8199422" src="https://user.oc-static.com/upload/2017/07/27/15011508180375_ASSOC2.png" alt="Table d'association avec une PK de 3 colonnes"><figcaption>Table d'association avec une PK de 3 colonnes</figcaption></figure><p id="r-4569685" data-claire-element-id="8199425"> </p><h3 id="r-4569690" data-claire-element-id="8537624"> Aller plus loin : modéliser les différents types de cardinalités</h3><p id="r-4569687" data-claire-element-id="8537623">Si vous souhaitez mieux comprendre, ou mieux formaliser le concept de cardinalité et son implémentation, je vous invite à jeter un coup d’œil au chapitre <a href="/courses/faites-une-base-de-donnees-avec-uml/mettez-en-oeuvre-les-differents-types-de-relations-a-laide-des-cles-etrangeres">Mettez en œuvre les différents types de relations à l'aide des clés étrangères</a> du cours <em>Faites une base de données avec UML</em>.</p><aside id="r-4569689" data-claire-element-id="8199429" data-claire-semantic="warning"><p id="r-4569688" data-claire-element-id="8199428">Dans ce cours, quand Loïc parle de "type de relation", le mot <em>relation</em> n'a pas du tout le même sens que celui auquel nous sommes habitués ici ! <em>Relation</em> n'y est pas synonyme de <em>table</em>, mais plutôt de "lien entre objets".</p></aside><p id="r-4620765" data-claire-element-id="8336484"> </p><h3 id="r-4620773" data-claire-element-id="8336493">En résumé</h3><ul id="r-4620772" data-claire-element-id="8336492"><li id="r-4620767" data-claire-element-id="8336487"><p id="r-4620766" data-claire-element-id="8336486">Se poser la question "Combien de pommes peut manger une personne, et par combien de personnes peut être mangée une pomme", c'est se poser la question de la <strong>cardinalité</strong>.</p></li><li id="r-4620769" data-claire-element-id="8336489"><p id="r-4620768" data-claire-element-id="8336488">Pour une cardinalité plusieurs-à-plusieurs, on doit introduire une <strong>table d'association</strong>.</p></li><li id="r-4620771" data-claire-element-id="8336491"><p id="r-4620770" data-claire-element-id="8336490">Une table d'association contient au moins deux clés étrangères vers les 2 objets qu'elle lie.</p></li></ul>
+</div>
+<div class="js-courseSelementActions sideActions">
+<ul class="sideActions__container">
+<li>
+<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+#
+</a>
+</li>
+</ul>
+</div>
+</div>
+<nav class="course-pagination    clearfix">
+<a href="/courses/4449026/4567381?status=draft" class="button course-pagination__btn course-pagination__btn--previous">
+<i class="icon-previous"></i>
+<span>Évitez la redondance</span>
+</a>
+<span class="course-pagination__separator"></span>
+<a href="/courses/4449026/exercises/1718?status=draft" class="button course-pagination__btn course-pagination__btn--next">
+<span>Quiz : Le modèle relationnel</span>
+<i class="icon-next"></i>
+</a>
+</nav>
+<aside tabindex="-1" role="dialog" aria-labelledby="popin-view-restriction_popin_title" class="popin popin--illustrated  js-popin" id="popin-view-restriction">
+<i class="popin__close-button icon-close js-close-button"></i>
+<div class="popin__inner">
+<div class="popin__illustrationWrapper">
+<div class="popin__illustration illustration--balloon"></div>
+</div>
+<div class="popin__mainContainer">
+<h3 id="popin-view-restriction_popin_title" class="popin__title  js-popin-title">Waouh !</h3>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+Très heureux de voir que nos cours vous plaisent, déjà 5 pages lues aujourd'hui ! Vous pouvez continuer la lecture de nos cours en devenant un membre de la communauté d'OpenClassrooms. C'est gratuit !
+</p>
+<p>
+Vous pourrez aussi suivre votre avancement dans le cours, faire les exercices et discuter avec les autres membres.
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<span class="u--inlineBlock">
+<a class="button button--primary " href="/register">S'inscrire</a>
+</span>
+<span class="u--inlineBlock">
+<a class="button button " href="/login">Se connecter</a>
+</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</section>
+</div>
+</div>
+<script type="text/template" class="js-single-video-download-info">
+            <div class="videoDownload js-download-video-popin-link">
+                <a href="#popin-download-video" class="js-popin-activator">
+                    <i class="icon-download videoDownload__icon"></i> Télécharger la vidéo
+                </a>
+            </div>
+        </script>
+<script type="text/template" class="js-video-download-forbidden">
+            <div class="videoDownload">
+                <i class="icon-info videoDownload__icon videoDownload__icon--rounded"></i> Pour télécharger les vidéos de ce cours, <a href="/premium">devenez Premium</a>
+            </div>
+        </script>
+<script type="text/template" class="js-all-video-download-info">
+            <div class="videoDownload js-download-video-popin-link">
+                <a href="#popin-download-all-videos" class="js-popin-activator">
+                    <i class="icon-download videoDownload__icon"></i> Télécharger toutes les vidéos de ce cours
+                </a>
+            </div>
+        </script>
+<div id="popin-not-certifying-yet_389278" class="popin" data-popin-title="Vous ne pouvez pas encore obtenir de certificat de réussite à l'issue de ce cours.
+                    ">
+<img alt="Exemple de certificat de réussite" src="//static.oc-static.com/prod/images/courses/certif.jpg">
+</div>
+<aside tabindex="-1" role="dialog" class="popin popin--small  js-popin" id="popin-download-all-videos">
+<i class="popin__close-button icon-close js-close-button"></i>
+<div class="popin__inner">
+<div class="popin__mainContainer">
+<i class="icon-video popin__icon  js-popin-icon"></i>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+Vous allez télécharger un fichier zip de 2 050 Mo contenant toutes les vidéos de ce cours en haute définition.
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<a class="button button--primary js-close-button" target="_blank" href="/components/courses/4449026/videos">Télécharger</a>
+</div>
+</div>
+</div>
+</aside>
+<div id="popin-not-certifying-yet_211466" class="popin" data-popin-title="Vous ne pouvez pas encore obtenir de certificat de réussite à l'issue de ce cours.
+                    ">
+<img alt="Exemple de certificat de réussite" src="//static.oc-static.com/prod/images/courses/certif.jpg">
+</div>
+<aside tabindex="-1" role="dialog" class="popin popin--small  js-popin" id="popin-download-video">
+<i class="popin__close-button icon-close js-close-button"></i>
+<div class="popin__inner">
+<div class="popin__mainContainer">
+<i class="icon-video popin__icon  js-popin-icon"></i>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+Choisissez la définition de votre vidéo :
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-ld " href="#">Basse</a>
+<br>
+<small class="js-download-video-popin-button-legend-ld"></small>
+</span>
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-md " href="#">Moyenne</a>
+<br>
+<small class="js-download-video-popin-button-legend-md"></small>
+</span>
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-hd " href="#">Haute</a>
+<br>
+<small class="js-download-video-popin-button-legend-hd"></small>
+</span>
+</div>
+</div>
+</div>
+</aside>
+</main>

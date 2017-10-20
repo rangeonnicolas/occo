@@ -1,0 +1,142 @@
+<main class="contentWithSidebar__content">
+<div class="relative js-sidebar-container">
+<div class="static">
+<h2 itemprop="name" data-part-title="Effectuez un produit cartésien" class="part-title">Effectuez un produit cartésien</h2>
+<section class="row space-bottom js-desktop-sticky-container">
+<div class="col9 col11-s col__small-padding--right">
+<div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/effectuez-un-produit-cartesien" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
+<div class="userContent js-userContent">
+<aside id="r-4702923" data-claire-element-id="8544013" data-claire-semantic="warning"><p id="r-4702921" data-claire-element-id="8544011">N'oubliez pas de regarder les illustrations des tables ci-dessous, elles ne sont pas données dans la vidéo.</p><p id="r-4702922" data-claire-element-id="8544012">Pour répondre à l'évaluation de fin de partie, il vous faudra en plus de la vidéo, consulter la section <em>Notations</em> ci-dessous.</p></aside><video id="r-4709410" data-claire-element-id="8559279" src="https://vimeo.com/233478063"><a href="https://vimeo.com/233478063">https://vimeo.com/233478063</a></video><p id="r-4620071" data-claire-element-id="8500242"> </p><h3 id="r-4569147" data-claire-element-id="8537819">Réfléchissons...</h3><p id="r-4569141" data-claire-element-id="8334534">Vous organisez une séance de dégustation de pommes auprès de personnes qui devront noter le goût de différentes variétés. Miam !</p><p id="r-4569142" data-claire-element-id="8334535">Si je vous dis qu'il y a 3 variétés à faire goûter à 4 personnes, et que je vous demande combien de pommes vous devez prévoir, quelle opération effectuerez-vous ?</p><p id="r-4569143" data-claire-element-id="8537816"><code data-claire-semantic="text">3 * 4 = 12</code> Il vous faudra au total 12 pommes.</p><p id="r-4569144" data-claire-element-id="8537817">Nous avons ici utilisé l'opération <code data-claire-semantic="text">*</code> : la <em>multiplication </em>(aussi appelée "produit").</p><p id="r-4569145" data-claire-element-id="8537818">En algèbre relationnelle, le produit (cartésien) a la même signification ! En calculant <code data-claire-semantic="text">3 * 4</code>, vous avez imaginé <strong>chaque goûteur</strong> essayer <strong>chaque variété</strong>. Vous avez donc créé toutes les combinaisons possibles entre les variétés et les goûteurs.</p><p id="r-4569146" data-claire-element-id="8198606"> </p><h3 id="r-4569156" data-claire-element-id="8559282">Le produit cartésien</h3><p id="r-4569148" data-claire-element-id="8334691">En algèbre relationnelle, le <strong>produit cartésien</strong> entre deux relations <strong>R1</strong> et <strong>R2</strong> est justement composé de toutes les combinaisons possibles entre les tuples de <strong>R1</strong> et les tuples de <strong>R2</strong>.</p><p id="r-4569149" data-claire-element-id="8334721">Ainsi, si nous avons une table représentant les 3 variétés de pommes et une table représentant nos 4 goûteurs, le produit cartésien produira une table :</p><ul id="r-4620155" data-claire-element-id="8334726"><li id="r-4620152" data-claire-element-id="8334723"><p id="r-4620151" data-claire-element-id="8334722">qui contiendra les colonnes de R1 ainsi que celles de R2,</p></li><li id="r-4620154" data-claire-element-id="8334725"><p id="r-4620153" data-claire-element-id="8334724">et qui aura comme lignes l'ensemble des pommes que vous donnerez à goûter.</p></li></ul><figure id="r-4569152" data-claire-element-id="8559281"><img id="r-4569150" data-claire-element-id="8198610" src="https://user.oc-static.com/upload/2017/06/26/14984735560204_PRODUIT.png" alt="Le produit cartésien"><figcaption>Le produit cartésien</figcaption></figure><p id="r-4569153" data-claire-element-id="8198613">Vous voyez donc que le nombre de lignes d'un produit cartésien entre une relation de<strong> 3 tuples</strong> par une relation de 4<strong> tuples</strong> donne justement une relation de<strong> 12 tuples</strong> !</p><p id="r-4569155" data-claire-element-id="8198615"> </p><h3 id="r-4569174" data-claire-element-id="8559287">Aller plus loin : la division</h3><aside id="r-4569158" data-claire-element-id="8334731" data-claire-semantic="information"><p id="r-4569157" data-claire-element-id="8334730">La division est rarement utilisée lorsque l'on manipule des données. Cette section est donc facultative !</p></aside><p id="r-4569159" data-claire-element-id="8198619">Vous ne serez pas étonné si je vous dis que la <strong>division</strong> est l'opération inverse du <strong>produit</strong>.</p><p id="r-4569160" data-claire-element-id="8537835">En effet, si j'écris <code data-claire-semantic="text">a * b = c</code>, cela est équivalent à écrire <code data-claire-semantic="text">c / b = a</code> (à condition que <strong>b</strong> ne soit pas nul).</p><p id="r-4569161" data-claire-element-id="8537836">Cependant, si j'ajoute la contrainte selon laquelle nous ne manipulons que des nombres entiers, la division de A par B <code data-claire-semantic="text">A / B</code> ne donne pas toujours un nombre entier. Par exemple, <code data-claire-semantic="text">314 / 7</code> donne <code data-claire-semantic="text">44.8571</code>. Si nous ne manipulons que des entiers, la division devient une division <em>euclidienne</em>. Vous savez, cette opération où vous manipulez<em> un dividende, un diviseur, un quotient </em>et<em> un reste.</em></p><figure id="r-4569164" data-claire-element-id="8559284"><img id="r-4569162" data-claire-element-id="8198622" src="https://user.oc-static.com/upload/2017/06/19/1497884898884_tmp.png" alt="Une belle division euclidienne"><figcaption>Une belle division euclidienne</figcaption></figure><p id="r-4569165" data-claire-element-id="8334747">La contrainte de ne manipuler que des nombres entiers introduit un reste à notre division, et ainsi<code data-claire-semantic="text">314 = 44 * 7 + 6</code>.</p><p id="r-4569166" data-claire-element-id="8198626">La transposition de ce concept en algèbre relationnelle demande un peu de gymnastique intellectuelle. Voici la définition formelle de la division :</p><blockquote id="r-4569168" data-claire-element-id="8537858"><p id="r-4569167" data-claire-element-id="8537857">La division d'une relation <strong>R1</strong> par une relation <strong>R2 (</strong>sachant que <strong>R1</strong> et <strong>R2</strong> ont au moins un attribut commun) donne une troisième relation <strong>R3</strong> comportant tous les attributs de <strong>R1</strong> qui n'appartiennent pas à <strong>R2,</strong> et qui contient l'ensemble des tuples qui, assemblés à ceux de <strong>R2</strong> , donnent toujours un tuple de <strong>R1</strong>.</p></blockquote><p id="r-4569169" data-claire-element-id="8198629"> Voilà ce que cela peut donner avec nos goûteurs et nos pommes, en supposant que certains goûteurs ne goûtent pas toutes les variétés de pommes :</p><figure id="r-4569172" data-claire-element-id="8559286"><img id="r-4569170" data-claire-element-id="8198630" src="https://user.oc-static.com/upload/2017/06/26/14984740821178_DIVISION.png" alt="La division"></figure><p id="r-4569173" data-claire-element-id="8537861"> On peut écrire ici que  <code data-claire-semantic="text">Dégustation = Variété * Goûteur + Reste</code>  .</p><p id="r-4620077" data-claire-element-id="8334545"> </p><h3 id="r-4569178" data-claire-element-id="8334701">Notations</h3><p id="r-4569175" data-claire-element-id="8334547"> Pour le produit entre une relation R1 et une relation R2, je vous propose la notation suivante :</p><p id="r-4620078" data-claire-element-id="8334548"><code data-claire-semantic="text">R1 Produit P2</code></p><aside id="r-4569177" data-claire-element-id="8198637" data-claire-semantic="information"><p id="r-4569176" data-claire-element-id="8198636"> Ces notations ne sont pas officielles, et ne serviront qu'à communiquer entre nous lors du quiz de fin de partie. Pas besoin de les retenir très longtemps ! ;)</p></aside><p id="r-4620139" data-claire-element-id="8334700"> </p><h3 id="r-4620145" data-claire-element-id="8334707">En résumé</h3><ul id="r-4620144" data-claire-element-id="8334706"><li id="r-4620141" data-claire-element-id="8334703"><p id="r-4620140" data-claire-element-id="8334702">Le <strong>produit cartésien</strong> entre deux relations R1 et R2 est composé de toutes les combinaisons possibles entre les lignes de R1 et les lignes de R2.</p></li><li id="r-4620143" data-claire-element-id="8334705"><p id="r-4620142" data-claire-element-id="8334704">Le nombre de lignes est égal à la multiplication du nombre de lignes de R1 par le nombre de lignes de R2.</p></li></ul>
+</div>
+<div class="js-courseSelementActions sideActions">
+<ul class="sideActions__container">
+<li>
+<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+#
+</a>
+</li>
+</ul>
+</div>
+</div>
+<nav class="course-pagination    clearfix">
+<a href="/courses/4449026/4568756?status=draft" class="button course-pagination__btn course-pagination__btn--previous">
+<i class="icon-previous"></i>
+<span>Découvrez les opérateurs ensemblistes</span>
+</a>
+<span class="course-pagination__separator"></span>
+<a href="/courses/4449026/4568771?status=draft" class="button course-pagination__btn course-pagination__btn--next">
+<span>Liez des relations grâce aux jointures</span>
+<i class="icon-next"></i>
+</a>
+</nav>
+<aside tabindex="-1" role="dialog" aria-labelledby="popin-view-restriction_popin_title" class="popin popin--illustrated  js-popin" id="popin-view-restriction">
+<i class="popin__close-button icon-close js-close-button"></i>
+<div class="popin__inner">
+<div class="popin__illustrationWrapper">
+<div class="popin__illustration illustration--balloon"></div>
+</div>
+<div class="popin__mainContainer">
+<h3 id="popin-view-restriction_popin_title" class="popin__title  js-popin-title">Waouh !</h3>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+Très heureux de voir que nos cours vous plaisent, déjà 5 pages lues aujourd'hui ! Vous pouvez continuer la lecture de nos cours en devenant un membre de la communauté d'OpenClassrooms. C'est gratuit !
+</p>
+<p>
+Vous pourrez aussi suivre votre avancement dans le cours, faire les exercices et discuter avec les autres membres.
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<span class="u--inlineBlock">
+<a class="button button--primary " href="/register">S'inscrire</a>
+</span>
+<span class="u--inlineBlock">
+<a class="button button " href="/login">Se connecter</a>
+</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</section>
+</div>
+</div>
+<script type="text/template" class="js-single-video-download-info">
+            <div class="videoDownload js-download-video-popin-link">
+                <a href="#popin-download-video" class="js-popin-activator">
+                    <i class="icon-download videoDownload__icon"></i> Télécharger la vidéo
+                </a>
+            </div>
+        </script>
+<script type="text/template" class="js-video-download-forbidden">
+            <div class="videoDownload">
+                <i class="icon-info videoDownload__icon videoDownload__icon--rounded"></i> Pour télécharger les vidéos de ce cours, <a href="/premium">devenez Premium</a>
+            </div>
+        </script>
+<script type="text/template" class="js-all-video-download-info">
+            <div class="videoDownload js-download-video-popin-link">
+                <a href="#popin-download-all-videos" class="js-popin-activator">
+                    <i class="icon-download videoDownload__icon"></i> Télécharger toutes les vidéos de ce cours
+                </a>
+            </div>
+        </script>
+<div id="popin-not-certifying-yet_920091" class="popin" data-popin-title="Vous ne pouvez pas encore obtenir de certificat de réussite à l'issue de ce cours.
+                    ">
+<img alt="Exemple de certificat de réussite" src="//static.oc-static.com/prod/images/courses/certif.jpg">
+</div>
+<aside tabindex="-1" role="dialog" class="popin popin--small  js-popin" id="popin-download-all-videos">
+<i class="popin__close-button icon-close js-close-button"></i>
+<div class="popin__inner">
+<div class="popin__mainContainer">
+<i class="icon-video popin__icon  js-popin-icon"></i>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+Vous allez télécharger un fichier zip de 2 050 Mo contenant toutes les vidéos de ce cours en haute définition.
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<a class="button button--primary js-close-button" target="_blank" href="/components/courses/4449026/videos">Télécharger</a>
+</div>
+</div>
+</div>
+</aside>
+<div id="popin-not-certifying-yet_741318" class="popin" data-popin-title="Vous ne pouvez pas encore obtenir de certificat de réussite à l'issue de ce cours.
+                    ">
+<img alt="Exemple de certificat de réussite" src="//static.oc-static.com/prod/images/courses/certif.jpg">
+</div>
+<aside tabindex="-1" role="dialog" class="popin popin--small  js-popin" id="popin-download-video">
+<i class="popin__close-button icon-close js-close-button"></i>
+<div class="popin__inner">
+<div class="popin__mainContainer">
+<i class="icon-video popin__icon  js-popin-icon"></i>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+Choisissez la définition de votre vidéo :
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-ld " href="#">Basse</a>
+<br>
+<small class="js-download-video-popin-button-legend-ld"></small>
+</span>
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-md " href="#">Moyenne</a>
+<br>
+<small class="js-download-video-popin-button-legend-md"></small>
+</span>
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-hd " href="#">Haute</a>
+<br>
+<small class="js-download-video-popin-button-legend-hd"></small>
+</span>
+</div>
+</div>
+</div>
+</aside>
+</main>

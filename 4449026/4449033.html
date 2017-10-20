@@ -1,0 +1,142 @@
+<main class="contentWithSidebar__content">
+<div class="relative js-sidebar-container">
+<div class="static">
+<h2 itemprop="name" data-part-title="Découvrez le concept de relation" class="part-title">Découvrez le concept de relation</h2>
+<section class="row space-bottom js-desktop-sticky-container">
+<div class="col9 col11-s col__small-padding--right">
+<div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/decouvrez-le-concept-de-relation" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
+<div class="userContent js-userContent">
+<aside id="r-4702577" data-claire-element-id="8543102" data-claire-semantic="information"><p id="r-4702576" data-claire-element-id="8543101">Tout au long de ce cours, nous jonglerons avec le vocabulaire : il n'est pas toujours simple et surtout, plusieurs termes peuvent désigner une même chose. Revenez donc régulièrement au bas de ce chapitre lorsque vous aurez un doute. ;)</p></aside><video id="r-4709393" data-claire-element-id="8559235" src="https://vimeo.com/233476700"><a href="https://vimeo.com/233476700">https://vimeo.com/233476700</a></video><p id="r-4702579" data-claire-element-id="8543104"> </p><h3 id="r-4504518" data-claire-element-id="8354652">Un peu d'histoire, pour les motivés !</h3><p id="r-4510201" data-claire-element-id="8354651">C'est un beau jour ensoleillé de 1970 que Monsieur Codd, du laboratoire de recherche d'IBM de San José, crée le <a href="https://fr.wikipedia.org/wiki/Mod%C3%A8le_relationnel">modèle relationnel</a>.</p><p id="r-4503685" data-claire-element-id="8054261">C'était bien vu, car celui-ci a réussi à s'imposer et se retrouve aujourd'hui dans la majorité des bases de données ! :soleil: En effet, ce modèle a été implémenté dans les systèmes de gestion des bases de données relationnelles (SGBDR) comme le IBM System R, Oracle, DB2 ou MySQL. Il a également donné naissance au langage de manipulation des données SQL.</p><p id="r-4567061" data-claire-element-id="8192761"> </p><h3 id="r-4504557" data-claire-element-id="8354656">L'objet phare de ce cours : la relation</h3><p id="r-4503687" data-claire-element-id="8017681">L'objet (théorique) que nous manipulerons tout au long de ce cours est appelé <strong>relation</strong>.</p><aside id="r-4627172" data-claire-element-id="8354654" data-claire-semantic="information"><p id="r-4627171" data-claire-element-id="8354653">J'espère que vous aimez les pommes, car tout au long de ce cours, nous illustrerons les concepts avec ce délicieux fruit. Une relation, ce sera un peu comme un panier de pommes.</p></aside><p id="r-4503688" data-claire-element-id="8335638">Une relation, c'est un tableau dans lequel on met des données. Un tableau dans lequel une ligne représente un objet, et où chaque ligne représente des objets de même nature.</p><p id="r-4503689" data-claire-element-id="8354655">Si nous représentons des pommes, nous pouvons les caractériser par leur masse, leur diamètre et leur couleur. Nous pouvons aussi leur attribuer un identifiant, c'est-à-dire un nombre (ou un code) <em>unique</em> qui permet de les différencier.</p><table id="r-4504556" data-claire-element-id="8022721"><tbody id="r-4504555" data-claire-element-id="8022720"><tr id="r-4504527" data-claire-element-id="8022719"><td id="r-4504520" data-claire-element-id="8022712"><p id="r-4504519" data-claire-element-id="8022711"><strong>identifiant</strong></p></td><td id="r-4504522" data-claire-element-id="8022714"><p id="r-4504521" data-claire-element-id="8022713"><strong>masse</strong></p></td><td id="r-4504524" data-claire-element-id="8022716"><p id="r-4504523" data-claire-element-id="8022715"><strong>diamètre</strong></p></td><td id="r-4504526" data-claire-element-id="8022718"><p id="r-4504525" data-claire-element-id="8022717"><strong>couleur</strong></p></td></tr><tr id="r-4504536" data-claire-element-id="8017701"><td id="r-4504529" data-claire-element-id="8017694"><p id="r-4504528" data-claire-element-id="8017693">1</p></td><td id="r-4504531" data-claire-element-id="8017696"><p id="r-4504530" data-claire-element-id="8017695">151 g</p></td><td id="r-4504533" data-claire-element-id="8017698"><p id="r-4504532" data-claire-element-id="8017697">8.3 cm</p></td><td id="r-4504535" data-claire-element-id="8017700"><p id="r-4504534" data-claire-element-id="8017699">rouge</p></td></tr><tr id="r-4504545" data-claire-element-id="8017710"><td id="r-4504538" data-claire-element-id="8017703"><p id="r-4504537" data-claire-element-id="8017702">2</p></td><td id="r-4504540" data-claire-element-id="8017705"><p id="r-4504539" data-claire-element-id="8017704">169 g</p></td><td id="r-4504542" data-claire-element-id="8017707"><p id="r-4504541" data-claire-element-id="8017706">9.1 cm</p></td><td id="r-4504544" data-claire-element-id="8017709"><p id="r-4504543" data-claire-element-id="8017708">jaune</p></td></tr><tr id="r-4504554" data-claire-element-id="8017719"><td id="r-4504547" data-claire-element-id="8017712"><p id="r-4504546" data-claire-element-id="8017711">3</p></td><td id="r-4504549" data-claire-element-id="8017714"><p id="r-4504548" data-claire-element-id="8017713">134 g</p></td><td id="r-4504551" data-claire-element-id="8017716"><p id="r-4504550" data-claire-element-id="8017715">8.0 cm</p></td><td id="r-4504553" data-claire-element-id="8017718"><p id="r-4504552" data-claire-element-id="8017717">jaune</p></td></tr></tbody></table><aside id="r-4514892" data-claire-element-id="8192766" data-claire-semantic="information"><p id="r-4514891" data-claire-element-id="8192765"> Dans une relation, l'ordre des lignes n'a pas d'importance et pas de signification.</p></aside><p id="r-4567062" data-claire-element-id="8192767"> </p><h3 id="r-4514893" data-claire-element-id="8537114">Un peu de vocabulaire</h3><aside id="r-4620458" data-claire-element-id="8335640" data-claire-semantic="warning"><p id="r-4510226" data-claire-element-id="8054281">Il est très fréquent de mélanger les termes définis par le <em>modèle relationnel</em> et les termes propres au jargon des <em>bases de données relationnelles</em>.</p></aside><p id="r-4510228" data-claire-element-id="8034284">Par exemple, une <strong>relation</strong> sera souvent appelée <strong>table</strong> !</p><p id="r-4510229" data-claire-element-id="8537072">De même, le terme <strong>tuple </strong>désigne ce que l'on appelle une <strong>ligne</strong> d'une table. Dans l'exemple précédent, la pomme numéro 2 est représentée par le <strong>tuple</strong> suivant : <code data-claire-semantic="text">(2, 169, 9.1, "jaune")</code>.</p><p id="r-4510266" data-claire-element-id="8034531">Pour désigner un tuple ou une ligne, vous trouverez aussi parfois les termes <strong>n-uplet</strong> , <strong>enregistrement</strong> ou <strong>vecteur</strong>. Vous avez l'embarras du choix !</p><p id="r-4510230" data-claire-element-id="8034415">Également, le terme <strong>attribut</strong> est l'équivalent, dans le vocabulaire des BDD, d'une <strong>colonne</strong>. Dans l'exemple précédent, <em>masse</em> est un attribut.</p><p id="r-4510251" data-claire-element-id="8192791">Le <strong>schéma</strong> est l'ensemble des attributs d'une relation.</p><p id="r-4510231" data-claire-element-id="8054292">Enfin, le <strong>domaine</strong> désigne l'ensemble des valeurs que peuvent prendre les attributs. Dans le jargon des bases de données, le domaine est assimilé au <strong>type de colonne</strong>.</p><aside id="r-4510310" data-claire-element-id="8537113" data-claire-semantic="information"><p id="r-4510309" data-claire-element-id="8537112">Petite précision sur les domaines. Dans notre exemple, l'attribut <em>masse</em> peut prendre toute valeur réelle et positive (c'est à dire tout nombre à virgule supérieur à 0). Également, la colonne <em>identifiant</em> est de type entier (elle peut prendre toute valeur de nombre entier). Enfin, l'attribut <em>couleur</em> a comme domaine l'ensemble <code data-claire-semantic="text">{vert, rouge, jaune}</code>.</p></aside><p id="r-4620459" data-claire-element-id="8335643"> </p><h3 id="r-4620467" data-claire-element-id="8537120">En résumé</h3><ul id="r-4620466" data-claire-element-id="8537119"><li id="r-4620461" data-claire-element-id="8335646"><p id="r-4620460" data-claire-element-id="8335645">Dans ce cours, on va manipuler des tableaux, appelés <strong>relations</strong> ou <strong>tables</strong>.</p></li><li id="r-4620463" data-claire-element-id="8537116"><p id="r-4620462" data-claire-element-id="8537115">Dans ces tableaux, une ligne (= un tuple) représente un objet, et chaque ligne représente des objets de même nature.</p></li><li id="r-4620465" data-claire-element-id="8537118"><p id="r-4620464" data-claire-element-id="8537117">On jonglera souvent entre le vocabulaire de l'<strong>algèbre relationnelle</strong> et le vocabulaire propre aux <strong>bases de données</strong> : connaissez bien les correspondances entre l'un et l'autre !</p></li></ul>
+</div>
+<div class="js-courseSelementActions sideActions">
+<ul class="sideActions__container">
+<li>
+<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+#
+</a>
+</li>
+</ul>
+</div>
+</div>
+<nav class="course-pagination    clearfix">
+<a href="/courses/4449026/4564001?status=draft" class="button course-pagination__btn course-pagination__btn--previous">
+<i class="icon-previous"></i>
+<span>Tirez parti de ce cours</span>
+</a>
+<span class="course-pagination__separator"></span>
+<a href="/courses/4449026/4503656?status=draft" class="button course-pagination__btn course-pagination__btn--next">
+<span>Comprenez l'importance des clés</span>
+<i class="icon-next"></i>
+</a>
+</nav>
+<aside tabindex="-1" role="dialog" aria-labelledby="popin-view-restriction_popin_title" class="popin popin--illustrated  js-popin" id="popin-view-restriction">
+<i class="popin__close-button icon-close js-close-button"></i>
+<div class="popin__inner">
+<div class="popin__illustrationWrapper">
+<div class="popin__illustration illustration--balloon"></div>
+</div>
+<div class="popin__mainContainer">
+<h3 id="popin-view-restriction_popin_title" class="popin__title  js-popin-title">Waouh !</h3>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+Très heureux de voir que nos cours vous plaisent, déjà 5 pages lues aujourd'hui ! Vous pouvez continuer la lecture de nos cours en devenant un membre de la communauté d'OpenClassrooms. C'est gratuit !
+</p>
+<p>
+Vous pourrez aussi suivre votre avancement dans le cours, faire les exercices et discuter avec les autres membres.
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<span class="u--inlineBlock">
+<a class="button button--primary " href="/register">S'inscrire</a>
+</span>
+<span class="u--inlineBlock">
+<a class="button button " href="/login">Se connecter</a>
+</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</section>
+</div>
+</div>
+<script type="text/template" class="js-single-video-download-info">
+            <div class="videoDownload js-download-video-popin-link">
+                <a href="#popin-download-video" class="js-popin-activator">
+                    <i class="icon-download videoDownload__icon"></i> Télécharger la vidéo
+                </a>
+            </div>
+        </script>
+<script type="text/template" class="js-video-download-forbidden">
+            <div class="videoDownload">
+                <i class="icon-info videoDownload__icon videoDownload__icon--rounded"></i> Pour télécharger les vidéos de ce cours, <a href="/premium">devenez Premium</a>
+            </div>
+        </script>
+<script type="text/template" class="js-all-video-download-info">
+            <div class="videoDownload js-download-video-popin-link">
+                <a href="#popin-download-all-videos" class="js-popin-activator">
+                    <i class="icon-download videoDownload__icon"></i> Télécharger toutes les vidéos de ce cours
+                </a>
+            </div>
+        </script>
+<div id="popin-not-certifying-yet_174771" class="popin" data-popin-title="Vous ne pouvez pas encore obtenir de certificat de réussite à l'issue de ce cours.
+                    ">
+<img alt="Exemple de certificat de réussite" src="//static.oc-static.com/prod/images/courses/certif.jpg">
+</div>
+<aside tabindex="-1" role="dialog" class="popin popin--small  js-popin" id="popin-download-all-videos">
+<i class="popin__close-button icon-close js-close-button"></i>
+<div class="popin__inner">
+<div class="popin__mainContainer">
+<i class="icon-video popin__icon  js-popin-icon"></i>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+Vous allez télécharger un fichier zip de 2 050 Mo contenant toutes les vidéos de ce cours en haute définition.
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<a class="button button--primary js-close-button" target="_blank" href="/components/courses/4449026/videos">Télécharger</a>
+</div>
+</div>
+</div>
+</aside>
+<div id="popin-not-certifying-yet_139900" class="popin" data-popin-title="Vous ne pouvez pas encore obtenir de certificat de réussite à l'issue de ce cours.
+                    ">
+<img alt="Exemple de certificat de réussite" src="//static.oc-static.com/prod/images/courses/certif.jpg">
+</div>
+<aside tabindex="-1" role="dialog" class="popin popin--small  js-popin" id="popin-download-video">
+<i class="popin__close-button icon-close js-close-button"></i>
+<div class="popin__inner">
+<div class="popin__mainContainer">
+<i class="icon-video popin__icon  js-popin-icon"></i>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+Choisissez la définition de votre vidéo :
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-ld " href="#">Basse</a>
+<br>
+<small class="js-download-video-popin-button-legend-ld"></small>
+</span>
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-md " href="#">Moyenne</a>
+<br>
+<small class="js-download-video-popin-button-legend-md"></small>
+</span>
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-hd " href="#">Haute</a>
+<br>
+<small class="js-download-video-popin-button-legend-hd"></small>
+</span>
+</div>
+</div>
+</div>
+</aside>
+</main>

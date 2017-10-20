@@ -1,0 +1,158 @@
+<main class="contentWithSidebar__content">
+<div class="relative js-sidebar-container">
+<div class="static">
+<h2 itemprop="name" data-part-title="Posez vos clés sur la table !" class="part-title">Posez vos clés sur la table !</h2>
+<section class="row space-bottom js-desktop-sticky-container">
+<div class="col9 col11-s col__small-padding--right">
+<div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/posez-vos-cles-sur-la-table" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
+<div class="userContent js-userContent">
+<p id="r-4705581" data-claire-element-id="8548691">Dans les parties précédentes, vous avez déjà vu les tables et les clés. Nous sommes ici au début d'une nouvelle partie, dans laquelle nous nous concentrons sur l'interrogation d'une base de données en langage SQL.</p><p id="r-4705582" data-claire-element-id="8548692">Mais avant de pouvoir les interroger, il est préférable de savoir créer une <strong>table</strong>, et comment implémenter les <strong>clés</strong>.</p><video id="r-4723196" data-claire-element-id="8598581" src="https://vimeo.com/233479210"><a href="https://vimeo.com/233479210">https://vimeo.com/233479210</a></video><h3 id="r-4538988" data-claire-element-id="8598584">Créer une table avec des clés</h3><p id="r-4538987" data-claire-element-id="8598582">Créons ensemble la table <strong>entity</strong>, qui accueillera les sociétés offshores contenues dans les Panama Papers.</p><pre id="r-4539051" data-claire-element-id="8117071"><code data-claire-semantic="sql">CREATE TABLE entity (
+    id INTEGER,
+    name TEXT NOT NULL,
+    jurisdiction TEXT,
+    jurisdiction_description TEXT,
+    company_type TEXT,
+    address_id INTEGER,
+    incorporation_date DATE,
+    inactivation_date DATE,
+    status TEXT,
+    service_provider TEXT,
+    country_codes TEXT,
+    countries TEXT,
+    source TEXT,
+    PRIMARY KEY(id),
+    FOREIGN KEY(address_id) REFERENCES address(id)
+)</code></pre><p id="r-4539022" data-claire-element-id="8539512">C'est assez simple à comprendre : nous utilisons <code data-claire-semantic="text">CREATE TABLE</code>, et spécifions ensuite le nom de la table à créer. Nous ouvrons les parenthèses, et spécifions chacune des colonnes en les séparant par des virgules. Pour chaque colonne, nous spécifions son nom et son type.</p><p id="r-4539436" data-claire-element-id="8539513">Remarquez que grâce aux mots clés <code data-claire-semantic="text">NOT NULL</code>, nous imposons que la valeur de <em>name</em> soit toujours renseignée lors de l'insertion d'une nouvelle ligne : on ne pourra donc jamais ajouter une société offshore sans spécifier son nom !</p><aside id="r-4539029" data-claire-element-id="8321574" data-claire-semantic="warning"><p id="r-4539028" data-claire-element-id="8321573">Il y a plusieurs types de colonnes possibles. Les plus communs sont les suivants : INTEGER, FLOAT, NUMERIC, VARCHAR, TEXT, TIMESTAMP, DATE, BOOLEAN. Je vous invite à jeter un coup d’œil <a href="https://www.w3schools.com/sql/sql_datatypes_general.asp">ici</a> pour comprendre à quoi ils correspondent !</p></aside><p id="r-4539181" data-claire-element-id="8116423">Nous avons également donné ici les clés étrangères et primaires de la table <strong>entity </strong>grâce aux clauses suivantes :</p><ul id="r-4539255" data-claire-element-id="8116428"><li id="r-4539252" data-claire-element-id="8116425"><p id="r-4539251" data-claire-element-id="8116424"><code data-claire-semantic="text">PRIMARY KEY</code> </p></li><li id="r-4539254" data-claire-element-id="8116427"><p id="r-4539253" data-claire-element-id="8116426"><code data-claire-semantic="text">FOREIGN KEY ... REFERENCES ...</code> </p></li></ul><p id="r-4539257" data-claire-element-id="8116430">Pour la clé étrangère, ce qui nous avons écrit ici signifie que la colonne <em>address_id</em> de la table <strong>entity</strong> fait référence à la colonne <em>id</em> de la table <strong>address</strong>.</p><aside id="r-4539183" data-claire-element-id="8321482" data-claire-semantic="warning"><p id="r-4539182" data-claire-element-id="8321481">Nous supposons ici que la table <strong>address</strong> est déjà créée.</p></aside><p id="r-4615311" data-claire-element-id="8598583"></p><h3 id="r-4538992" data-claire-element-id="8598586">Insérer des données</h3><p id="r-4538991" data-claire-element-id="8539515">Maintenant que nous avons créé la structure de la table, insérons une ligne.</p><pre id="r-4550577" data-claire-element-id="8263941"><code data-claire-semantic="sql">INSERT INTO entity (id, name, jurisdiction, jurisdiction_description, incorporation_date) VALUES (0, 'Une société', 'IMG', 'Le Pays Imaginaire', '2020-01-01');</code></pre><p id="r-4539441" data-claire-element-id="8539522">Nous spécifions ici la table à remplir grâce à <code data-claire-semantic="text">INSERT INTO</code>, puis nous indiquons entre parenthèses les colonnes que nous voulons compléter (<em>id</em>, <em>name</em>, etc.) . Enfin, nous donnons les valeurs à insérer après le mot clé <code data-claire-semantic="text">VALUES</code> : ces valeurs doivent être dans le même ordre que les colonnes.</p><aside id="r-4539413" data-claire-element-id="8117076" data-claire-semantic="information"><p id="r-4539412" data-claire-element-id="8117075">Ici, certaines colonnes seront laissées vides, car nous ne leur avons donné aucune valeur.</p></aside><p id="r-4539414" data-claire-element-id="8321578">Il est aussi possible de remplir une table à partir d'un fichier CSV.  En effet, un fichier CSV se présente exactement de la même manière qu'une table d'une base de données ; si vous ne connaissez pas ce format, je vous invite à jeter un coup d'oeil <a href="https://fr.wikipedia.org/wiki/Comma-separated_values">ici</a>. ;)</p><p id="r-4550578" data-claire-element-id="8321579">Cependant, chaque SGBDR a sa propre manière d'importer des données à partir d'un tel fichier :'(. Certains utilisent une syntaxe SQL, pour d'autres, c'est un peu plus compliqué. Il faudra donc <a href="/courses/comprendre-le-web/les-secrets-bien-gardes-pour-devenir-developpeur-1">vous renseigner</a> en fonction du SGBDR que vous utilisez...</p><p id="r-4539417" data-claire-element-id="8598585"></p><h3 id="r-4615321" data-claire-element-id="8539529">En résumé</h3><ul id="r-4615320" data-claire-element-id="8539528"><li id="r-4615317" data-claire-element-id="8539525"><p id="r-4615316" data-claire-element-id="8539524">On crée une table avec <code data-claire-semantic="text">CREATE TABLE</code>.</p></li><li id="r-4615319" data-claire-element-id="8539527"><p id="r-4615318" data-claire-element-id="8539526">On insère des données grâce à <code data-claire-semantic="text">INSERT INTO (...) VALUES (...)</code>.</p></li></ul>
+</div>
+<div class="js-courseSelementActions sideActions">
+<ul class="sideActions__container">
+<li>
+<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+#
+</a>
+</li>
+</ul>
+</div>
+</div>
+<nav class="course-pagination    clearfix">
+<a href="/courses/4449026/4539106?status=draft" class="button course-pagination__btn course-pagination__btn--previous">
+<i class="icon-previous"></i>
+<span>Explorez les Panama Papers</span>
+</a>
+<span class="course-pagination__separator"></span>
+<a href="/courses/4449026/4519421?status=draft" class="button course-pagination__btn course-pagination__btn--next">
+<span>Exécutez une requête avec SELECT, FROM et WHERE</span>
+<i class="icon-next"></i>
+</a>
+</nav>
+<aside tabindex="-1" role="dialog" aria-labelledby="popin-view-restriction_popin_title" class="popin popin--illustrated  js-popin" id="popin-view-restriction">
+<i class="popin__close-button icon-close js-close-button"></i>
+<div class="popin__inner">
+<div class="popin__illustrationWrapper">
+<div class="popin__illustration illustration--balloon"></div>
+</div>
+<div class="popin__mainContainer">
+<h3 id="popin-view-restriction_popin_title" class="popin__title  js-popin-title">Waouh !</h3>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+Très heureux de voir que nos cours vous plaisent, déjà 5 pages lues aujourd'hui ! Vous pouvez continuer la lecture de nos cours en devenant un membre de la communauté d'OpenClassrooms. C'est gratuit !
+</p>
+<p>
+Vous pourrez aussi suivre votre avancement dans le cours, faire les exercices et discuter avec les autres membres.
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<span class="u--inlineBlock">
+<a class="button button--primary " href="/register">S'inscrire</a>
+</span>
+<span class="u--inlineBlock">
+<a class="button button " href="/login">Se connecter</a>
+</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</section>
+</div>
+</div>
+<script type="text/template" class="js-single-video-download-info">
+            <div class="videoDownload js-download-video-popin-link">
+                <a href="#popin-download-video" class="js-popin-activator">
+                    <i class="icon-download videoDownload__icon"></i> Télécharger la vidéo
+                </a>
+            </div>
+        </script>
+<script type="text/template" class="js-video-download-forbidden">
+            <div class="videoDownload">
+                <i class="icon-info videoDownload__icon videoDownload__icon--rounded"></i> Pour télécharger les vidéos de ce cours, <a href="/premium">devenez Premium</a>
+            </div>
+        </script>
+<script type="text/template" class="js-all-video-download-info">
+            <div class="videoDownload js-download-video-popin-link">
+                <a href="#popin-download-all-videos" class="js-popin-activator">
+                    <i class="icon-download videoDownload__icon"></i> Télécharger toutes les vidéos de ce cours
+                </a>
+            </div>
+        </script>
+<div id="popin-not-certifying-yet_185834" class="popin" data-popin-title="Vous ne pouvez pas encore obtenir de certificat de réussite à l'issue de ce cours.
+                    ">
+<img alt="Exemple de certificat de réussite" src="//static.oc-static.com/prod/images/courses/certif.jpg">
+</div>
+<aside tabindex="-1" role="dialog" class="popin popin--small  js-popin" id="popin-download-all-videos">
+<i class="popin__close-button icon-close js-close-button"></i>
+<div class="popin__inner">
+<div class="popin__mainContainer">
+<i class="icon-video popin__icon  js-popin-icon"></i>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+Vous allez télécharger un fichier zip de 2 050 Mo contenant toutes les vidéos de ce cours en haute définition.
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<a class="button button--primary js-close-button" target="_blank" href="/components/courses/4449026/videos">Télécharger</a>
+</div>
+</div>
+</div>
+</aside>
+<div id="popin-not-certifying-yet_960157" class="popin" data-popin-title="Vous ne pouvez pas encore obtenir de certificat de réussite à l'issue de ce cours.
+                    ">
+<img alt="Exemple de certificat de réussite" src="//static.oc-static.com/prod/images/courses/certif.jpg">
+</div>
+<aside tabindex="-1" role="dialog" class="popin popin--small  js-popin" id="popin-download-video">
+<i class="popin__close-button icon-close js-close-button"></i>
+<div class="popin__inner">
+<div class="popin__mainContainer">
+<i class="icon-video popin__icon  js-popin-icon"></i>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+Choisissez la définition de votre vidéo :
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-ld " href="#">Basse</a>
+<br>
+<small class="js-download-video-popin-button-legend-ld"></small>
+</span>
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-md " href="#">Moyenne</a>
+<br>
+<small class="js-download-video-popin-button-legend-md"></small>
+</span>
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-hd " href="#">Haute</a>
+<br>
+<small class="js-download-video-popin-button-legend-hd"></small>
+</span>
+</div>
+</div>
+</div>
+</aside>
+</main>

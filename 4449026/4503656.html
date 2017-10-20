@@ -1,0 +1,142 @@
+<main class="contentWithSidebar__content">
+<div class="relative js-sidebar-container">
+<div class="static">
+<h2 itemprop="name" data-part-title="Comprenez l'importance des clés" class="part-title">Comprenez l'importance des clés</h2>
+<section class="row space-bottom js-desktop-sticky-container">
+<div class="col9 col11-s col__small-padding--right">
+<div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/comprenez-limportance-des-cles" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
+<div class="userContent js-userContent">
+<video id="r-4709394" data-claire-element-id="8559237" src="https://vimeo.com/album/233476803"><a href="https://vimeo.com/album/233476803">https://vimeo.com/album/233476803</a></video><p id="r-4503661" data-claire-element-id="8015701">Je ne vous ai pas tout dit à propos du modèle relationnel. J'ai oublié une chose très importante :</p><aside id="r-4503706" data-claire-element-id="8016322" data-claire-semantic="warning"><p id="r-4503662" data-claire-element-id="8016321">Une relation ne peut contenir deux tuples identiques : chaque ligne est donc unique !</p></aside><p id="r-4503707" data-claire-element-id="8192811"> </p><h3 id="r-4567068" data-claire-element-id="8537143">Réfléchissons...</h3><p id="r-4567066" data-claire-element-id="8192812">Cette contrainte ne devrait normalement pas nous poser de problème, même si nous souhaitons représenter deux objets identiques. Si nous reprenons l'exemple de nos pommes, il est tout à fait possible que deux pommes distinctes aient exactement les mêmes caractéristiques :</p><table id="r-4503754" data-claire-element-id="8381315"><tbody id="r-4503753" data-claire-element-id="8381314"><tr id="r-4503716" data-claire-element-id="8381313"><td id="r-4503709" data-claire-element-id="8048842"><p id="r-4503708" data-claire-element-id="8048841"><strong>identifiant</strong></p></td><td id="r-4503711" data-claire-element-id="8048844"><p id="r-4503710" data-claire-element-id="8048843"><strong>masse</strong></p></td><td id="r-4503713" data-claire-element-id="8048846"><p id="r-4503712" data-claire-element-id="8048845"><strong>diamètre</strong></p></td><td id="r-4503715" data-claire-element-id="8381312"><p id="r-4503714" data-claire-element-id="8381311"><strong>couleur</strong></p></td></tr><tr id="r-4503725" data-claire-element-id="8015851"><td id="r-4503718" data-claire-element-id="8015844"><p id="r-4503717" data-claire-element-id="8015843">1</p></td><td id="r-4503720" data-claire-element-id="8015846"><p id="r-4503719" data-claire-element-id="8015845">151 g</p></td><td id="r-4503722" data-claire-element-id="8015848"><p id="r-4503721" data-claire-element-id="8015847">8.3 cm</p></td><td id="r-4503724" data-claire-element-id="8015850"><p id="r-4503723" data-claire-element-id="8015849">rouge</p></td></tr><tr id="r-4503734" data-claire-element-id="8015860"><td id="r-4503727" data-claire-element-id="8015853"><p id="r-4503726" data-claire-element-id="8015852">2</p></td><td id="r-4503729" data-claire-element-id="8015855"><p id="r-4503728" data-claire-element-id="8015854">169 g</p></td><td id="r-4503731" data-claire-element-id="8015857"><p id="r-4503730" data-claire-element-id="8015856">9.1 cm</p></td><td id="r-4503733" data-claire-element-id="8015859"><p id="r-4503732" data-claire-element-id="8015858">jaune</p></td></tr><tr id="r-4503743" data-claire-element-id="8015869"><td id="r-4503736" data-claire-element-id="8015862"><p id="r-4503735" data-claire-element-id="8015861">3</p></td><td id="r-4503738" data-claire-element-id="8015864"><p id="r-4503737" data-claire-element-id="8015863">134 g</p></td><td id="r-4503740" data-claire-element-id="8015866"><p id="r-4503739" data-claire-element-id="8015865">8.0 cm</p></td><td id="r-4503742" data-claire-element-id="8015868"><p id="r-4503741" data-claire-element-id="8015867">jaune</p></td></tr><tr id="r-4503752" data-claire-element-id="8015878"><td id="r-4503745" data-claire-element-id="8015871"><p id="r-4503744" data-claire-element-id="8015870">4</p></td><td id="r-4503747" data-claire-element-id="8015873"><p id="r-4503746" data-claire-element-id="8015872">134 g</p></td><td id="r-4503749" data-claire-element-id="8015875"><p id="r-4503748" data-claire-element-id="8015874">8.0 cm</p></td><td id="r-4503751" data-claire-element-id="8015877"><p id="r-4503750" data-claire-element-id="8015876">jaune</p></td></tr></tbody></table><p id="r-4503755" data-claire-element-id="8537142">Ici, les pommes 3 et 4 ont les mêmes caractéristiques. Cependant, les lignes correspondantes ne sont pas identiques, car la valeur de leurs attributs <em>identifiant</em> est différente : <code data-claire-semantic="text">3</code> et <code data-claire-semantic="text">4</code>.</p><p id="r-4503756" data-claire-element-id="8335751">Cela nous amène à l'<em>identification</em> des tuples d'une relation. C'est là qu'interviennent les clés !</p><p id="r-4567067" data-claire-element-id="8192813"> </p><h3 id="r-4503762" data-claire-element-id="8543636">Qu'est-ce qu'une clé ?</h3><p id="r-4503758" data-claire-element-id="8335753">Dans la vie quotidienne, une clé sert à ouvrir une porte pour <strong>accéder</strong> à votre maison. Une caractéristique essentielle d'une clé est qu'elle doit être <strong>unique</strong>, car si votre clé est identique à celle de la maison de votre voisin, il se pose un problème évident !</p><p id="r-4503759" data-claire-element-id="8015885">Dans le modèle relationnel, une clé a donc pour vocation d'<strong>accéder</strong> à un tuple, et donc d'identifier ce dernier.</p><p id="r-4503760" data-claire-element-id="8016111"> Ainsi, pour une relation donnée, une clé est un <em>groupe d'attribut minimum déterminant un tuple unique.</em></p><aside id="r-4510816" data-claire-element-id="8543635" data-claire-semantic="information"><p id="r-4503801" data-claire-element-id="8034631">Autrement dit, si nous pouvons être sûrs que n'importe quelle ligne peut être retrouvée en connaissant la valeur de quelques-uns de ses attributs, c'est que ces quelques attributs forment une clé !</p><p id="r-4702752" data-claire-element-id="8543632">Cette illustration (qui n'a rien de formel, et qui est une pure vue de l'esprit) vous aidera peut-être à visualiser ce concept :</p><p id="r-4702754" data-claire-element-id="8543634"><img id="r-4702753" data-claire-element-id="8543633" src="https://user.oc-static.com/upload/2017/10/05/15072142629728_CLES.png" alt=""></p></aside><p id="r-4503802" data-claire-element-id="8022964">Dans notre exemple des pommes, l'attribut <em>identifiant</em> est une clé, car si je vous dis…</p><blockquote id="r-4503804" data-claire-element-id="8022966"><p id="r-4503803" data-claire-element-id="8022965">Donne-moi la pomme dont l'identifiant est 2 !</p></blockquote><p id="r-4503761" data-claire-element-id="8335754"> … vous savez exactement quelle ligne me donner, car l'identifiant de chaque pomme est unique !</p><p id="r-4503805" data-claire-element-id="8022968">Cependant, si je vous demande…</p><blockquote id="r-4503807" data-claire-element-id="8022970"><p id="r-4503806" data-claire-element-id="8022969">Donne-moi la pomme dont la masse est de 169 grammes !</p></blockquote><p id="r-4503808" data-claire-element-id="8335755">… dans ce cas, vous pourriez me donner la pomme numéro 2. Mais si j'ajoute à ma relation une autre pomme qui a aussi une masse de 169 grammes, vous ne saurez plus laquelle des deux pommes choisir. L'attribut <em>masse</em> n'est donc pas une clé.</p><p id="r-4555061" data-claire-element-id="8162281"> </p><h3 id="r-4503919" data-claire-element-id="8543533">Un peu d’entraînement</h3><p id="r-4503809" data-claire-element-id="8016341">Entraînons-nous à repérer des clés avec une relation que nous appellerons <strong>voiture</strong>, qui représente des voitures possédées par des personnes <em>ayant la nationalité française</em> (ce détail aura son importance pour la suite) :</p><table id="r-4503916" data-claire-element-id="8159931"><tbody id="r-4503915" data-claire-element-id="8159930"><tr id="r-4503824" data-claire-element-id="8159929"><td id="r-4503811" data-claire-element-id="8159582"><p id="r-4503810" data-claire-element-id="8159581"><strong>immatriculation</strong></p></td><td id="r-4503813" data-claire-element-id="8159584"><p id="r-4503812" data-claire-element-id="8159583"><strong>pays_immatriculation</strong></p></td><td id="r-4503815" data-claire-element-id="8159922"><p id="r-4503814" data-claire-element-id="8159921"><strong>couleur</strong></p></td><td id="r-4503817" data-claire-element-id="8159924"><p id="r-4503816" data-claire-element-id="8159923"><strong>nombre_places</strong></p></td><td id="r-4503819" data-claire-element-id="8159926"><p id="r-4503818" data-claire-element-id="8159925"><strong>propriétaire</strong></p></td><td id="r-4503821" data-claire-element-id="8159928"><p id="r-4503820" data-claire-element-id="8159927"><strong>prop_num_secu</strong></p></td><td id="r-4503823" data-claire-element-id="8016274"><p id="r-4503822" data-claire-element-id="8016273"><strong>prop_num_voiture</strong></p></td></tr><tr id="r-4503839" data-claire-element-id="8016152"><td id="r-4503826" data-claire-element-id="8016139"><p id="r-4503825" data-claire-element-id="8016138">2983-AA</p></td><td id="r-4503828" data-claire-element-id="8016141"><p id="r-4503827" data-claire-element-id="8016140">France</p></td><td id="r-4503830" data-claire-element-id="8016143"><p id="r-4503829" data-claire-element-id="8016142">bleue</p></td><td id="r-4503832" data-claire-element-id="8016145"><p id="r-4503831" data-claire-element-id="8016144">5</p></td><td id="r-4503834" data-claire-element-id="8016147"><p id="r-4503833" data-claire-element-id="8016146">Luc</p></td><td id="r-4503836" data-claire-element-id="8016149"><p id="r-4503835" data-claire-element-id="8016148">1134212</p></td><td id="r-4503838" data-claire-element-id="8016151"><p id="r-4503837" data-claire-element-id="8016150">1</p></td></tr><tr id="r-4503854" data-claire-element-id="8016167"><td id="r-4503841" data-claire-element-id="8016154"><p id="r-4503840" data-claire-element-id="8016153">1923-BD</p></td><td id="r-4503843" data-claire-element-id="8016156"><p id="r-4503842" data-claire-element-id="8016155">France</p></td><td id="r-4503845" data-claire-element-id="8016158"><p id="r-4503844" data-claire-element-id="8016157">verte</p></td><td id="r-4503847" data-claire-element-id="8016160"><p id="r-4503846" data-claire-element-id="8016159">7</p></td><td id="r-4503849" data-claire-element-id="8016162"><p id="r-4503848" data-claire-element-id="8016161">Lucia</p></td><td id="r-4503851" data-claire-element-id="8016164"><p id="r-4503850" data-claire-element-id="8016163">2021726</p></td><td id="r-4503853" data-claire-element-id="8016166"><p id="r-4503852" data-claire-element-id="8016165">1</p></td></tr><tr id="r-4503869" data-claire-element-id="8016182"><td id="r-4503856" data-claire-element-id="8016169"><p id="r-4503855" data-claire-element-id="8016168">PLT-28-190</p></td><td id="r-4503858" data-claire-element-id="8016171"><p id="r-4503857" data-claire-element-id="8016170">Portugal</p></td><td id="r-4503860" data-claire-element-id="8016173"><p id="r-4503859" data-claire-element-id="8016172">bleue</p></td><td id="r-4503862" data-claire-element-id="8016175"><p id="r-4503861" data-claire-element-id="8016174">7</p></td><td id="r-4503864" data-claire-element-id="8016177"><p id="r-4503863" data-claire-element-id="8016176">Gaël</p></td><td id="r-4503866" data-claire-element-id="8016179"><p id="r-4503865" data-claire-element-id="8016178">1012612</p></td><td id="r-4503868" data-claire-element-id="8016181"><p id="r-4503867" data-claire-element-id="8016180">1</p></td></tr><tr id="r-4503884" data-claire-element-id="8016197"><td id="r-4503871" data-claire-element-id="8016184"><p id="r-4503870" data-claire-element-id="8016183">2383-ZN</p></td><td id="r-4503873" data-claire-element-id="8016186"><p id="r-4503872" data-claire-element-id="8016185">France</p></td><td id="r-4503875" data-claire-element-id="8016188"><p id="r-4503874" data-claire-element-id="8016187">noire</p></td><td id="r-4503877" data-claire-element-id="8016190"><p id="r-4503876" data-claire-element-id="8016189">9</p></td><td id="r-4503879" data-claire-element-id="8016192"><p id="r-4503878" data-claire-element-id="8016191">Leïla</p></td><td id="r-4503881" data-claire-element-id="8016194"><p id="r-4503880" data-claire-element-id="8016193">2125312</p></td><td id="r-4503883" data-claire-element-id="8016196"><p id="r-4503882" data-claire-element-id="8016195">2</p></td></tr><tr id="r-4503899" data-claire-element-id="8016325"><td id="r-4503886" data-claire-element-id="8016199"><p id="r-4503885" data-claire-element-id="8016198">1209-NQ</p></td><td id="r-4503888" data-claire-element-id="8016201"><p id="r-4503887" data-claire-element-id="8016200">France</p></td><td id="r-4503890" data-claire-element-id="8016203"><p id="r-4503889" data-claire-element-id="8016202">noire</p></td><td id="r-4503892" data-claire-element-id="8016205"><p id="r-4503891" data-claire-element-id="8016204">5</p></td><td id="r-4503894" data-claire-element-id="8016207"><p id="r-4503893" data-claire-element-id="8016206">Leïla</p></td><td id="r-4503896" data-claire-element-id="8016324"><p id="r-4503895" data-claire-element-id="8016323">2125312</p></td><td id="r-4503898" data-claire-element-id="8016211"><p id="r-4503897" data-claire-element-id="8016210">1</p></td></tr><tr id="r-4503914" data-claire-element-id="8016227"><td id="r-4503901" data-claire-element-id="8016214"><p id="r-4503900" data-claire-element-id="8016213">2634-OS</p></td><td id="r-4503903" data-claire-element-id="8016216"><p id="r-4503902" data-claire-element-id="8016215">France</p></td><td id="r-4503905" data-claire-element-id="8016218"><p id="r-4503904" data-claire-element-id="8016217">bleue</p></td><td id="r-4503907" data-claire-element-id="8016220"><p id="r-4503906" data-claire-element-id="8016219">5</p></td><td id="r-4503909" data-claire-element-id="8016222"><p id="r-4503908" data-claire-element-id="8016221">Gaël</p></td><td id="r-4503911" data-claire-element-id="8016224"><p id="r-4503910" data-claire-element-id="8016223">1162732</p></td><td id="r-4503913" data-claire-element-id="8016226"><p id="r-4503912" data-claire-element-id="8016225">1</p></td></tr></tbody></table><aside id="r-4510821" data-claire-element-id="8036391" data-claire-semantic="information"><p id="r-4503921" data-claire-element-id="8016251">Voici la signification des attributs :</p><ul id="r-4503924" data-claire-element-id="8016330"><li id="r-4503923" data-claire-element-id="8016279"><p id="r-4503922" data-claire-element-id="8016278"><strong>immatriculation</strong> : numéro d'immatriculation de la voiture</p></li><li id="r-4503927" data-claire-element-id="8016281"><p id="r-4503926" data-claire-element-id="8016280"><strong>pays_immatriculation</strong> : pays dans lequel le véhicule est immatriculé</p></li><li id="r-4503929" data-claire-element-id="8016283"><p id="r-4503928" data-claire-element-id="8016282"><strong>couleur</strong> : couleur de la voiture</p></li><li id="r-4503931" data-claire-element-id="8016285"><p id="r-4503930" data-claire-element-id="8016284"><strong>nombre_places</strong> : nombre de places de la voiture</p></li><li id="r-4503933" data-claire-element-id="8016287"><p id="r-4503932" data-claire-element-id="8016286"><strong>propriétaire</strong> : prénom du propriétaire de la voiture</p></li><li id="r-4503935" data-claire-element-id="8016289"><p id="r-4503934" data-claire-element-id="8016288"><strong>prop_num_secu</strong> : numéro de sécurité sociale du propriétaire (chaque personne de nationalité française possède un numéro de sécurité sociale unique)</p></li><li id="r-4503937" data-claire-element-id="8016329"><p id="r-4503936" data-claire-element-id="8016328"><strong>prop_num_voiture</strong> : si un propriétaire possède plusieurs voitures, il peut les numéroter pour les repérer. S'il n'en possède qu'une, prop_num_voiture vaut 1. Par exemple, Leïla numérote ici ses voitures de cette manière : "1209-NQ est ma première voiture, et 2383-ZN est ma voiture numéro 2".</p></li></ul></aside><div id="r-4503939" data-claire-element-id="8016294" data-claire-semantic="question"><p id="r-4503938" data-claire-element-id="8016293">Le groupe d'attributs [ immatriculation ] est-il une clé pour notre relation ?</p></div><p id="r-4503940" data-claire-element-id="8016295">Non ! Même si en France, le numéro d'immatriculation d'une voiture est unique, notre relation est visiblement prévue pour contenir des voitures de pays différents. Or, il n'est pas exclu qu'un autre pays utilise (ou utilisera un jour) le même système d'immatriculation que la France. Dans ce cas, deux voitures dans le monde pourraient avoir le même numéro !</p><div id="r-4503942" data-claire-element-id="8023012" data-claire-semantic="question"><p id="r-4503941" data-claire-element-id="8023011">Le groupe d'attributs [ immatriculation, pays_immatriculation ] est-il une clé pour notre relation ?</p></div><p id="r-4503943" data-claire-element-id="8016298">Oui ! A condition de supposer qu'un numéro d'immatriculation ne peut pas être réattribué à un autre véhicule une fois qu'une voiture est détruite.</p><div id="r-4503945" data-claire-element-id="8023014" data-claire-semantic="question"><p id="r-4503944" data-claire-element-id="8023013">Et le groupe [ immatriculation, pays_immatriculation, couleur ] ?</p></div><p id="r-4503946" data-claire-element-id="8335757">Oui et Non... Comme nous venons de le voir, le groupe [ immatriculation , pays_immatriculation ] est déjà une clé. Ceci implique que deux lignes ne peuvent pas avoir la même valeur pour leurs attributs <em>immatriculation</em> et <em>pays_immatriculation.</em></p><p id="r-4620501" data-claire-element-id="8335758">De manière évidente, deux lignes ne peuvent donc pas avoir les mêmes valeurs pour les 3 attributs ci-dessus.</p><p id="r-4620502" data-claire-element-id="8543452">Cependant, dans la définition de <em>clé</em> donnée plus haut, nous avons dit que le groupe d'attributs devait être minimal. Ici, notre groupe de 3 attributs n'est pas minimal. En effet, si on enlève l'attribut <em>couleur</em>, on se retrouve avec [ immatriculation, pays_immatriculation ] qui est une clé (on vient de le voir au cas précédent, j'espère que vous suivez ;) ). <em>Couleur</em> est donc inutile ici.</p><div id="r-4503948" data-claire-element-id="8016303" data-claire-semantic="question"><p id="r-4503947" data-claire-element-id="8016302">Et le groupe [ prop_num_secu ] ?</p></div><p id="r-4503949" data-claire-element-id="8543532">Non. Bon, certes, si nous avions une relation qui représentait des personnes de nationalité française, alors le numéro de sécurité sociale serait une clé. Mais ici, ce n'est pas le cas : notre relation représente des voitures, pas des personnes. Deux voitures peuvent avoir le même propriétaire, et donc avoir la même valeur pour l'attribut <em>prop_num_secu.</em></p><div id="r-4503952" data-claire-element-id="8023017" data-claire-semantic="question"><p id="r-4503951" data-claire-element-id="8023016">Et le groupe [ prop_num_secu, prop_num_voiture ] ?</p></div><p id="r-4503953" data-claire-element-id="8016334">Oui, c'est une clé. En effet, si deux voitures ont le même propriétaire (identifié par <em>prop_num_secu</em>), elles ne peuvent pas avoir à la fois le même propriétaire ET le même <em>prop_num_voiture</em>.</p><aside id="r-4503957" data-claire-element-id="8016343" data-claire-semantic="information"><p id="r-4503956" data-claire-element-id="8016342">Pour ceux qui veulent se "triturer" le cerveau : si nous enlevions la supposition selon laquelle les voitures sont possédées par des personnes de nationalité française, et qu'il existait un pays ayant la même numérotation de sécurité sociale qu'en France, alors ce dernier groupe d'attribut ne serait plus une clé !</p></aside><p id="r-4567071" data-claire-element-id="8192821"> </p><h3 id="r-4620543" data-claire-element-id="8537155">En résumé</h3><ul id="r-4620542" data-claire-element-id="8537154"><li id="r-4620537" data-claire-element-id="8335862"><p id="r-4620536" data-claire-element-id="8335861">Une clé, c'est un groupe d'attributs (= un groupe de colonnes).</p></li><li id="r-4620539" data-claire-element-id="8335864"><p id="r-4620538" data-claire-element-id="8335863">Pour qu'un groupe d'attribut soit une clé, il faut être sûr que deux tuples (= deux lignes) n'auront jamais des valeurs identiques pour ces attributs.</p></li><li id="r-4620541" data-claire-element-id="8537153"><p id="r-4620540" data-claire-element-id="8537152">Ce groupe d'attributs doit être minimal, c'est-à-dire que si on retire l'un des attributs de ce groupe, la phrase précédente n'est plus vérifiée.</p></li></ul>
+</div>
+<div class="js-courseSelementActions sideActions">
+<ul class="sideActions__container">
+<li>
+<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+#
+</a>
+</li>
+</ul>
+</div>
+</div>
+<nav class="course-pagination    clearfix">
+<a href="/courses/4449026/4449033?status=draft" class="button course-pagination__btn course-pagination__btn--previous">
+<i class="icon-previous"></i>
+<span>Découvrez le concept de relation</span>
+</a>
+<span class="course-pagination__separator"></span>
+<a href="/courses/4449026/4504071?status=draft" class="button course-pagination__btn course-pagination__btn--next">
+<span>Choisissez votre clé primaire parmi les candidates</span>
+<i class="icon-next"></i>
+</a>
+</nav>
+<aside tabindex="-1" role="dialog" aria-labelledby="popin-view-restriction_popin_title" class="popin popin--illustrated  js-popin" id="popin-view-restriction">
+<i class="popin__close-button icon-close js-close-button"></i>
+<div class="popin__inner">
+<div class="popin__illustrationWrapper">
+<div class="popin__illustration illustration--balloon"></div>
+</div>
+<div class="popin__mainContainer">
+<h3 id="popin-view-restriction_popin_title" class="popin__title  js-popin-title">Waouh !</h3>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+Très heureux de voir que nos cours vous plaisent, déjà 5 pages lues aujourd'hui ! Vous pouvez continuer la lecture de nos cours en devenant un membre de la communauté d'OpenClassrooms. C'est gratuit !
+</p>
+<p>
+Vous pourrez aussi suivre votre avancement dans le cours, faire les exercices et discuter avec les autres membres.
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<span class="u--inlineBlock">
+<a class="button button--primary " href="/register">S'inscrire</a>
+</span>
+<span class="u--inlineBlock">
+<a class="button button " href="/login">Se connecter</a>
+</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</section>
+</div>
+</div>
+<script type="text/template" class="js-single-video-download-info">
+            <div class="videoDownload js-download-video-popin-link">
+                <a href="#popin-download-video" class="js-popin-activator">
+                    <i class="icon-download videoDownload__icon"></i> Télécharger la vidéo
+                </a>
+            </div>
+        </script>
+<script type="text/template" class="js-video-download-forbidden">
+            <div class="videoDownload">
+                <i class="icon-info videoDownload__icon videoDownload__icon--rounded"></i> Pour télécharger les vidéos de ce cours, <a href="/premium">devenez Premium</a>
+            </div>
+        </script>
+<script type="text/template" class="js-all-video-download-info">
+            <div class="videoDownload js-download-video-popin-link">
+                <a href="#popin-download-all-videos" class="js-popin-activator">
+                    <i class="icon-download videoDownload__icon"></i> Télécharger toutes les vidéos de ce cours
+                </a>
+            </div>
+        </script>
+<div id="popin-not-certifying-yet_332672" class="popin" data-popin-title="Vous ne pouvez pas encore obtenir de certificat de réussite à l'issue de ce cours.
+                    ">
+<img alt="Exemple de certificat de réussite" src="//static.oc-static.com/prod/images/courses/certif.jpg">
+</div>
+<aside tabindex="-1" role="dialog" class="popin popin--small  js-popin" id="popin-download-all-videos">
+<i class="popin__close-button icon-close js-close-button"></i>
+<div class="popin__inner">
+<div class="popin__mainContainer">
+<i class="icon-video popin__icon  js-popin-icon"></i>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+Vous allez télécharger un fichier zip de 2 050 Mo contenant toutes les vidéos de ce cours en haute définition.
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<a class="button button--primary js-close-button" target="_blank" href="/components/courses/4449026/videos">Télécharger</a>
+</div>
+</div>
+</div>
+</aside>
+<div id="popin-not-certifying-yet_583859" class="popin" data-popin-title="Vous ne pouvez pas encore obtenir de certificat de réussite à l'issue de ce cours.
+                    ">
+<img alt="Exemple de certificat de réussite" src="//static.oc-static.com/prod/images/courses/certif.jpg">
+</div>
+<aside tabindex="-1" role="dialog" class="popin popin--small  js-popin" id="popin-download-video">
+<i class="popin__close-button icon-close js-close-button"></i>
+<div class="popin__inner">
+<div class="popin__mainContainer">
+<i class="icon-video popin__icon  js-popin-icon"></i>
+<div class="popin__content  js-popin-content">
+<div class="popin__contentWrapper">
+<p>
+Choisissez la définition de votre vidéo :
+</p>
+</div>
+</div>
+<div class="popin__actions  js-popin-actions">
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-ld " href="#">Basse</a>
+<br>
+<small class="js-download-video-popin-button-legend-ld"></small>
+</span>
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-md " href="#">Moyenne</a>
+<br>
+<small class="js-download-video-popin-button-legend-md"></small>
+</span>
+<span class="u--inlineBlock">
+<a class="button button--primary js-download-video-popin-button-hd " href="#">Haute</a>
+<br>
+<small class="js-download-video-popin-button-legend-hd"></small>
+</span>
+</div>
+</div>
+</div>
+</aside>
+</main>
