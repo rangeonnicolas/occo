@@ -1,9 +1,3 @@
-<main class="contentWithSidebar__content">
-<div class="relative js-sidebar-container">
-<div class="static">
-<h2 itemprop="name" data-part-title="TP : Nettoyez votre jeu de données" class="part-title">TP : Nettoyez votre jeu de données</h2>
-<section class="row space-bottom js-desktop-sticky-container">
-<div class="col9 col11-s col__small-padding--right">
 <div itemprop="articleBody" data-page-indentifier="/courses/nettoyez-et-decrivez-votre-jeu-de-donnees/tp-nettoyez-votre-jeu-de-donnees" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
 <div class="userContent js-userContent">
 <p id="r-4724178" data-claire-element-id="8606641">Nous allons nettoyer le jeu de données du chapitre précédent. Nous illustrerons ceci en Python. Si vous préférez R, un code équivalent est donné en bas de chapitre ;)</p><p id="r-4725378" data-claire-element-id="8605436">Nous commencerons par charger l'échantillon à partir de ce fichier csv (qu'il vous faudra télécharger) dans une variable que nous appellerons  <code data-claire-semantic="text">data</code>. Cette variable sera donc un dataframe.</p><table id="r-4725516" data-claire-element-id="8605441"><tbody id="r-4725515" data-claire-element-id="8605440"><tr id="r-4725514" data-claire-element-id="8605439"><td id="r-4725513" data-claire-element-id="8605438"><p id="r-4725512" data-claire-element-id="8605437">lien vers dataset</p></td></tr></tbody></table><p id="r-4725379" data-claire-element-id="8606642">Ensuite, nous allons parcourir chacune des colonnes pour détecter les erreurs, les corriger, puis actualiser les colonnes en conséquence. Que ce soit en Python ou en R, actualiser un colonne d'un dataframe se fait de cette manière :</p><pre id="r-4725517" data-claire-element-id="8605443"><code data-claire-semantic="python">data["nom_colonne"] = nouvelle_colonne</code></pre><p id="r-4697986" data-claire-element-id="8605444"> Ici, on cherche à remplacer les valeurs de la colonne (ou variable)  <code data-claire-semantic="text">nom_colonne</code>  . Si la dataframe a 7 lignes, alors la colonne  <code data-claire-semantic="text">nom_colonne</code>  contient 7 valeurs. Pour les remplacer,  <code data-claire-semantic="text">nouvelle_colonne</code>  doit ainsi être une liste de 7 valeurs.</p><p id="r-4725881" data-claire-element-id="8606491"></p><h3 id="r-4725523" data-claire-element-id="8606683">La méthode apply</h3><p id="r-4725520" data-claire-element-id="8606643">Il reste encore à savoir comment remplir  <code data-claire-semantic="text">nouvelle_colonne</code>  . En fait, elle sera calculée à partir de  <code data-claire-semantic="text">nom_colonne</code>  . Ce qu'il nous faut, c'est parcourir chaque valeur de  <code data-claire-semantic="text">nom_colonne</code>  , vérifier si elle est correcte ou pas, et la corriger si besoin.</p><p id="r-4725521" data-claire-element-id="8606494">Pour cela, nous utilisons la méthode  <code data-claire-semantic="text">apply</code>  . C'est une méthode qui est appelée sur une colonne du dataframe, et qui permet de parcourir toutes ses valeurs. Pour chaque valeur, elle applique une fonction destinée à la vérification/correction :</p><pre id="r-4725748" data-claire-element-id="8606644"><code data-claire-semantic="python">import pandas as pd # On importe la librairie Pandas, que l'on surnomme 'pd'
@@ -91,56 +85,3 @@ data['taille'] = nouvelle_colonne</code></pre><p id="r-4725965" data-claire-elem
 </ul>
 </div>
 </div>
-<nav class="course-pagination    clearfix">
-<a href="/courses/4525266/4698408?status=draft" class="button course-pagination__btn course-pagination__btn--previous">
-<i class="icon-previous"></i>
-<span>Valeurs manquantes, aberrantes et doublons: sachez réagir !</span>
-</a>
-<span class="course-pagination__separator"></span>
-<a href="/courses/4525266/exercises/1954?status=draft" class="button course-pagination__btn course-pagination__btn--next">
-<span>Quiz : Nettoyez un échantillon</span>
-<i class="icon-next"></i>
-</a>
-</nav>
-<aside tabindex="-1" role="dialog" aria-labelledby="popin-view-restriction_popin_title" class="popin popin--illustrated  js-popin" id="popin-view-restriction">
-<i class="popin__close-button icon-close js-close-button"></i>
-<div class="popin__inner">
-<div class="popin__illustrationWrapper">
-<div class="popin__illustration illustration--balloon"></div>
-</div>
-<div class="popin__mainContainer">
-<h3 id="popin-view-restriction_popin_title" class="popin__title  js-popin-title">Waouh !</h3>
-<div class="popin__content  js-popin-content">
-<div class="popin__contentWrapper">
- <p>
-Très heureux de voir que nos cours vous plaisent, déjà 5 pages lues aujourd'hui ! Vous pouvez continuer la lecture de nos cours en devenant un membre de la communauté d'OpenClassrooms. C'est gratuit !
-</p>
-<p>
-Vous pourrez aussi suivre votre avancement dans le cours, faire les exercices et discuter avec les autres membres.
-</p>
-</div>
-</div>
-<div class="popin__actions  js-popin-actions">
-<span class="u--inlineBlock">
-<a class="button button--primary " href="/register">S'inscrire</a>
-</span>
-<span class="u--inlineBlock">
-<a class="button button " href="/login">Se connecter</a>
-</span>
-</div>
-</div>
-</div>
-</aside>
-</div>
-</section>
-</div>
-</div>
-<div id="popin-not-certifying-yet_394557" class="popin" data-popin-title="Vous ne pouvez pas encore obtenir de certificat de réussite à l'issue de ce cours.
-                    ">
-<img alt="Exemple de certificat de réussite" src="//static.oc-static.com/prod/images/courses/certif.jpg">
-</div>
-<div id="popin-not-certifying-yet_716003" class="popin" data-popin-title="Vous ne pouvez pas encore obtenir de certificat de réussite à l'issue de ce cours.
-                    ">
-<img alt="Exemple de certificat de réussite" src="//static.oc-static.com/prod/images/courses/certif.jpg">
-</div>
-</main>
