@@ -1,14 +1,319 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/choisissez-votre-cle-primaire-parmi-les-candidates" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
+
 <div class="userContent js-userContent">
-<video id="r-4709395" data-claire-element-id="8559239" src="https://vimeo.com/233476978"><a href="https://vimeo.com/233476978">https://vimeo.com/233476978</a></video><p id="r-4504077" data-claire-element-id="8023031">Nous venons de voir que plusieurs ensembles d'attributs peuvent être des clés. Mais dans une base de données, nous souhaitons nous mettre d'accord une bonne fois pour toutes sur l'une d'entre elles.</p><p id="r-4504078" data-claire-element-id="8016671">Nous organisons donc un "grand concours" : l'élection de la <strong>clé primaire </strong>! La clé primaire est tout simplement une clé que nous choisissons comme celle qui nous permettra d’identifier un tuple dans une relation.</p><p id="r-4504079" data-claire-element-id="8016672">A ce grand concours, toutes les clés possibles sont appelées <strong>clés candidates</strong>. Ce sont en fait toutes les clés qui remplissent les critères définis dans le chapitre précédent.</p><p id="r-4567076" data-claire-element-id="8192841"> </p><h3 id="r-4504092" data-claire-element-id="8537184">Comment choisir sa clé primaire ?</h3><p id="r-4504081" data-claire-element-id="8336361">Dans le contexte des <strong>bases de données relationnelles</strong>, la notion de clé primaire est importante. En effet, certains SGBDR (systèmes de gestion de base de données relationnelles) ne sont vraiment pas contents :colere:lorsque vous créez une table sans lui spécifier de clé primaire, et ils ne manqueront pas de vous le faire savoir !</p><p id="r-4504082" data-claire-element-id="8537172">Le choix d'une clé primaire peut très bien être arbitraire. Cependant, on peut prendre en compte certains critères. En effet, une clé primaire est généralement choisie de façon à ce qu'elle soit <em>simple</em>, c'est-à-dire à ce qu'elle contienne le moins d'attributs possibles. De plus, on préfère généralement les attributs "basiques" (par exemple des entiers ou des chaînes de caractères courtes). Le contexte aide généralement à trouver une clé primaire qui semble la plus "logique" et intelligible pour un être humain.</p><div id="r-4504091" data-claire-element-id="8537183" data-claire-semantic="question"><p id="r-4504083" data-claire-element-id="8537182">Oui mais parfois, aucune des clés candidates ne contient un nombre d'attributs raisonnable et ne semble "simple" !</p></div><p id="r-4504084" data-claire-element-id="8016677">Exact. Dans ce cas, il est possible de créer une <strong>clé artificielle</strong>.</p><p id="r-4567081" data-claire-element-id="8192851"> </p><h3 id="r-4504093" data-claire-element-id="8537254">Qu'est-ce qu'une clé artificielle ?</h3><p id="r-4504086" data-claire-element-id="8016691">Une clé artificielle est un attribut que l'on ajoute à la relation. Cet attribut n'a pas de réelle signification dans le domaine que l'on modélise, mais sa seule fonction est d'identifier de manière unique les tuples de la relation.</p><p id="r-4504096" data-claire-element-id="8016692">Vous vous souvenez de notre relation <strong>pommes</strong> ?</p><table id="r-4504147" data-claire-element-id="8049235"><tbody id="r-4504146" data-claire-element-id="8049234"><tr id="r-4504109" data-claire-element-id="8049221"><td id="r-4504102" data-claire-element-id="8049212"><p id="r-4504101" data-claire-element-id="8049211"><strong>identifiant</strong></p></td><td id="r-4504104" data-claire-element-id="8049214"><p id="r-4504103" data-claire-element-id="8049213"><strong>masse</strong></p></td><td id="r-4504106" data-claire-element-id="8049216"><p id="r-4504105" data-claire-element-id="8049215"><strong>diamètre</strong></p></td><td id="r-4504108" data-claire-element-id="8049218"><p id="r-4504107" data-claire-element-id="8049217"><strong>couleur</strong></p></td><td id="r-4515147" data-claire-element-id="8049220"><p id="r-4515146" data-claire-element-id="8049219"><strong>nom_variété</strong></p></td></tr><tr id="r-4504118" data-claire-element-id="8049224"><td id="r-4504111" data-claire-element-id="8016711"><p id="r-4504110" data-claire-element-id="8016710">1</p></td><td id="r-4504113" data-claire-element-id="8016713"><p id="r-4504112" data-claire-element-id="8016712">151 g</p></td><td id="r-4504115" data-claire-element-id="8016715"><p id="r-4504114" data-claire-element-id="8016714">8.3 cm</p></td><td id="r-4504117" data-claire-element-id="8016717"><p id="r-4504116" data-claire-element-id="8016716">rouge</p></td><td id="r-4515149" data-claire-element-id="8049223"><p id="r-4515148" data-claire-element-id="8049222">Ariane</p></td></tr><tr id="r-4504127" data-claire-element-id="8049227"><td id="r-4504120" data-claire-element-id="8016720"><p id="r-4504119" data-claire-element-id="8016719">2</p></td><td id="r-4504122" data-claire-element-id="8016722"><p id="r-4504121" data-claire-element-id="8016721">169 g</p></td><td id="r-4504124" data-claire-element-id="8016724"><p id="r-4504123" data-claire-element-id="8016723">9.1 cm</p></td><td id="r-4504126" data-claire-element-id="8016726"><p id="r-4504125" data-claire-element-id="8016725">jaune</p></td><td id="r-4515151" data-claire-element-id="8049226"><p id="r-4515150" data-claire-element-id="8049225">Gala</p></td></tr><tr id="r-4504136" data-claire-element-id="8049230"><td id="r-4504129" data-claire-element-id="8016729"><p id="r-4504128" data-claire-element-id="8016728">3</p></td><td id="r-4504131" data-claire-element-id="8016731"><p id="r-4504130" data-claire-element-id="8016730">134 g</p></td><td id="r-4504133" data-claire-element-id="8016733"><p id="r-4504132" data-claire-element-id="8016732">8.0 cm</p></td><td id="r-4504135" data-claire-element-id="8016735"><p id="r-4504134" data-claire-element-id="8016734">jaune</p></td><td id="r-4515153" data-claire-element-id="8049229"><p id="r-4515152" data-claire-element-id="8049228">Gala</p></td></tr><tr id="r-4504145" data-claire-element-id="8049233"><td id="r-4504138" data-claire-element-id="8016738"><p id="r-4504137" data-claire-element-id="8016737">4</p></td><td id="r-4504140" data-claire-element-id="8016740"><p id="r-4504139" data-claire-element-id="8016739">134 g</p></td><td id="r-4504142" data-claire-element-id="8016742"><p id="r-4504141" data-claire-element-id="8016741">8.0 cm</p></td><td id="r-4504144" data-claire-element-id="8016744"><p id="r-4504143" data-claire-element-id="8016743">jaune</p></td><td id="r-4515155" data-claire-element-id="8049232"><p id="r-4515154" data-claire-element-id="8049231">Ariane</p></td></tr></tbody></table><p id="r-4504148" data-claire-element-id="8537212">Dans le domaine modélisé (celui des pommes), la masse, le diamètre et la couleur caractérisent bien une indication sur la pomme (ici, sur sa morphologie). Cependant, la colonne <em>identifiant</em> ne caractérise absolument pas notre pomme, en effet, on aurait très bien pu permuter les identifiants, et attribuer l'identifiant <code data-claire-semantic="text">3</code> (au lieu de <code data-claire-semantic="text">1</code>) à la pomme rouge sans que cela ne modifie l'exactitude de notre représentation.</p><p id="r-4504149" data-claire-element-id="8016749">Vous l'aurez compris, l'attribut identifiant est donc une <strong>clé artificielle</strong>, car elle n'a été créée que pour différencier et identifier les pommes !</p><aside id="r-4567121" data-claire-element-id="8537253" data-claire-semantic="information"><p id="r-4567082" data-claire-element-id="8537252">En général, dans le contexte des bases de données, on aime bien utiliser des clés artificielles. Dans certaines applications, elles sont même utilisées de manière systématique. Pour savoir pourquoi, descendez jusqu'au paragraphe <em>Aller plus loin : pourquoi aime-t-on les clés artificielles dans les BDD ?</em></p></aside><p id="r-4567083" data-claire-element-id="8192855"> </p><h3 id="r-4555073" data-claire-element-id="8537294">Clés primaires et valeurs nulles</h3><p id="r-4555066" data-claire-element-id="8336364">Il arrive parfois que la valeur de certains attributs pour un tuple donné soit inconnue, ou bien qu'elle n'existe pas. Il est donc possible de laisser une "case blanche" dans la table.</p><p id="r-4555067" data-claire-element-id="8537272">Pour représenter une case vide, on note sa valeur comme étant <code data-claire-semantic="text">NULL</code>.</p><aside id="r-4555069" data-claire-element-id="8537274" data-claire-semantic="information"><p id="r-4555068" data-claire-element-id="8537273">Quasiment chaque langage de programmation a son propre équivalent pour spécifier qu'une variable n'a pas de valeur : <code data-claire-semantic="text">None</code> en Python, <code data-claire-semantic="text">NULL</code> (pour les pointeurs) en C et C++, <code data-claire-semantic="text">null</code> en Java, <code data-claire-semantic="text">NULL</code> en SQL, etc.</p></aside><p id="r-4555070" data-claire-element-id="8537275">Cependant, en ce qui concerne les attributs d'une clé, il est nécessaire que ceux-ci ne soient jamais <code data-claire-semantic="text">NULL</code>. En effet, comme c'est la clé qui permet d'accéder à une ligne donnée, il faut absolument que tous ses attributs soient renseignés !</p><aside id="r-4555072" data-claire-element-id="8537293" data-claire-semantic="warning"><p id="r-4555071" data-claire-element-id="8537292">Lorsque vous choisissez une clé primaire, ayez bien en tête qu'à l'ajout d'une nouvelle ligne, les valeurs des attributs de cette clé devront être connues. S'il y a un risque que cela ne soit pas le cas, alors c'est que c'est une mauvaise clé primaire ! On n'ouvre pas une maison avec une clé incomplète !</p></aside><p id="r-4567084" data-claire-element-id="8192857"> </p><h3 id="r-4554282" data-claire-element-id="8192965">Représenter la clé primaire</h3><p id="r-4504163" data-claire-element-id="8159692"> En terme de notation, il est courant d'indiquer les attributs de la clé primaire en indiquant leur nom suivi de <em>[PK]</em> (mis pour<em> primary key</em>, clé primaire en anglais) :</p><p id="r-4504571" data-claire-element-id="8159694"><img id="r-4554276" data-claire-element-id="8159693" src="https://user.oc-static.com/upload/2017/07/19/15004567654956_PK1.png" alt=""> </p><p id="r-4554277" data-claire-element-id="8159695">Une autre notation possible est de les indiquer en gras :</p><p id="r-4554279" data-claire-element-id="8159697"><img id="r-4554278" data-claire-element-id="8159696" src="https://user.oc-static.com/upload/2017/07/19/15004568081292_PK2.png" alt=""></p><aside id="r-4554281" data-claire-element-id="8159712" data-claire-semantic="warning"><p id="r-4554280" data-claire-element-id="8159711">Dans ce cours, je représente les noms de colonne (sur la 1ère ligne) toujours en gras, pour les différencier des tuples de la relation. Ayez donc bien conscience que dans ce cours, des noms d'attributs en gras ne représentent PAS une clé primaire.</p></aside><p id="r-4567122" data-claire-element-id="8192964"> </p><h3 id="r-4567129" data-claire-element-id="8537308">Aller plus loin : pourquoi aime-t-on les clés artificielles dans les BDD ?</h3><aside id="r-4620117" data-claire-element-id="8334632" data-claire-semantic="information"><p id="r-4620116" data-claire-element-id="8334631">N'oubliez pas que tout au long de ce cours, les sections commençant par <em>Aller plus loin</em> sont facultatives, et ne sont pas présentes dans les évaluations.</p></aside><p id="r-4567123" data-claire-element-id="8537302">En général, dans le contexte des bases de données, on aime bien utiliser des clés artificielles. Dans certaines applications, elles sont même utilisées de manière systématique. Pourquoi ?</p><ul id="r-4567128" data-claire-element-id="8537307"><li id="r-4567125" data-claire-element-id="8537304"><p id="r-4567124" data-claire-element-id="8537303">Au chapitre précédent, nous nous demandions si les deux attributs <em>[ prop_num_secu, prop_num_voiture ]</em> constituaient une clé candidate. La réponse était oui, à condition de supposer que l'on ne prenait en compte, dans notre application, que des propriétaires de nationalité française. Cependant, si notre application évolue, et que nous souhaitons généraliser notre application à des personnes d'autres nationalités, alors notre clé n'est plus bonne. Une clé étrangère est donc une bonne solution à l'<em>évolutivité</em> de la base de données.</p></li><li id="r-4567127" data-claire-element-id="8537306"><p id="r-4567126" data-claire-element-id="8537305">Pour des questions de <em>performance</em> (en termes de temps de calcul), les clés non artificielles ne sont souvent pas optimisées lorsqu'il est demandé au SGBDR de retrouver une ligne dans la table.</p></li></ul><p id="r-4620731" data-claire-element-id="8336369"> </p><h3 id="r-4620739" data-claire-element-id="8537314">En résumé</h3><ul id="r-4620738" data-claire-element-id="8537313"><li id="r-4620733" data-claire-element-id="8336372"><p id="r-4620732" data-claire-element-id="8336371">Quand plusieurs clés sont possibles sur une table, on les appelle des <strong>clés candidates</strong>.</p></li><li id="r-4620735" data-claire-element-id="8537310"><p id="r-4620734" data-claire-element-id="8537309">Parmi les clés candidates, on en choisit une qui servira de référence : c'est la <strong>clé primaire</strong>. En anglais : <em>primary key (PK)</em>.</p></li><li id="r-4620737" data-claire-element-id="8537312"><p id="r-4620736" data-claire-element-id="8537311">Si aucune clé candidate n'est simple et intelligible, on crée une <strong>clé artificielle</strong>, souvent appelée <strong>identifiant</strong>.</p></li></ul>
+
+<video id="r-4709395" data-claire-element-id="8559239" src="https://vimeo.com/233476978">
+<a href="https://vimeo.com/233476978">
+https://vimeo.com/233476978</a>
+</video>
+<p id="r-4504077" data-claire-element-id="8023031">
+Nous venons de voir que plusieurs ensembles d'attributs peuvent être des clés. Mais dans une base de données, nous souhaitons nous mettre d'accord une bonne fois pour toutes sur l'une d'entre elles.</p>
+<p id="r-4504078" data-claire-element-id="8016671">
+Nous organisons donc un "grand concours" : l'élection de la <strong>
+clé primaire </strong>
+! La clé primaire est tout simplement une clé que nous choisissons comme celle qui nous permettra d’identifier un tuple dans une relation.</p>
+<p id="r-4504079" data-claire-element-id="8016672">
+A ce grand concours, toutes les clés possibles sont appelées <strong>
+clés candidates</strong>
+. Ce sont en fait toutes les clés qui remplissent les critères définis dans le chapitre précédent.</p>
+<p id="r-4567076" data-claire-element-id="8192841">
+ </p>
+<h3 id="r-4504092" data-claire-element-id="8537184">
+Comment choisir sa clé primaire ?</h3>
+<p id="r-4504081" data-claire-element-id="8336361">
+Dans le contexte des <strong>
+bases de données relationnelles</strong>
+, la notion de clé primaire est importante. En effet, certains SGBDR (systèmes de gestion de base de données relationnelles) ne sont vraiment pas contents :colere:lorsque vous créez une table sans lui spécifier de clé primaire, et ils ne manqueront pas de vous le faire savoir !</p>
+<p id="r-4504082" data-claire-element-id="8537172">
+Le choix d'une clé primaire peut très bien être arbitraire. Cependant, on peut prendre en compte certains critères. En effet, une clé primaire est généralement choisie de façon à ce qu'elle soit <em>
+simple</em>
+, c'est-à-dire à ce qu'elle contienne le moins d'attributs possibles. De plus, on préfère généralement les attributs "basiques" (par exemple des entiers ou des chaînes de caractères courtes). Le contexte aide généralement à trouver une clé primaire qui semble la plus "logique" et intelligible pour un être humain.</p>
+<div id="r-4504091" data-claire-element-id="8537183" data-claire-semantic="question">
+<p id="r-4504083" data-claire-element-id="8537182">
+Oui mais parfois, aucune des clés candidates ne contient un nombre d'attributs raisonnable et ne semble "simple" !</p>
 </div>
-<div class="js-courseSelementActions sideActions">
-<ul class="sideActions__container">
-<li>
-<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
-#
-</a>
+<p id="r-4504084" data-claire-element-id="8016677">
+Exact. Dans ce cas, il est possible de créer une <strong>
+clé artificielle</strong>
+.</p>
+<p id="r-4567081" data-claire-element-id="8192851">
+ </p>
+<h3 id="r-4504093" data-claire-element-id="8537254">
+Qu'est-ce qu'une clé artificielle ?</h3>
+<p id="r-4504086" data-claire-element-id="8016691">
+Une clé artificielle est un attribut que l'on ajoute à la relation. Cet attribut n'a pas de réelle signification dans le domaine que l'on modélise, mais sa seule fonction est d'identifier de manière unique les tuples de la relation.</p>
+<p id="r-4504096" data-claire-element-id="8016692">
+Vous vous souvenez de notre relation <strong>
+pommes</strong>
+ ?</p>
+<table id="r-4504147" data-claire-element-id="8049235">
+<tbody id="r-4504146" data-claire-element-id="8049234">
+<tr id="r-4504109" data-claire-element-id="8049221">
+<td id="r-4504102" data-claire-element-id="8049212">
+<p id="r-4504101" data-claire-element-id="8049211">
+<strong>
+identifiant</strong>
+</p>
+</td>
+<td id="r-4504104" data-claire-element-id="8049214">
+<p id="r-4504103" data-claire-element-id="8049213">
+<strong>
+masse</strong>
+</p>
+</td>
+<td id="r-4504106" data-claire-element-id="8049216">
+<p id="r-4504105" data-claire-element-id="8049215">
+<strong>
+diamètre</strong>
+</p>
+</td>
+<td id="r-4504108" data-claire-element-id="8049218">
+<p id="r-4504107" data-claire-element-id="8049217">
+<strong>
+couleur</strong>
+</p>
+</td>
+<td id="r-4515147" data-claire-element-id="8049220">
+<p id="r-4515146" data-claire-element-id="8049219">
+<strong>
+nom_variété</strong>
+</p>
+</td>
+</tr>
+<tr id="r-4504118" data-claire-element-id="8049224">
+<td id="r-4504111" data-claire-element-id="8016711">
+<p id="r-4504110" data-claire-element-id="8016710">
+1</p>
+</td>
+<td id="r-4504113" data-claire-element-id="8016713">
+<p id="r-4504112" data-claire-element-id="8016712">
+151 g</p>
+</td>
+<td id="r-4504115" data-claire-element-id="8016715">
+<p id="r-4504114" data-claire-element-id="8016714">
+8.3 cm</p>
+</td>
+<td id="r-4504117" data-claire-element-id="8016717">
+<p id="r-4504116" data-claire-element-id="8016716">
+rouge</p>
+</td>
+<td id="r-4515149" data-claire-element-id="8049223">
+<p id="r-4515148" data-claire-element-id="8049222">
+Ariane</p>
+</td>
+</tr>
+<tr id="r-4504127" data-claire-element-id="8049227">
+<td id="r-4504120" data-claire-element-id="8016720">
+<p id="r-4504119" data-claire-element-id="8016719">
+2</p>
+</td>
+<td id="r-4504122" data-claire-element-id="8016722">
+<p id="r-4504121" data-claire-element-id="8016721">
+169 g</p>
+</td>
+<td id="r-4504124" data-claire-element-id="8016724">
+<p id="r-4504123" data-claire-element-id="8016723">
+9.1 cm</p>
+</td>
+<td id="r-4504126" data-claire-element-id="8016726">
+<p id="r-4504125" data-claire-element-id="8016725">
+jaune</p>
+</td>
+<td id="r-4515151" data-claire-element-id="8049226">
+<p id="r-4515150" data-claire-element-id="8049225">
+Gala</p>
+</td>
+</tr>
+<tr id="r-4504136" data-claire-element-id="8049230">
+<td id="r-4504129" data-claire-element-id="8016729">
+<p id="r-4504128" data-claire-element-id="8016728">
+3</p>
+</td>
+<td id="r-4504131" data-claire-element-id="8016731">
+<p id="r-4504130" data-claire-element-id="8016730">
+134 g</p>
+</td>
+<td id="r-4504133" data-claire-element-id="8016733">
+<p id="r-4504132" data-claire-element-id="8016732">
+8.0 cm</p>
+</td>
+<td id="r-4504135" data-claire-element-id="8016735">
+<p id="r-4504134" data-claire-element-id="8016734">
+jaune</p>
+</td>
+<td id="r-4515153" data-claire-element-id="8049229">
+<p id="r-4515152" data-claire-element-id="8049228">
+Gala</p>
+</td>
+</tr>
+<tr id="r-4504145" data-claire-element-id="8049233">
+<td id="r-4504138" data-claire-element-id="8016738">
+<p id="r-4504137" data-claire-element-id="8016737">
+4</p>
+</td>
+<td id="r-4504140" data-claire-element-id="8016740">
+<p id="r-4504139" data-claire-element-id="8016739">
+134 g</p>
+</td>
+<td id="r-4504142" data-claire-element-id="8016742">
+<p id="r-4504141" data-claire-element-id="8016741">
+8.0 cm</p>
+</td>
+<td id="r-4504144" data-claire-element-id="8016744">
+<p id="r-4504143" data-claire-element-id="8016743">
+jaune</p>
+</td>
+<td id="r-4515155" data-claire-element-id="8049232">
+<p id="r-4515154" data-claire-element-id="8049231">
+Ariane</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p id="r-4504148" data-claire-element-id="8537212">
+Dans le domaine modélisé (celui des pommes), la masse, le diamètre et la couleur caractérisent bien une indication sur la pomme (ici, sur sa morphologie). Cependant, la colonne <em>
+identifiant</em>
+ ne caractérise absolument pas notre pomme, en effet, on aurait très bien pu permuter les identifiants, et attribuer l'identifiant <code data-claire-semantic="text">
+3</code>
+ (au lieu de <code data-claire-semantic="text">
+1</code>
+) à la pomme rouge sans que cela ne modifie l'exactitude de notre représentation.</p>
+<p id="r-4504149" data-claire-element-id="8016749">
+Vous l'aurez compris, l'attribut identifiant est donc une <strong>
+clé artificielle</strong>
+, car elle n'a été créée que pour différencier et identifier les pommes !</p>
+<aside id="r-4567121" data-claire-element-id="8537253" data-claire-semantic="information">
+<p id="r-4567082" data-claire-element-id="8537252">
+En général, dans le contexte des bases de données, on aime bien utiliser des clés artificielles. Dans certaines applications, elles sont même utilisées de manière systématique. Pour savoir pourquoi, descendez jusqu'au paragraphe <em>
+Aller plus loin : pourquoi aime-t-on les clés artificielles dans les BDD ?</em>
+</p>
+</aside>
+<p id="r-4567083" data-claire-element-id="8192855">
+ </p>
+<h3 id="r-4555073" data-claire-element-id="8537294">
+Clés primaires et valeurs nulles</h3>
+<p id="r-4555066" data-claire-element-id="8336364">
+Il arrive parfois que la valeur de certains attributs pour un tuple donné soit inconnue, ou bien qu'elle n'existe pas. Il est donc possible de laisser une "case blanche" dans la table.</p>
+<p id="r-4555067" data-claire-element-id="8537272">
+Pour représenter une case vide, on note sa valeur comme étant <code data-claire-semantic="text">
+NULL</code>
+.</p>
+<aside id="r-4555069" data-claire-element-id="8537274" data-claire-semantic="information">
+<p id="r-4555068" data-claire-element-id="8537273">
+Quasiment chaque langage de programmation a son propre équivalent pour spécifier qu'une variable n'a pas de valeur : <code data-claire-semantic="text">
+None</code>
+ en Python, <code data-claire-semantic="text">
+NULL</code>
+ (pour les pointeurs) en C et C++, <code data-claire-semantic="text">
+null</code>
+ en Java, <code data-claire-semantic="text">
+NULL</code>
+ en SQL, etc.</p>
+</aside>
+<p id="r-4555070" data-claire-element-id="8537275">
+Cependant, en ce qui concerne les attributs d'une clé, il est nécessaire que ceux-ci ne soient jamais <code data-claire-semantic="text">
+NULL</code>
+. En effet, comme c'est la clé qui permet d'accéder à une ligne donnée, il faut absolument que tous ses attributs soient renseignés !</p>
+<aside id="r-4555072" data-claire-element-id="8537293" data-claire-semantic="warning">
+<p id="r-4555071" data-claire-element-id="8537292">
+Lorsque vous choisissez une clé primaire, ayez bien en tête qu'à l'ajout d'une nouvelle ligne, les valeurs des attributs de cette clé devront être connues. S'il y a un risque que cela ne soit pas le cas, alors c'est que c'est une mauvaise clé primaire ! On n'ouvre pas une maison avec une clé incomplète !</p>
+</aside>
+<p id="r-4567084" data-claire-element-id="8192857">
+ </p>
+<h3 id="r-4554282" data-claire-element-id="8192965">
+Représenter la clé primaire</h3>
+<p id="r-4504163" data-claire-element-id="8159692">
+ En terme de notation, il est courant d'indiquer les attributs de la clé primaire en indiquant leur nom suivi de <em>
+[PK]</em>
+ (mis pour<em>
+ primary key</em>
+, clé primaire en anglais) :</p>
+<p id="r-4504571" data-claire-element-id="8159694">
+<img id="r-4554276" data-claire-element-id="8159693" src="https://user.oc-static.com/upload/2017/07/19/15004567654956_PK1.png" alt="">
+ </p>
+<p id="r-4554277" data-claire-element-id="8159695">
+Une autre notation possible est de les indiquer en gras :</p>
+<p id="r-4554279" data-claire-element-id="8159697">
+<img id="r-4554278" data-claire-element-id="8159696" src="https://user.oc-static.com/upload/2017/07/19/15004568081292_PK2.png" alt="">
+</p>
+<aside id="r-4554281" data-claire-element-id="8159712" data-claire-semantic="warning">
+<p id="r-4554280" data-claire-element-id="8159711">
+Dans ce cours, je représente les noms de colonne (sur la 1ère ligne) toujours en gras, pour les différencier des tuples de la relation. Ayez donc bien conscience que dans ce cours, des noms d'attributs en gras ne représentent PAS une clé primaire.</p>
+</aside>
+<p id="r-4567122" data-claire-element-id="8192964">
+ </p>
+<h3 id="r-4567129" data-claire-element-id="8537308">
+Aller plus loin : pourquoi aime-t-on les clés artificielles dans les BDD ?</h3>
+<aside id="r-4620117" data-claire-element-id="8334632" data-claire-semantic="information">
+<p id="r-4620116" data-claire-element-id="8334631">
+N'oubliez pas que tout au long de ce cours, les sections commençant par <em>
+Aller plus loin</em>
+ sont facultatives, et ne sont pas présentes dans les évaluations.</p>
+</aside>
+<p id="r-4567123" data-claire-element-id="8537302">
+En général, dans le contexte des bases de données, on aime bien utiliser des clés artificielles. Dans certaines applications, elles sont même utilisées de manière systématique. Pourquoi ?</p>
+<ul id="r-4567128" data-claire-element-id="8537307">
+<li id="r-4567125" data-claire-element-id="8537304">
+<p id="r-4567124" data-claire-element-id="8537303">
+Au chapitre précédent, nous nous demandions si les deux attributs <em>
+[ prop_num_secu, prop_num_voiture ]</em>
+ constituaient une clé candidate. La réponse était oui, à condition de supposer que l'on ne prenait en compte, dans notre application, que des propriétaires de nationalité française. Cependant, si notre application évolue, et que nous souhaitons généraliser notre application à des personnes d'autres nationalités, alors notre clé n'est plus bonne. Une clé étrangère est donc une bonne solution à l'<em>
+évolutivité</em>
+ de la base de données.</p>
+</li>
+<li id="r-4567127" data-claire-element-id="8537306">
+<p id="r-4567126" data-claire-element-id="8537305">
+Pour des questions de <em>
+performance</em>
+ (en termes de temps de calcul), les clés non artificielles ne sont souvent pas optimisées lorsqu'il est demandé au SGBDR de retrouver une ligne dans la table.</p>
 </li>
 </ul>
+<p id="r-4620731" data-claire-element-id="8336369">
+ </p>
+<h3 id="r-4620739" data-claire-element-id="8537314">
+En résumé</h3>
+<ul id="r-4620738" data-claire-element-id="8537313">
+<li id="r-4620733" data-claire-element-id="8336372">
+<p id="r-4620732" data-claire-element-id="8336371">
+Quand plusieurs clés sont possibles sur une table, on les appelle des <strong>
+clés candidates</strong>
+.</p>
+</li>
+<li id="r-4620735" data-claire-element-id="8537310">
+<p id="r-4620734" data-claire-element-id="8537309">
+Parmi les clés candidates, on en choisit une qui servira de référence : c'est la <strong>
+clé primaire</strong>
+. En anglais : <em>
+primary key (PK)</em>
+.</p>
+</li>
+<li id="r-4620737" data-claire-element-id="8537312">
+<p id="r-4620736" data-claire-element-id="8537311">
+Si aucune clé candidate n'est simple et intelligible, on crée une <strong>
+clé artificielle</strong>
+, souvent appelée <strong>
+identifiant</strong>
+.</p>
+</li>
+</ul>
+
 </div>
+
+<div class="js-courseSelementActions sideActions">
+
+<ul class="sideActions__container">
+
+<li>
+
+<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+
+#
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
 </div>

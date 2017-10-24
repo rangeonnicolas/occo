@@ -1,14 +1,175 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/comprenez-les-bases-de-donnees-sql" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
+
 <div class="userContent js-userContent">
-<video id="r-4709430" data-claire-element-id="8559330" src="https://vimeo.com/233478925"><a href="https://vimeo.com/233478925">https://vimeo.com/233478925</a></video><p id="r-4538701" data-claire-element-id="8320941">Passons maintenant au SQL, un langage qui a été créé pour dialoguer avec des bases de données relationnelles.</p><h3 id="r-4701890" data-claire-element-id="8540885">Télécharger la base de données</h3><p id="r-4701887" data-claire-element-id="8540882">La base de données que nous utiliserons jusqu'à la fin du cours est en ligne, vous pourrez l'interroger grâce à une console interactive située au bas des prochains chapitres. </p><p id="r-4701888" data-claire-element-id="8540883">Cependant, si vous souhaitez la télécharger, elle se situe <a href="https://s3-eu-west-1.amazonaws.com/static.oc-static.com/prod/courses/files/parcours-data-analyst/Cours_initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/database_sqlite3.zip">ici</a>, au format sqlite3. Vous pouvez l'ouvrir grâce à tout logiciel qui prend en compte ce format, par exemple <a href="https://sqlitestudio.pl/">SQLiteStudio</a>. Pour un petit guide rapide de son utilisation , regardez la vidéo . ;)</p><p id="r-4701889" data-claire-element-id="8540884"> </p><h3 id="r-4538816" data-claire-element-id="8538804">Petite introduction au SQL</h3><p id="r-4538796" data-claire-element-id="8320951">Ce langage offre trois modalités :</p><ol id="r-4538812" data-claire-element-id="8197079"><li id="r-4538798" data-claire-element-id="8197074"><p id="r-4538797" data-claire-element-id="8197073">le <strong>LDD</strong> (langage de définition de données) destiné à <strong>créer ou supprimer des objets</strong> dans la base de données (tables, contraintes, etc.)</p></li><li id="r-4538800" data-claire-element-id="8197076"><p id="r-4538799" data-claire-element-id="8197075">le <strong>LCD</strong> (langage de contrôle de données) qui <strong>gère les utilisateurs d'une base de données ainsi que leurs droits</strong> sur les objets (droit de consultation, modification etc.)</p></li><li id="r-4538811" data-claire-element-id="8197078"><p id="r-4538801" data-claire-element-id="8197077">le <strong>LMD</strong> (langage de manipulation de données) destiné à <strong>manipuler les données contenues dans les tables</strong>, c'est-à-dire à manipuler les lignes de celles-ci. Les 4 opérations possibles sont :</p><ol id="r-4538810" data-claire-element-id="8115139"><li id="r-4538803" data-claire-element-id="8115132"><p id="r-4538802" data-claire-element-id="8115131">La <strong>création</strong> de lignes</p></li><li id="r-4538805" data-claire-element-id="8115134"><p id="r-4538804" data-claire-element-id="8115133">La <strong>lecture</strong> de lignes</p></li><li id="r-4538807" data-claire-element-id="8115136"><p id="r-4538806" data-claire-element-id="8115135">L'<strong>actualisation</strong> de lignes</p></li><li id="r-4538809" data-claire-element-id="8115138"><p id="r-4538813" data-claire-element-id="8115137">La <strong>suppression</strong> de lignes</p></li></ol></li></ol><aside id="r-4538815" data-claire-element-id="8538803" data-claire-semantic="warning"><p id="r-4538814" data-claire-element-id="8320981">Dans cette partie, nous ne verrons qu'une partie du langage. Nous ne traiterons que le <strong>LMD</strong>, et plus particulièrement la partie <em>lecture des données</em>.</p><p id="r-4538821" data-claire-element-id="8538802">Nous supposons donc que la base de données est déjà construite et déjà remplie. Ce qui nous intéresse ici, c'est d<strong>'interroger ces données</strong> afin de répondre aux questions que nous nous posons.</p></aside><p id="r-4615061" data-claire-element-id="8321001"> </p><h3 id="r-4538837" data-claire-element-id="8538834">Un petit mot sur les SGBDR</h3><p id="r-4538836" data-claire-element-id="8321011">Un <strong>Système de Gestion de Base de Données</strong>, c'est un logiciel.</p><p id="r-4538861" data-claire-element-id="8197085">Ce logiciel permet de manipuler des bases de données, au sein desquelles sont stockées des informations.</p><p id="r-4538862" data-claire-element-id="8538822">Lorsque ces bases de données suivent les règles du <strong>modèle relationnel</strong>, alors on les qualifie de bases de données <strong>relationnelles</strong>, et le SGBD qui les manipule devient alors un système de gestion de bases de données relationnelles, ou SGBD<strong>R</strong>. Logique non ?</p><div id="r-4538882" data-claire-element-id="8538833" data-claire-semantic="question"><p id="r-4538881" data-claire-element-id="8538832">Et le SQL dans tout cela ?</p></div><p id="r-4538883" data-claire-element-id="8197087">Si votre SGBD est un SGBD<strong>R</strong>, alors il est fort probable que pour dialoguer avec lui, votre langue de communication privilégiée soit le SQL !</p><p id="r-4615066" data-claire-element-id="8321021">Les SGBDR <a href="/courses/comprendre-le-web/les-bases-de-donnees-7">les plus connus</a> sont MySQL (et son petit frère MariaDB), PostgreSQL, Microsoft Access, Oracle database et SQLite.</p><aside id="r-4539101" data-claire-element-id="8321023" data-claire-semantic="warning"><p id="r-4538885" data-claire-element-id="8321022">Si vous n'en avez jamais utilisé, je vous conseille <a href="https://sqlite.org/">SQLite</a>. Ce n'est pas le plus performant, mais c'est le plus simple à utiliser, et il suffit amplement à s'initier au langage SQL.</p></aside><p id="r-4615067" data-claire-element-id="8321024"> </p><h3 id="r-4539105" data-claire-element-id="8538837">Prenez vos précautions !</h3><p id="r-4539102" data-claire-element-id="8538835">Attention, le langage SQL a évolué au cours du temps. Plusieurs normes ont vu le jour (SQL-1, SQL-2, etc.). De plus, les SGBDR ne sont pas tous en accord total sur la syntaxe du SQL : chacun d'entre eux a quelques variantes.</p><p id="r-4539103" data-claire-element-id="8538836">Le SQL que nous traiterons dans ce cours est généralement compris de tous les SGBDR, mais il est possible que des variations apparaissent. Si l'une des lignes de code de ce cours ne fonctionne pas dans votre SGBRD, je vous invite à effectuer <a href="/courses/comprendre-le-web/les-secrets-bien-gardes-pour-devenir-developpeur-1">une petite recherche sur internet</a> !</p><p id="r-4615161" data-claire-element-id="8321181"> </p><h3 id="r-4615169" data-claire-element-id="8538845">En résumé</h3><ul id="r-4615168" data-claire-element-id="8538844"><li id="r-4615163" data-claire-element-id="8538839"><p id="r-4615162" data-claire-element-id="8538838">Nous ne verrons dans ce cours que le LMD.</p></li><li id="r-4615165" data-claire-element-id="8538841"><p id="r-4615164" data-claire-element-id="8538840">Le SQL permet de dialoguer avec des BDD relationnelles.</p></li><li id="r-4615167" data-claire-element-id="8538843"><p id="r-4615166" data-claire-element-id="8538842">Un SGBDR, c'est un logiciel qui permet de manipuler des bases de données relationnelles.</p></li></ul>
+
+<video id="r-4709430" data-claire-element-id="8559330" src="https://vimeo.com/233478925">
+<a href="https://vimeo.com/233478925">
+https://vimeo.com/233478925</a>
+</video>
+<p id="r-4538701" data-claire-element-id="8320941">
+Passons maintenant au SQL, un langage qui a été créé pour dialoguer avec des bases de données relationnelles.</p>
+<h3 id="r-4701890" data-claire-element-id="8540885">
+Télécharger la base de données</h3>
+<p id="r-4701887" data-claire-element-id="8540882">
+La base de données que nous utiliserons jusqu'à la fin du cours est en ligne, vous pourrez l'interroger grâce à une console interactive située au bas des prochains chapitres. </p>
+<p id="r-4701888" data-claire-element-id="8540883">
+Cependant, si vous souhaitez la télécharger, elle se situe <a href="https://s3-eu-west-1.amazonaws.com/static.oc-static.com/prod/courses/files/parcours-data-analyst/Cours_initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/database_sqlite3.zip">
+ici</a>
+, au format sqlite3. Vous pouvez l'ouvrir grâce à tout logiciel qui prend en compte ce format, par exemple <a href="https://sqlitestudio.pl/">
+SQLiteStudio</a>
+. Pour un petit guide rapide de son utilisation , regardez la vidéo . ;)</p>
+<p id="r-4701889" data-claire-element-id="8540884">
+ </p>
+<h3 id="r-4538816" data-claire-element-id="8538804">
+Petite introduction au SQL</h3>
+<p id="r-4538796" data-claire-element-id="8320951">
+Ce langage offre trois modalités :</p>
+<ol id="r-4538812" data-claire-element-id="8197079">
+<li id="r-4538798" data-claire-element-id="8197074">
+<p id="r-4538797" data-claire-element-id="8197073">
+le <strong>
+LDD</strong>
+ (langage de définition de données) destiné à <strong>
+créer ou supprimer des objets</strong>
+ dans la base de données (tables, contraintes, etc.)</p>
+</li>
+<li id="r-4538800" data-claire-element-id="8197076">
+<p id="r-4538799" data-claire-element-id="8197075">
+le <strong>
+LCD</strong>
+ (langage de contrôle de données) qui <strong>
+gère les utilisateurs d'une base de données ainsi que leurs droits</strong>
+ sur les objets (droit de consultation, modification etc.)</p>
+</li>
+<li id="r-4538811" data-claire-element-id="8197078">
+<p id="r-4538801" data-claire-element-id="8197077">
+le <strong>
+LMD</strong>
+ (langage de manipulation de données) destiné à <strong>
+manipuler les données contenues dans les tables</strong>
+, c'est-à-dire à manipuler les lignes de celles-ci. Les 4 opérations possibles sont :</p>
+<ol id="r-4538810" data-claire-element-id="8115139">
+<li id="r-4538803" data-claire-element-id="8115132">
+<p id="r-4538802" data-claire-element-id="8115131">
+La <strong>
+création</strong>
+ de lignes</p>
+</li>
+<li id="r-4538805" data-claire-element-id="8115134">
+<p id="r-4538804" data-claire-element-id="8115133">
+La <strong>
+lecture</strong>
+ de lignes</p>
+</li>
+<li id="r-4538807" data-claire-element-id="8115136">
+<p id="r-4538806" data-claire-element-id="8115135">
+L'<strong>
+actualisation</strong>
+ de lignes</p>
+</li>
+<li id="r-4538809" data-claire-element-id="8115138">
+<p id="r-4538813" data-claire-element-id="8115137">
+La <strong>
+suppression</strong>
+ de lignes</p>
+</li>
+</ol>
+</li>
+</ol>
+<aside id="r-4538815" data-claire-element-id="8538803" data-claire-semantic="warning">
+<p id="r-4538814" data-claire-element-id="8320981">
+Dans cette partie, nous ne verrons qu'une partie du langage. Nous ne traiterons que le <strong>
+LMD</strong>
+, et plus particulièrement la partie <em>
+lecture des données</em>
+.</p>
+<p id="r-4538821" data-claire-element-id="8538802">
+Nous supposons donc que la base de données est déjà construite et déjà remplie. Ce qui nous intéresse ici, c'est d<strong>
+'interroger ces données</strong>
+ afin de répondre aux questions que nous nous posons.</p>
+</aside>
+<p id="r-4615061" data-claire-element-id="8321001">
+ </p>
+<h3 id="r-4538837" data-claire-element-id="8538834">
+Un petit mot sur les SGBDR</h3>
+<p id="r-4538836" data-claire-element-id="8321011">
+Un <strong>
+Système de Gestion de Base de Données</strong>
+, c'est un logiciel.</p>
+<p id="r-4538861" data-claire-element-id="8197085">
+Ce logiciel permet de manipuler des bases de données, au sein desquelles sont stockées des informations.</p>
+<p id="r-4538862" data-claire-element-id="8538822">
+Lorsque ces bases de données suivent les règles du <strong>
+modèle relationnel</strong>
+, alors on les qualifie de bases de données <strong>
+relationnelles</strong>
+, et le SGBD qui les manipule devient alors un système de gestion de bases de données relationnelles, ou SGBD<strong>
+R</strong>
+. Logique non ?</p>
+<div id="r-4538882" data-claire-element-id="8538833" data-claire-semantic="question">
+<p id="r-4538881" data-claire-element-id="8538832">
+Et le SQL dans tout cela ?</p>
 </div>
-<div class="js-courseSelementActions sideActions">
-<ul class="sideActions__container">
-<li>
-<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
-#
-</a>
+<p id="r-4538883" data-claire-element-id="8197087">
+Si votre SGBD est un SGBD<strong>
+R</strong>
+, alors il est fort probable que pour dialoguer avec lui, votre langue de communication privilégiée soit le SQL !</p>
+<p id="r-4615066" data-claire-element-id="8321021">
+Les SGBDR <a href="/courses/comprendre-le-web/les-bases-de-donnees-7">
+les plus connus</a>
+ sont MySQL (et son petit frère MariaDB), PostgreSQL, Microsoft Access, Oracle database et SQLite.</p>
+<aside id="r-4539101" data-claire-element-id="8321023" data-claire-semantic="warning">
+<p id="r-4538885" data-claire-element-id="8321022">
+Si vous n'en avez jamais utilisé, je vous conseille <a href="https://sqlite.org/">
+SQLite</a>
+. Ce n'est pas le plus performant, mais c'est le plus simple à utiliser, et il suffit amplement à s'initier au langage SQL.</p>
+</aside>
+<p id="r-4615067" data-claire-element-id="8321024">
+ </p>
+<h3 id="r-4539105" data-claire-element-id="8538837">
+Prenez vos précautions !</h3>
+<p id="r-4539102" data-claire-element-id="8538835">
+Attention, le langage SQL a évolué au cours du temps. Plusieurs normes ont vu le jour (SQL-1, SQL-2, etc.). De plus, les SGBDR ne sont pas tous en accord total sur la syntaxe du SQL : chacun d'entre eux a quelques variantes.</p>
+<p id="r-4539103" data-claire-element-id="8538836">
+Le SQL que nous traiterons dans ce cours est généralement compris de tous les SGBDR, mais il est possible que des variations apparaissent. Si l'une des lignes de code de ce cours ne fonctionne pas dans votre SGBRD, je vous invite à effectuer <a href="/courses/comprendre-le-web/les-secrets-bien-gardes-pour-devenir-developpeur-1">
+une petite recherche sur internet</a>
+ !</p>
+<p id="r-4615161" data-claire-element-id="8321181">
+ </p>
+<h3 id="r-4615169" data-claire-element-id="8538845">
+En résumé</h3>
+<ul id="r-4615168" data-claire-element-id="8538844">
+<li id="r-4615163" data-claire-element-id="8538839">
+<p id="r-4615162" data-claire-element-id="8538838">
+Nous ne verrons dans ce cours que le LMD.</p>
+</li>
+<li id="r-4615165" data-claire-element-id="8538841">
+<p id="r-4615164" data-claire-element-id="8538840">
+Le SQL permet de dialoguer avec des BDD relationnelles.</p>
+</li>
+<li id="r-4615167" data-claire-element-id="8538843">
+<p id="r-4615166" data-claire-element-id="8538842">
+Un SGBDR, c'est un logiciel qui permet de manipuler des bases de données relationnelles.</p>
 </li>
 </ul>
+
 </div>
+
+<div class="js-courseSelementActions sideActions">
+
+<ul class="sideActions__container">
+
+<li>
+
+<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+
+#
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
 </div>

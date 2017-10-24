@@ -1,14 +1,392 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/nettoyez-et-decrivez-votre-jeu-de-donnees/reperez-les-differents-types-derreurs" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
+
 <div class="userContent js-userContent">
-<p id="r-4696831" data-claire-element-id="8531432">Avant de vous lancer dans l'analyse de vos données, il vous faudra les nettoyer de toute erreur. Sinon, le code que vous écrirez pour faire de beaux graphiques (ou autres) plantera. Pire, vos analyses pourront contenir des erreurs si votre échantillon contient des erreurs.</p><p id="r-4698391" data-claire-element-id="8557441">Tous les data analysts ou data scientists <a href="https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/">vous le dirons</a> : on passe malheureusement la majeure partie du temps à nettoyer les données plus qu'à les analyser... c'est frustrant, car le nettoyage n'est vraiment pas la <a href="http://www.kdnuggets.com/2015/05/data-science-inconvenient-truth.html">partie la plus captivante</a> ! Mais j'ai une bonne nouvelle : le nettoyage des données ne nous prendra que 4 chapitres, alors courage.;)</p><p id="r-4698392" data-claire-element-id="8599479"></p><h3 id="r-4697586" data-claire-element-id="8606842">D'où proviennent les erreurs à nettoyer ?</h3><p id="r-4697583" data-claire-element-id="8531492">En fait, tout dépend de la source de vos données. Prenons deux exemples de sources parmi d'autres : les saisies "à la main" effectuées par des humain, et les capteurs.</p><p id="r-4697584" data-claire-element-id="8528817">Si les données ont été saisies par un humain, alors il y a de fortes chances pour que des erreurs se soient glissées dans la saisie, par exemple lorsque quelqu'un tape dans un tableur les résultats d'un sondage rempli sur papier, ou encore lorsqu'un site web contient un formulaire dans lequel l'internaute saisit de fausses données.</p><p id="r-4697585" data-claire-element-id="8528818">Si les données proviennent de capteurs (exemple : le système de géolocalisation de votre téléphone, le capteur de vitesse de votre véhicule, la machine qui valide votre billet à l'entrée du bus, etc. ), alors il se peut que le capteur se dégrade au cours du temps et ne soit plus étalonné (ex: un thermomètre qui indique 23°c alors que la température réelle est de 25°c) ou bien qu'il ne fonctionne plus (il n'envoie plus de données).</p><p id="r-4726016" data-claire-element-id="8606841"></p><h3 id="r-4698251" data-claire-element-id="8610622">Les différents types d'erreurs</h3><aside id="r-4698376" data-claire-element-id="8531361" data-claire-semantic="information"><p id="r-4697588" data-claire-element-id="8531033">Nous allons ici voir quelques types d'erreurs. Pas besoin de les apprendre par cœur, ni de retenir leur nom : cela n'a aucun intérêt !</p></aside><p id="r-4697589" data-claire-element-id="8528822">Prenons l'exemple d'un échantillon de personnes, décrites par plusieurs variables :</p><table id="r-4697705" data-claire-element-id="8604790"><thead id="r-4697876" data-claire-element-id="8529812"><tr id="r-4697649" data-claire-element-id="8529811"><td id="r-4697642" data-claire-element-id="8529802"><p id="r-4697641" data-claire-element-id="8529801"><strong>Prénom</strong></p></td><td id="r-4697644" data-claire-element-id="8529804"><p id="r-4697643" data-claire-element-id="8529803"><strong>Email</strong></p></td><td id="r-4697646" data-claire-element-id="8529806"><p id="r-4697645" data-claire-element-id="8529805"><strong>Date de naissance</strong></p></td><td id="r-4697648" data-claire-element-id="8529808"><p id="r-4697647" data-claire-element-id="8529807"><strong>Pays</strong></p></td><td id="r-4697847" data-claire-element-id="8529810"><p id="r-4697846" data-claire-element-id="8529809"><strong>Taille</strong></p></td></tr></thead><tbody id="r-4697704" data-claire-element-id="8604789"><tr id="r-4697658" data-claire-element-id="8529704"><td id="r-4697651" data-claire-element-id="8529021"><p id="r-4697650" data-claire-element-id="8529020">Leila</p></td><td id="r-4697653" data-claire-element-id="8529023"><p id="r-4697652" data-claire-element-id="8529022">leila@example.com</p></td><td id="r-4697655" data-claire-element-id="8529699"><p id="r-4697654" data-claire-element-id="8529698">23/01/1990</p></td><td id="r-4697657" data-claire-element-id="8529701"><p id="r-4697656" data-claire-element-id="8529700">France</p></td><td id="r-4697849" data-claire-element-id="8529703"><p id="r-4697848" data-claire-element-id="8529702">1,49m</p></td></tr><tr id="r-4697667" data-claire-element-id="8529713"><td id="r-4697660" data-claire-element-id="8529030"><p id="r-4697659" data-claire-element-id="8529029">Samuel</p></td><td id="r-4697662" data-claire-element-id="8529706"><p id="r-4697661" data-claire-element-id="8529705">samuel_329@example.com</p></td><td id="r-4697664" data-claire-element-id="8529708"><p id="r-4697663" data-claire-element-id="8529707">20/09/2001</p></td><td id="r-4697666" data-claire-element-id="8529710"><p id="r-4697850" data-claire-element-id="8529709"> </p></td><td id="r-4697852" data-claire-element-id="8529712"><p id="r-4697851" data-claire-element-id="8529711">1,67m</p></td></tr><tr id="r-4697676" data-claire-element-id="8604788"><td id="r-4697669" data-claire-element-id="8529039"><p id="r-4697668" data-claire-element-id="8529038">Radia</p></td><td id="r-4697671" data-claire-element-id="8529041"><p id="r-4697670" data-claire-element-id="8529040">choupipoune@supermail.eu</p></td><td id="r-4697673" data-claire-element-id="8529715"><p id="r-4697672" data-claire-element-id="8529714"> 12 sept. 1984</p></td><td id="r-4697675" data-claire-element-id="8532782"><p id="r-4697674" data-claire-element-id="8532781">Côte d'ivoire</p></td><td id="r-4697854" data-claire-element-id="8604787"><p id="r-4697853" data-claire-element-id="8604786">153cm</p></td></tr><tr id="r-4697685" data-claire-element-id="8532786"><td id="r-4697678" data-claire-element-id="8529048"><p id="r-4697677" data-claire-element-id="8529047">Marc</p></td><td id="r-4697680" data-claire-element-id="8529082"><p id="r-4697679" data-claire-element-id="8529081">marco23@example.com, mc23@supermail.eu</p></td><td id="r-4697682" data-claire-element-id="8529722"><p id="r-4697681" data-claire-element-id="8529721"> 10/02/1978</p></td><td id="r-4697684" data-claire-element-id="8532785"><p id="r-4697683" data-claire-element-id="8532784"> France</p></td><td id="r-4697856" data-claire-element-id="8529726"><p id="r-4697855" data-claire-element-id="8529725">1,65m</p></td></tr><tr id="r-4697694" data-claire-element-id="8529734"><td id="r-4697687" data-claire-element-id="8529057"><p id="r-4697686" data-claire-element-id="8529056">Heri</p></td><td id="r-4697689" data-claire-element-id="8529059"><p id="r-4697688" data-claire-element-id="8529058">helloworld@supermail.eu</p></td><td id="r-4697691" data-claire-element-id="8529729"><p id="r-4697690" data-claire-element-id="8529728"> 05/03/2008</p></td><td id="r-4697693" data-claire-element-id="8529731"><p id="r-4697692" data-claire-element-id="8529730"> Madagascar</p></td><td id="r-4697858" data-claire-element-id="8529733"><p id="r-4697857" data-claire-element-id="8529732">1,34m</p></td></tr><tr id="r-4697703" data-claire-element-id="8529815"><td id="r-4697696" data-claire-element-id="8529066"><p id="r-4697695" data-claire-element-id="8529065">Hanna</p></td><td id="r-4697698" data-claire-element-id="8529068"><p id="r-4697697" data-claire-element-id="8529067">hanna2019@supermail.eu</p></td><td id="r-4697700" data-claire-element-id="8529736"><p id="r-4697699" data-claire-element-id="8529735"> 01/01/1970</p></td><td id="r-4697702" data-claire-element-id="8529738"><p id="r-4697701" data-claire-element-id="8529737"> 24</p></td><td id="r-4697860" data-claire-element-id="8529814"><p id="r-4697859" data-claire-element-id="8529813">3,45m</p></td></tr><tr id="r-4697871" data-claire-element-id="8529752"><td id="r-4697862" data-claire-element-id="8529743"><p id="r-4697861" data-claire-element-id="8529742">samuël</p></td><td id="r-4697864" data-claire-element-id="8529745"><p id="r-4697863" data-claire-element-id="8529744">samuel_329@example.com</p></td><td id="r-4697866" data-claire-element-id="8529747"><p id="r-4697865" data-claire-element-id="8529746"> </p></td><td id="r-4697868" data-claire-element-id="8529749"><p id="r-4697867" data-claire-element-id="8529748">Bénin</p></td><td id="r-4697870" data-claire-element-id="8529751"><p id="r-4697869" data-claire-element-id="8529750">1,45m</p></td></tr></tbody></table><p id="r-4698246" data-claire-element-id="8610621">Bon... vous voyez que cet échantillon n'est pas vraiment vraiment propre, n'est-ce pas ?</p><ol id="r-4698291" data-claire-element-id="8604793"><li id="r-4698282" data-claire-element-id="8531212"><p id="r-4698281" data-claire-element-id="8531211">Tout d'abord, il y a des cases vides pour les variables Pays et Date de naissance. On appelle cela les <em>valeurs manquantes</em>.</p></li><li id="r-4698284" data-claire-element-id="8531038"><p id="r-4698283" data-claire-element-id="8531037">Si vous regardez dans la colonne Pays, il y a une case qui contient  <code data-claire-semantic="text">24</code>  . Or 24 n'est absolument pas un pays ! Il s'agit ici d'une <em>erreur lexicale</em>.</p></li><li id="r-4698286" data-claire-element-id="8604792"><p id="r-4698285" data-claire-element-id="8604791">Ensuite, vous avez peut-être vu qu'un  <code data-claire-semantic="text">153cm</code>  s'est glissé dans la colonne Taille. C'est un problème car toutes les autres valeurs sont données en mètre, et pas en centimètres ! C'est une <em>erreur d'irrégularité</em>, car la variable Taille n'est pas représentée de manière régulière.</p></li><li id="r-4698288" data-claire-element-id="8557452"><p id="r-4698287" data-claire-element-id="8557451">Marc a 2 adresses emails. Ce n'est pas forcément problématique, mais si vous oubliez cela et que vous codez un programme d'analyse en faisant la supposition qu'une personne n'a qu'un seul email, votre programme plantera probablement ! Si vous faites effectivement cette supposition, alors il y aura une erreur de formatage, car<code data-claire-semantic="text">marco23@example.com, mc23@supermail.eu</code>ne respecte pas le format voulu.</p></li><li id="r-4698290" data-claire-element-id="8531044"><p id="r-4698289" data-claire-element-id="8531043">Regardez la variable Date de naissance. Il y a également une erreur de formatage : la date de naissance de Radia n'est pas du même format que les autres dates.</p></li><li id="r-4698342" data-claire-element-id="8531214"><p id="r-4698341" data-claire-element-id="8531213">Samuel est présent sur 2 lignes. Comment être sûr qu'il s'agit bien du même Samuel ? Par son adresse email bien sûr ! Il s'agit d'un <em>doublon.</em> De plus, sur les 2 lignes de Samuel, les tailles sont différentes : 1,67m et 1,45m, ça c'est une <em>erreur de contradiction</em>.</p></li><li id="r-4698657" data-claire-element-id="8532102"><p id="r-4698656" data-claire-element-id="8532101">Hanna mesure 3,45m. Cette taille est très différente des tailles usuelles des êtres humains : c'est une <em>valeur aberrante</em>. Même si nous n'en sommes pas sûrs, il s'agit probablement d'une erreur. </p></li></ol><aside id="r-4724628" data-claire-element-id="8602427" data-claire-semantic="information"><p id="r-4724627" data-claire-element-id="8602426"> En anglais, une valeur aberrante est souvent appelée <strong>outlier</strong>.</p></aside><p id="r-4726017" data-claire-element-id="8606843"></p><h3 id="r-4724629" data-claire-element-id="8602430">Que faire de toutes ces erreurs ?</h3><p id="r-4697932" data-claire-element-id="8531047">Je préfère vous le dire tout de suite, dès que vous devrez nettoyer un jeu de données, il n'y a pas de règle toute faite. Tous les traitements que vous ferez seront en fonction de l'utilisation que vous aurez de vos données. Deux data analysts ne nettoierons pas un même jeu de donnés de la même manière s'ils ont des objectifs différents !</p><p id="r-4698253" data-claire-element-id="8531048">Pas de règle donc, mais je peux vous donner quelques pistes :</p><ol id="r-4698351" data-claire-element-id="8532107"><li id="r-4698344" data-claire-element-id="8531218"><p id="r-4698343" data-claire-element-id="8531217">Concernant les valeurs manquantes, c'est l'objet du chapitre suivant. ;)</p></li><li id="r-4698346" data-claire-element-id="8531752"><p id="r-4698345" data-claire-element-id="8531751">Pour le pays invalide, il est possible de fixer à l'avance une liste des pays autorisés, puis de supprimer les valeurs qui ne sont pas dans cette liste (ici,  <code data-claire-semantic="text">24</code>  n'y sera pas). Une telle liste est souvent appelée <em>dictionnaire</em>.</p></li><li id="r-4698348" data-claire-element-id="8531222"><p id="r-4698347" data-claire-element-id="8531221">Pour les erreurs d'irrégularité, c'est plus compliqué ! On peut par exemple fixer un format fixe (ici : "un nombre décimal suivi du caractère "m") et supprimer les valeurs qui ne suivent pas ce format. Mais on peut faire mieux, et détecter d'abord dans quelle unité est exprimée la valeur (mètres ou centimètres) puis tout convertir en une même unité.</p></li><li id="r-4698350" data-claire-element-id="8531402"><p id="r-4698349" data-claire-element-id="8531401">Pour l'erreur de formatage de la double adresse email, tout dépend de ce que vous souhaitez faire. Si vous n'analyserez pas les emails dans votre analyse future, alors pas besoin de corriger l'erreur. Si par contre vous souhaitez connaître la proportion du nombre de personnes dont l'adresse finit par  <code data-claire-semantic="text">@example.com</code>  , par  <code data-claire-semantic="text">@supermail.eu</code>  , etc. , alors vous pouvez choisir entre :</p><ol id="r-4698381" data-claire-element-id="8531368"><li id="r-4698378" data-claire-element-id="8531365"><p id="r-4698377" data-claire-element-id="8531364">prendre la première adresse email, et oublier la seconde</p></li><li id="r-4698380" data-claire-element-id="8531367"><p id="r-4698379" data-claire-element-id="8531366">garder l'ensemble des adresses mails</p></li></ol></li><li id="r-4698383" data-claire-element-id="8531754"><p id="r-4698382" data-claire-element-id="8531753">Passons à la variable Date de naissance. Aaaaaaah les dates ! :'( Croyez-moi, elles vous donnerons toujours du fil à retordre ! Eh oui, il existe d'innombrable formats de date, et chaque pays a sa propre habitude quand il s'agit d'écrire une date (ex : les français et les nord-américains n'utilisent pas les mêmes formats). En plus de cela, il faut ajouter les problèmes des fuseaux horaires ! Dans notre cas, la plus simple des solutions consiste à supprimer les dates qui ne sont pas au format  <code data-claire-semantic="text">jour/mois/année</code>  .</p></li><li id="r-4698387" data-claire-element-id="8531384"><p id="r-4698386" data-claire-element-id="8531383">Pour le doublon, vous verrez cela dans le chapitre suivant.</p></li><li id="r-4698659" data-claire-element-id="8532106"><p id="r-4698658" data-claire-element-id="8532105">Pour la valeur aberrante, c'est également dans le chapitre suivant ! ;)</p></li></ol><aside id="r-4698384" data-claire-element-id="8531373" data-claire-semantic="information"><p id="r-4698352" data-claire-element-id="8531226">En règle générale, si une variable contient peu d'erreurs et que cette variable n'est pas d'une importance cruciale pour votre analyse, on peut se permettre de supprimer les valeurs erronées. On se retrouvera alors avec des valeurs manquantes.</p></aside><p id="r-4698353" data-claire-element-id="8531494">Cependant, si les erreurs sont nombreuses et de même nature, autant créer un programme informatique qui corrigera les erreurs.</p><p id="r-4698426" data-claire-element-id="8531495">Par exemple, si 60% des tailles est donné en mètres, 35% en centimètres et 5% dans d'autres unités, alors il y a 35% d'erreurs qui sont de même nature (35% des valeurs sont en centimètres au lieu de mètres). Autant donc coder quelques lignes de code qui convertirons les centimètres en mètres. Si vous êtes motivés et que le jeu en vaut la chandelle, attaquez-vous aussi aux 5% restants, mais cela vous prendra beaucoup de temps !</p><p id="r-4697933" data-claire-element-id="8599482"></p><h3 id="r-4724046" data-claire-element-id="8606846">Aller plus loin : Les dates</h3><p id="r-4724042" data-claire-element-id="8601047">Sachez qu'entre différents pays, nous avons quand même réussi à nous mettre d'accord sur un format de date normalisé : c'est le format <a href="https://fr.wikipedia.org/wiki/ISO_8601">ISO 8601</a>. Il est de cette forme :  <code data-claire-semantic="text">1977-04-22T06:00:00Z</code>.</p><p id="r-4726018" data-claire-element-id="8606845">De tout manière, sachez que les dates vous feront toujours souffrir, comme en témoigne ce <a href="http://www.commitstrip.com/fr/2013/06/20/inavouable/">commitstrip</a> :</p><p id="r-4724133" data-claire-element-id="8601228"><img id="r-4724132" data-claire-element-id="8601227" src="http://www.commitstrip.com/wp-content/uploads/2013/06/Strips-MkTime-550-final.jpg" alt=""></p><h3 id="r-4724047" data-claire-element-id="8601232">Aller plus loin : Ressources externes</h3><p id="r-4724134" data-claire-element-id="8601230">Dans ce cours, nous nettoierons nos données grâce à Python ou R.</p><p id="r-4724135" data-claire-element-id="8601231">Mais sachez qu'il existe un très bon outil destiné au nettoyage de données, accessible à ceux qui ne maitrisent pas la programmation : c'est <a href="http://openrefine.org/">OpenRefine</a>.</p>
+
+<p id="r-4696831" data-claire-element-id="8531432">
+Avant de vous lancer dans l'analyse de vos données, il vous faudra les nettoyer de toute erreur. Sinon, le code que vous écrirez pour faire de beaux graphiques (ou autres) plantera. Pire, vos analyses pourront contenir des erreurs si votre échantillon contient des erreurs.</p>
+<p id="r-4698391" data-claire-element-id="8557441">
+Tous les data analysts ou data scientists <a href="https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/">
+vous le dirons</a>
+ : on passe malheureusement la majeure partie du temps à nettoyer les données plus qu'à les analyser... c'est frustrant, car le nettoyage n'est vraiment pas la <a href="http://www.kdnuggets.com/2015/05/data-science-inconvenient-truth.html">
+partie la plus captivante</a>
+ ! Mais j'ai une bonne nouvelle : le nettoyage des données ne nous prendra que 4 chapitres, alors courage.;)</p>
+<p id="r-4698392" data-claire-element-id="8599479">
+</p>
+<h3 id="r-4697586" data-claire-element-id="8606842">
+D'où proviennent les erreurs à nettoyer ?</h3>
+<p id="r-4697583" data-claire-element-id="8531492">
+En fait, tout dépend de la source de vos données. Prenons deux exemples de sources parmi d'autres : les saisies "à la main" effectuées par des humain, et les capteurs.</p>
+<p id="r-4697584" data-claire-element-id="8528817">
+Si les données ont été saisies par un humain, alors il y a de fortes chances pour que des erreurs se soient glissées dans la saisie, par exemple lorsque quelqu'un tape dans un tableur les résultats d'un sondage rempli sur papier, ou encore lorsqu'un site web contient un formulaire dans lequel l'internaute saisit de fausses données.</p>
+<p id="r-4697585" data-claire-element-id="8528818">
+Si les données proviennent de capteurs (exemple : le système de géolocalisation de votre téléphone, le capteur de vitesse de votre véhicule, la machine qui valide votre billet à l'entrée du bus, etc. ), alors il se peut que le capteur se dégrade au cours du temps et ne soit plus étalonné (ex: un thermomètre qui indique 23°c alors que la température réelle est de 25°c) ou bien qu'il ne fonctionne plus (il n'envoie plus de données).</p>
+<p id="r-4726016" data-claire-element-id="8606841">
+</p>
+<h3 id="r-4698251" data-claire-element-id="8610622">
+Les différents types d'erreurs</h3>
+<aside id="r-4698376" data-claire-element-id="8531361" data-claire-semantic="information">
+<p id="r-4697588" data-claire-element-id="8531033">
+Nous allons ici voir quelques types d'erreurs. Pas besoin de les apprendre par cœur, ni de retenir leur nom : cela n'a aucun intérêt !</p>
+</aside>
+<p id="r-4697589" data-claire-element-id="8528822">
+Prenons l'exemple d'un échantillon de personnes, décrites par plusieurs variables :</p>
+<table id="r-4697705" data-claire-element-id="8604790">
+<thead id="r-4697876" data-claire-element-id="8529812">
+<tr id="r-4697649" data-claire-element-id="8529811">
+<td id="r-4697642" data-claire-element-id="8529802">
+<p id="r-4697641" data-claire-element-id="8529801">
+<strong>
+Prénom</strong>
+</p>
+</td>
+<td id="r-4697644" data-claire-element-id="8529804">
+<p id="r-4697643" data-claire-element-id="8529803">
+<strong>
+Email</strong>
+</p>
+</td>
+<td id="r-4697646" data-claire-element-id="8529806">
+<p id="r-4697645" data-claire-element-id="8529805">
+<strong>
+Date de naissance</strong>
+</p>
+</td>
+<td id="r-4697648" data-claire-element-id="8529808">
+<p id="r-4697647" data-claire-element-id="8529807">
+<strong>
+Pays</strong>
+</p>
+</td>
+<td id="r-4697847" data-claire-element-id="8529810">
+<p id="r-4697846" data-claire-element-id="8529809">
+<strong>
+Taille</strong>
+</p>
+</td>
+</tr>
+</thead>
+<tbody id="r-4697704" data-claire-element-id="8604789">
+<tr id="r-4697658" data-claire-element-id="8529704">
+<td id="r-4697651" data-claire-element-id="8529021">
+<p id="r-4697650" data-claire-element-id="8529020">
+Leila</p>
+</td>
+<td id="r-4697653" data-claire-element-id="8529023">
+<p id="r-4697652" data-claire-element-id="8529022">
+leila@example.com</p>
+</td>
+<td id="r-4697655" data-claire-element-id="8529699">
+<p id="r-4697654" data-claire-element-id="8529698">
+23/01/1990</p>
+</td>
+<td id="r-4697657" data-claire-element-id="8529701">
+<p id="r-4697656" data-claire-element-id="8529700">
+France</p>
+</td>
+<td id="r-4697849" data-claire-element-id="8529703">
+<p id="r-4697848" data-claire-element-id="8529702">
+1,49m</p>
+</td>
+</tr>
+<tr id="r-4697667" data-claire-element-id="8529713">
+<td id="r-4697660" data-claire-element-id="8529030">
+<p id="r-4697659" data-claire-element-id="8529029">
+Samuel</p>
+</td>
+<td id="r-4697662" data-claire-element-id="8529706">
+<p id="r-4697661" data-claire-element-id="8529705">
+samuel_329@example.com</p>
+</td>
+<td id="r-4697664" data-claire-element-id="8529708">
+<p id="r-4697663" data-claire-element-id="8529707">
+20/09/2001</p>
+</td>
+<td id="r-4697666" data-claire-element-id="8529710">
+<p id="r-4697850" data-claire-element-id="8529709">
+ </p>
+</td>
+<td id="r-4697852" data-claire-element-id="8529712">
+<p id="r-4697851" data-claire-element-id="8529711">
+1,67m</p>
+</td>
+</tr>
+<tr id="r-4697676" data-claire-element-id="8604788">
+<td id="r-4697669" data-claire-element-id="8529039">
+<p id="r-4697668" data-claire-element-id="8529038">
+Radia</p>
+</td>
+<td id="r-4697671" data-claire-element-id="8529041">
+<p id="r-4697670" data-claire-element-id="8529040">
+choupipoune@supermail.eu</p>
+</td>
+<td id="r-4697673" data-claire-element-id="8529715">
+<p id="r-4697672" data-claire-element-id="8529714">
+ 12 sept. 1984</p>
+</td>
+<td id="r-4697675" data-claire-element-id="8532782">
+<p id="r-4697674" data-claire-element-id="8532781">
+Côte d'ivoire</p>
+</td>
+<td id="r-4697854" data-claire-element-id="8604787">
+<p id="r-4697853" data-claire-element-id="8604786">
+153cm</p>
+</td>
+</tr>
+<tr id="r-4697685" data-claire-element-id="8532786">
+<td id="r-4697678" data-claire-element-id="8529048">
+<p id="r-4697677" data-claire-element-id="8529047">
+Marc</p>
+</td>
+<td id="r-4697680" data-claire-element-id="8529082">
+<p id="r-4697679" data-claire-element-id="8529081">
+marco23@example.com, mc23@supermail.eu</p>
+</td>
+<td id="r-4697682" data-claire-element-id="8529722">
+<p id="r-4697681" data-claire-element-id="8529721">
+ 10/02/1978</p>
+</td>
+<td id="r-4697684" data-claire-element-id="8532785">
+<p id="r-4697683" data-claire-element-id="8532784">
+ France</p>
+</td>
+<td id="r-4697856" data-claire-element-id="8529726">
+<p id="r-4697855" data-claire-element-id="8529725">
+1,65m</p>
+</td>
+</tr>
+<tr id="r-4697694" data-claire-element-id="8529734">
+<td id="r-4697687" data-claire-element-id="8529057">
+<p id="r-4697686" data-claire-element-id="8529056">
+Heri</p>
+</td>
+<td id="r-4697689" data-claire-element-id="8529059">
+<p id="r-4697688" data-claire-element-id="8529058">
+helloworld@supermail.eu</p>
+</td>
+<td id="r-4697691" data-claire-element-id="8529729">
+<p id="r-4697690" data-claire-element-id="8529728">
+ 05/03/2008</p>
+</td>
+<td id="r-4697693" data-claire-element-id="8529731">
+<p id="r-4697692" data-claire-element-id="8529730">
+ Madagascar</p>
+</td>
+<td id="r-4697858" data-claire-element-id="8529733">
+<p id="r-4697857" data-claire-element-id="8529732">
+1,34m</p>
+</td>
+</tr>
+<tr id="r-4697703" data-claire-element-id="8529815">
+<td id="r-4697696" data-claire-element-id="8529066">
+<p id="r-4697695" data-claire-element-id="8529065">
+Hanna</p>
+</td>
+<td id="r-4697698" data-claire-element-id="8529068">
+<p id="r-4697697" data-claire-element-id="8529067">
+hanna2019@supermail.eu</p>
+</td>
+<td id="r-4697700" data-claire-element-id="8529736">
+<p id="r-4697699" data-claire-element-id="8529735">
+ 01/01/1970</p>
+</td>
+<td id="r-4697702" data-claire-element-id="8529738">
+<p id="r-4697701" data-claire-element-id="8529737">
+ 24</p>
+</td>
+<td id="r-4697860" data-claire-element-id="8529814">
+<p id="r-4697859" data-claire-element-id="8529813">
+3,45m</p>
+</td>
+</tr>
+<tr id="r-4697871" data-claire-element-id="8529752">
+<td id="r-4697862" data-claire-element-id="8529743">
+<p id="r-4697861" data-claire-element-id="8529742">
+samuël</p>
+</td>
+<td id="r-4697864" data-claire-element-id="8529745">
+<p id="r-4697863" data-claire-element-id="8529744">
+samuel_329@example.com</p>
+</td>
+<td id="r-4697866" data-claire-element-id="8529747">
+<p id="r-4697865" data-claire-element-id="8529746">
+ </p>
+</td>
+<td id="r-4697868" data-claire-element-id="8529749">
+<p id="r-4697867" data-claire-element-id="8529748">
+Bénin</p>
+</td>
+<td id="r-4697870" data-claire-element-id="8529751">
+<p id="r-4697869" data-claire-element-id="8529750">
+1,45m</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p id="r-4698246" data-claire-element-id="8610621">
+Bon... vous voyez que cet échantillon n'est pas vraiment vraiment propre, n'est-ce pas ?</p>
+<ol id="r-4698291" data-claire-element-id="8604793">
+<li id="r-4698282" data-claire-element-id="8531212">
+<p id="r-4698281" data-claire-element-id="8531211">
+Tout d'abord, il y a des cases vides pour les variables Pays et Date de naissance. On appelle cela les <em>
+valeurs manquantes</em>
+.</p>
+</li>
+<li id="r-4698284" data-claire-element-id="8531038">
+<p id="r-4698283" data-claire-element-id="8531037">
+Si vous regardez dans la colonne Pays, il y a une case qui contient  <code data-claire-semantic="text">
+24</code>
+  . Or 24 n'est absolument pas un pays ! Il s'agit ici d'une <em>
+erreur lexicale</em>
+.</p>
+</li>
+<li id="r-4698286" data-claire-element-id="8604792">
+<p id="r-4698285" data-claire-element-id="8604791">
+Ensuite, vous avez peut-être vu qu'un  <code data-claire-semantic="text">
+153cm</code>
+  s'est glissé dans la colonne Taille. C'est un problème car toutes les autres valeurs sont données en mètre, et pas en centimètres ! C'est une <em>
+erreur d'irrégularité</em>
+, car la variable Taille n'est pas représentée de manière régulière.</p>
+</li>
+<li id="r-4698288" data-claire-element-id="8557452">
+<p id="r-4698287" data-claire-element-id="8557451">
+Marc a 2 adresses emails. Ce n'est pas forcément problématique, mais si vous oubliez cela et que vous codez un programme d'analyse en faisant la supposition qu'une personne n'a qu'un seul email, votre programme plantera probablement ! Si vous faites effectivement cette supposition, alors il y aura une erreur de formatage, car<code data-claire-semantic="text">
+marco23@example.com, mc23@supermail.eu</code>
+ne respecte pas le format voulu.</p>
+</li>
+<li id="r-4698290" data-claire-element-id="8531044">
+<p id="r-4698289" data-claire-element-id="8531043">
+Regardez la variable Date de naissance. Il y a également une erreur de formatage : la date de naissance de Radia n'est pas du même format que les autres dates.</p>
+</li>
+<li id="r-4698342" data-claire-element-id="8531214">
+<p id="r-4698341" data-claire-element-id="8531213">
+Samuel est présent sur 2 lignes. Comment être sûr qu'il s'agit bien du même Samuel ? Par son adresse email bien sûr ! Il s'agit d'un <em>
+doublon.</em>
+ De plus, sur les 2 lignes de Samuel, les tailles sont différentes : 1,67m et 1,45m, ça c'est une <em>
+erreur de contradiction</em>
+.</p>
+</li>
+<li id="r-4698657" data-claire-element-id="8532102">
+<p id="r-4698656" data-claire-element-id="8532101">
+Hanna mesure 3,45m. Cette taille est très différente des tailles usuelles des êtres humains : c'est une <em>
+valeur aberrante</em>
+. Même si nous n'en sommes pas sûrs, il s'agit probablement d'une erreur. </p>
+</li>
+</ol>
+<aside id="r-4724628" data-claire-element-id="8602427" data-claire-semantic="information">
+<p id="r-4724627" data-claire-element-id="8602426">
+ En anglais, une valeur aberrante est souvent appelée <strong>
+outlier</strong>
+.</p>
+</aside>
+<p id="r-4726017" data-claire-element-id="8606843">
+</p>
+<h3 id="r-4724629" data-claire-element-id="8602430">
+Que faire de toutes ces erreurs ?</h3>
+<p id="r-4697932" data-claire-element-id="8531047">
+Je préfère vous le dire tout de suite, dès que vous devrez nettoyer un jeu de données, il n'y a pas de règle toute faite. Tous les traitements que vous ferez seront en fonction de l'utilisation que vous aurez de vos données. Deux data analysts ne nettoierons pas un même jeu de donnés de la même manière s'ils ont des objectifs différents !</p>
+<p id="r-4698253" data-claire-element-id="8531048">
+Pas de règle donc, mais je peux vous donner quelques pistes :</p>
+<ol id="r-4698351" data-claire-element-id="8532107">
+<li id="r-4698344" data-claire-element-id="8531218">
+<p id="r-4698343" data-claire-element-id="8531217">
+Concernant les valeurs manquantes, c'est l'objet du chapitre suivant. ;)</p>
+</li>
+<li id="r-4698346" data-claire-element-id="8531752">
+<p id="r-4698345" data-claire-element-id="8531751">
+Pour le pays invalide, il est possible de fixer à l'avance une liste des pays autorisés, puis de supprimer les valeurs qui ne sont pas dans cette liste (ici,  <code data-claire-semantic="text">
+24</code>
+  n'y sera pas). Une telle liste est souvent appelée <em>
+dictionnaire</em>
+.</p>
+</li>
+<li id="r-4698348" data-claire-element-id="8531222">
+<p id="r-4698347" data-claire-element-id="8531221">
+Pour les erreurs d'irrégularité, c'est plus compliqué ! On peut par exemple fixer un format fixe (ici : "un nombre décimal suivi du caractère "m") et supprimer les valeurs qui ne suivent pas ce format. Mais on peut faire mieux, et détecter d'abord dans quelle unité est exprimée la valeur (mètres ou centimètres) puis tout convertir en une même unité.</p>
+</li>
+<li id="r-4698350" data-claire-element-id="8531402">
+<p id="r-4698349" data-claire-element-id="8531401">
+Pour l'erreur de formatage de la double adresse email, tout dépend de ce que vous souhaitez faire. Si vous n'analyserez pas les emails dans votre analyse future, alors pas besoin de corriger l'erreur. Si par contre vous souhaitez connaître la proportion du nombre de personnes dont l'adresse finit par  <code data-claire-semantic="text">
+@example.com</code>
+  , par  <code data-claire-semantic="text">
+@supermail.eu</code>
+  , etc. , alors vous pouvez choisir entre :</p>
+<ol id="r-4698381" data-claire-element-id="8531368">
+<li id="r-4698378" data-claire-element-id="8531365">
+<p id="r-4698377" data-claire-element-id="8531364">
+prendre la première adresse email, et oublier la seconde</p>
+</li>
+<li id="r-4698380" data-claire-element-id="8531367">
+<p id="r-4698379" data-claire-element-id="8531366">
+garder l'ensemble des adresses mails</p>
+</li>
+</ol>
+</li>
+<li id="r-4698383" data-claire-element-id="8531754">
+<p id="r-4698382" data-claire-element-id="8531753">
+Passons à la variable Date de naissance. Aaaaaaah les dates ! :'( Croyez-moi, elles vous donnerons toujours du fil à retordre ! Eh oui, il existe d'innombrable formats de date, et chaque pays a sa propre habitude quand il s'agit d'écrire une date (ex : les français et les nord-américains n'utilisent pas les mêmes formats). En plus de cela, il faut ajouter les problèmes des fuseaux horaires ! Dans notre cas, la plus simple des solutions consiste à supprimer les dates qui ne sont pas au format  <code data-claire-semantic="text">
+jour/mois/année</code>
+  .</p>
+</li>
+<li id="r-4698387" data-claire-element-id="8531384">
+<p id="r-4698386" data-claire-element-id="8531383">
+Pour le doublon, vous verrez cela dans le chapitre suivant.</p>
+</li>
+<li id="r-4698659" data-claire-element-id="8532106">
+<p id="r-4698658" data-claire-element-id="8532105">
+Pour la valeur aberrante, c'est également dans le chapitre suivant ! ;)</p>
+</li>
+</ol>
+<aside id="r-4698384" data-claire-element-id="8531373" data-claire-semantic="information">
+<p id="r-4698352" data-claire-element-id="8531226">
+En règle générale, si une variable contient peu d'erreurs et que cette variable n'est pas d'une importance cruciale pour votre analyse, on peut se permettre de supprimer les valeurs erronées. On se retrouvera alors avec des valeurs manquantes.</p>
+</aside>
+<p id="r-4698353" data-claire-element-id="8531494">
+Cependant, si les erreurs sont nombreuses et de même nature, autant créer un programme informatique qui corrigera les erreurs.</p>
+<p id="r-4698426" data-claire-element-id="8531495">
+Par exemple, si 60% des tailles est donné en mètres, 35% en centimètres et 5% dans d'autres unités, alors il y a 35% d'erreurs qui sont de même nature (35% des valeurs sont en centimètres au lieu de mètres). Autant donc coder quelques lignes de code qui convertirons les centimètres en mètres. Si vous êtes motivés et que le jeu en vaut la chandelle, attaquez-vous aussi aux 5% restants, mais cela vous prendra beaucoup de temps !</p>
+<p id="r-4697933" data-claire-element-id="8599482">
+</p>
+<h3 id="r-4724046" data-claire-element-id="8606846">
+Aller plus loin : Les dates</h3>
+<p id="r-4724042" data-claire-element-id="8601047">
+Sachez qu'entre différents pays, nous avons quand même réussi à nous mettre d'accord sur un format de date normalisé : c'est le format <a href="https://fr.wikipedia.org/wiki/ISO_8601">
+ISO 8601</a>
+. Il est de cette forme :  <code data-claire-semantic="text">
+1977-04-22T06:00:00Z</code>
+.</p>
+<p id="r-4726018" data-claire-element-id="8606845">
+De tout manière, sachez que les dates vous feront toujours souffrir, comme en témoigne ce <a href="http://www.commitstrip.com/fr/2013/06/20/inavouable/">
+commitstrip</a>
+ :</p>
+<p id="r-4724133" data-claire-element-id="8601228">
+<img id="r-4724132" data-claire-element-id="8601227" src="http://www.commitstrip.com/wp-content/uploads/2013/06/Strips-MkTime-550-final.jpg" alt="">
+</p>
+<h3 id="r-4724047" data-claire-element-id="8601232">
+Aller plus loin : Ressources externes</h3>
+<p id="r-4724134" data-claire-element-id="8601230">
+Dans ce cours, nous nettoierons nos données grâce à Python ou R.</p>
+<p id="r-4724135" data-claire-element-id="8601231">
+Mais sachez qu'il existe un très bon outil destiné au nettoyage de données, accessible à ceux qui ne maitrisent pas la programmation : c'est <a href="http://openrefine.org/">
+OpenRefine</a>
+.</p>
+
 </div>
+
 <div class="js-courseSelementActions sideActions">
+
 <ul class="sideActions__container">
+
 <li>
+
 <a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+
 #
 </a>
+
 </li>
+
 </ul>
+
 </div>
+
 </div>

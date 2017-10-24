@@ -1,14 +1,87 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/nettoyez-et-decrivez-votre-jeu-de-donnees/recherchez-les-correlations" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
+
 <div class="userContent js-userContent">
-<p id="r-4717718" data-claire-element-id="8615791">Vous l’aurez compris, étudier les relations entre les variables, c’est important.</p><p id="r-4717719" data-claire-element-id="8615792">Pour être plus formel, la notion de relation entre variables est appelée <strong>corrélation</strong>. Dire que deux variables sont corrélées signifie que si on connaît la valeur d’une variable, <em>alors</em> il est possible d’avoir une indication (plus ou moins précise) sur la valeur d’une autre variable.</p><p id="r-4717721" data-claire-element-id="8615793">Dans le chapitre précédent, on étudiait déjà des corrélations, en se posant la question : sachant la position politique d'un individu, peut-on avoir une indication plus précise sur la valeur de la variable « pour/contre la monnaie locale » ?</p><aside id="r-4728846" data-claire-element-id="8615795" data-claire-semantic="warning"><p id="r-4717722" data-claire-element-id="8615794">Dès que l’on parle de corrélation, il y a une erreur, très fréquente, à ne <em>JAMAIS</em> commettre : celle de dire qu’il y a un lien de cause à effet d’une variable sur l’autre.</p></aside><p id="r-4717724" data-claire-element-id="8615796">S’il y a corrélation entre une variable <math>$\(A\)$</math> et une variable <math>$\(B\)$</math> , est-ce <math>$\(A\)$</math> qui est la cause de <math>$\(B\)$</math> , ou <math>$\(B\)$</math> qui est la cause de <math>$\(A\)$</math> ? Il est souvent impossible de le savoir sans effectuer une expérimentation. Le plus souvent, c’est un troisième (ou plusieurs) facteur <math>$\(C\)$</math> (qui n’est d’ailleurs pas toujours observé) qui est la cause de <math>$\(A\)$</math> et de B .</p><p id="r-4717726" data-claire-element-id="8615797"> Il est aussi possible que 2 variables soient corrélées sans qu’il n’y ait aucun lien entre elles. On les appelle les corrélation fallacieuses (« <em>spurious correlations</em> » en anglais).</p><p id="r-4717728" data-claire-element-id="8615798">[ILLUS du poly de Vincent]</p><aside id="r-4728847" data-claire-element-id="8615800" data-claire-semantic="information"><p id="r-4717730" data-claire-element-id="8615799">Pour en voir d’autres, c’est <a href="http://www.tylervigen.com/spurious-correlations">par ici</a>. Certaines sont amusantes !</p></aside><p id="r-4717732" data-claire-element-id="8580777">En fait, pour avoir le droit d’établir un lien de cause à effet entre des variables, il faut construire une expérimentation qui respecte certaines conditions. Ces conditions ne sont en général pas vérifiées lorsque votre échantillon ne provient pas de cette expérimentation conçue spécialement.</p><p id="r-4717734" data-claire-element-id="8617171">Si vous aimez les paradoxes mathématiques, il y en a un qui traite du lien de cause à effet, c’est le paradoxe de Simpson. Tout bon Data Analyst devrait être conscient de ce paradoxe. Une vidéo très bien expliquée et très compréhensible a été réalisée dans <a href="https://www.youtube.com/watch?v=vs_Zzf_vL2I">série Science Étonnante</a>.</p><aside id="r-4728849" data-claire-element-id="8617173" data-claire-semantic="information"><p id="r-4728848" data-claire-element-id="8617172">A la minute 7:58 de cette vidéo, vous apprendrez par exemple que si 2 variables sont corrélées, agir sur la valeur de l'une des variables ne fait pas forcément changer la seconde. ;)</p></aside><p id="r-4717735" data-claire-element-id="8580780">Vous verrez, ce paradoxe vous bluffera !</p><p id="r-4717736" data-claire-element-id="8580781">[METRE LE LIEN]</p><p id="r-4717737" data-claire-element-id="8599640"></p>
+
+<p id="r-4717718" data-claire-element-id="8615791">
+Vous l’aurez compris, étudier les relations entre les variables, c’est important.</p>
+<p id="r-4717719" data-claire-element-id="8615792">
+Pour être plus formel, la notion de relation entre variables est appelée <strong>
+corrélation</strong>
+. Dire que deux variables sont corrélées signifie que si on connaît la valeur d’une variable, <em>
+alors</em>
+ il est possible d’avoir une indication (plus ou moins précise) sur la valeur d’une autre variable.</p>
+<p id="r-4717721" data-claire-element-id="8615793">
+Dans le chapitre précédent, on étudiait déjà des corrélations, en se posant la question : sachant la position politique d'un individu, peut-on avoir une indication plus précise sur la valeur de la variable « pour/contre la monnaie locale » ?</p>
+<aside id="r-4728846" data-claire-element-id="8615795" data-claire-semantic="warning">
+<p id="r-4717722" data-claire-element-id="8615794">
+Dès que l’on parle de corrélation, il y a une erreur, très fréquente, à ne <em>
+JAMAIS</em>
+ commettre : celle de dire qu’il y a un lien de cause à effet d’une variable sur l’autre.</p>
+</aside>
+<p id="r-4717724" data-claire-element-id="8615796">
+S’il y a corrélation entre une variable <math>
+$\(A\)$</math>
+ et une variable <math>
+$\(B\)$</math>
+ , est-ce <math>
+$\(A\)$</math>
+ qui est la cause de <math>
+$\(B\)$</math>
+ , ou <math>
+$\(B\)$</math>
+ qui est la cause de <math>
+$\(A\)$</math>
+ ? Il est souvent impossible de le savoir sans effectuer une expérimentation. Le plus souvent, c’est un troisième (ou plusieurs) facteur <math>
+$\(C\)$</math>
+ (qui n’est d’ailleurs pas toujours observé) qui est la cause de <math>
+$\(A\)$</math>
+ et de B .</p>
+<p id="r-4717726" data-claire-element-id="8615797">
+ Il est aussi possible que 2 variables soient corrélées sans qu’il n’y ait aucun lien entre elles. On les appelle les corrélation fallacieuses (« <em>
+spurious correlations</em>
+ » en anglais).</p>
+<p id="r-4717728" data-claire-element-id="8615798">
+[ILLUS du poly de Vincent]</p>
+<aside id="r-4728847" data-claire-element-id="8615800" data-claire-semantic="information">
+<p id="r-4717730" data-claire-element-id="8615799">
+Pour en voir d’autres, c’est <a href="http://www.tylervigen.com/spurious-correlations">
+par ici</a>
+. Certaines sont amusantes !</p>
+</aside>
+<p id="r-4717732" data-claire-element-id="8580777">
+En fait, pour avoir le droit d’établir un lien de cause à effet entre des variables, il faut construire une expérimentation qui respecte certaines conditions. Ces conditions ne sont en général pas vérifiées lorsque votre échantillon ne provient pas de cette expérimentation conçue spécialement.</p>
+<p id="r-4717734" data-claire-element-id="8617171">
+Si vous aimez les paradoxes mathématiques, il y en a un qui traite du lien de cause à effet, c’est le paradoxe de Simpson. Tout bon Data Analyst devrait être conscient de ce paradoxe. Une vidéo très bien expliquée et très compréhensible a été réalisée dans <a href="https://www.youtube.com/watch?v=vs_Zzf_vL2I">
+série Science Étonnante</a>
+.</p>
+<aside id="r-4728849" data-claire-element-id="8617173" data-claire-semantic="information">
+<p id="r-4728848" data-claire-element-id="8617172">
+A la minute 7:58 de cette vidéo, vous apprendrez par exemple que si 2 variables sont corrélées, agir sur la valeur de l'une des variables ne fait pas forcément changer la seconde. ;)</p>
+</aside>
+<p id="r-4717735" data-claire-element-id="8580780">
+Vous verrez, ce paradoxe vous bluffera !</p>
+<p id="r-4717736" data-claire-element-id="8580781">
+[METRE LE LIEN]</p>
+<p id="r-4717737" data-claire-element-id="8599640">
+</p>
+
 </div>
+
 <div class="js-courseSelementActions sideActions">
+
 <ul class="sideActions__container">
+
 <li>
+
 <a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+
 #
 </a>
+
 </li>
+
 </ul>
+
 </div>
+
 </div>

@@ -1,6 +1,58 @@
 <div itemprop="articleBody" data-page-indentifier="" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
+
 <div class="userContent js-userContent">
-<h3 id="r-4736964" data-claire-element-id="8640034">Énoncé</h3><p id="r-4736891" data-claire-element-id="8639461">L'un des jeux de données les plus utilisés dans les cours et tutoriels de statistiques est appelé "iris". C'est un échantillon contenant des mesures prises sur des fleurs de la variété iris. Chaque individu représente une fleur dont on a mesuré :</p><ul id="r-4736900" data-claire-element-id="8639470"><li id="r-4736893" data-claire-element-id="8639463"><p id="r-4736892" data-claire-element-id="8639462">la longueur du pétale</p></li><li id="r-4736895" data-claire-element-id="8639465"><p id="r-4736894" data-claire-element-id="8639464">la largeur du pétale</p></li><li id="r-4736897" data-claire-element-id="8639467"><p id="r-4736896" data-claire-element-id="8639466">la longueur du sépale</p></li><li id="r-4736899" data-claire-element-id="8639469"><p id="r-4736898" data-claire-element-id="8639468">la largeur du sépale</p></li></ul><p id="r-4736902" data-claire-element-id="8639472"><img id="r-4736901" data-claire-element-id="8639471" src="https://user.oc-static.com/upload/2017/10/24/15088528667743_iris.png" alt=""></p><p id="r-4736903" data-claire-element-id="8639473">[ILLUS : iris.png]</p><p id="r-4736904" data-claire-element-id="8639474">(image de http://suruchifialoke.com/2016-10-13-machine-learning-tutorial-iris-classification/)</p><p id="r-4736905" data-claire-element-id="8639475"></p><p id="r-4736906" data-claire-element-id="8639476">La 5e variable disponible est l'espèce de la fleur, il y en a 3 : Setosa, Versicolor et Virginica.</p><p id="r-4736907" data-claire-element-id="8639477">Le jeu de données original (<a href="https://en.wikipedia.org/wiki/Iris_flower_data_set">https://en.wikipedia.org/wiki/Iris_flower_data_set</a>) a été modifié : quelques valeurs ont été supprimées : il y a donc des valeurs manquantes. Certaines valeurs ont également été modifiées.<br>Le but de cette activité ne sera pas de retrouver ces valeurs exactes, mais de les approcher en utilisant les méthodes d'analyse bivariée que vous avez vues lors des derniers chapitres.</p><p id="r-4736908" data-claire-element-id="8639478">Le jeu de données est à télécharger ici.<br>[LIEN]</p><p id="r-4736909" data-claire-element-id="8639479">Voici les diagrammes de dispersion des variables qualitatives prises 2 à 2. Sur ces graphiques, les points ont été colorés en fonction de la variable qualitative Espèce.</p><p id="r-4736911" data-claire-element-id="8639481"><img id="r-4736910" data-claire-element-id="8639480" src="https://user.oc-static.com/upload/2017/10/24/15088529281048_pairplot.png" alt="">[ILLUS : pairplot.png]</p><p id="r-4736912" data-claire-element-id="8639482">Voici le code Python destiné à charger le jeu de données :</p><pre id="r-4736913" data-claire-element-id="8639483"><code data-claire-semantic="python"># Chargement
+
+<h3 id="r-4736964" data-claire-element-id="8640034">
+Énoncé</h3>
+<p id="r-4736891" data-claire-element-id="8639461">
+L'un des jeux de données les plus utilisés dans les cours et tutoriels de statistiques est appelé "iris". C'est un échantillon contenant des mesures prises sur des fleurs de la variété iris. Chaque individu représente une fleur dont on a mesuré :</p>
+<ul id="r-4736900" data-claire-element-id="8639470">
+<li id="r-4736893" data-claire-element-id="8639463">
+<p id="r-4736892" data-claire-element-id="8639462">
+la longueur du pétale</p>
+</li>
+<li id="r-4736895" data-claire-element-id="8639465">
+<p id="r-4736894" data-claire-element-id="8639464">
+la largeur du pétale</p>
+</li>
+<li id="r-4736897" data-claire-element-id="8639467">
+<p id="r-4736896" data-claire-element-id="8639466">
+la longueur du sépale</p>
+</li>
+<li id="r-4736899" data-claire-element-id="8639469">
+<p id="r-4736898" data-claire-element-id="8639468">
+la largeur du sépale</p>
+</li>
+</ul>
+<p id="r-4736902" data-claire-element-id="8639472">
+<img id="r-4736901" data-claire-element-id="8639471" src="https://user.oc-static.com/upload/2017/10/24/15088528667743_iris.png" alt="">
+</p>
+<p id="r-4736903" data-claire-element-id="8639473">
+[ILLUS : iris.png]</p>
+<p id="r-4736904" data-claire-element-id="8639474">
+(image de http://suruchifialoke.com/2016-10-13-machine-learning-tutorial-iris-classification/)</p>
+<p id="r-4736905" data-claire-element-id="8639475">
+</p>
+<p id="r-4736906" data-claire-element-id="8639476">
+La 5e variable disponible est l'espèce de la fleur, il y en a 3 : Setosa, Versicolor et Virginica.</p>
+<p id="r-4736907" data-claire-element-id="8639477">
+Le jeu de données original (<a href="https://en.wikipedia.org/wiki/Iris_flower_data_set">
+https://en.wikipedia.org/wiki/Iris_flower_data_set</a>
+) a été modifié : quelques valeurs ont été supprimées : il y a donc des valeurs manquantes. Certaines valeurs ont également été modifiées.<br>
+Le but de cette activité ne sera pas de retrouver ces valeurs exactes, mais de les approcher en utilisant les méthodes d'analyse bivariée que vous avez vues lors des derniers chapitres.</p>
+<p id="r-4736908" data-claire-element-id="8639478">
+Le jeu de données est à télécharger ici.<br>
+[LIEN]</p>
+<p id="r-4736909" data-claire-element-id="8639479">
+Voici les diagrammes de dispersion des variables qualitatives prises 2 à 2. Sur ces graphiques, les points ont été colorés en fonction de la variable qualitative Espèce.</p>
+<p id="r-4736911" data-claire-element-id="8639481">
+<img id="r-4736910" data-claire-element-id="8639480" src="https://user.oc-static.com/upload/2017/10/24/15088529281048_pairplot.png" alt="">
+[ILLUS : pairplot.png]</p>
+<p id="r-4736912" data-claire-element-id="8639482">
+Voici le code Python destiné à charger le jeu de données :</p>
+<pre id="r-4736913" data-claire-element-id="8639483">
+<code data-claire-semantic="python">
+# Chargement
 iris = pd.read_csv("iris_dataset.csv")
 # On renomme les colonnes
 iris.columns = ["id","sepal_length","sepal_width","petal_length","petal_width","species"]
@@ -10,9 +62,129 @@ del iris["id"]
 iris_dna = iris.dropna(axis=0, how='any')
 print("iris : {} individus, iris_dna : {} individus".format(len(iris),len(iris_dna)))
 # Affichage des diagrammes de dispersion
-sns.pairplot(iris_dna,hue="species")</code></pre><p id="r-4736914" data-claire-element-id="8639484">On sépare également iris_dna en 3 échantillons ; un pour chaque espèce :</p><pre id="r-4736915" data-claire-element-id="8639485"><code data-claire-semantic="python">iris_setosa = iris_dna[iris_dna["species"] == "setosa"]
+sns.pairplot(iris_dna,hue="species")</code>
+</pre>
+<p id="r-4736914" data-claire-element-id="8639484">
+On sépare également iris_dna en 3 échantillons ; un pour chaque espèce :</p>
+<pre id="r-4736915" data-claire-element-id="8639485">
+<code data-claire-semantic="python">
+iris_setosa = iris_dna[iris_dna["species"] == "setosa"]
 iris_virginica = iris_dna[iris_dna["species"] == "virginica"]
-iris_versicolor = iris_dna[iris_dna["species"] == "versicolor"]</code></pre><p id="r-4736916" data-claire-element-id="8639486">Voici 2 diagrammes de dispersion :</p><ul id="r-4736921" data-claire-element-id="8639491"><li id="r-4736918" data-claire-element-id="8639488"><p id="r-4736917" data-claire-element-id="8639487">celui de petal_width en fonction de petal_length</p></li><li id="r-4736920" data-claire-element-id="8639490"><p id="r-4736919" data-claire-element-id="8639489">celui de sepal_width en fonction de petal_width</p></li></ul><p id="r-4736923" data-claire-element-id="8639493"><img id="r-4736922" data-claire-element-id="8639492" src="https://user.oc-static.com/upload/2017/10/24/15088529897427_1.png" alt=""></p><p id="r-4736925" data-claire-element-id="8639495"><img id="r-4736924" data-claire-element-id="8639494" src="https://user.oc-static.com/upload/2017/10/24/15088529991132_2.png" alt=""></p><p id="r-4736926" data-claire-element-id="8639496">[ILLUS : 1.png puis 2.png]</p><h4 id="r-4736934" data-claire-element-id="8639504">Rendu :</h4><p id="r-4736927" data-claire-element-id="8639497">Vous rendrez une archive .zip contenant :</p><ul id="r-4736932" data-claire-element-id="8639502"><li id="r-4736929" data-claire-element-id="8639499"><p id="r-4736928" data-claire-element-id="8639498">le code Python ou R qui vous a permis de répondre aux questions</p></li><li id="r-4736931" data-claire-element-id="8639501"><p id="r-4736930" data-claire-element-id="8639500">les réponses à vos question, en français, dans un fichier au format .txt</p></li></ul><p id="r-4736933" data-claire-element-id="8639503"></p><h4 id="r-4736963" data-claire-element-id="8640033">Questions :</h4><h5 id="r-4736936" data-claire-element-id="8639506">Q1:</h5><p id="r-4736935" data-claire-element-id="8639505">Sur le dataframe iris_dna calculez les coefficients de corrélation linéaires suivants :<br> - petal_width en fonction de petal_length<br> - sepal_width en fonction de petal_width</p><h5 id="r-4736950" data-claire-element-id="8639783">Q2:</h5><p id="r-4736937" data-claire-element-id="8639507">Commentez les résultats de la question 1 grâce aux 2 diagrammes de dispersion donnés dans l'énoncé.</p><p id="r-4736938" data-claire-element-id="8639781">Ensuite, gardez en tête le coefficient de corrélation linéaire de sepal_width en fonction de petal_width. Celui-ci est calculé sur l'ensemble des iris. Quand on calcule les coefficients de corrélation linéaire de ces mêmes variables, mais en les séparant par espèce, on obtient les résultats suivants :</p><ul id="r-4736945" data-claire-element-id="8639515"><li id="r-4736940" data-claire-element-id="8639510"><p id="r-4736939" data-claire-element-id="8639509">sepal_width en fonction de petal_width sur iris_setosa : 0.753</p></li><li id="r-4736942" data-claire-element-id="8639512"><p id="r-4736941" data-claire-element-id="8639511">sepal_width en fonction de petal_width sur iris_virginica : 0.685</p></li><li id="r-4736944" data-claire-element-id="8639514"><p id="r-4736943" data-claire-element-id="8639513">sepal_width en fonction de petal_width sur iris_versicolor : 0.825</p></li></ul><p id="r-4736946" data-claire-element-id="8639782"><strong>NB: vous n'avez pas besoin de refaire ce calcul</strong><br>Comparez (dans votre tête) ces 3 résultats à celui obtenu sur l'ensemble des iris (question 1). <br><strong>NB: vous n'avez pas à répondre à cette question dans votre rendu</strong><br>Ces résultats sont mieux interprétables quand on colore les points selon l'espèce d'iris :</p><p id="r-4736948" data-claire-element-id="8639518"><img id="r-4736947" data-claire-element-id="8639517" src="https://user.oc-static.com/upload/2017/10/24/15088531507671_3.png" alt=""></p><p id="r-4736949" data-claire-element-id="8639519">[ILLUS 3.png]</p><h5 id="r-4736954" data-claire-element-id="8639524">Q3:</h5><p id="r-4736951" data-claire-element-id="8639521">Réalisez 4 régressions linéaires (avec le méthode des moindres carrés). Nous utiliserons la notation suivante : Y = aX + b + epsilon</p><p id="r-4736952" data-claire-element-id="8639522">a et b sont les réels que vous devez estimer, epsilon le terme d'erreur (vous n'avez pas à vous en soucier), X et Y sont 2 variables.</p><p id="r-4736953" data-claire-element-id="8639523">Les 4 régressions linéaires correspondent à chacun de ces 4 cas :<br><strong>cas 1/ X est la variable petal_length et Y la variable petal_width, sur le dataframe iris_dna</strong><br><strong>cas 2/ X est la variable petal_width et Y la variable sepal_width, sur le dataframe iris_setosa</strong><br><strong>cas 3/ X est la variable petal_width et Y la variable sepal_width, sur le dataframe iris_virginica</strong><br><strong>cas 4/ X est la variable petal_width et Y la variable sepal_width, sur le dataframe iris_versicolor</strong><br>Remarque : ce sont les 4 cas que nous étudions depuis le début.<br>Donnez pour chacun des ces 4 cas les estimations de a et de b.</p><h5 id="r-4736962" data-claire-element-id="8640032">Q4:</h5><p id="r-4736955" data-claire-element-id="8639525">Voici les 4 lignes contenant des données manquantes :</p><p id="r-4736957" data-claire-element-id="8639527"><img id="r-4736956" data-claire-element-id="8639526" src="https://user.oc-static.com/upload/2017/10/24/15088532400518_4.png" alt="">[ILLUS 4.png]</p><p id="r-4736958" data-claire-element-id="8639784">Pour chaque individu, la valeur manquante se trouve soit dans la variable petal_width soit dans la variable sepal_width. Dans ces 2 cas, on peut imputer (remplir) ces valeurs grâce aux régressions linéaires que nous avons étudiées précédemment. Ces valeurs seront approchées mais fausses.<br>En supposant qu'un individu n'a jamais plus d'une valeur manquante, voici le code qui remplace les valeurs manquantes grâce aux régressions linéaires. Des bouts de code ont été supprimés et remplacés par "[...]" : à vous de les retrouver.</p><pre id="r-4736959" data-claire-element-id="8640031"><code data-claire-semantic="python">coeffs = {
+iris_versicolor = iris_dna[iris_dna["species"] == "versicolor"]</code>
+</pre>
+<p id="r-4736916" data-claire-element-id="8639486">
+Voici 2 diagrammes de dispersion :</p>
+<ul id="r-4736921" data-claire-element-id="8639491">
+<li id="r-4736918" data-claire-element-id="8639488">
+<p id="r-4736917" data-claire-element-id="8639487">
+celui de petal_width en fonction de petal_length</p>
+</li>
+<li id="r-4736920" data-claire-element-id="8639490">
+<p id="r-4736919" data-claire-element-id="8639489">
+celui de sepal_width en fonction de petal_width</p>
+</li>
+</ul>
+<p id="r-4736923" data-claire-element-id="8639493">
+<img id="r-4736922" data-claire-element-id="8639492" src="https://user.oc-static.com/upload/2017/10/24/15088529897427_1.png" alt="">
+</p>
+<p id="r-4736925" data-claire-element-id="8639495">
+<img id="r-4736924" data-claire-element-id="8639494" src="https://user.oc-static.com/upload/2017/10/24/15088529991132_2.png" alt="">
+</p>
+<p id="r-4736926" data-claire-element-id="8639496">
+[ILLUS : 1.png puis 2.png]</p>
+<h4 id="r-4736934" data-claire-element-id="8639504">
+Rendu :</h4>
+<p id="r-4736927" data-claire-element-id="8639497">
+Vous rendrez une archive .zip contenant :</p>
+<ul id="r-4736932" data-claire-element-id="8639502">
+<li id="r-4736929" data-claire-element-id="8639499">
+<p id="r-4736928" data-claire-element-id="8639498">
+le code Python ou R qui vous a permis de répondre aux questions</p>
+</li>
+<li id="r-4736931" data-claire-element-id="8639501">
+<p id="r-4736930" data-claire-element-id="8639500">
+les réponses à vos question, en français, dans un fichier au format .txt</p>
+</li>
+</ul>
+<p id="r-4736933" data-claire-element-id="8639503">
+</p>
+<h4 id="r-4736963" data-claire-element-id="8640033">
+Questions :</h4>
+<h5 id="r-4736936" data-claire-element-id="8639506">
+Q1:</h5>
+<p id="r-4736935" data-claire-element-id="8639505">
+Sur le dataframe iris_dna calculez les coefficients de corrélation linéaires suivants :<br>
+ - petal_width en fonction de petal_length<br>
+ - sepal_width en fonction de petal_width</p>
+<h5 id="r-4736950" data-claire-element-id="8639783">
+Q2:</h5>
+<p id="r-4736937" data-claire-element-id="8639507">
+Commentez les résultats de la question 1 grâce aux 2 diagrammes de dispersion donnés dans l'énoncé.</p>
+<p id="r-4736938" data-claire-element-id="8639781">
+Ensuite, gardez en tête le coefficient de corrélation linéaire de sepal_width en fonction de petal_width. Celui-ci est calculé sur l'ensemble des iris. Quand on calcule les coefficients de corrélation linéaire de ces mêmes variables, mais en les séparant par espèce, on obtient les résultats suivants :</p>
+<ul id="r-4736945" data-claire-element-id="8639515">
+<li id="r-4736940" data-claire-element-id="8639510">
+<p id="r-4736939" data-claire-element-id="8639509">
+sepal_width en fonction de petal_width sur iris_setosa : 0.753</p>
+</li>
+<li id="r-4736942" data-claire-element-id="8639512">
+<p id="r-4736941" data-claire-element-id="8639511">
+sepal_width en fonction de petal_width sur iris_virginica : 0.685</p>
+</li>
+<li id="r-4736944" data-claire-element-id="8639514">
+<p id="r-4736943" data-claire-element-id="8639513">
+sepal_width en fonction de petal_width sur iris_versicolor : 0.825</p>
+</li>
+</ul>
+<p id="r-4736946" data-claire-element-id="8639782">
+<strong>
+NB: vous n'avez pas besoin de refaire ce calcul</strong>
+<br>
+Comparez (dans votre tête) ces 3 résultats à celui obtenu sur l'ensemble des iris (question 1). <br>
+<strong>
+NB: vous n'avez pas à répondre à cette question dans votre rendu</strong>
+<br>
+Ces résultats sont mieux interprétables quand on colore les points selon l'espèce d'iris :</p>
+<p id="r-4736948" data-claire-element-id="8639518">
+<img id="r-4736947" data-claire-element-id="8639517" src="https://user.oc-static.com/upload/2017/10/24/15088531507671_3.png" alt="">
+</p>
+<p id="r-4736949" data-claire-element-id="8639519">
+[ILLUS 3.png]</p>
+<h5 id="r-4736954" data-claire-element-id="8639524">
+Q3:</h5>
+<p id="r-4736951" data-claire-element-id="8639521">
+Réalisez 4 régressions linéaires (avec le méthode des moindres carrés). Nous utiliserons la notation suivante : Y = aX + b + epsilon</p>
+<p id="r-4736952" data-claire-element-id="8639522">
+a et b sont les réels que vous devez estimer, epsilon le terme d'erreur (vous n'avez pas à vous en soucier), X et Y sont 2 variables.</p>
+<p id="r-4736953" data-claire-element-id="8639523">
+Les 4 régressions linéaires correspondent à chacun de ces 4 cas :<br>
+<strong>
+cas 1/ X est la variable petal_length et Y la variable petal_width, sur le dataframe iris_dna</strong>
+<br>
+<strong>
+cas 2/ X est la variable petal_width et Y la variable sepal_width, sur le dataframe iris_setosa</strong>
+<br>
+<strong>
+cas 3/ X est la variable petal_width et Y la variable sepal_width, sur le dataframe iris_virginica</strong>
+<br>
+<strong>
+cas 4/ X est la variable petal_width et Y la variable sepal_width, sur le dataframe iris_versicolor</strong>
+<br>
+Remarque : ce sont les 4 cas que nous étudions depuis le début.<br>
+Donnez pour chacun des ces 4 cas les estimations de a et de b.</p>
+<h5 id="r-4736962" data-claire-element-id="8640032">
+Q4:</h5>
+<p id="r-4736955" data-claire-element-id="8639525">
+Voici les 4 lignes contenant des données manquantes :</p>
+<p id="r-4736957" data-claire-element-id="8639527">
+<img id="r-4736956" data-claire-element-id="8639526" src="https://user.oc-static.com/upload/2017/10/24/15088532400518_4.png" alt="">
+[ILLUS 4.png]</p>
+<p id="r-4736958" data-claire-element-id="8639784">
+Pour chaque individu, la valeur manquante se trouve soit dans la variable petal_width soit dans la variable sepal_width. Dans ces 2 cas, on peut imputer (remplir) ces valeurs grâce aux régressions linéaires que nous avons étudiées précédemment. Ces valeurs seront approchées mais fausses.<br>
+En supposant qu'un individu n'a jamais plus d'une valeur manquante, voici le code qui remplace les valeurs manquantes grâce aux régressions linéaires. Des bouts de code ont été supprimés et remplacés par "[...]" : à vous de les retrouver.</p>
+<pre id="r-4736959" data-claire-element-id="8640031">
+<code data-claire-semantic="python">
+coeffs = {
     "cas 1" : {'a': [...] , 'b':[...]},
     "cas 2" : {'a': [...] , 'b':[...]},
     "cas 3" : {'a': [...] , 'b':[...]},
@@ -36,9 +208,71 @@ for (i,individu) in iris.iterrows(): # pour chaque individu de iris,...
         [...]
         lignes_modifiees.append(i)
         print("On a complété sepal_width par {} a partir de l'espece:{} et de petal_width={}".format(Y,espece,X))
-</code></pre><p id="r-4736960" data-claire-element-id="8639530"></p><p id="r-4736961" data-claire-element-id="8639531"></p><h3 id="r-4736982" data-claire-element-id="8640275">Corrigé</h3><h4 id="r-4736968" data-claire-element-id="8640272">Q1:</h4><p id="r-4736965" data-claire-element-id="8639535">compétence = étudier une corrélation entre 2 variables quantitatives<br>critère = Les coefficients doivent tous être corrects (à 0.1 près) :<br> - petal_width en fonction de petal_length : 0.942<br> - sepal_width en fonction de petal_length : -0.248</p><p id="r-4736966" data-claire-element-id="8640271">Remarque : peu importe le code informatique qui a permis d'arriver à ces résultats. Voici un exemple :</p><pre id="r-4736967" data-claire-element-id="8639537"><code data-claire-semantic="python">import scipy.stats as st
+</code>
+</pre>
+<p id="r-4736960" data-claire-element-id="8639530">
+</p>
+<p id="r-4736961" data-claire-element-id="8639531">
+</p>
+<h3 id="r-4736982" data-claire-element-id="8640275">
+Corrigé</h3>
+<h4 id="r-4736968" data-claire-element-id="8640272">
+Q1:</h4>
+<p id="r-4736965" data-claire-element-id="8639535">
+compétence = étudier une corrélation entre 2 variables quantitatives<br>
+critère = Les coefficients doivent tous être corrects (à 0.1 près) :<br>
+ - petal_width en fonction de petal_length : 0.942<br>
+ - sepal_width en fonction de petal_length : -0.248</p>
+<p id="r-4736966" data-claire-element-id="8640271">
+Remarque : peu importe le code informatique qui a permis d'arriver à ces résultats. Voici un exemple :</p>
+<pre id="r-4736967" data-claire-element-id="8639537">
+<code data-claire-semantic="python">
+import scipy.stats as st
 print(st.pearsonr(iris_dna["petal_length"],iris_dna["petal_width"])[0])
-print(st.pearsonr(iris_dna["petal_length"],iris_dna["sepal_width"])[0])</code></pre><h4 id="r-4736970" data-claire-element-id="8640274">Q2:</h4><p id="r-4736969" data-claire-element-id="8639539">compétence = interpréter un coefficient de corrélation linéaire<br>critère = Pour petal_width en fonction de petal_length, le coefficient de corrélation linéaire est (en valeur absolue) supérieur à celui de sepal_width en fonction de petal_length. L'étudiant a remarqué que le coefficient le plus haut se traduit graphiquement par des points très ressérés autour d'une droite (il sont presque alignés), alors que le coefficient plus bas se traduit par des points plus dispersés.</p><p id="r-4737271" data-claire-element-id="8640273">Remarque : le coefficient de -0.248 dénote un faible lien de linéarité entre sepal_width et petal_length lorsque l'on prend tout l'échantillon. cependant, quand on sépare l'échantillon par espèce, les liens de linéarité de ces 2 variables sont bien plus forts. C'est donc une analyse tri-variée, car on étudie les relations entre 3 variables : species, sepal_width et petal_length.</p><h4 id="r-4736979" data-claire-element-id="8639549">Q3:</h4><p id="r-4736971" data-claire-element-id="8639541">compétence = appliquer une régression linéaire simple<br>critère = La compétence est considérée comme validée dans l'un des deux cas :</p><ul id="r-4736976" data-claire-element-id="8639546"><li id="r-4736973" data-claire-element-id="8639543"><p id="r-4736972" data-claire-element-id="8639542">les 2 coefficients a et b du cas 1/ sont corrects à 0.1 près<br> OU</p></li><li id="r-4736975" data-claire-element-id="8639545"><p id="r-4736974" data-claire-element-id="8639544">les 6 coefficients a et b des cas 2/, 3/ et 4/ sont corrects. à 0.1 près</p></li></ul><p id="r-4736977" data-claire-element-id="8639547">NB : pas besoin que l'ensemble des 8 coefficients soient bon.<br>Voici ces coefficients :<br><strong>cas 1/ : a=0.386 , b=0.509</strong><br><strong>cas 2/ : a=1.788 , b=1.459</strong><br><strong>cas 3/ : a=0.699 , b=1.038</strong><br><strong>cas 4/ : a=0.974 , b=0.809</strong><br>Nb : peu importe le code informatique qui a permi de trouver ces résultats. En voici un exemple :</p><pre id="r-4736978" data-claire-element-id="8639548"><code data-claire-semantic="python">import scipy.stats as st
+print(st.pearsonr(iris_dna["petal_length"],iris_dna["sepal_width"])[0])</code>
+</pre>
+<h4 id="r-4736970" data-claire-element-id="8640274">
+Q2:</h4>
+<p id="r-4736969" data-claire-element-id="8639539">
+compétence = interpréter un coefficient de corrélation linéaire<br>
+critère = Pour petal_width en fonction de petal_length, le coefficient de corrélation linéaire est (en valeur absolue) supérieur à celui de sepal_width en fonction de petal_length. L'étudiant a remarqué que le coefficient le plus haut se traduit graphiquement par des points très ressérés autour d'une droite (il sont presque alignés), alors que le coefficient plus bas se traduit par des points plus dispersés.</p>
+<p id="r-4737271" data-claire-element-id="8640273">
+Remarque : le coefficient de -0.248 dénote un faible lien de linéarité entre sepal_width et petal_length lorsque l'on prend tout l'échantillon. cependant, quand on sépare l'échantillon par espèce, les liens de linéarité de ces 2 variables sont bien plus forts. C'est donc une analyse tri-variée, car on étudie les relations entre 3 variables : species, sepal_width et petal_length.</p>
+<h4 id="r-4736979" data-claire-element-id="8639549">
+Q3:</h4>
+<p id="r-4736971" data-claire-element-id="8639541">
+compétence = appliquer une régression linéaire simple<br>
+critère = La compétence est considérée comme validée dans l'un des deux cas :</p>
+<ul id="r-4736976" data-claire-element-id="8639546">
+<li id="r-4736973" data-claire-element-id="8639543">
+<p id="r-4736972" data-claire-element-id="8639542">
+les 2 coefficients a et b du cas 1/ sont corrects à 0.1 près<br>
+ OU</p>
+</li>
+<li id="r-4736975" data-claire-element-id="8639545">
+<p id="r-4736974" data-claire-element-id="8639544">
+les 6 coefficients a et b des cas 2/, 3/ et 4/ sont corrects. à 0.1 près</p>
+</li>
+</ul>
+<p id="r-4736977" data-claire-element-id="8639547">
+NB : pas besoin que l'ensemble des 8 coefficients soient bon.<br>
+Voici ces coefficients :<br>
+<strong>
+cas 1/ : a=0.386 , b=0.509</strong>
+<br>
+<strong>
+cas 2/ : a=1.788 , b=1.459</strong>
+<br>
+<strong>
+cas 3/ : a=0.699 , b=1.038</strong>
+<br>
+<strong>
+cas 4/ : a=0.974 , b=0.809</strong>
+<br>
+Nb : peu importe le code informatique qui a permi de trouver ces résultats. En voici un exemple :</p>
+<pre id="r-4736978" data-claire-element-id="8639548">
+<code data-claire-semantic="python">
+import scipy.stats as st
 cases = [(iris_dna["petal_length"],iris_dna["petal_width"]),
 (iris_setosa["petal_width"],iris_setosa["sepal_width"]),
 (iris_virginica["petal_width"],iris_virginica["sepal_width"]),
@@ -47,12 +281,27 @@ for c in cases:
 x = c[0]
 y = c[1]
 a, b, r_value, p_value, std_err = st.linregress(x, y)
-print("a={} , b={}, coeff de correl lin={}".format(a,b,r_value))</code></pre><h4 id="r-4736981" data-claire-element-id="8640041">Q4:</h4><p id="r-4736980" data-claire-element-id="8639561">compétence = prédire une valeur grâce à un modèle de régression linéaire<br>critère = le code qui remplace "[...]" est équivalent à celui-ci :</p><pre id="r-4737171" data-claire-element-id="8640035"><code data-claire-semantic="python">coeffs = {
+print("a={} , b={}, coeff de correl lin={}".format(a,b,r_value))</code>
+</pre>
+<h4 id="r-4736981" data-claire-element-id="8640041">
+Q4:</h4>
+<p id="r-4736980" data-claire-element-id="8639561">
+compétence = prédire une valeur grâce à un modèle de régression linéaire<br>
+critère = le code qui remplace "[...]" est équivalent à celui-ci :</p>
+<pre id="r-4737171" data-claire-element-id="8640035">
+<code data-claire-semantic="python">
+coeffs = {
     "cas 1" : {'a':0.386 , 'b':0.509},
     "cas 2" : {'a':1.788 , 'b':1.459},
     "cas 3" : {'a':0.699 , 'b':1.038},
     "cas 4" : {'a':0.974 , 'b':0.809}
-}</code></pre><p id="r-4737172" data-claire-element-id="8640036">NB: ces 6 premières lignes indiquent les 8 coefficients. Il n'est pas nécessaire que ces coefficients soient égaux à ceux ci-dessus, mais ils doivent absolument être cohérents à ceux donnés par l'étudiant en question 3.</p><pre id="r-4737173" data-claire-element-id="8640037"><code data-claire-semantic="python">        if espece == "setosa":
+}</code>
+</pre>
+<p id="r-4737172" data-claire-element-id="8640036">
+NB: ces 6 premières lignes indiquent les 8 coefficients. Il n'est pas nécessaire que ces coefficients soient égaux à ceux ci-dessus, mais ils doivent absolument être cohérents à ceux donnés par l'étudiant en question 3.</p>
+<pre id="r-4737173" data-claire-element-id="8640037">
+<code data-claire-semantic="python">
+        if espece == "setosa":
             a = coeffs["cas 2"]['a']
             b = coeffs["cas 2"]['b']
         elif espece == "virginica":
@@ -62,15 +311,32 @@ print("a={} , b={}, coeff de correl lin={}".format(a,b,r_value))</code></pre><h4
             a = coeffs["cas 4"]['a']
             b = coeffs["cas 4"]['b']          
         Y = a*X + b
-        iris.loc[i,"sepal_width"] = Y</code></pre><p id="r-4737174" data-claire-element-id="8640038"></p><p id="r-4737175" data-claire-element-id="8640039"></p><p id="r-4737176" data-claire-element-id="8640040"></p>
+        iris.loc[i,"sepal_width"] = Y</code>
+</pre>
+<p id="r-4737174" data-claire-element-id="8640038">
+</p>
+<p id="r-4737175" data-claire-element-id="8640039">
+</p>
+<p id="r-4737176" data-claire-element-id="8640040">
+</p>
+
 </div>
+
 <div class="js-courseSelementActions sideActions">
+
 <ul class="sideActions__container">
+
 <li>
+
 <a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+
 #
 </a>
+
 </li>
+
 </ul>
+
 </div>
+
 </div>

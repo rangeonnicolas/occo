@@ -1,14 +1,248 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/nettoyez-et-decrivez-votre-jeu-de-donnees/decouvrez-les-statistiques-vocabulaire-et-tour-dhorizon" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
+
 <div class="userContent js-userContent">
-<p id="r-4723682" data-claire-element-id="8600111">Bon, l’heure est venue de savoir de quoi on parle ! Nous définirons dans ce chapitre les concepts clés du cours, et si vous souhaitez plonger dans le vaste monde de la Data Science, je vous propose un petit tour d’horizon du domaine des statistiques, c’est cadeau !</p><h3 id="r-4723694" data-claire-element-id="8600123">Le vocabulaire</h3><p id="r-4723683" data-claire-element-id="8600112">En statistiques, on étudie des trucs, des bidules et des choses.</p><div id="r-4723685" data-claire-element-id="8600114" data-claire-semantic="question"><p id="r-4723684" data-claire-element-id="8600113">Super. Merci pour l’info ! Mais encore ?</p></div><p id="r-4723686" data-claire-element-id="8600115">Je détaille ! Ces « choses », on les appelle des <strong>individus</strong>. Ces individus peuvent être des objets, des personnes, des animaux, des mesures physiques, etc. L’individu, c’est l’<em>unité d’observation</em>.</p><p id="r-4723687" data-claire-element-id="8600116"> Des individus ont des caractéristiques : on les appelle des caractères, ou des <strong>variables</strong>.</p><p id="r-4723688" data-claire-element-id="8600117">L’ensemble des individus s’appelle la <strong>population</strong>. On note souvent sa taille <math>$\(N\)$</math> , correspondant au nombre d’individus de la population.</p><p id="r-4723689" data-claire-element-id="8600118"> Lorsque l’on sélectionne certains individus d’une population, on obtient un échantillon. Sa taille est souvent notée <math>$\(n\)$</math>.</p><aside id="r-4723691" data-claire-element-id="8600120" data-claire-semantic="information"><p id="r-4723690" data-claire-element-id="8600119">Dans ce cours, nous ne ferons pas de distinction entre les termes <strong>population</strong> et <strong>échantillon</strong>. Normalement, un échantillon est un sous-groupe d’une population ; mais ici, on considérera que l’on travaille toujours sur l’ensemble de la population. Notre échantillon sera toujours l’ensemble de la population.</p></aside><p id="r-4723692" data-claire-element-id="8600121">On utilisera souvent le terme de <strong>jeu de données</strong>, (ou <strong>dataset</strong> en anglais). Ces termes ne sont pas très précis, mais dans ce cours, ils seront équivalents à <strong>échantillon</strong>.</p><p id="r-4723693" data-claire-element-id="8600122"></p><h3 id="r-4723757" data-claire-element-id="8600381">Comment représenter un échantillon ?</h3><p id="r-4723695" data-claire-element-id="8600124">On représente en général un échantillon sous forme de tableau, où chaque ligne correspond à un individu, et chaque colonne représente une variable. Cette représentation est à l’origine du format de fichier <a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a> (comma separated values). Ce format peut être ouvert avec les logiciels tableurs (Microsoft® Excel, Openoffice Calc), et est facilement interprétable par les langages R et Python.</p><table id="r-4723700" data-claire-element-id="8600225"><tbody id="r-4723699" data-claire-element-id="8600224"><tr id="r-4723698" data-claire-element-id="8600223"><td id="r-4723697" data-claire-element-id="8600222"><p id="r-4723696" data-claire-element-id="8600221"> ILLUS</p></td></tr></tbody></table><aside id="r-4723703" data-claire-element-id="8600227" data-claire-semantic="information"><p id="r-4723702" data-claire-element-id="8600226">Cette représentation est très similaire à <a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/decouvrez-le-concept-de-relation">celle des bases de données relationnelles</a>.</p></aside><p id="r-4723704" data-claire-element-id="8600133"></p><h3 id="r-4723822" data-claire-element-id="8600395">Petit tout d’horizon des statistiques</h3><div id="r-4723816" data-claire-element-id="8600383" data-claire-semantic="question"><p id="r-4723707" data-claire-element-id="8600382">Les statistiques et le probabilités, c’est la même chose non ?</p></div><p id="r-4723708" data-claire-element-id="8600384">Eh bien… non ! Certes, ces 2 domaines sont étroitement liés, mais ils sont distincts.</p><p id="r-4723710" data-claire-element-id="8600385">Les probabilités ne sont que des lois théoriques. Elles définissent la probabilité qu’un événement arrive ou n’arrive pas. Le concept clé des probabilités, c’est la <em>variable aléatoire</em>.</p><p id="r-4723712" data-claire-element-id="8600386">Mais dès que l’on vérifie si l’événement s’est produit ou pas, alors on est dans la statistique. Cette vérification est une « <strong>réalisation</strong> », aussi appelée « <strong>observation</strong> ».</p><p id="r-4723713" data-claire-element-id="8600142">Par exemple, vous avez une urne (ou un saladier, c’est pareil) qui contient des 3 boules noires et 7 boules rouges. Les probabilités vous permettent de dire que si vous tirez une boule, vous avez 3 chances sur 10 d’en tirer une noire. C’est purement théorique. Mais dès que vous plongez réellement la main dans l’urne et que vous piochez une boule, alors c’est là où les statistiques commencent : si vous avez pioché une boule noire, un statisticien pourra dire « J’observe qu’il-elle a pioché une boule noire ». Dans le cas contraire, il dira « J’observe qu’il-elle a pioché une boule rouge ».</p><aside id="r-4723818" data-claire-element-id="8600388" data-claire-semantic="information"><p id="r-4723817" data-claire-element-id="8600387">Les urnes et les boules de couleurs sont très utilisées pour illustrer la théorie des probabilités. C’est un peu frustrant, car le seul et unique endroit où vous verrez réellement des gens piocher des boules de couleur dans une urne, c’est dans une célèbre <a href="https://www.youtube.com/watch?v=1xZ83Yi7n9g">émission</a> française diffusée en plein milieu d’après-midi. Du coup, tous les statisticiens adorent cette émission !</p></aside><p id="r-4723717" data-claire-element-id="8600389"> Les probabilité ne sont que des lois purement théoriques dans un monde abstrait : il est impossible de vérifier avec exactitude si elles sont vraies ou pas. Cependant, il est possible d’<strong>estimer</strong>, grâce à la statistique, si elles décrivent bien la réalité ou pas. Pour les boules dans l’urne, comment pouvez-vous être sûr que la probabilité <math>$\(P\)$</math> de tirer une boule noire est vraiment de <math>$\(P=3/10\)$</math> ? Après tout, cette probabilité dépend aussi de la place initiale des boules dans l’urne, et donc cette probabilité peut très bien être de 3,01/10 : comme c’est purement théorique, impossible de le vérifier avec exactitude.</p><p id="r-4723819" data-claire-element-id="8600390">Heureusement, les statistiques sont là. Elles nous permettent d’<strong>estimer</strong> la probabilité de tirer une boule noire. Il suffit d’effectuer un grand nombre de tirage (en remettant à chaque fois la boule dans l’urne), et vous verrez qu’environ 3/10 de vos tirages auront pioché une boule noire. Mais même si vous faites 1000000 tirages, il est possible que ayez tiré une boule noire pour 3,002/10 des tirages ; il reste impossible de déterminer si la probabilité est exactement de 3/10. Pour passer des probabilités aux statistiques, on utilise donc des <strong>estimateurs</strong>. Ici, la proportion de boules noires tirées est un <em>estimateur de la probabilité P</em>.</p><p id="r-4723720" data-claire-element-id="8600391">Tout ce qui traite des probabilités est dit <strong>théorique</strong>, et tout ce qui traite des observations réelles est dit <strong>empirique</strong>. Cela ne paraît pas comme ça, mais la distinction entre théorique et empirique est extrêmement importante. En effet, les formules mathématiques du domaine théorique ne peuvent pas être mélangées avec les formules mathématiques du domaine empirique. Instinctivement, on a tendance à ne pas trop faire la différence entre les 2 domaines, on se retrouve donc à écrire des formules qui mixent des variables aléatoires (qui sont théoriques) et des variables empiriques, ce qui est source de nombreuses erreurs…</p><aside id="r-4723820" data-claire-element-id="8600393" data-claire-semantic="information"><p id="r-4723721" data-claire-element-id="8600392">… et parfois de ratage d’examen de fin de semestre avec obligation de les repasser 6 mois après : c’est du vécu :(</p></aside><p id="r-4723723" data-claire-element-id="8600152">Dans ce cours, on ne parlera absolument pas de probabilités, donc nous ne nous embrouillerons pas les pinceaux !</p><p id="r-4723821" data-claire-element-id="8600394"></p><h3 id="r-4723832" data-claire-element-id="8612640">Les différents domaines de la statistiques</h3><h4 id="r-4723831" data-claire-element-id="8612633">Les statistiques descriptives</h4><p id="r-4723729" data-claire-element-id="8600396">C’est le sujet ce cours ! Il s’agit de présenter, décrire et résumer le jeu de données, à l’aide de graphiques et de mesures (moyenne, écart-type, etc.). En général, chaque graphique ou mesure est calculé à chaque fois sur 1 ou 2 variables. En effet, représenter les relations entre 2 variables sur un graphique est assez simple sur du papier ou sur un écran, car ceux-ci sont en 2 dimensions (longueur-largeur) : 1 dimension par variable.</p><figure id="r-4723830" data-claire-element-id="8612632"><img id="r-4723828" data-claire-element-id="8600541" src="https://user.oc-static.com/upload/2017/10/16/1508152103499_Linear_regression.png" alt="Graphique en 2 dimensions avec 1 axe horizontal et 1 axe vertical (source: wikipedia)"><figcaption>Graphique en 2 dimensions avec 1 axe horizontal et 1 axe vertical (source: wikipedia)</figcaption></figure><p id="r-4723732" data-claire-element-id="8600161"></p><h4 id="r-4723883" data-claire-element-id="8600547">Les statistiques exploratoires (ou analyse exploratoire de données)</h4><p id="r-4723735" data-claire-element-id="8600545"> L’analyse exploratoire de données est le prolongement des statistiques descriptives : sauf que là, on étudie plutôt les relations entre 3 variables ou plus. Représenter des graphiques avec 3, 4, 5 ou 100 dimensions n’est plus possible sur du papier à 2 dimensions. Il faut donc utiliser des techniques spéciales pour continuer à <a href="/courses/explorez-vos-donnees-avec-des-algorithmes-non-supervises">décrire et explorer les données</a>.</p><p id="r-4723882" data-claire-element-id="8600546"></p><h4 id="r-4723894" data-claire-element-id="8600574">Les statistiques inférentielles</h4><p id="r-4723740" data-claire-element-id="8600548">Ici, il s’agit d’analyser les données d’un sous-ensemble d’une population pour en déduire les caractéristiques globale de la population. Les sondages d’opinion, qui interrogent une petite proportion des habitants d’un pays pour en déduire l’opinion de l’ensemble de la population sont de la statistique inférentielle. Les statistiques inférentielles sont très liées à la théorie des probabilités. En effet, on suppose qu’une population obéit à des lois (probabilistes), puis on vérifie ces lois de manière statistique grâce à des <strong>estimateurs</strong> et des <strong>tests statistiques</strong>.</p><p id="r-4723741" data-claire-element-id="8600170"></p><h4 id="r-4723900" data-claire-element-id="8612639">La modélisation statistique</h4><p id="r-4723749" data-claire-element-id="8600575">Il s’agit d’observer les caractéristiques d’un échantillon, puis de formaliser ces observations par des règles mathématiques. Cette formalisation s’appelle un modèle probabiliste.</p><table id="r-4727911" data-claire-element-id="8612638"><tbody id="r-4727910" data-claire-element-id="8612637"><tr id="r-4727909" data-claire-element-id="8612636"><td id="r-4727908" data-claire-element-id="8612635"><p id="r-4727907" data-claire-element-id="8612634">aspect prédction, aide à la décision,</p></td></tr></tbody></table><p id="r-4724027" data-claire-element-id="8600994"></p><h3 id="r-4724029" data-claire-element-id="8600999">Aller plus loin : Plus de cours !</h3><p id="r-4723750" data-claire-element-id="8600997">Voici les cours d'Openclassroms qui correspondent à ces domaines :</p><ul id="r-4723892" data-claire-element-id="8600558"><li id="r-4723885" data-claire-element-id="8600551"><p id="r-4723884" data-claire-element-id="8600550"><a href="/courses/4525296">Probabilités</a></p></li><li id="r-4723887" data-claire-element-id="8600553"><p id="r-4723886" data-claire-element-id="8600552"><a href="/courses/4525281">Analyse exploratoire de données</a></p></li><li id="r-4723889" data-claire-element-id="8600555"><p id="r-4723888" data-claire-element-id="8600554"><a href="/courses/4525306">Statistique inférentielle</a></p></li><li id="r-4723891" data-claire-element-id="8600557"><p id="r-4723890" data-claire-element-id="8600556"><a href="/courses/4525326">Modélisation</a></p></li></ul><p id="r-4724028" data-claire-element-id="8600998"></p><h3 id="r-4724030" data-claire-element-id="8601000">Aller plus loin : Data Analyst vs Data Scientist</h3><div id="r-4723898" data-claire-element-id="8600577" data-claire-semantic="question"><p id="r-4723897" data-claire-element-id="8600576">Quid de la différence entre un Data Scientist et un Data Analyst ?</p></div><p id="r-4723899" data-claire-element-id="8600578">La frontière entre ces deux métiers est assez floue, mais on peut dire que le Data Analyst pratique les statistiques descriptives, exploratoires et inférentielles. Le Data Scientist doit maîtriser ces 3 domaines, et est également capable de modéliser des phénomènes.</p><p id="r-4723753" data-claire-element-id="8600183"></p><p id="r-4723754" data-claire-element-id="8600184"></p><p id="r-4723755" data-claire-element-id="8600185"></p><p id="r-4723756" data-claire-element-id="8600186"></p>
+
+<p id="r-4723682" data-claire-element-id="8600111">
+Bon, l’heure est venue de savoir de quoi on parle ! Nous définirons dans ce chapitre les concepts clés du cours, et si vous souhaitez plonger dans le vaste monde de la Data Science, je vous propose un petit tour d’horizon du domaine des statistiques, c’est cadeau !</p>
+<h3 id="r-4723694" data-claire-element-id="8600123">
+Le vocabulaire</h3>
+<p id="r-4723683" data-claire-element-id="8600112">
+En statistiques, on étudie des trucs, des bidules et des choses.</p>
+<div id="r-4723685" data-claire-element-id="8600114" data-claire-semantic="question">
+<p id="r-4723684" data-claire-element-id="8600113">
+Super. Merci pour l’info ! Mais encore ?</p>
 </div>
-<div class="js-courseSelementActions sideActions">
-<ul class="sideActions__container">
-<li>
-<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
-#
-</a>
+<p id="r-4723686" data-claire-element-id="8600115">
+Je détaille ! Ces « choses », on les appelle des <strong>
+individus</strong>
+. Ces individus peuvent être des objets, des personnes, des animaux, des mesures physiques, etc. L’individu, c’est l’<em>
+unité d’observation</em>
+.</p>
+<p id="r-4723687" data-claire-element-id="8600116">
+ Des individus ont des caractéristiques : on les appelle des caractères, ou des <strong>
+variables</strong>
+.</p>
+<p id="r-4723688" data-claire-element-id="8600117">
+L’ensemble des individus s’appelle la <strong>
+population</strong>
+. On note souvent sa taille <math>
+$\(N\)$</math>
+ , correspondant au nombre d’individus de la population.</p>
+<p id="r-4723689" data-claire-element-id="8600118">
+ Lorsque l’on sélectionne certains individus d’une population, on obtient un échantillon. Sa taille est souvent notée <math>
+$\(n\)$</math>
+.</p>
+<aside id="r-4723691" data-claire-element-id="8600120" data-claire-semantic="information">
+<p id="r-4723690" data-claire-element-id="8600119">
+Dans ce cours, nous ne ferons pas de distinction entre les termes <strong>
+population</strong>
+ et <strong>
+échantillon</strong>
+. Normalement, un échantillon est un sous-groupe d’une population ; mais ici, on considérera que l’on travaille toujours sur l’ensemble de la population. Notre échantillon sera toujours l’ensemble de la population.</p>
+</aside>
+<p id="r-4723692" data-claire-element-id="8600121">
+On utilisera souvent le terme de <strong>
+jeu de données</strong>
+, (ou <strong>
+dataset</strong>
+ en anglais). Ces termes ne sont pas très précis, mais dans ce cours, ils seront équivalents à <strong>
+échantillon</strong>
+.</p>
+<p id="r-4723693" data-claire-element-id="8600122">
+</p>
+<h3 id="r-4723757" data-claire-element-id="8600381">
+Comment représenter un échantillon ?</h3>
+<p id="r-4723695" data-claire-element-id="8600124">
+On représente en général un échantillon sous forme de tableau, où chaque ligne correspond à un individu, et chaque colonne représente une variable. Cette représentation est à l’origine du format de fichier <a href="https://en.wikipedia.org/wiki/Comma-separated_values">
+CSV</a>
+ (comma separated values). Ce format peut être ouvert avec les logiciels tableurs (Microsoft® Excel, Openoffice Calc), et est facilement interprétable par les langages R et Python.</p>
+<table id="r-4723700" data-claire-element-id="8600225">
+<tbody id="r-4723699" data-claire-element-id="8600224">
+<tr id="r-4723698" data-claire-element-id="8600223">
+<td id="r-4723697" data-claire-element-id="8600222">
+<p id="r-4723696" data-claire-element-id="8600221">
+ ILLUS</p>
+</td>
+</tr>
+</tbody>
+</table>
+<aside id="r-4723703" data-claire-element-id="8600227" data-claire-semantic="information">
+<p id="r-4723702" data-claire-element-id="8600226">
+Cette représentation est très similaire à <a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/decouvrez-le-concept-de-relation">
+celle des bases de données relationnelles</a>
+.</p>
+</aside>
+<p id="r-4723704" data-claire-element-id="8600133">
+</p>
+<h3 id="r-4723822" data-claire-element-id="8600395">
+Petit tout d’horizon des statistiques</h3>
+<div id="r-4723816" data-claire-element-id="8600383" data-claire-semantic="question">
+<p id="r-4723707" data-claire-element-id="8600382">
+Les statistiques et le probabilités, c’est la même chose non ?</p>
+</div>
+<p id="r-4723708" data-claire-element-id="8600384">
+Eh bien… non ! Certes, ces 2 domaines sont étroitement liés, mais ils sont distincts.</p>
+<p id="r-4723710" data-claire-element-id="8600385">
+Les probabilités ne sont que des lois théoriques. Elles définissent la probabilité qu’un événement arrive ou n’arrive pas. Le concept clé des probabilités, c’est la <em>
+variable aléatoire</em>
+.</p>
+<p id="r-4723712" data-claire-element-id="8600386">
+Mais dès que l’on vérifie si l’événement s’est produit ou pas, alors on est dans la statistique. Cette vérification est une « <strong>
+réalisation</strong>
+ », aussi appelée « <strong>
+observation</strong>
+ ».</p>
+<p id="r-4723713" data-claire-element-id="8600142">
+Par exemple, vous avez une urne (ou un saladier, c’est pareil) qui contient des 3 boules noires et 7 boules rouges. Les probabilités vous permettent de dire que si vous tirez une boule, vous avez 3 chances sur 10 d’en tirer une noire. C’est purement théorique. Mais dès que vous plongez réellement la main dans l’urne et que vous piochez une boule, alors c’est là où les statistiques commencent : si vous avez pioché une boule noire, un statisticien pourra dire « J’observe qu’il-elle a pioché une boule noire ». Dans le cas contraire, il dira « J’observe qu’il-elle a pioché une boule rouge ».</p>
+<aside id="r-4723818" data-claire-element-id="8600388" data-claire-semantic="information">
+<p id="r-4723817" data-claire-element-id="8600387">
+Les urnes et les boules de couleurs sont très utilisées pour illustrer la théorie des probabilités. C’est un peu frustrant, car le seul et unique endroit où vous verrez réellement des gens piocher des boules de couleur dans une urne, c’est dans une célèbre <a href="https://www.youtube.com/watch?v=1xZ83Yi7n9g">
+émission</a>
+ française diffusée en plein milieu d’après-midi. Du coup, tous les statisticiens adorent cette émission !</p>
+</aside>
+<p id="r-4723717" data-claire-element-id="8600389">
+ Les probabilité ne sont que des lois purement théoriques dans un monde abstrait : il est impossible de vérifier avec exactitude si elles sont vraies ou pas. Cependant, il est possible d’<strong>
+estimer</strong>
+, grâce à la statistique, si elles décrivent bien la réalité ou pas. Pour les boules dans l’urne, comment pouvez-vous être sûr que la probabilité <math>
+$\(P\)$</math>
+ de tirer une boule noire est vraiment de <math>
+$\(P=3/10\)$</math>
+ ? Après tout, cette probabilité dépend aussi de la place initiale des boules dans l’urne, et donc cette probabilité peut très bien être de 3,01/10 : comme c’est purement théorique, impossible de le vérifier avec exactitude.</p>
+<p id="r-4723819" data-claire-element-id="8600390">
+Heureusement, les statistiques sont là. Elles nous permettent d’<strong>
+estimer</strong>
+ la probabilité de tirer une boule noire. Il suffit d’effectuer un grand nombre de tirage (en remettant à chaque fois la boule dans l’urne), et vous verrez qu’environ 3/10 de vos tirages auront pioché une boule noire. Mais même si vous faites 1000000 tirages, il est possible que ayez tiré une boule noire pour 3,002/10 des tirages ; il reste impossible de déterminer si la probabilité est exactement de 3/10. Pour passer des probabilités aux statistiques, on utilise donc des <strong>
+estimateurs</strong>
+. Ici, la proportion de boules noires tirées est un <em>
+estimateur de la probabilité P</em>
+.</p>
+<p id="r-4723720" data-claire-element-id="8600391">
+Tout ce qui traite des probabilités est dit <strong>
+théorique</strong>
+, et tout ce qui traite des observations réelles est dit <strong>
+empirique</strong>
+. Cela ne paraît pas comme ça, mais la distinction entre théorique et empirique est extrêmement importante. En effet, les formules mathématiques du domaine théorique ne peuvent pas être mélangées avec les formules mathématiques du domaine empirique. Instinctivement, on a tendance à ne pas trop faire la différence entre les 2 domaines, on se retrouve donc à écrire des formules qui mixent des variables aléatoires (qui sont théoriques) et des variables empiriques, ce qui est source de nombreuses erreurs…</p>
+<aside id="r-4723820" data-claire-element-id="8600393" data-claire-semantic="information">
+<p id="r-4723721" data-claire-element-id="8600392">
+… et parfois de ratage d’examen de fin de semestre avec obligation de les repasser 6 mois après : c’est du vécu :(</p>
+</aside>
+<p id="r-4723723" data-claire-element-id="8600152">
+Dans ce cours, on ne parlera absolument pas de probabilités, donc nous ne nous embrouillerons pas les pinceaux !</p>
+<p id="r-4723821" data-claire-element-id="8600394">
+</p>
+<h3 id="r-4723832" data-claire-element-id="8612640">
+Les différents domaines de la statistiques</h3>
+<h4 id="r-4723831" data-claire-element-id="8612633">
+Les statistiques descriptives</h4>
+<p id="r-4723729" data-claire-element-id="8600396">
+C’est le sujet ce cours ! Il s’agit de présenter, décrire et résumer le jeu de données, à l’aide de graphiques et de mesures (moyenne, écart-type, etc.). En général, chaque graphique ou mesure est calculé à chaque fois sur 1 ou 2 variables. En effet, représenter les relations entre 2 variables sur un graphique est assez simple sur du papier ou sur un écran, car ceux-ci sont en 2 dimensions (longueur-largeur) : 1 dimension par variable.</p>
+<figure id="r-4723830" data-claire-element-id="8612632">
+<img id="r-4723828" data-claire-element-id="8600541" src="https://user.oc-static.com/upload/2017/10/16/1508152103499_Linear_regression.png" alt="Graphique en 2 dimensions avec 1 axe horizontal et 1 axe vertical (source: wikipedia)">
+<figcaption>
+Graphique en 2 dimensions avec 1 axe horizontal et 1 axe vertical (source: wikipedia)</figcaption>
+</figure>
+<p id="r-4723732" data-claire-element-id="8600161">
+</p>
+<h4 id="r-4723883" data-claire-element-id="8600547">
+Les statistiques exploratoires (ou analyse exploratoire de données)</h4>
+<p id="r-4723735" data-claire-element-id="8600545">
+ L’analyse exploratoire de données est le prolongement des statistiques descriptives : sauf que là, on étudie plutôt les relations entre 3 variables ou plus. Représenter des graphiques avec 3, 4, 5 ou 100 dimensions n’est plus possible sur du papier à 2 dimensions. Il faut donc utiliser des techniques spéciales pour continuer à <a href="/courses/explorez-vos-donnees-avec-des-algorithmes-non-supervises">
+décrire et explorer les données</a>
+.</p>
+<p id="r-4723882" data-claire-element-id="8600546">
+</p>
+<h4 id="r-4723894" data-claire-element-id="8600574">
+Les statistiques inférentielles</h4>
+<p id="r-4723740" data-claire-element-id="8600548">
+Ici, il s’agit d’analyser les données d’un sous-ensemble d’une population pour en déduire les caractéristiques globale de la population. Les sondages d’opinion, qui interrogent une petite proportion des habitants d’un pays pour en déduire l’opinion de l’ensemble de la population sont de la statistique inférentielle. Les statistiques inférentielles sont très liées à la théorie des probabilités. En effet, on suppose qu’une population obéit à des lois (probabilistes), puis on vérifie ces lois de manière statistique grâce à des <strong>
+estimateurs</strong>
+ et des <strong>
+tests statistiques</strong>
+.</p>
+<p id="r-4723741" data-claire-element-id="8600170">
+</p>
+<h4 id="r-4723900" data-claire-element-id="8612639">
+La modélisation statistique</h4>
+<p id="r-4723749" data-claire-element-id="8600575">
+Il s’agit d’observer les caractéristiques d’un échantillon, puis de formaliser ces observations par des règles mathématiques. Cette formalisation s’appelle un modèle probabiliste.</p>
+<table id="r-4727911" data-claire-element-id="8612638">
+<tbody id="r-4727910" data-claire-element-id="8612637">
+<tr id="r-4727909" data-claire-element-id="8612636">
+<td id="r-4727908" data-claire-element-id="8612635">
+<p id="r-4727907" data-claire-element-id="8612634">
+aspect prédction, aide à la décision,</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p id="r-4724027" data-claire-element-id="8600994">
+</p>
+<h3 id="r-4724029" data-claire-element-id="8600999">
+Aller plus loin : Plus de cours !</h3>
+<p id="r-4723750" data-claire-element-id="8600997">
+Voici les cours d'Openclassroms qui correspondent à ces domaines :</p>
+<ul id="r-4723892" data-claire-element-id="8600558">
+<li id="r-4723885" data-claire-element-id="8600551">
+<p id="r-4723884" data-claire-element-id="8600550">
+<a href="/courses/4525296">
+Probabilités</a>
+</p>
+</li>
+<li id="r-4723887" data-claire-element-id="8600553">
+<p id="r-4723886" data-claire-element-id="8600552">
+<a href="/courses/4525281">
+Analyse exploratoire de données</a>
+</p>
+</li>
+<li id="r-4723889" data-claire-element-id="8600555">
+<p id="r-4723888" data-claire-element-id="8600554">
+<a href="/courses/4525306">
+Statistique inférentielle</a>
+</p>
+</li>
+<li id="r-4723891" data-claire-element-id="8600557">
+<p id="r-4723890" data-claire-element-id="8600556">
+<a href="/courses/4525326">
+Modélisation</a>
+</p>
 </li>
 </ul>
+<p id="r-4724028" data-claire-element-id="8600998">
+</p>
+<h3 id="r-4724030" data-claire-element-id="8601000">
+Aller plus loin : Data Analyst vs Data Scientist</h3>
+<div id="r-4723898" data-claire-element-id="8600577" data-claire-semantic="question">
+<p id="r-4723897" data-claire-element-id="8600576">
+Quid de la différence entre un Data Scientist et un Data Analyst ?</p>
 </div>
+<p id="r-4723899" data-claire-element-id="8600578">
+La frontière entre ces deux métiers est assez floue, mais on peut dire que le Data Analyst pratique les statistiques descriptives, exploratoires et inférentielles. Le Data Scientist doit maîtriser ces 3 domaines, et est également capable de modéliser des phénomènes.</p>
+<p id="r-4723753" data-claire-element-id="8600183">
+</p>
+<p id="r-4723754" data-claire-element-id="8600184">
+</p>
+<p id="r-4723755" data-claire-element-id="8600185">
+</p>
+<p id="r-4723756" data-claire-element-id="8600186">
+</p>
+
+</div>
+
+<div class="js-courseSelementActions sideActions">
+
+<ul class="sideActions__container">
+
+<li>
+
+<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+
+#
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
 </div>

@@ -1,33 +1,799 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/apprehendez-le-fenetrage-avec-over-et-partition-by" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
+
 <div class="userContent js-userContent">
-<p id="r-4705631" data-claire-element-id="8548801">Les fonctions de fenêtrage sont souvent utilisées pour calculer (entre autres) :</p><ul id="r-4705636" data-claire-element-id="8548806"><li id="r-4705633" data-claire-element-id="8548803"><p id="r-4705632" data-claire-element-id="8548802">des sommes cumulées,</p></li><li id="r-4705635" data-claire-element-id="8548805"><p id="r-4705634" data-claire-element-id="8548804">des numéros de rang, lorsque l'on classe des lignes.</p></li></ul><p id="r-4705637" data-claire-element-id="8548851">Vous allez voir, il y a beaucoup de similitudes entre les agrégations et le fenêtrage. N'hésitez-donc pas à vous <a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/noubliez-pas-lagregation">rafraîchir la mémoire</a>.</p><aside id="r-4705657" data-claire-element-id="8549432" data-claire-semantic="information"><p id="r-4705656" data-claire-element-id="8549431">MySQL ne gère pas les fonctions de fenêtrage , pas besoin de les tester dans la console. :p Préférez plutôt ici PostgreSQL ou Oracle.</p></aside><video id="r-4709440" data-claire-element-id="8559351" src="https://vimeo.com/233481111"><a href="https://vimeo.com/233481111">https://vimeo.com/233481111</a></video><h3 id="r-4619743" data-claire-element-id="8549444">Réfléchissons...</h3><aside id="r-4619761" data-claire-element-id="8541373" data-claire-semantic="error"><p id="r-4563081" data-claire-element-id="8541372"><a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/agregez-vos-donnees-grace-au-group-by#r-4616745">Nous avions vu</a> que la requête suivante renvoie à une erreur, car <code data-claire-semantic="text">incorporation_date</code> renvoie autant de lignes qu'en a <code data-claire-semantic="text">entity</code>, mais <code data-claire-semantic="text">min(id)</code> ne renvoie qu'une seule valeur :</p><pre id="r-4619806" data-claire-element-id="8333832"><code data-claire-semantic="sql">SELECT incorporation_date, min(id) FROM entity ;</code></pre></aside><p id="r-4563083" data-claire-element-id="8541374">Mettons-y un petit coup de baguette magique... :magicien:</p><pre id="r-4563084" data-claire-element-id="8185535"><code data-claire-semantic="sql">SELECT incorporation_date, min(id) OVER() FROM entity ;</code></pre><p id="r-4705878" data-claire-element-id="8549443"><img id="r-4705877" data-claire-element-id="8549442" src="https://user.oc-static.com/upload/2017/10/06/15072745697386_OVER.png" alt=""></p><p id="r-4563090" data-claire-element-id="8541375">Tadaaam ! Il n'y a plus d'erreur ! Le fait d'ajouter <code data-claire-semantic="text">OVER()</code> a pour effet que la fonction d'agrégation <code data-claire-semantic="text">min()</code> renvoie autant de lignes que n'en a <strong>entity</strong>, ce qui n'est pas le comportement classique des fonctions d'agrégation !</p><aside id="r-4619822" data-claire-element-id="8541377" data-claire-semantic="warning"><p id="r-4619821" data-claire-element-id="8541376">Le comportement de la fonction <code data-claire-semantic="text">min</code> a ici été modifié par <code data-claire-semantic="text">OVER</code>, et tout est une question de nombre de lignes. C'est ce que nous allons voir plus bas.</p></aside><p id="r-4619823" data-claire-element-id="8333873"> </p><h3 id="r-4619858" data-claire-element-id="8541435">Le fenêtrage</h3><p id="r-4619824" data-claire-element-id="8333875">Oui oui, il y a bien des similitudes entre les agrégations et le fenêtrage. Tous deux se réalisent en 2 étapes, et seule la seconde étape diffère :</p><table id="r-4619856" data-claire-element-id="8541389"><thead id="r-4619832" data-claire-element-id="8334036"><tr id="r-4619831" data-claire-element-id="8334035"><td id="r-4619826" data-claire-element-id="8333877"><p id="r-4619825" data-claire-element-id="8333876"> </p></td><td id="r-4619828" data-claire-element-id="8334032"><p id="r-4619827" data-claire-element-id="8334031"><strong>Agrégation</strong></p></td><td id="r-4619830" data-claire-element-id="8334034"><p id="r-4619829" data-claire-element-id="8334033"><strong>Fenêtrage</strong></p></td></tr></thead><tbody id="r-4619855" data-claire-element-id="8541388"><tr id="r-4619847" data-claire-element-id="8334007"><td id="r-4619840" data-claire-element-id="8334002"><p id="r-4619881" data-claire-element-id="8334001"><strong>Etape 1</strong></p></td><td id="r-4619843" data-claire-element-id="8334004"><p id="r-4619882" data-claire-element-id="8334003">Partitionnement selon les <strong>attributs de partitionnement</strong></p></td><td id="r-4619846" data-claire-element-id="8334006"><p id="r-4619883" data-claire-element-id="8334005">Partitionnement selon les <strong>attributs de partitionnement</strong></p></td></tr><tr id="r-4619887" data-claire-element-id="8541384"><td id="r-4619884" data-claire-element-id="8334009"><p id="r-4619839" data-claire-element-id="8334008"><strong>Etape 2</strong></p></td><td id="r-4619885" data-claire-element-id="8334010"><p id="r-4619842" data-claire-element-id="8333974">Application d'une <strong>fonction d'agrégation</strong></p></td><td id="r-4619886" data-claire-element-id="8541383"><p id="r-4619844" data-claire-element-id="8541379">Application...</p><ul id="r-4619875" data-claire-element-id="8541382"><li id="r-4619872" data-claire-element-id="8333952"><p id="r-4619871" data-claire-element-id="8333951">d'une <strong>fonction d'agrégation</strong> avec un comportement modifié</p></li><li id="r-4619874" data-claire-element-id="8541381"><p id="r-4619873" data-claire-element-id="8541380"><code data-claire-semantic="text">OU</code> d'une <strong>fonction de rang</strong>.</p></li></ul></td></tr><tr id="r-4619854" data-claire-element-id="8541387"><td id="r-4619849" data-claire-element-id="8334017"><p id="r-4619848" data-claire-element-id="8334016"><strong>Résultat</strong></p></td><td id="r-4619851" data-claire-element-id="8334019"><p id="r-4619850" data-claire-element-id="8334018"> Autant de lignes que d'agrégats</p></td><td id="r-4619853" data-claire-element-id="8541386"><p id="r-4619852" data-claire-element-id="8541385">Autant de lignes que la table d'origine</p></td></tr></tbody></table><p id="r-4619891" data-claire-element-id="8541432">Pour appliquer un fenêtrage, il y a 2 cas différents, qui ont chacun des comportements... différents ! Voici les 2 syntaxes correspondantes :</p><ul id="r-4619896" data-claire-element-id="8334043"><li id="r-4619893" data-claire-element-id="8334040"><p id="r-4619892" data-claire-element-id="8334039"><code data-claire-semantic="text">OVER (PARTITION BY ...)</code></p></li><li id="r-4619895" data-claire-element-id="8334042"><p id="r-4619894" data-claire-element-id="8334041"><code data-claire-semantic="text">OVER (PARTITION BY ... ORDER BY ...)</code></p></li></ul><aside id="r-4619901" data-claire-element-id="8541434" data-claire-semantic="information"><p id="r-4619857" data-claire-element-id="8541433"> Nous allons étudier le fonctionnement de ces deux syntaxes ci-dessous. Mais bon... C'est le dernier chapitre du cours... et vous êtes peut-être fatigués et pressés de finir... :ange: . Alors si vous voulez juste savoir comment faire une somme cumulée et calculer un rang, je vous autorise à passer les 2 sections qui suivent.</p></aside><p id="r-4619902" data-claire-element-id="8334053"> </p><h3 id="r-4563130" data-claire-element-id="8541471">OVER (PARTITION BY...)</h3><p id="r-4563127" data-claire-element-id="8201413">Analysons ces deux requêtes, qui utilisent la table <strong>nb_entities</strong> du chapitre précédent :</p><pre id="r-4563156" data-claire-element-id="8185701"><code data-claire-semantic="sql">-- REQUETE n°1
+
+<p id="r-4705631" data-claire-element-id="8548801">
+Les fonctions de fenêtrage sont souvent utilisées pour calculer (entre autres) :</p>
+<ul id="r-4705636" data-claire-element-id="8548806">
+<li id="r-4705633" data-claire-element-id="8548803">
+<p id="r-4705632" data-claire-element-id="8548802">
+des sommes cumulées,</p>
+</li>
+<li id="r-4705635" data-claire-element-id="8548805">
+<p id="r-4705634" data-claire-element-id="8548804">
+des numéros de rang, lorsque l'on classe des lignes.</p>
+</li>
+</ul>
+<p id="r-4705637" data-claire-element-id="8548851">
+Vous allez voir, il y a beaucoup de similitudes entre les agrégations et le fenêtrage. N'hésitez-donc pas à vous <a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/noubliez-pas-lagregation">
+rafraîchir la mémoire</a>
+.</p>
+<aside id="r-4705657" data-claire-element-id="8549432" data-claire-semantic="information">
+<p id="r-4705656" data-claire-element-id="8549431">
+MySQL ne gère pas les fonctions de fenêtrage , pas besoin de les tester dans la console. :p Préférez plutôt ici PostgreSQL ou Oracle.</p>
+</aside>
+<video id="r-4709440" data-claire-element-id="8559351" src="https://vimeo.com/233481111">
+<a href="https://vimeo.com/233481111">
+https://vimeo.com/233481111</a>
+</video>
+<h3 id="r-4619743" data-claire-element-id="8549444">
+Réfléchissons...</h3>
+<aside id="r-4619761" data-claire-element-id="8541373" data-claire-semantic="error">
+<p id="r-4563081" data-claire-element-id="8541372">
+<a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/agregez-vos-donnees-grace-au-group-by#r-4616745">
+Nous avions vu</a>
+ que la requête suivante renvoie à une erreur, car <code data-claire-semantic="text">
+incorporation_date</code>
+ renvoie autant de lignes qu'en a <code data-claire-semantic="text">
+entity</code>
+, mais <code data-claire-semantic="text">
+min(id)</code>
+ ne renvoie qu'une seule valeur :</p>
+<pre id="r-4619806" data-claire-element-id="8333832">
+<code data-claire-semantic="sql">
+SELECT incorporation_date, min(id) FROM entity ;</code>
+</pre>
+</aside>
+<p id="r-4563083" data-claire-element-id="8541374">
+Mettons-y un petit coup de baguette magique... :magicien:</p>
+<pre id="r-4563084" data-claire-element-id="8185535">
+<code data-claire-semantic="sql">
+SELECT incorporation_date, min(id) OVER() FROM entity ;</code>
+</pre>
+<p id="r-4705878" data-claire-element-id="8549443">
+<img id="r-4705877" data-claire-element-id="8549442" src="https://user.oc-static.com/upload/2017/10/06/15072745697386_OVER.png" alt="">
+</p>
+<p id="r-4563090" data-claire-element-id="8541375">
+Tadaaam ! Il n'y a plus d'erreur ! Le fait d'ajouter <code data-claire-semantic="text">
+OVER()</code>
+ a pour effet que la fonction d'agrégation <code data-claire-semantic="text">
+min()</code>
+ renvoie autant de lignes que n'en a <strong>
+entity</strong>
+, ce qui n'est pas le comportement classique des fonctions d'agrégation !</p>
+<aside id="r-4619822" data-claire-element-id="8541377" data-claire-semantic="warning">
+<p id="r-4619821" data-claire-element-id="8541376">
+Le comportement de la fonction <code data-claire-semantic="text">
+min</code>
+ a ici été modifié par <code data-claire-semantic="text">
+OVER</code>
+, et tout est une question de nombre de lignes. C'est ce que nous allons voir plus bas.</p>
+</aside>
+<p id="r-4619823" data-claire-element-id="8333873">
+ </p>
+<h3 id="r-4619858" data-claire-element-id="8541435">
+Le fenêtrage</h3>
+<p id="r-4619824" data-claire-element-id="8333875">
+Oui oui, il y a bien des similitudes entre les agrégations et le fenêtrage. Tous deux se réalisent en 2 étapes, et seule la seconde étape diffère :</p>
+<table id="r-4619856" data-claire-element-id="8541389">
+<thead id="r-4619832" data-claire-element-id="8334036">
+<tr id="r-4619831" data-claire-element-id="8334035">
+<td id="r-4619826" data-claire-element-id="8333877">
+<p id="r-4619825" data-claire-element-id="8333876">
+ </p>
+</td>
+<td id="r-4619828" data-claire-element-id="8334032">
+<p id="r-4619827" data-claire-element-id="8334031">
+<strong>
+Agrégation</strong>
+</p>
+</td>
+<td id="r-4619830" data-claire-element-id="8334034">
+<p id="r-4619829" data-claire-element-id="8334033">
+<strong>
+Fenêtrage</strong>
+</p>
+</td>
+</tr>
+</thead>
+<tbody id="r-4619855" data-claire-element-id="8541388">
+<tr id="r-4619847" data-claire-element-id="8334007">
+<td id="r-4619840" data-claire-element-id="8334002">
+<p id="r-4619881" data-claire-element-id="8334001">
+<strong>
+Etape 1</strong>
+</p>
+</td>
+<td id="r-4619843" data-claire-element-id="8334004">
+<p id="r-4619882" data-claire-element-id="8334003">
+Partitionnement selon les <strong>
+attributs de partitionnement</strong>
+</p>
+</td>
+<td id="r-4619846" data-claire-element-id="8334006">
+<p id="r-4619883" data-claire-element-id="8334005">
+Partitionnement selon les <strong>
+attributs de partitionnement</strong>
+</p>
+</td>
+</tr>
+<tr id="r-4619887" data-claire-element-id="8541384">
+<td id="r-4619884" data-claire-element-id="8334009">
+<p id="r-4619839" data-claire-element-id="8334008">
+<strong>
+Etape 2</strong>
+</p>
+</td>
+<td id="r-4619885" data-claire-element-id="8334010">
+<p id="r-4619842" data-claire-element-id="8333974">
+Application d'une <strong>
+fonction d'agrégation</strong>
+</p>
+</td>
+<td id="r-4619886" data-claire-element-id="8541383">
+<p id="r-4619844" data-claire-element-id="8541379">
+Application...</p>
+<ul id="r-4619875" data-claire-element-id="8541382">
+<li id="r-4619872" data-claire-element-id="8333952">
+<p id="r-4619871" data-claire-element-id="8333951">
+d'une <strong>
+fonction d'agrégation</strong>
+ avec un comportement modifié</p>
+</li>
+<li id="r-4619874" data-claire-element-id="8541381">
+<p id="r-4619873" data-claire-element-id="8541380">
+<code data-claire-semantic="text">
+OU</code>
+ d'une <strong>
+fonction de rang</strong>
+.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr id="r-4619854" data-claire-element-id="8541387">
+<td id="r-4619849" data-claire-element-id="8334017">
+<p id="r-4619848" data-claire-element-id="8334016">
+<strong>
+Résultat</strong>
+</p>
+</td>
+<td id="r-4619851" data-claire-element-id="8334019">
+<p id="r-4619850" data-claire-element-id="8334018">
+ Autant de lignes que d'agrégats</p>
+</td>
+<td id="r-4619853" data-claire-element-id="8541386">
+<p id="r-4619852" data-claire-element-id="8541385">
+Autant de lignes que la table d'origine</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p id="r-4619891" data-claire-element-id="8541432">
+Pour appliquer un fenêtrage, il y a 2 cas différents, qui ont chacun des comportements... différents ! Voici les 2 syntaxes correspondantes :</p>
+<ul id="r-4619896" data-claire-element-id="8334043">
+<li id="r-4619893" data-claire-element-id="8334040">
+<p id="r-4619892" data-claire-element-id="8334039">
+<code data-claire-semantic="text">
+OVER (PARTITION BY ...)</code>
+</p>
+</li>
+<li id="r-4619895" data-claire-element-id="8334042">
+<p id="r-4619894" data-claire-element-id="8334041">
+<code data-claire-semantic="text">
+OVER (PARTITION BY ... ORDER BY ...)</code>
+</p>
+</li>
+</ul>
+<aside id="r-4619901" data-claire-element-id="8541434" data-claire-semantic="information">
+<p id="r-4619857" data-claire-element-id="8541433">
+ Nous allons étudier le fonctionnement de ces deux syntaxes ci-dessous. Mais bon... C'est le dernier chapitre du cours... et vous êtes peut-être fatigués et pressés de finir... :ange: . Alors si vous voulez juste savoir comment faire une somme cumulée et calculer un rang, je vous autorise à passer les 2 sections qui suivent.</p>
+</aside>
+<p id="r-4619902" data-claire-element-id="8334053">
+ </p>
+<h3 id="r-4563130" data-claire-element-id="8541471">
+OVER (PARTITION BY...)</h3>
+<p id="r-4563127" data-claire-element-id="8201413">
+Analysons ces deux requêtes, qui utilisent la table <strong>
+nb_entities</strong>
+ du chapitre précédent :</p>
+<pre id="r-4563156" data-claire-element-id="8185701">
+<code data-claire-semantic="sql">
+-- REQUETE n°1
 SELECT sum(cnt_entities) FROM nb_entities GROUP BY id_intermediary ;
 
 -- REQUETE n°2
-SELECT sum(cnt_entities) OVER (PARTITION BY id_intermediary) FROM nb_entities ;</code></pre><p id="r-4563129" data-claire-element-id="8541436">La requête 2 fonctionne presque comme l'agrégation de la requête 1 ; mais la seule chose qui diffère, c'est ce que retourne <code data-claire-semantic="text">sum</code>.</p><p id="r-4563158" data-claire-element-id="8541437">Dans la requête 2, si <code data-claire-semantic="text">sum</code> reçoit en entrée la liste de valeurs <code data-claire-semantic="text">[10, 1, 5]</code>, elle ne renverra pas <code data-claire-semantic="text">16</code> mais plutôt <code data-claire-semantic="text">[16, 16, 16]</code>.</p><p id="r-4563159" data-claire-element-id="8541438">Dans les deux cas, on calcule la somme des sociétés créées par chaque intermédiaire. Mais voici comment le résultat est présenté avec la fonction de fenêtrage :</p><pre id="r-4563201" data-claire-element-id="8185971"><code data-claire-semantic="sql">SELECT id_intermediary, 
+SELECT sum(cnt_entities) OVER (PARTITION BY id_intermediary) FROM nb_entities ;</code>
+</pre>
+<p id="r-4563129" data-claire-element-id="8541436">
+La requête 2 fonctionne presque comme l'agrégation de la requête 1 ; mais la seule chose qui diffère, c'est ce que retourne <code data-claire-semantic="text">
+sum</code>
+.</p>
+<p id="r-4563158" data-claire-element-id="8541437">
+Dans la requête 2, si <code data-claire-semantic="text">
+sum</code>
+ reçoit en entrée la liste de valeurs <code data-claire-semantic="text">
+[10, 1, 5]</code>
+, elle ne renverra pas <code data-claire-semantic="text">
+16</code>
+ mais plutôt <code data-claire-semantic="text">
+[16, 16, 16]</code>
+.</p>
+<p id="r-4563159" data-claire-element-id="8541438">
+Dans les deux cas, on calcule la somme des sociétés créées par chaque intermédiaire. Mais voici comment le résultat est présenté avec la fonction de fenêtrage :</p>
+<pre id="r-4563201" data-claire-element-id="8185971">
+<code data-claire-semantic="sql">
+SELECT id_intermediary, 
     jurisdiction, 
     cnt_entities, 
     sum(cnt_entities) OVER (PARTITION BY id_intermediary) AS entities_by_intermediary 
-FROM nb_entities ;</code></pre><table id="r-4563199" data-claire-element-id="8541470"><tbody id="r-4563198" data-claire-element-id="8541469"><tr id="r-4563170" data-claire-element-id="8541441"><td id="r-4563163" data-claire-element-id="8185783"><p id="r-4563202" data-claire-element-id="8185782"><strong>id_intermediary</strong></p></td><td id="r-4563165" data-claire-element-id="8541440"><p id="r-4563164" data-claire-element-id="8541439"><strong>jurisdiction</strong></p></td><td id="r-4563167" data-claire-element-id="8185787"><p id="r-4563166" data-claire-element-id="8185786"><strong>cnt_entities</strong></p></td><td id="r-4563169" data-claire-element-id="8185789"><p id="r-4563168" data-claire-element-id="8185788"><strong>entities_by_intermediary </strong></p></td></tr><tr id="r-4563179" data-claire-element-id="8541450"><td id="r-4563172" data-claire-element-id="8541443"><p id="r-4563171" data-claire-element-id="8541442">4000</p></td><td id="r-4563174" data-claire-element-id="8541445"><p id="r-4563173" data-claire-element-id="8541444">SAM</p></td><td id="r-4563176" data-claire-element-id="8541447"><p id="r-4563175" data-claire-element-id="8541446">10</p></td><td id="r-4563178" data-claire-element-id="8541449"><p id="r-4563177" data-claire-element-id="8541448">16</p></td></tr><tr id="r-4563188" data-claire-element-id="8541459"><td id="r-4563181" data-claire-element-id="8541452"><p id="r-4563180" data-claire-element-id="8541451">4000</p></td><td id="r-4563183" data-claire-element-id="8541454"><p id="r-4563182" data-claire-element-id="8541453">PMA</p></td><td id="r-4563185" data-claire-element-id="8541456"><p id="r-4563184" data-claire-element-id="8541455">1</p></td><td id="r-4563187" data-claire-element-id="8541458"><p id="r-4563186" data-claire-element-id="8541457">16</p></td></tr><tr id="r-4563197" data-claire-element-id="8541468"><td id="r-4563190" data-claire-element-id="8541461"><p id="r-4563189" data-claire-element-id="8541460">4000</p></td><td id="r-4563192" data-claire-element-id="8541463"><p id="r-4563191" data-claire-element-id="8541462">CYP</p></td><td id="r-4563194" data-claire-element-id="8541465"><p id="r-4563193" data-claire-element-id="8541464">5</p></td><td id="r-4563196" data-claire-element-id="8541467"><p id="r-4563195" data-claire-element-id="8541466">16</p></td></tr><tr id="r-4563214" data-claire-element-id="8185863"><td id="r-4563207" data-claire-element-id="8185829"><p id="r-4563206" data-claire-element-id="8185828">4001</p></td><td id="r-4563209" data-claire-element-id="8185831"><p id="r-4563208" data-claire-element-id="8185830">SAM</p></td><td id="r-4563211" data-claire-element-id="8185833"><p id="r-4563210" data-claire-element-id="8185832">3</p></td><td id="r-4563213" data-claire-element-id="8185862"><p id="r-4563212" data-claire-element-id="8185861">5</p></td></tr><tr id="r-4563234" data-claire-element-id="8185872"><td id="r-4563227" data-claire-element-id="8185865"><p id="r-4563226" data-claire-element-id="8185864">4001</p></td><td id="r-4563229" data-claire-element-id="8185867"><p id="r-4563228" data-claire-element-id="8185866">NEV</p></td><td id="r-4563231" data-claire-element-id="8185869"><p id="r-4563230" data-claire-element-id="8185868">2</p></td><td id="r-4563233" data-claire-element-id="8185871"><p id="r-4563232" data-claire-element-id="8185870">5</p></td></tr><tr id="r-4563223" data-claire-element-id="8185845"><td id="r-4563216" data-claire-element-id="8185838"><p id="r-4563215" data-claire-element-id="8185837">[...]</p></td><td id="r-4563218" data-claire-element-id="8185840"><p id="r-4563217" data-claire-element-id="8185839">[...]</p></td><td id="r-4563220" data-claire-element-id="8185842"><p id="r-4563219" data-claire-element-id="8185841">[...]</p></td><td id="r-4563222" data-claire-element-id="8185844"><p id="r-4563221" data-claire-element-id="8185843">[...]</p></td></tr></tbody></table><p id="r-4563261" data-claire-element-id="8185933"> </p><h3 id="r-4563283" data-claire-element-id="8541489">OVER (PARTITION BY... ORDER BY...)</h3><h4 id="r-4619977" data-claire-element-id="8541484">Avec une fonction d'agrégation</h4><p id="r-4563262" data-claire-element-id="8541472">Lorsque l'on ajoute <code data-claire-semantic="text">ORDER BY</code> dans le <code data-claire-semantic="text">OVER</code>, alors la fonction d'agrégation se comporte d'une manière encore différente !</p><p id="r-4563263" data-claire-element-id="8334281">En effet, elle considère que les valeurs sont <em>ordonnées</em>. Comme précédemment, la fonction d'agrégation va renvoyer autant de lignes qu'elle n'en reçoit en entrée. Mais voici ce qu'elle va faire :</p><ol id="r-4563272" data-claire-element-id="8541481"><li id="r-4563265" data-claire-element-id="8541474"><p id="r-4563264" data-claire-element-id="8541473">Elle effectue son calcul sur la 1ère valeur, et renvoie son résultat ;</p></li><li id="r-4563267" data-claire-element-id="8541476"><p id="r-4563266" data-claire-element-id="8541475">Elle effectue son calcul sur les 1ère et 2ème valeurs, et renvoie son résultat ;</p></li><li id="r-4563269" data-claire-element-id="8541478"><p id="r-4563268" data-claire-element-id="8541477">Elle effectue son calcul sur les 1ère, 2ème et 3ème valeurs, et renvoie son résultat ;</p></li><li id="r-4563271" data-claire-element-id="8541480"><p id="r-4563270" data-claire-element-id="8541479">Ainsi de suite.</p></li></ol><p id="r-4563273" data-claire-element-id="8541482">Ainsi, si la fonction <code data-claire-semantic="text">sum</code> reçoit <code data-claire-semantic="text">[10, 5, 1]</code>, elle renverra <code data-claire-semantic="text">[10, 15, 16]</code>, car</p><ul id="r-4563280" data-claire-element-id="8186028"><li id="r-4563275" data-claire-element-id="8186023"><p id="r-4563274" data-claire-element-id="8186022">10 = 10</p></li><li id="r-4563277" data-claire-element-id="8186025"><p id="r-4563276" data-claire-element-id="8186024">10 + 5 = 15</p></li><li id="r-4563291" data-claire-element-id="8186027"><p id="r-4563278" data-claire-element-id="8186026">10 + 5 + 1 = 16</p></li></ul><p id="r-4563281" data-claire-element-id="8541483">Ici, <code data-claire-semantic="text">sum</code> se comporte comme une <em>somme cumulée</em> !</p><p id="r-4619976" data-claire-element-id="8334282"> </p><h4 id="r-4619980" data-claire-element-id="8541488">Avec une fonction de rang</h4><p id="r-4563282" data-claire-element-id="8541485">Si on utilise une fonction de rang (par exemple <code data-claire-semantic="text">rank</code>), alors celle-ci va simplement donner le rang des lignes. Ces lignes ont préalablement été triées grâce à <code data-claire-semantic="text">ORDER BY</code>.</p><p id="r-4619978" data-claire-element-id="8334395">Petit exemple : nous sommes dans une course où nous avons enregistré le temps mis par chaque coureur pour finir le parcours. Pour savoir qui sera sur le podium, il faut classer ces sportifs selon leur temps :</p><pre id="r-4620031" data-claire-element-id="8334396"><code data-claire-semantic="sql">SELECT 
+FROM nb_entities ;</code>
+</pre>
+<table id="r-4563199" data-claire-element-id="8541470">
+<tbody id="r-4563198" data-claire-element-id="8541469">
+<tr id="r-4563170" data-claire-element-id="8541441">
+<td id="r-4563163" data-claire-element-id="8185783">
+<p id="r-4563202" data-claire-element-id="8185782">
+<strong>
+id_intermediary</strong>
+</p>
+</td>
+<td id="r-4563165" data-claire-element-id="8541440">
+<p id="r-4563164" data-claire-element-id="8541439">
+<strong>
+jurisdiction</strong>
+</p>
+</td>
+<td id="r-4563167" data-claire-element-id="8185787">
+<p id="r-4563166" data-claire-element-id="8185786">
+<strong>
+cnt_entities</strong>
+</p>
+</td>
+<td id="r-4563169" data-claire-element-id="8185789">
+<p id="r-4563168" data-claire-element-id="8185788">
+<strong>
+entities_by_intermediary </strong>
+</p>
+</td>
+</tr>
+<tr id="r-4563179" data-claire-element-id="8541450">
+<td id="r-4563172" data-claire-element-id="8541443">
+<p id="r-4563171" data-claire-element-id="8541442">
+4000</p>
+</td>
+<td id="r-4563174" data-claire-element-id="8541445">
+<p id="r-4563173" data-claire-element-id="8541444">
+SAM</p>
+</td>
+<td id="r-4563176" data-claire-element-id="8541447">
+<p id="r-4563175" data-claire-element-id="8541446">
+10</p>
+</td>
+<td id="r-4563178" data-claire-element-id="8541449">
+<p id="r-4563177" data-claire-element-id="8541448">
+16</p>
+</td>
+</tr>
+<tr id="r-4563188" data-claire-element-id="8541459">
+<td id="r-4563181" data-claire-element-id="8541452">
+<p id="r-4563180" data-claire-element-id="8541451">
+4000</p>
+</td>
+<td id="r-4563183" data-claire-element-id="8541454">
+<p id="r-4563182" data-claire-element-id="8541453">
+PMA</p>
+</td>
+<td id="r-4563185" data-claire-element-id="8541456">
+<p id="r-4563184" data-claire-element-id="8541455">
+1</p>
+</td>
+<td id="r-4563187" data-claire-element-id="8541458">
+<p id="r-4563186" data-claire-element-id="8541457">
+16</p>
+</td>
+</tr>
+<tr id="r-4563197" data-claire-element-id="8541468">
+<td id="r-4563190" data-claire-element-id="8541461">
+<p id="r-4563189" data-claire-element-id="8541460">
+4000</p>
+</td>
+<td id="r-4563192" data-claire-element-id="8541463">
+<p id="r-4563191" data-claire-element-id="8541462">
+CYP</p>
+</td>
+<td id="r-4563194" data-claire-element-id="8541465">
+<p id="r-4563193" data-claire-element-id="8541464">
+5</p>
+</td>
+<td id="r-4563196" data-claire-element-id="8541467">
+<p id="r-4563195" data-claire-element-id="8541466">
+16</p>
+</td>
+</tr>
+<tr id="r-4563214" data-claire-element-id="8185863">
+<td id="r-4563207" data-claire-element-id="8185829">
+<p id="r-4563206" data-claire-element-id="8185828">
+4001</p>
+</td>
+<td id="r-4563209" data-claire-element-id="8185831">
+<p id="r-4563208" data-claire-element-id="8185830">
+SAM</p>
+</td>
+<td id="r-4563211" data-claire-element-id="8185833">
+<p id="r-4563210" data-claire-element-id="8185832">
+3</p>
+</td>
+<td id="r-4563213" data-claire-element-id="8185862">
+<p id="r-4563212" data-claire-element-id="8185861">
+5</p>
+</td>
+</tr>
+<tr id="r-4563234" data-claire-element-id="8185872">
+<td id="r-4563227" data-claire-element-id="8185865">
+<p id="r-4563226" data-claire-element-id="8185864">
+4001</p>
+</td>
+<td id="r-4563229" data-claire-element-id="8185867">
+<p id="r-4563228" data-claire-element-id="8185866">
+NEV</p>
+</td>
+<td id="r-4563231" data-claire-element-id="8185869">
+<p id="r-4563230" data-claire-element-id="8185868">
+2</p>
+</td>
+<td id="r-4563233" data-claire-element-id="8185871">
+<p id="r-4563232" data-claire-element-id="8185870">
+5</p>
+</td>
+</tr>
+<tr id="r-4563223" data-claire-element-id="8185845">
+<td id="r-4563216" data-claire-element-id="8185838">
+<p id="r-4563215" data-claire-element-id="8185837">
+[...]</p>
+</td>
+<td id="r-4563218" data-claire-element-id="8185840">
+<p id="r-4563217" data-claire-element-id="8185839">
+[...]</p>
+</td>
+<td id="r-4563220" data-claire-element-id="8185842">
+<p id="r-4563219" data-claire-element-id="8185841">
+[...]</p>
+</td>
+<td id="r-4563222" data-claire-element-id="8185844">
+<p id="r-4563221" data-claire-element-id="8185843">
+[...]</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p id="r-4563261" data-claire-element-id="8185933">
+ </p>
+<h3 id="r-4563283" data-claire-element-id="8541489">
+OVER (PARTITION BY... ORDER BY...)</h3>
+<h4 id="r-4619977" data-claire-element-id="8541484">
+Avec une fonction d'agrégation</h4>
+<p id="r-4563262" data-claire-element-id="8541472">
+Lorsque l'on ajoute <code data-claire-semantic="text">
+ORDER BY</code>
+ dans le <code data-claire-semantic="text">
+OVER</code>
+, alors la fonction d'agrégation se comporte d'une manière encore différente !</p>
+<p id="r-4563263" data-claire-element-id="8334281">
+En effet, elle considère que les valeurs sont <em>
+ordonnées</em>
+. Comme précédemment, la fonction d'agrégation va renvoyer autant de lignes qu'elle n'en reçoit en entrée. Mais voici ce qu'elle va faire :</p>
+<ol id="r-4563272" data-claire-element-id="8541481">
+<li id="r-4563265" data-claire-element-id="8541474">
+<p id="r-4563264" data-claire-element-id="8541473">
+Elle effectue son calcul sur la 1ère valeur, et renvoie son résultat ;</p>
+</li>
+<li id="r-4563267" data-claire-element-id="8541476">
+<p id="r-4563266" data-claire-element-id="8541475">
+Elle effectue son calcul sur les 1ère et 2ème valeurs, et renvoie son résultat ;</p>
+</li>
+<li id="r-4563269" data-claire-element-id="8541478">
+<p id="r-4563268" data-claire-element-id="8541477">
+Elle effectue son calcul sur les 1ère, 2ème et 3ème valeurs, et renvoie son résultat ;</p>
+</li>
+<li id="r-4563271" data-claire-element-id="8541480">
+<p id="r-4563270" data-claire-element-id="8541479">
+Ainsi de suite.</p>
+</li>
+</ol>
+<p id="r-4563273" data-claire-element-id="8541482">
+Ainsi, si la fonction <code data-claire-semantic="text">
+sum</code>
+ reçoit <code data-claire-semantic="text">
+[10, 5, 1]</code>
+, elle renverra <code data-claire-semantic="text">
+[10, 15, 16]</code>
+, car</p>
+<ul id="r-4563280" data-claire-element-id="8186028">
+<li id="r-4563275" data-claire-element-id="8186023">
+<p id="r-4563274" data-claire-element-id="8186022">
+10 = 10</p>
+</li>
+<li id="r-4563277" data-claire-element-id="8186025">
+<p id="r-4563276" data-claire-element-id="8186024">
+10 + 5 = 15</p>
+</li>
+<li id="r-4563291" data-claire-element-id="8186027">
+<p id="r-4563278" data-claire-element-id="8186026">
+10 + 5 + 1 = 16</p>
+</li>
+</ul>
+<p id="r-4563281" data-claire-element-id="8541483">
+Ici, <code data-claire-semantic="text">
+sum</code>
+ se comporte comme une <em>
+somme cumulée</em>
+ !</p>
+<p id="r-4619976" data-claire-element-id="8334282">
+ </p>
+<h4 id="r-4619980" data-claire-element-id="8541488">
+Avec une fonction de rang</h4>
+<p id="r-4563282" data-claire-element-id="8541485">
+Si on utilise une fonction de rang (par exemple <code data-claire-semantic="text">
+rank</code>
+), alors celle-ci va simplement donner le rang des lignes. Ces lignes ont préalablement été triées grâce à <code data-claire-semantic="text">
+ORDER BY</code>
+.</p>
+<p id="r-4619978" data-claire-element-id="8334395">
+Petit exemple : nous sommes dans une course où nous avons enregistré le temps mis par chaque coureur pour finir le parcours. Pour savoir qui sera sur le podium, il faut classer ces sportifs selon leur temps :</p>
+<pre id="r-4620031" data-claire-element-id="8334396">
+<code data-claire-semantic="sql">
+SELECT 
     prenom, 
     temps, 
     rank() OVER (ORDER BY temps) 
-FROM course ;</code></pre><table id="r-4620027" data-claire-element-id="8334349"><tbody id="r-4620026" data-claire-element-id="8334348"><tr id="r-4619997" data-claire-element-id="8334319"><td id="r-4619992" data-claire-element-id="8334314"><p id="r-4619991" data-claire-element-id="8334313"><strong>prenom</strong></p></td><td id="r-4619994" data-claire-element-id="8334316"><p id="r-4619993" data-claire-element-id="8334315"><strong>temps</strong></p></td><td id="r-4619996" data-claire-element-id="8334318"><p id="r-4619995" data-claire-element-id="8334317"><strong>rank()</strong></p></td></tr><tr id="r-4620004" data-claire-element-id="8334326"><td id="r-4619999" data-claire-element-id="8334321"><p id="r-4619998" data-claire-element-id="8334320">Naïma</p></td><td id="r-4620001" data-claire-element-id="8334323"><p id="r-4620000" data-claire-element-id="8334322">3 min 15 s</p></td><td id="r-4620003" data-claire-element-id="8334325"><p id="r-4620002" data-claire-element-id="8334324">1</p></td></tr><tr id="r-4620011" data-claire-element-id="8334333"><td id="r-4620006" data-claire-element-id="8334328"><p id="r-4620005" data-claire-element-id="8334327">Sarah</p></td><td id="r-4620008" data-claire-element-id="8334330"><p id="r-4620007" data-claire-element-id="8334329">3 min 19 s</p></td><td id="r-4620010" data-claire-element-id="8334332"><p id="r-4620009" data-claire-element-id="8334331">3</p></td></tr><tr id="r-4620018" data-claire-element-id="8334340"><td id="r-4620013" data-claire-element-id="8334335"><p id="r-4620012" data-claire-element-id="8334334">Sonia</p></td><td id="r-4620015" data-claire-element-id="8334337"><p id="r-4620014" data-claire-element-id="8334336">3 min 16 s</p></td><td id="r-4620017" data-claire-element-id="8334339"><p id="r-4620016" data-claire-element-id="8334338">2</p></td></tr><tr id="r-4620025" data-claire-element-id="8334347"><td id="r-4620020" data-claire-element-id="8334342"><p id="r-4620019" data-claire-element-id="8334341">Luc</p></td><td id="r-4620022" data-claire-element-id="8334344"><p id="r-4620021" data-claire-element-id="8334343">10 min 39 s</p></td><td id="r-4620024" data-claire-element-id="8334346"><p id="r-4620023" data-claire-element-id="8334345">4</p></td></tr></tbody></table><aside id="r-4620028" data-claire-element-id="8541487" data-claire-semantic="information"><p id="r-4619987" data-claire-element-id="8541486">Nous n'avons pas utilisé de <code data-claire-semantic="text">PARTITION BY</code> ici, car nous n'avons pas eu besoin de former d'agrégat. C'était juste pour vous montrer ce que fait <code data-claire-semantic="text">rank</code>.</p></aside><p id="r-4619988" data-claire-element-id="8334303"> </p><h3 id="r-4563285" data-claire-element-id="8541492">La somme cumulée et les numéros de rang</h3><aside id="r-4619981" data-claire-element-id="8334290" data-claire-semantic="information"><p id="r-4563292" data-claire-element-id="8334289">Nous souhaitons ici connaître les juridictions "préférées" de nos intermédiaires. Celles-ci se comptent en nombre de sociétés créées.</p></aside><p id="r-4563293" data-claire-element-id="8541490">Attribuons donc un rang à chaque juridiction <em>pour chacun des intermédiaires</em>. Appelons notre classement <code data-claire-semantic="text">rank</code>. Pour leur attribuer un rang, je les classe par <code data-claire-semantic="text">cnt_entities</code> décroissant. Comme je veux un classement pour chacun des intermédiaires, j'écris <code data-claire-semantic="text">PARTITION BY id_intermediary</code>.</p><p id="r-4563286" data-claire-element-id="8541491">Nous sommes également capables d'effectuer une somme cumulée ! Faisons une somme cumulée de <code data-claire-semantic="text">cnt_entities</code> pour chaque intermédiaire, en triant les lignes par <code data-claire-semantic="text">cnt_entities</code> décroissant. Appelons notre somme cumulée <code data-claire-semantic="text">cum_sum</code>.</p><pre id="r-4563287" data-claire-element-id="8186034"><code data-claire-semantic="sql">SELECT id_intermediary,
+FROM course ;</code>
+</pre>
+<table id="r-4620027" data-claire-element-id="8334349">
+<tbody id="r-4620026" data-claire-element-id="8334348">
+<tr id="r-4619997" data-claire-element-id="8334319">
+<td id="r-4619992" data-claire-element-id="8334314">
+<p id="r-4619991" data-claire-element-id="8334313">
+<strong>
+prenom</strong>
+</p>
+</td>
+<td id="r-4619994" data-claire-element-id="8334316">
+<p id="r-4619993" data-claire-element-id="8334315">
+<strong>
+temps</strong>
+</p>
+</td>
+<td id="r-4619996" data-claire-element-id="8334318">
+<p id="r-4619995" data-claire-element-id="8334317">
+<strong>
+rank()</strong>
+</p>
+</td>
+</tr>
+<tr id="r-4620004" data-claire-element-id="8334326">
+<td id="r-4619999" data-claire-element-id="8334321">
+<p id="r-4619998" data-claire-element-id="8334320">
+Naïma</p>
+</td>
+<td id="r-4620001" data-claire-element-id="8334323">
+<p id="r-4620000" data-claire-element-id="8334322">
+3 min 15 s</p>
+</td>
+<td id="r-4620003" data-claire-element-id="8334325">
+<p id="r-4620002" data-claire-element-id="8334324">
+1</p>
+</td>
+</tr>
+<tr id="r-4620011" data-claire-element-id="8334333">
+<td id="r-4620006" data-claire-element-id="8334328">
+<p id="r-4620005" data-claire-element-id="8334327">
+Sarah</p>
+</td>
+<td id="r-4620008" data-claire-element-id="8334330">
+<p id="r-4620007" data-claire-element-id="8334329">
+3 min 19 s</p>
+</td>
+<td id="r-4620010" data-claire-element-id="8334332">
+<p id="r-4620009" data-claire-element-id="8334331">
+3</p>
+</td>
+</tr>
+<tr id="r-4620018" data-claire-element-id="8334340">
+<td id="r-4620013" data-claire-element-id="8334335">
+<p id="r-4620012" data-claire-element-id="8334334">
+Sonia</p>
+</td>
+<td id="r-4620015" data-claire-element-id="8334337">
+<p id="r-4620014" data-claire-element-id="8334336">
+3 min 16 s</p>
+</td>
+<td id="r-4620017" data-claire-element-id="8334339">
+<p id="r-4620016" data-claire-element-id="8334338">
+2</p>
+</td>
+</tr>
+<tr id="r-4620025" data-claire-element-id="8334347">
+<td id="r-4620020" data-claire-element-id="8334342">
+<p id="r-4620019" data-claire-element-id="8334341">
+Luc</p>
+</td>
+<td id="r-4620022" data-claire-element-id="8334344">
+<p id="r-4620021" data-claire-element-id="8334343">
+10 min 39 s</p>
+</td>
+<td id="r-4620024" data-claire-element-id="8334346">
+<p id="r-4620023" data-claire-element-id="8334345">
+4</p>
+</td>
+</tr>
+</tbody>
+</table>
+<aside id="r-4620028" data-claire-element-id="8541487" data-claire-semantic="information">
+<p id="r-4619987" data-claire-element-id="8541486">
+Nous n'avons pas utilisé de <code data-claire-semantic="text">
+PARTITION BY</code>
+ ici, car nous n'avons pas eu besoin de former d'agrégat. C'était juste pour vous montrer ce que fait <code data-claire-semantic="text">
+rank</code>
+.</p>
+</aside>
+<p id="r-4619988" data-claire-element-id="8334303">
+ </p>
+<h3 id="r-4563285" data-claire-element-id="8541492">
+La somme cumulée et les numéros de rang</h3>
+<aside id="r-4619981" data-claire-element-id="8334290" data-claire-semantic="information">
+<p id="r-4563292" data-claire-element-id="8334289">
+Nous souhaitons ici connaître les juridictions "préférées" de nos intermédiaires. Celles-ci se comptent en nombre de sociétés créées.</p>
+</aside>
+<p id="r-4563293" data-claire-element-id="8541490">
+Attribuons donc un rang à chaque juridiction <em>
+pour chacun des intermédiaires</em>
+. Appelons notre classement <code data-claire-semantic="text">
+rank</code>
+. Pour leur attribuer un rang, je les classe par <code data-claire-semantic="text">
+cnt_entities</code>
+ décroissant. Comme je veux un classement pour chacun des intermédiaires, j'écris <code data-claire-semantic="text">
+PARTITION BY id_intermediary</code>
+.</p>
+<p id="r-4563286" data-claire-element-id="8541491">
+Nous sommes également capables d'effectuer une somme cumulée ! Faisons une somme cumulée de <code data-claire-semantic="text">
+cnt_entities</code>
+ pour chaque intermédiaire, en triant les lignes par <code data-claire-semantic="text">
+cnt_entities</code>
+ décroissant. Appelons notre somme cumulée <code data-claire-semantic="text">
+cum_sum</code>
+.</p>
+<pre id="r-4563287" data-claire-element-id="8186034">
+<code data-claire-semantic="sql">
+SELECT id_intermediary,
     jurisdiction,
     cnt_entities,
     rank()
         OVER(PARTITION BY id_intermediary ORDER BY cnt_entities DESC) AS rank,
     sum(cnt_entities) 
         OVER(PARTITION BY id_intermediary ORDER BY cnt_entities DESC) AS cum_sum
-FROM nb_entities ;</code></pre><p id="r-4563288" data-claire-element-id="8185985">Voici le résultat :</p><table id="r-4563372" data-claire-element-id="8334364"><tbody id="r-4563371" data-claire-element-id="8334363"><tr id="r-4563304" data-claire-element-id="8186045"><td id="r-4563295" data-claire-element-id="8186036"><p id="r-4563294" data-claire-element-id="8186035"><strong>id_intermediary</strong></p></td><td id="r-4563297" data-claire-element-id="8186038"><p id="r-4563296" data-claire-element-id="8186037"><strong>jurisdiction</strong></p></td><td id="r-4563299" data-claire-element-id="8186040"><p id="r-4563298" data-claire-element-id="8186039"><strong>cnt_entitites</strong></p></td><td id="r-4563301" data-claire-element-id="8186042"><p id="r-4563300" data-claire-element-id="8186041"><strong>rank</strong></p></td><td id="r-4563303" data-claire-element-id="8186044"><p id="r-4563302" data-claire-element-id="8186043"><strong>cum_sum</strong></p></td></tr><tr id="r-4563315" data-claire-element-id="8334356"><td id="r-4563306" data-claire-element-id="8186047"><p id="r-4563305" data-claire-element-id="8186046">4000</p></td><td id="r-4563308" data-claire-element-id="8186049"><p id="r-4563307" data-claire-element-id="8186048">SAM</p></td><td id="r-4563310" data-claire-element-id="8186051"><p id="r-4563309" data-claire-element-id="8186050">10</p></td><td id="r-4563312" data-claire-element-id="8186053"><p id="r-4563311" data-claire-element-id="8186052">1</p></td><td id="r-4563314" data-claire-element-id="8334355"><p id="r-4563313" data-claire-element-id="8334354">10</p></td></tr><tr id="r-4563326" data-claire-element-id="8334359"><td id="r-4563317" data-claire-element-id="8186058"><p id="r-4563316" data-claire-element-id="8186057">4000</p></td><td id="r-4563319" data-claire-element-id="8186060"><p id="r-4563318" data-claire-element-id="8186059">CYP</p></td><td id="r-4563321" data-claire-element-id="8186062"><p id="r-4563320" data-claire-element-id="8186061">5</p></td><td id="r-4563323" data-claire-element-id="8186064"><p id="r-4563322" data-claire-element-id="8186063">2</p></td><td id="r-4563325" data-claire-element-id="8334358"><p id="r-4563324" data-claire-element-id="8334357">15</p></td></tr><tr id="r-4563337" data-claire-element-id="8186078"><td id="r-4563328" data-claire-element-id="8186069"><p id="r-4563327" data-claire-element-id="8186068">4000</p></td><td id="r-4563330" data-claire-element-id="8186071"><p id="r-4563329" data-claire-element-id="8186070">PMA</p></td><td id="r-4563332" data-claire-element-id="8186073"><p id="r-4563331" data-claire-element-id="8186072">1</p></td><td id="r-4563334" data-claire-element-id="8186075"><p id="r-4563333" data-claire-element-id="8186074">3</p></td><td id="r-4563336" data-claire-element-id="8186077"><p id="r-4563335" data-claire-element-id="8186076">16</p></td></tr><tr id="r-4563348" data-claire-element-id="8334362"><td id="r-4563339" data-claire-element-id="8186080"><p id="r-4563338" data-claire-element-id="8186079">4001</p></td><td id="r-4563341" data-claire-element-id="8186082"><p id="r-4563340" data-claire-element-id="8186081">SAM</p></td><td id="r-4563343" data-claire-element-id="8186084"><p id="r-4563342" data-claire-element-id="8186083">3</p></td><td id="r-4563345" data-claire-element-id="8186086"><p id="r-4563344" data-claire-element-id="8186085">1</p></td><td id="r-4563347" data-claire-element-id="8334361"><p id="r-4563346" data-claire-element-id="8334360">3</p></td></tr><tr id="r-4563359" data-claire-element-id="8186100"><td id="r-4563350" data-claire-element-id="8186091"><p id="r-4563349" data-claire-element-id="8186090">4001</p></td><td id="r-4563352" data-claire-element-id="8186093"><p id="r-4563351" data-claire-element-id="8186092">NEV</p></td><td id="r-4563354" data-claire-element-id="8186095"><p id="r-4563353" data-claire-element-id="8186094">2</p></td><td id="r-4563356" data-claire-element-id="8186097"><p id="r-4563355" data-claire-element-id="8186096">2</p></td><td id="r-4563358" data-claire-element-id="8186099"><p id="r-4563357" data-claire-element-id="8186098">5</p></td></tr><tr id="r-4563370" data-claire-element-id="8186111"><td id="r-4563361" data-claire-element-id="8186102"><p id="r-4563360" data-claire-element-id="8186101">[...]</p></td><td id="r-4563363" data-claire-element-id="8186104"><p id="r-4563362" data-claire-element-id="8186103">[...]</p></td><td id="r-4563365" data-claire-element-id="8186106"><p id="r-4563364" data-claire-element-id="8186105">[...]</p></td><td id="r-4563367" data-claire-element-id="8186108"><p id="r-4563366" data-claire-element-id="8186107">[...]</p></td><td id="r-4563369" data-claire-element-id="8186110"><p id="r-4563368" data-claire-element-id="8186109">[...]</p></td></tr></tbody></table><p id="r-4563290" data-claire-element-id="8334401"> </p><h3 id="r-4620044" data-claire-element-id="8541498">En résumé</h3><ul id="r-4620042" data-claire-element-id="8541497"><li id="r-4620037" data-claire-element-id="8334413"><p id="r-4620036" data-claire-element-id="8334412">Le fenêtrage est très similaire à une agrégation, sauf qu'il ne modifie pas le nombre de lignes.</p></li><li id="r-4620039" data-claire-element-id="8541494"><p id="r-4620038" data-claire-element-id="8541493">Le mot clé <code data-claire-semantic="text">OVER</code> peut être utilisé avec des <strong>fonctions d'agrégation</strong> ou des <strong>fonctions de rang</strong>.</p></li><li id="r-4620041" data-claire-element-id="8541496"><p id="r-4620040" data-claire-element-id="8541495">C'est grâce au mot clé <code data-claire-semantic="text">OVER</code> que l'on peut réaliser des <strong>sommes cumulées</strong> ou des <strong>calculs de rang</strong>.</p></li></ul><p id="r-4638516" data-claire-element-id="8382812"> </p>
-</div>
-<div class="js-courseSelementActions sideActions">
-<ul class="sideActions__container">
-<li>
-<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
-#
-</a>
+FROM nb_entities ;</code>
+</pre>
+<p id="r-4563288" data-claire-element-id="8185985">
+Voici le résultat :</p>
+<table id="r-4563372" data-claire-element-id="8334364">
+<tbody id="r-4563371" data-claire-element-id="8334363">
+<tr id="r-4563304" data-claire-element-id="8186045">
+<td id="r-4563295" data-claire-element-id="8186036">
+<p id="r-4563294" data-claire-element-id="8186035">
+<strong>
+id_intermediary</strong>
+</p>
+</td>
+<td id="r-4563297" data-claire-element-id="8186038">
+<p id="r-4563296" data-claire-element-id="8186037">
+<strong>
+jurisdiction</strong>
+</p>
+</td>
+<td id="r-4563299" data-claire-element-id="8186040">
+<p id="r-4563298" data-claire-element-id="8186039">
+<strong>
+cnt_entitites</strong>
+</p>
+</td>
+<td id="r-4563301" data-claire-element-id="8186042">
+<p id="r-4563300" data-claire-element-id="8186041">
+<strong>
+rank</strong>
+</p>
+</td>
+<td id="r-4563303" data-claire-element-id="8186044">
+<p id="r-4563302" data-claire-element-id="8186043">
+<strong>
+cum_sum</strong>
+</p>
+</td>
+</tr>
+<tr id="r-4563315" data-claire-element-id="8334356">
+<td id="r-4563306" data-claire-element-id="8186047">
+<p id="r-4563305" data-claire-element-id="8186046">
+4000</p>
+</td>
+<td id="r-4563308" data-claire-element-id="8186049">
+<p id="r-4563307" data-claire-element-id="8186048">
+SAM</p>
+</td>
+<td id="r-4563310" data-claire-element-id="8186051">
+<p id="r-4563309" data-claire-element-id="8186050">
+10</p>
+</td>
+<td id="r-4563312" data-claire-element-id="8186053">
+<p id="r-4563311" data-claire-element-id="8186052">
+1</p>
+</td>
+<td id="r-4563314" data-claire-element-id="8334355">
+<p id="r-4563313" data-claire-element-id="8334354">
+10</p>
+</td>
+</tr>
+<tr id="r-4563326" data-claire-element-id="8334359">
+<td id="r-4563317" data-claire-element-id="8186058">
+<p id="r-4563316" data-claire-element-id="8186057">
+4000</p>
+</td>
+<td id="r-4563319" data-claire-element-id="8186060">
+<p id="r-4563318" data-claire-element-id="8186059">
+CYP</p>
+</td>
+<td id="r-4563321" data-claire-element-id="8186062">
+<p id="r-4563320" data-claire-element-id="8186061">
+5</p>
+</td>
+<td id="r-4563323" data-claire-element-id="8186064">
+<p id="r-4563322" data-claire-element-id="8186063">
+2</p>
+</td>
+<td id="r-4563325" data-claire-element-id="8334358">
+<p id="r-4563324" data-claire-element-id="8334357">
+15</p>
+</td>
+</tr>
+<tr id="r-4563337" data-claire-element-id="8186078">
+<td id="r-4563328" data-claire-element-id="8186069">
+<p id="r-4563327" data-claire-element-id="8186068">
+4000</p>
+</td>
+<td id="r-4563330" data-claire-element-id="8186071">
+<p id="r-4563329" data-claire-element-id="8186070">
+PMA</p>
+</td>
+<td id="r-4563332" data-claire-element-id="8186073">
+<p id="r-4563331" data-claire-element-id="8186072">
+1</p>
+</td>
+<td id="r-4563334" data-claire-element-id="8186075">
+<p id="r-4563333" data-claire-element-id="8186074">
+3</p>
+</td>
+<td id="r-4563336" data-claire-element-id="8186077">
+<p id="r-4563335" data-claire-element-id="8186076">
+16</p>
+</td>
+</tr>
+<tr id="r-4563348" data-claire-element-id="8334362">
+<td id="r-4563339" data-claire-element-id="8186080">
+<p id="r-4563338" data-claire-element-id="8186079">
+4001</p>
+</td>
+<td id="r-4563341" data-claire-element-id="8186082">
+<p id="r-4563340" data-claire-element-id="8186081">
+SAM</p>
+</td>
+<td id="r-4563343" data-claire-element-id="8186084">
+<p id="r-4563342" data-claire-element-id="8186083">
+3</p>
+</td>
+<td id="r-4563345" data-claire-element-id="8186086">
+<p id="r-4563344" data-claire-element-id="8186085">
+1</p>
+</td>
+<td id="r-4563347" data-claire-element-id="8334361">
+<p id="r-4563346" data-claire-element-id="8334360">
+3</p>
+</td>
+</tr>
+<tr id="r-4563359" data-claire-element-id="8186100">
+<td id="r-4563350" data-claire-element-id="8186091">
+<p id="r-4563349" data-claire-element-id="8186090">
+4001</p>
+</td>
+<td id="r-4563352" data-claire-element-id="8186093">
+<p id="r-4563351" data-claire-element-id="8186092">
+NEV</p>
+</td>
+<td id="r-4563354" data-claire-element-id="8186095">
+<p id="r-4563353" data-claire-element-id="8186094">
+2</p>
+</td>
+<td id="r-4563356" data-claire-element-id="8186097">
+<p id="r-4563355" data-claire-element-id="8186096">
+2</p>
+</td>
+<td id="r-4563358" data-claire-element-id="8186099">
+<p id="r-4563357" data-claire-element-id="8186098">
+5</p>
+</td>
+</tr>
+<tr id="r-4563370" data-claire-element-id="8186111">
+<td id="r-4563361" data-claire-element-id="8186102">
+<p id="r-4563360" data-claire-element-id="8186101">
+[...]</p>
+</td>
+<td id="r-4563363" data-claire-element-id="8186104">
+<p id="r-4563362" data-claire-element-id="8186103">
+[...]</p>
+</td>
+<td id="r-4563365" data-claire-element-id="8186106">
+<p id="r-4563364" data-claire-element-id="8186105">
+[...]</p>
+</td>
+<td id="r-4563367" data-claire-element-id="8186108">
+<p id="r-4563366" data-claire-element-id="8186107">
+[...]</p>
+</td>
+<td id="r-4563369" data-claire-element-id="8186110">
+<p id="r-4563368" data-claire-element-id="8186109">
+[...]</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p id="r-4563290" data-claire-element-id="8334401">
+ </p>
+<h3 id="r-4620044" data-claire-element-id="8541498">
+En résumé</h3>
+<ul id="r-4620042" data-claire-element-id="8541497">
+<li id="r-4620037" data-claire-element-id="8334413">
+<p id="r-4620036" data-claire-element-id="8334412">
+Le fenêtrage est très similaire à une agrégation, sauf qu'il ne modifie pas le nombre de lignes.</p>
+</li>
+<li id="r-4620039" data-claire-element-id="8541494">
+<p id="r-4620038" data-claire-element-id="8541493">
+Le mot clé <code data-claire-semantic="text">
+OVER</code>
+ peut être utilisé avec des <strong>
+fonctions d'agrégation</strong>
+ ou des <strong>
+fonctions de rang</strong>
+.</p>
+</li>
+<li id="r-4620041" data-claire-element-id="8541496">
+<p id="r-4620040" data-claire-element-id="8541495">
+C'est grâce au mot clé <code data-claire-semantic="text">
+OVER</code>
+ que l'on peut réaliser des <strong>
+sommes cumulées</strong>
+ ou des <strong>
+calculs de rang</strong>
+.</p>
 </li>
 </ul>
+<p id="r-4638516" data-claire-element-id="8382812">
+ </p>
+
 </div>
+
+<div class="js-courseSelementActions sideActions">
+
+<ul class="sideActions__container">
+
+<li>
+
+<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+
+#
+</a>
+
+</li>
+
+</ul>
+
 </div>
+
+ </div>

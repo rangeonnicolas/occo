@@ -1,6 +1,26 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/imbriquez-des-requetes-avec-in-all-any-et-exists" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
+
 <div class="userContent js-userContent">
-<p id="r-4705626" data-claire-element-id="8548781">Saviez-vous qu'il était possible d'imbriquer des requêtes ? Normalement oui, vous en avez déjà vu passer <a href="http://www.larousse.fr/dictionnaires/francais/subrepticement/75084?q=subrepticement#74231">subrepticement</a> dans ce cours !</p><video id="r-4709439" data-claire-element-id="8559349" src="https://vimeo.com/album/233480879"><a href="https://vimeo.com/album/233480879">https://vimeo.com/album/233480879</a></video><h3 id="r-4638927" data-claire-element-id="8541283">Réfléchissons...</h3><p id="r-4561886" data-claire-element-id="8541282">Prenons un exemple. Dans le <a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/ameliorez-vos-agregations-grace-a-having">chapitre sur le mot clé HAVING</a>, j'expliquais que celui-ci servait à effectuer une restriction sur une table <em>après</em> agrégation. Mais si HAVING vous semble compliqué, il est possible d'utiliser une requête imbriquée :</p><pre id="r-4562021" data-claire-element-id="8200802"><code data-claire-semantic="sql">-- REQUETE n°1
+
+<p id="r-4705626" data-claire-element-id="8548781">
+Saviez-vous qu'il était possible d'imbriquer des requêtes ? Normalement oui, vous en avez déjà vu passer <a href="http://www.larousse.fr/dictionnaires/francais/subrepticement/75084?q=subrepticement#74231">
+subrepticement</a>
+ dans ce cours !</p>
+<video id="r-4709439" data-claire-element-id="8559349" src="https://vimeo.com/album/233480879">
+<a href="https://vimeo.com/album/233480879">
+https://vimeo.com/album/233480879</a>
+</video>
+<h3 id="r-4638927" data-claire-element-id="8541283">
+Réfléchissons...</h3>
+<p id="r-4561886" data-claire-element-id="8541282">
+Prenons un exemple. Dans le <a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/ameliorez-vos-agregations-grace-a-having">
+chapitre sur le mot clé HAVING</a>
+, j'expliquais que celui-ci servait à effectuer une restriction sur une table <em>
+après</em>
+ agrégation. Mais si HAVING vous semble compliqué, il est possible d'utiliser une requête imbriquée :</p>
+<pre id="r-4562021" data-claire-element-id="8200802">
+<code data-claire-semantic="sql">
+-- REQUETE n°1
 SELECT *
 FROM (SELECT id_address, count(*) AS cnt FROM entity GROUP BY id_address) a
 WHERE a.cnt &gt; 500 ;
@@ -9,15 +29,166 @@ WHERE a.cnt &gt; 500 ;
 SELECT id_address, count(*) AS cnt 
 FROM entity 
 GROUP BY id_address 
-HAVING count(*) &gt; 500 ;</code></pre><p id="r-4561842" data-claire-element-id="8182222">Que retournent ces requêtes ? Elles retournent les adresses auxquelles sont domiciliées plus de 500 sociétés.</p><aside id="r-4562023" data-claire-element-id="8182224" data-claire-semantic="information"><p id="r-4562022" data-claire-element-id="8182223">Certaines sociétés n'ont pas ou très peu d'employés. Il n'est donc pas impossible de trouver un grand nombre de sociétés enregistrées dans un même bâtiment, même si ce dernier n'est pas un gratte-ciel. Certaines de ces sociétés sont qualifiées de <em>coquilles vides</em> ou de <em>sociétés boîte aux lettres</em>.</p></aside><p id="r-4561843" data-claire-element-id="8181733"> </p><h3 id="r-4562030" data-claire-element-id="8541287">Le mot clé IN</h3><div id="r-4562025" data-claire-element-id="8182226" data-claire-semantic="question"><p id="r-4562024" data-claire-element-id="8182225">Ces deux requêtes ne renvoient que l'identifiant de l'adresse, qui est un nombre entier. Comment obtenir l'adresse de manière intelligible ?</p></div><p id="r-4561844" data-claire-element-id="8541284">Nous pourrions faire une jointure avec la table <strong>address</strong>, mais nous pouvons également utiliser le mot clé <code data-claire-semantic="text">IN</code>, qui signifie en français <em>dans</em>, en posant une question du type :</p><blockquote id="r-4562027" data-claire-element-id="8541286"><p id="r-4562026" data-claire-element-id="8541285">Donne-moi les lignes de la table <strong>address</strong> pour lesquelles l'identifiant se trouve <strong><em>DANS</em></strong> la colonne <em>id_address</em> de la table obtenue par la requête n°2.</p></blockquote><p id="r-4562028" data-claire-element-id="8182230">Nous sommes encore face à une requête imbriquée, qui utilise le résultat de la requête n°2 (en haut de cette page) :</p><pre id="r-4562036" data-claire-element-id="8182241"><code data-claire-semantic="sql">SELECT *
+HAVING count(*) &gt; 500 ;</code>
+</pre>
+<p id="r-4561842" data-claire-element-id="8182222">
+Que retournent ces requêtes ? Elles retournent les adresses auxquelles sont domiciliées plus de 500 sociétés.</p>
+<aside id="r-4562023" data-claire-element-id="8182224" data-claire-semantic="information">
+<p id="r-4562022" data-claire-element-id="8182223">
+Certaines sociétés n'ont pas ou très peu d'employés. Il n'est donc pas impossible de trouver un grand nombre de sociétés enregistrées dans un même bâtiment, même si ce dernier n'est pas un gratte-ciel. Certaines de ces sociétés sont qualifiées de <em>
+coquilles vides</em>
+ ou de <em>
+sociétés boîte aux lettres</em>
+.</p>
+</aside>
+<p id="r-4561843" data-claire-element-id="8181733">
+ </p>
+<h3 id="r-4562030" data-claire-element-id="8541287">
+Le mot clé IN</h3>
+<div id="r-4562025" data-claire-element-id="8182226" data-claire-semantic="question">
+<p id="r-4562024" data-claire-element-id="8182225">
+Ces deux requêtes ne renvoient que l'identifiant de l'adresse, qui est un nombre entier. Comment obtenir l'adresse de manière intelligible ?</p>
+</div>
+<p id="r-4561844" data-claire-element-id="8541284">
+Nous pourrions faire une jointure avec la table <strong>
+address</strong>
+, mais nous pouvons également utiliser le mot clé <code data-claire-semantic="text">
+IN</code>
+, qui signifie en français <em>
+dans</em>
+, en posant une question du type :</p>
+<blockquote id="r-4562027" data-claire-element-id="8541286">
+<p id="r-4562026" data-claire-element-id="8541285">
+Donne-moi les lignes de la table <strong>
+address</strong>
+ pour lesquelles l'identifiant se trouve <strong>
+<em>
+DANS</em>
+</strong>
+ la colonne <em>
+id_address</em>
+ de la table obtenue par la requête n°2.</p>
+</blockquote>
+<p id="r-4562028" data-claire-element-id="8182230">
+Nous sommes encore face à une requête imbriquée, qui utilise le résultat de la requête n°2 (en haut de cette page) :</p>
+<pre id="r-4562036" data-claire-element-id="8182241">
+<code data-claire-semantic="sql">
+SELECT *
 FROM address a
 WHERE a.id_address IN (
     SELECT id_address
     FROM entity
     GROUP BY id_address
     HAVING count(*) &gt; 500
-    );</code></pre><p id="r-4562421" data-claire-element-id="8183293"> </p><h3 id="r-4562440" data-claire-element-id="8541292">Les mots clés ANY et ALL</h3><div id="r-4562422" data-claire-element-id="8201152" data-claire-semantic="question"><p id="r-4561847" data-claire-element-id="8201151">Y a-t-il des intermédiaires qui sont plus actifs que les deux intermédiaires que nous avons trouvés précédemment : <em>Pacher Banking S.A.</em> et <em>Plouf Financial Services Corp</em>. ?</p></div><p id="r-4562423" data-claire-element-id="8541288">D'abord, nous avons créé une table <strong>nb_entities</strong>, indiquant pour chaque intermédiaire le nombre de sociétés dont il a participé à la création :</p><table id="r-4562435" data-claire-element-id="8186006"><caption>nb_entities</caption><tbody id="r-4562434" data-claire-element-id="8186005"><tr id="r-4562428" data-claire-element-id="8186004"><td id="r-4562425" data-claire-element-id="8183343"><p id="r-4562451" data-claire-element-id="8183342"><strong>id_intermediary</strong></p></td><td id="r-4562452" data-claire-element-id="8183345"><p id="r-4562424" data-claire-element-id="8183344"><strong>intermediary_name</strong></p></td><td id="r-4562427" data-claire-element-id="8186003"><p id="r-4562426" data-claire-element-id="8186002"><strong>cnt_entities</strong></p></td></tr><tr id="r-4562433" data-claire-element-id="8185263"><td id="r-4562430" data-claire-element-id="8183572"><p id="r-4562453" data-claire-element-id="8183571"> 5000</p></td><td id="r-4562454" data-claire-element-id="8185262"><p id="r-4562429" data-claire-element-id="8185261">Pacher Banking S.A.</p></td><td id="r-4562432" data-claire-element-id="8183574"><p id="r-4562431" data-claire-element-id="8183573"> 2184</p></td></tr><tr id="r-4562462" data-claire-element-id="8183578"><td id="r-4562457" data-claire-element-id="8183577"><p id="r-4562456" data-claire-element-id="8183576"> 5001</p></td><td id="r-4562459" data-claire-element-id="8183387"><p id="r-4562458" data-claire-element-id="8183386">Plouf Financial Services Corp.</p></td><td id="r-4562461" data-claire-element-id="8183502"><p id="r-4562460" data-claire-element-id="8183501"> 720</p></td></tr><tr id="r-4562527" data-claire-element-id="8183585"><td id="r-4562522" data-claire-element-id="8183580"><p id="r-4562521" data-claire-element-id="8183579">[...]</p></td><td id="r-4562524" data-claire-element-id="8183582"><p id="r-4562523" data-claire-element-id="8183581">[...]</p></td><td id="r-4562526" data-claire-element-id="8183584"><p id="r-4562525" data-claire-element-id="8183583">[...]</p></td></tr></tbody></table><p id="r-4639026" data-claire-element-id="8541289">Pour répondre à cette question, il faut utiliser un opérateur suivi du mot clé <code data-claire-semantic="text">ALL</code> ou <code data-claire-semantic="text">ANY</code> :</p><pre id="r-4639027" data-claire-element-id="8384082"><code data-claire-semantic="sql">SELECT * FROM nb_entities WHERE cnt_entities &gt; ALL(SELECT cnt_entities FROM nb_entities WHERE intermediary_id IN (5000,5001,5002));
-</code></pre><p id="r-4562528" data-claire-element-id="8183589"> </p><aside id="r-4562439" data-claire-element-id="8541291" data-claire-semantic="information"><p id="r-4562437" data-claire-element-id="8541290">Voici la requête de création de <strong>nb_entities</strong>. Elle est très similaire à <a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/effectuer-une-recherche-dans-une-chaine-de-caractere#r-4561736">celle du chapitre précédent</a>.</p><pre id="r-4562442" data-claire-element-id="8383863"><code data-claire-semantic="sql">CREATE TABLE nb_entities AS
+    );</code>
+</pre>
+<p id="r-4562421" data-claire-element-id="8183293">
+ </p>
+<h3 id="r-4562440" data-claire-element-id="8541292">
+Les mots clés ANY et ALL</h3>
+<div id="r-4562422" data-claire-element-id="8201152" data-claire-semantic="question">
+<p id="r-4561847" data-claire-element-id="8201151">
+Y a-t-il des intermédiaires qui sont plus actifs que les deux intermédiaires que nous avons trouvés précédemment : <em>
+Pacher Banking S.A.</em>
+ et <em>
+Plouf Financial Services Corp</em>
+. ?</p>
+</div>
+<p id="r-4562423" data-claire-element-id="8541288">
+D'abord, nous avons créé une table <strong>
+nb_entities</strong>
+, indiquant pour chaque intermédiaire le nombre de sociétés dont il a participé à la création :</p>
+<table id="r-4562435" data-claire-element-id="8186006">
+<caption>
+nb_entities</caption>
+<tbody id="r-4562434" data-claire-element-id="8186005">
+<tr id="r-4562428" data-claire-element-id="8186004">
+<td id="r-4562425" data-claire-element-id="8183343">
+<p id="r-4562451" data-claire-element-id="8183342">
+<strong>
+id_intermediary</strong>
+</p>
+</td>
+<td id="r-4562452" data-claire-element-id="8183345">
+<p id="r-4562424" data-claire-element-id="8183344">
+<strong>
+intermediary_name</strong>
+</p>
+</td>
+<td id="r-4562427" data-claire-element-id="8186003">
+<p id="r-4562426" data-claire-element-id="8186002">
+<strong>
+cnt_entities</strong>
+</p>
+</td>
+</tr>
+<tr id="r-4562433" data-claire-element-id="8185263">
+<td id="r-4562430" data-claire-element-id="8183572">
+<p id="r-4562453" data-claire-element-id="8183571">
+ 5000</p>
+</td>
+<td id="r-4562454" data-claire-element-id="8185262">
+<p id="r-4562429" data-claire-element-id="8185261">
+Pacher Banking S.A.</p>
+</td>
+<td id="r-4562432" data-claire-element-id="8183574">
+<p id="r-4562431" data-claire-element-id="8183573">
+ 2184</p>
+</td>
+</tr>
+<tr id="r-4562462" data-claire-element-id="8183578">
+<td id="r-4562457" data-claire-element-id="8183577">
+<p id="r-4562456" data-claire-element-id="8183576">
+ 5001</p>
+</td>
+<td id="r-4562459" data-claire-element-id="8183387">
+<p id="r-4562458" data-claire-element-id="8183386">
+Plouf Financial Services Corp.</p>
+</td>
+<td id="r-4562461" data-claire-element-id="8183502">
+<p id="r-4562460" data-claire-element-id="8183501">
+ 720</p>
+</td>
+</tr>
+<tr id="r-4562527" data-claire-element-id="8183585">
+<td id="r-4562522" data-claire-element-id="8183580">
+<p id="r-4562521" data-claire-element-id="8183579">
+[...]</p>
+</td>
+<td id="r-4562524" data-claire-element-id="8183582">
+<p id="r-4562523" data-claire-element-id="8183581">
+[...]</p>
+</td>
+<td id="r-4562526" data-claire-element-id="8183584">
+<p id="r-4562525" data-claire-element-id="8183583">
+[...]</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p id="r-4639026" data-claire-element-id="8541289">
+Pour répondre à cette question, il faut utiliser un opérateur suivi du mot clé <code data-claire-semantic="text">
+ALL</code>
+ ou <code data-claire-semantic="text">
+ANY</code>
+ :</p>
+<pre id="r-4639027" data-claire-element-id="8384082">
+<code data-claire-semantic="sql">
+SELECT * FROM nb_entities WHERE cnt_entities &gt; ALL(SELECT cnt_entities FROM nb_entities WHERE intermediary_id IN (5000,5001,5002));
+</code>
+</pre>
+<p id="r-4562528" data-claire-element-id="8183589">
+ </p>
+<aside id="r-4562439" data-claire-element-id="8541291" data-claire-semantic="information">
+<p id="r-4562437" data-claire-element-id="8541290">
+Voici la requête de création de <strong>
+nb_entities</strong>
+. Elle est très similaire à <a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/effectuer-une-recherche-dans-une-chaine-de-caractere#r-4561736">
+celle du chapitre précédent</a>
+.</p>
+<pre id="r-4562442" data-claire-element-id="8383863">
+<code data-claire-semantic="sql">
+CREATE TABLE nb_entities AS
 SELECT i.id AS intermediary_id, 
     i.name AS intermediary_name, 
     e.jurisdiction,
@@ -25,27 +196,179 @@ SELECT i.id AS intermediary_id,
     count(*) AS cnt_entities
 FROM intermediary i, assoc_inter_entity a, entity e
 WHERE a.entity = e.id AND a.inter = i.id
-GROUP BY i.id, i.name, e.jurisdiction, e.jurisdiction_description;</code></pre></aside><p id="r-4638941" data-claire-element-id="8383881"> </p><h3 id="r-4638936" data-claire-element-id="8541298">Le mot clé EXISTS</h3><p id="r-4638928" data-claire-element-id="8541293">Reprenons la requête que nous avons vu plus haut, dans le paragraphe sur <code data-claire-semantic="text">IN</code>, et mettons-nous dans la peau de votre SGBDR, qui devra exécuter cette requête :</p><pre id="r-4638929" data-claire-element-id="8383867"><code data-claire-semantic="sql">SELECT *
+GROUP BY i.id, i.name, e.jurisdiction, e.jurisdiction_description;</code>
+</pre>
+</aside>
+<p id="r-4638941" data-claire-element-id="8383881">
+ </p>
+<h3 id="r-4638936" data-claire-element-id="8541298">
+Le mot clé EXISTS</h3>
+<p id="r-4638928" data-claire-element-id="8541293">
+Reprenons la requête que nous avons vu plus haut, dans le paragraphe sur <code data-claire-semantic="text">
+IN</code>
+, et mettons-nous dans la peau de votre SGBDR, qui devra exécuter cette requête :</p>
+<pre id="r-4638929" data-claire-element-id="8383867">
+<code data-claire-semantic="sql">
+SELECT *
 FROM address a
 WHERE a.id_address IN (
     SELECT id_address
     FROM entity
     GROUP BY id_address
     HAVING count(*) &gt; 500
-    );</code></pre><p id="r-4638931" data-claire-element-id="8541294">Pour <em>chaque ligne</em> de la table <code data-claire-semantic="text">address</code>,  vous êtes censé vérifier si la condition du <code data-claire-semantic="text">WHERE</code> est vraie ou fausse, n'est-ce pas? La condition sera testée autant de fois qu'il y a de lignes.</p><p id="r-4638932" data-claire-element-id="8541295">On est ok là-dessus. Mais ici, dans le <code data-claire-semantic="text">WHERE</code>, il y a une sous-requête imbriquée (de la ligne 4 à la ligne 7). Allez-vous recalculer cette sous-requête à chaque fois que vous allez vérifier la condition du <code data-claire-semantic="text">WHERE</code>, pour chaque ligne de <code data-claire-semantic="text">address</code> ??? Ce serait bête, car le résultat de cette sous-requête est toujours le même : autant garder son résultat en mémoire plutôt que de le recalculer à chaque fois !</p><aside id="r-4638934" data-claire-element-id="8384014" data-claire-semantic="information"><p id="r-4638933" data-claire-element-id="8384013">La plupart des SGBD le font : ils gardent le résultat dans une mémoire temporaire, appelée un <strong>cache</strong>.</p></aside><p id="r-4638991" data-claire-element-id="8541296">Sauf que... si cette sous-requête <em>dépend</em> de la ligne pour laquelle on est en train de tester le <code data-claire-semantic="text">WHERE</code>, il n'est plus possible de mettre le résultat en cache. :( S'il faut recalculer la sous-requête à chaque fois, cela prend du temps !</p><p id="r-4638992" data-claire-element-id="8541297">Si l'on est dans ce cas de figure, il est préférable (du point de vue performance) d'utiliser <code data-claire-semantic="text">EXISTS</code>, qui teste si une sous-requête contient <em>au moins</em> une ligne. S'il en trouve au moins une, il arrête l'exécution de la sous-requête, car il est satisfait !</p><p id="r-4638935" data-claire-element-id="8383873"> </p><h3 id="r-4629195" data-claire-element-id="8541300">Aller plus loin : utiliser IN sur plusieurs colonnes</h3><p id="r-4629191" data-claire-element-id="8360264">Dans ce chapitre, on a vérifié si une valeur est présente parmi une liste de valeurs.</p><p id="r-4629192" data-claire-element-id="8541299">Il est également possible de vérifier si un <em>couple</em> de deux valeurs <code data-claire-semantic="text">(valeur1, valeur2)</code> est présent dans une liste de couples <code data-claire-semantic="text">(c1, c2)</code>, de cette manière :</p><pre id="r-4629193" data-claire-element-id="8360266"><code data-claire-semantic="sql">SELECT * FROM t1 WHERE t1.valeur1, t1.valeur2 IN (SELECT c1, c2 FROM t2) ;</code></pre><p id="r-4629194" data-claire-element-id="8360267"> </p><h3 id="r-4561849" data-claire-element-id="8541303">Aller plus loin : les tables temporaires</h3><p id="r-4562031" data-claire-element-id="8541301">Théoriquement, il n'y a pas vraiment de limite à l'imbrication de requêtes. Il est possible d'imbriquer des requêtes imbriquées elles-même dans une requête… etc ! :soleil:</p><aside id="r-4562042" data-claire-element-id="8228732" data-claire-semantic="information"><p id="r-4562041" data-claire-element-id="8228731">Votre SGBDR peut cependant limiter le nombre d'imbrications.</p></aside><p id="r-4562043" data-claire-element-id="8541302">Afin de ne pas avoir des requêtes à rallonge, sachez qu'il est parfois possible (selon votre SGBDR) de créer des tables temporaires. Celles-ci permettent de créer de nouvelles tables pour y stocker le résultat d'une requête, puis de l'utiliser dans une autre requête.</p><p id="r-4562045" data-claire-element-id="8201157">Par exemple, la requête n°1 en haut de cette page est équivalente à ce code :</p><pre id="r-4562051" data-claire-element-id="8182271"><code data-claire-semantic="sql">CREATE TEMP TABLE une_table_temporaire AS
+    );</code>
+</pre>
+<p id="r-4638931" data-claire-element-id="8541294">
+Pour <em>
+chaque ligne</em>
+ de la table <code data-claire-semantic="text">
+address</code>
+,  vous êtes censé vérifier si la condition du <code data-claire-semantic="text">
+WHERE</code>
+ est vraie ou fausse, n'est-ce pas? La condition sera testée autant de fois qu'il y a de lignes.</p>
+<p id="r-4638932" data-claire-element-id="8541295">
+On est ok là-dessus. Mais ici, dans le <code data-claire-semantic="text">
+WHERE</code>
+, il y a une sous-requête imbriquée (de la ligne 4 à la ligne 7). Allez-vous recalculer cette sous-requête à chaque fois que vous allez vérifier la condition du <code data-claire-semantic="text">
+WHERE</code>
+, pour chaque ligne de <code data-claire-semantic="text">
+address</code>
+ ??? Ce serait bête, car le résultat de cette sous-requête est toujours le même : autant garder son résultat en mémoire plutôt que de le recalculer à chaque fois !</p>
+<aside id="r-4638934" data-claire-element-id="8384014" data-claire-semantic="information">
+<p id="r-4638933" data-claire-element-id="8384013">
+La plupart des SGBD le font : ils gardent le résultat dans une mémoire temporaire, appelée un <strong>
+cache</strong>
+.</p>
+</aside>
+<p id="r-4638991" data-claire-element-id="8541296">
+Sauf que... si cette sous-requête <em>
+dépend</em>
+ de la ligne pour laquelle on est en train de tester le <code data-claire-semantic="text">
+WHERE</code>
+, il n'est plus possible de mettre le résultat en cache. :( S'il faut recalculer la sous-requête à chaque fois, cela prend du temps !</p>
+<p id="r-4638992" data-claire-element-id="8541297">
+Si l'on est dans ce cas de figure, il est préférable (du point de vue performance) d'utiliser <code data-claire-semantic="text">
+EXISTS</code>
+, qui teste si une sous-requête contient <em>
+au moins</em>
+ une ligne. S'il en trouve au moins une, il arrête l'exécution de la sous-requête, car il est satisfait !</p>
+<p id="r-4638935" data-claire-element-id="8383873">
+ </p>
+<h3 id="r-4629195" data-claire-element-id="8541300">
+Aller plus loin : utiliser IN sur plusieurs colonnes</h3>
+<p id="r-4629191" data-claire-element-id="8360264">
+Dans ce chapitre, on a vérifié si une valeur est présente parmi une liste de valeurs.</p>
+<p id="r-4629192" data-claire-element-id="8541299">
+Il est également possible de vérifier si un <em>
+couple</em>
+ de deux valeurs <code data-claire-semantic="text">
+(valeur1, valeur2)</code>
+ est présent dans une liste de couples <code data-claire-semantic="text">
+(c1, c2)</code>
+, de cette manière :</p>
+<pre id="r-4629193" data-claire-element-id="8360266">
+<code data-claire-semantic="sql">
+SELECT * FROM t1 WHERE t1.valeur1, t1.valeur2 IN (SELECT c1, c2 FROM t2) ;</code>
+</pre>
+<p id="r-4629194" data-claire-element-id="8360267">
+ </p>
+<h3 id="r-4561849" data-claire-element-id="8541303">
+Aller plus loin : les tables temporaires</h3>
+<p id="r-4562031" data-claire-element-id="8541301">
+Théoriquement, il n'y a pas vraiment de limite à l'imbrication de requêtes. Il est possible d'imbriquer des requêtes imbriquées elles-même dans une requête… etc ! :soleil:</p>
+<aside id="r-4562042" data-claire-element-id="8228732" data-claire-semantic="information">
+<p id="r-4562041" data-claire-element-id="8228731">
+Votre SGBDR peut cependant limiter le nombre d'imbrications.</p>
+</aside>
+<p id="r-4562043" data-claire-element-id="8541302">
+Afin de ne pas avoir des requêtes à rallonge, sachez qu'il est parfois possible (selon votre SGBDR) de créer des tables temporaires. Celles-ci permettent de créer de nouvelles tables pour y stocker le résultat d'une requête, puis de l'utiliser dans une autre requête.</p>
+<p id="r-4562045" data-claire-element-id="8201157">
+Par exemple, la requête n°1 en haut de cette page est équivalente à ce code :</p>
+<pre id="r-4562051" data-claire-element-id="8182271">
+<code data-claire-semantic="sql">
+CREATE TEMP TABLE une_table_temporaire AS
 SELECT id_address, count(*) AS cnt 
 FROM entity 
 GROUP BY id_address ;
 
-SELECT * FROM une_table_temporaire a WHERE a.cnt &gt; 500 ;</code></pre><p id="r-4562047" data-claire-element-id="8182272"> Ces tables temporaires seront ensuite effacées à la fermeture de votre session avec le SGBDR.</p><p id="r-4563017" data-claire-element-id="8185268"> </p><h3 id="r-4563018" data-claire-element-id="8541316">En résumé</h3><ul id="r-4619682" data-claire-element-id="8541315"><li id="r-4619672" data-claire-element-id="8541305"><p id="r-4619671" data-claire-element-id="8541304">Pour tester si une valeur se trouve <strong>dans</strong> le résultat d'une requête, on utilise <code data-claire-semantic="text">IN</code>.</p></li><li id="r-4619679" data-claire-element-id="8541312"><p id="r-4619673" data-claire-element-id="8541306">Soit B une liste de valeurs renvoyées par une requête. Pour tester si une <strong>condition</strong> (par exemple <code data-claire-semantic="text">A &lt; B</code>) est vraie pour...</p><ul id="r-4619678" data-claire-element-id="8541311"><li id="r-4619675" data-claire-element-id="8541308"><p id="r-4619674" data-claire-element-id="8541307">... toutes les valeurs de <code data-claire-semantic="text">B</code>, on utilise <code data-claire-semantic="text">ALL</code>,</p></li><li id="r-4619677" data-claire-element-id="8541310"><p id="r-4619676" data-claire-element-id="8541309">... au moins une valeur de <code data-claire-semantic="text">B</code>, on utilise <code data-claire-semantic="text">ANY</code>.</p></li></ul></li><li id="r-4619681" data-claire-element-id="8541314"><p id="r-4619680" data-claire-element-id="8541313"><code data-claire-semantic="text">EXISTS</code> vérifie si la sous-requête contient au moins une ligne.</p></li></ul><p id="r-4619683" data-claire-element-id="8333553"> </p><h3 id="r-4637496" data-claire-element-id="8542393">Un peu d'entraînement !</h3><p id="r-4637492" data-claire-element-id="8380162">La base de données est en ligne, vous pouvez vous entraîner en réécrivant les requêtes de ce chapitre. N'hésitez pas à les modifier, à jouer avec, pour "voir ce que ça fait". ;)</p><p id="r-4637493" data-claire-element-id="8542392"><a href="https://www.codevolve.com/api/v1/publishable_key/2A9CAA3419124E3E8C3F5AFCE5306292?content_id=ba014daa-d108-4e91-83f1-42154313b2d1">Console interactive</a></p>
-</div>
-<div class="js-courseSelementActions sideActions">
-<ul class="sideActions__container">
-<li>
-<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
- #
-</a>
+SELECT * FROM une_table_temporaire a WHERE a.cnt &gt; 500 ;</code>
+</pre>
+<p id="r-4562047" data-claire-element-id="8182272">
+ Ces tables temporaires seront ensuite effacées à la fermeture de votre session avec le SGBDR.</p>
+<p id="r-4563017" data-claire-element-id="8185268">
+ </p>
+<h3 id="r-4563018" data-claire-element-id="8541316">
+En résumé</h3>
+<ul id="r-4619682" data-claire-element-id="8541315">
+<li id="r-4619672" data-claire-element-id="8541305">
+<p id="r-4619671" data-claire-element-id="8541304">
+Pour tester si une valeur se trouve <strong>
+dans</strong>
+ le résultat d'une requête, on utilise <code data-claire-semantic="text">
+IN</code>
+.</p>
+</li>
+<li id="r-4619679" data-claire-element-id="8541312">
+<p id="r-4619673" data-claire-element-id="8541306">
+Soit B une liste de valeurs renvoyées par une requête. Pour tester si une <strong>
+condition</strong>
+ (par exemple <code data-claire-semantic="text">
+A &lt; B</code>
+) est vraie pour...</p>
+<ul id="r-4619678" data-claire-element-id="8541311">
+<li id="r-4619675" data-claire-element-id="8541308">
+<p id="r-4619674" data-claire-element-id="8541307">
+... toutes les valeurs de <code data-claire-semantic="text">
+B</code>
+, on utilise <code data-claire-semantic="text">
+ALL</code>
+,</p>
+</li>
+<li id="r-4619677" data-claire-element-id="8541310">
+<p id="r-4619676" data-claire-element-id="8541309">
+... au moins une valeur de <code data-claire-semantic="text">
+B</code>
+, on utilise <code data-claire-semantic="text">
+ANY</code>
+.</p>
 </li>
 </ul>
+</li>
+<li id="r-4619681" data-claire-element-id="8541314">
+<p id="r-4619680" data-claire-element-id="8541313">
+<code data-claire-semantic="text">
+EXISTS</code>
+ vérifie si la sous-requête contient au moins une ligne.</p>
+</li>
+</ul>
+<p id="r-4619683" data-claire-element-id="8333553">
+ </p>
+<h3 id="r-4637496" data-claire-element-id="8542393">
+Un peu d'entraînement !</h3>
+<p id="r-4637492" data-claire-element-id="8380162">
+La base de données est en ligne, vous pouvez vous entraîner en réécrivant les requêtes de ce chapitre. N'hésitez pas à les modifier, à jouer avec, pour "voir ce que ça fait". ;)</p>
+<p id="r-4637493" data-claire-element-id="8542392">
+<a href="https://www.codevolve.com/api/v1/publishable_key/2A9CAA3419124E3E8C3F5AFCE5306292?content_id=ba014daa-d108-4e91-83f1-42154313b2d1">
+Console interactive</a>
+</p>
+
 </div>
+
+<div class="js-courseSelementActions sideActions">
+
+<ul class="sideActions__container">
+
+<li>
+
+<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+
+#
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
 </div>
