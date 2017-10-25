@@ -17,7 +17,7 @@ individus</strong>
 unité d’observation</em>
 .</p>
 <p id="r-4723687" data-claire-element-id="8600116">
- Des individus ont des caractéristiques : on les appelle des caractères, ou des<strong>
+Des individus ont des caractéristiques : on les appelle des caractères, ou des<strong>
 variables</strong>
 .</p>
 <p id="r-4723688" data-claire-element-id="8600117">
@@ -25,16 +25,16 @@ L’ensemble des individus s’appelle la<strong>
 population</strong>
 . On note souvent sa taille<math>
 $\(N\)$</math>
- , correspondant au nombre d’individus de la population.</p>
+, correspondant au nombre d’individus de la population.</p>
 <p id="r-4723689" data-claire-element-id="8600118">
- Lorsque l’on sélectionne certains individus d’une population, on obtient un échantillon. Sa taille est souvent notée<math>
+Lorsque l’on sélectionne certains individus d’une population, on obtient un échantillon. Sa taille est souvent notée<math>
 $\(n\)$</math>
 .</p>
 <aside id="r-4723691" data-claire-element-id="8600120" data-claire-semantic="information">
 <p id="r-4723690" data-claire-element-id="8600119">
 Dans ce cours, nous ne ferons pas de distinction entre les termes<strong>
 population</strong>
- et<strong>
+et<strong>
 échantillon</strong>
 . Normalement, un échantillon est un sous-groupe d’une population ; mais ici, on considérera que l’on travaille toujours sur l’ensemble de la population. Notre échantillon sera toujours l’ensemble de la population.</p>
 </aside>
@@ -43,7 +43,7 @@ On utilisera souvent le terme de<strong>
 jeu de données</strong>
 , (ou<strong>
 dataset</strong>
- en anglais). Ces termes ne sont pas très précis, mais dans ce cours, ils seront équivalents à<strong>
+en anglais). Ces termes ne sont pas très précis, mais dans ce cours, ils seront équivalents à<strong>
 échantillon</strong>
 .</p>
 <p id="r-4723693" data-claire-element-id="8600122">
@@ -53,13 +53,13 @@ Comment représenter un échantillon ?</h3>
 <p id="r-4723695" data-claire-element-id="8600124">
 On représente en général un échantillon sous forme de tableau, où chaque ligne correspond à un individu, et chaque colonne représente une variable. Cette représentation est à l’origine du format de fichier<a href="https://en.wikipedia.org/wiki/Comma-separated_values">
 CSV</a>
- (comma separated values). Ce format peut être ouvert avec les logiciels tableurs (Microsoft® Excel, Openoffice Calc), et est facilement interprétable par les langages R et Python.</p>
+(comma separated values). Ce format peut être ouvert avec les logiciels tableurs (Microsoft® Excel, Openoffice Calc), et est facilement interprétable par les langages R et Python.</p>
 <table id="r-4723700" data-claire-element-id="8600225">
 <tbody id="r-4723699" data-claire-element-id="8600224">
 <tr id="r-4723698" data-claire-element-id="8600223">
 <td id="r-4723697" data-claire-element-id="8600222">
 <p id="r-4723696" data-claire-element-id="8600221">
- ILLUS</p>
+ILLUS</p>
 </td>
 </tr>
 </tbody>
@@ -87,29 +87,29 @@ variable aléatoire</em>
 <p id="r-4723712" data-claire-element-id="8600386">
 Mais dès que l’on vérifie si l’événement s’est produit ou pas, alors on est dans la statistique. Cette vérification est une «<strong>
 réalisation</strong>
- », aussi appelée «<strong>
+», aussi appelée «<strong>
 observation</strong>
- ».</p>
+».</p>
 <p id="r-4723713" data-claire-element-id="8600142">
 Par exemple, vous avez une urne (ou un saladier, c’est pareil) qui contient des 3 boules noires et 7 boules rouges. Les probabilités vous permettent de dire que si vous tirez une boule, vous avez 3 chances sur 10 d’en tirer une noire. C’est purement théorique. Mais dès que vous plongez réellement la main dans l’urne et que vous piochez une boule, alors c’est là où les statistiques commencent : si vous avez pioché une boule noire, un statisticien pourra dire « J’observe qu’il-elle a pioché une boule noire ». Dans le cas contraire, il dira « J’observe qu’il-elle a pioché une boule rouge ».</p>
 <aside id="r-4723818" data-claire-element-id="8600388" data-claire-semantic="information">
 <p id="r-4723817" data-claire-element-id="8600387">
 Les urnes et les boules de couleurs sont très utilisées pour illustrer la théorie des probabilités. C’est un peu frustrant, car le seul et unique endroit où vous verrez réellement des gens piocher des boules de couleur dans une urne, c’est dans une célèbre<a href="https://www.youtube.com/watch?v=1xZ83Yi7n9g">
 émission</a>
- française diffusée en plein milieu d’après-midi. Du coup, tous les statisticiens adorent cette émission !</p>
+française diffusée en plein milieu d’après-midi. Du coup, tous les statisticiens adorent cette émission !</p>
 </aside>
 <p id="r-4723717" data-claire-element-id="8600389">
- Les probabilité ne sont que des lois purement théoriques dans un monde abstrait : il est impossible de vérifier avec exactitude si elles sont vraies ou pas. Cependant, il est possible d’<strong>
+Les probabilité ne sont que des lois purement théoriques dans un monde abstrait : il est impossible de vérifier avec exactitude si elles sont vraies ou pas. Cependant, il est possible d’<strong>
 estimer</strong>
 , grâce à la statistique, si elles décrivent bien la réalité ou pas. Pour les boules dans l’urne, comment pouvez-vous être sûr que la probabilité<math>
 $\(P\)$</math>
- de tirer une boule noire est vraiment de<math>
+de tirer une boule noire est vraiment de<math>
 $\(P=3/10\)$</math>
- ? Après tout, cette probabilité dépend aussi de la place initiale des boules dans l’urne, et donc cette probabilité peut très bien être de 3,01/10 : comme c’est purement théorique, impossible de le vérifier avec exactitude.</p>
+? Après tout, cette probabilité dépend aussi de la place initiale des boules dans l’urne, et donc cette probabilité peut très bien être de 3,01/10 : comme c’est purement théorique, impossible de le vérifier avec exactitude.</p>
 <p id="r-4723819" data-claire-element-id="8600390">
 Heureusement, les statistiques sont là. Elles nous permettent d’<strong>
 estimer</strong>
- la probabilité de tirer une boule noire. Il suffit d’effectuer un grand nombre de tirage (en remettant à chaque fois la boule dans l’urne), et vous verrez qu’environ 3/10 de vos tirages auront pioché une boule noire. Mais même si vous faites 1000000 tirages, il est possible que ayez tiré une boule noire pour 3,002/10 des tirages ; il reste impossible de déterminer si la probabilité est exactement de 3/10. Pour passer des probabilités aux statistiques, on utilise donc des<strong>
+la probabilité de tirer une boule noire. Il suffit d’effectuer un grand nombre de tirage (en remettant à chaque fois la boule dans l’urne), et vous verrez qu’environ 3/10 de vos tirages auront pioché une boule noire. Mais même si vous faites 1000000 tirages, il est possible que ayez tiré une boule noire pour 3,002/10 des tirages ; il reste impossible de déterminer si la probabilité est exactement de 3/10. Pour passer des probabilités aux statistiques, on utilise donc des<strong>
 estimateurs</strong>
 . Ici, la proportion de boules noires tirées est un<em>
 estimateur de la probabilité P</em>
@@ -144,7 +144,7 @@ Graphique en 2 dimensions avec 1 axe horizontal et 1 axe vertical (source: wikip
 <h4 id="r-4723883" data-claire-element-id="8600547">
 Les statistiques exploratoires (ou analyse exploratoire de données)</h4>
 <p id="r-4723735" data-claire-element-id="8600545">
- L’analyse exploratoire de données est le prolongement des statistiques descriptives : sauf que là, on étudie plutôt les relations entre 3 variables ou plus. Représenter des graphiques avec 3, 4, 5 ou 100 dimensions n’est plus possible sur du papier à 2 dimensions. Il faut donc utiliser des techniques spéciales pour continuer à<a href="/courses/explorez-vos-donnees-avec-des-algorithmes-non-supervises">
+L’analyse exploratoire de données est le prolongement des statistiques descriptives : sauf que là, on étudie plutôt les relations entre 3 variables ou plus. Représenter des graphiques avec 3, 4, 5 ou 100 dimensions n’est plus possible sur du papier à 2 dimensions. Il faut donc utiliser des techniques spéciales pour continuer à<a href="/courses/explorez-vos-donnees-avec-des-algorithmes-non-supervises">
 décrire et explorer les données</a>
 .</p>
 <p id="r-4723882" data-claire-element-id="8600546">
@@ -154,7 +154,7 @@ Les statistiques inférentielles</h4>
 <p id="r-4723740" data-claire-element-id="8600548">
 Ici, il s’agit d’analyser les données d’un sous-ensemble d’une population pour en déduire les caractéristiques globale de la population. Les sondages d’opinion, qui interrogent une petite proportion des habitants d’un pays pour en déduire l’opinion de l’ensemble de la population sont de la statistique inférentielle. Les statistiques inférentielles sont très liées à la théorie des probabilités. En effet, on suppose qu’une population obéit à des lois (probabilistes), puis on vérifie ces lois de manière statistique grâce à des<strong>
 estimateurs</strong>
- et des<strong>
+et des<strong>
 tests statistiques</strong>
 .</p>
 <p id="r-4723741" data-claire-element-id="8600170">
@@ -228,7 +228,7 @@ La frontière entre ces deux métiers est assez floue, mais on peut dire que le 
 <ul class="sideActions__container">
 <li>
 <a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
- #</a>
+#</a>
 </li>
 </ul>
 </div>

@@ -5,9 +5,9 @@ Dans une base de données, il arrive souvent que deux chaînes de caractères di
 <p id="r-4705622" data-claire-element-id="8548772">
 Par exemple, les chaînes de caractères<code data-claire-semantic="text">
 'Jean-Michel'</code>
- et<code data-claire-semantic="text">
+et<code data-claire-semantic="text">
 'Jean Michel'</code>
- font référence au même prénom, mais elles diffèrent à cause du tiret.</p>
+font référence au même prénom, mais elles diffèrent à cause du tiret.</p>
 <video id="r-4710636" data-claire-element-id="8562791" src="https://vimeo.com/233480806">
 <a href="https://vimeo.com/233480806">
 https://vimeo.com/233480806</a>
@@ -26,16 +26,16 @@ Celui-ci permet d'effectuer une recherche dans des chaînes de caractères. Il e
 <p id="r-4561436" data-claire-element-id="8540945">
 Ce que j'appelle<em>
 forme générale d'une chaîne de caractères</em>
- est souvent appelé<em>
+est souvent appelé<em>
 pattern</em>
- dans le monde de la programmation informatique.</p>
+dans le monde de la programmation informatique.</p>
 </aside>
 <p id="r-4561316" data-claire-element-id="8540947">
 On utilise<code data-claire-semantic="text">
 LIKE</code>
- avec les caractères<code data-claire-semantic="text">
+avec les caractères<code data-claire-semantic="text">
 _</code>
- et<code data-claire-semantic="text">
+et<code data-claire-semantic="text">
 %</code>
 . Le premier est employé pour remplacer un caractère inconnu, le second pour remplacer 0, 1 ou plusieurs caractères inconnus.</p>
 <p id="r-4561317" data-claire-element-id="8540948">
@@ -53,7 +53,7 @@ Un peu d'entraînement</h4>
 <p id="r-4561322" data-claire-element-id="8540949">
 Voici dans ce tableau différentes expressions utilisant<code data-claire-semantic="text">
 LIKE</code>
- (colonne de gauche), ainsi que la valeur renvoyée par l'expression en question (colonne de droite).</p>
+(colonne de gauche), ainsi que la valeur renvoyée par l'expression en question (colonne de droite).</p>
 <table id="r-4561369" data-claire-element-id="8180722">
 <tbody id="r-4561368" data-claire-element-id="8180721">
 <tr id="r-4561327" data-claire-element-id="8180637">
@@ -186,7 +186,7 @@ TRUE</code>
 </table>
 <aside id="r-4561445" data-claire-element-id="8540984" data-claire-semantic="warning">
 <p id="r-4560416" data-claire-element-id="8540982">
- Si vous souhaitez tester ces expressions, écrivez dans votre SGBDR :</p>
+Si vous souhaitez tester ces expressions, écrivez dans votre SGBDR :</p>
 <pre id="r-4561443" data-claire-element-id="8180592">
 <code data-claire-semantic="sql">
 SELECT 'OpenClassrooms' LIKE '%Class%' ;</code>
@@ -194,17 +194,17 @@ SELECT 'OpenClassrooms' LIKE '%Class%' ;</code>
 <p id="r-4561444" data-claire-element-id="8540983">
 La réponse sera une table d'une ligne et d'une colonne. En fonction de votre SGBDR, la valeur contenue dans cette table peut varier :<code data-claire-semantic="text">
 TRUE</code>
- est par exemple équivalent à<code data-claire-semantic="text">
+est par exemple équivalent à<code data-claire-semantic="text">
 1</code>
- en SQLite ou<code data-claire-semantic="text">
+en SQLite ou<code data-claire-semantic="text">
 t</code>
- en Postgresql ; et<code data-claire-semantic="text">
+en Postgresql ; et<code data-claire-semantic="text">
 FALSE</code>
- est équivalent à<code data-claire-semantic="text">
+est équivalent à<code data-claire-semantic="text">
 0</code>
- en SQLite et<code data-claire-semantic="text">
+en SQLite et<code data-claire-semantic="text">
 f</code>
- en Postgresql.</p>
+en Postgresql.</p>
 </aside>
 <p id="r-4561446" data-claire-element-id="8180595">
 </p>
@@ -214,7 +214,7 @@ Majuscules et minuscules</h3>
 <p id="r-4560388" data-claire-element-id="8541062">
 Que renvoie l'expression<code data-claire-semantic="text">
 'OpenClassrooms' LIKE 'openclassrooms'</code>
- ?</p>
+?</p>
 </div>
 <p id="r-4561448" data-claire-element-id="8541064">
 Et bien... cela dépend ! Les SGBDR n'ont pas tous le même comportement, certains vous renverront<code data-claire-semantic="text">
@@ -231,7 +231,7 @@ SELECT * FROM entity WHERE lower(name) LIKE 'a%' ;</code>
 <p id="r-4561451" data-claire-element-id="8541065">
 De cette manière, quelle que soit sa valeur,<em>
 name</em>
- sera converti en minuscules grâce à la fonction<code data-claire-semantic="text">
+sera converti en minuscules grâce à la fonction<code data-claire-semantic="text">
 lower</code>
 . Une fois la conversion faite, écrivez votre pattern sans aucune majuscule (ici le pattern est<code data-claire-semantic="text">
 'a%'</code>
@@ -261,7 +261,7 @@ Oui ! Il y a 2 lignes qui ont un nom similaire. Correspondent-elles à la même 
 <p id="r-4561691" data-claire-element-id="8541103">
 Nous pouvons donc adapter la requête du chapitre précédent, en intégrant l'opérateur<code data-claire-semantic="text">
 LIKE</code>
- :</p>
+:</p>
 <pre id="r-4561736" data-claire-element-id="8262241">
 <code data-claire-semantic="sql">
 SELECT i.id AS intermediary_id, i.name AS intermediary_name, e.jurisdiction, e.jurisdiction_description, count(*) as cnt FROM intermediary i, assoc_inter_entity a, entity e WHERE a.entity = e.id AND a.inter = i.id AND ( lower(i.name) LIKE '%pacher%banking%' OR lower(i.name) LIKE '%plouf%financial%services%') GROUP BY i.id, i.name, e.jurisdiction, e.jurisdiction_description HAVING count(*) &gt; 100 ;</code>
@@ -277,14 +277,14 @@ Ils ont en effet lié certaines lignes des tables<strong>
 entity</strong>
 ,<strong>
 intermediary</strong>
- et<strong>
+et<strong>
 officers</strong>
- avec des liens de type<em>
+avec des liens de type<em>
 "same name as"</em>
- ou<em>
+ou<em>
 "same address as"</em>
- (respectivement<em>
- "même nom que"</em>
+(respectivement<em>
+"même nom que"</em>
 ,<em>
 "même adresse que"</em>
 ).</p>
@@ -293,7 +293,7 @@ Vous pouvez trouver ces liens dans les tables<strong>
 assoc_intermediaries</strong>
 ,<strong>
 assoc_entities</strong>
- et<strong>
+et<strong>
 assoc_officers</strong>
 .</p>
 <p id="r-4617885" data-claire-element-id="8328806">
@@ -323,9 +323,9 @@ On spécifie un<em>
 pattern</em>
 , où<code data-claire-semantic="text">
 _</code>
- remplace un caractère, et où<code data-claire-semantic="text">
+remplace un caractère, et où<code data-claire-semantic="text">
 %</code>
- remplace plusieurs (ou aucun) caractères.</p>
+remplace plusieurs (ou aucun) caractères.</p>
 </li>
 </ul>
 </div>
@@ -333,7 +333,7 @@ _</code>
 <ul class="sideActions__container">
 <li>
 <a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
- #</a>
+#</a>
 </li>
 </ul>
 </div>

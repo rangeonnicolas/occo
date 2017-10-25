@@ -9,11 +9,11 @@ Nous allons voir comment écrire une<strong>
 union</strong>
 , une<strong>
 différence</strong>
- et une<strong>
+et une<strong>
 intersection</strong>
 . Plus précisément, nous testerons ces opérateurs binaires sur les deux tables<strong>
 entity</strong>
- et<strong>
+et<strong>
 intermediary</strong>
 .</p>
 <p id="r-4701627" data-claire-element-id="8540132">
@@ -23,13 +23,13 @@ Faisons le point sur notre investigation</h3>
 <p id="r-4616021" data-claire-element-id="8323331">
 <strong>
 Entity</strong>
- contient une liste de sociétés.<strong>
+contient une liste de sociétés.<strong>
 Intermediary</strong>
- contient des intermédiaires. Dans certains cas, ces intermédiaires sont aussi des sociétés. Il y a peut-être donc des sociétés qui se trouvent à la fois dans les deux tables.</p>
+contient des intermédiaires. Dans certains cas, ces intermédiaires sont aussi des sociétés. Il y a peut-être donc des sociétés qui se trouvent à la fois dans les deux tables.</p>
 <p id="r-4616022" data-claire-element-id="8323332">
 Testons si c'est la cas de<em>
 Big Data Crunchers Ltd.</em>
- ! Si c'est le cas, cela signifiera que cette société a servi d'intermédiaire.</p>
+! Si c'est le cas, cela signifiera que cette société a servi d'intermédiaire.</p>
 <aside id="r-4616024" data-claire-element-id="8540123" data-claire-semantic="warning">
 <p id="r-4616023" data-claire-element-id="8540122">
 Pour vous rafraîchir la mémoire sur la notion d'intermédiaire, c'est<a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/explorez-les-panama-papers#r-4552280">
@@ -45,15 +45,15 @@ Pour utiliser un opérateur binaire sur deux tables, il faut que ces deux tables
 schéma</a>
 , ce qui n'est pas le cas de<strong>
 entity</strong>
- et<strong>
+et<strong>
 intermediary</strong>
 .</p>
 <p id="r-4550650" data-claire-element-id="8540213">
 Pour résoudre ce problème, nous allons les ramener au même schéma, grâce à une projection. Ainsi, au lieu d'utiliser les tables<strong>
 entity</strong>
- et<strong>
+et<strong>
 intermediary</strong>
- telles quelles, nous prendrons plutôt les tables résultant de ces deux projections, qui elles sont bien de même schéma :</p>
+telles quelles, nous prendrons plutôt les tables résultant de ces deux projections, qui elles sont bien de même schéma :</p>
 <pre id="r-4550686" data-claire-element-id="8150542">
 <code data-claire-semantic="sql">
 SELECT name, id_address FROM intermediary ; SELECT name, id_address FROM entity ;</code>
@@ -69,25 +69,25 @@ Les mots clés UNION, EXCEPT et INTERSECT</h4>
 <p id="r-4550706" data-claire-element-id="8199274">
 Pour avoir la liste de toutes les sociétés de<strong>
 entity</strong>
- ainsi que la liste de tous les intermédiaires, voici la requête à formuler :</p>
+ainsi que la liste de tous les intermédiaires, voici la requête à formuler :</p>
 <pre id="r-4550707" data-claire-element-id="8230961">
 <code data-claire-semantic="sql">
 SELECT name, id_address FROM intermediary UNION SELECT name, id_address FROM entity;</code>
 </pre>
 <p id="r-4550926" data-claire-element-id="8151201">
- La liste des sociétés de la table<strong>
+La liste des sociétés de la table<strong>
 entity</strong>
- qui ne sont pas des intermédiaires est donnée par :</p>
+qui ne sont pas des intermédiaires est donnée par :</p>
 <pre id="r-4550731" data-claire-element-id="8230962">
 <code data-claire-semantic="sql">
 SELECT name, id_address FROM entity EXCEPT SELECT name, id_address FROM intermediary ;</code>
 </pre>
 <p id="r-4550927" data-claire-element-id="8151202">
- Si nous souhaitons connaître les sociétés à la fois présentes dans la table<strong>
+Si nous souhaitons connaître les sociétés à la fois présentes dans la table<strong>
 entity</strong>
- et dans la table<strong>
+et dans la table<strong>
 intermediary</strong>
- :</p>
+:</p>
 <pre id="r-4550816" data-claire-element-id="8230963">
 <code data-claire-semantic="sql">
 SELECT name, id_address FROM entity INTERSECT SELECT name, id_address FROM intermediary ;</code>
@@ -99,11 +99,11 @@ Oui mais...</h3>
 <p id="r-4550837" data-claire-element-id="8323572">
 Malheureusement, il y a un<em>
 Mais.</em>
- :euh: Il faut que je vous avoue que la<strong>
+:euh: Il faut que je vous avoue que la<strong>
 différence</strong>
- et l'<strong>
+et l'<strong>
 intersection</strong>
- sont rarement effectuées de cette manière.</p>
+sont rarement effectuées de cette manière.</p>
 <aside id="r-4550839" data-claire-element-id="8547373" data-claire-semantic="warning">
 <p id="r-4550838" data-claire-element-id="8151014">
 D'ailleurs, certains SGBDR n'acceptent même pas les mots clés EXCEPT et INTERSECT ! :waw:</p>
@@ -115,23 +115,23 @@ Réfléchissons</h4>
 <p id="r-4550840" data-claire-element-id="8199343">
 Par exemple, on veut savoir si une ligne d'une première table est présente dans une seconde table. On doit donc comparer la valeur de chacun de ses attributs un à un. S'il y a beaucoup d'attributs, ceci n'est pas optimal. En fait il y a plus simple,<em>
 mais à une condition</em>
- : que les deux tables soient extraites d'une table originelle contenant au moins une clé candidate.</p>
+: que les deux tables soient extraites d'une table originelle contenant au moins une clé candidate.</p>
 <p id="r-4550841" data-claire-element-id="8151175">
 Prenons une table<strong>
 personne</strong>
- contenant des personnes de nationalité française, décrites par 20 colonnes. La colonne<em>
+contenant des personnes de nationalité française, décrites par 20 colonnes. La colonne<em>
 numéro de sécurité sociale</em>
- est l'une des clés candidates, car elle identifie chacun des individus. De cette table originelle<strong>
+est l'une des clés candidates, car elle identifie chacun des individus. De cette table originelle<strong>
 personne</strong>
 , nous créons une table<strong>
 adulte</strong>
 , qui contient les personnes de plus de 18 ans, et une table<strong>
 marseillais</strong>
- contenant les personnes habitant dans la ville de Marseille.</p>
+contenant les personnes habitant dans la ville de Marseille.</p>
 <p id="r-4550846" data-claire-element-id="8323573">
 Pour savoir si une personne est présente à la fois dans<strong>
 adulte</strong>
- et dans<strong>
+et dans<strong>
 marseillais</strong>
 , pas besoin de comparer la totalité des 20 colonnes : il suffit juste de regarder si son numéro de sécurité sociale est présent dans chacune des deux tables !</p>
 <h4 id="r-4616155" data-claire-element-id="8540253">
@@ -149,7 +149,7 @@ Traduite en français, cette requête serait :</p>
 <p id="r-4550863" data-claire-element-id="8151068">
 Sélectionner toutes les lignes de la table<strong>
 adulte</strong>
- pour lesquelles le numéro de sécurité sociale se trouve dans :</p>
+pour lesquelles le numéro de sécurité sociale se trouve dans :</p>
 <ul id="r-4550866" data-claire-element-id="8151071">
 <li id="r-4550865" data-claire-element-id="8151070">
 <p id="r-4550864" data-claire-element-id="8151069">
@@ -173,7 +173,7 @@ intersection</strong>
 différence</strong>
 , il suffit de remplacer le mot clé<code data-claire-semantic="text">
 IN</code>
- par<code data-claire-semantic="text">
+par<code data-claire-semantic="text">
 NOT IN</code>
 .</p>
 <p id="r-4616171" data-claire-element-id="8323631">
@@ -183,7 +183,7 @@ En résumé</h3>
 <ul id="r-4616178" data-claire-element-id="8540318">
 <li id="r-4616173" data-claire-element-id="8540313">
 <p id="r-4616172" data-claire-element-id="8540312">
- L'union s'effectue grâce à<code data-claire-semantic="text">
+L'union s'effectue grâce à<code data-claire-semantic="text">
 UNION</code>
 .</p>
 </li>
@@ -191,7 +191,7 @@ UNION</code>
 <p id="r-4616174" data-claire-element-id="8540314">
 L'intersection et la différence s'effectuent respectivement grâce à<code data-claire-semantic="text">
 INTERSECT</code>
- et<code data-claire-semantic="text">
+et<code data-claire-semantic="text">
 EXCEPT</code>
 .</p>
 </li>
@@ -199,9 +199,9 @@ EXCEPT</code>
 <p id="r-4616176" data-claire-element-id="8540316">
 Quand on peut utiliser des clés primaires, il y a plus efficace que<code data-claire-semantic="text">
 INTERSECT</code>
- et<code data-claire-semantic="text">
+et<code data-claire-semantic="text">
 EXCEPT</code>
- !</p>
+!</p>
 </li>
 </ul>
 <p id="r-4637456" data-claire-element-id="8380091">
@@ -221,7 +221,7 @@ Console interactive</a>
 <ul class="sideActions__container">
 <li>
 <a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
- #</a>
+#</a>
 </li>
 </ul>
 </div>

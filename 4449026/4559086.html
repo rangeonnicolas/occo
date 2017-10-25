@@ -3,7 +3,7 @@
 <p id="r-4705626" data-claire-element-id="8548781">
 Saviez-vous qu'il était possible d'imbriquer des requêtes ? Normalement oui, vous en avez déjà vu passer<a href="http://www.larousse.fr/dictionnaires/francais/subrepticement/75084?q=subrepticement#74231">
 subrepticement</a>
- dans ce cours !</p>
+dans ce cours !</p>
 <video id="r-4709439" data-claire-element-id="8559349" src="https://vimeo.com/album/233480879">
 <a href="https://vimeo.com/album/233480879">
 https://vimeo.com/album/233480879</a>
@@ -15,7 +15,7 @@ Prenons un exemple. Dans le<a href="/courses/initiez-vous-a-lalgebre-relationnel
 chapitre sur le mot clé HAVING</a>
 , j'expliquais que celui-ci servait à effectuer une restriction sur une table<em>
 après</em>
- agrégation. Mais si HAVING vous semble compliqué, il est possible d'utiliser une requête imbriquée :</p>
+agrégation. Mais si HAVING vous semble compliqué, il est possible d'utiliser une requête imbriquée :</p>
 <pre id="r-4562021" data-claire-element-id="8200802">
 <code data-claire-semantic="sql">
 -- REQUETE n°1 SELECT * FROM (SELECT id_address, count(*) AS cnt FROM entity GROUP BY id_address) a WHERE a.cnt &gt; 500 ; -- REQUETE n°2, équivalente à la requête n°1 : SELECT id_address, count(*) AS cnt FROM entity GROUP BY id_address HAVING count(*) &gt; 500 ;</code>
@@ -26,7 +26,7 @@ Que retournent ces requêtes ? Elles retournent les adresses auxquelles sont dom
 <p id="r-4562022" data-claire-element-id="8182223">
 Certaines sociétés n'ont pas ou très peu d'employés. Il n'est donc pas impossible de trouver un grand nombre de sociétés enregistrées dans un même bâtiment, même si ce dernier n'est pas un gratte-ciel. Certaines de ces sociétés sont qualifiées de<em>
 coquilles vides</em>
- ou de<em>
+ou de<em>
 sociétés boîte aux lettres</em>
 .</p>
 </aside>
@@ -50,13 +50,13 @@ dans</em>
 <p id="r-4562026" data-claire-element-id="8541285">
 Donne-moi les lignes de la table<strong>
 address</strong>
- pour lesquelles l'identifiant se trouve<strong>
+pour lesquelles l'identifiant se trouve<strong>
 <em>
 DANS</em>
 </strong>
- la colonne<em>
+la colonne<em>
 id_address</em>
- de la table obtenue par la requête n°2.</p>
+de la table obtenue par la requête n°2.</p>
 </blockquote>
 <p id="r-4562028" data-claire-element-id="8182230">
 Nous sommes encore face à une requête imbriquée, qui utilise le résultat de la requête n°2 (en haut de cette page) :</p>
@@ -72,7 +72,7 @@ Les mots clés ANY et ALL</h3>
 <p id="r-4561847" data-claire-element-id="8201151">
 Y a-t-il des intermédiaires qui sont plus actifs que les deux intermédiaires que nous avons trouvés précédemment :<em>
 Pacher Banking S.A.</em>
- et<em>
+et<em>
 Plouf Financial Services Corp</em>
 . ?</p>
 </div>
@@ -107,7 +107,7 @@ cnt_entities</strong>
 <tr id="r-4562433" data-claire-element-id="8185263">
 <td id="r-4562430" data-claire-element-id="8183572">
 <p id="r-4562453" data-claire-element-id="8183571">
- 5000</p>
+5000</p>
 </td>
 <td id="r-4562454" data-claire-element-id="8185262">
 <p id="r-4562429" data-claire-element-id="8185261">
@@ -115,13 +115,13 @@ Pacher Banking S.A.</p>
 </td>
 <td id="r-4562432" data-claire-element-id="8183574">
 <p id="r-4562431" data-claire-element-id="8183573">
- 2184</p>
+2184</p>
 </td>
 </tr>
 <tr id="r-4562462" data-claire-element-id="8183578">
 <td id="r-4562457" data-claire-element-id="8183577">
 <p id="r-4562456" data-claire-element-id="8183576">
- 5001</p>
+5001</p>
 </td>
 <td id="r-4562459" data-claire-element-id="8183387">
 <p id="r-4562458" data-claire-element-id="8183386">
@@ -129,7 +129,7 @@ Plouf Financial Services Corp.</p>
 </td>
 <td id="r-4562461" data-claire-element-id="8183502">
 <p id="r-4562460" data-claire-element-id="8183501">
- 720</p>
+720</p>
 </td>
 </tr>
 <tr id="r-4562527" data-claire-element-id="8183585">
@@ -151,9 +151,9 @@ Plouf Financial Services Corp.</p>
 <p id="r-4639026" data-claire-element-id="8541289">
 Pour répondre à cette question, il faut utiliser un opérateur suivi du mot clé<code data-claire-semantic="text">
 ALL</code>
- ou<code data-claire-semantic="text">
+ou<code data-claire-semantic="text">
 ANY</code>
- :</p>
+:</p>
 <pre id="r-4639027" data-claire-element-id="8384082">
 <code data-claire-semantic="sql">
 SELECT * FROM nb_entities WHERE cnt_entities &gt; ALL(SELECT cnt_entities FROM nb_entities WHERE intermediary_id IN (5000,5001,5002));</code>
@@ -187,11 +187,11 @@ SELECT * FROM address a WHERE a.id_address IN ( SELECT id_address FROM entity GR
 <p id="r-4638931" data-claire-element-id="8541294">
 Pour<em>
 chaque ligne</em>
- de la table<code data-claire-semantic="text">
+de la table<code data-claire-semantic="text">
 address</code>
 , vous êtes censé vérifier si la condition du<code data-claire-semantic="text">
 WHERE</code>
- est vraie ou fausse, n'est-ce pas? La condition sera testée autant de fois qu'il y a de lignes.</p>
+est vraie ou fausse, n'est-ce pas? La condition sera testée autant de fois qu'il y a de lignes.</p>
 <p id="r-4638932" data-claire-element-id="8541295">
 On est ok là-dessus. Mais ici, dans le<code data-claire-semantic="text">
 WHERE</code>
@@ -199,7 +199,7 @@ WHERE</code>
 WHERE</code>
 , pour chaque ligne de<code data-claire-semantic="text">
 address</code>
- ??? Ce serait bête, car le résultat de cette sous-requête est toujours le même : autant garder son résultat en mémoire plutôt que de le recalculer à chaque fois !</p>
+??? Ce serait bête, car le résultat de cette sous-requête est toujours le même : autant garder son résultat en mémoire plutôt que de le recalculer à chaque fois !</p>
 <aside id="r-4638934" data-claire-element-id="8384014" data-claire-semantic="information">
 <p id="r-4638933" data-claire-element-id="8384013">
 La plupart des SGBD le font : ils gardent le résultat dans une mémoire temporaire, appelée un<strong>
@@ -209,7 +209,7 @@ cache</strong>
 <p id="r-4638991" data-claire-element-id="8541296">
 Sauf que... si cette sous-requête<em>
 dépend</em>
- de la ligne pour laquelle on est en train de tester le<code data-claire-semantic="text">
+de la ligne pour laquelle on est en train de tester le<code data-claire-semantic="text">
 WHERE</code>
 , il n'est plus possible de mettre le résultat en cache. :( S'il faut recalculer la sous-requête à chaque fois, cela prend du temps !</p>
 <p id="r-4638992" data-claire-element-id="8541297">
@@ -217,7 +217,7 @@ Si l'on est dans ce cas de figure, il est préférable (du point de vue performa
 EXISTS</code>
 , qui teste si une sous-requête contient<em>
 au moins</em>
- une ligne. S'il en trouve au moins une, il arrête l'exécution de la sous-requête, car il est satisfait !</p>
+une ligne. S'il en trouve au moins une, il arrête l'exécution de la sous-requête, car il est satisfait !</p>
 <p id="r-4638935" data-claire-element-id="8383873">
 </p>
 <h3 id="r-4629195" data-claire-element-id="8541300">
@@ -227,9 +227,9 @@ Dans ce chapitre, on a vérifié si une valeur est présente parmi une liste de 
 <p id="r-4629192" data-claire-element-id="8541299">
 Il est également possible de vérifier si un<em>
 couple</em>
- de deux valeurs<code data-claire-semantic="text">
+de deux valeurs<code data-claire-semantic="text">
 (valeur1, valeur2)</code>
- est présent dans une liste de couples<code data-claire-semantic="text">
+est présent dans une liste de couples<code data-claire-semantic="text">
 (c1, c2)</code>
 , de cette manière :</p>
 <pre id="r-4629193" data-claire-element-id="8360266">
@@ -255,7 +255,7 @@ Par exemple, la requête n°1 en haut de cette page est équivalente à ce code 
 CREATE TEMP TABLE une_table_temporaire AS SELECT id_address, count(*) AS cnt FROM entity GROUP BY id_address ; SELECT * FROM une_table_temporaire a WHERE a.cnt &gt; 500 ;</code>
 </pre>
 <p id="r-4562047" data-claire-element-id="8182272">
- Ces tables temporaires seront ensuite effacées à la fermeture de votre session avec le SGBDR.</p>
+Ces tables temporaires seront ensuite effacées à la fermeture de votre session avec le SGBDR.</p>
 <p id="r-4563017" data-claire-element-id="8185268">
 </p>
 <h3 id="r-4563018" data-claire-element-id="8541316">
@@ -265,7 +265,7 @@ En résumé</h3>
 <p id="r-4619671" data-claire-element-id="8541304">
 Pour tester si une valeur se trouve<strong>
 dans</strong>
- le résultat d'une requête, on utilise<code data-claire-semantic="text">
+le résultat d'une requête, on utilise<code data-claire-semantic="text">
 IN</code>
 .</p>
 </li>
@@ -273,7 +273,7 @@ IN</code>
 <p id="r-4619673" data-claire-element-id="8541306">
 Soit B une liste de valeurs renvoyées par une requête. Pour tester si une<strong>
 condition</strong>
- (par exemple<code data-claire-semantic="text">
+(par exemple<code data-claire-semantic="text">
 A &lt; B</code>
 ) est vraie pour...</p>
 <ul id="r-4619678" data-claire-element-id="8541311">
@@ -299,7 +299,7 @@ ANY</code>
 <p id="r-4619680" data-claire-element-id="8541313">
 <code data-claire-semantic="text">
 EXISTS</code>
- vérifie si la sous-requête contient au moins une ligne.</p>
+vérifie si la sous-requête contient au moins une ligne.</p>
 </li>
 </ul>
 <p id="r-4619683" data-claire-element-id="8333553">
@@ -317,7 +317,7 @@ Console interactive</a>
 <ul class="sideActions__container">
 <li>
 <a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
- #</a>
+#</a>
 </li>
 </ul>
 </div>

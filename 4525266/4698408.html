@@ -22,8 +22,8 @@ Si la variable qui contient des données manquantes est cruciale dans l'analyse,
 Cette dernière méthode contient cependant des risques. En effet, vous pouvez vous retrouver avec un nombre d'individus (un nombre de lignes) trop restreint pour que votre analyse ait encore du sens.</p>
 <p id="r-4727257" data-claire-element-id="8610562">
 De plus, il se peut que votre échantillon ne soit plus représentatif de la population globale. Imaginez un échantillon de personnes de la même forme que celui du chapitre précédent. Vous décidez de supprimer les dates de naissances pour lesquelles le format n'est pas<code data-claire-semantic="text">
- jour/mois/année</code>
- , ce qui créera des valeurs manquantes dans la variable Date de naissance. Puis, vous décidez de supprimer toutes les lignes (tous les individus) qui ont une date de naissance manquante. Vous aurez probablement supprimé toutes les personnes habitant aux USA, car ceux-ci ont l'habitude d'écrire les dates<a href="https://frenchmorning.com/pourquoi-les-americains-mettent-le-mois-en-tete-de-la-date/">
+jour/mois/année</code>
+, ce qui créera des valeurs manquantes dans la variable Date de naissance. Puis, vous décidez de supprimer toutes les lignes (tous les individus) qui ont une date de naissance manquante. Vous aurez probablement supprimé toutes les personnes habitant aux USA, car ceux-ci ont l'habitude d'écrire les dates<a href="https://frenchmorning.com/pourquoi-les-americains-mettent-le-mois-en-tete-de-la-date/">
 différemment des francophones</a>
 . Si vous réalisez ensuite une analyse sur les tailles, votre échantillon ne sera plus représentatif, car les personnes des USA ont sûrement une taille moyenne différente de celle des autres pays.</p>
 <h4 id="r-4698668" data-claire-element-id="8604754">
@@ -67,7 +67,7 @@ Hanna mesure 3,45m. Vous ne trouvez pas cela aberrant ?</p>
 <p id="r-4698842" data-claire-element-id="8533301">
 Si. C'est aberrant<em>
 comparé</em>
- aux tailles des autres êtres humains.</p>
+aux tailles des autres êtres humains.</p>
 <p id="r-4698861" data-claire-element-id="8533302">
 Mais attention, une valeur aberrante ne signifie pas forcément une valeur fausse ! En effet, Hanna mesure peut-être réellement 3,45m. Ok, c'est difficile à concevoir, mais c'est possible.</p>
 <p id="r-4698966" data-claire-element-id="8533303">
@@ -108,14 +108,14 @@ Il faut supprimer les doublons. Cependant, il n’y a pas de règle précise pou
 <p id="r-4724162" data-claire-element-id="8610571">
 Un petit exemple : si votre échantillon contient une variable « identifiant », alors il est aisé de détecter des doublons : ce sont ceux qui auront le même identifiant ;) . Dans notre exemple, on peut considérer que l’adresse email est l’identifiant d’une personne. Dans notre exmeple, les 2 lignes qui ont pour email<code data-claire-semantic="text">
 samuel_329@example.com</code>
- constituent un doublon.</p>
+constituent un doublon.</p>
 <aside id="r-4724164" data-claire-element-id="8601304" data-claire-semantic="information">
 <p id="r-4724163" data-claire-element-id="8601303">
 Si vous êtes familiers avec les bases de données, vous connaissez probablement la notion de<a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/comprenez-limportance-des-cles">
 clé</a>
- (clé primaire ou clé candidate). Deux individus avec les mêmes valeurs pour une clé<em>
+(clé primaire ou clé candidate). Deux individus avec les mêmes valeurs pour une clé<em>
 sont</em>
- un doublon !</p>
+un doublon !</p>
 </aside>
 <p id="r-4724165" data-claire-element-id="8601305">
 Autre exemple : vous analysez des relevés de température pris dans un village. Il y a 2 stations météo dans ce village : la station 1, qui a fonctionné de nombreuses années jusqu’au 15 janvier 2019, puis qui s’est arrêtée à cause de son ancienneté. Cette panne ayant été prévue, une station 2 avait été installée (au même endroit) pour la remplacer : elle a été mise en service le 2 janvier 2019. Votre échantillon est donc constitué de relevés provenant des 2 stations. Cependant, les relevés compris entre le 2 janvier et le 15 janvier 2019 sont en double, car les 2 stations fonctionnaient en parallèle. Il vous faut donc supprimer, pour chaque date comprise dans cette période, l’un des 2 relevés.</p>
@@ -123,7 +123,7 @@ Autre exemple : vous analysez des relevés de température pris dans un village.
 <p id="r-4724166" data-claire-element-id="8601431">
 Oui mais de nos deux lignes contenant<code data-claire-semantic="text">
 samuel_329@example.com</code>
- , faut-il en supprimer une au hasard ?</p>
+, faut-il en supprimer une au hasard ?</p>
 </div>
 <p id="r-4724168" data-claire-element-id="8601308">
 En fait, il faut faire un peu plus attention. Mieux vaut les regrouper en une ligne. En effet, parmi ces 2 lignes, la 1ere nous informe que Samuel est né le 20/09/2001, et la seconde ligne nous informe que Samuel habite au Bénin (information qui est manquante dans la 1ere ligne). Le problème, c’est pour la taille : la première ligne nous dit que Samuel mesure 1,67m, alors que la seconde nous affirme qu’il n’en mesure que 1,45m. Il y a contradiction. S’il n’y a pas d’autre moyen de vérification, on peut par exemple choisir de prendre la moyenne de ces 2 valeurs.</p>
@@ -176,7 +176,7 @@ http://cedric.cnam.fr/~saporta/NonReponse%20-%20DEC2013.pdf</a>
 <ul class="sideActions__container">
 <li>
 <a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
- #</a>
+#</a>
 </li>
 </ul>
 </div>

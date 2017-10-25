@@ -8,7 +8,7 @@ jointure</strong>
 <p id="r-4702941" data-claire-element-id="8544051">
 Pour répondre à l'évaluation de fin de partie, il vous faudra en plus de la vidéo, consulter la section<em>
 Notations</em>
- ci-dessous.</p>
+ci-dessous.</p>
 </aside>
 <video id="r-4709414" data-claire-element-id="8559289" src="https://vimeo.com/233478167">
 <a href="https://vimeo.com/233478167">
@@ -23,11 +23,11 @@ Remettons-nous en tête le concept des<em>
 clés étrangères</em>
 , qui servent à lier des relations. Nous savons qu'elles sont liées, oui, mais nous ne savons pas encore comment<em>
 exploiter</em>
- ces liaisons. C'est donc ce que nous allons voir ! :D</p>
+ces liaisons. C'est donc ce que nous allons voir ! :D</p>
 <p id="r-4569224" data-claire-element-id="8198784">
 Reprenons l'exemple de nos deux relations<strong>
 variété</strong>
- et<strong>
+et<strong>
 pomme</strong>
 .</p>
 <figure id="r-4569227" data-claire-element-id="8559291">
@@ -48,13 +48,13 @@ Créez du lien entre vos relations grâce aux clés étrangères</a>
 <p id="r-4569232" data-claire-element-id="8332108">
 Si je prends une pomme, et que je veux connaître son prix au kilo, il faudra d'abord que je connaisse sa variété. Ensuite, il faudra que je retrouve dans la table<strong>
 variété</strong>
- la ligne correspondante, pour connaître le prix.</p>
+la ligne correspondante, pour connaître le prix.</p>
 </blockquote>
 <aside id="r-4569236" data-claire-element-id="8537937" data-claire-semantic="information">
 <p id="r-4569235" data-claire-element-id="8537936">
 La jointure aura pour but de "coller" les tables<strong>
 pomme</strong>
- et<strong>
+et<strong>
 variété</strong>
 . Elle créera une grande table qui contiendra à la fois les informations de ma pomme et également les informations sur sa variété.</p>
 </aside>
@@ -65,25 +65,25 @@ La jointure interne</h3>
 <p id="r-4569239" data-claire-element-id="8537939">
 Plus formellement, on dit que l'on effectue une<em>
 jointure interne</em>
- de la relation<strong>
+de la relation<strong>
 pomme</strong>
- et de la relation<strong>
+et de la relation<strong>
 variété</strong>
- selon la condition<code data-claire-semantic="text">
+selon la condition<code data-claire-semantic="text">
 pomme.nom_variete = variete.libelle</code>
 .</p>
 <p id="r-4569240" data-claire-element-id="8537940">
 Et oui, il ne faut pas oublier de spécifier la condition de la jointure. Ici, cette condition dit que c'est la colonne<em>
 nom_variété</em>
- de<strong>
+de<strong>
 pomme</strong>
- qui référence la colonne<em>
+qui référence la colonne<em>
 libellé</em>
- de<strong>
+de<strong>
 variété</strong>
 .</p>
 <p id="r-4569241" data-claire-element-id="8198801">
- Voilà le résultat :</p>
+Voilà le résultat :</p>
 <figure id="r-4569244" data-claire-element-id="8559296">
 <img id="r-4569242" data-claire-element-id="8198802" src="https://user.oc-static.com/upload/2017/06/26/14984867824089_jointure.png" alt="Le résultat de la jointure">
 <figcaption>
@@ -132,9 +132,9 @@ Pomme</figcaption>
 <p id="r-4569262" data-claire-element-id="8537983">
 La condition de jointure que nous avons vu précédemment ne sera pas satisfaite :<code data-claire-semantic="text">
 pomme.nom_variete = variete.libelle</code>
- car<code data-claire-semantic="text">
+car<code data-claire-semantic="text">
 pomme.nom_variete</code>
- est nul.</p>
+est nul.</p>
 <p id="r-4569263" data-claire-element-id="8332245">
 Conséquence ? Comme la condition de jointure n'est pas satisfaite, la pomme 3 ne sera plus présente dans la table finale !</p>
 <p id="r-4569264" data-claire-element-id="8332246">
@@ -142,9 +142,9 @@ Si nous souhaitons quand même garder les pommes dont on ne connaît pas la vari
 jointure externe</em>
 . Si on considère que la table<strong>
 pomme</strong>
- est à gauche, et que la table<strong>
+est à gauche, et que la table<strong>
 variété</strong>
- est à droite, on effectue une<em>
+est à droite, on effectue une<em>
 jointure externe à gauche</em>
 , car on garde toutes les lignes de la table de gauche :</p>
 <figure id="r-4569267" data-claire-element-id="8559301">
@@ -158,7 +158,7 @@ Ici, on a pris l'exemple d'une pomme dont on ne connaît pas la variété (<code
 null</code>
 ). Ce problème peut aussi se poser si on connaît la variété de la pomme, mais que cette variété n'est pas répertoriée dans la table<strong>
 variété,</strong>
- comme par exemple la variété "Boskoop". C'est d'ailleurs l'exemple illustré dans la vidéo.</p>
+comme par exemple la variété "Boskoop". C'est d'ailleurs l'exemple illustré dans la vidéo.</p>
 </aside>
 <p id="r-4627901" data-claire-element-id="8537986">
 De même, s'il n'y avait aucune pomme de la variété Gala, mais que nous souhaitions quand même garder les informations sur cette variété après la jointure, il aurait fallu faire une jointure externe à droite. On aurait donc gardé toutes les lignes de la table de droite (<strong>
@@ -172,13 +172,13 @@ pomme</strong>
 Résultat d'une jointure externe à droite</figcaption>
 </figure>
 <p id="r-4627905" data-claire-element-id="8537989">
- Et si nous voulons garder à la fois toutes les informations de<strong>
+Et si nous voulons garder à la fois toutes les informations de<strong>
 pomme</strong>
- et de<strong>
+et de<strong>
 variété</strong>
 , j'ai en stock un troisième type de jointure externe : la<em>
 jointure totale</em>
- ! Voici à quoi elle ressemblerait :</p>
+! Voici à quoi elle ressemblerait :</p>
 <figure id="r-4627909" data-claire-element-id="8559305">
 <img id="r-4627907" data-claire-element-id="8356610" src="https://user.oc-static.com/upload/2017/08/28/15039269824758_JOINTURE_TOTALE.png" alt="Résultat d'une jointure externe totale">
 <figcaption>
@@ -225,9 +225,9 @@ Effectivement, si nous voulons joindre 2 tables, il suffit d'effectuer le produi
 <p id="r-4569291" data-claire-element-id="8332304">
 Voici le produit cartésien de<strong>
 pomme</strong>
- par<strong>
+par<strong>
 variété</strong>
- :</p>
+:</p>
 <figure id="r-4569294" data-claire-element-id="8559308">
 <img id="r-4569292" data-claire-element-id="8198852" src="https://user.oc-static.com/upload/2017/06/26/14984868573705_prod_cart.png" alt="Produit cartésien des relations pomme et variété">
 <figcaption>
@@ -245,7 +245,7 @@ pomme.nom_variete = variete.libelle</code>
 Lignes ne satisfaisant pas la condition</figcaption>
 </figure>
 <p id="r-4569300" data-claire-element-id="8198860">
- :magicien: Nous obtenons ici le même résultat que précédemment. C'est magique !</p>
+:magicien: Nous obtenons ici le même résultat que précédemment. C'est magique !</p>
 <figure id="r-4569303" data-claire-element-id="8559312">
 <img id="r-4569301" data-claire-element-id="8198861" src="https://user.oc-static.com/upload/2017/06/26/14984873695575_jointure.png" alt="Résultat de la jointure">
 <figcaption>
@@ -262,9 +262,9 @@ C'est une jointure classique. Mais si elle intervient sur deux relations dont le
 <p id="r-4569308" data-claire-element-id="8538067">
 Ainsi, si je renommais la colonne<em>
 libellé</em>
- de la table<strong>
+de la table<strong>
 variété</strong>
- en<em>
+en<em>
 nom_variété</em>
 , alors les deux tables auraient ce nom en commun. Comme nous souhaitons effectuer une jointure sur l'ensemble des colonnes ayant le même nom sur les deux relations (ici il n'y en a qu'une seule), nous aurions pu utiliser la<strong>
 jointure naturelle</strong>
@@ -298,7 +298,7 @@ condition</strong>
 <p id="r-4619251" data-claire-element-id="8332424">
 Une<strong>
 jointure interne</strong>
- ne garde pas forcément toutes les informations des deux tables jointes.</p>
+ne garde pas forcément toutes les informations des deux tables jointes.</p>
 </li>
 <li id="r-4619254" data-claire-element-id="8538073">
 <p id="r-4619253" data-claire-element-id="8538072">
@@ -314,7 +314,7 @@ jointure externe</strong>
 <ul class="sideActions__container">
 <li>
 <a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
- #</a>
+#</a>
 </li>
 </ul>
 </div>

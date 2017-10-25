@@ -9,13 +9,13 @@ Le point sur notre investigation</h3>
 <p id="r-4558476" data-claire-element-id="8323971">
 Pour l'instant, nous avons juste retrouvé notre mystérieuse société<em>
 Big Data Crunchers Ltd.</em>
- dans la table<strong>
+dans la table<strong>
 entity</strong>
 . Prochaine étape : retrouver son adresse !</p>
 <p id="r-4616291" data-claire-element-id="8324651">
 Nous irons même plus loin : nous chercherons également les<a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/explorez-les-panama-papers#r-4552280">
 intermédiaires</a>
- qui ont aidé à créer<em>
+qui ont aidé à créer<em>
 Big Data Crunchers Ltd</em>
 . Ces intermédiaires peuvent être aussi bien des personnes que des sociétés (banques, cabinets d'avocats, etc.)</p>
 <p id="r-4616292" data-claire-element-id="8323973">
@@ -25,9 +25,9 @@ La jointure interne</h3>
 <p id="r-4616293" data-claire-element-id="8324271">
 Notre objectif : "coller" les tables<strong>
 entity</strong>
- et<strong>
+et<strong>
 intermediary</strong>
- pour obtenir une table dans laquelle les lignes contiennent les informations sur les sociétés, avec pour chacune d'entre elles leur adresse. En SQL, il y a deux manières principales d'écrire des jointures :</p>
+pour obtenir une table dans laquelle les lignes contiennent les informations sur les sociétés, avec pour chacune d'entre elles leur adresse. En SQL, il y a deux manières principales d'écrire des jointures :</p>
 <p id="r-4616406" data-claire-element-id="8324272">
 </p>
 <h4 id="r-4616295" data-claire-element-id="8540374">
@@ -35,9 +35,9 @@ La première méthode : avec FROM et WHERE</h4>
 <p id="r-4519887" data-claire-element-id="8540372">
 Vous vous souvenez du chapitre<a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/liez-des-relations-grace-aux-jointures#r-4569305">
 Liez des relations grâce aux jointures</a>
- ? J'y expliquais dans le chapitre<em>
+? J'y expliquais dans le chapitre<em>
 Voir la jointure autrement</em>
- qu'une jointure était en fait l'enchaînement d'un produit cartésien et d'une restriction.</p>
+qu'une jointure était en fait l'enchaînement d'un produit cartésien et d'une restriction.</p>
 <p id="r-4519888" data-claire-element-id="8540373">
 Je commence donc par effectuer le produit cartésien des deux tables...</p>
 <pre id="r-4519889" data-claire-element-id="8151794">
@@ -59,9 +59,9 @@ La seconde méthode : avec JOIN et ON</h4>
 <p id="r-4519894" data-claire-element-id="8540375">
 La seconde méthode introduit les nouveaux mots clés<code data-claire-semantic="text">
 JOIN</code>
- et<code data-claire-semantic="text">
+et<code data-claire-semantic="text">
 ON</code>
- :</p>
+:</p>
 <pre id="r-4519895" data-claire-element-id="8323982">
 <code data-claire-semantic="sql">
 SELECT * FROM entity JOIN address ON entity.id_address = address.id_address ;</code>
@@ -70,7 +70,7 @@ SELECT * FROM entity JOIN address ON entity.id_address = address.id_address ;</c
 <p id="r-4519896" data-claire-element-id="8323983">
 On peut inverser<strong>
 entity</strong>
- et<strong>
+et<strong>
 address</strong>
 , le résultat sera identique :</p>
 <pre id="r-4519897" data-claire-element-id="8151799">
@@ -87,17 +87,17 @@ Si votre clé étrangère contient 2 attributs (ou plus), alors il faut utiliser
 AND</code>
 . Prenons l'exemple d'une table<code data-claire-semantic="text">
 t1</code>
- ayant une clé étrangère de 2 attributs :<code data-claire-semantic="text">
+ayant une clé étrangère de 2 attributs :<code data-claire-semantic="text">
 fk1</code>
- et<code data-claire-semantic="text">
+et<code data-claire-semantic="text">
 fk2</code>
 . Cette clé étrangère référence la table<code data-claire-semantic="text">
 t2</code>
 , dont la clé primaire est elle aussi composée de 2 attributs :<code data-claire-semantic="text">
 pk1</code>
- et<code data-claire-semantic="text">
+et<code data-claire-semantic="text">
 pk2</code>
- :</p>
+:</p>
 <pre id="r-4555350" data-claire-element-id="8324273">
 <code data-claire-semantic="sql">
 -- Première méthode : SELECT * FROM t1, t2 WHERE (t1.fk1 = t2.pk1 AND t1.fk2 = t2.pk2); -- Seconde méthode : SELECT * FROM t1 JOIN t2 ON (t1.fk1 = t2.pk1 AND t1.fk2 = t2.pk2);</code>
@@ -113,7 +113,7 @@ Big Data Crunchers Ltd</em>
 WHERE</code>
 . Comme il y a déjà une condition, on utilise<code data-claire-semantic="text">
 AND</code>
- :</p>
+:</p>
 <pre id="r-4551313" data-claire-element-id="8226501">
 <code data-claire-semantic="sql">
 SELECT * FROM entity, address WHERE entity.id_address = address.id_address AND entity.name = 'Big Data Crunchers Ltd.';</code>
@@ -125,15 +125,15 @@ Joindre avec une table d'association</h3>
 <p id="r-4558557" data-claire-element-id="8540382">
 Retrouvons maintenant les intermédiaires qui ont participé à la création de la société<em>
 Big Data Crunchers Ltd</em>
- !</p>
+!</p>
 <p id="r-4558529" data-claire-element-id="8324592">
 <a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/utilisez-les-tables-dassociation">
 Précédemment</a>
 , nous avions vu qu'une table d'association servait à modéliser un lien de cardinalité<em>
 plusieurs à plusieurs</em>
- entre deux objets. C'est le cas du lien qui unit<strong>
+entre deux objets. C'est le cas du lien qui unit<strong>
 entity</strong>
- et<strong>
+et<strong>
 intermediary</strong>
 , car plusieurs intermédiaires peuvent créer une société, et un unique intermédiaire peut créer plusieurs sociétés. Ainsi, il y a une table qui porte le nom de<strong>
 assoc_inter_entity</strong>
@@ -174,9 +174,9 @@ Cette requête est complexe ! :waw: Pour la simplifier, nous avons fait suivre l
 a</code>
 ,<code data-claire-semantic="text">
 e</code>
- et<code data-claire-semantic="text">
+et<code data-claire-semantic="text">
 i</code>
- dans le<code data-claire-semantic="text">
+dans le<code data-claire-semantic="text">
 WHERE</code>
 . Ce sont des<strong>
 alias</strong>
@@ -189,11 +189,11 @@ Aller plus loin : les jointures externes</h3>
 <p id="r-4616300" data-claire-element-id="8324703">
 Vous vous souvenez des<a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/liez-des-relations-grace-aux-jointures#r-4569277">
 jointures externes</a>
- ? Elles permettent de garder des lignes qui auraient été ignorées lors d'une jointure interne. Si nous souhaitons obtenir une table avec toutes les sociétés de<strong>
+? Elles permettent de garder des lignes qui auraient été ignorées lors d'une jointure interne. Si nous souhaitons obtenir une table avec toutes les sociétés de<strong>
 entity</strong>
- avec leur adresse,<em>
- sans oublier</em>
- les sociétés dont l'adresse est inconnue, alors il nous faut une<strong>
+avec leur adresse,<em>
+sans oublier</em>
+les sociétés dont l'adresse est inconnue, alors il nous faut une<strong>
 jointure externe à gauche</strong>
 .</p>
 <pre id="r-4616325" data-claire-element-id="8324068">
@@ -203,9 +203,9 @@ SELECT * FROM entity LEFT OUTER JOIN address ON entity.id_address = address.id_a
 <p id="r-4616305" data-claire-element-id="8324280">
 Si au contraire, nous voulons garder<em>
 toutes</em>
- les adresses (qu'elles correspondent à une société ou non), il faut alors faire une jointure<strong>
+les adresses (qu'elles correspondent à une société ou non), il faut alors faire une jointure<strong>
 externe à droite</strong>
- :</p>
+:</p>
 <pre id="r-4616326" data-claire-element-id="8324070">
 <code data-claire-semantic="sql">
 SELECT * FROM entity RIGHT OUTER JOIN address ON entity.id_address = address.id_address;</code>
@@ -214,18 +214,18 @@ SELECT * FROM entity RIGHT OUTER JOIN address ON entity.id_address = address.id_
 <p id="r-4616327" data-claire-element-id="8324281">
 Bien entendu, une jointure externe à<strong>
 droite</strong>
- est équivalente à une jointure externe à<strong>
+est équivalente à une jointure externe à<strong>
 gauche</strong>
- pour laquelle on aurait interverti<strong>
+pour laquelle on aurait interverti<strong>
 entity</strong>
- et<strong>
+et<strong>
 address</strong>
 . Certains SGBDR n'acceptent d'ailleurs que l'une de ces deux jointures : c'est alors à vous d'intervertir les tables ! :p</p>
 </aside>
 <p id="r-4616329" data-claire-element-id="8324073">
 Vous me voyez venir...? Oui ! Il ne me reste plus qu'à vous donner la syntaxe de la jointure<strong>
 entière</strong>
- ! Celle-ci nous permet de garder à la fois toutes les adresses et à la fois toutes les sociétés :</p>
+! Celle-ci nous permet de garder à la fois toutes les adresses et à la fois toutes les sociétés :</p>
 <pre id="r-4616347" data-claire-element-id="8324113">
 <code data-claire-semantic="sql">
 SELECT * FROM entity FULL OUTER JOIN address ON entity.id_address = address.id_address;</code>
@@ -261,7 +261,7 @@ Il y a deux méthodes pour effectuer une jointure :</p>
 <p id="r-4616562" data-claire-element-id="8540466">
 avec le<code data-claire-semantic="text">
 FROM</code>
- et le<code data-claire-semantic="text">
+et le<code data-claire-semantic="text">
 WHERE</code>
 </p>
 </li>
@@ -269,7 +269,7 @@ WHERE</code>
 <p id="r-4616564" data-claire-element-id="8540468">
 avec<code data-claire-semantic="text">
 JOIN</code>
- et<code data-claire-semantic="text">
+et<code data-claire-semantic="text">
 ON</code>
 </p>
 </li>
@@ -290,7 +290,7 @@ alias</strong>
 <p id="r-4637466" data-claire-element-id="8547485">
 Si vous souhaitez un mémo pour tous les types de jointure, je vous conseille cette<a href="https://fr.wikipedia.org/wiki/Jointure_(informatique)">
 merveilleuse page Wikipedia</a>
- !</p>
+!</p>
 </aside>
 <p id="r-4705183" data-claire-element-id="8547487">
 </p>
@@ -307,7 +307,7 @@ Console interactive</a>
 <ul class="sideActions__container">
 <li>
 <a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
- #</a>
+#</a>
 </li>
 </ul>
 </div>

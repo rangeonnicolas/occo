@@ -23,19 +23,19 @@ Réfléchissons</h3>
 <p id="r-4737816" data-claire-element-id="8643154">
 Essayons de construire notre propre indicateur de dispersion, pas-à-pas. Pour illustrer, prenons les valeurs suivantes (70, 60, 50, 55, 55, 65, 65), et donnons leur chacun un nom :<math>
 $\(x_i\)$</math>
- , avec<math>
+, avec<math>
 $\(i\)$</math>
- allant de 1 à 7. Ainsi, nos valeurs portent les noms de<math>
+allant de 1 à 7. Ainsi, nos valeurs portent les noms de<math>
 $\(x_1\)$</math>
- à<math>
+à<math>
 $\(x_7\)$</math>
- .</p>
+.</p>
 <p id="r-4737817" data-claire-element-id="8641582">
 Formellement, on écrit<math>
 $\((x_1,...,x_n) = (70, 60, 50, 55, 55, 65, 65)\)$</math>
- avec<math>
+avec<math>
 $\(n=7\)$</math>
- .</p>
+.</p>
 <p id="r-4737818" data-claire-element-id="8641722">
 Remarquons que la moyenne de ces valeurs vaut 60, on la note<math>
 $\(\overline{x}=60\)$</math>
@@ -47,9 +47,9 @@ Facile de faire une mesure de dispersion ! Prenons toutes nos valeurs, et calcul
 <p id="r-4737820" data-claire-element-id="8641725">
 C'est un bon début. Comme notre moyenne est de 60, les écarts des<math>
 $\(x_i\)$</math>
- à la moyenne sont :<math>
+à la moyenne sont :<math>
 $\((x_1-\overline{x},...,x_7-\overline{x}) = (10,0,-10,-5,-5,5,5)\)$</math>
- . Sauf que... si nous faisons la somme de ceux-ci, on obtient 0 ! On peut même le démontrer mathématiquement : quelle que soit la dispersion de vos valeurs, la somme les écarts à la moyenne vaudra toujours 0. Pas très efficace donc...</p>
+. Sauf que... si nous faisons la somme de ceux-ci, on obtient 0 ! On peut même le démontrer mathématiquement : quelle que soit la dispersion de vos valeurs, la somme les écarts à la moyenne vaudra toujours 0. Pas très efficace donc...</p>
 <div id="r-4737854" data-claire-element-id="8643158" data-claire-semantic="question">
 <p id="r-4737853" data-claire-element-id="8643157">
 Si ça vaut 0, c'est parce qu’il y a des nombres positifs et des nombres négatifs. Évitons cela, et mettons-les tous au carré. Un nombre mis au carré, c'est toujours positif n'est-ce-pas ?</p>
@@ -62,9 +62,9 @@ $\(((x_1-\overline{x})^2,...,(x_7-\overline{x})^2) = (100,0,100,25,25,25,25)\)$<
 <p id="r-4737856" data-claire-element-id="8641862">
 Ici, on a fait la somme de tous les<math>
 $\((x_i-\overline{x})^2\)$</math>
- , avec<math>
+, avec<math>
 $\(i\)$</math>
- allant de 1 à 7. Mathématiquement, on note cette somme comme ceci :</p>
+allant de 1 à 7. Mathématiquement, on note cette somme comme ceci :</p>
 <p id="r-4737946" data-claire-element-id="8641921">
 <math>
 $\[\sum_{i=1}^{i=7}(x_i-\overline{x})^2\]$</math>
@@ -84,7 +84,7 @@ Bonne idée. la moyenne de (100,0,100,25,25,25,25) est 42.86</p>
 <p id="r-4737947" data-claire-element-id="8643171">
 Pour obtenir cette moyenne de 42.86, on a juste divisé 300 par le nombre de valeurs : 7. On a juste multiplié la formule précédente par<math>
 $\(\frac{1}{n}\)$</math>
- , ce qui nous donne</p>
+, ce qui nous donne</p>
 <p id="r-4738526" data-claire-element-id="8643491">
 <math>
 $\[\frac{1}{n}\sum_{i=1}^{i=n}(x_i-\overline{x})^2\]$</math>
@@ -113,9 +113,9 @@ L'écart-type empirique</h4>
 <p id="r-4738276" data-claire-element-id="8643191">
 L'écart-type empirique, c'est juste la racine carrée de la variance empirique. En fait, quand on calcule la variance empirique des temps de trajet, le résultat a pour unité la minute<math>
 $\(^2\)$</math>
- , ce qui n'est pas très intelligible. En prenant la racine carrée, l'unité redevient la minute. Ici, notre écart-type vaut 6.55 minutes. On le note<math>
+, ce qui n'est pas très intelligible. En prenant la racine carrée, l'unité redevient la minute. Ici, notre écart-type vaut 6.55 minutes. On le note<math>
 $\(s\)$</math>
- .</p>
+.</p>
 <p id="r-4738281" data-claire-element-id="8642712">
 <math>
 $\[s = \sqrt{v}\]$</math>
@@ -129,31 +129,31 @@ Un<strong>
 quartile</strong>
 , c'est la même chose, mais avec la proportion d'un quart. Plus rigoureusement, il existe 3 quartiles, notés<math>
 $\(Q_1\)$</math>
- (premier quartile),<math>
+(premier quartile),<math>
 $\(Q_2\)$</math>
- (deuxième quartile) et<math>
+(deuxième quartile) et<math>
 $\(Q_3\)$</math>
- (troisième quartile). Ainsi :</p>
+(troisième quartile). Ainsi :</p>
 <ul id="r-4738368" data-claire-element-id="8642938">
 <li id="r-4738363" data-claire-element-id="8642933">
 <p id="r-4738362" data-claire-element-id="8642932">
 1/4 des valeurs se trouvent en dessous de<math>
 $\(Q_1\)$</math>
- et 3/4 au dessus</p>
+et 3/4 au dessus</p>
 </li>
 <li id="r-4738365" data-claire-element-id="8642935">
 <p id="r-4738364" data-claire-element-id="8642934">
 2/4 se trouvent en dessous de<math>
 $\(Q_2\)$</math>
- , et 2/4 au dessus (<math>
+, et 2/4 au dessus (<math>
 $\(Q_2\)$</math>
- est la médiane !)</p>
+est la médiane !)</p>
 </li>
 <li id="r-4738367" data-claire-element-id="8642937">
 <p id="r-4738366" data-claire-element-id="8642936">
 3/4 se trouvent en dessous de<math>
 $\(Q_3\)$</math>
- , et 1/4 au dessus</p>
+, et 1/4 au dessus</p>
 </li>
 </ul>
 <aside id="r-4738391" data-claire-element-id="8643012" data-claire-semantic="information">
@@ -164,7 +164,7 @@ $\(\alpha\)$</math>
 </strong>
 . Ainsi, la médiane est le quantile d'ordre 0.5, Q1 le quantile d'ordre 0.25, Q3 le quantile d'ordre 0.75. Il y a également le<strong>
 décile</strong>
- (quantile d'ordre 0.1), ou le<strong>
+(quantile d'ordre 0.1), ou le<strong>
 centile</strong>
 , aussi appelé percentile (quantile d'ordre 0.01).</p>
 </aside>
@@ -185,13 +185,13 @@ boxplot</em>
 <p id="r-4738416" data-claire-element-id="8643241">
 Elle permet de représenter schématiquement une distribution, en incluant sa dispersion. La boîte est délimitée par<math>
 $\(Q_1\)$</math>
- et<math>
+et<math>
 $\(Q_3\)$</math>
- , et on représente souvent la médiane à l’intérieur de la boîte. On dessine ensuite des moustaches à cette boîte, qui vont de la valeur minimale à la valeur maximale... à condition que la moustache (d'un côté ou de l'autre) ne mesure pas plus de 1.5 fois l'écart inter-quartiles. Si certaines valeurs sont au dessous de<math>
+, et on représente souvent la médiane à l’intérieur de la boîte. On dessine ensuite des moustaches à cette boîte, qui vont de la valeur minimale à la valeur maximale... à condition que la moustache (d'un côté ou de l'autre) ne mesure pas plus de 1.5 fois l'écart inter-quartiles. Si certaines valeurs sont au dessous de<math>
 $\(Q_1 - 1.5IQ\)$</math>
- ou au dessus de<math>
+ou au dessus de<math>
 $\(Q_3 + 1.5IQ\)$</math>
- , alors on les considère comme des valeurs aberrantes (<em>
+, alors on les considère comme des valeurs aberrantes (<em>
 outliers</em>
 ), et on ne les inclut pas dans la moustache :</p>
 <p id="r-4738442" data-claire-element-id="8643213">
@@ -220,7 +220,7 @@ Vous vous souvenez que le monde des probabilités et le monde des statistiques s
 <p id="r-4738038" data-claire-element-id="8642111">
 Imaginez qu'il y a quelque part dans un monde parallèle une personne, un programme informatique (ou je ne sais quoi d'autre) qui détermine la taille de chaque personne naissant sur Terre. Ce monde parallèle, c'est le monde des probabilités. La Terre, c'est le monde réel. Il a été décidé dans le monde parallèle d'une taille moyenne à donner aux humains, ainsi que d'une<strong>
 variance</strong>
- qui détermine si les tailles varient beaucoup (ou pas) autour de la moyenne. Les humains n'ont aucun moyen de connaître exactement la valeur de cette variance. Ils considèrent donc que cette variance est théorique.</p>
+qui détermine si les tailles varient beaucoup (ou pas) autour de la moyenne. Les humains n'ont aucun moyen de connaître exactement la valeur de cette variance. Ils considèrent donc que cette variance est théorique.</p>
 <aside id="r-4738067" data-claire-element-id="8642152" data-claire-semantic="information">
 <p id="r-4738066" data-claire-element-id="8642151">
 Plus précisément, les humains appellent cette variance théorique<em>
@@ -230,7 +230,7 @@ variance de la variable aléatoire</em>
 <p id="r-4738068" data-claire-element-id="8642153">
 Mais les humains ont plus d'un tour dans leur sac ! Ils vont donc chercher à<strong>
 estimer</strong>
- cette variance. Ils construisent donc un<em>
+cette variance. Ils construisent donc un<em>
 estimateur</em>
 . Un estimateur, c'est une formule mathématique qui, à partir d'une série de valeurs, calcule un nombre qui vise à estimer une valeur théorique à laquelle les humains n'auront jamais accès.</p>
 <p id="r-4738081" data-claire-element-id="8642154">
@@ -250,9 +250,9 @@ La meilleure manière d'estimer la variance d'une variable aléatoire (i.e. la v
 <p id="r-4738085" data-claire-element-id="8642159">
 Il s'agit de la notion de<a href="https://fr.wikipedia.org/wiki/Estimateur_(statistique)#Biais">
 biais</a>
- d'un estimateur. Un estimateur<em>
+d'un estimateur. Un estimateur<em>
 sans biais</em>
- est meilleur qu'un estimateur<em>
+est meilleur qu'un estimateur<em>
 biaisé</em>
 . La variance empirique est un estimateur biaisé de la variance de la variable aléatoire.</p>
 <p id="r-4738086" data-claire-element-id="8642612">
@@ -262,13 +262,13 @@ variance empirique corrigée</a>
 variance empirique sans biais</strong>
 . Elle est souvent notée<math>
 $\(s*^2\)$</math>
- ou<math>
+ou<math>
 $\(s'^2\)$</math>
- , et est égale à s'^2=\frac{n}{n-1}v, où<math>
+, et est égale à s'^2=\frac{n}{n-1}v, où<math>
 $\(v\)$</math>
- est la variance empirique, et<math>
+est la variance empirique, et<math>
 $\(n\)$</math>
- la taille de l'échantillon.</p>
+la taille de l'échantillon.</p>
 <table id="r-4738430" data-claire-element-id="8643095">
 <tbody id="r-4738429" data-claire-element-id="8643094">
 <tr id="r-4738428" data-claire-element-id="8643093">
@@ -284,35 +284,35 @@ Aller plus loin : calculs avec la variance empirique</h3>
 <p id="r-4738087" data-claire-element-id="8642647">
 On peut montrer par le calcul que la variance empirique<math>
 $\(v\)$</math>
- peut aussi s'écrire sous une forme très pratique :</p>
+peut aussi s'écrire sous une forme très pratique :</p>
 <p id="r-4738261" data-claire-element-id="8642661">
 <math>
 $\[v=\frac{1}{n}\sum_{i=1}^{n}(x_i-\overline{x})^2 =(\frac{1}{n}\sum_{i=1}^{n}x_i^2)-\overline{x}^2\]$</math>
 </p>
 <p id="r-4738254" data-claire-element-id="8642662">
- C'est la Théorème de König-Huygens. Pour la démonstration, c'est<a href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_K%C3%B6nig-Huygens">
+C'est la Théorème de König-Huygens. Pour la démonstration, c'est<a href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_K%C3%B6nig-Huygens">
 par ici</a>
- ;)</p>
+;)</p>
 <p id="r-4738255" data-claire-element-id="8642671">
- Si on crée une nouvelle variable<math>
+Si on crée une nouvelle variable<math>
 $\(Y\)$</math>
- à partir d'une variable<math>
+à partir d'une variable<math>
 $\(X\)$</math>
- dont on connaît la variance<math>
+dont on connaît la variance<math>
 $\(v_X\)$</math>
- , et que<math>
+, et que<math>
 $\(Y = aX + b\)$</math>
- , alors on peut connaître la variance de<math>
+, alors on peut connaître la variance de<math>
 $\(Y\)$</math>
- notée<math>
+notée<math>
 $\(v_Y\)$</math>
- ! Elle est donnée par cette relation :</p>
+! Elle est donnée par cette relation :</p>
 <p id="r-4738271" data-claire-element-id="8642681">
 <math>
 $\[v_Y = a^2v_X\]$</math>
 </p>
 <p id="r-4738267" data-claire-element-id="8642691">
- (<a href="https://fr.wikipedia.org/wiki/Variance_(statistiques_et_probabilit%C3%A9s)#Transformation_affine">
+(<a href="https://fr.wikipedia.org/wiki/Variance_(statistiques_et_probabilit%C3%A9s)#Transformation_affine">
 voir la démonstration</a>
 )</p>
 <h3 id="r-4738463" data-claire-element-id="8644192">
@@ -362,7 +362,7 @@ Si on souhaite une mesure plus robuste, on définit également le MAD qui est la
 <ul class="sideActions__container">
 <li>
 <a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
- #</a>
+#</a>
 </li>
 </ul>
 </div>

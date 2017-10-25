@@ -5,7 +5,7 @@ Voyons maintenant l'agrégation !</p>
 <p id="r-4705592" data-claire-element-id="8548712">
 Vous vous<a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/noubliez-pas-lagregation">
 souvenez</a>
- qu'une agrégation est composée de deux éléments :</p>
+qu'une agrégation est composée de deux éléments :</p>
 <ol id="r-4705597" data-claire-element-id="8548717">
 <li id="r-4705594" data-claire-element-id="8548714">
 <p id="r-4705593" data-claire-element-id="8548713">
@@ -43,11 +43,11 @@ status</code>
 GROUP BY</code>
 , et la fonction d'agrégation<code data-claire-semantic="text">
 COUNT()</code>
- (en français "compter") dans le<code data-claire-semantic="text">
+(en français "compter") dans le<code data-claire-semantic="text">
 SELECT</code>
- . Optionnellement, on peut aussi ajouter dans le<code data-claire-semantic="text">
+. Optionnellement, on peut aussi ajouter dans le<code data-claire-semantic="text">
 SELECT</code>
- les attributs de partitionnement.</p>
+les attributs de partitionnement.</p>
 <p id="r-4710416" data-claire-element-id="8562276">
 Voilà, vous savez tout (ou presque) !</p>
 <p id="r-4710417" data-claire-element-id="8562277">
@@ -75,11 +75,11 @@ SELECT max(incorporation_date) AS maxi FROM entity ;</code>
 <p id="r-4558371" data-claire-element-id="8540482">
 alors la fonction<code data-claire-semantic="text">
 max</code>
- prend l'attribut<code data-claire-semantic="text">
+prend l'attribut<code data-claire-semantic="text">
 incorporation_date</code>
- de<em>
+de<em>
 plusieurs lignes</em>
- (toutes les lignes de la table<strong>
+(toutes les lignes de la table<strong>
 entity</strong>
 ), et renvoie un attribut (que nous appelons ici<code data-claire-semantic="text">
 maxi</code>
@@ -93,15 +93,15 @@ Entrées et sorties…</h5>
 <p id="r-4558396" data-claire-element-id="8540483">
 La majorité des fonctions d’agrégation basiques en SQL (celles qui sont déjà prédéfinies par le langage) prennent en entrée un seul attribut et renvoient également un seul attribut. C’est le cas de la fonction<code data-claire-semantic="text">
 max</code>
- que nous venons de voir.</p>
+que nous venons de voir.</p>
 <p id="r-4558397" data-claire-element-id="8540484">
 Il y a cependant une fonction qui échappe à cette règle : la fonction<code data-claire-semantic="text">
 count</code>
 . La fonction<code data-claire-semantic="text">
 count</code>
- renvoie un nombre entier : le nombre de lignes qu’elle a reçu en entrée. Pour compter le nombre de lignes, pas besoin de connaître la valeur d’un quelconque argument de ces lignes ! Alors on lui donne simplement le caractère<code data-claire-semantic="text">
+renvoie un nombre entier : le nombre de lignes qu’elle a reçu en entrée. Pour compter le nombre de lignes, pas besoin de connaître la valeur d’un quelconque argument de ces lignes ! Alors on lui donne simplement le caractère<code data-claire-semantic="text">
 *</code>
- :</p>
+:</p>
 <pre id="r-4558582" data-claire-element-id="8174080">
 <code data-claire-semantic="sql">
 SELECT count(*) FROM entity ;</code>
@@ -134,9 +134,9 @@ Peut-on en conclure que dans le<code data-claire-semantic="text">
 SELECT</code>
 , on ne peut faire appel à une fonction d’agrégation<em>
 uniquement</em>
- si toutes les autres colonnes résultent<em>
+si toutes les autres colonnes résultent<em>
 elles aussi</em>
- d’une fonction d’agrégation ?</p>
+d’une fonction d’agrégation ?</p>
 </div>
 <p id="r-4558592" data-claire-element-id="8540624">
 Oui ! Sauf si votre requête contient un<code data-claire-semantic="text">
@@ -149,13 +149,13 @@ Les attributs de partitionnement</h4>
 <p id="r-4558432" data-claire-element-id="8540627">
 Dans une agrégation, les attributs de partitionnement sont à spécifier dans le<code data-claire-semantic="text">
 GROUP BY</code>
- :</p>
+:</p>
 <pre id="r-4558594" data-claire-element-id="8174099">
 <code data-claire-semantic="sql">
 SELECT count(*) FROM entity GROUP BY status ;</code>
 </pre>
 <p id="r-4558436" data-claire-element-id="8174100">
- Ici, on compte le nombre de sociétés pour chacun des statuts présents dans<strong>
+Ici, on compte le nombre de sociétés pour chacun des statuts présents dans<strong>
 entity</strong>
 .</p>
 <div id="r-4558446" data-claire-element-id="8325477" data-claire-semantic="question">
@@ -165,7 +165,7 @@ Oui, mais cette requête ne renvoie qu'une colonne avec des nombres ! On ne sait
 <p id="r-4558440" data-claire-element-id="8174103">
 Effectivement ! Pour résoudre ce problème, on peut afficher la valeur de<em>
 status</em>
- de cette manière :</p>
+de cette manière :</p>
 <pre id="r-4558595" data-claire-element-id="8174137">
 <code data-claire-semantic="sql">
 SELECT status, count(*) FROM entity GROUP BY status ;</code>
@@ -182,7 +182,7 @@ Dans le<code data-claire-semantic="text">
 SELECT</code>
 , on ne peut faire appel à une fonction d’agrégation<em>
 uniquement</em>
- si toutes les autres colonnes :</p>
+si toutes les autres colonnes :</p>
 <ul id="r-4616974" data-claire-element-id="8540632">
 <li id="r-4616971" data-claire-element-id="8325811">
 <p id="r-4616967" data-claire-element-id="8325807">
@@ -231,15 +231,15 @@ l'intermédiaire (prenons par exemple son identifiant et son nom)</p>
 <p id="r-4710522" data-claire-element-id="8562632">
 Commençons par modifier la requête précédente. Tout d'abord, cette dernière est limitée à l'entité<code data-claire-semantic="text">
 Big Data Crunchers Ltd.</code>
- . Ici, nous souhaitons étudier toutes les entités créées par les 2 intermédiaires. Remplaçons donc la ligne 14 par<code data-claire-semantic="text">
+. Ici, nous souhaitons étudier toutes les entités créées par les 2 intermédiaires. Remplaçons donc la ligne 14 par<code data-claire-semantic="text">
 AND (i.id = 5000 OR i.id = 5001)</code>
- .</p>
+.</p>
 <p id="r-4710538" data-claire-element-id="8562562">
 Ajoutons nos 3 attributs de partitionnement dans le GROUP BY, puis supprimons du SELECT toutes les colonnes qui ne sont pas des attributs de partitionnement (c'est-à-dire les lignes 4,5 et 6).</p>
 <p id="r-4710552" data-claire-element-id="8562573">
 Il ne reste plus que notre fonction d'agrégation :<code data-claire-semantic="text">
 COUNT()</code>
- , car nous souhaitons compter le nombre d'entités. Voici le résultat :</p>
+, car nous souhaitons compter le nombre d'entités. Voici le résultat :</p>
 <pre id="r-4710455" data-claire-element-id="8562633">
 <code data-claire-semantic="sql">
 SELECT i.id as intermediary_id, i.name as intermediary_name, e.jurisdiction, count(*) FROM intermediary i, assoc_inter_entity a, entity e WHERE a.entity = e.id AND a.inter = i.id AND (i.id = 5000 OR i.id = 5001) GROUP BY i.id, i.name, e.jurisdiction;</code>
@@ -252,7 +252,7 @@ Aller plus loin : fonctions d'agrégation et fonctions scalaires</h3>
 <p id="r-4558609" data-claire-element-id="8540636">
 Nous avons vu dans le chapitre sur la<a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/lancez-votre-premiere-requete-avec-select-from-et-where#r-4552922">
 la clause SELECT</a>
- qu'il est possible utiliser des fonctions dans le<code data-claire-semantic="text">
+qu'il est possible utiliser des fonctions dans le<code data-claire-semantic="text">
 SELECT</code>
 . S’agit-il de fonctions d'agrégation ?</p>
 <pre id="r-4617026" data-claire-element-id="8325981">
@@ -263,13 +263,13 @@ SELECT abs(id) AS valeur_absolue FROM entity ;</code>
 <p id="r-4558614" data-claire-element-id="8540638">
 Non. :( Dans cette requête (qui renvoie la valeur absolue de l’identifiant de la société),<code data-claire-semantic="text">
 abs</code>
- renvoie un résultat sur autant de lignes qu’elle en a reçu en entrée. S’il y a 1000 sociétés dans la table<strong>
+renvoie un résultat sur autant de lignes qu’elle en a reçu en entrée. S’il y a 1000 sociétés dans la table<strong>
 entity</strong>
 , alors il y aura 1000 valeurs absolues à calculer. Au contraire, une fonction d’agrégation ne renvoie qu’une seule ligne.</p>
 <p id="r-4558615" data-claire-element-id="8540639">
 La fonction<code data-claire-semantic="text">
 abs</code>
- est donc appelée<em>
+est donc appelée<em>
 fonction scalaire</em>
 .</p>
 <p id="r-4617046" data-claire-element-id="8326047">
@@ -281,7 +281,7 @@ En résumé</h3>
 <p id="r-4617047" data-claire-element-id="8540641">
 Dans une agrégation, les fonctions d'agrégation se placent dans le<code data-claire-semantic="text">
 SELECT</code>
- ...</p>
+...</p>
 </li>
 <li id="r-4617050" data-claire-element-id="8540644">
 <p id="r-4617049" data-claire-element-id="8540643">
@@ -295,7 +295,7 @@ Dans le<code data-claire-semantic="text">
 SELECT</code>
 , on ne peut faire appel à une fonction d’agrégation<em>
 uniquement</em>
- si toutes les autres colonnes résultent elles aussi d’une fonction d’agrégation, OU sont présentes dans la clause<code data-claire-semantic="text">
+si toutes les autres colonnes résultent elles aussi d’une fonction d’agrégation, OU sont présentes dans la clause<code data-claire-semantic="text">
 GROUP BY</code>
 .</p>
 </li>
@@ -315,7 +315,7 @@ Console interactive</a>
 <ul class="sideActions__container">
 <li>
 <a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
- #</a>
+#</a>
 </li>
 </ul>
 </div>

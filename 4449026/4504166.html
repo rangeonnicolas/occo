@@ -19,15 +19,15 @@ Je décide par exemple d'avoir une relation<strong>
 pomme</strong>
 , et également une seconde relation<strong>
 variété</strong>
- destinée à répertorier les différentes variétés de pommes connues. Ces deux relations sont<em>
+destinée à répertorier les différentes variétés de pommes connues. Ces deux relations sont<em>
 liées</em>
- entre elles, car une pomme<strong>
+entre elles, car une pomme<strong>
 est</strong>
- d'une certaine variété. Il y a donc un lien entre la pomme et sa variété.</p>
+d'une certaine variété. Il y a donc un lien entre la pomme et sa variété.</p>
 <p id="r-4504253" data-claire-element-id="8068521">
 Dans le contexte d'un magasin de fruits, on peut dire que le prix d'une pomme dépend de sa variété. Le prix au kilogramme est donc une caractéristique propre à la variété. On aura donc dans la relation<strong>
 variété</strong>
- un attribut<em>
+un attribut<em>
 prix_au_kilo</em>
 :</p>
 <table id="r-4504317" data-claire-element-id="8203371">
@@ -155,12 +155,12 @@ acidulé</p>
 <p id="r-4504318" data-claire-element-id="8336043">
 Si je prends une pomme, et que je veux connaître son prix au kilo, il faudra d'abord que je connaisse sa variété. Ensuite, à partir de sa variété, il faudra que je retrouve dans la table<strong>
 variété</strong>
- la ligne correspondante pour connaître le prix.</p>
+la ligne correspondante pour connaître le prix.</p>
 <div id="r-4504320" data-claire-element-id="8017186" data-claire-semantic="question">
 <p id="r-4504319" data-claire-element-id="8017185">
 Retrouver une ligne dans une table ?!? Ce n'est pas justement le rôle des<strong>
 clés</strong>
- ?</p>
+?</p>
 </div>
 <p id="r-4504321" data-claire-element-id="8537372">
 Tout à fait ! Cette question nous amène au paragraphe suivant :</p>
@@ -175,9 +175,9 @@ variété</strong>
 libellé</em>
 . Ainsi, si pour chaque ligne de la table<strong>
 pomme</strong>
- nous renseignons le nom de la variété dans une colonne, alors il sera possible, grâce à cette clé, de retrouver le prix au kilo. Voici à quoi pourrait ressembler notre nouvelle table<strong>
+nous renseignons le nom de la variété dans une colonne, alors il sera possible, grâce à cette clé, de retrouver le prix au kilo. Voici à quoi pourrait ressembler notre nouvelle table<strong>
 pomme</strong>
- :</p>
+:</p>
 <table id="r-4504378" data-claire-element-id="8354801">
 <caption>
 Pomme</caption>
@@ -309,20 +309,20 @@ Dans la table<strong>
 pomme</strong>
 , la colonne<em>
 nom_variété</em>
- ne n'est pas une clé candidate. Cependant, cette colonne fait<em>
+ne n'est pas une clé candidate. Cependant, cette colonne fait<em>
 quand même</em>
- référence à la clé primaire d'une autre table (la table<strong>
+référence à la clé primaire d'une autre table (la table<strong>
 variété</strong>
 ). On dit donc que :</p>
 <blockquote id="r-4504428" data-claire-element-id="8336047">
 <p id="r-4504427" data-claire-element-id="8336046">
 La colonne<em>
 nom_variété</em>
- est une<strong>
+est une<strong>
 clé étrangère</strong>
- référençant la colonne<em>
+référençant la colonne<em>
 libellé</em>
- de la table<strong>
+de la table<strong>
 variété</strong>
 .</p>
 </blockquote>
@@ -337,13 +337,13 @@ Vous savez maintenant lier des tables grâce à des clés étrangères !</p>
 <p id="r-4554291" data-claire-element-id="8159791">
 La clé primaire d'une table<em>
 A</em>
- peut être composée de plusieurs colonnes. Si une table<em>
+peut être composée de plusieurs colonnes. Si une table<em>
 B</em>
- veut référencer<em>
+veut référencer<em>
 A</em>
 , alors la clé étrangère sur<em>
 B</em>
- sera composée d'autant de colonnes que pour la clé primaire de<em>
+sera composée d'autant de colonnes que pour la clé primaire de<em>
 A</em>
 .</p>
 </aside>
@@ -353,7 +353,7 @@ Pour indiquer qu'un attribut (ou groupe d'attributs) est une clé étrangère, o
 [FK]</em>
 , qui signifie<em>
 foreign key</em>
- (clé étrangère en anglais).</p>
+(clé étrangère en anglais).</p>
 </aside>
 <p id="r-4620607" data-claire-element-id="8336048">
 </p>
@@ -368,13 +368,13 @@ Une clé étrangère sert à lier des relations (= des tables) entre elles.</p>
 <p id="r-4620610" data-claire-element-id="8336052">
 On dit qu'une clé étrangère d'une table A<strong>
 référence</strong>
- la clé primaire d'une table B.</p>
+la clé primaire d'une table B.</p>
 </li>
 <li id="r-4620613" data-claire-element-id="8336055">
 <p id="r-4620612" data-claire-element-id="8336054">
 Une clé étrangère se dit en anglais<em>
 foreign key</em>
- (FK)</p>
+(FK)</p>
 </li>
 </ul>
 <p id="r-4620615" data-claire-element-id="8336057">
@@ -384,7 +384,7 @@ foreign key</em>
 <ul class="sideActions__container">
 <li>
 <a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
- #</a>
+#</a>
 </li>
 </ul>
 </div>

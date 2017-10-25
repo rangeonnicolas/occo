@@ -30,13 +30,13 @@ Réfléchissons...</h3>
 <p id="r-4563081" data-claire-element-id="8541372">
 <a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/agregez-vos-donnees-grace-au-group-by#r-4616745">
 Nous avions vu</a>
- que la requête suivante renvoie à une erreur, car<code data-claire-semantic="text">
+que la requête suivante renvoie à une erreur, car<code data-claire-semantic="text">
 incorporation_date</code>
- renvoie autant de lignes qu'en a<code data-claire-semantic="text">
+renvoie autant de lignes qu'en a<code data-claire-semantic="text">
 entity</code>
 , mais<code data-claire-semantic="text">
 min(id)</code>
- ne renvoie qu'une seule valeur :</p>
+ne renvoie qu'une seule valeur :</p>
 <pre id="r-4619806" data-claire-element-id="8333832">
 <code data-claire-semantic="sql">
 SELECT incorporation_date, min(id) FROM entity ;</code>
@@ -54,16 +54,16 @@ SELECT incorporation_date, min(id) OVER() FROM entity ;</code>
 <p id="r-4563090" data-claire-element-id="8541375">
 Tadaaam ! Il n'y a plus d'erreur ! Le fait d'ajouter<code data-claire-semantic="text">
 OVER()</code>
- a pour effet que la fonction d'agrégation<code data-claire-semantic="text">
+a pour effet que la fonction d'agrégation<code data-claire-semantic="text">
 min()</code>
- renvoie autant de lignes que n'en a<strong>
+renvoie autant de lignes que n'en a<strong>
 entity</strong>
 , ce qui n'est pas le comportement classique des fonctions d'agrégation !</p>
 <aside id="r-4619822" data-claire-element-id="8541377" data-claire-semantic="warning">
 <p id="r-4619821" data-claire-element-id="8541376">
 Le comportement de la fonction<code data-claire-semantic="text">
 min</code>
- a ici été modifié par<code data-claire-semantic="text">
+a ici été modifié par<code data-claire-semantic="text">
 OVER</code>
 , et tout est une question de nombre de lignes. C'est ce que nous allons voir plus bas.</p>
 </aside>
@@ -136,13 +136,13 @@ Application...</p>
 <p id="r-4619871" data-claire-element-id="8333951">
 d'une<strong>
 fonction d'agrégation</strong>
- avec un comportement modifié</p>
+avec un comportement modifié</p>
 </li>
 <li id="r-4619874" data-claire-element-id="8541381">
 <p id="r-4619873" data-claire-element-id="8541380">
 <code data-claire-semantic="text">
 OU</code>
- d'une<strong>
+d'une<strong>
 fonction de rang</strong>
 .</p>
 </li>
@@ -158,7 +158,7 @@ Résultat</strong>
 </td>
 <td id="r-4619851" data-claire-element-id="8334019">
 <p id="r-4619850" data-claire-element-id="8334018">
- Autant de lignes que d'agrégats</p>
+Autant de lignes que d'agrégats</p>
 </td>
 <td id="r-4619853" data-claire-element-id="8541386">
 <p id="r-4619852" data-claire-element-id="8541385">
@@ -185,7 +185,7 @@ OVER (PARTITION BY ... ORDER BY ...)</code>
 </ul>
 <aside id="r-4619901" data-claire-element-id="8541434" data-claire-semantic="information">
 <p id="r-4619857" data-claire-element-id="8541433">
- Nous allons étudier le fonctionnement de ces deux syntaxes ci-dessous. Mais bon... C'est le dernier chapitre du cours... et vous êtes peut-être fatigués et pressés de finir... :ange: . Alors si vous voulez juste savoir comment faire une somme cumulée et calculer un rang, je vous autorise à passer les 2 sections qui suivent.</p>
+Nous allons étudier le fonctionnement de ces deux syntaxes ci-dessous. Mais bon... C'est le dernier chapitre du cours... et vous êtes peut-être fatigués et pressés de finir... :ange: . Alors si vous voulez juste savoir comment faire une somme cumulée et calculer un rang, je vous autorise à passer les 2 sections qui suivent.</p>
 </aside>
 <p id="r-4619902" data-claire-element-id="8334053">
 </p>
@@ -194,7 +194,7 @@ OVER (PARTITION BY...)</h3>
 <p id="r-4563127" data-claire-element-id="8201413">
 Analysons ces deux requêtes, qui utilisent la table<strong>
 nb_entities</strong>
- du chapitre précédent :</p>
+du chapitre précédent :</p>
 <pre id="r-4563156" data-claire-element-id="8185701">
 <code data-claire-semantic="sql">
 -- REQUETE n°1 SELECT sum(cnt_entities) FROM nb_entities GROUP BY id_intermediary ; -- REQUETE n°2 SELECT sum(cnt_entities) OVER (PARTITION BY id_intermediary) FROM nb_entities ;</code>
@@ -206,11 +206,11 @@ sum</code>
 <p id="r-4563158" data-claire-element-id="8541437">
 Dans la requête 2, si<code data-claire-semantic="text">
 sum</code>
- reçoit en entrée la liste de valeurs<code data-claire-semantic="text">
+reçoit en entrée la liste de valeurs<code data-claire-semantic="text">
 [10, 1, 5]</code>
 , elle ne renverra pas<code data-claire-semantic="text">
 16</code>
- mais plutôt<code data-claire-semantic="text">
+mais plutôt<code data-claire-semantic="text">
 [16, 16, 16]</code>
 .</p>
 <p id="r-4563159" data-claire-element-id="8541438">
@@ -366,7 +366,7 @@ Avec une fonction d'agrégation</h4>
 <p id="r-4563262" data-claire-element-id="8541472">
 Lorsque l'on ajoute<code data-claire-semantic="text">
 ORDER BY</code>
- dans le<code data-claire-semantic="text">
+dans le<code data-claire-semantic="text">
 OVER</code>
 , alors la fonction d'agrégation se comporte d'une manière encore différente !</p>
 <p id="r-4563263" data-claire-element-id="8334281">
@@ -394,7 +394,7 @@ Ainsi de suite.</p>
 <p id="r-4563273" data-claire-element-id="8541482">
 Ainsi, si la fonction<code data-claire-semantic="text">
 sum</code>
- reçoit<code data-claire-semantic="text">
+reçoit<code data-claire-semantic="text">
 [10, 5, 1]</code>
 , elle renverra<code data-claire-semantic="text">
 [10, 15, 16]</code>
@@ -416,9 +416,9 @@ sum</code>
 <p id="r-4563281" data-claire-element-id="8541483">
 Ici,<code data-claire-semantic="text">
 sum</code>
- se comporte comme une<em>
+se comporte comme une<em>
 somme cumulée</em>
- !</p>
+!</p>
 <p id="r-4619976" data-claire-element-id="8334282">
 </p>
 <h4 id="r-4619980" data-claire-element-id="8541488">
@@ -519,7 +519,7 @@ Luc</p>
 <p id="r-4619987" data-claire-element-id="8541486">
 Nous n'avons pas utilisé de<code data-claire-semantic="text">
 PARTITION BY</code>
- ici, car nous n'avons pas eu besoin de former d'agrégat. C'était juste pour vous montrer ce que fait<code data-claire-semantic="text">
+ici, car nous n'avons pas eu besoin de former d'agrégat. C'était juste pour vous montrer ce que fait<code data-claire-semantic="text">
 rank</code>
 .</p>
 </aside>
@@ -538,15 +538,15 @@ pour chacun des intermédiaires</em>
 rank</code>
 . Pour leur attribuer un rang, je les classe par<code data-claire-semantic="text">
 cnt_entities</code>
- décroissant. Comme je veux un classement pour chacun des intermédiaires, j'écris<code data-claire-semantic="text">
+décroissant. Comme je veux un classement pour chacun des intermédiaires, j'écris<code data-claire-semantic="text">
 PARTITION BY id_intermediary</code>
 .</p>
 <p id="r-4563286" data-claire-element-id="8541491">
 Nous sommes également capables d'effectuer une somme cumulée ! Faisons une somme cumulée de<code data-claire-semantic="text">
 cnt_entities</code>
- pour chaque intermédiaire, en triant les lignes par<code data-claire-semantic="text">
+pour chaque intermédiaire, en triant les lignes par<code data-claire-semantic="text">
 cnt_entities</code>
- décroissant. Appelons notre somme cumulée<code data-claire-semantic="text">
+décroissant. Appelons notre somme cumulée<code data-claire-semantic="text">
 cum_sum</code>
 .</p>
 <pre id="r-4563287" data-claire-element-id="8186034">
@@ -736,9 +736,9 @@ Le fenêtrage est très similaire à une agrégation, sauf qu'il ne modifie pas 
 <p id="r-4620038" data-claire-element-id="8541493">
 Le mot clé<code data-claire-semantic="text">
 OVER</code>
- peut être utilisé avec des<strong>
+peut être utilisé avec des<strong>
 fonctions d'agrégation</strong>
- ou des<strong>
+ou des<strong>
 fonctions de rang</strong>
 .</p>
 </li>
@@ -746,9 +746,9 @@ fonctions de rang</strong>
 <p id="r-4620040" data-claire-element-id="8541495">
 C'est grâce au mot clé<code data-claire-semantic="text">
 OVER</code>
- que l'on peut réaliser des<strong>
+que l'on peut réaliser des<strong>
 sommes cumulées</strong>
- ou des<strong>
+ou des<strong>
 calculs de rang</strong>
 .</p>
 </li>
@@ -760,7 +760,7 @@ calculs de rang</strong>
 <ul class="sideActions__container">
 <li>
 <a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
- #</a>
+#</a>
 </li>
 </ul>
 </div>

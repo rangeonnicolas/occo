@@ -9,9 +9,9 @@ Réfléchissons...</h3>
 <p id="r-4569631" data-claire-element-id="8199371">
 Nous avons créé un lien entre<strong>
 pomme</strong>
- et<strong>
+et<strong>
 variété</strong>
- à l'aide d'une clé étrangère.</p>
+à l'aide d'une clé étrangère.</p>
 <p id="r-4569632" data-claire-element-id="8199372">
 Cela fonctionne plutôt bien, car une pomme n'a qu'une seule variété. Mais que se passerait-il si, dans un monde imaginaire, une pomme pouvait avoir plusieurs variétés ?</p>
 <div id="r-4569634" data-claire-element-id="8199374" data-claire-semantic="question">
@@ -31,7 +31,7 @@ Dans la table<strong>
 pomme</strong>
 , mettons une colonne<em>
 mangé_par</em>
- qui est une clé étrangère vers la table<strong>
+qui est une clé étrangère vers la table<strong>
 personne</strong>
 .</p>
 <figure id="r-4569641" data-claire-element-id="8559254">
@@ -46,7 +46,7 @@ Mais si la pomme est mangée par 2 personnes, que fait-on ?</p>
 <p id="r-4569644" data-claire-element-id="8199384">
 On pourrait mettre 2 colonnes dans<strong>
 pomme</strong>
- :<em>
+:<em>
 mangé_par_1</em>
 , et<em>
 mangé_par_2</em>
@@ -63,13 +63,13 @@ Malheureusement, ce raisonnement est plutôt mauvais. En effet, une table avec p
 <p id="r-4569648" data-claire-element-id="8199388">
 Bon. Et si on essayait autre chose. Plutôt que de mettre une clé étrangère de<strong>
 pomme</strong>
- vers<strong>
+vers<strong>
 personne</strong>
 , pourquoi ne pas en mettre une de<strong>
 personne</strong>
- vers<strong>
+vers<strong>
 pomme</strong>
- ?</p>
+?</p>
 </div>
 <p id="r-4569650" data-claire-element-id="8199390">
 Pourquoi pas, cela donnerait cela :</p>
@@ -90,9 +90,9 @@ Se poser la question<em>
 "Combien de pommes peut manger une personne, et par combien de personnes peut être mangée une pomme"</em>
 , c'est se poser la question de la<em>
 cardinalité</em>
- du lien entre<strong>
+du lien entre<strong>
 pomme</strong>
- et<strong>
+et<strong>
 personne</strong>
 .</p>
 <p id="r-4569658" data-claire-element-id="8199398">
@@ -102,7 +102,7 @@ Plusieurs cardinalités sont possibles :</p>
 <p id="r-4569659" data-claire-element-id="8537517">
 <strong>
 de 1 à plusieurs</strong>
- (ex : une pomme pour plusieurs personnes)</p>
+(ex : une pomme pour plusieurs personnes)</p>
 </li>
 <li id="r-4569662" data-claire-element-id="8199402">
 <p id="r-4569661" data-claire-element-id="8199401">
@@ -114,13 +114,13 @@ de plusieurs à 1</strong>
 <p id="r-4569663" data-claire-element-id="8537519">
 <strong>
 de plusieurs à plusieurs</strong>
- (ex : plusieurs pommes pour 1 personne, plusieurs personnes sur 1 pomme)</p>
+(ex : plusieurs pommes pour 1 personne, plusieurs personnes sur 1 pomme)</p>
 </li>
 <li id="r-4569666" data-claire-element-id="8537522">
 <p id="r-4569665" data-claire-element-id="8537521">
 <strong>
 de 1 à 1</strong>
- (ex : une pomme par personne, et basta !)</p>
+(ex : une pomme par personne, et basta !)</p>
 </li>
 </ul>
 </aside>
@@ -152,7 +152,7 @@ Aller plus loin : Quelle clé primaire pour une table d'association ?</h3>
 <p id="r-4569680" data-claire-element-id="8199420">
 La clé primaire d'une telle table est composée<em>
 au moins</em>
- des 2 clés étrangères. Mais il est parfois nécessaire d'ajouter des colonnes supplémentaires à la clé.</p>
+des 2 clés étrangères. Mais il est parfois nécessaire d'ajouter des colonnes supplémentaires à la clé.</p>
 <p id="r-4569681" data-claire-element-id="8199421">
 Par exemple, si nous avions ajouté la notion de date dans notre table d'association, on pourrait dire "Heri a mangé la pomme 2 le 21 avril". Mais il aurait également pu manger la même pomme à une autre date (s'il ne l'a pas mangée en entier le 21 avril, il peut la finir le 22 avril). Ainsi, la clé primaire aurait été<code data-claire-semantic="text">
 [pomme, date, personne]</code>
@@ -165,20 +165,20 @@ Table d'association avec une PK de 3 colonnes</figcaption>
 <p id="r-4569685" data-claire-element-id="8199425">
 </p>
 <h3 id="r-4569690" data-claire-element-id="8537624">
- Aller plus loin : modéliser les différents types de cardinalités</h3>
+Aller plus loin : modéliser les différents types de cardinalités</h3>
 <p id="r-4569687" data-claire-element-id="8537623">
 Si vous souhaitez mieux comprendre, ou mieux formaliser le concept de cardinalité et son implémentation, je vous invite à jeter un coup d’œil au chapitre<a href="/courses/faites-une-base-de-donnees-avec-uml/mettez-en-oeuvre-les-differents-types-de-relations-a-laide-des-cles-etrangeres">
 Mettez en œuvre les différents types de relations à l'aide des clés étrangères</a>
- du cours<em>
+du cours<em>
 Faites une base de données avec UML</em>
 .</p>
 <aside id="r-4569689" data-claire-element-id="8199429" data-claire-semantic="warning">
 <p id="r-4569688" data-claire-element-id="8199428">
 Dans ce cours, quand Loïc parle de "type de relation", le mot<em>
 relation</em>
- n'a pas du tout le même sens que celui auquel nous sommes habitués ici !<em>
+n'a pas du tout le même sens que celui auquel nous sommes habitués ici !<em>
 Relation</em>
- n'y est pas synonyme de<em>
+n'y est pas synonyme de<em>
 table</em>
 , mais plutôt de "lien entre objets".</p>
 </aside>
@@ -209,7 +209,7 @@ Une table d'association contient au moins deux clés étrangères vers les 2 obj
 <ul class="sideActions__container">
 <li>
 <a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
- #</a>
+#</a>
 </li>
 </ul>
 </div>

@@ -3,7 +3,7 @@
 <p id="r-4703001" data-claire-element-id="8544201">
 Oh non, il ne faut surtout pas oublier<strong>
 l’agrégation</strong>
- ! Pourquoi ? Parce que l'agrégation n'est pas une opération faisant partie de l'algèbre relationnelle.</p>
+! Pourquoi ? Parce que l'agrégation n'est pas une opération faisant partie de l'algèbre relationnelle.</p>
 <p id="r-4703002" data-claire-element-id="8544202">
 Néanmoins, elle est extrêmement importante ! ;)</p>
 <aside id="r-4703027" data-claire-element-id="8544272" data-claire-semantic="information">
@@ -21,9 +21,9 @@ A quoi sert l'agrégation ?</h3>
 <p id="r-4569328" data-claire-element-id="8198903">
 On utilise l'agrégation lorsque l'on veut calculer un résultat qui porte sur plusieurs lignes d'une table. On dit que l'on<em>
 agrège</em>
- ces lignes, c'est-à-dire que l'on forme des<em>
+ces lignes, c'est-à-dire que l'on forme des<em>
 agrégats</em>
- pour effectuer sur eux une opération.</p>
+pour effectuer sur eux une opération.</p>
 <p id="r-4569329" data-claire-element-id="8198904">
 Par exemple, si je pose la question suivante...</p>
 <div id="r-4569331" data-claire-element-id="8198906" data-claire-semantic="question">
@@ -37,11 +37,11 @@ Quelle est la masse moyenne de chaque couleur de pomme ?</p>
 <p id="r-4569333" data-claire-element-id="8198908">
 <strong>
 une</strong>
- valeur (la masse moyenne) qui porte sur<strong>
+valeur (la masse moyenne) qui porte sur<strong>
 plusieurs</strong>
- pommes (<strong>
+pommes (<strong>
 toutes</strong>
- les pommes<em>
+les pommes<em>
 vertes</em>
 )</p>
 </li>
@@ -49,9 +49,9 @@ vertes</em>
 <p id="r-4569335" data-claire-element-id="8198910">
 <strong>
 la</strong>
- valeur de la masse moyenne portant sur<strong>
+valeur de la masse moyenne portant sur<strong>
 les</strong>
- pommes<em>
+pommes<em>
 jaunes</em>
 </p>
 </li>
@@ -59,9 +59,9 @@ jaunes</em>
 <p id="r-4569337" data-claire-element-id="8198912">
 <strong>
 la</strong>
- valeur de la masse moyenne portant sur<strong>
+valeur de la masse moyenne portant sur<strong>
 les</strong>
- pommes<em>
+pommes<em>
 rouges</em>
 </p>
 </li>
@@ -73,7 +73,7 @@ etc.</p>
 <p id="r-4569342" data-claire-element-id="8538104">
 Vous aurez compris qu'il y aura autant de valeurs de<em>
 masse moyenne</em>
- calculées que de couleurs de pommes.</p>
+calculées que de couleurs de pommes.</p>
 <p id="r-4569343" data-claire-element-id="8538105">
 Vous sentez déjà l'importance de l'agrégation, n'est-ce-pas ?</p>
 <p id="r-4569344" data-claire-element-id="8198919">
@@ -88,7 +88,7 @@ attributs de partitionnement,</strong>
 <li id="r-4569348" data-claire-element-id="8538109">
 <p id="r-4569347" data-claire-element-id="8538108">
 une (ou des)<strong>
- fonction(s) d'agrégation.</strong>
+fonction(s) d'agrégation.</strong>
 </p>
 </li>
 </ol>
@@ -115,13 +115,13 @@ Je peux également partitionner sur plusieurs attributs. Par exemple, disons que
 abîmée</em>
 , attribut booléen qui vaut<code data-claire-semantic="text">
 VRAI</code>
- si la pomme est abîmée. Je peux partitionner mes pommes par les attributs<em>
+si la pomme est abîmée. Je peux partitionner mes pommes par les attributs<em>
 couleur</em>
- et<em>
+et<em>
 abîmée</em>
 . Ainsi, au sein d'un même groupe de pommes, la couleur de celles-ci et la valeur de leur attribut<em>
 abîmée</em>
- seront identiques :</p>
+seront identiques :</p>
 <figure id="r-4569357" data-claire-element-id="8559317">
 <img id="r-4569355" data-claire-element-id="8198930" src="https://user.oc-static.com/upload/2017/06/26/14984793735677_PARTITIONNEMENT.png" alt="Partitionnemennt selon les attributs [ couleur, abîmée ]">
 <figcaption>
@@ -149,9 +149,9 @@ La fonction d'agrégation MOYENNE qui s'applique à chacun des agrégats</figcap
 <p id="r-4619298" data-claire-element-id="8538157">
 En général, une fonction d'agrégation prend en entrée une<strong>
 liste</strong>
- et renvoie une unique valeur. Par exemple, pour calculer le prix moyen au kilo des pommes, la fonction<code data-claire-semantic="text">
+et renvoie une unique valeur. Par exemple, pour calculer le prix moyen au kilo des pommes, la fonction<code data-claire-semantic="text">
 moyenne</code>
- prendra en entrée la liste des masses des pommes de l'agrégat, et retournera la moyenne de cette liste. C'est ce qui se passe sur l'image ci-dessus.</p>
+prendra en entrée la liste des masses des pommes de l'agrégat, et retournera la moyenne de cette liste. C'est ce qui se passe sur l'image ci-dessus.</p>
 <figure id="r-4569368" data-claire-element-id="8332518">
 </figure>
 <aside id="r-4619299" data-claire-element-id="8538159" data-claire-semantic="information">
@@ -160,7 +160,7 @@ La liste en entrée correspond à 1 attribut (ici, l'attribut<em>
 masse</em>
 ). Mais il est également possible de trouver des fonctions d'agrégation qui prennent plusieurs attributs en entrée (donc plusieurs listes) ou parfois même l'<em>
 ensemble</em>
- des attributs d'une table.</p>
+des attributs d'une table.</p>
 </aside>
 <h4 id="r-4569386" data-claire-element-id="8332522">
 </h4>
@@ -169,7 +169,7 @@ Le résultat</h4>
 <p id="r-4569373" data-claire-element-id="8198948">
 Voici donc le résultat d'une agrégation avec partitionnement selon les attributs<em>
 couleur</em>
- et<em>
+et<em>
 abîmée</em>
 , en appliquant deux fonctions d'agrégation :</p>
 <ol id="r-4569378" data-claire-element-id="8538165">
@@ -177,7 +177,7 @@ abîmée</em>
 <p id="r-4569374" data-claire-element-id="8538161">
 la fonction<code data-claire-semantic="text">
 moyenne</code>
- (en anglais<em>
+(en anglais<em>
 average</em>
 , notée<em>
 avg</em>
@@ -187,7 +187,7 @@ avg</em>
 <p id="r-4569376" data-claire-element-id="8538163">
 la fonction<code data-claire-semantic="text">
 compter</code>
- (en anglais<em>
+(en anglais<em>
 count</em>
 ), qui compte le nombre de pommes de l'agrégat.</p>
 </li>
@@ -207,11 +207,11 @@ Comme la fonction d'agrégation retourne une valeur pour chacun des agrégats, l
 <p id="r-4619303" data-claire-element-id="8538168">
 La nature des objets représentés par une ligne<em>
 avant</em>
- l'agrégation (ici : une pomme) ne sera pas la même qu'une ligne<em>
+l'agrégation (ici : une pomme) ne sera pas la même qu'une ligne<em>
 après</em>
- agrégation (ici : un<em>
+agrégation (ici : un<em>
 ensemble</em>
- de pommes).</p>
+de pommes).</p>
 </aside>
 <p id="r-4619305" data-claire-element-id="8332529">
 </p>
@@ -230,7 +230,7 @@ En Map Reduce, on découpe l'information en petits morceaux. Chacune de ces part
 reduce</em>
 . Au moment de l'exécution du calcul, tous les morceaux d'informations qui ont la même clé seront dirigés vers un même serveur parallélisé. Ce serveur applique ensuite la fonction<em>
 reduce</em>
- à toutes les valeurs des morceaux qui lui sont parvenues avec la même clé.</p>
+à toutes les valeurs des morceaux qui lui sont parvenues avec la même clé.</p>
 <p id="r-4569391" data-claire-element-id="8198966">
 Sachez que le Map Reduce fonctionne exactement de la même manière qu'une agrégation, selon cette correspondance :</p>
 <table id="r-4569418" data-claire-element-id="8198993">
@@ -296,7 +296,7 @@ Fonction d'agrégation</p>
 <p id="r-4569419" data-claire-element-id="8538233">
 Jetez à nouveau un coup d’œil sur le<a href="#r-4619281">
 graphique ci-dessus</a>
- qui explique le partitionnement selon les attributs. La partie droite de ce graphique montre une table fractionnée en plusieurs parties. En Map Reduce, chacune de ces parties est envoyée sur un serveur différent. Ensuite, chaque serveur appliquera la fonction<em>
+qui explique le partitionnement selon les attributs. La partie droite de ce graphique montre une table fractionnée en plusieurs parties. En Map Reduce, chacune de ces parties est envoyée sur un serveur différent. Ensuite, chaque serveur appliquera la fonction<em>
 reduce</em>
 , qui est, par exemple, la fonction<em>
 moyenne</em>
@@ -354,7 +354,7 @@ Le résultat d'une agrégation donne une table avec moins de lignes (autant de l
 <ul class="sideActions__container">
 <li>
 <a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
- #</a>
+#</a>
 </li>
 </ul>
 </div>
