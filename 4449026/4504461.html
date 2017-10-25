@@ -1,7 +1,5 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/utilisez-les-tables-dassociation" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
-
 <div class="userContent js-userContent">
-
 <video id="r-4709400" data-claire-element-id="8559252" src="https://vimeo.com/233477539">
 <a href="https://vimeo.com/233477539">
 https://vimeo.com/233477539</a>
@@ -9,9 +7,9 @@ https://vimeo.com/233477539</a>
 <h3 id="r-4569671" data-claire-element-id="8559257">
 Réfléchissons...</h3>
 <p id="r-4569631" data-claire-element-id="8199371">
-Nous avons créé un lien entre <strong>
+Nous avons créé un lien entre<strong>
 pomme</strong>
- et <strong>
+ et<strong>
 variété</strong>
  à l'aide d'une clé étrangère.</p>
 <p id="r-4569632" data-claire-element-id="8199372">
@@ -23,17 +21,17 @@ C'est un peu bizarre ton truc là ! :'(</p>
 <p id="r-4569635" data-claire-element-id="8199375">
 C'est vrai. Oublions la variété, et prenons un meilleur exemple.</p>
 <p id="r-4569636" data-claire-element-id="8199376">
-Disons qu'une pomme peut être mangée par quelqu'un. Du coup, j'introduis ici une table <strong>
+Disons qu'une pomme peut être mangée par quelqu'un. Du coup, j'introduis ici une table<strong>
 personne</strong>
 , qui contient des gens susceptibles de manger des pommes.</p>
 <p id="r-4569637" data-claire-element-id="8537492">
 Une personne peut manger plusieurs pommes, mais plusieurs personnes peuvent se partager une même pomme (s'ils n'ont pas très faim, ou si la pomme est très grosse !).</p>
 <p id="r-4569638" data-claire-element-id="8199378">
-Dans la table <strong>
+Dans la table<strong>
 pomme</strong>
-, mettons une colonne <em>
+, mettons une colonne<em>
 mangé_par</em>
-  qui est une clé étrangère vers la table <strong>
+ qui est une clé étrangère vers la table<strong>
 personne</strong>
 .</p>
 <figure id="r-4569641" data-claire-element-id="8559254">
@@ -46,13 +44,13 @@ Clé étrangère de Pomme vers Personne</figcaption>
 Mais si la pomme est mangée par 2 personnes, que fait-on ?</p>
 </div>
 <p id="r-4569644" data-claire-element-id="8199384">
-On pourrait mettre 2 colonnes dans <strong>
+On pourrait mettre 2 colonnes dans<strong>
 pomme</strong>
- : <em>
+ :<em>
 mangé_par_1</em>
-, et <em>
+, et<em>
 mangé_par_2</em>
-. Elles seraient toutes deux clés étrangères vers <strong>
+. Elles seraient toutes deux clés étrangères vers<strong>
 personne</strong>
 .</p>
 <div id="r-4569646" data-claire-element-id="8199386" data-claire-semantic="question">
@@ -63,13 +61,13 @@ Mais si la pomme est mangée par plus de deux personnes, combien de colonnes doi
 Malheureusement, ce raisonnement est plutôt mauvais. En effet, une table avec plus de 1000 colonnes, c'est volumineux, et pas très pratique à manipuler. De plus, nous ne pouvons pas être certains qu'un jour, nous n'aurons pas besoin d'ajouter une 1001ième clé étrangère.</p>
 <div id="r-4569649" data-claire-element-id="8199389" data-claire-semantic="question">
 <p id="r-4569648" data-claire-element-id="8199388">
-Bon. Et si on essayait autre chose. Plutôt que de mettre une clé étrangère de <strong>
+Bon. Et si on essayait autre chose. Plutôt que de mettre une clé étrangère de<strong>
 pomme</strong>
- vers <strong>
+ vers<strong>
 personne</strong>
-, pourquoi ne pas en mettre une de <strong>
+, pourquoi ne pas en mettre une de<strong>
 personne</strong>
- vers <strong>
+ vers<strong>
 pomme</strong>
  ?</p>
 </div>
@@ -83,18 +81,18 @@ Clé étrangère de Personne vers Pomme</figcaption>
 <p id="r-4569654" data-claire-element-id="8199394">
 On voit qu'une pomme peut être mangée par plusieurs personnes.</p>
 <p id="r-4569655" data-claire-element-id="8199395">
-Mais... :'( Inverser le sens de la clé étrangère n'a fait qu'inverser le problème ! Certes, une pomme peut être mangée par plusieurs personnes, mais avec notre nouveau modèle, une personne ne peut plus manger qu'une seule pomme !</p>
+Mais... :'( Inverser le sens de la clé étrangère n'a fait qu'inverser le problème ! Certes, une pomme peut être mangée par plusieurs personnes, mais avec notre nouveau modèle, une personne ne peut plus manger qu'une seule pomme !</p>
 <p id="r-4569656" data-claire-element-id="8537516">
 Or dans la réalité, une seule personne a le droit de manger plusieurs pommes, non ?</p>
 <aside id="r-4569668" data-claire-element-id="8537524" data-claire-semantic="warning">
 <p id="r-4569657" data-claire-element-id="8199397">
-Se poser la question <em>
+Se poser la question<em>
 "Combien de pommes peut manger une personne, et par combien de personnes peut être mangée une pomme"</em>
-, c'est se poser la question de la <em>
+, c'est se poser la question de la<em>
 cardinalité</em>
- du lien entre <strong>
+ du lien entre<strong>
 pomme</strong>
- et <strong>
+ et<strong>
 personne</strong>
 .</p>
 <p id="r-4569658" data-claire-element-id="8199398">
@@ -127,13 +125,13 @@ de 1 à 1</strong>
 </ul>
 </aside>
 <p id="r-4569669" data-claire-element-id="8336475">
-La solution à notre problème est de créer une troisième table, que l'on appelle parfois <em>
+La solution à notre problème est de créer une troisième table, que l'on appelle parfois<em>
 table d'association</em>
-, ou <em>
+, ou<em>
 table de composition</em>
 , ou bien d'un tout autre nom si vous en avez envie (pourquoi pas "mange" dans notre cas) !</p>
 <p id="r-4569670" data-claire-element-id="8199410">
- </p>
+</p>
 <h3 id="r-4569679" data-claire-element-id="8559260">
 La table d'association pour une cardinalité plusieurs-à-plusieurs</h3>
 <p id="r-4569672" data-claire-element-id="8537547">
@@ -148,11 +146,11 @@ Table d'association</figcaption>
 <p id="r-4569677" data-claire-element-id="8199417">
 On remarque ici que Jeanne mange à la fois la pomme 1 et la pomme 2, mais que la pomme 2 est également mangée par Thanh !</p>
 <p id="r-4569678" data-claire-element-id="8199418">
- </p>
+</p>
 <h3 id="r-4569686" data-claire-element-id="8559263">
 Aller plus loin : Quelle clé primaire pour une table d'association ?</h3>
 <p id="r-4569680" data-claire-element-id="8199420">
-La clé primaire d'une telle table est composée <em>
+La clé primaire d'une telle table est composée<em>
 au moins</em>
  des 2 clés étrangères. Mais il est parfois nécessaire d'ajouter des colonnes supplémentaires à la clé.</p>
 <p id="r-4569681" data-claire-element-id="8199421">
@@ -165,39 +163,39 @@ Par exemple, si nous avions ajouté la notion de date dans notre table d'associa
 Table d'association avec une PK de 3 colonnes</figcaption>
 </figure>
 <p id="r-4569685" data-claire-element-id="8199425">
- </p>
+</p>
 <h3 id="r-4569690" data-claire-element-id="8537624">
- Aller plus loin : modéliser les différents types de cardinalités</h3>
+ Aller plus loin : modéliser les différents types de cardinalités</h3>
 <p id="r-4569687" data-claire-element-id="8537623">
-Si vous souhaitez mieux comprendre, ou mieux formaliser le concept de cardinalité et son implémentation, je vous invite à jeter un coup d’œil au chapitre <a href="/courses/faites-une-base-de-donnees-avec-uml/mettez-en-oeuvre-les-differents-types-de-relations-a-laide-des-cles-etrangeres">
+Si vous souhaitez mieux comprendre, ou mieux formaliser le concept de cardinalité et son implémentation, je vous invite à jeter un coup d’œil au chapitre<a href="/courses/faites-une-base-de-donnees-avec-uml/mettez-en-oeuvre-les-differents-types-de-relations-a-laide-des-cles-etrangeres">
 Mettez en œuvre les différents types de relations à l'aide des clés étrangères</a>
- du cours <em>
+ du cours<em>
 Faites une base de données avec UML</em>
 .</p>
 <aside id="r-4569689" data-claire-element-id="8199429" data-claire-semantic="warning">
 <p id="r-4569688" data-claire-element-id="8199428">
-Dans ce cours, quand Loïc parle de "type de relation", le mot <em>
+Dans ce cours, quand Loïc parle de "type de relation", le mot<em>
 relation</em>
- n'a pas du tout le même sens que celui auquel nous sommes habitués ici ! <em>
+ n'a pas du tout le même sens que celui auquel nous sommes habitués ici !<em>
 Relation</em>
- n'y est pas synonyme de <em>
+ n'y est pas synonyme de<em>
 table</em>
 , mais plutôt de "lien entre objets".</p>
 </aside>
 <p id="r-4620765" data-claire-element-id="8336484">
- </p>
+</p>
 <h3 id="r-4620773" data-claire-element-id="8336493">
 En résumé</h3>
 <ul id="r-4620772" data-claire-element-id="8336492">
 <li id="r-4620767" data-claire-element-id="8336487">
 <p id="r-4620766" data-claire-element-id="8336486">
-Se poser la question "Combien de pommes peut manger une personne, et par combien de personnes peut être mangée une pomme", c'est se poser la question de la <strong>
+Se poser la question "Combien de pommes peut manger une personne, et par combien de personnes peut être mangée une pomme", c'est se poser la question de la<strong>
 cardinalité</strong>
 .</p>
 </li>
 <li id="r-4620769" data-claire-element-id="8336489">
 <p id="r-4620768" data-claire-element-id="8336488">
-Pour une cardinalité plusieurs-à-plusieurs, on doit introduire une <strong>
+Pour une cardinalité plusieurs-à-plusieurs, on doit introduire une<strong>
 table d'association</strong>
 .</p>
 </li>
@@ -206,24 +204,13 @@ table d'association</strong>
 Une table d'association contient au moins deux clés étrangères vers les 2 objets qu'elle lie.</p>
 </li>
 </ul>
-
 </div>
-
 <div class="js-courseSelementActions sideActions">
-
 <ul class="sideActions__container">
-
 <li>
-
-<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
-
-#
-</a>
-
+<a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+ #</a>
 </li>
-
 </ul>
-
 </div>
-
 </div>

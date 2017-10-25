@@ -1,31 +1,29 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/decouvrez-le-concept-de-relation" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
-
 <div class="userContent js-userContent">
-
 <aside id="r-4702577" data-claire-element-id="8543102" data-claire-semantic="information">
 <p id="r-4702576" data-claire-element-id="8543101">
-Tout au long de ce cours, nous jonglerons avec le vocabulaire : il n'est pas toujours simple et surtout, plusieurs termes peuvent désigner une même chose. Revenez donc régulièrement au bas de ce chapitre lorsque vous aurez un doute. ;)</p>
+Tout au long de ce cours, nous jonglerons avec le vocabulaire : il n'est pas toujours simple et surtout, plusieurs termes peuvent désigner une même chose. Revenez donc régulièrement au bas de ce chapitre lorsque vous aurez un doute. ;)</p>
 </aside>
 <video id="r-4709393" data-claire-element-id="8559235" src="https://vimeo.com/233476700">
 <a href="https://vimeo.com/233476700">
 https://vimeo.com/233476700</a>
 </video>
 <p id="r-4702579" data-claire-element-id="8543104">
- </p>
+</p>
 <h3 id="r-4504518" data-claire-element-id="8354652">
 Un peu d'histoire, pour les motivés !</h3>
 <p id="r-4510201" data-claire-element-id="8354651">
-C'est un beau jour ensoleillé de 1970 que Monsieur Codd, du laboratoire de recherche d'IBM de San José, crée le <a href="https://fr.wikipedia.org/wiki/Mod%C3%A8le_relationnel">
+C'est un beau jour ensoleillé de 1970 que Monsieur Codd, du laboratoire de recherche d'IBM de San José, crée le<a href="https://fr.wikipedia.org/wiki/Mod%C3%A8le_relationnel">
 modèle relationnel</a>
 .</p>
 <p id="r-4503685" data-claire-element-id="8054261">
-C'était bien vu, car celui-ci a réussi à s'imposer et se retrouve aujourd'hui dans la majorité des bases de données ! :soleil: En effet, ce modèle a été implémenté dans les systèmes de gestion des bases de données relationnelles (SGBDR) comme le IBM System R, Oracle, DB2 ou MySQL. Il a également donné naissance au langage de manipulation des données SQL.</p>
+C'était bien vu, car celui-ci a réussi à s'imposer et se retrouve aujourd'hui dans la majorité des bases de données ! :soleil: En effet, ce modèle a été implémenté dans les systèmes de gestion des bases de données relationnelles (SGBDR) comme le IBM System R, Oracle, DB2 ou MySQL. Il a également donné naissance au langage de manipulation des données SQL.</p>
 <p id="r-4567061" data-claire-element-id="8192761">
- </p>
+</p>
 <h3 id="r-4504557" data-claire-element-id="8354656">
 L'objet phare de ce cours : la relation</h3>
 <p id="r-4503687" data-claire-element-id="8017681">
-L'objet (théorique) que nous manipulerons tout au long de ce cours est appelé <strong>
+L'objet (théorique) que nous manipulerons tout au long de ce cours est appelé<strong>
 relation</strong>
 .</p>
 <aside id="r-4627172" data-claire-element-id="8354654" data-claire-semantic="information">
@@ -35,7 +33,7 @@ J'espère que vous aimez les pommes, car tout au long de ce cours, nous illustre
 <p id="r-4503688" data-claire-element-id="8335638">
 Une relation, c'est un tableau dans lequel on met des données. Un tableau dans lequel une ligne représente un objet, et où chaque ligne représente des objets de même nature.</p>
 <p id="r-4503689" data-claire-element-id="8354655">
-Si nous représentons des pommes, nous pouvons les caractériser par leur masse, leur diamètre et leur couleur. Nous pouvons aussi leur attribuer un identifiant, c'est-à-dire un nombre (ou un code) <em>
+Si nous représentons des pommes, nous pouvons les caractériser par leur masse, leur diamètre et leur couleur. Nous pouvons aussi leur attribuer un identifiant, c'est-à-dire un nombre (ou un code)<em>
 unique</em>
  qui permet de les différencier.</p>
 <table id="r-4504556" data-claire-element-id="8022721">
@@ -124,84 +122,84 @@ jaune</p>
 </table>
 <aside id="r-4514892" data-claire-element-id="8192766" data-claire-semantic="information">
 <p id="r-4514891" data-claire-element-id="8192765">
- Dans une relation, l'ordre des lignes n'a pas d'importance et pas de signification.</p>
+ Dans une relation, l'ordre des lignes n'a pas d'importance et pas de signification.</p>
 </aside>
 <p id="r-4567062" data-claire-element-id="8192767">
- </p>
+</p>
 <h3 id="r-4514893" data-claire-element-id="8537114">
 Un peu de vocabulaire</h3>
 <aside id="r-4620458" data-claire-element-id="8335640" data-claire-semantic="warning">
 <p id="r-4510226" data-claire-element-id="8054281">
-Il est très fréquent de mélanger les termes définis par le <em>
+Il est très fréquent de mélanger les termes définis par le<em>
 modèle relationnel</em>
- et les termes propres au jargon des <em>
+ et les termes propres au jargon des<em>
 bases de données relationnelles</em>
 .</p>
 </aside>
 <p id="r-4510228" data-claire-element-id="8034284">
-Par exemple, une <strong>
+Par exemple, une<strong>
 relation</strong>
- sera souvent appelée <strong>
+ sera souvent appelée<strong>
 table</strong>
  !</p>
 <p id="r-4510229" data-claire-element-id="8537072">
-De même, le terme <strong>
-tuple </strong>
-désigne ce que l'on appelle une <strong>
-ligne</strong>
- d'une table. Dans l'exemple précédent, la pomme numéro 2 est représentée par le <strong>
+De même, le terme<strong>
 tuple</strong>
- suivant : <code data-claire-semantic="text">
+désigne ce que l'on appelle une<strong>
+ligne</strong>
+ d'une table. Dans l'exemple précédent, la pomme numéro 2 est représentée par le<strong>
+tuple</strong>
+ suivant :<code data-claire-semantic="text">
 (2, 169, 9.1, "jaune")</code>
 .</p>
 <p id="r-4510266" data-claire-element-id="8034531">
-Pour désigner un tuple ou une ligne, vous trouverez aussi parfois les termes <strong>
+Pour désigner un tuple ou une ligne, vous trouverez aussi parfois les termes<strong>
 n-uplet</strong>
- , <strong>
+ ,<strong>
 enregistrement</strong>
- ou <strong>
+ ou<strong>
 vecteur</strong>
 . Vous avez l'embarras du choix !</p>
 <p id="r-4510230" data-claire-element-id="8034415">
-Également, le terme <strong>
+Également, le terme<strong>
 attribut</strong>
- est l'équivalent, dans le vocabulaire des BDD, d'une <strong>
+ est l'équivalent, dans le vocabulaire des BDD, d'une<strong>
 colonne</strong>
-. Dans l'exemple précédent, <em>
+. Dans l'exemple précédent,<em>
 masse</em>
  est un attribut.</p>
 <p id="r-4510251" data-claire-element-id="8192791">
-Le <strong>
+Le<strong>
 schéma</strong>
  est l'ensemble des attributs d'une relation.</p>
 <p id="r-4510231" data-claire-element-id="8054292">
-Enfin, le <strong>
+Enfin, le<strong>
 domaine</strong>
- désigne l'ensemble des valeurs que peuvent prendre les attributs. Dans le jargon des bases de données, le domaine est assimilé au <strong>
+ désigne l'ensemble des valeurs que peuvent prendre les attributs. Dans le jargon des bases de données, le domaine est assimilé au<strong>
 type de colonne</strong>
 .</p>
 <aside id="r-4510310" data-claire-element-id="8537113" data-claire-semantic="information">
 <p id="r-4510309" data-claire-element-id="8537112">
-Petite précision sur les domaines. Dans notre exemple, l'attribut <em>
+Petite précision sur les domaines. Dans notre exemple, l'attribut<em>
 masse</em>
- peut prendre toute valeur réelle et positive (c'est à dire tout nombre à virgule supérieur à 0). Également, la colonne <em>
+ peut prendre toute valeur réelle et positive (c'est à dire tout nombre à virgule supérieur à 0). Également, la colonne<em>
 identifiant</em>
- est de type entier (elle peut prendre toute valeur de nombre entier). Enfin, l'attribut <em>
+ est de type entier (elle peut prendre toute valeur de nombre entier). Enfin, l'attribut<em>
 couleur</em>
- a comme domaine l'ensemble <code data-claire-semantic="text">
+ a comme domaine l'ensemble<code data-claire-semantic="text">
 {vert, rouge, jaune}</code>
 .</p>
 </aside>
 <p id="r-4620459" data-claire-element-id="8335643">
- </p>
+</p>
 <h3 id="r-4620467" data-claire-element-id="8537120">
 En résumé</h3>
 <ul id="r-4620466" data-claire-element-id="8537119">
 <li id="r-4620461" data-claire-element-id="8335646">
 <p id="r-4620460" data-claire-element-id="8335645">
-Dans ce cours, on va manipuler des tableaux, appelés <strong>
+Dans ce cours, on va manipuler des tableaux, appelés<strong>
 relations</strong>
- ou <strong>
+ ou<strong>
 tables</strong>
 .</p>
 </li>
@@ -213,29 +211,18 @@ Dans ces tableaux, une ligne (= un tuple) représente un objet, et chaque ligne 
 <p id="r-4620464" data-claire-element-id="8537117">
 On jonglera souvent entre le vocabulaire de l'<strong>
 algèbre relationnelle</strong>
- et le vocabulaire propre aux <strong>
+ et le vocabulaire propre aux<strong>
 bases de données</strong>
  : connaissez bien les correspondances entre l'un et l'autre !</p>
 </li>
 </ul>
-
 </div>
-
 <div class="js-courseSelementActions sideActions">
-
 <ul class="sideActions__container">
-
 <li>
-
-<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
-
-#
-</a>
-
+<a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+ #</a>
 </li>
-
 </ul>
-
 </div>
-
 </div>

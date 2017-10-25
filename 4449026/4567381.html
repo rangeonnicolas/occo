@@ -1,7 +1,5 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/evitez-la-redondance" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
-
 <div class="userContent js-userContent">
-
 <aside id="r-4702792" data-claire-element-id="8543772" data-claire-semantic="information">
 <p id="r-4702791" data-claire-element-id="8543771">
 Ce chapitre est un peu technique. La vidéo est ici bien plus explicite que le texte, et vous aidera à mieux comprendre.</p>
@@ -30,11 +28,11 @@ Cela pose plusieurs problèmes :</p>
 <ul id="r-4567448" data-claire-element-id="8336214">
 <li id="r-4567445" data-claire-element-id="8193890">
 <p id="r-4567444" data-claire-element-id="8193889">
- Si le prix au kilo d'une variété change, il faudra le modifier sur <em>
+ Si le prix au kilo d'une variété change, il faudra le modifier sur<em>
 toutes</em>
- les lignes correspondant à des pommes de la variété en question. En informatique, on n'aime pas vraiment qu'une information soit stockée à plusieurs endroits (i.e. la <strong>
+ les lignes correspondant à des pommes de la variété en question. En informatique, on n'aime pas vraiment qu'une information soit stockée à plusieurs endroits (i.e. la<strong>
 redondance de données</strong>
-), car en cas de modification, il est probable d'oublier d'actualiser l'information <em>
+), car en cas de modification, il est probable d'oublier d'actualiser l'information<em>
 partout</em>
  où c'est nécessaire. Si l'information n'est pas modifiée partout, alors la cohérence est perdue !</p>
 </li>
@@ -44,7 +42,7 @@ Si nous souhaitons ajouter les informations d'une nouvelle variété à notre ba
 </li>
 </ul>
 <p id="r-4567561" data-claire-element-id="8194091">
- </p>
+</p>
 <h3 id="r-4567511" data-claire-element-id="8559250">
 Comment éviter la redondance ?</h3>
 <div id="r-4567450" data-claire-element-id="8537403" data-claire-semantic="question">
@@ -52,26 +50,26 @@ Comment éviter la redondance ?</h3>
 Très bien, mais si j'avais été mis face à cette relation (qui regroupe à la fois des pommes et des variétés), comment aurais-je pu savoir qu'il fallait la diviser en deux relations ?</p>
 </div>
 <h4 id="r-4567506" data-claire-element-id="8211001">
- </h4>
+</h4>
 <h4 id="r-4574347" data-claire-element-id="8537414">
 La règle</h4>
 <p id="r-4567451" data-claire-element-id="8336218">
 Il y a une règle pour cela ! ;) Elle est compliquée, mais je donne un exemple juste en dessous :</p>
 <blockquote id="r-4567453" data-claire-element-id="8537413">
 <p id="r-4567452" data-claire-element-id="8537412">
-Dans une relation, si un attribut <em>
+Dans une relation, si un attribut<em>
 A</em>
- dépend uniquement d'un groupe d'attributs <em>
-G </em>
+ dépend uniquement d'un groupe d'attributs<em>
+G</em>
 (et que ce groupe d'attributs n'est pas une clé candidate), alors il est possible de créer une nouvelle relation qui contiendra les attributs A et G.</p>
 <p id="r-4574346" data-claire-element-id="8211003">
-Il faut cependant s'assurer que <em>
+Il faut cependant s'assurer que<em>
 G</em>
  soit minimal (c'est-à-dire que l'on ne puisse pas enlever d'attribut au groupe<em>
  G</em>
- sans casser la dépendance entre <em>
+ sans casser la dépendance entre<em>
 A</em>
- et <em>
+ et<em>
 G</em>
 ).</p>
 </blockquote>
@@ -81,31 +79,31 @@ G sera d'ailleurs une clé candidate pour la nouvelle relation créée.</p>
 </aside>
 <aside id="r-4567457" data-claire-element-id="8193902" data-claire-semantic="warning">
 <p id="r-4567456" data-claire-element-id="8193901">
-Si un autre attribut <em>
+Si un autre attribut<em>
 B</em>
  dépend également uniquement de G, alors il faut aussi le déplacer dans la nouvelle relation créée !</p>
 </aside>
 <p id="r-4567458" data-claire-element-id="8193992">
- </p>
+</p>
 <h4 id="r-4567510" data-claire-element-id="8559249">
 Avons-nous appliqué cette règle avec nos relations pomme et variété ?</h4>
 <p id="r-4567507" data-claire-element-id="8537415">
-Dans l'exemple en haut de cette page, l'attribut <em>
+Dans l'exemple en haut de cette page, l'attribut<em>
 prix_au_kilo</em>
- ne dépend que de la variété, mais <em>
+ ne dépend que de la variété, mais<em>
 nom_variété</em>
- n'est pas une clé candidate.</p>
+ n'est pas une clé candidate.</p>
 <p id="r-4567508" data-claire-element-id="8537416">
-Ainsi on peut créer une nouvelle table dans laquelle <em>
+Ainsi on peut créer une nouvelle table dans laquelle<em>
 nom_variété</em>
- est la clé primaire. Elle contiendra l'attribut <em>
+ est la clé primaire. Elle contiendra l'attribut<em>
 prix_au_kilo</em>
-. De même, les attributs <em>
+. De même, les attributs<em>
 maturation</em>
- et <em>
+ et<em>
 goût</em>
- ne dépendent eux aussi que de <em>
-nom_variété </em>
+ ne dépendent eux aussi que de<em>
+nom_variété</em>
 ! On peut donc les ajouter à notre nouvelle relation.</p>
 <figure id="r-4627248" data-claire-element-id="8559248">
 <img id="r-4627246" data-claire-element-id="8354881" src="https://user.oc-static.com/upload/2017/08/28/15039106894736_NOUVELLE_RELATION.png" alt="Notre nouvelle relation">
@@ -113,24 +111,24 @@ nom_variété </em>
 Notre nouvelle relation</figcaption>
 </figure>
 <p id="r-4567509" data-claire-element-id="8543764">
-Nous voici donc avec une relation toute nouvelle et toute belle ! Que remarquez-vous ? Que cette nouvelle relation est exactement la même que la table <strong>
+Nous voici donc avec une relation toute nouvelle et toute belle ! Que remarquez-vous ? Que cette nouvelle relation est exactement la même que la table<strong>
 variété</strong>
- que nous avions définie dans les chapitres précédents (au nom de colonne près) :</p>
+ que nous avions définie dans les chapitres précédents (au nom de colonne près) :</p>
 <p id="r-4627250" data-claire-element-id="8354886">
 <img id="r-4627249" data-claire-element-id="8354885" src="https://user.oc-static.com/upload/2017/08/28/1503910741861_CLE_ETRANGERE2.png" alt="">
 </p>
 <p id="r-4567586" data-claire-element-id="8194141">
- </p>
+</p>
 <h4 id="r-4567588" data-claire-element-id="8537436">
 Faut-il à tout prix éviter la redondance ?</h4>
 <p id="r-4567587" data-claire-element-id="8194143">
-Dans les chapitres suivants, lorsque nous manipulerons les données, nous serons amenés à former de nouvelles tables, dont certaines ressembleront à la table du haut de cette page, qui est redondante. Ce n'est pas un problème lorsqu'on <em>
+Dans les chapitres suivants, lorsque nous manipulerons les données, nous serons amenés à former de nouvelles tables, dont certaines ressembleront à la table du haut de cette page, qui est redondante. Ce n'est pas un problème lorsqu'on<em>
 manipule</em>
- les données pour les questionner. La redondance, il faut l'éviter dans le <em>
+ les données pour les questionner. La redondance, il faut l'éviter dans le<em>
 stockage</em>
  des données.</p>
 <h4 id="r-4567459" data-claire-element-id="8193904">
- </h4>
+</h4>
 <h3 id="r-4567488" data-claire-element-id="8537447">
 Aller plus loin : les dépendances fonctionnelles</h3>
 <div id="r-4567462" data-claire-element-id="8193907" data-claire-semantic="question">
@@ -140,45 +138,45 @@ Oui, mais comment savoir si "un attribut dépend d'un groupe d'attributs" ? Cela
 <p id="r-4567463" data-claire-element-id="8193908">
 C'est vrai. Voici donc un petit "truc":</p>
 <p id="r-4567464" data-claire-element-id="8193909">
-Soit une relation <strong>
+Soit une relation<strong>
 pomme.</strong>
- Imaginez-vous une pomme hypothétique, donc vous ne connaissez pas les caractéristiques. Ou plutôt, vous ne connaissez d'elle que <em>
+ Imaginez-vous une pomme hypothétique, donc vous ne connaissez pas les caractéristiques. Ou plutôt, vous ne connaissez d'elle que<em>
 certaines</em>
- caractéristiques, c'est-à-dire certains attributs seulement. Appelons ces attributs <em>
+ caractéristiques, c'est-à-dire certains attributs seulement. Appelons ces attributs<em>
 G</em>
-. Maintenant, demandons-nous si un attribut <em>
+. Maintenant, demandons-nous si un attribut<em>
 A</em>
- dépend (ou non) de <em>
+ dépend (ou non) de<em>
 G</em>
 . La question à se poser est la suivante :</p>
 <div id="r-4567556" data-claire-element-id="8194081" data-claire-semantic="question">
 <p id="r-4567465" data-claire-element-id="8193910">
-En ne connaissant que G, et en ayant à disposition la relation <strong>
+En ne connaissant que G, et en ayant à disposition la relation<strong>
 pomme</strong>
 , puis-je trouver de manière certaine A ?</p>
 </div>
 <p id="r-4567467" data-claire-element-id="8537446">
 <strong>
 Exemple :</strong>
- Je vous dis que j'ai une pomme cachée derrière mon dos. Je vous donne également un papier sur lequel est imprimée la totalité de la relation <strong>
+ Je vous dis que j'ai une pomme cachée derrière mon dos. Je vous donne également un papier sur lequel est imprimée la totalité de la relation<strong>
 pomme</strong>
 . Si la seule chose que je veuille bien vous dire est...</p>
 <ul id="r-4567483" data-claire-element-id="8193928">
 <li id="r-4567472" data-claire-element-id="8193917">
 <p id="r-4567468" data-claire-element-id="8193913">
-que cette pomme est de variété <em>
+que cette pomme est de variété<em>
 Gala</em>
- ( <math>
+ (<math>
 $\(G = [nom\_variete]\)$</math>
- ). Pouvez-vous me dire si son goût sera sucré ou acidulé ( <math>
+ ). Pouvez-vous me dire si son goût sera sucré ou acidulé (<math>
 $\(A = gout\)$</math>
  )?</p>
 <ul id="r-4567471" data-claire-element-id="8193916">
 <li id="r-4567470" data-claire-element-id="8193915">
 <p id="r-4567469" data-claire-element-id="8193914">
-La réponse est <strong>
+La réponse est<strong>
 oui.</strong>
- Remarquez que vous n'avez même pas besoin de savoir précisément de quelle pomme il s'agit, car de toute manière, toutes les pommes <em>
+ Remarquez que vous n'avez même pas besoin de savoir précisément de quelle pomme il s'agit, car de toute manière, toutes les pommes<em>
 Gala</em>
  sont toujours sucrées !</p>
 </li>
@@ -186,13 +184,13 @@ Gala</em>
 </li>
 <li id="r-4567477" data-claire-element-id="8193922">
 <p id="r-4567473" data-claire-element-id="8193918">
-que cette pomme est de variété <em>
+que cette pomme est de variété<em>
 Gala</em>
 . Pouvez-vous me donner sa masse ?</p>
 <ul id="r-4567476" data-claire-element-id="8193921">
 <li id="r-4567475" data-claire-element-id="8193920">
 <p id="r-4567474" data-claire-element-id="8193919">
-La réponse est <strong>
+La réponse est<strong>
 non</strong>
 .</p>
 </li>
@@ -200,13 +198,13 @@ non</strong>
 </li>
 <li id="r-4567482" data-claire-element-id="8193927">
 <p id="r-4567478" data-claire-element-id="8193923">
-que cette pomme a pour identifiant 2 et qu'elle est de couleur jaune ( <math>
+que cette pomme a pour identifiant 2 et qu'elle est de couleur jaune (<math>
 $\(G = [identifiant, couleur]\)$</math>
  ). Pouvez-vous me donner sa masse ?</p>
 <ul id="r-4567481" data-claire-element-id="8193926">
 <li id="r-4567480" data-claire-element-id="8193925">
 <p id="r-4567479" data-claire-element-id="8193924">
-La réponse est <strong>
+La réponse est<strong>
 oui</strong>
 .</p>
 </li>
@@ -214,35 +212,35 @@ oui</strong>
 </li>
 </ul>
 <p id="r-4567484" data-claire-element-id="8193929">
-Si la réponse est non, alors <em>
+Si la réponse est non, alors<em>
 A</em>
- ne dépend pas (ou pas uniquement) de <em>
+ ne dépend pas (ou pas uniquement) de<em>
 G</em>
-. Si la réponse est oui, alors <em>
+. Si la réponse est oui, alors<em>
 A</em>
- dépend de <em>
+ dépend de<em>
 G</em>
 .</p>
 <aside id="r-4567486" data-claire-element-id="8193931" data-claire-semantic="information">
 <p id="r-4567485" data-claire-element-id="8193930">
-Cependant, dans le 3e exemple, G n'est pas minimal, car si on enlève <em>
+Cependant, dans le 3e exemple, G n'est pas minimal, car si on enlève<em>
 couleur</em>
- à G, on ne casse pas la dépendance entre <math>
+ à G, on ne casse pas la dépendance entre<math>
 $\( A = masse\)$</math>
- et <math>
+ et<math>
 $\(G = [identifiant]\)$</math>
  .</p>
 </aside>
 <p id="r-4567487" data-claire-element-id="8193932">
- </p>
+</p>
 <h3 id="r-4567494" data-claire-element-id="8336228">
 Aller plus loin : la normalisation</h3>
 <p id="r-4567489" data-claire-element-id="8193934">
-Séparer des relations comme nous venons de le faire évite la <strong>
+Séparer des relations comme nous venons de le faire évite la<strong>
 redondance</strong>
  de données. En effet, cela permet qu'une information ne soit présente qu'à un seul endroit.</p>
 <p id="r-4567490" data-claire-element-id="8193935">
-Dans le domaine des bases de données, le fait d'enlever les redondances s'appelle la <strong>
+Dans le domaine des bases de données, le fait d'enlever les redondances s'appelle la<strong>
 normalisation</strong>
 .</p>
 <aside id="r-4567492" data-claire-element-id="8193937" data-claire-semantic="warning">
@@ -250,13 +248,13 @@ normalisation</strong>
 Les concepts de la normalisation sont très importants à connaître si vous concevez vous-même une base de données.</p>
 </aside>
 <p id="r-4567493" data-claire-element-id="8193938">
-Pour en savoir plus, je vous renvoie vers le chapitre <a href="/courses/faites-une-base-de-donnees-avec-uml/optimisez-votre-modele-relationnel-avec-les-formes-normales">
+Pour en savoir plus, je vous renvoie vers le chapitre<a href="/courses/faites-une-base-de-donnees-avec-uml/optimisez-votre-modele-relationnel-avec-les-formes-normales">
 Optimisez votre modèle relationnel avec les formes normales</a>
- du cours <em>
+ du cours<em>
 Faites une base de données avec UML</em>
 , qui explique très bien la normalisation. Mais pensez à revenir ici ensuite, sinon je serai jaloux ! ;)</p>
 <p id="r-4620681" data-claire-element-id="8336227">
- </p>
+</p>
 <h3 id="r-4620689" data-claire-element-id="8537459">
 En résumé</h3>
 <ul id="r-4620688" data-claire-element-id="8537458">
@@ -273,24 +271,13 @@ Si une table contient de la redondance, mieux vaut la séparer en plusieurs tabl
 Il y a une règle pour savoir comment séparer une table redondante.</p>
 </li>
 </ul>
-
 </div>
-
 <div class="js-courseSelementActions sideActions">
-
 <ul class="sideActions__container">
-
 <li>
-
-<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
-
-#
-</a>
-
+<a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+ #</a>
 </li>
-
 </ul>
-
 </div>
-
 </div>

@@ -1,7 +1,5 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/ameliorez-vos-agregations-grace-a-having" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
-
 <div class="userContent js-userContent">
-
 <video id="r-4709437" data-claire-element-id="8559345" src="https://vimeo.com/233480672">
 <a href="https://vimeo.com/233480672">
 https://vimeo.com/233480672</a>
@@ -12,129 +10,94 @@ Réfléchissons...</h3>
 Reprenons notre dernière requête, écrite au chapitre précédent :</p>
 <pre id="r-4559266" data-claire-element-id="8549422">
 <code data-claire-semantic="sql">
-SELECT 
-    i.id AS intermediary_id,
-    i.name AS intermediary_name,
-    e.jurisdiction,
-    e.jurisdiction_description,
-    count(*) as cnt
-FROM 
-    intermediary i,
-    assoc_inter_entity a,
-    entity e
-WHERE 
-    a.entity = e.id AND 
-    a.inter = i.id AND 
-    (i.id = 5000 OR i.id = 5001) 
-GROUP BY 
-    i.id, i.name, e.jurisdiction, e.jurisdiction_description
-ORDER BY 
-    cnt DESC
-LIMIT 5;</code>
+SELECT i.id AS intermediary_id, i.name AS intermediary_name, e.jurisdiction, e.jurisdiction_description, count(*) as cnt FROM intermediary i, assoc_inter_entity a, entity e WHERE a.entity = e.id AND a.inter = i.id AND (i.id = 5000 OR i.id = 5001) GROUP BY i.id, i.name, e.jurisdiction, e.jurisdiction_description ORDER BY cnt DESC LIMIT 5;</code>
 </pre>
 <p id="r-4559268" data-claire-element-id="8326441">
-Imaginons que je ne souhaite avoir <em>
+Imaginons que je ne souhaite avoir<em>
 que</em>
  les lignes pour lesquelles le nombre de sociétés est supérieur à 100, car je considère que ce sont les plus importantes.</p>
 <p id="r-4559269" data-claire-element-id="8540892">
-La première idée qui nous viendrait à l'esprit serait d'effectuer une <strong>
+La première idée qui nous viendrait à l'esprit serait d'effectuer une<strong>
 restriction</strong>
-, et donc d'ajouter une condition dans le <code data-claire-semantic="text">
+, et donc d'ajouter une condition dans le<code data-claire-semantic="text">
 WHERE</code>
 .</p>
 <p id="r-4559270" data-claire-element-id="8540893">
-Malheureusement, ce n'est pas la bonne solution. En effet, les conditions du <code data-claire-semantic="text">
+Malheureusement, ce n'est pas la bonne solution. En effet, les conditions du<code data-claire-semantic="text">
 WHERE</code>
- sont appliquées sur les lignes <em>
+ sont appliquées sur les lignes<em>
 avant</em>
  que l'agrégation ne soit effectuée.</p>
 <aside id="r-4559274" data-claire-element-id="8540895" data-claire-semantic="information">
 <p id="r-4559273" data-claire-element-id="8540894">
-Quand on lance une <strong>
+Quand on lance une<strong>
 agrégation</strong>
- sur une table, les lignes de la table obtenue ne représentent plus les même objets. La nouvelle table n'est plus de même nature. Il n'est donc pas possible de mélanger dans le <code data-claire-semantic="text">
+ sur une table, les lignes de la table obtenue ne représentent plus les même objets. La nouvelle table n'est plus de même nature. Il n'est donc pas possible de mélanger dans le<code data-claire-semantic="text">
 WHERE</code>
- des conditions portant sur la table <em>
+ des conditions portant sur la table<em>
 avant</em>
- agrégation et des conditions portant sur la table obtenue <em>
+ agrégation et des conditions portant sur la table obtenue<em>
 après</em>
  agrégation.</p>
 </aside>
 <p id="r-4559275" data-claire-element-id="8540896">
-Ainsi, pour effectuer une restriction <em>
+Ainsi, pour effectuer une restriction<em>
 après</em>
- l'agrégation, on utilise la clause <code data-claire-semantic="text">
+ l'agrégation, on utilise la clause<code data-claire-semantic="text">
 HAVING</code>
 .</p>
 <p id="r-4559276" data-claire-element-id="8326401">
- </p>
+</p>
 <h3 id="r-4617172" data-claire-element-id="8549425">
 La clause HAVING</h3>
 <p id="r-4617171" data-claire-element-id="8326411">
 Si nous souhaitons connaître les juridictions dans lesquelles les intermédiaires ont créé plus de 100 sociétés, voici ce qu'il faut écrire :</p>
 <pre id="r-4559278" data-claire-element-id="8549424">
 <code data-claire-semantic="sql">
-SELECT 
-    i.id AS intermediary_id,
-    i.name AS intermediary_name,
-    e.jurisdiction,
-    e.jurisdiction_description,
-    count(*) as cnt
-FROM 
-    intermediary i,
-    assoc_inter_entity a,
-    entity e
-WHERE 
-    a.entity = e.id AND 
-    a.inter = i.id AND 
-    (i.id = 5000 OR i.id = 5001) 
-GROUP BY 
-    i.id, i.name, e.jurisdiction, e.jurisdiction_description
-HAVING 
-    count(*) &gt; 100 ;</code>
+SELECT i.id AS intermediary_id, i.name AS intermediary_name, e.jurisdiction, e.jurisdiction_description, count(*) as cnt FROM intermediary i, assoc_inter_entity a, entity e WHERE a.entity = e.id AND a.inter = i.id AND (i.id = 5000 OR i.id = 5001) GROUP BY i.id, i.name, e.jurisdiction, e.jurisdiction_description HAVING count(*) &gt; 100 ;</code>
 </pre>
 <p id="r-4559284" data-claire-element-id="8540898">
-Notez que dans le <code data-claire-semantic="text">
+Notez que dans le<code data-claire-semantic="text">
 HAVING</code>
-, il est tout naturel d'avoir une fonction d'agrégation, ce qui n'est pas possible dans le <code data-claire-semantic="text">
+, il est tout naturel d'avoir une fonction d'agrégation, ce qui n'est pas possible dans le<code data-claire-semantic="text">
 WHERE</code>
 .</p>
 <aside id="r-4560278" data-claire-element-id="8540900" data-claire-semantic="information">
 <p id="r-4560277" data-claire-element-id="8540899">
-Il est tout à fait possible d'écrire <code data-claire-semantic="text">
+Il est tout à fait possible d'écrire<code data-claire-semantic="text">
 HAVING count(*) &gt; 100</code>
- même s'il n'y a pas dans le <code data-claire-semantic="text">
+ même s'il n'y a pas dans le<code data-claire-semantic="text">
 SELECT</code>
- une colonne <code data-claire-semantic="text">
+ une colonne<code data-claire-semantic="text">
 count(*)</code>
 .</p>
 </aside>
 <p id="r-4559285" data-claire-element-id="8326444">
 Ce n'est pas bien compliqué, mais c'est un point qu'il faut retenir pour ne pas faire de bêtises !</p>
 <p id="r-4617181" data-claire-element-id="8326445">
- </p>
+</p>
 <h3 id="r-4617187" data-claire-element-id="8540907">
 En résumé</h3>
 <ul id="r-4617186" data-claire-element-id="8540906">
 <li id="r-4617183" data-claire-element-id="8540903">
 <p id="r-4617182" data-claire-element-id="8540902">
-La condition dans le <code data-claire-semantic="text">
+La condition dans le<code data-claire-semantic="text">
 WHERE</code>
- est vérifiée <em>
+ est vérifiée<em>
 avant</em>
  l'agrégation.</p>
 </li>
 <li id="r-4617185" data-claire-element-id="8540905">
 <p id="r-4617184" data-claire-element-id="8540904">
-Pour restreindre les lignes <em>
+Pour restreindre les lignes<em>
 après</em>
- l'agrégation, il faut utiliser <code data-claire-semantic="text">
+ l'agrégation, il faut utiliser<code data-claire-semantic="text">
 HAVING</code>
 .</p>
 </li>
 </ul>
 <p id="r-4637481" data-claire-element-id="8380141">
- </p>
+</p>
 <h3 id="r-4637506" data-claire-element-id="8542353">
 Un peu d'entraînement !</h3>
 <p id="r-4637483" data-claire-element-id="8380143">
@@ -143,24 +106,13 @@ La base de données est en ligne, vous pouvez vous entraîner en réécrivant le
 <a href="https://www.codevolve.com/api/v1/publishable_key/2A9CAA3419124E3E8C3F5AFCE5306292?content_id=ba014daa-d108-4e91-83f1-42154313b2d1">
 Console interactive</a>
 </p>
-
 </div>
-
 <div class="js-courseSelementActions sideActions">
-
 <ul class="sideActions__container">
-
 <li>
-
-<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
-
-#
-</a>
-
+<a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+ #</a>
 </li>
-
 </ul>
-
 </div>
-
 </div>

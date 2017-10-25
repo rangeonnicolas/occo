@@ -1,7 +1,5 @@
 <div itemprop="articleBody" data-page-indentifier="" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
-
 <div class="userContent js-userContent">
-
 <h3 id="r-4736964" data-claire-element-id="8640034">
 Énoncé</h3>
 <p id="r-4736891" data-claire-element-id="8639461">
@@ -52,25 +50,13 @@ Voici les diagrammes de dispersion des variables qualitatives prises 2 à 2. Sur
 Voici le code Python destiné à charger le jeu de données :</p>
 <pre id="r-4736913" data-claire-element-id="8639483">
 <code data-claire-semantic="python">
-# Chargement
-iris = pd.read_csv("iris_dataset.csv")
-# On renomme les colonnes
-iris.columns = ["id","sepal_length","sepal_width","petal_length","petal_width","species"]
-# On supprime l'identifiant des iris
-del iris["id"]
-# On supprime les individus contenant au moins une valeur manquante
-iris_dna = iris.dropna(axis=0, how='any')
-print("iris : {} individus, iris_dna : {} individus".format(len(iris),len(iris_dna)))
-# Affichage des diagrammes de dispersion
-sns.pairplot(iris_dna,hue="species")</code>
+# Chargement iris = pd.read_csv("iris_dataset.csv") # On renomme les colonnes iris.columns = ["id","sepal_length","sepal_width","petal_length","petal_width","species"] # On supprime l'identifiant des iris del iris["id"] # On supprime les individus contenant au moins une valeur manquante iris_dna = iris.dropna(axis=0, how='any') print("iris : {} individus, iris_dna : {} individus".format(len(iris),len(iris_dna))) # Affichage des diagrammes de dispersion sns.pairplot(iris_dna,hue="species")</code>
 </pre>
 <p id="r-4736914" data-claire-element-id="8639484">
 On sépare également iris_dna en 3 échantillons ; un pour chaque espèce :</p>
 <pre id="r-4736915" data-claire-element-id="8639485">
 <code data-claire-semantic="python">
-iris_setosa = iris_dna[iris_dna["species"] == "setosa"]
-iris_virginica = iris_dna[iris_dna["species"] == "virginica"]
-iris_versicolor = iris_dna[iris_dna["species"] == "versicolor"]</code>
+iris_setosa = iris_dna[iris_dna["species"] == "setosa"] iris_virginica = iris_dna[iris_dna["species"] == "virginica"] iris_versicolor = iris_dna[iris_dna["species"] == "versicolor"]</code>
 </pre>
 <p id="r-4736916" data-claire-element-id="8639486">
 Voici 2 diagrammes de dispersion :</p>
@@ -140,7 +126,7 @@ sepal_width en fonction de petal_width sur iris_versicolor : 0.825</p>
 <strong>
 NB: vous n'avez pas besoin de refaire ce calcul</strong>
 <br>
-Comparez (dans votre tête) ces 3 résultats à celui obtenu sur l'ensemble des iris (question 1). <br>
+Comparez (dans votre tête) ces 3 résultats à celui obtenu sur l'ensemble des iris (question 1).<br>
 <strong>
 NB: vous n'avez pas à répondre à cette question dans votre rendu</strong>
 <br>
@@ -184,31 +170,7 @@ Pour chaque individu, la valeur manquante se trouve soit dans la variable petal_
 En supposant qu'un individu n'a jamais plus d'une valeur manquante, voici le code qui remplace les valeurs manquantes grâce aux régressions linéaires. Des bouts de code ont été supprimés et remplacés par "[...]" : à vous de les retrouver.</p>
 <pre id="r-4736959" data-claire-element-id="8640031">
 <code data-claire-semantic="python">
-coeffs = {
-    "cas 1" : {'a': [...] , 'b':[...]},
-    "cas 2" : {'a': [...] , 'b':[...]},
-    "cas 3" : {'a': [...] , 'b':[...]},
-    "cas 4" : {'a': [...] , 'b':[...]},
-}
-lignes_modifiees = []
-
-for (i,individu) in iris.iterrows(): # pour chaque individu de iris,...
-    if pd.isnull(individu["petal_width"]): #... on test si individu["petal_width"] est nul.
-        a = coeffs["cas 1"]['a']
-        b = coeffs["cas 1"]['b']
-        X = individu["petal_length"]
-        Y = a*X + b
-        iris.loc[i,"petal_width"] = Y # on remplace la valeur manquante par Y
-        lignes_modifiees.append(i)
-        print("On a complété petal_width par {} a partir de petal_length={}".format(Y,X))
-        
-    if pd.isnull(individu["sepal_width"]):
-        espece = individu["species"]
-        X = individu["petal_width"]
-        [...]
-        lignes_modifiees.append(i)
-        print("On a complété sepal_width par {} a partir de l'espece:{} et de petal_width={}".format(Y,espece,X))
-</code>
+coeffs = { "cas 1" : {'a': [...] , 'b':[...]}, "cas 2" : {'a': [...] , 'b':[...]}, "cas 3" : {'a': [...] , 'b':[...]}, "cas 4" : {'a': [...] , 'b':[...]}, } lignes_modifiees = [] for (i,individu) in iris.iterrows(): # pour chaque individu de iris,... if pd.isnull(individu["petal_width"]): #... on test si individu["petal_width"] est nul. a = coeffs["cas 1"]['a'] b = coeffs["cas 1"]['b'] X = individu["petal_length"] Y = a*X + b iris.loc[i,"petal_width"] = Y # on remplace la valeur manquante par Y lignes_modifiees.append(i) print("On a complété petal_width par {} a partir de petal_length={}".format(Y,X)) if pd.isnull(individu["sepal_width"]): espece = individu["species"] X = individu["petal_width"] [...] lignes_modifiees.append(i) print("On a complété sepal_width par {} a partir de l'espece:{} et de petal_width={}".format(Y,espece,X))</code>
 </pre>
 <p id="r-4736960" data-claire-element-id="8639530">
 </p>
@@ -227,9 +189,7 @@ critère = Les coefficients doivent tous être corrects (à 0.1 près) :<br>
 Remarque : peu importe le code informatique qui a permis d'arriver à ces résultats. Voici un exemple :</p>
 <pre id="r-4736967" data-claire-element-id="8639537">
 <code data-claire-semantic="python">
-import scipy.stats as st
-print(st.pearsonr(iris_dna["petal_length"],iris_dna["petal_width"])[0])
-print(st.pearsonr(iris_dna["petal_length"],iris_dna["sepal_width"])[0])</code>
+import scipy.stats as st print(st.pearsonr(iris_dna["petal_length"],iris_dna["petal_width"])[0]) print(st.pearsonr(iris_dna["petal_length"],iris_dna["sepal_width"])[0])</code>
 </pre>
 <h4 id="r-4736970" data-claire-element-id="8640274">
 Q2:</h4>
@@ -272,16 +232,7 @@ cas 4/ : a=0.974 , b=0.809</strong>
 Nb : peu importe le code informatique qui a permi de trouver ces résultats. En voici un exemple :</p>
 <pre id="r-4736978" data-claire-element-id="8639548">
 <code data-claire-semantic="python">
-import scipy.stats as st
-cases = [(iris_dna["petal_length"],iris_dna["petal_width"]),
-(iris_setosa["petal_width"],iris_setosa["sepal_width"]),
-(iris_virginica["petal_width"],iris_virginica["sepal_width"]),
-(iris_versicolor["petal_width"],iris_versicolor["sepal_width"])]
-for c in cases:
-x = c[0]
-y = c[1]
-a, b, r_value, p_value, std_err = st.linregress(x, y)
-print("a={} , b={}, coeff de correl lin={}".format(a,b,r_value))</code>
+import scipy.stats as st cases = [(iris_dna["petal_length"],iris_dna["petal_width"]), (iris_setosa["petal_width"],iris_setosa["sepal_width"]), (iris_virginica["petal_width"],iris_virginica["sepal_width"]), (iris_versicolor["petal_width"],iris_versicolor["sepal_width"])] for c in cases: x = c[0] y = c[1] a, b, r_value, p_value, std_err = st.linregress(x, y) print("a={} , b={}, coeff de correl lin={}".format(a,b,r_value))</code>
 </pre>
 <h4 id="r-4736981" data-claire-element-id="8640041">
 Q4:</h4>
@@ -290,28 +241,13 @@ compétence = prédire une valeur grâce à un modèle de régression linéaire<
 critère = le code qui remplace "[...]" est équivalent à celui-ci :</p>
 <pre id="r-4737171" data-claire-element-id="8640035">
 <code data-claire-semantic="python">
-coeffs = {
-    "cas 1" : {'a':0.386 , 'b':0.509},
-    "cas 2" : {'a':1.788 , 'b':1.459},
-    "cas 3" : {'a':0.699 , 'b':1.038},
-    "cas 4" : {'a':0.974 , 'b':0.809}
-}</code>
+coeffs = { "cas 1" : {'a':0.386 , 'b':0.509}, "cas 2" : {'a':1.788 , 'b':1.459}, "cas 3" : {'a':0.699 , 'b':1.038}, "cas 4" : {'a':0.974 , 'b':0.809} }</code>
 </pre>
 <p id="r-4737172" data-claire-element-id="8640036">
 NB: ces 6 premières lignes indiquent les 8 coefficients. Il n'est pas nécessaire que ces coefficients soient égaux à ceux ci-dessus, mais ils doivent absolument être cohérents à ceux donnés par l'étudiant en question 3.</p>
 <pre id="r-4737173" data-claire-element-id="8640037">
 <code data-claire-semantic="python">
-        if espece == "setosa":
-            a = coeffs["cas 2"]['a']
-            b = coeffs["cas 2"]['b']
-        elif espece == "virginica":
-            a = coeffs["cas 3"]['a']
-            b = coeffs["cas 3"]['b']            
-        elif espece == "versicolor":
-            a = coeffs["cas 4"]['a']
-            b = coeffs["cas 4"]['b']          
-        Y = a*X + b
-        iris.loc[i,"sepal_width"] = Y</code>
+ if espece == "setosa": a = coeffs["cas 2"]['a'] b = coeffs["cas 2"]['b'] elif espece == "virginica": a = coeffs["cas 3"]['a'] b = coeffs["cas 3"]['b'] elif espece == "versicolor": a = coeffs["cas 4"]['a'] b = coeffs["cas 4"]['b'] Y = a*X + b iris.loc[i,"sepal_width"] = Y</code>
 </pre>
 <p id="r-4737174" data-claire-element-id="8640038">
 </p>
@@ -319,24 +255,13 @@ NB: ces 6 premières lignes indiquent les 8 coefficients. Il n'est pas nécessai
 </p>
 <p id="r-4737176" data-claire-element-id="8640040">
 </p>
-
 </div>
-
 <div class="js-courseSelementActions sideActions">
-
 <ul class="sideActions__container">
-
 <li>
-
-<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
-
-#
-</a>
-
+<a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+ #</a>
 </li>
-
 </ul>
-
 </div>
-
 </div>

@@ -1,7 +1,5 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/comprenez-limportance-des-cles" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
-
 <div class="userContent js-userContent">
-
 <video id="r-4709394" data-claire-element-id="8559237" src="https://vimeo.com/album/233476803">
 <a href="https://vimeo.com/album/233476803">
 https://vimeo.com/album/233476803</a>
@@ -13,7 +11,7 @@ Je ne vous ai pas tout dit à propos du modèle relationnel. J'ai oublié une ch
 Une relation ne peut contenir deux tuples identiques : chaque ligne est donc unique !</p>
 </aside>
 <p id="r-4503707" data-claire-element-id="8192811">
- </p>
+</p>
 <h3 id="r-4567068" data-claire-element-id="8537143">
 Réfléchissons...</h3>
 <p id="r-4567066" data-claire-element-id="8192812">
@@ -121,11 +119,11 @@ jaune</p>
 </tbody>
 </table>
 <p id="r-4503755" data-claire-element-id="8537142">
-Ici, les pommes 3 et 4 ont les mêmes caractéristiques. Cependant, les lignes correspondantes ne sont pas identiques, car la valeur de leurs attributs <em>
+Ici, les pommes 3 et 4 ont les mêmes caractéristiques. Cependant, les lignes correspondantes ne sont pas identiques, car la valeur de leurs attributs<em>
 identifiant</em>
- est différente : <code data-claire-semantic="text">
+ est différente :<code data-claire-semantic="text">
 3</code>
- et <code data-claire-semantic="text">
+ et<code data-claire-semantic="text">
 4</code>
 .</p>
 <p id="r-4503756" data-claire-element-id="8335751">
@@ -133,13 +131,13 @@ Cela nous amène à l'<em>
 identification</em>
  des tuples d'une relation. C'est là qu'interviennent les clés !</p>
 <p id="r-4567067" data-claire-element-id="8192813">
- </p>
+</p>
 <h3 id="r-4503762" data-claire-element-id="8543636">
 Qu'est-ce qu'une clé ?</h3>
 <p id="r-4503758" data-claire-element-id="8335753">
-Dans la vie quotidienne, une clé sert à ouvrir une porte pour <strong>
+Dans la vie quotidienne, une clé sert à ouvrir une porte pour<strong>
 accéder</strong>
- à votre maison. Une caractéristique essentielle d'une clé est qu'elle doit être <strong>
+ à votre maison. Une caractéristique essentielle d'une clé est qu'elle doit être<strong>
 unique</strong>
 , car si votre clé est identique à celle de la maison de votre voisin, il se pose un problème évident !</p>
 <p id="r-4503759" data-claire-element-id="8015885">
@@ -147,7 +145,7 @@ Dans le modèle relationnel, une clé a donc pour vocation d'<strong>
 accéder</strong>
  à un tuple, et donc d'identifier ce dernier.</p>
 <p id="r-4503760" data-claire-element-id="8016111">
- Ainsi, pour une relation donnée, une clé est un <em>
+ Ainsi, pour une relation donnée, une clé est un<em>
 groupe d'attribut minimum déterminant un tuple unique.</em>
 </p>
 <aside id="r-4510816" data-claire-element-id="8543635" data-claire-semantic="information">
@@ -160,7 +158,7 @@ Cette illustration (qui n'a rien de formel, et qui est une pure vue de l'esprit)
 </p>
 </aside>
 <p id="r-4503802" data-claire-element-id="8022964">
-Dans notre exemple des pommes, l'attribut <em>
+Dans notre exemple des pommes, l'attribut<em>
 identifiant</em>
  est une clé, car si je vous dis…</p>
 <blockquote id="r-4503804" data-claire-element-id="8022966">
@@ -168,7 +166,7 @@ identifiant</em>
 Donne-moi la pomme dont l'identifiant est 2 !</p>
 </blockquote>
 <p id="r-4503761" data-claire-element-id="8335754">
- … vous savez exactement quelle ligne me donner, car l'identifiant de chaque pomme est unique !</p>
+ … vous savez exactement quelle ligne me donner, car l'identifiant de chaque pomme est unique !</p>
 <p id="r-4503805" data-claire-element-id="8022968">
 Cependant, si je vous demande…</p>
 <blockquote id="r-4503807" data-claire-element-id="8022970">
@@ -176,17 +174,17 @@ Cependant, si je vous demande…</p>
 Donne-moi la pomme dont la masse est de 169 grammes !</p>
 </blockquote>
 <p id="r-4503808" data-claire-element-id="8335755">
-… dans ce cas, vous pourriez me donner la pomme numéro 2. Mais si j'ajoute à ma relation une autre pomme qui a aussi une masse de 169 grammes, vous ne saurez plus laquelle des deux pommes choisir. L'attribut <em>
+… dans ce cas, vous pourriez me donner la pomme numéro 2. Mais si j'ajoute à ma relation une autre pomme qui a aussi une masse de 169 grammes, vous ne saurez plus laquelle des deux pommes choisir. L'attribut<em>
 masse</em>
  n'est donc pas une clé.</p>
 <p id="r-4555061" data-claire-element-id="8162281">
- </p>
+</p>
 <h3 id="r-4503919" data-claire-element-id="8543533">
 Un peu d’entraînement</h3>
 <p id="r-4503809" data-claire-element-id="8016341">
-Entraînons-nous à repérer des clés avec une relation que nous appellerons <strong>
+Entraînons-nous à repérer des clés avec une relation que nous appellerons<strong>
 voiture</strong>
-, qui représente des voitures possédées par des personnes <em>
+, qui représente des voitures possédées par des personnes<em>
 ayant la nationalité française</em>
  (ce détail aura son importance pour la suite) :</p>
 <table id="r-4503916" data-claire-element-id="8159931">
@@ -482,27 +480,27 @@ Oui ! A condition de supposer qu'un numéro d'immatriculation ne peut pas être 
 Et le groupe [ immatriculation, pays_immatriculation, couleur ] ?</p>
 </div>
 <p id="r-4503946" data-claire-element-id="8335757">
-Oui et Non... Comme nous venons de le voir, le groupe [ immatriculation , pays_immatriculation ] est déjà une clé. Ceci implique que deux lignes ne peuvent pas avoir la même valeur pour leurs attributs <em>
+Oui et Non... Comme nous venons de le voir, le groupe [ immatriculation , pays_immatriculation ] est déjà une clé. Ceci implique que deux lignes ne peuvent pas avoir la même valeur pour leurs attributs<em>
 immatriculation</em>
- et <em>
+ et<em>
 pays_immatriculation.</em>
 </p>
 <p id="r-4620501" data-claire-element-id="8335758">
 De manière évidente, deux lignes ne peuvent donc pas avoir les mêmes valeurs pour les 3 attributs ci-dessus.</p>
 <p id="r-4620502" data-claire-element-id="8543452">
-Cependant, dans la définition de <em>
+Cependant, dans la définition de<em>
 clé</em>
- donnée plus haut, nous avons dit que le groupe d'attributs devait être minimal. Ici, notre groupe de 3 attributs n'est pas minimal. En effet, si on enlève l'attribut <em>
+ donnée plus haut, nous avons dit que le groupe d'attributs devait être minimal. Ici, notre groupe de 3 attributs n'est pas minimal. En effet, si on enlève l'attribut<em>
 couleur</em>
-, on se retrouve avec [ immatriculation, pays_immatriculation ] qui est une clé (on vient de le voir au cas précédent, j'espère que vous suivez ;) ). <em>
+, on se retrouve avec [ immatriculation, pays_immatriculation ] qui est une clé (on vient de le voir au cas précédent, j'espère que vous suivez ;) ).<em>
 Couleur</em>
  est donc inutile ici.</p>
 <div id="r-4503948" data-claire-element-id="8016303" data-claire-semantic="question">
 <p id="r-4503947" data-claire-element-id="8016302">
-Et le groupe [ prop_num_secu ] ?</p>
+Et le groupe [ prop_num_secu ] ?</p>
 </div>
 <p id="r-4503949" data-claire-element-id="8543532">
-Non. Bon, certes, si nous avions une relation qui représentait des personnes de nationalité française, alors le numéro de sécurité sociale serait une clé. Mais ici, ce n'est pas le cas : notre relation représente des voitures, pas des personnes. Deux voitures peuvent avoir le même propriétaire, et donc avoir la même valeur pour l'attribut <em>
+Non. Bon, certes, si nous avions une relation qui représentait des personnes de nationalité française, alors le numéro de sécurité sociale serait une clé. Mais ici, ce n'est pas le cas : notre relation représente des voitures, pas des personnes. Deux voitures peuvent avoir le même propriétaire, et donc avoir la même valeur pour l'attribut<em>
 prop_num_secu.</em>
 </p>
 <div id="r-4503952" data-claire-element-id="8023017" data-claire-semantic="question">
@@ -510,9 +508,9 @@ prop_num_secu.</em>
 Et le groupe [ prop_num_secu, prop_num_voiture ] ?</p>
 </div>
 <p id="r-4503953" data-claire-element-id="8016334">
-Oui, c'est une clé. En effet, si deux voitures ont le même propriétaire (identifié par <em>
+Oui, c'est une clé. En effet, si deux voitures ont le même propriétaire (identifié par<em>
 prop_num_secu</em>
-), elles ne peuvent pas avoir à la fois le même propriétaire ET le même <em>
+), elles ne peuvent pas avoir à la fois le même propriétaire ET le même<em>
 prop_num_voiture</em>
 .</p>
 <aside id="r-4503957" data-claire-element-id="8016343" data-claire-semantic="information">
@@ -520,7 +518,7 @@ prop_num_voiture</em>
 Pour ceux qui veulent se "triturer" le cerveau : si nous enlevions la supposition selon laquelle les voitures sont possédées par des personnes de nationalité française, et qu'il existait un pays ayant la même numérotation de sécurité sociale qu'en France, alors ce dernier groupe d'attribut ne serait plus une clé !</p>
 </aside>
 <p id="r-4567071" data-claire-element-id="8192821">
- </p>
+</p>
 <h3 id="r-4620543" data-claire-element-id="8537155">
 En résumé</h3>
 <ul id="r-4620542" data-claire-element-id="8537154">
@@ -537,24 +535,13 @@ Pour qu'un groupe d'attribut soit une clé, il faut être sûr que deux tuples (
 Ce groupe d'attributs doit être minimal, c'est-à-dire que si on retire l'un des attributs de ce groupe, la phrase précédente n'est plus vérifiée.</p>
 </li>
 </ul>
-
 </div>
-
 <div class="js-courseSelementActions sideActions">
-
 <ul class="sideActions__container">
-
 <li>
-
-<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
-
-#
-</a>
-
+<a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+ #</a>
 </li>
-
 </ul>
-
 </div>
-
 </div>

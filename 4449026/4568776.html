@@ -1,11 +1,9 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/noubliez-pas-lagregation" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
-
 <div class="userContent js-userContent">
-
 <p id="r-4703001" data-claire-element-id="8544201">
-Oh non, il ne faut surtout pas oublier <strong>
+Oh non, il ne faut surtout pas oublier<strong>
 l’agrégation</strong>
- !  Pourquoi ? Parce que l'agrégation n'est pas une opération faisant partie de l'algèbre relationnelle. </p>
+ ! Pourquoi ? Parce que l'agrégation n'est pas une opération faisant partie de l'algèbre relationnelle.</p>
 <p id="r-4703002" data-claire-element-id="8544202">
 Néanmoins, elle est extrêmement importante ! ;)</p>
 <aside id="r-4703027" data-claire-element-id="8544272" data-claire-semantic="information">
@@ -17,13 +15,13 @@ Ce chapitre est un peu technique, et la vidéo pourra vous aider (mieux que le t
 https://vimeo.com/233478394</a>
 </video>
 <p id="r-4569326" data-claire-element-id="8544204">
- </p>
+</p>
 <h3 id="r-4569351" data-claire-element-id="8538111">
 A quoi sert l'agrégation ?</h3>
 <p id="r-4569328" data-claire-element-id="8198903">
-On utilise l'agrégation lorsque l'on veut calculer un résultat qui porte sur plusieurs lignes d'une table. On dit que l'on <em>
+On utilise l'agrégation lorsque l'on veut calculer un résultat qui porte sur plusieurs lignes d'une table. On dit que l'on<em>
 agrège</em>
- ces lignes, c'est-à-dire que l'on forme des <em>
+ ces lignes, c'est-à-dire que l'on forme des<em>
 agrégats</em>
  pour effectuer sur eux une opération.</p>
 <p id="r-4569329" data-claire-element-id="8198904">
@@ -39,11 +37,11 @@ Quelle est la masse moyenne de chaque couleur de pomme ?</p>
 <p id="r-4569333" data-claire-element-id="8198908">
 <strong>
 une</strong>
- valeur (la masse moyenne) qui porte sur <strong>
+ valeur (la masse moyenne) qui porte sur<strong>
 plusieurs</strong>
  pommes (<strong>
 toutes</strong>
- les pommes <em>
+ les pommes<em>
 vertes</em>
 )</p>
 </li>
@@ -51,9 +49,9 @@ vertes</em>
 <p id="r-4569335" data-claire-element-id="8198910">
 <strong>
 la</strong>
- valeur de la masse moyenne portant sur <strong>
+ valeur de la masse moyenne portant sur<strong>
 les</strong>
- pommes <em>
+ pommes<em>
 jaunes</em>
 </p>
 </li>
@@ -61,9 +59,9 @@ jaunes</em>
 <p id="r-4569337" data-claire-element-id="8198912">
 <strong>
 la</strong>
- valeur de la masse moyenne portant sur <strong>
+ valeur de la masse moyenne portant sur<strong>
 les</strong>
- pommes <em>
+ pommes<em>
 rouges</em>
 </p>
 </li>
@@ -73,7 +71,7 @@ etc.</p>
 </li>
 </ul>
 <p id="r-4569342" data-claire-element-id="8538104">
-Vous aurez compris qu'il y aura autant de valeurs de <em>
+Vous aurez compris qu'il y aura autant de valeurs de<em>
 masse moyenne</em>
  calculées que de couleurs de pommes.</p>
 <p id="r-4569343" data-claire-element-id="8538105">
@@ -95,13 +93,13 @@ une (ou des)<strong>
 </li>
 </ol>
 <p id="r-4569350" data-claire-element-id="8198925">
- </p>
+</p>
 <h3 id="r-4569387" data-claire-element-id="8559325">
 Les deux éléments qui constituent l'agrégation</h3>
 <h4 id="r-4569358" data-claire-element-id="8559318">
 Le partitionnement</h4>
 <p id="r-4569353" data-claire-element-id="8332461">
-Si je choisis de partitionner mes pommes par couleur, cela signifie que je veux former des groupes de pommes (on appelle ces groupes des <strong>
+Si je choisis de partitionner mes pommes par couleur, cela signifie que je veux former des groupes de pommes (on appelle ces groupes des<strong>
 agrégats</strong>
 ), toutes les pommes d'un même groupe devant avoir la même couleur.</p>
 <aside id="r-4619279" data-claire-element-id="8332465" data-claire-semantic="information">
@@ -113,15 +111,15 @@ Le partitionnement a pour but de créer des groupes de lignes de telle manière 
 </blockquote>
 </aside>
 <p id="r-4569354" data-claire-element-id="8538132">
-Je peux également partitionner sur plusieurs attributs. Par exemple, disons que j'ajoute à ma table pomme un attribut <em>
+Je peux également partitionner sur plusieurs attributs. Par exemple, disons que j'ajoute à ma table pomme un attribut<em>
 abîmée</em>
-, attribut booléen qui vaut <code data-claire-semantic="text">
+, attribut booléen qui vaut<code data-claire-semantic="text">
 VRAI</code>
- si la pomme est abîmée. Je peux partitionner mes pommes par les attributs <em>
+ si la pomme est abîmée. Je peux partitionner mes pommes par les attributs<em>
 couleur</em>
- et <em>
+ et<em>
 abîmée</em>
-. Ainsi, au sein d'un même groupe de pommes, la couleur de celles-ci et la valeur de leur attribut <em>
+. Ainsi, au sein d'un même groupe de pommes, la couleur de celles-ci et la valeur de leur attribut<em>
 abîmée</em>
  seront identiques :</p>
 <figure id="r-4569357" data-claire-element-id="8559317">
@@ -130,13 +128,13 @@ abîmée</em>
 Partitionnement selon les attributs [ couleur, abîmée ]</figcaption>
 </figure>
 <h4 id="r-4569372" data-claire-element-id="8332470">
- </h4>
+</h4>
 <h4 id="r-4619285" data-claire-element-id="8559321">
 La fonction d'agrégation</h4>
 <p id="r-4569359" data-claire-element-id="8198934">
 Une fois les agrégats formés, il faut bien en faire quelque chose !</p>
 <p id="r-4569360" data-claire-element-id="8198935">
-C'est là qu'intervient la fonction d'agrégation. :zorro: Son rôle est de prendre en entrée un groupe de plusieurs lignes, d'effectuer un calcul sur celles-ci, puis de retourner <em>
+C'est là qu'intervient la fonction d'agrégation. :zorro: Son rôle est de prendre en entrée un groupe de plusieurs lignes, d'effectuer un calcul sur celles-ci, puis de retourner<em>
 une unique valeur pour chacun des groupes</em>
 .</p>
 <p id="r-4569361" data-claire-element-id="8332471">
@@ -147,49 +145,49 @@ Par exemple, on peut appliquer la fonction qui calculera la masse moyenne de cha
 La fonction d'agrégation MOYENNE qui s'applique à chacun des agrégats</figcaption>
 </figure>
 <p id="r-4569365" data-claire-element-id="8332516">
- </p>
+</p>
 <p id="r-4619298" data-claire-element-id="8538157">
-En général, une fonction d'agrégation prend en entrée une <strong>
+En général, une fonction d'agrégation prend en entrée une<strong>
 liste</strong>
- et renvoie une unique valeur. Par exemple, pour calculer le prix moyen au kilo des pommes, la fonction <code data-claire-semantic="text">
+ et renvoie une unique valeur. Par exemple, pour calculer le prix moyen au kilo des pommes, la fonction<code data-claire-semantic="text">
 moyenne</code>
- prendra en entrée la liste des masses des pommes de l'agrégat, et retournera la moyenne de cette liste. C'est ce qui se passe sur l'image ci-dessus.</p>
+ prendra en entrée la liste des masses des pommes de l'agrégat, et retournera la moyenne de cette liste. C'est ce qui se passe sur l'image ci-dessus.</p>
 <figure id="r-4569368" data-claire-element-id="8332518">
 </figure>
 <aside id="r-4619299" data-claire-element-id="8538159" data-claire-semantic="information">
 <p id="r-4569369" data-claire-element-id="8538158">
-La liste en entrée correspond à 1 attribut (ici, l'attribut <em>
+La liste en entrée correspond à 1 attribut (ici, l'attribut<em>
 masse</em>
 ). Mais il est également possible de trouver des fonctions d'agrégation qui prennent plusieurs attributs en entrée (donc plusieurs listes) ou parfois même l'<em>
 ensemble</em>
  des attributs d'une table.</p>
 </aside>
 <h4 id="r-4569386" data-claire-element-id="8332522">
- </h4>
+</h4>
 <h4 id="r-4619306" data-claire-element-id="8559324">
 Le résultat</h4>
 <p id="r-4569373" data-claire-element-id="8198948">
-Voici donc le résultat d'une agrégation avec partitionnement selon les attributs <em>
+Voici donc le résultat d'une agrégation avec partitionnement selon les attributs<em>
 couleur</em>
- et <em>
+ et<em>
 abîmée</em>
 , en appliquant deux fonctions d'agrégation :</p>
 <ol id="r-4569378" data-claire-element-id="8538165">
 <li id="r-4569375" data-claire-element-id="8538162">
 <p id="r-4569374" data-claire-element-id="8538161">
-la fonction <code data-claire-semantic="text">
+la fonction<code data-claire-semantic="text">
 moyenne</code>
- (en anglais <em>
+ (en anglais<em>
 average</em>
-, notée <em>
+, notée<em>
 avg</em>
 ) sur la masse des pommes,</p>
 </li>
 <li id="r-4569377" data-claire-element-id="8538164">
 <p id="r-4569376" data-claire-element-id="8538163">
-la fonction <code data-claire-semantic="text">
+la fonction<code data-claire-semantic="text">
 compter</code>
- (en anglais <em>
+ (en anglais<em>
 count</em>
 ), qui compte le nombre de pommes de l'agrégat.</p>
 </li>
@@ -207,30 +205,30 @@ Comme la fonction d'agrégation retourne une valeur pour chacun des agrégats, l
 </aside>
 <aside id="r-4619304" data-claire-element-id="8538169" data-claire-semantic="information">
 <p id="r-4619303" data-claire-element-id="8538168">
-La nature des objets représentés par une ligne <em>
+La nature des objets représentés par une ligne<em>
 avant</em>
- l'agrégation (ici : une pomme) ne sera pas la même qu'une ligne <em>
+ l'agrégation (ici : une pomme) ne sera pas la même qu'une ligne<em>
 après</em>
- agrégation (ici : un <em>
+ agrégation (ici : un<em>
 ensemble</em>
  de pommes).</p>
 </aside>
 <p id="r-4619305" data-claire-element-id="8332529">
- </p>
+</p>
 <h3 id="r-4569421" data-claire-element-id="8538236">
 Aller (beaucoup) plus loin : le Map Reduce</h3>
 <p id="r-4569388" data-claire-element-id="8198963">
-Dans cette section, on va aller beaucoup plus loin que nécessaire ! On anticipe, pour le jour où vous serez confronté au problème du <em>
+Dans cette section, on va aller beaucoup plus loin que nécessaire ! On anticipe, pour le jour où vous serez confronté au problème du<em>
 Big Data</em>
 , dans lequel les données à traiter sont très volumineuses.</p>
 <p id="r-4569389" data-claire-element-id="8538232">
-Lorsque les données sont trop volumineuses, on demande souvent à plusieurs ordinateurs (des serveurs) de les traiter en parallèle, pour que cela aille plus vite ! Seulement, il faut bien un serveur qui se charge de coordonner les autres, et de répartir les données de manière intelligente vers les serveurs parallélisés. L'une des manières de faire, c'est d'utiliser la technique du <a href="https://fr.wikipedia.org/wiki/MapReduce">
+Lorsque les données sont trop volumineuses, on demande souvent à plusieurs ordinateurs (des serveurs) de les traiter en parallèle, pour que cela aille plus vite ! Seulement, il faut bien un serveur qui se charge de coordonner les autres, et de répartir les données de manière intelligente vers les serveurs parallélisés. L'une des manières de faire, c'est d'utiliser la technique du<a href="https://fr.wikipedia.org/wiki/MapReduce">
 Map Reduce</a>
 .</p>
 <p id="r-4569390" data-claire-element-id="8332572">
-En Map Reduce, on découpe l'information en petits morceaux. Chacune de ces parties contient une clé et une valeur. On définit ensuite une fonction appelée <em>
+En Map Reduce, on découpe l'information en petits morceaux. Chacune de ces parties contient une clé et une valeur. On définit ensuite une fonction appelée<em>
 reduce</em>
-. Au moment de l'exécution du calcul, tous les morceaux d'informations qui ont la même clé seront dirigés vers un même serveur parallélisé. Ce serveur applique ensuite la fonction <em>
+. Au moment de l'exécution du calcul, tous les morceaux d'informations qui ont la même clé seront dirigés vers un même serveur parallélisé. Ce serveur applique ensuite la fonction<em>
 reduce</em>
  à toutes les valeurs des morceaux qui lui sont parvenues avec la même clé.</p>
 <p id="r-4569391" data-claire-element-id="8198966">
@@ -284,7 +282,7 @@ Attributs envoyés à la fonction d'agrégation</p>
 <tr id="r-4569416" data-claire-element-id="8198991">
 <td id="r-4569413" data-claire-element-id="8198988">
 <p id="r-4569412" data-claire-element-id="8198987">
-Fonction <em>
+Fonction<em>
 Reduce</em>
 </p>
 </td>
@@ -296,25 +294,25 @@ Fonction d'agrégation</p>
 </tbody>
 </table>
 <p id="r-4569419" data-claire-element-id="8538233">
-Jetez à nouveau un coup d’œil sur le <a href="#r-4619281">
+Jetez à nouveau un coup d’œil sur le<a href="#r-4619281">
 graphique ci-dessus</a>
- qui explique le partitionnement selon les attributs. La partie droite de ce graphique montre une table fractionnée en plusieurs parties. En Map Reduce, chacune de ces parties est envoyée sur un serveur différent. Ensuite, chaque serveur appliquera la fonction <em>
+ qui explique le partitionnement selon les attributs. La partie droite de ce graphique montre une table fractionnée en plusieurs parties. En Map Reduce, chacune de ces parties est envoyée sur un serveur différent. Ensuite, chaque serveur appliquera la fonction<em>
 reduce</em>
-, qui est, par exemple, la fonction <em>
+, qui est, par exemple, la fonction<em>
 moyenne</em>
 .</p>
 <p id="r-4569420" data-claire-element-id="8198995">
 C'est aussi simple que cela !</p>
 <aside id="r-4619409" data-claire-element-id="8538235" data-claire-semantic="information">
 <p id="r-4619374" data-claire-element-id="8538234">
-Envie d'aller plus loin dans le Big Data ? Passez voir le parcours <a href="/paths/data-architect">
+Envie d'aller plus loin dans le Big Data ? Passez voir le parcours<a href="/paths/data-architect">
 Data Architect</a>
-. Pour approfondir le Map Reduce, je vous conseille le cours <a href="/courses/realisez-des-calculs-distribues-sur-des-donnees-massives">
+. Pour approfondir le Map Reduce, je vous conseille le cours<a href="/courses/realisez-des-calculs-distribues-sur-des-donnees-massives">
 Réalisez des calculs distribués sur des données massives</a>
 .</p>
 </aside>
 <p id="r-4619410" data-claire-element-id="8332842">
- </p>
+</p>
 <h3 id="r-4619426" data-claire-element-id="8538244">
 En résumé</h3>
 <ul id="r-4619424" data-claire-element-id="8538243">
@@ -324,13 +322,13 @@ Les deux composantes de l'agrégation sont :</p>
 <ul id="r-4619418" data-claire-element-id="8538239">
 <li id="r-4619415" data-claire-element-id="8332848">
 <p id="r-4619414" data-claire-element-id="8332847">
-les <strong>
+les<strong>
 attributs de partitionnement</strong>
 ,</p>
 </li>
 <li id="r-4619417" data-claire-element-id="8538238">
 <p id="r-4619416" data-claire-element-id="8538237">
-la/les <strong>
+la/les<strong>
 fonction(s) d'agrégation</strong>
 .</p>
 </li>
@@ -350,25 +348,14 @@ Le résultat d'une agrégation donne une table avec moins de lignes (autant de l
 </li>
 </ul>
 <p id="r-4619425" data-claire-element-id="8332858">
- </p>
-
+</p>
 </div>
-
 <div class="js-courseSelementActions sideActions">
-
 <ul class="sideActions__container">
-
 <li>
-
-<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
-
-#
-</a>
-
+<a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+ #</a>
 </li>
-
 </ul>
-
 </div>
-
 </div>

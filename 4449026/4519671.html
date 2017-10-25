@@ -1,7 +1,5 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/joignez-dans-tous-les-sens-avec-join" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
-
 <div class="userContent js-userContent">
-
 <video id="r-4710456" data-claire-element-id="8562371" src="https://vimeo.com/album/233480024">
 <a href="https://vimeo.com/album/233480024">
 https://vimeo.com/album/233480024</a>
@@ -9,35 +7,35 @@ https://vimeo.com/album/233480024</a>
 <h3 id="r-4551304" data-claire-element-id="8324652">
 Le point sur notre investigation</h3>
 <p id="r-4558476" data-claire-element-id="8323971">
-Pour l'instant, nous avons juste retrouvé notre mystérieuse société <em>
+Pour l'instant, nous avons juste retrouvé notre mystérieuse société<em>
 Big Data Crunchers Ltd.</em>
- dans la table <strong>
+ dans la table<strong>
 entity</strong>
 . Prochaine étape : retrouver son adresse !</p>
 <p id="r-4616291" data-claire-element-id="8324651">
-Nous irons même plus loin : nous chercherons également les <a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/explorez-les-panama-papers#r-4552280">
+Nous irons même plus loin : nous chercherons également les<a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/explorez-les-panama-papers#r-4552280">
 intermédiaires</a>
- qui ont aidé à créer <em>
+ qui ont aidé à créer<em>
 Big Data Crunchers Ltd</em>
 . Ces intermédiaires peuvent être aussi bien des personnes que des sociétés (banques, cabinets d'avocats, etc.)</p>
 <p id="r-4616292" data-claire-element-id="8323973">
- </p>
+</p>
 <h3 id="r-4551308" data-claire-element-id="8540381">
 La jointure interne</h3>
 <p id="r-4616293" data-claire-element-id="8324271">
-Notre objectif : "coller" les tables <strong>
+Notre objectif : "coller" les tables<strong>
 entity</strong>
- et <strong>
+ et<strong>
 intermediary</strong>
  pour obtenir une table dans laquelle les lignes contiennent les informations sur les sociétés, avec pour chacune d'entre elles leur adresse. En SQL, il y a deux manières principales d'écrire des jointures :</p>
 <p id="r-4616406" data-claire-element-id="8324272">
- </p>
+</p>
 <h4 id="r-4616295" data-claire-element-id="8540374">
 La première méthode : avec FROM et WHERE</h4>
 <p id="r-4519887" data-claire-element-id="8540372">
-Vous vous souvenez du chapitre <a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/liez-des-relations-grace-aux-jointures#r-4569305">
+Vous vous souvenez du chapitre<a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/liez-des-relations-grace-aux-jointures#r-4569305">
 Liez des relations grâce aux jointures</a>
- ? J'y expliquais dans le chapitre <em>
+ ? J'y expliquais dans le chapitre<em>
 Voir la jointure autrement</em>
  qu'une jointure était en fait l'enchaînement d'un produit cartésien et d'une restriction.</p>
 <p id="r-4519888" data-claire-element-id="8540373">
@@ -55,26 +53,24 @@ SELECT * FROM entity, address WHERE entity.id_address = address.id_address ;</co
 <p id="r-4519892" data-claire-element-id="8062207">
 Voilà, notre jointure est faite !</p>
 <p id="r-4616294" data-claire-element-id="8323980">
- </p>
+</p>
 <h4 id="r-4616296" data-claire-element-id="8540376">
 La seconde méthode : avec JOIN et ON</h4>
 <p id="r-4519894" data-claire-element-id="8540375">
-La seconde méthode introduit les nouveaux mots clés <code data-claire-semantic="text">
+La seconde méthode introduit les nouveaux mots clés<code data-claire-semantic="text">
 JOIN</code>
- et <code data-claire-semantic="text">
+ et<code data-claire-semantic="text">
 ON</code>
- :</p>
+ :</p>
 <pre id="r-4519895" data-claire-element-id="8323982">
 <code data-claire-semantic="sql">
-SELECT * 
-FROM entity 
-    JOIN address ON entity.id_address = address.id_address ;</code>
+SELECT * FROM entity JOIN address ON entity.id_address = address.id_address ;</code>
 </pre>
 <aside id="r-4519898" data-claire-element-id="8323984" data-claire-semantic="warning">
 <p id="r-4519896" data-claire-element-id="8323983">
-On peut inverser <strong>
+On peut inverser<strong>
 entity</strong>
- et <strong>
+ et<strong>
 address</strong>
 , le résultat sera identique :</p>
 <pre id="r-4519897" data-claire-element-id="8151799">
@@ -83,85 +79,79 @@ SELECT * FROM address JOIN entity ON entity.id_address = address.id_address ;</c
 </pre>
 </aside>
 <h4 id="r-4558478" data-claire-element-id="8323986">
- </h4>
+</h4>
 <h4 id="r-4616297" data-claire-element-id="8540378">
 Joindre sur plusieurs colonnes</h4>
 <p id="r-4555349" data-claire-element-id="8540377">
-Si votre clé étrangère contient 2 attributs (ou plus), alors il faut  utiliser <code data-claire-semantic="text">
+Si votre clé étrangère contient 2 attributs (ou plus), alors il faut utiliser<code data-claire-semantic="text">
 AND</code>
-. Prenons l'exemple d'une table <code data-claire-semantic="text">
+. Prenons l'exemple d'une table<code data-claire-semantic="text">
 t1</code>
- ayant une clé étrangère de 2 attributs : <code data-claire-semantic="text">
+ ayant une clé étrangère de 2 attributs :<code data-claire-semantic="text">
 fk1</code>
- et <code data-claire-semantic="text">
+ et<code data-claire-semantic="text">
 fk2</code>
-. Cette clé étrangère référence la table <code data-claire-semantic="text">
+. Cette clé étrangère référence la table<code data-claire-semantic="text">
 t2</code>
-, dont la clé primaire est elle aussi composée de 2 attributs : <code data-claire-semantic="text">
+, dont la clé primaire est elle aussi composée de 2 attributs :<code data-claire-semantic="text">
 pk1</code>
- et <code data-claire-semantic="text">
+ et<code data-claire-semantic="text">
 pk2</code>
- :</p>
+ :</p>
 <pre id="r-4555350" data-claire-element-id="8324273">
 <code data-claire-semantic="sql">
--- Première méthode :
-SELECT * FROM t1, t2 WHERE (t1.fk1 = t2.pk1 AND t1.fk2 = t2.pk2);
--- Seconde méthode :
-SELECT * FROM t1 JOIN t2 ON (t1.fk1 = t2.pk1 AND t1.fk2 = t2.pk2);</code>
+-- Première méthode : SELECT * FROM t1, t2 WHERE (t1.fk1 = t2.pk1 AND t1.fk2 = t2.pk2); -- Seconde méthode : SELECT * FROM t1 JOIN t2 ON (t1.fk1 = t2.pk1 AND t1.fk2 = t2.pk2);</code>
 </pre>
 <h4 id="r-4555362" data-claire-element-id="8324331">
- </h4>
+</h4>
 <h4 id="r-4616426" data-claire-element-id="8540380">
 Bien joué !</h4>
 <p id="r-4551311" data-claire-element-id="8540379">
-Nous avons atteint notre objectif : coller nos deux tables. Dans le résultat, il nous faut maintenant retrouver <em>
+Nous avons atteint notre objectif : coller nos deux tables. Dans le résultat, il nous faut maintenant retrouver<em>
 Big Data Crunchers Ltd</em>
-. Pour cela, une petite restriction s'impose. On l'ajoute dans le <code data-claire-semantic="text">
+. Pour cela, une petite restriction s'impose. On l'ajoute dans le<code data-claire-semantic="text">
 WHERE</code>
-. Comme il y a déjà une condition, on utilise <code data-claire-semantic="text">
+. Comme il y a déjà une condition, on utilise<code data-claire-semantic="text">
 AND</code>
- :</p>
+ :</p>
 <pre id="r-4551313" data-claire-element-id="8226501">
 <code data-claire-semantic="sql">
-SELECT * 
-FROM entity, address 
-WHERE entity.id_address = address.id_address 
-    AND entity.name = 'Big Data Crunchers Ltd.';</code>
+SELECT * FROM entity, address WHERE entity.id_address = address.id_address AND entity.name = 'Big Data Crunchers Ltd.';</code>
 </pre>
 <p id="r-4551314" data-claire-element-id="8173964">
- </p>
+</p>
 <h3 id="r-4558541" data-claire-element-id="8540395">
 Joindre avec une table d'association</h3>
 <p id="r-4558557" data-claire-element-id="8540382">
-Retrouvons maintenant les intermédiaires qui ont participé à la création de la société <em>
+Retrouvons maintenant les intermédiaires qui ont participé à la création de la société<em>
 Big Data Crunchers Ltd</em>
  !</p>
 <p id="r-4558529" data-claire-element-id="8324592">
 <a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/utilisez-les-tables-dassociation">
 Précédemment</a>
-, nous avions vu qu'une table d'association servait à modéliser un lien de cardinalité <em>
+, nous avions vu qu'une table d'association servait à modéliser un lien de cardinalité<em>
 plusieurs à plusieurs</em>
- entre deux objets. C'est le cas du lien qui unit <strong>
+ entre deux objets. C'est le cas du lien qui unit<strong>
 entity</strong>
- et <strong>
+ et<strong>
 intermediary</strong>
-, car plusieurs intermédiaires peuvent créer une société, et un unique intermédiaire peut créer plusieurs sociétés. Ainsi, il y a une table qui porte le nom de <strong>
+, car plusieurs intermédiaires peuvent créer une société, et un unique intermédiaire peut créer plusieurs sociétés. Ainsi, il y a une table qui porte le nom de<strong>
 assoc_inter_entity</strong>
 , contenant entre autres :</p>
 <ul id="r-4558534" data-claire-element-id="8173900">
 <li id="r-4558531" data-claire-element-id="8173897">
 <p id="r-4558530" data-claire-element-id="8173896">
-une colonne <em>
+une colonne<em>
 entity</em>
-, clé étrangère qui référence la table <strong>
+, clé étrangère qui référence la table<strong>
 entity</strong>
 ,</p>
 </li>
 <li id="r-4558533" data-claire-element-id="8173899">
 <p id="r-4558532" data-claire-element-id="8173898">
-une colonne <em>
+une colonne<em>
 intermediary</em>
-, clé étrangère qui référence la table <strong>
+, clé étrangère qui référence la table<strong>
 intermediary</strong>
 .</p>
 </li>
@@ -170,107 +160,88 @@ intermediary</strong>
 Il nous faut donc faire une jointure sur 3 tables, comme ceci :</p>
 <pre id="r-4558546" data-claire-element-id="8232761">
 <code data-claire-semantic="sql">
-SELECT
-    i.id as intermediary_id,
-    i.name as intermediary_name,
-    e.id as entity_id,
-    e.name as entity_name,
-    e.status as entity_status
-FROM 
-    intermediary i,
-    assoc_inter_entity a,
-    entity e
-WHERE
-    a.entity = e.id
-    AND a.inter = i.id
-    AND e.name = 'Big Data Crunchers Ltd.' ;</code>
+SELECT i.id as intermediary_id, i.name as intermediary_name, e.id as entity_id, e.name as entity_name, e.status as entity_status FROM intermediary i, assoc_inter_entity a, entity e WHERE a.entity = e.id AND a.inter = i.id AND e.name = 'Big Data Crunchers Ltd.' ;</code>
 </pre>
 <p id="r-4558548" data-claire-element-id="8540392">
-Nous spécifions les 3 tables dans le <code data-claire-semantic="text">
+Nous spécifions les 3 tables dans le<code data-claire-semantic="text">
 FROM</code>
-. Dans le <code data-claire-semantic="text">
+. Dans le<code data-claire-semantic="text">
 WHERE</code>
 , nous donnons les deux conditions de jointure, ainsi que le nom de notre société.</p>
 <aside id="r-4616522" data-claire-element-id="8540394" data-claire-semantic="information">
 <p id="r-4616521" data-claire-element-id="8540393">
 Cette requête est complexe ! :waw: Pour la simplifier, nous avons fait suivre le nom des tables par<code data-claire-semantic="text">
 a</code>
-, <code data-claire-semantic="text">
+,<code data-claire-semantic="text">
 e</code>
- et <code data-claire-semantic="text">
+ et<code data-claire-semantic="text">
 i</code>
- dans le <code data-claire-semantic="text">
+ dans le<code data-claire-semantic="text">
 WHERE</code>
-. Ce sont des <strong>
-alias </strong>
+. Ce sont des<strong>
+alias</strong>
 : ils permettent simplement de donner des surnoms aux tables, pour remplacer le nom de celles-ci par leur alias. C'est plus lisible, non ?</p>
 </aside>
 <p id="r-4558551" data-claire-element-id="8173928">
- </p>
+</p>
 <h3 id="r-4616310" data-claire-element-id="8547484">
 Aller plus loin : les jointures externes</h3>
 <p id="r-4616300" data-claire-element-id="8324703">
-Vous vous souvenez des <a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/liez-des-relations-grace-aux-jointures#r-4569277">
+Vous vous souvenez des<a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/liez-des-relations-grace-aux-jointures#r-4569277">
 jointures externes</a>
- ? Elles permettent de garder des lignes qui auraient été ignorées lors d'une jointure interne. Si nous souhaitons obtenir une table avec toutes les sociétés de <strong>
+ ? Elles permettent de garder des lignes qui auraient été ignorées lors d'une jointure interne. Si nous souhaitons obtenir une table avec toutes les sociétés de<strong>
 entity</strong>
  avec leur adresse,<em>
  sans oublier</em>
- les sociétés dont l'adresse est inconnue, alors il nous faut une <strong>
+ les sociétés dont l'adresse est inconnue, alors il nous faut une<strong>
 jointure externe à gauche</strong>
 .</p>
 <pre id="r-4616325" data-claire-element-id="8324068">
 <code data-claire-semantic="sql">
-SELECT *
-FROM entity
-    LEFT OUTER JOIN address ON entity.id_address = address.id_address;</code>
+SELECT * FROM entity LEFT OUTER JOIN address ON entity.id_address = address.id_address;</code>
 </pre>
 <p id="r-4616305" data-claire-element-id="8324280">
-Si au contraire, nous voulons garder <em>
+Si au contraire, nous voulons garder<em>
 toutes</em>
- les adresses (qu'elles correspondent à une société ou non), il faut alors faire une jointure <strong>
+ les adresses (qu'elles correspondent à une société ou non), il faut alors faire une jointure<strong>
 externe à droite</strong>
  :</p>
 <pre id="r-4616326" data-claire-element-id="8324070">
 <code data-claire-semantic="sql">
-SELECT *
-FROM entity
-    RIGHT OUTER JOIN address ON entity.id_address = address.id_address;</code>
+SELECT * FROM entity RIGHT OUTER JOIN address ON entity.id_address = address.id_address;</code>
 </pre>
 <aside id="r-4616346" data-claire-element-id="8324282" data-claire-semantic="warning">
 <p id="r-4616327" data-claire-element-id="8324281">
-Bien entendu, une jointure externe à <strong>
+Bien entendu, une jointure externe à<strong>
 droite</strong>
- est équivalente à une jointure externe à <strong>
+ est équivalente à une jointure externe à<strong>
 gauche</strong>
- pour laquelle on aurait interverti <strong>
+ pour laquelle on aurait interverti<strong>
 entity</strong>
- et <strong>
+ et<strong>
 address</strong>
 . Certains SGBDR n'acceptent d'ailleurs que l'une de ces deux jointures : c'est alors à vous d'intervertir les tables ! :p</p>
 </aside>
 <p id="r-4616329" data-claire-element-id="8324073">
-Vous me voyez venir...? Oui ! Il ne me reste plus qu'à vous donner la syntaxe de la jointure <strong>
+Vous me voyez venir...? Oui ! Il ne me reste plus qu'à vous donner la syntaxe de la jointure<strong>
 entière</strong>
  ! Celle-ci nous permet de garder à la fois toutes les adresses et à la fois toutes les sociétés :</p>
 <pre id="r-4616347" data-claire-element-id="8324113">
 <code data-claire-semantic="sql">
-SELECT *
-FROM entity
-    FULL OUTER JOIN address ON entity.id_address = address.id_address;</code>
+SELECT * FROM entity FULL OUTER JOIN address ON entity.id_address = address.id_address;</code>
 </pre>
 <aside id="r-4616349" data-claire-element-id="8547483" data-claire-semantic="information">
 <p id="r-4616336" data-claire-element-id="8547482">
-MySQL ne supporte pas la jointure externe entière, mais vous pouvez <a href="https://stackoverflow.com/questions/4796872/how-to-do-a-full-outer-join-in-mysql">
+MySQL ne supporte pas la jointure externe entière, mais vous pouvez<a href="https://stackoverflow.com/questions/4796872/how-to-do-a-full-outer-join-in-mysql">
 contourner cela</a>
 .</p>
 </aside>
 <p id="r-4616309" data-claire-element-id="8324003">
- </p>
+</p>
 <h3 id="r-4519910" data-claire-element-id="8324783">
 Aller plus loin : la jointure naturelle</h3>
 <p id="r-4519900" data-claire-element-id="8324781">
-Dans le chapitre <a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/liez-des-relations-grace-aux-jointures">
+Dans le chapitre<a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/liez-des-relations-grace-aux-jointures">
 Liez des relations grâce aux jointures</a>
 , j’expliquais le concept de la jointure naturelle. Voici comment l'implémenter en SQL :</p>
 <pre id="r-4519901" data-claire-element-id="8151821">
@@ -278,7 +249,7 @@ Liez des relations grâce aux jointures</a>
 SELECT * FROM entity NATURAL JOIN address ;</code>
 </pre>
 <p id="r-4519902" data-claire-element-id="8324782">
- </p>
+</p>
 <h3 id="r-4616573" data-claire-element-id="8547488">
 En résumé</h3>
 <ul id="r-4616572" data-claire-element-id="8540474">
@@ -288,17 +259,17 @@ Il y a deux méthodes pour effectuer une jointure :</p>
 <ul id="r-4616566" data-claire-element-id="8540470">
 <li id="r-4616563" data-claire-element-id="8540467">
 <p id="r-4616562" data-claire-element-id="8540466">
-avec le <code data-claire-semantic="text">
+avec le<code data-claire-semantic="text">
 FROM</code>
- et le <code data-claire-semantic="text">
+ et le<code data-claire-semantic="text">
 WHERE</code>
 </p>
 </li>
 <li id="r-4616565" data-claire-element-id="8540469">
 <p id="r-4616564" data-claire-element-id="8540468">
-avec <code data-claire-semantic="text">
+avec<code data-claire-semantic="text">
 JOIN</code>
- et<code data-claire-semantic="text">
+ et<code data-claire-semantic="text">
 ON</code>
 </p>
 </li>
@@ -310,19 +281,19 @@ Lorsque nous avons affaire à une table d'association, alors il faut joindre 3 t
 </li>
 <li id="r-4616571" data-claire-element-id="8324794">
 <p id="r-4616570" data-claire-element-id="8324793">
-Pour simplifier des requêtes, nous pouvons utiliser des <strong>
+Pour simplifier des requêtes, nous pouvons utiliser des<strong>
 alias</strong>
 .</p>
 </li>
 </ul>
 <aside id="r-4705182" data-claire-element-id="8547486" data-claire-semantic="information">
 <p id="r-4637466" data-claire-element-id="8547485">
-Si vous souhaitez un mémo pour tous les types de jointure, je vous conseille cette <a href="https://fr.wikipedia.org/wiki/Jointure_(informatique)">
+Si vous souhaitez un mémo pour tous les types de jointure, je vous conseille cette<a href="https://fr.wikipedia.org/wiki/Jointure_(informatique)">
 merveilleuse page Wikipedia</a>
  !</p>
 </aside>
 <p id="r-4705183" data-claire-element-id="8547487">
- </p>
+</p>
 <h3 id="r-4637469" data-claire-element-id="8542183">
 Un peu d'entraînement !</h3>
 <p id="r-4637467" data-claire-element-id="8380113">
@@ -331,24 +302,13 @@ La base de données est en ligne, vous pouvez vous entraîner en réécrivant le
 <a href="https://www.codevolve.com/api/v1/publishable_key/2A9CAA3419124E3E8C3F5AFCE5306292?content_id=ba014daa-d108-4e91-83f1-42154313b2d1">
 Console interactive</a>
 </p>
-
- </div>
-
-<div class="js-courseSelementActions sideActions">
-
-<ul class="sideActions__container">
-
-<li>
-
-<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
-
-#
-</a>
-
-</li>
-
-</ul>
-
 </div>
-
+<div class="js-courseSelementActions sideActions">
+<ul class="sideActions__container">
+<li>
+<a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+ #</a>
+</li>
+</ul>
+</div>
 </div>

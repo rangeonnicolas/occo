@@ -1,7 +1,5 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/lancez-votre-premiere-requete-avec-select-from-et-where" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
-
 <div class="userContent js-userContent">
-
 <video id="r-4709432" data-claire-element-id="8559334" src="https://vimeo.com/album/233479466">
 <a href="https://vimeo.com/album/233479466">
 https://vimeo.com/album/233479466</a>
@@ -13,36 +11,36 @@ Voyons voir à quoi ressemble une requête SQL de type SELECT :</p>
 SELECT * FROM entity ;</code>
 </pre>
 <p id="r-4615351" data-claire-element-id="8539562">
-Vous vous souvenez que le SQL permet de communiquer avec le SGBDR. On communique avec lui grâce à des <strong>
+Vous vous souvenez que le SQL permet de communiquer avec le SGBDR. On communique avec lui grâce à des<strong>
 requêtes</strong>
-. Les requêtes qui commencent par <code data-claire-semantic="text">
+. Les requêtes qui commencent par<code data-claire-semantic="text">
 SELECT</code>
- sont en fait des questions que l'on pose. Quand le SGBDR nous répond, on dit qu'il <strong>
+ sont en fait des questions que l'on pose. Quand le SGBDR nous répond, on dit qu'il<strong>
 renvoie</strong>
- (ou <strong>
+ (ou<strong>
 retourne</strong>
 ) une table.</p>
 <p id="r-4552798" data-claire-element-id="8321662">
-Lorsque nous <strong>
+Lorsque nous<strong>
 écrivons</strong>
- puis <strong>
+ puis<strong>
 exécutons</strong>
- cette requête, le SGBDR renvoie tout simplement la table <strong>
+ cette requête, le SGBDR renvoie tout simplement la table<strong>
 entity</strong>
 , avec toutes ses lignes et toutes ses colonnes.</p>
 <aside id="r-4552801" data-claire-element-id="8539564" data-claire-semantic="warning">
 <p id="r-4552799" data-claire-element-id="8539563">
-En <strong>
+En<strong>
 algèbre relationnelle</strong>
-, il n'y a pas de <strong>
+, il n'y a pas de<strong>
 doublons</strong>
- dans les relations. Mais dans les <strong>
+ dans les relations. Mais dans les<strong>
 bases de données</strong>
 , il peut y avoir des doublons dans une table (c'est-à-dire de lignes identiques). Si vous souhaitez éliminer les doublons d'un résultat d'une requête SQL, il faut utiliser<code data-claire-semantic="text">
 SELECT DISTINCT</code>
- au lieu de <code data-claire-semantic="text">
+ au lieu de<code data-claire-semantic="text">
 SELECT</code>
-. Nous en avions déjà parlé <a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/ne-perdez-pas-de-vue-vos-cles#r-4629016">
+. Nous en avions déjà parlé<a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/ne-perdez-pas-de-vue-vos-cles#r-4629016">
 précédemment</a>
 .</p>
 <pre id="r-4552800" data-claire-element-id="8155945">
@@ -55,17 +53,17 @@ A partir de cette structure de base, nous allons pouvoir effectuer toutes les op
 <p id="r-4552803" data-claire-element-id="8321665">
 C'est parti ! Commençons avec la projection. :)</p>
 <p id="r-4579816" data-claire-element-id="8227031">
- </p>
+</p>
 <h3 id="r-4552808" data-claire-element-id="8539567">
 La projection</h3>
 <p id="r-4552804" data-claire-element-id="8539565">
-La projection, c'est l'affaire du mot clé <code data-claire-semantic="text">
+La projection, c'est l'affaire du mot clé<code data-claire-semantic="text">
 SELECT</code>
 . C'est lui qui sera chargé de sélectionner les colonnes que vous souhaitez afficher.</p>
 <p id="r-4552805" data-claire-element-id="8539566">
-Pour le moment, nous avons mis le caractère <code data-claire-semantic="text">
+Pour le moment, nous avons mis le caractère<code data-claire-semantic="text">
 *</code>
- derrière le <code data-claire-semantic="text">
+ derrière le<code data-claire-semantic="text">
 SELECT</code>
 . Cette étoile signifie que nous souhaitons obtenir toutes les colonnes disponibles.</p>
 <p id="r-4552806" data-claire-element-id="8321667">
@@ -77,17 +75,17 @@ SELECT id, name, status FROM entity ;</code>
 <p id="r-4569136" data-claire-element-id="8198585">
 Allez-y, testez par vous-même dans la console en bas de ce chapitre !</p>
 <p id="r-4579817" data-claire-element-id="8227032">
- </p>
+</p>
 <h3 id="r-4552880" data-claire-element-id="8539583">
 La restriction</h3>
 <p id="r-4552809" data-claire-element-id="8321669">
-Vous vous souvenez que la restriction consiste à ne sélectionner que certaines lignes de la table selon une  condition.</p>
+Vous vous souvenez que la restriction consiste à ne sélectionner que certaines lignes de la table selon une condition.</p>
 <p id="r-4552810" data-claire-element-id="8539568">
-Pour faire cela, nous spécifions cette condition grâce au mot clé <code data-claire-semantic="text">
+Pour faire cela, nous spécifions cette condition grâce au mot clé<code data-claire-semantic="text">
 WHERE</code>
 .</p>
 <p id="r-4552811" data-claire-element-id="8539569">
-Commençons notre investigation ! Nous allons rechercher notre mystérieuse société dont le nom est <em>
+Commençons notre investigation ! Nous allons rechercher notre mystérieuse société dont le nom est<em>
 Big Data Crunchers Ltd</em>
 .</p>
 <pre id="r-4552812" data-claire-element-id="8182422">
@@ -95,25 +93,25 @@ Big Data Crunchers Ltd</em>
 SELECT * FROM entity WHERE name = 'Big Data Crunchers Ltd.' ;</code>
 </pre>
 <p id="r-4552813" data-claire-element-id="8198587">
- Cette requête renvoie une table d'une ligne, qui correspond à la société que nous recherchons.</p>
+ Cette requête renvoie une table d'une ligne, qui correspond à la société que nous recherchons.</p>
 <aside id="r-4552815" data-claire-element-id="8539571" data-claire-semantic="information">
 <p id="r-4552814" data-claire-element-id="8539570">
-Dans cette requête, nous avons utilisé le signe <code data-claire-semantic="text">
+Dans cette requête, nous avons utilisé le signe<code data-claire-semantic="text">
 <strong>
 =</strong>
 </code>
-, qui teste si la variable <code data-claire-semantic="text">
+, qui teste si la variable<code data-claire-semantic="text">
 name</code>
- et la chaîne<code data-claire-semantic="text">
+ et la chaîne<code data-claire-semantic="text">
 'Big Data Crunchers Ltd.'</code>
- ont la même valeur.</p>
+ ont la même valeur.</p>
 </aside>
 <p id="r-4552816" data-claire-element-id="8155961">
 D'autres opérateurs sont possibles en SQL :</p>
 <ul id="r-4552819" data-claire-element-id="8155964">
 <li id="r-4552818" data-claire-element-id="8155963">
 <p id="r-4552817" data-claire-element-id="8155962">
-Les opérateurs de comparaison : </p>
+Les opérateurs de comparaison :</p>
 </li>
 </ul>
 <table id="r-4552866" data-claire-element-id="8539576">
@@ -266,19 +264,18 @@ Ils signifient respectivement OU, ET, NON.</p>
 Grâce à ces opérateurs, on peut complexifier un peu notre condition :</p>
 <pre id="r-4552878" data-claire-element-id="8227422">
 <code data-claire-semantic="sql">
-SELECT * FROM entity 
-WHERE (id &lt; 10000004 AND (NOT id &lt; 10000000)) OR (name = 'Big Data Crunchers Ltd.');</code>
+SELECT * FROM entity WHERE (id &lt; 10000004 AND (NOT id &lt; 10000000)) OR (name = 'Big Data Crunchers Ltd.');</code>
 </pre>
 <p id="r-4552879" data-claire-element-id="8539582">
-Cette requête affichera toutes les sociétés dont l'identifiant est compris entre 10000000 (inclus) et 10000004 (non inclus) ainsi que toutes les sociétés dont le nom est <code data-claire-semantic="text">
+Cette requête affichera toutes les sociétés dont l'identifiant est compris entre 10000000 (inclus) et 10000004 (non inclus) ainsi que toutes les sociétés dont le nom est<code data-claire-semantic="text">
 Big Data Crunchers Ltd.</code>
 . Relisez à tête reposée, c'est de la gymnastique de neurones ! ^^</p>
 <p id="r-4579818" data-claire-element-id="8227034">
- </p>
+</p>
 <h3 id="r-4552892" data-claire-element-id="8547324">
 Le produit cartésien</h3>
 <p id="r-4552881" data-claire-element-id="8539584">
-Pour effectuer le produit cartésien entre deux tables, il faut simplement spécifier ces deux tables derrière la clause <code data-claire-semantic="text">
+Pour effectuer le produit cartésien entre deux tables, il faut simplement spécifier ces deux tables derrière la clause<code data-claire-semantic="text">
 FROM</code>
 . Rien de plus simple !</p>
 <pre id="r-4552882" data-claire-element-id="8156027">
@@ -289,9 +286,9 @@ SELECT * FROM entity, address ;</code>
 Vous pouvez même spécifier plus de 2 tables ! Le résultat sera ainsi l'ensemble des combinaisons possibles entre toutes les lignes de chacune des tables.</p>
 <aside id="r-4569139" data-claire-element-id="8547323" data-claire-semantic="warning">
 <p id="r-4569138" data-claire-element-id="8198590">
-Cette requête peut être coûteuse en ressources (en temps de calcul et en mémoire vive). En effet, le nombre de lignes renvoyé sera égal au nombre de lignes de la table <strong>
+Cette requête peut être coûteuse en ressources (en temps de calcul et en mémoire vive). En effet, le nombre de lignes renvoyé sera égal au nombre de lignes de la table<strong>
 entity</strong>
- multiplié par le nombre de lignes de <strong>
+ multiplié par le nombre de lignes de<strong>
 address</strong>
 . Prenez garde, ce nombre peut vite exploser !</p>
 <p id="r-4705092" data-claire-element-id="8547322">
@@ -304,9 +301,9 @@ FROM</code>
 ?</p>
 </div>
 <p id="r-4552888" data-claire-element-id="8156033">
- Bonne question !</p>
+ Bonne question !</p>
 <p id="r-4552889" data-claire-element-id="8321691">
-Une requête sans le mot clé<code data-claire-semantic="text">
+Une requête sans le mot clé<code data-claire-semantic="text">
 FROM</code>
 est une requête qui ne se fait sur aucune table. Elle ne renvoie donc qu'une seule ligne. Par exemple, la requête suivante :</p>
 <pre id="r-4552890" data-claire-element-id="8156035">
@@ -314,19 +311,19 @@ est une requête qui ne se fait sur aucune table. Elle ne renvoie donc qu'une se
 SELECT 45, 20, 'bonjour' ;</code>
 </pre>
 <p id="r-4552891" data-claire-element-id="8539585">
-renvoie une ligne composée de 3 attributs (donc 3 colonnes). La valeur de ceux-ci sera <code data-claire-semantic="text">
+renvoie une ligne composée de 3 attributs (donc 3 colonnes). La valeur de ceux-ci sera<code data-claire-semantic="text">
 45</code>
-, <code data-claire-semantic="text">
+,<code data-claire-semantic="text">
 20</code>
- et <code data-claire-semantic="text">
+ et<code data-claire-semantic="text">
 bonjour</code>
 .</p>
 <p id="r-4615356" data-claire-element-id="8321693">
- </p>
+</p>
 <h3 id="r-4552922" data-claire-element-id="8547334">
 Projections : les fonctions scalaires, et le mot clé AS</h3>
 <p id="r-4552896" data-claire-element-id="8539587">
- Il est possible d'appliquer des <strong>
+ Il est possible d'appliquer des<strong>
 fonctions</strong>
  sur les colonnes. Par exemple, nous pouvons utiliser la fonction multiplication, en multipliant l'identifiant de toutes les entités par 2 (et pourquoi pas ?).</p>
 <pre id="r-4552897" data-claire-element-id="8156042">
@@ -334,32 +331,29 @@ fonctions</strong>
 SELECT id * 2, name, status FROM entity ;</code>
 </pre>
 <p id="r-4552898" data-claire-element-id="8539588">
-Il est même possible de combiner des fonctions. Par exemple, calculons la valeur absolue de l'opposé de l'identifiant multiplié par 2 (soyons fous !) :  o_O</p>
+Il est même possible de combiner des fonctions. Par exemple, calculons la valeur absolue de l'opposé de l'identifiant multiplié par 2 (soyons fous !) : o_O</p>
 <pre id="r-4552899" data-claire-element-id="8156044">
 <code data-claire-semantic="sql">
 SELECT ABS( (- id) *2 ) AS calcul_bizarre, name, status FROM entity ;</code>
 </pre>
 <aside id="r-4552901" data-claire-element-id="8539590" data-claire-semantic="warning">
 <p id="r-4552900" data-claire-element-id="8539589">
-Ici, j'ai utilisé le mot clé <code data-claire-semantic="text">
+Ici, j'ai utilisé le mot clé<code data-claire-semantic="text">
 AS</code>
 . Il permet de renommer une colonne. Sans ce mot clé, la colonne résultat du calcul mathématique aurait comme nom "ABS((-id)*2)", ce qui n'est pas très compréhensible ! je l'ai donc renommée en "calcul_bizarre".</p>
 </aside>
 <p id="r-4552902" data-claire-element-id="8539591">
-Il existe beaucoup de types de fonctions ! Par exemple, des fonctions sur des chaînes de caractères. Si on souhaite obtenir le nom d'une société et ajouter à cette chaîne son statut entre parenthèses, on peut utiliser l'opérateur de concaténation <code data-claire-semantic="text">
+Il existe beaucoup de types de fonctions ! Par exemple, des fonctions sur des chaînes de caractères. Si on souhaite obtenir le nom d'une société et ajouter à cette chaîne son statut entre parenthèses, on peut utiliser l'opérateur de concaténation<code data-claire-semantic="text">
 ||</code>
- :</p>
+ :</p>
 <pre id="r-4552903" data-claire-element-id="8547332">
 <code data-claire-semantic="sql">
-SELECT name || '(' || status || ')' AS name_and_status FROM entity ;
-
--- Version Mysql (pour la console interactive):
-SELECT concat(name,'(',status,')') AS name_and_status FROM entity ;</code>
+SELECT name || '(' || status || ')' AS name_and_status FROM entity ; -- Version Mysql (pour la console interactive): SELECT concat(name,'(',status,')') AS name_and_status FROM entity ;</code>
 </pre>
 <p id="r-4552904" data-claire-element-id="8539592">
-Il y a également des fonctions utilisant des dates, ou des fonctions binaires (qui renvoient <code data-claire-semantic="text">
+Il y a également des fonctions utilisant des dates, ou des fonctions binaires (qui renvoient<code data-claire-semantic="text">
 TRUE</code>
- ou <code data-claire-semantic="text">
+ ou<code data-claire-semantic="text">
 FALSE</code>
 ). Voici un exemple :</p>
 <pre id="r-4552905" data-claire-element-id="8156050">
@@ -367,23 +361,23 @@ FALSE</code>
 SELECT CURRENT_DATE() &gt; incorporation_date FROM entity ;</code>
 </pre>
 <p id="r-4552906" data-claire-element-id="8547333">
-Ici, <code data-claire-semantic="text">
+Ici,<code data-claire-semantic="text">
 CURRENT_DATE()</code>
- renvoie la date actuelle. Celle-ci est ensuite comparée à l'attribut <code data-claire-semantic="text">
+ renvoie la date actuelle. Celle-ci est ensuite comparée à l'attribut<code data-claire-semantic="text">
 incorporation_date</code>
- grâce à l'opérateur <code data-claire-semantic="text">
+ grâce à l'opérateur<code data-claire-semantic="text">
 &gt;</code>
-, qui renvoie <code data-claire-semantic="text">
+, qui renvoie<code data-claire-semantic="text">
 TRUE</code>
-(ou  <code data-claire-semantic="text">
+(ou<code data-claire-semantic="text">
 1</code>
-  selon votre SGBD) si incorporation_date est antérieure à la date actuelle, <code data-claire-semantic="text">
+ selon votre SGBD) si incorporation_date est antérieure à la date actuelle,<code data-claire-semantic="text">
 FALSE</code>
-(ou  <code data-claire-semantic="text">
+(ou<code data-claire-semantic="text">
 0</code>
-  ) sinon.</p>
+ ) sinon.</p>
 <p id="r-4552907" data-claire-element-id="8156052">
- </p>
+</p>
 <h3 id="r-4637453" data-claire-element-id="8380082">
 Un peu d'entraînement !</h3>
 <p id="r-4637451" data-claire-element-id="8380061">
@@ -392,24 +386,13 @@ La base de données est en ligne, vous pouvez vous entraîner en réécrivant le
 <a href="https://www.codevolve.com/api/v1/publishable_key/2A9CAA3419124E3E8C3F5AFCE5306292?content_id=ba014daa-d108-4e91-83f1-42154313b2d1">
 Console interactive</a>
 </p>
-
 </div>
-
 <div class="js-courseSelementActions sideActions">
-
 <ul class="sideActions__container">
-
 <li>
-
-<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
-
-#
-</a>
-
+<a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+ #</a>
 </li>
-
 </ul>
-
 </div>
-
 </div>

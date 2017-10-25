@@ -1,36 +1,34 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/creez-du-lien-entre-vos-relations-grace-aux-cles-etrangeres" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
-
 <div class="userContent js-userContent">
-
 <video id="r-4709396" data-claire-element-id="8559241" src="https://vimeo.com/album/233477149">
 <a href="https://vimeo.com/album/233477149">
 https://vimeo.com/album/233477149</a>
 </video>
 <p id="r-4504251" data-claire-element-id="8023051">
-Nous avons pour le moment une relation qui contient des <strong>
+Nous avons pour le moment une relation qui contient des<strong>
 pommes</strong>
-. C'est bien, mais sachez que dans une base de données, il est très rare de ne trouver qu'une seule table ! Les applications informatiques qui utilisent des bases de données sont en général complexes et nécessitent de nombreuses tables.</p>
+. C'est bien, mais sachez que dans une base de données, il est très rare de ne trouver qu'une seule table ! Les applications informatiques qui utilisent des bases de données sont en général complexes et nécessitent de nombreuses tables.</p>
 <p id="r-4567261" data-claire-element-id="8193461">
- </p>
+</p>
 <h3 id="r-4567262" data-claire-element-id="8537373">
 Réfléchissons...</h3>
 <p id="r-4504252" data-claire-element-id="8336041">
-En général, les tables d'une base de données ne sont pas indépendantes entre elles, elles sont liées.</p>
+En général, les tables d'une base de données ne sont pas indépendantes entre elles, elles sont liées.</p>
 <p id="r-4620606" data-claire-element-id="8336042">
-Je décide par exemple d'avoir une relation <strong>
+Je décide par exemple d'avoir une relation<strong>
 pomme</strong>
-, et également une seconde relation <strong>
+, et également une seconde relation<strong>
 variété</strong>
- destinée à répertorier les différentes variétés de pommes connues. Ces deux relations sont <em>
+ destinée à répertorier les différentes variétés de pommes connues. Ces deux relations sont<em>
 liées</em>
- entre elles, car une pomme <strong>
+ entre elles, car une pomme<strong>
 est</strong>
  d'une certaine variété. Il y a donc un lien entre la pomme et sa variété.</p>
 <p id="r-4504253" data-claire-element-id="8068521">
-Dans le contexte d'un magasin de fruits, on peut dire que le prix d'une pomme dépend de sa variété. Le prix au kilogramme est donc une caractéristique propre à la variété. On aura donc dans la relation <strong>
+Dans le contexte d'un magasin de fruits, on peut dire que le prix d'une pomme dépend de sa variété. Le prix au kilogramme est donc une caractéristique propre à la variété. On aura donc dans la relation<strong>
 variété</strong>
- un attribut <em>
-prix_au_kilo </em>
+ un attribut<em>
+prix_au_kilo</em>
 :</p>
 <table id="r-4504317" data-claire-element-id="8203371">
 <caption>
@@ -155,29 +153,29 @@ acidulé</p>
 </tbody>
 </table>
 <p id="r-4504318" data-claire-element-id="8336043">
-Si je prends une pomme, et que je veux connaître son prix au kilo, il faudra d'abord que je connaisse sa variété. Ensuite, à partir de sa variété, il faudra que je retrouve dans la table <strong>
+Si je prends une pomme, et que je veux connaître son prix au kilo, il faudra d'abord que je connaisse sa variété. Ensuite, à partir de sa variété, il faudra que je retrouve dans la table<strong>
 variété</strong>
  la ligne correspondante pour connaître le prix.</p>
 <div id="r-4504320" data-claire-element-id="8017186" data-claire-semantic="question">
 <p id="r-4504319" data-claire-element-id="8017185">
-Retrouver une ligne dans une table ?!? Ce n'est pas justement le rôle des <strong>
+Retrouver une ligne dans une table ?!? Ce n'est pas justement le rôle des<strong>
 clés</strong>
  ?</p>
 </div>
 <p id="r-4504321" data-claire-element-id="8537372">
 Tout à fait ! Cette question nous amène au paragraphe suivant :</p>
 <p id="r-4567306" data-claire-element-id="8193543">
- </p>
+</p>
 <h3 id="r-4567308" data-claire-element-id="8559244">
 Les clés étrangères</h3>
 <p id="r-4567307" data-claire-element-id="8354721">
-Dans notre relation <strong>
+Dans notre relation<strong>
 variété</strong>
-, il y a une clé candidate : l'attribut <em>
+, il y a une clé candidate : l'attribut<em>
 libellé</em>
-. Ainsi, si pour chaque ligne de la table <strong>
+. Ainsi, si pour chaque ligne de la table<strong>
 pomme</strong>
- nous renseignons le nom de la variété dans une colonne, alors il sera possible, grâce à cette clé, de retrouver le prix au kilo. Voici à quoi pourrait ressembler notre nouvelle table <strong>
+ nous renseignons le nom de la variété dans une colonne, alors il sera possible, grâce à cette clé, de retrouver le prix au kilo. Voici à quoi pourrait ressembler notre nouvelle table<strong>
 pomme</strong>
  :</p>
 <table id="r-4504378" data-claire-element-id="8354801">
@@ -307,24 +305,24 @@ Ariane</p>
 </tbody>
 </table>
 <p id="r-4504426" data-claire-element-id="8537382">
-Dans la table <strong>
+Dans la table<strong>
 pomme</strong>
-, la colonne <em>
+, la colonne<em>
 nom_variété</em>
- ne n'est pas une clé candidate. Cependant, cette colonne fait <em>
+ ne n'est pas une clé candidate. Cependant, cette colonne fait<em>
 quand même</em>
- référence à la clé primaire d'une autre table (la table <strong>
+ référence à la clé primaire d'une autre table (la table<strong>
 variété</strong>
 ). On dit donc que :</p>
 <blockquote id="r-4504428" data-claire-element-id="8336047">
 <p id="r-4504427" data-claire-element-id="8336046">
-La colonne <em>
+La colonne<em>
 nom_variété</em>
- est une <strong>
+ est une<strong>
 clé étrangère</strong>
- référençant la colonne <em>
+ référençant la colonne<em>
 libellé</em>
- de la table <strong>
+ de la table<strong>
 variété</strong>
 .</p>
 </blockquote>
@@ -337,28 +335,28 @@ Vous savez maintenant lier des tables grâce à des clés étrangères !</p>
 </figure>
 <aside id="r-4554292" data-claire-element-id="8159792" data-claire-semantic="warning">
 <p id="r-4554291" data-claire-element-id="8159791">
-La clé primaire d'une table <em>
+La clé primaire d'une table<em>
 A</em>
- peut être composée de plusieurs colonnes. Si une table <em>
+ peut être composée de plusieurs colonnes. Si une table<em>
 B</em>
- veut référencer <em>
+ veut référencer<em>
 A</em>
-, alors la clé étrangère sur <em>
+, alors la clé étrangère sur<em>
 B</em>
- sera composée d'autant de colonnes que pour la clé primaire de <em>
+ sera composée d'autant de colonnes que pour la clé primaire de<em>
 A</em>
 .</p>
 </aside>
 <aside id="r-4567366" data-claire-element-id="8193701" data-claire-semantic="information">
 <p id="r-4511915" data-claire-element-id="8159751">
-Pour indiquer qu'un attribut (ou groupe d'attributs) est une clé étrangère, on peut le spécifier en faisant suivre le nom de cet attribut (ou de chacun de ces attributs) par <em>
+Pour indiquer qu'un attribut (ou groupe d'attributs) est une clé étrangère, on peut le spécifier en faisant suivre le nom de cet attribut (ou de chacun de ces attributs) par<em>
 [FK]</em>
-, qui signifie <em>
+, qui signifie<em>
 foreign key</em>
  (clé étrangère en anglais).</p>
 </aside>
 <p id="r-4620607" data-claire-element-id="8336048">
- </p>
+</p>
 <h3 id="r-4620616" data-claire-element-id="8336058">
 En résumé</h3>
 <ul id="r-4620614" data-claire-element-id="8336056">
@@ -368,37 +366,26 @@ Une clé étrangère sert à lier des relations (= des tables) entre elles.</p>
 </li>
 <li id="r-4620611" data-claire-element-id="8336053">
 <p id="r-4620610" data-claire-element-id="8336052">
-On dit qu'une clé étrangère d'une table A <strong>
+On dit qu'une clé étrangère d'une table A<strong>
 référence</strong>
  la clé primaire d'une table B.</p>
 </li>
 <li id="r-4620613" data-claire-element-id="8336055">
 <p id="r-4620612" data-claire-element-id="8336054">
-Une clé étrangère se dit en anglais <em>
+Une clé étrangère se dit en anglais<em>
 foreign key</em>
  (FK)</p>
 </li>
 </ul>
 <p id="r-4620615" data-claire-element-id="8336057">
- </p>
-
+</p>
 </div>
-
 <div class="js-courseSelementActions sideActions">
-
 <ul class="sideActions__container">
-
 <li>
-
-<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
-
-#
-</a>
-
+<a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+ #</a>
 </li>
-
 </ul>
-
 </div>
-
 </div>

@@ -1,24 +1,346 @@
 <div itemprop="articleBody" data-page-indentifier="" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
-
 <div class="userContent js-userContent">
-
+<p id="r-4738761" data-claire-element-id="8645881">
+Bon, votre ami vous a donné la moyenne des temps de trajets, ainsi que l’écart-type. Vous êtes déjà plus serein. Mais... il y a quelque chose que vous n'avez pas prévu. Regardez ces 2 distributions :</p>
+<p id="r-4738763" data-claire-element-id="8644083">
+<img id="r-4738762" data-claire-element-id="8644082" src="https://user.oc-static.com/upload/2017/10/25/15089224545382_distribs.png" alt="">
+</p>
+<p id="r-4738764" data-claire-element-id="8644084">
+Elles ont la même moyenne empirique (60 minutes), et le même écart-type. Cependant dans le cas 1 est plus "dangereux" que le cas 2. En effet, dans le cas 2, il est très peu probable que votre trajet dure plus de 75 minutes : pas de risque d'être en retard ! Par contre, dans le cas 1, il est tout à fait possible que votre trajet dure 80 minutes, ou même beaucoup plus.</p>
+<aside id="r-4738771" data-claire-element-id="8644132" data-claire-semantic="information">
+<p id="r-4738765" data-claire-element-id="8644131">
+Vous remarquez donc que connaître la moyenne et l’écart-type ne suffit pas ici. Ce qu'il vous faut connaître, c'est la forme de la distribution : est-ce qu'elle s'étale plutôt vers la gauche ou plutôt vers la droite ?</p>
+</aside>
+<p id="r-4738772" data-claire-element-id="8644133">
+Il y a des mesures statistiques pour cela ! On les appelle les<strong>
+mesures de forme</strong>
+.</p>
+<h3 id="r-4738801" data-claire-element-id="8645733">
+Réfléchissons</h3>
+<p id="r-4738901" data-claire-element-id="8644481">
+Construisons notre propre indicateur de forme ! Nous souhaitons savoir si la distribution s'étale plutôt à gauche ou à droite de la moyenne.</p>
+<aside id="r-4738903" data-claire-element-id="8645732" data-claire-semantic="warning">
+<p id="r-4738902" data-claire-element-id="8645731">
+Ceci est équivalent à savoir si la majorité des valeurs est plus petite ou plus grande que la moyenne.</p>
+</aside>
+<p id="r-4738904" data-claire-element-id="8644484">
+Je vous propose de reprendre celui que nous avons construit au chapitre précédent. Au départ, nous avions eu cette idée :</p>
+<blockquote id="r-4738906" data-claire-element-id="8644486">
+<p id="r-4738905" data-claire-element-id="8644485">
+Prenons toutes nos valeurs, et calculons pour chacune d'entre elles l'écart qu'elles ont avec la moyenne. Puis additionnons tous ces écarts !</p>
+</blockquote>
+<p id="r-4738907" data-claire-element-id="8644487">
+L'écart entre une valeur et la moyenne, nous l'avons écrit<math>
+$\((x_i - \overline{x})\)$</math>
+ . Si cet écart est positif, cela signifie que<math>
+$\(x_i \)$</math>
+ est supérieur à la moyenne, s'il est négatif,<math>
+$\(x_i\)$</math>
+ est inférieur à la moyenne.</p>
+<p id="r-4738908" data-claire-element-id="8644488">
+En additionnant tous ces écarts, nous nous sommes aperçus que la somme valait toujours 0. Nous avons donc mis cette quantité au carré :<math>
+$\((x_i - \overline{x})^2\)$</math>
+ . Avec le carré, cette grandeur est toujours positive. Si elle est toujours positive, on perd l'information qui nous dit si<math>
+$\(x_i\)$</math>
+ est supérieur ou inférieur à la moyenne. Or ici, nous voulons garder cette information !</p>
+<div id="r-4738910" data-claire-element-id="8644490" data-claire-semantic="question">
+<p id="r-4738909" data-claire-element-id="8644489">
+Bon, si le carré ne convient pas, mettons-la au cube pour voir !</p>
 </div>
-
-<div class="js-courseSelementActions sideActions">
-
-<ul class="sideActions__container">
-
-<li>
-
-<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
-
-#
-</a>
-
+<p id="r-4738911" data-claire-element-id="8644811">
+Bien vu ! Quand on met l'écart au cube, on obtient<math>
+$\((x_i-\overline{x})^3\)$</math>
+ . Contrairement au carré, le cube conserve le signe de<math>
+$\((x_i - \overline{x})\)$</math>
+ . Ensuite, prenons la moyenne de tous ces écarts au cube, on obtient :</p>
+<p id="r-4739001" data-claire-element-id="8644841">
+<math>
+$\(\frac{1}{n}\sum_{i=1}^{n}(x_i-\overline{x})^3\)$</math>
+</p>
+<p id="r-4738912" data-claire-element-id="8644813">
+Nous avons atteint notre objectif : cette grandeur sera négative si la majorité des valeurs est plus petite que la moyenne, et positive sinon !</p>
+<p id="r-4739002" data-claire-element-id="8644814">
+Mais nous pouvons faire encore mieux. Regardez ces deux distributions :</p>
+<p id="r-4739004" data-claire-element-id="8644816">
+<img id="r-4739003" data-claire-element-id="8644815" src="https://user.oc-static.com/upload/2017/10/25/15089254593603_distribs2.png" alt="">
+</p>
+<p id="r-4738913" data-claire-element-id="8644817">
+Elles ont la même forme, mais pas le même écart-type (la distribution A est plus étendue que B, A a un écart-type 2 fois supérieur à B). Comme elles ont la même forme, on voudrait que notre indicateur donne la même valeur pour ces deux distributions.</p>
+<p id="r-4739006" data-claire-element-id="8644842">
+Mais actuellement, ce n'est pas le cas. Dans le cas A, les écarts à la moyenne sont 2 fois plus importants que dans le cas B. Comme on met ces écarts au cube, notre indicateur sera donc<math>
+$\(2^3\)$</math>
+ fois plus grand pour A que pour B. Or nous les souhaitons égaux. Pour corriger cela, il faut annuler l'effet de l'écart-type. On va donc diviser notre indicateur par l'écart-type mis au cube :</p>
+<p id="r-4739007" data-claire-element-id="8644843">
+<math>
+$\[\frac{\frac{1}{n}\sum_{i=1}^{n}(x_i-\overline{x})^3}{s^3}\]$</math>
+</p>
+<p id="r-4739005" data-claire-element-id="8644844">
+</p>
+<h3 id="r-4739576" data-claire-element-id="8647470">
+Les mesures de forme</h3>
+<h4 id="r-4739568" data-claire-element-id="8647463">
+Le Skewness empirique</h4>
+<p id="r-4739010" data-claire-element-id="8645841">
+Devinez quoi ! L'indicateur que nous venons de créer es utilisé par les statisticiens, et s'appelle le<strong>
+skewness empirique</strong>
+. En général, on a l'habitude de nommer le skewness<math>
+$\(\gamma_1\)$</math>
+ , et son numérateur<math>
+$\(\mu_3\)$</math>
+ :</p>
+<p id="r-4739056" data-claire-element-id="8645032">
+<math>
+$\[\gamma_1 = \frac{\mu_3}{s^3}\]$</math>
+</p>
+<p id="r-4739027" data-claire-element-id="8644933">
+avec<math>
+$\(\mu_3 = \frac{1}{n}\sum_{i=1}^{n}(x_i-\overline{x})^3\)$</math>
+</p>
+<p id="r-4739011" data-claire-element-id="8645033">
+Le skewness est une mesure d'asymétrie. L’asymétrie d’une distribution traduit la régularité (ou non) avec laquelle les observations se répartissent autour de la valeur centrale. On interprète cette mesure de cette manière :</p>
+<ul id="r-4739092" data-claire-element-id="8645795">
+<li id="r-4739087" data-claire-element-id="8645212">
+<p id="r-4739086" data-claire-element-id="8645211">
+ Si<math>
+$\(\gamma_1= 0\)$</math>
+ alors la distribution est symétrique.</p>
 </li>
-
+<li id="r-4739089" data-claire-element-id="8645792">
+<p id="r-4739088" data-claire-element-id="8645791">
+Si<math>
+$\(\gamma_1 &gt; 0\)$</math>
+ alors la distribution est étalée à droite.</p>
+</li>
+<li id="r-4739091" data-claire-element-id="8645794">
+<p id="r-4739090" data-claire-element-id="8645793">
+Si<math>
+$\(\gamma_1 &lt; 0\)$</math>
+ alors la distribution est étalée à gauche.</p>
+</li>
 </ul>
-
+<p id="r-4739058" data-claire-element-id="8645035">
+</p>
+<figure id="r-4739567" data-claire-element-id="8647462">
+<img id="r-4739246" data-claire-element-id="8645661" src="https://user.oc-static.com/upload/2017/10/25/15089270573292_ex_Skewness.jpeg" alt="Relation entre la forme de la distribution et le skewness">
+<figcaption>
+Relation entre la forme de la distribution et le skewness</figcaption>
+</figure>
+<aside id="r-4739308" data-claire-element-id="8645845" data-claire-semantic="information">
+<p id="r-4739307" data-claire-element-id="8645844">
+Pour en savoir plus sur la notion d'<strong>
+asymétrie</strong>
+, rendez-vous à la section<em>
+Aller plus loin</em>
+, au bas de ce chapitre. Vous y découvrirez pourquoi comparer la médiane à la moyenne mesure aussi l'asymétrie.</p>
+</aside>
+<h4 id="r-4739575" data-claire-element-id="8647469">
+Le Kurtosis empirique</h4>
+<p id="r-4739407" data-claire-element-id="8647364">
+Le<strong>
+kurtosis empirique</strong>
+ n'est pas une mesure d'asymétrie, mais c'est une mesure d'<strong>
+aplatissement</strong>
+. L’aplatissement peut s’interpréter à la condition que la distribution soit symétrique. En fait, on compare l'aplatissement par rapport à la distribution la plus célèbre : appelée<strong>
+distribution normale</strong>
+ (parfois "courbe en cloche" ou "courbe de Gauss"). Vous en avez probablement déjà vu, elle ressemble à cela :</p>
+<figure id="r-4739570" data-claire-element-id="8647465">
+<img id="r-4739517" data-claire-element-id="8646225" src="https://user.oc-static.com/upload/2017/10/25/15089301229401_norm.png" alt="Distribution normale">
+<figcaption>
+Distribution normale</figcaption>
+</figure>
+<p id="r-4739418" data-claire-element-id="8646338">
+Le kurtosis est souvent noté<math>
+$\(\gamma_2\)$</math>
+ , et se calcule par :</p>
+<p id="r-4739584" data-claire-element-id="8646518">
+<math>
+$\[\gamma_2 = \frac{\mu_4}{s^4} -3\]$</math>
+</p>
+<p id="r-4739574" data-claire-element-id="8646519">
+avec<math>
+$\(\mu_4 = \frac{1}{n}\sum_{i=1}^{n}(x_i-\overline{x})^4\)$</math>
+</p>
+<div id="r-4739614" data-claire-element-id="8646609" data-claire-semantic="question">
+<p id="r-4739419" data-claire-element-id="8646608">
+Mais que sont vraiment ces mystérieux<math>
+$\(\mu_3\)$</math>
+ et<math>
+$\(\mu_4\)$</math>
+ dans les formules du skewness et du kurtosis ? On les appelle des<strong>
+moments</strong>
+. Pour plus de précisions, reportez-vous à la section<em>
+Aller plus loin</em>
+, au bas du chapitre ;)</p>
 </div>
-
+<p id="r-4739749" data-claire-element-id="8647088">
+Il s’interprète comme ceci :</p>
+<ul id="r-4739756" data-claire-element-id="8647142">
+<li id="r-4739755" data-claire-element-id="8647137">
+<p id="r-4739754" data-claire-element-id="8647136">
+si<math>
+$\(\gamma_2 = 0\)$</math>
+ , alors la distribution a la même aplatissement que la distribution normale.</p>
+</li>
+<li id="r-4739774" data-claire-element-id="8647139">
+<p id="r-4739773" data-claire-element-id="8647138">
+si<math>
+$\(\gamma_2 &gt; 0\)$</math>
+ , alors elle est moins aplatie que la distribution normale : les observations sont plus concentrées</p>
+</li>
+<li id="r-4739776" data-claire-element-id="8647141">
+<p id="r-4739775" data-claire-element-id="8647140">
+si<math>
+$\(\gamma_2 &lt; 0\)$</math>
+ , alors les observations sont moins concentrées : la distribution est plus aplatie.</p>
+</li>
+</ul>
+<figure id="r-4739779" data-claire-element-id="8647468">
+<img id="r-4739777" data-claire-element-id="8647466" src="https://user.oc-static.com/upload/2017/10/25/15089367850815_ex_Kurtosis.jpeg" alt="Relation entre la forme de la distribution et le kurtosis">
+<figcaption>
+Relation entre la forme de la distribution et le kurtosis</figcaption>
+</figure>
+<h3 id="r-4739785" data-claire-element-id="8647153">
+Du côté du code</h3>
+<table id="r-4739784" data-claire-element-id="8647152">
+<tbody id="r-4739783" data-claire-element-id="8647151">
+<tr id="r-4739782" data-claire-element-id="8647150">
+<td id="r-4739781" data-claire-element-id="8647149">
+<p id="r-4739780" data-claire-element-id="8647148">
+code</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="r-4739311" data-claire-element-id="8647250">
+Aller plus loin : quels mots sur l'asymétrie</h3>
+<p id="r-4739267" data-claire-element-id="8645737">
+Vous vous souvenez de cette phrase, plus haut dans le chapitre ?</p>
+<blockquote id="r-4739269" data-claire-element-id="8645739">
+<p id="r-4739268" data-claire-element-id="8645738">
+Nous souhaitons savoir si la majorité des valeurs est plus petite ou plus grande que la moyenne.</p>
+</blockquote>
+<p id="r-4739270" data-claire-element-id="8645740">
+Quand on dit<em>
+la majorité</em>
+, on entend<em>
+plus de 50% des valeurs</em>
+. Vous vous souvenez que la médiane est construite de telle manière à ce que 50% des valeurs lui soient supérieures. Ainsi, la phrase ci dessus est équivalente à dire :<em>
+Nous souhaitons savoir si la médiane est plus petite ou plus grande que la moyenne.</em>
+</p>
+<aside id="r-4739272" data-claire-element-id="8645755" data-claire-semantic="information">
+<p id="r-4739271" data-claire-element-id="8645754">
+Chercher qui de la médiane ou de la moyenne est la plus grande, c'est donc étudier l'<strong>
+asymétrie</strong>
+ de la distribution !</p>
+</aside>
+<p id="r-4739277" data-claire-element-id="8645799">
+Une distribution est dite symétrique si elle présente la même forme de part et d’autre du centre de la distribution. Dans ce cas :<math>
+$\(Mode = Med = \overline{x}\)$</math>
+ .<br>
+Une distribution est étalée à droite (ou<em>
+oblique à gauche</em>
+, ou<em>
+présentant une asymétrie positive</em>
+) si :<math>
+$\(Mode &lt; Med &lt; \overline{x}\)$</math>
+ . De même, elle est étalée à gauche (ou<em>
+oblique à droite</em>
+) si<math>
+$\(Mode &gt; Med &gt; \overline{x}\)$</math>
+ .</p>
+<h3 id="r-4739831" data-claire-element-id="8647373">
+Aller plus loin : les moments</h3>
+<p id="r-4739278" data-claire-element-id="8647251">
+La moyenne empirique, la variance empirique,<math>
+$\(\mu_3\)$</math>
+ et<math>
+$\(\mu_4\)$</math>
+ sont tous des<strong>
+moments</strong>
+.</p>
+<p id="r-4739819" data-claire-element-id="8647252">
+La notion de moment est ici très similaire à celle des moments d'inertie, dont la définition selon<a href="https://fr.wikipedia.org/wiki/Moment_d%27inertie">
+M. Wikipedia</a>
+ est la suivante :</p>
+<blockquote id="r-4739821" data-claire-element-id="8647254">
+<p id="r-4739820" data-claire-element-id="8647253">
+Le moment d'inertie est une grandeur physique qui caractérise la<em>
+géométrie</em>
+ des masses d'un solide, c'est-à-dire la répartition de la matière en son sein. Il quantifie également la résistance à une mise en rotation de ce solide</p>
+</blockquote>
+<p id="r-4739822" data-claire-element-id="8647255">
+La moyenne, la variance, et les mesures de forme que nous avons vu caractérisent la<em>
+géométrie</em>
+ de la distribution, d'où la similitude avec la définition du moment d’inertie.</p>
+<p id="r-4739823" data-claire-element-id="8647256">
+Ceux qui étudient la mécanique sont habitués à calculer des moments. Par exemple, si on prend une règle graduée, que l'on attache un poids à chacun des endroits correspondant à des observations<math>
+$\((x_1,...,x_n)\)$</math>
+ , puis que l'on fait tourner cette règle autour de la valeur moyenne, alors le moment d'inertie se calculera de la même manière que la variance des<math>
+$\((x_1,...,x_n)\)$</math>
+ !</p>
+<p id="r-4739824" data-claire-element-id="8647257">
+En statistiques, le<strong>
+moment général empirique</strong>
+ d'ordre<math>
+$\(p\)$</math>
+ par rapport à<math>
+$\(t\)$</math>
+ est donné par la relation</p>
+<p id="r-4739825" data-claire-element-id="8647258">
+<math>
+$\[M_p^t=\frac{1}{n}\sum_{i=1}^{n}(x_i-t)^p\]$</math>
+</p>
+<p id="r-4739826" data-claire-element-id="8647259">
+</p>
+<p id="r-4739827" data-claire-element-id="8647260">
+Le<strong>
+moment simple empirique</strong>
+ est le moment général par rapport à<math>
+$\(t=0\)$</math>
+ :</p>
+<p id="r-4739828" data-claire-element-id="8647281">
+<math>
+$\[M_p=\frac{1}{n}\sum_{i=1}^{n}x_i^p\]$</math>
+</p>
+<p id="r-4739829" data-claire-element-id="8647262">
+Le<strong>
+moment centré empirique</strong>
+ est le moment général par rapport à la moyenne, soit<math>
+$\( t=\overline{x}\)$</math>
+ :</p>
+<p id="r-4739840" data-claire-element-id="8647371">
+</p>
+<p id="r-4739889" data-claire-element-id="8647372">
+<math>
+$\[\mu_p=\frac{1}{n}\sum_{i=1}^{n}(x_i-\overline{x})^p\]$</math>
+</p>
+<aside id="r-4739842" data-claire-element-id="8647284" data-claire-semantic="information">
+<p id="r-4739841" data-claire-element-id="8647283">
+On retrouve ici la formule générale des nos<math>
+$\(\mu_3\)$</math>
+ et<math>
+$\(\mu_4\)$</math>
+ , et on voit également que<math>
+$\(\mu_2\)$</math>
+ est la variance empirique, que<math>
+$\(\mu_1 = 0\)$</math>
+ (la somme des écarts à la moyenne est toujours nulle comme nous l'avons vu au chapitre précédent). Enfin, la moyenne est le moment simple d'ordre 1 :<math>
+$\(M_1 = \overline{x}\)$</math>
+ .</p>
+</aside>
+<p id="r-4739843" data-claire-element-id="8647285">
+</p>
+<p id="r-4739844" data-claire-element-id="8647286">
+</p>
+<p id="r-4739830" data-claire-element-id="8647263">
+</p>
+</div>
+<div class="js-courseSelementActions sideActions">
+<ul class="sideActions__container">
+<li>
+<a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+ #</a>
+</li>
+</ul>
+</div>
 </div>

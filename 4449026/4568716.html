@@ -1,16 +1,14 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/decouvrez-la-projection-et-la-restriction" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
-
 <div class="userContent js-userContent">
-
 <p id="r-4568911" data-claire-element-id="8198171">
 Dans les précédents chapitres, nous avons vu que le modèle relationnel permettait de représenter et de manipuler des données. Nous y avons abordé la partie représentation, avec les concepts de relation et de clé étrangère.</p>
 <p id="r-4568912" data-claire-element-id="8198172">
 Maintenant, passons donc à la partie manipulation ! Dans le modèle relationnel, tout ce qui concerne la manipulation des relations est appelé<strong>
  l'algèbre relationnelle.</strong>
- Peut être que le mot algèbre vous procure des frissons, et fait remonter en vous de vieux souvenirs de cours de mathématiques. Laissez-moi vous rassurer, l'algèbre relationnelle, c'est bien plus fun !</p>
+ Peut être que le mot algèbre vous procure des frissons, et fait remonter en vous de vieux souvenirs de cours de mathématiques. Laissez-moi vous rassurer, l'algèbre relationnelle, c'est bien plus fun !</p>
 <aside id="r-4702867" data-claire-element-id="8543962" data-claire-semantic="warning">
 <p id="r-4702866" data-claire-element-id="8543961">
-Pour répondre à l'évaluation de fin de partie, il vous faudra en plus de la vidéo, consulter la section <em>
+Pour répondre à l'évaluation de fin de partie, il vous faudra en plus de la vidéo, consulter la section<em>
 Notations</em>
  ci dessous.</p>
 </aside>
@@ -19,15 +17,15 @@ Notations</em>
 https://vimeo.com/233477671</a>
 </video>
 <p id="r-4568915" data-claire-element-id="8543904">
- </p>
+</p>
 <p id="r-4702869" data-claire-element-id="8543905">
-Sans plus tarder, passons aux deux premières opérations de l'algèbre relationnelle : la <strong>
+Sans plus tarder, passons aux deux premières opérations de l'algèbre relationnelle : la<strong>
 projection</strong>
- et la <strong>
+ et la<strong>
 restriction</strong>
 .</p>
 <p id="r-4568916" data-claire-element-id="8334823">
-Ces deux opérations portent sur une seule relation. Reprenons ici notre relation <strong>
+Ces deux opérations portent sur une seule relation. Reprenons ici notre relation<strong>
 pomme</strong>
  :</p>
 <table id="r-4568973" data-claire-element-id="8373545">
@@ -115,23 +113,23 @@ rouge</p>
 </tbody>
 </table>
 <p id="r-4568974" data-claire-element-id="8198234">
- </p>
+</p>
 <h3 id="r-4569003" data-claire-element-id="8373556">
 La projection</h3>
 <p id="r-4568975" data-claire-element-id="8198235">
 La projection, c'est simplement le fait de sélectionner les attributs d'une relation que l'on souhaite, en éliminant les autres.</p>
 <p id="r-4568976" data-claire-element-id="8373531">
-Sur notre exemple des pommes, la projection de la relation <strong>
+Sur notre exemple des pommes, la projection de la relation<strong>
 pomme</strong>
- sur ses attributs <em>
+ sur ses attributs<em>
 diamètre</em>
- et <em>
+ et<em>
 couleur</em>
- donne comme résultat une nouvelle relation ne contant que deux attributs : <em>
+ donne comme résultat une nouvelle relation ne contant que deux attributs :<em>
 diamètre</em>
- et <em>
+ et<em>
 couleur</em>
-, et contenant les mêmes tuples que la relation <strong>
+, et contenant les mêmes tuples que la relation<strong>
 pomme</strong>
 .</p>
 <p id="r-4568977" data-claire-element-id="8198237">
@@ -186,14 +184,14 @@ rouge</p>
 </table>
 <aside id="r-4569001" data-claire-element-id="8373533" data-claire-semantic="warning">
 <p id="r-4569000" data-claire-element-id="8373532">
-Bon, tout cela est exprimé en termes un peu pompeux, mais au final, on a juste supprimé les colonnes <em>
-identifiant </em>
-et <em>
+Bon, tout cela est exprimé en termes un peu pompeux, mais au final, on a juste supprimé les colonnes<em>
+identifiant</em>
+et<em>
 masse</em>
  !</p>
 </aside>
 <p id="r-4569002" data-claire-element-id="8198262">
- </p>
+</p>
 <h3 id="r-4569049" data-claire-element-id="8537705">
 La restriction</h3>
 <p id="r-4569004" data-claire-element-id="8198264">
@@ -203,15 +201,15 @@ Avec la projection, on se contentait de sélectionner les colonnes qui nous int�
 Cependant, dans une base de données, nous connaissons les noms des colonnes, car ils ne varient pas. En ce qui concerne les lignes, on ne les connaît pas à l'avance, et elles varient au cours du temps. C'est bien là la vocation d'une base de données : stocker des données dynamiques, que l'on ajoute, que l'on supprime, ou que l'on modifie au fil de l'utilisation de l'application !</p>
 </aside>
 <p id="r-4569007" data-claire-element-id="8198267">
-Comme les lignes à garder (ou enlever) sont dynamiques, il nous faut donc établir une condition qui nous permette de <em>
+Comme les lignes à garder (ou enlever) sont dynamiques, il nous faut donc établir une condition qui nous permette de<em>
 restreindre</em>
  les lignes.</p>
 <p id="r-4569008" data-claire-element-id="8537702">
-Voici un exemple : la restriction de la relation <strong>
+Voici un exemple : la restriction de la relation<strong>
 pomme</strong>
-, étant donnée la condition C : <code data-claire-semantic="text">
+, étant donnée la condition C :<code data-claire-semantic="text">
 diamètre &gt; 6 cm</code>
- donne une relation contenant contenant les tuples vérifiant C.</p>
+ donne une relation contenant contenant les tuples vérifiant C.</p>
 <p id="r-4569009" data-claire-element-id="8537703">
 Voici le résultat de cette restriction, une relation avec 2 lignes :</p>
 <table id="r-4569044" data-claire-element-id="8373571">
@@ -281,7 +279,7 @@ rouge</p>
 </tbody>
 </table>
 <p id="r-4569045" data-claire-element-id="8537704">
-Une restriction peut également porter sur plusieurs colonnes, par exemple <code data-claire-semantic="text">
+Une restriction peut également porter sur plusieurs colonnes, par exemple<code data-claire-semantic="text">
 diamètre &gt; 2 * masse</code>
 . Cet exemple n'a aucun sens, je vous l'accorde, mais sachez que c'est possible.</p>
 <aside id="r-4569047" data-claire-element-id="8198307" data-claire-semantic="warning">
@@ -289,11 +287,11 @@ diamètre &gt; 2 * masse</code>
 En résumé, une restriction, c'est juste un "filtrage" de lignes selon une condition !</p>
 </aside>
 <p id="r-4569048" data-claire-element-id="8198308">
- </p>
+</p>
 <h3 id="r-4569059" data-claire-element-id="8537713">
 Notations</h3>
 <p id="r-4569050" data-claire-element-id="8537712">
-Pour décrire les opérations que nous étudions, il existe plusieurs notations possibles. Mettons-nous d'accord sur l'une d'entre elles. (En fait je ne vous laisse pas le choix, désolé. :-° )</p>
+Pour décrire les opérations que nous étudions, il existe plusieurs notations possibles. Mettons-nous d'accord sur l'une d'entre elles. (En fait je ne vous laisse pas le choix, désolé. :-° )</p>
 <p id="r-4569051" data-claire-element-id="8198311">
 Pour les deux opérations que nous venons d'effectuer, nous pouvons utiliser cette notation :</p>
 <p id="r-4569052" data-claire-element-id="8198312">
@@ -309,43 +307,32 @@ pomme_restr = Restriction(pomme, masse &gt; 141 g)</code>
 Ces notations ne sont pas officielles, et ne serviront qu'à communiquer entre nous lors du quiz de fin de partie. Pas besoin de les retenir très longtemps ! ;)</p>
 </aside>
 <p id="r-4620103" data-claire-element-id="8334911">
- Voilà ! C'est plutôt simple pour le moment, n'est-ce-pas ? On continue dans le prochain chapitre !</p>
+ Voilà ! C'est plutôt simple pour le moment, n'est-ce-pas ? On continue dans le prochain chapitre !</p>
 <p id="r-4569058" data-claire-element-id="8198318">
- </p>
+</p>
 <h3 id="r-4620211" data-claire-element-id="8334918">
 En résumé</h3>
 <ul id="r-4620210" data-claire-element-id="8334917">
 <li id="r-4620207" data-claire-element-id="8334914">
 <p id="r-4620206" data-claire-element-id="8334913">
-La <strong>
+La<strong>
 projection</strong>
 , c'est sélectionner certaines colonnes d'une table en supprimant les autres.</p>
 </li>
 <li id="r-4620209" data-claire-element-id="8334916">
 <p id="r-4620208" data-claire-element-id="8334915">
-La <strong>
+La<strong>
 restriction</strong>
 , c'est filtrer certaines lignes d'une table selon une certaine condition.</p>
 </li>
 </ul>
-
 </div>
-
 <div class="js-courseSelementActions sideActions">
-
 <ul class="sideActions__container">
-
 <li>
-
-<a class="sideActions__item  js-courseElementActions-copyUrl  js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
-
-#
-</a>
-
+<a class="sideActions__item js-courseElementActions-copyUrl js-tooltip" href="#" data-tooltip="Copier le lien" data-tooltip-done="Lien copié !">
+ #</a>
 </li>
-
 </ul>
-
 </div>
-
 </div>
