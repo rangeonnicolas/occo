@@ -1,71 +1,87 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/nettoyez-et-decrivez-votre-jeu-de-donnees/valeurs-manquantes-aberrantes-et-doublons-sachez-reagir" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
 <div class="userContent js-userContent">
-<p id="r-4698446" data-claire-element-id="8531758">
-Nous l'avons vu dans le chapitre précédents, un échantillon peut contenir des valeurs manquantes et des doublons. Alors que faire ?</p>
-<h3 id="r-4727259" data-claire-element-id="8610564">
-Les valeurs manquantes</h3>
-<p id="r-4698447" data-claire-element-id="8601426">
-Lorsque l'échantillon contient des valeurs manquantes, on ne peut malheureusement pas faire de miracle pour les retrouver ! Cependant, plusieurs attitudes sont possibles :</p>
-<h4 id="r-4698660" data-claire-element-id="8534421">
-Ne rien faire et travailler avec un gruyère</h4>
-<p id="r-4698541" data-claire-element-id="8531760">
-Pour une variable donnée (par exemple Date de naissance dans l'exemple du chapitre précédent), si la proportion de valeurs manquantes est faibles, alors on peu les oublier et ne rien faire : on laisse l'échantillon intact. On travaillera alors avec un jeu de données qui contiendra des "trous", comme dans un gruyère. :honte:</p>
-<h4 id="r-4698661" data-claire-element-id="8532112">
-Supprimer une variable</h4>
-<p id="r-4698542" data-claire-element-id="8532111">
-Cependant, si pour cette même variable, la proportion de valeurs manquantes est beaucoup trop importante, mieux vaut oublier cette variable, à condition que la variable ne soit pas trop importante pour l'analyse. Cela équivaut à supprimer une colonne dans le tableau du chapitre précédent.</p>
-<h4 id="r-4727258" data-claire-element-id="8610563">
-Supprimer des individus</h4>
-<p id="r-4698543" data-claire-element-id="8531762">
-Si la variable qui contient des données manquantes est cruciale dans l'analyse, alors mieux vaut supprimer les individus pour lesquels cette variable est manquante. Par exemple, si vous analysez vos relevés de comptes bancaires en vous intéressant aux sommes d'argent que vous gagnez/dépensez, la variable "montant de l'opération" sera très importante. S'il arrive que le montant de l'opération soit inconnu pour certaines lignes de votre relevé, alors mieux vaut supprimer la totalité de ces lignes.</p>
-<p id="r-4727256" data-claire-element-id="8610561">
-Cette dernière méthode contient cependant des risques. En effet, vous pouvez vous retrouver avec un nombre d'individus (un nombre de lignes) trop restreint pour que votre analyse ait encore du sens.</p>
-<p id="r-4727257" data-claire-element-id="8610562">
-De plus, il se peut que votre échantillon ne soit plus représentatif de la population globale. Imaginez un échantillon de personnes de la même forme que celui du chapitre précédent. Vous décidez de supprimer les dates de naissances pour lesquelles le format n'est pas<code data-claire-semantic="text">
-jour/mois/année</code>
-, ce qui créera des valeurs manquantes dans la variable Date de naissance. Puis, vous décidez de supprimer toutes les lignes (tous les individus) qui ont une date de naissance manquante. Vous aurez probablement supprimé toutes les personnes habitant aux USA, car ceux-ci ont l'habitude d'écrire les dates<a href="https://frenchmorning.com/pourquoi-les-americains-mettent-le-mois-en-tete-de-la-date/">
-différemment des francophones</a>
-. Si vous réalisez ensuite une analyse sur les tailles, votre échantillon ne sera plus représentatif, car les personnes des USA ont sûrement une taille moyenne différente de celle des autres pays.</p>
-<h4 id="r-4698668" data-claire-element-id="8604754">
-Essayer de deviner quand même !</h4>
-<p id="r-4698663" data-claire-element-id="8532115">
-Une méthode un peu plus aventurière consiste à combler les trous par des valeurs à deviner. C'est un peu la méthode des aventuriers ! :zorro: Bien sûr, ces valeurs seront fausses, mais certaines méthodes permettent de ne pas se tromper de beaucoup. Deviner une valeur manquante s'appelle l'<em>
-imputation</em>
+<p id="r-4698446" data-claire-element-id="8685681">
+Nous l'avons vu dans le chapitre précédents, un échantillon peut contenir des valeurs manquantes, aberrantes et des doublons. Alors que faire ?</p>
+<aside id="r-4762155" data-claire-element-id="8686262" data-claire-semantic="warning">
+<p id="r-4762154" data-claire-element-id="8686261">
+Certaines des méthodes suivantes suppriment de l'information dans votre échantillon. Faites attention à toujours<em>
+garder une copie de votre échantillon</em>
+. Si vous souhaitez supprimer de l'information, alors créez une copie de l'échantillon, puis supprimez ce que vous voulez : le nouvel échantillon que vous obtenez sera appelé<strong>
+sous-échantillon</strong>
 .</p>
-<p id="r-4698664" data-claire-element-id="8604751">
-Par exemple, On peut remplacer les valeurs manquantes de la variable Taille par la taille moyenne des individus de notre échantillon. Dans notre exemple, pour corriger la taille de Hanna (que nous supposons être erronée), on la remplace par la moyenne des autres individus, soit 1,52m. C'est l'<em>
+</aside>
+<p id="r-4762156" data-claire-element-id="8686263">
+Par exemple, prenons ces 2 traitements : calculer une moyenne, puis réaliser une ACP (qui n'est pas au programme ici). Pour calculer votre moyenne, vous pourrez appliquer la méthode<em>
+supprimer des individus</em>
+(donnée ci-dessous) en créant un sous-échantillon. Mais pour votre ACP, il faudra conserver l'ensemble des individus et plutôt réaliser une<em>
 imputation par la moyenne</em>
+sur l'échantillon d'origine.</p>
+<p id="r-4762157" data-claire-element-id="8685688">
+</p>
+<h3 id="r-4727259" data-claire-element-id="8686122">
+Les valeurs manquantes</h3>
+<p id="r-4698447" data-claire-element-id="8684461">
+Lorsque l'échantillon contient des valeurs manquantes, on ne peut malheureusement pas faire de miracle pour les retrouver ! Cependant, plusieurs attitudes sont possibles.</p>
+<h4 id="r-4698660" data-claire-element-id="8685690">
+Ne rien faire et travailler avec un gruyère</h4>
+<p id="r-4698541" data-claire-element-id="8685689">
+Pour une variable donnée (par exemple d<em>
+ate de naissance</em>
+dans l'exemple du chapitre précédent), si la proportion de valeurs manquantes est faibles, alors on peut les oublier et ne rien faire : on laisse l'échantillon intact. On travaillera alors avec un jeu de données qui contiendra des "trous", comme dans un gruyère. :honte: Selon le traitement statistiques que vous appliquerez, cette solution sera ou non acceptable.</p>
+<h4 id="r-4698661" data-claire-element-id="8685437">
+Supprimer une variable</h4>
+<p id="r-4698542" data-claire-element-id="8685436">
+Cependant, si pour cette même variable, la proportion de valeurs manquantes est beaucoup trop importante, mieux vaut l'oublier, à condition que la variable ne soit pas trop importante pour l'analyse. Cela équivaut à supprimer une colonne dans le tableau du chapitre précédent.</p>
+<h4 id="r-4727258" data-claire-element-id="8686121">
+Supprimer des individus</h4>
+<p id="r-4698543" data-claire-element-id="8685871">
+Si la variable qui contient des données manquantes est cruciale dans l'analyse, alors mieux vaut créer un sous-échantillon et y supprimer les individus pour lesquels cette variable est manquante. Par exemple, si vous analysez vos relevés de comptes bancaires en vous intéressant aux sommes d'argent que vous gagnez/dépensez, la variable "montant de l'opération" sera très importante. S'il arrive que le montant de l'opération soit inconnu pour certaines lignes de votre relevé, alors mieux vaut supprimer la totalité de ces lignes.</p>
+<p id="r-4727257" data-claire-element-id="8686101">
+Cette dernière méthode contient cependant des risques. En effet, vous pouvez vous retrouver avec un nombre d'individus (un nombre de lignes) trop petit pour que votre analyse ait encore du sens. De plus, il se peut que votre échantillon ne soit plus représentatif de la population globale. Pour savoir pourquoi, rendez-vous à la section<em>
+Aller plus loin</em>
+au bas de ce chapitre.</p>
+<h4 id="r-4698668" data-claire-element-id="8685944">
+Essayer de deviner quand même !</h4>
+<p id="r-4698663" data-claire-element-id="8685593">
+Une méthode un peu plus aventurière consiste à combler les trous par des valeurs à deviner. C'est un peu la méthode des aventuriers ! :zorro: Bien sûr, ces valeurs seront fausses, mais certaines méthodes permettent de ne pas se tromper de beaucoup. Deviner une valeur manquante s'appelle l'<strong>
+imputation</strong>
 .</p>
-<h5 id="r-4698830" data-claire-element-id="8604753">
+<p id="r-4698664" data-claire-element-id="8685594">
+Par exemple, On peut remplacer les valeurs manquantes de la variable<em>
+taille</em>
+par la taille moyenne des individus de notre échantillon. Dans notre exemple, pour corriger la taille de Hanna (que nous supposons être erronée), on la remplace par la moyenne des autres individus, soit 1,52m. C'est l'<strong>
+imputation par la moyenne</strong>
+.</p>
+<h5 id="r-4698830" data-claire-element-id="8685943">
 Deviner à partir d'autres variables</h5>
 <p id="r-4698816" data-claire-element-id="8532792">
 Mais on peut faire mieux ! Pour remplacer une variable donnée, on peut regarder les autres variables aux alentours. Il y a plusieurs méthodes qui utilisent ce principe.</p>
-<p id="r-4698817" data-claire-element-id="8604752">
-Imaginons un nouvel individu : Luc, français, dont la taille est inconnue. Plutôt que de lui attribuer la moyenne de tout l'échantillon (1,52m), on peut lui attribuer la moyenne des français : 1,57m. Ici, on a regardé la valeur de la variable Pays pour déduire la valeur de la variable Taille.</p>
+<p id="r-4698817" data-claire-element-id="8685595">
+Imaginons un nouvel individu : Luc, français, dont la taille est inconnue. Plutôt que de lui attribuer la moyenne de tout l'échantillon (1,52m), on peut lui attribuer la moyenne des français : 1,57m. Ici, on a regardé la valeur de la variable<em>
+pays</em>
+pour déduire la valeur de la variable<em>
+taille</em>
+.</p>
 <p id="r-4698818" data-claire-element-id="8532981">
 D'autres méthodes sont également basées sur le fait de déduire une variable à partir d'autres. On peut citer les méthodes de<em>
 Hot-deck</em>
 , ou les méthodes basées sur des<em>
 régressions linéaires</em>
 . Ces dernières sont un peu plus complexes, et vous avez besoin de comprendre ce qu'est une régression linéaire. Patience, nous le verrons à la fin de ce cours ! :D</p>
-<aside id="r-4698820" data-claire-element-id="8532983" data-claire-semantic="warning">
-<p id="r-4698819" data-claire-element-id="8532982">
-Deviner (imputer) des valeurs modifie votre échantillon, car les valeurs imputées sont fausses. En particulier, vos calculs de variances ou de corrélations (nous verrons ces concepts plus tard) seront faussées. Il faut donc les utiliser<a href="http://www.i3s.unice.fr/~crescenz/publications/Florence/valeurs-manquantes-ou-aberrantes.pdf">
-avec des pincettes</a>
-.</p>
-</aside>
-<aside id="r-4698667" data-claire-element-id="8532798" data-claire-semantic="information">
-<p id="r-4698666" data-claire-element-id="8532797">
-Pour savoir que faire avec une valeur manquante, il n'y a pas vraiment de règle. Tout dépend de votre échantillon et de l'analyse que vous souhaitez mener. Dans tous les cas, il est nécessaire de toujours préciser quelle méthode vous avez utilisé dans chacun des résultats d'analyse que vous présenterez. C'est une question d'honnêteté intellectuelle. ^^</p>
+<aside id="r-4698820" data-claire-element-id="8685942" data-claire-semantic="warning">
+<p id="r-4698819" data-claire-element-id="8683490">
+Deviner (imputer) des valeurs modifie votre échantillon, car les valeurs imputées sont fausses. En particulier, vos calculs de variances ou de corrélations (nous verrons ces concepts plus tard) seront faussées. Il faut donc les utiliser avec des pincettes, comme en témoigne<a href="http://www.i3s.unice.fr/~crescenz/publications/Florence/valeurs-manquantes-ou-aberrantes.pdf">
+ce document</a>
+(pages 4 et 5).</p>
+<p id="r-4762206" data-claire-element-id="8685941">
+Dans tous les cas, il est nécessaire de toujours préciser quelle méthode vous avez utilisé dans chacun des résultats d'analyse que vous présenterez. C'est une question d'honnêteté intellectuelle. ;)</p>
 </aside>
 <p id="r-4698407" data-claire-element-id="8599486">
 </p>
-<h3 id="r-4698850" data-claire-element-id="8602433">
+<h3 id="r-4698850" data-claire-element-id="8685963">
 Les valeurs aberrantes</h3>
-<p id="r-4698841" data-claire-element-id="8532884">
-Hanna mesure 3,45m. Vous ne trouvez pas cela aberrant ?</p>
-<p id="r-4698842" data-claire-element-id="8533301">
-Si. C'est aberrant<em>
+<p id="r-4698842" data-claire-element-id="8685875">
+Hanna mesure 3,45m. Vous ne trouvez pas cela aberrant ? Si. C'est aberrant<em>
 comparé</em>
 aux tailles des autres êtres humains.</p>
 <p id="r-4698861" data-claire-element-id="8533302">
@@ -74,44 +90,39 @@ Mais attention, une valeur aberrante ne signifie pas forcément une valeur fauss
 Idéalement, il faudrait vérifier si les valeurs aberrantes sont erronées ou pas. Par exemple, un thermomètre qui mesure les températures en France peut indiquer 40°c, mais il peut s'agir soit d'une défaillance du capteur de température, soit d'une valeur réelle.</p>
 <p id="r-4698967" data-claire-element-id="8602432">
 Dans tous les cas, les valeurs aberrantes méritent toujours que l'on s'y attarde. Dans certains cas, elles peuvent même donner des indications intéressantes</p>
-<div id="r-4724148" data-claire-element-id="8601287" data-claire-semantic="question">
-<p id="r-4724147" data-claire-element-id="8601286">
-Alors que faire avec les valeurs aberrantes ?</p>
-</div>
-<p id="r-4724150" data-claire-element-id="8601429">
-Si nous sommes sûrs que la valeur est erronée (erreur de saisie ou défaut d’un capteur par exemple), alors il faut la supprimer s’il n’est pas possible de connaître la vraie valeur. Dans les autres cas, nous avons le choix entre :</p>
-<ul id="r-4724155" data-claire-element-id="8601294">
-<li id="r-4724152" data-claire-element-id="8601291">
-<p id="r-4724151" data-claire-element-id="8601290">
-supprimer la valeur aberrante. On se retrouve alors avec une valeur manquante, à laquelle on peut imputer une valeur comme nous l’avons vu précédemment. L’imputation n’est pas obligatoire</p>
+<p id="r-4724150" data-claire-element-id="8685876">
+Alors que faire avec les valeurs aberrantes ? Si nous sommes sûrs que la valeur est erronée (erreur de saisie ou défaut d’un capteur par exemple), alors il faut la supprimer s’il n’est pas possible de connaître la vraie valeur. Dans les autres cas, nous avons le choix entre :</p>
+<ul id="r-4724155" data-claire-element-id="8685962">
+<li id="r-4724152" data-claire-element-id="8685878">
+<p id="r-4724151" data-claire-element-id="8685877">
+Supprimer la valeur aberrante. On se retrouve alors avec une valeur manquante, à laquelle on peut imputer une valeur comme nous l’avons vu précédemment. L’imputation n’est pas obligatoire.</p>
 </li>
-<li id="r-4724154" data-claire-element-id="8601293">
-<p id="r-4724153" data-claire-element-id="8601292">
-conserver la valeur aberrante.</p>
+<li id="r-4724154" data-claire-element-id="8685961">
+<p id="r-4724156" data-claire-element-id="8685946">
+Conserver la valeur aberrante.</p>
 </li>
 </ul>
-<p id="r-4724156" data-claire-element-id="8601295">
-<br>
-Comment choisir entre ces deux options ? Tout dépend des méthodes d’analyse que vous appliquerez par la suite. Certaines méthodes sont dites « robustes », car elle ne sont pas déstabilisées par les valeurs aberrantes. Par exemple, nous verrons par la suite que la moyenne est très sensible aux valeurs aberrantes, alors que la médiane de l’est pas. Si vous souhaitez faire une moyenne, supprimez donc les valeurs aberrantes, mais si vous préférez utiliser la médiane, laissez tel quel. ;)</p>
+<p id="r-4762209" data-claire-element-id="8685951">
+Comment choisir entre ces deux options ? Tout dépend des traitements que vous appliquerez par la suite. Certaines méthodes sont dites « robustes », car elle ne sont pas déstabilisées par les valeurs aberrantes. Par exemple, nous verrons par la suite que la moyenne est très sensible aux valeurs aberrantes, alors que la médiane de l’est pas. Si vous souhaitez faire une moyenne, créez un sous-échantillons dans lequel vous supprimez les valeurs aberrantes. Mais si vous calculez aussi la médiane, travaillez sur l’échantillon de départ. ;)</p>
 <aside id="r-4724158" data-claire-element-id="8601297" data-claire-semantic="warning">
 <p id="r-4724157" data-claire-element-id="8601296">
 N’hésitez pas, quand vous présentez votre analyse, à citer vos valeurs aberrantes si elles sont intéressantes. Par exemple « les relevés de température contiennent 2 valeurs aberrantes à 42°c, dus à 2 jours de canicule extrême »</p>
 </aside>
 <p id="r-4724159" data-claire-element-id="8601298">
 </p>
-<h3 id="r-4724177" data-claire-element-id="8610572">
+<h3 id="r-4724177" data-claire-element-id="8686283">
 Et les doublons ?</h3>
-<p id="r-4724160" data-claire-element-id="8601300">
-Dans notre exemple, Samuel est présent 2 fois. c’est problématique, car ce doublon (aussi appelé « donnée dupliquée ») fausse les analyses, notamment la taille moyenne de la population.</p>
-<p id="r-4724161" data-claire-element-id="8601301">
-Il faut supprimer les doublons. Cependant, il n’y a pas de règle précise pour les détecter : vous seuls pouvez les détecter, à partir de la structure de vos données et en sachant comment elles ont été collectées. Mais parfois, ce sera impossible. :(</p>
-<p id="r-4724162" data-claire-element-id="8610571">
-Un petit exemple : si votre échantillon contient une variable « identifiant », alors il est aisé de détecter des doublons : ce sont ceux qui auront le même identifiant ;) . Dans notre exemple, on peut considérer que l’adresse email est l’identifiant d’une personne. Dans notre exmeple, les 2 lignes qui ont pour email<code data-claire-semantic="text">
+<p id="r-4724160" data-claire-element-id="8683060">
+Dans notre exemple, Samuel est présent 2 fois. c’est problématique, car ce doublon (aussi appelé « donnée dupliquée ») fausse les analyses : notamment la taille moyenne de l'échantillon.</p>
+<p id="r-4724161" data-claire-element-id="8685884">
+Il faut éliminer les doublons. Cependant, il n’y a pas de règle précise pour les détecter : vous seuls pouvez les détecter, à partir de la structure de vos données et en sachant comment elles ont été collectées. Mais parfois, ce sera impossible. :(</p>
+<p id="r-4724162" data-claire-element-id="8683801">
+Un petit exemple : si votre échantillon contient une variable « identifiant », alors il est aisé de détecter des doublons : ce sont ceux qui auront le même identifiant ;) . Dans notre exemple, on peut considérer que l’adresse email est l’identifiant d’une personne. Dans notre exemple, les 2 lignes qui ont pour email<code data-claire-semantic="text">
 samuel_329@example.com</code>
 constituent un doublon.</p>
-<aside id="r-4724164" data-claire-element-id="8601304" data-claire-semantic="information">
-<p id="r-4724163" data-claire-element-id="8601303">
-Si vous êtes familiers avec les bases de données, vous connaissez probablement la notion de<a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/comprenez-limportance-des-cles">
+<aside id="r-4724164" data-claire-element-id="8686282" data-claire-semantic="information">
+<p id="r-4724163" data-claire-element-id="8686281">
+Si vous êtes familier avec les bases de données, vous connaissez probablement la notion de<a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/comprenez-limportance-des-cles">
 clé</a>
 (clé primaire ou clé candidate). Deux individus avec les mêmes valeurs pour une clé<em>
 sont</em>
@@ -125,10 +136,10 @@ Oui mais de nos deux lignes contenant<code data-claire-semantic="text">
 samuel_329@example.com</code>
 , faut-il en supprimer une au hasard ?</p>
 </div>
-<p id="r-4724168" data-claire-element-id="8601308">
-En fait, il faut faire un peu plus attention. Mieux vaut les regrouper en une ligne. En effet, parmi ces 2 lignes, la 1ere nous informe que Samuel est né le 20/09/2001, et la seconde ligne nous informe que Samuel habite au Bénin (information qui est manquante dans la 1ere ligne). Le problème, c’est pour la taille : la première ligne nous dit que Samuel mesure 1,67m, alors que la seconde nous affirme qu’il n’en mesure que 1,45m. Il y a contradiction. S’il n’y a pas d’autre moyen de vérification, on peut par exemple choisir de prendre la moyenne de ces 2 valeurs.</p>
-<p id="r-4724169" data-claire-element-id="8601309">
-Vous l’aurez compris, c’est un peu du cas-par-cas !</p>
+<p id="r-4724168" data-claire-element-id="8686264">
+En fait, il faut faire un peu plus attention. Mieux vaut les<em>
+regrouper</em>
+en une ligne. En effet, parmi ces 2 lignes, la 1ere nous informe que Samuel est né le 20/09/2001, et la seconde ligne nous informe que Samuel habite au Bénin (information qui est manquante dans la 1ere ligne). Le problème, c’est pour la taille : la première ligne nous dit que Samuel mesure 1,67m, alors que la seconde nous affirme qu’il n’en mesure que 1,45m. Il y a contradiction. S’il n’y a pas d’autre moyen de vérification, on peut par exemple choisir de prendre la moyenne de ces 2 valeurs.</p>
 <p id="r-4724170" data-claire-element-id="8601310">
 </p>
 <p id="r-4724171" data-claire-element-id="8601311">
@@ -139,6 +150,132 @@ Vous l’aurez compris, c’est un peu du cas-par-cas !</p>
 </p>
 <p id="r-4724174" data-claire-element-id="8601314">
 </p>
+<h3 id="r-4762254" data-claire-element-id="8686581">
+Aller plus loin : conséquence de la suppression d'individus</h3>
+<p id="r-4762251" data-claire-element-id="8686110">
+Imaginez un échantillon de personnes de la même forme que celui du chapitre précédent :</p>
+<table id="r-4762372" data-claire-element-id="8686377">
+<thead id="r-4762325" data-claire-element-id="8686330">
+<tr id="r-4762324" data-claire-element-id="8686329">
+<td id="r-4762317" data-claire-element-id="8686322">
+<p id="r-4762316" data-claire-element-id="8686321">
+Prénom</p>
+</td>
+<td id="r-4762319" data-claire-element-id="8686324">
+<p id="r-4762318" data-claire-element-id="8686323">
+Pays</p>
+</td>
+<td id="r-4762321" data-claire-element-id="8686326">
+<p id="r-4762320" data-claire-element-id="8686325">
+Date de naissance</p>
+</td>
+<td id="r-4762323" data-claire-element-id="8686328">
+<p id="r-4762322" data-claire-element-id="8686327">
+Taille</p>
+</td>
+</tr>
+</thead>
+<tbody id="r-4762371" data-claire-element-id="8686376">
+<tr id="r-4762334" data-claire-element-id="8686339">
+<td id="r-4762327" data-claire-element-id="8686332">
+<p id="r-4762326" data-claire-element-id="8686331">
+Albert</p>
+</td>
+<td id="r-4762329" data-claire-element-id="8686334">
+<p id="r-4762328" data-claire-element-id="8686333">
+France</p>
+</td>
+<td id="r-4762331" data-claire-element-id="8686336">
+<p id="r-4762330" data-claire-element-id="8686335">
+23/09/1930</p>
+</td>
+<td id="r-4762333" data-claire-element-id="8686338">
+<p id="r-4762332" data-claire-element-id="8686337">
+1,45 m</p>
+</td>
+</tr>
+<tr id="r-4762343" data-claire-element-id="8686348">
+<td id="r-4762336" data-claire-element-id="8686341">
+<p id="r-4762335" data-claire-element-id="8686340">
+Sophia</p>
+</td>
+<td id="r-4762338" data-claire-element-id="8686343">
+<p id="r-4762337" data-claire-element-id="8686342">
+USA</p>
+</td>
+<td id="r-4762340" data-claire-element-id="8686345">
+<p id="r-4762339" data-claire-element-id="8686344">
+01/20/1959</p>
+</td>
+<td id="r-4762342" data-claire-element-id="8686347">
+<p id="r-4762341" data-claire-element-id="8686346">
+1,68 m</p>
+</td>
+</tr>
+<tr id="r-4762352" data-claire-element-id="8686357">
+<td id="r-4762345" data-claire-element-id="8686350">
+<p id="r-4762344" data-claire-element-id="8686349">
+Donald</p>
+</td>
+<td id="r-4762347" data-claire-element-id="8686352">
+<p id="r-4762346" data-claire-element-id="8686351">
+USA</p>
+</td>
+<td id="r-4762349" data-claire-element-id="8686354">
+<p id="r-4762348" data-claire-element-id="8686353">
+02/16/2002</p>
+</td>
+<td id="r-4762351" data-claire-element-id="8686356">
+<p id="r-4762350" data-claire-element-id="8686355">
+1,65 m</p>
+</td>
+</tr>
+<tr id="r-4762361" data-claire-element-id="8686366">
+<td id="r-4762354" data-claire-element-id="8686359">
+<p id="r-4762353" data-claire-element-id="8686358">
+Ali</p>
+</td>
+<td id="r-4762356" data-claire-element-id="8686361">
+<p id="r-4762355" data-claire-element-id="8686360">
+France</p>
+</td>
+<td id="r-4762358" data-claire-element-id="8686363">
+<p id="r-4762357" data-claire-element-id="8686362">
+16/02/2000</p>
+</td>
+<td id="r-4762360" data-claire-element-id="8686365">
+<p id="r-4762359" data-claire-element-id="8686364">
+1,57 m</p>
+</td>
+</tr>
+<tr id="r-4762370" data-claire-element-id="8686375">
+<td id="r-4762363" data-claire-element-id="8686368">
+<p id="r-4762362" data-claire-element-id="8686367">
+Doriane</p>
+</td>
+<td id="r-4762365" data-claire-element-id="8686370">
+<p id="r-4762364" data-claire-element-id="8686369">
+Togo</p>
+</td>
+<td id="r-4762367" data-claire-element-id="8686372">
+<p id="r-4762366" data-claire-element-id="8686371">
+17/08/1978</p>
+</td>
+<td id="r-4762369" data-claire-element-id="8686374">
+<p id="r-4762368" data-claire-element-id="8686373">
+1,58 m</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p id="r-4762253" data-claire-element-id="8686112">
+Vous décidez de supprimer les dates de naissances pour lesquelles le format n'est pas<code data-claire-semantic="text">
+jour/mois/année</code>
+, ce qui créera des valeurs manquantes dans la variable d<em>
+ate de naissance</em>
+. Puis, vous décidez de supprimer toutes les lignes (tous les individus) qui ont une date de naissance manquante. Vous aurez probablement supprimé toutes les personnes habitant aux USA, car ceux-ci ont l'habitude d'écrire les dates<a href="https://frenchmorning.com/pourquoi-les-americains-mettent-le-mois-en-tete-de-la-date/">
+différemment des francophones</a>
+. Si vous réalisez ensuite une analyse sur les tailles, votre échantillon ne sera plus représentatif, car les personnes des USA ont sûrement une taille moyenne différente de celle des autres pays.</p>
 <p id="r-4724175" data-claire-element-id="8601315">
 </p>
 <p id="r-4724176" data-claire-element-id="8601316">
@@ -147,28 +284,6 @@ Vous l’aurez compris, c’est un peu du cas-par-cas !</p>
 </p>
 <p id="r-4698849" data-claire-element-id="8599491">
 </p>
-<table id="r-4698829" data-claire-element-id="8601320">
-<tbody id="r-4698828" data-claire-element-id="8601319">
-<tr id="r-4698827" data-claire-element-id="8601318">
-<td id="r-4698826" data-claire-element-id="8601317">
-<p id="r-4698822" data-claire-element-id="8532800">
-<a href="https://en.wikipedia.org/wiki/Imputation_%28statistics%29#Regression">
-https://en.wikipedia.org/wiki/Imputation_%28statistics%29#Regression</a>
-</p>
-<p id="r-4698823" data-claire-element-id="8532801">
-<a href="https://www.math.univ-toulouse.fr/~besse/Wikistat/pdf/st-m-app-idm.pdf">
-https://www.math.univ-toulouse.fr/~besse/Wikistat/pdf/st-m-app-idm.pdf</a>
-</p>
-<p id="r-4698824" data-claire-element-id="8532802">
-<a href="http://cedric.cnam.fr/~saporta/NonReponse%20-%20DEC2013.pdf">
-http://cedric.cnam.fr/~saporta/NonReponse%20-%20DEC2013.pdf</a>
-</p>
-<p id="r-4698825" data-claire-element-id="8532803">
-</p>
-</td>
-</tr>
-</tbody>
-</table>
 <p id="r-4698448" data-claire-element-id="8601321">
 </p>
 </div>

@@ -4,12 +4,48 @@
 <p id="r-4717411" data-claire-element-id="8580351">
 Rassurez-vous, ce chapitre est plus rapide qu'il n'y paraît ! Pas besoin de tout lire. ;)</p>
 </aside>
+<h3 id="r-4761228" data-claire-element-id="8685073">
+Ce dont vous aurez besoin</h3>
+<p id="r-4761216" data-claire-element-id="8682591">
+Pour ce cours, vous aurez besoin d'utiliser soit Python soit R.</p>
+<p id="r-4761217" data-claire-element-id="8685071">
+Si vous avez déjà installé R dans le passé, alors vous n'avez rien à faire, sauf si vous souhaitez travailler avec un<a href="#r-4709890">
+notebook</a>
+.</p>
+<p id="r-4761218" data-claire-element-id="8682593">
+Si vous avez déjà installé Python, alors vous aurez besoin des librairies suivantes :</p>
+<ol id="r-4761227" data-claire-element-id="8682602">
+<li id="r-4761220" data-claire-element-id="8682595">
+<p id="r-4761219" data-claire-element-id="8682594">
+Pandas</p>
+</li>
+<li id="r-4761222" data-claire-element-id="8682597">
+<p id="r-4761221" data-claire-element-id="8682596">
+Matplotlib</p>
+</li>
+<li id="r-4761224" data-claire-element-id="8682599">
+<p id="r-4761223" data-claire-element-id="8682598">
+Numpy</p>
+</li>
+<li id="r-4761226" data-claire-element-id="8682601">
+<p id="r-4761225" data-claire-element-id="8682600">
+Scipy</p>
+</li>
+</ol>
+<p id="r-4761281" data-claire-element-id="8685072">
+Si cependant vous n'avez jamais installé Python, alors il existe une<a href="#r-4761286">
+solution miracle</a>
+, qui installera directement Python, toutes les librairies nécessaires, ainsi que le<a href="#r-4709890">
+notebook Jupyter</a>
+!</p>
+<h3 id="r-4761229" data-claire-element-id="8682605">
+C'est parti !</h3>
 <p id="r-4709591" data-claire-element-id="8559901">
 Aaaaaaah, les fameuses instruction d'installation d'un logiciel ou d'un langage... Personnellement, que ce soit sur openclassrooms ou ailleurs, ça ne s'est jamais passé comme prévu. Au départ, on suit les instruction, tout se passe bien, et BAM ! La capture d'écran du tutoriel montre une ancienne version du logiciel, ou pire, une erreur survient à l'installation, et là on ne sait plus surtout quoi faire. Et on se retrouve sur<a href="https://stackoverflow.com/">
 stackoverflow</a>
 à chercher la solution à notre problème, parfois pendant plusieurs heures.</p>
-<p id="r-4709592" data-claire-element-id="8580353">
-Alors voici comment nous allons procéder. Suivez ces instruction et dès que sur votre ordinateur, quelque chose diffère (à cause d'une nouvelle version logicielle par exemple), signalez-le sur le forum. Nous actualiserons alors le cours en conséquence, durant la période de maintien de ce cours. Si vous avez une erreur d'installation, alors recherchez sur stackoverflow ou google. En général, il suffit de décrire votre problème en une phrase (en anglais si posible) dans le champ de recherche pour trouver des gens qui ont déjà eu le même problème. Le plus efficace est même d'y<a href="/courses/comprendre-le-web/les-secrets-bien-gardes-pour-devenir-developpeur-1">
+<p id="r-4709592" data-claire-element-id="8682604">
+Alors voici comment nous allons procéder. Suivez ces instruction, et dès que sur votre ordinateur, quelque chose diffère (à cause d'une nouvelle version logicielle par exemple), signalez-le sur le forum. Nous actualiserons alors le cours en conséquence, durant la période de maintien de ce cours. Si vous avez une erreur d'installation, alors recherchez sur stackoverflow ou google. En général, il suffit de décrire votre problème en une phrase (en anglais si posible) dans le champ de recherche pour trouver des gens qui ont déjà eu le même problème. Le plus efficace est même d'y<a href="/courses/comprendre-le-web/les-secrets-bien-gardes-pour-devenir-developpeur-1">
 copier-coller votre message d'erreur</a>
 .</p>
 <p id="r-4709771" data-claire-element-id="8560252">
@@ -289,7 +325,7 @@ Normalement, il devrait s'afficher le résultat du calcul 3+2 :</p>
 </pre>
 <p id="r-4723678" data-claire-element-id="8600099">
 </p>
-<h3 id="r-4709975" data-claire-element-id="8600109">
+<h3 id="r-4709975" data-claire-element-id="8685076">
 Installer R avec notebook</h3>
 <p id="r-4717267" data-claire-element-id="8579902">
 Il vous faudra tout d'abord...<a href="#r-4709787">
@@ -299,36 +335,135 @@ installer R sans notebook</a>
 Ensuite, il vous faudra installer Jupyter (Le comble, c'est que Jupyter est codé en Python, alors il vous faudra aussi installer Python !). Pour installer Jupyter, rendez-vous à la section<a href="#r-4709978">
 Installer Python avec notebook</a>
 .</p>
-<table id="r-4717427" data-claire-element-id="8600105">
-<tbody id="r-4717426" data-claire-element-id="8600104">
-<tr id="r-4717425" data-claire-element-id="8600103">
-<td id="r-4717424" data-claire-element-id="8600102">
-<p id="r-4717421" data-claire-element-id="8580369">
-Compléter avec ceci : https://irkernel.github.io/</p>
+<p id="r-4761230" data-claire-element-id="8682606">
+Ensuite, rendez-vous sur cette page :<a href="https://irkernel.github.io/installation/">
+https://irkernel.github.io/installation/</a>
+, et suivez les instructions. Il s'agit de lignes de code à taper dans R.</p>
+<p id="r-4761231" data-claire-element-id="8682607">
+Pour vérifier si cela a fonctionné,<a href="#h4sj9e0yk58v226jg1lzh9tl1dst8g6">
+lancez Jupyter</a>
+. Une fois sur la page d'accueil de Jupyter (à laquelle vous pouvez accéder depuis un navigateur en saisissant l'url<a href="http://localhost:8888/tree">
+http://localhost:8888/tree</a>
+). En haut à droite, il y a un bouton "New", si vous cliquez dessus, une option "R" devrait vous être proposée. Si vous cliquez dessus, un nouveau notebook R sera créé :</p>
+<figure id="r-4761234" data-claire-element-id="8685075">
+<img id="r-4761232" data-claire-element-id="8682608" src="https://user.oc-static.com/upload/2017/10/30/15093587120907_jupyter_r.png" alt="Tester le notebook Jupyter avec R">
+<figcaption>
+Tester le notebook Jupyter avec R</figcaption>
+</figure>
+<aside id="r-4723680" data-claire-element-id="8682612" data-claire-semantic="information">
+<p id="r-4723679" data-claire-element-id="8682611">
+Un alternative au notebook R est le logiciel<a href="https://www.rstudio.com/">
+RStudio</a>
+, qui est<strong>
+très</strong>
+populaire parmi les utilisateurs de R. Il est d'ailleurs plus utilisé que le notebook Jupyter R.</p>
+</aside>
+<p id="r-4723681" data-claire-element-id="8600108">
+</p>
+<h3 id="r-4761286" data-claire-element-id="8683014">
+Installer la totale : Python + librairies + notebook</h3>
+<p id="r-4761283" data-claire-element-id="8682986">
+Si vous n'avez jamais installé Python, alors autant installer la distribution<em>
+Anaconda</em>
+.</p>
+<p id="r-4761347" data-claire-element-id="8682987">
+En gros, une distribution, c'est un langage de programmation + certaines librairies et autres fonctionnalités.</p>
+<p id="r-4761348" data-claire-element-id="8682988">
+Anaconda est donc une distribution Python, faite pour la Data Science.</p>
+<p id="r-4761349" data-claire-element-id="8682989">
+Il installera donc :</p>
+<ul id="r-4761356" data-claire-element-id="8682996">
+<li id="r-4761351" data-claire-element-id="8682991">
+<p id="r-4761350" data-claire-element-id="8682990">
+Python</p>
+</li>
+<li id="r-4761353" data-claire-element-id="8682993">
+<p id="r-4761352" data-claire-element-id="8682992">
+les librairies de Data Science dont nous aurons besoin : matplotlib, scipy, numpy, pandas.</p>
+</li>
+<li id="r-4761355" data-claire-element-id="8682995">
+<p id="r-4761354" data-claire-element-id="8682994">
+le<a href="#r-4709890">
+notebook Jupyter</a>
+, que je vous conseille vivement d'utiliser.</p>
+</li>
+</ul>
+<aside id="r-4761358" data-claire-element-id="8682998" data-claire-semantic="information">
+<p id="r-4761357" data-claire-element-id="8682997">
+Anaconda installera tout ce dont nous avons besoin oui, mais il se peut qu'il en installe un peu trop (librairies que nous n'utiliserons pas, etc.). Il existe donc une version épurée d'Anaconda ici :<a href="https://docs.anaconda.com/docs_oss/conda/install/quick">
+https://docs.anaconda.com/docs_oss/conda/install/quick</a>
+. Mais je ne sais pas si celle-ci installe les librairies don nous aurons besoin. J'aurais donc besoin d'un cobaye un peu aventurier :ninja: pour essayer et me donner la réponse !</p>
+</aside>
+<p id="r-4761359" data-claire-element-id="8682999">
+Pour télécharger la distribution Anaconda, c'est par ici :<a href="https://www.anaconda.com/download/">
+https://www.anaconda.com/download/</a>
+</p>
+<p id="r-4761360" data-claire-element-id="8683000">
+Les instructions d'installation se trouvent sur cette page :<a href="https://docs.anaconda.com/anaconda/navigator/install">
+https://docs.anaconda.com/anaconda/navigator/install</a>
+</p>
+<p id="r-4761284" data-claire-element-id="8683001">
+Pour tester si l’installation s'est bien déroulée, vous pouvez :</p>
+<ol id="r-4761365" data-claire-element-id="8683006">
+<li id="r-4761362" data-claire-element-id="8683003">
+<p id="r-4761361" data-claire-element-id="8683002">
+<a href="#r-4717146">
+Tester Python</a>
+</p>
+</li>
+<li id="r-4761364" data-claire-element-id="8683005">
+<p id="r-4761363" data-claire-element-id="8683004">
+<a href="#r-4761236">
+Tester le notebook Jupyter</a>
+</p>
+</li>
+</ol>
+<aside id="r-4761366" data-claire-element-id="8683008" data-claire-semantic="information">
+<p id="r-4761285" data-claire-element-id="8683007">
+Si vous considérez que les instruction d'installation d'Anaconda ne sont pas claires, ou si vous avez es doutes, parlez-en sur le forum ;)</p>
+</aside>
+<table id="r-4761371" data-claire-element-id="8683013">
+<tbody id="r-4761370" data-claire-element-id="8683012">
+<tr id="r-4761369" data-claire-element-id="8683011">
+<td id="r-4761368" data-claire-element-id="8683010">
+<p id="r-4761367" data-claire-element-id="8683009">
+Mettre le lien vers le forum</p>
 </td>
 </tr>
 </tbody>
 </table>
-<aside id="r-4723680" data-claire-element-id="8600107" data-claire-semantic="information">
-<p id="r-4723679" data-claire-element-id="8600106">
-Un alternative au notebook R est le logiciel<a href="https://www.rstudio.com/">
-RStudio</a>
-, qui est très populaire parmi les utilisateurs de R. Il est d'ailleurs plus utilisé que le notebook Jupyter R.</p>
-</aside>
-<p id="r-4723681" data-claire-element-id="8600108">
-</p>
-<h3 id="r-4709976" data-claire-element-id="8599465">
+<h3 id="r-4709976" data-claire-element-id="8683026">
 Installer Python sans notebook</h3>
-<p id="r-4717145" data-claire-element-id="8599464">
-</p>
-<h4 id="r-4717146" data-claire-element-id="8579592">
-Testez Python</h4>
-<h3 id="r-4709978" data-claire-element-id="8599469">
-Installer Python avec notebook</h3>
-<h4 id="r-4717428" data-claire-element-id="8599466">
+<p id="r-4717145" data-claire-element-id="8683015">
+Normalement, il est préférable d'installer toutes les fonctionnalités d'un coup : Python, les librairies que nous utiliserons, et le notebook Jupyter. Je vous conseille donc de vous rendre<a href="#r-4761286">
+à cette section</a>
+. Si pour une quelconque raison, vous souhaitez tout installer séparément, alors vous pouvez rester ici. :)</p>
+<h4 id="r-4717146" data-claire-element-id="8683024">
 </h4>
-<h4 id="r-4717429" data-claire-element-id="8599468">
+<h4 id="r-4761377" data-claire-element-id="8683025">
+Testez Python</h4>
+<p id="r-4761287" data-claire-element-id="8682740">
+</p>
+<h4 id="r-4761291" data-claire-element-id="8682745">
+Installez les librairies nécessaires</h4>
+<p id="r-4761288" data-claire-element-id="8682742">
+</p>
+<p id="r-4761289" data-claire-element-id="8682743">
+</p>
+<p id="r-4761290" data-claire-element-id="8682744">
+</p>
+<h3 id="r-4709978" data-claire-element-id="8682748">
+Installer Python avec notebook</h3>
+<p id="r-4761292" data-claire-element-id="8682747">
+Si vous vous retrouvez dans cette section, c'est que vous avez déjà installé Python. Si ce n'est pas le cas, alors autant tout installer en même temps : pour cela, vous n'êtes pas au bon endroit :<a href="#h5sj9e1htbnh0dhqqs9wxrx143bxxd">
+c'est plutôt par ici</a>
+.</p>
+<h4 id="r-4717429" data-claire-element-id="8682615">
 Par Jupyter !</h4>
+<p id="r-4761235" data-claire-element-id="8682614">
+</p>
+<h4 id="r-4761236" data-claire-element-id="8682616">
+Testez Jupyter</h4>
 <p id="r-4709977" data-claire-element-id="8599467">
 </p>
 <table id="r-4709859" data-claire-element-id="8560469">

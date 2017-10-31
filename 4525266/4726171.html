@@ -1,17 +1,17 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/nettoyez-et-decrivez-votre-jeu-de-donnees/telechargez-les-donnees" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
 <div class="userContent js-userContent">
-<table id="r-4726180" data-claire-element-id="8608175">
-<tbody id="r-4726179" data-claire-element-id="8608174">
-<tr id="r-4726178" data-claire-element-id="8608173">
-<td id="r-4726177" data-claire-element-id="8608172">
-<p id="r-4726176" data-claire-element-id="8608171">
-INTRO, voc: transaction &amp; opération / donner le code R</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p id="r-4726291" data-claire-element-id="8608341">
-Dans ce chapitre, vous allez télécharger vos relevés bancaires, les charger dans Python, et enrichir votre échantillon de nouvelles variables. Si tout se passe bien, cela ne devrait pas prendre beaucoup de temps. Mais si vous rencontrez des erreurs, il vous sera possible de télécharger un fichier final afin de continuer le cours. ;)</p>
+<p id="r-4762746" data-claire-element-id="8690241">
+Pour que ce cours soit plus attrayant, je vous propose d'analyser des données qui viennent de vous. Si vous possédez un compte bancaire consultable en ligne, et qu'il y a sur celui-ci des opérations bancaires fréquentes (c'est le cas si vous utilisez fréquemment une carte bancaire), alors vous pouvez analyser vos comportements de consommation.</p>
+<p id="r-4763441" data-claire-element-id="8690242">
+Un relevé bancaire est composé de lignes, que l'on appellera<strong>
+opération</strong>
+,<strong>
+opération bancaire</strong>
+ou<strong>
+transaction</strong>
+. Une opération sera donc un individu.</p>
+<p id="r-4726291" data-claire-element-id="8690243">
+Je vous propose donc dans ce chapitre de télécharger vos relevés de compte, de les charger dans Python, et d'enrichir votre échantillon de nouvelles variables. Si tout se passe bien, cela ne devrait pas prendre beaucoup de temps. Mais si vous rencontrez des erreurs, il vous sera possible de télécharger un fichier final afin de continuer le cours. ;)</p>
 <aside id="r-4726617" data-claire-element-id="8608343" data-claire-semantic="information">
 <p id="r-4726616" data-claire-element-id="8608342">
 Ne fuyez pas devant l’apparente longueur de ce chapitre : j'y traite effectivement beaucoup de cas particuliers, mais la réalisation du programme reste cependant rapide !</p>
@@ -144,7 +144,7 @@ attente</strong>
 </ul>
 <p id="r-4726341" data-claire-element-id="8607631">
 Certaines de ces variables peuvent être calculées automatiquement, mais certaines nécessiterons votre intervention. Par exemple, vous devrez indiquer vous-même les opérations qui sont des courses ou des paiements de loyers. Ne vous inquiétez pas, je vous faciliterai la tâche afin de ne pas faire ceci entièrement "à la main". ;)</p>
-<h3 id="r-4726833" data-claire-element-id="8609304">
+<h3 id="r-4726833" data-claire-element-id="8690323">
 C'est parti !</h3>
 <h4 id="r-4726826" data-claire-element-id="8609031">
 Télécharger les données</h4>
@@ -288,7 +288,7 @@ lien forum</p>
 </tr>
 </tbody>
 </table>
-<h4 id="r-4726828" data-claire-element-id="8609033">
+<h4 id="r-4726828" data-claire-element-id="8690322">
 Détectez les opérations fréquentes</h4>
 <p id="r-4726589" data-claire-element-id="8608305">
 Vous avez probablement vos habitudes de consommation, par exemple, vous fréquentez probablement les mêmes endroits pour faire vos courses. Dans ce cas, beaucoup d'opérations auront un libellé contenant le nom de votre magasin préféré.</p>
@@ -318,9 +318,9 @@ TYPE</code>
 et<code data-claire-semantic="text">
 CATEGS</code>
 , en suivant cet exemple :</p>
-<pre id="r-4726597" data-claire-element-id="8608345">
+<pre id="r-4726597" data-claire-element-id="8690321">
 <code data-claire-semantic="python">
-CATEGS = { 'LOYER': 'LOYER', 'FORFAIT COMPTE SUPERBANK': 'QUOTISATION BANCAIRE', 'LES ANCIENS ROBINSON': 'COURSES', "L'EPICERIE DENBAS": 'COURSES', 'TELEPHONE': 'FACTURE TELEPHONE', 'LA CCNCF': 'TRANSPORT', 'CHEZ LUC': 'RESTAURANT', 'RAPT': 'TRANSPORT', 'TOUPTIPRI': 'COURSES', 'LA LOUVE': 'COURSES', 'VELOC': 'TRANSPORT' } TYPES = { 'CARTE': 'CARTE', 'VIR': 'VIREMENT', 'VIREMENT': 'VIREMENT', 'RETRAIT': 'RETRAIT', 'PRLV': 'PRELEVEMENT', 'DON': 'DON', }</code>
+CATEGS = { 'LOYER': 'LOYER', 'FORFAIT COMPTE SUPERBANK': 'COTISATION BANCAIRE', 'LES ANCIENS ROBINSON': 'COURSES', "L'EPICERIE DENBAS": 'COURSES', 'TELEPHONE': 'FACTURE TELEPHONE', 'LA CCNCF': 'TRANSPORT', 'CHEZ LUC': 'RESTAURANT', 'RAPT': 'TRANSPORT', 'TOUPTIPRI': 'COURSES', 'LA LOUVE': 'COURSES', 'VELOC': 'TRANSPORT' } TYPES = { 'CARTE': 'CARTE', 'VIR': 'VIREMENT', 'VIREMENT': 'VIREMENT', 'RETRAIT': 'RETRAIT', 'PRLV': 'PRELEVEMENT', 'DON': 'DON', }</code>
 </pre>
 <aside id="r-4726607" data-claire-element-id="8608352" data-claire-semantic="warning">
 <p id="r-4726606" data-claire-element-id="8608351">
@@ -358,7 +358,7 @@ WEEKEND = []</code>
 <code data-claire-semantic="python">
 ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']</code>
 </pre>
-<h4 id="r-4726832" data-claire-element-id="8609303">
+<h4 id="r-4726832" data-claire-element-id="8690245">
 Décollage !</h4>
 <p id="r-4726748" data-claire-element-id="8608826">
 C'est quasi-fini ! Il ne vous reste plus qu'à copier-coller ce code les yeux fermés :</p>
@@ -372,8 +372,8 @@ C'est quasi-fini ! Il ne vous reste plus qu'à copier-coller ce code les yeux fe
 Ce code supprimera les colonnes dont nous n'avons pas besoin (par exemple<em>
 date_valeur</em>
 ), et vérifiera que votre dataframe contient biens les colonnes dont nous aurons besoin (leur nom doit être correctement orthographié). Ensuite, il créera toutes les variables citées tout en haut du chapitre !</p>
-<p id="r-4726830" data-claire-element-id="8609035">
-Le résultat sera enregistré dans une nouveau fchier csv :<code data-claire-semantic="text">
+<p id="r-4726830" data-claire-element-id="8690244">
+Le résultat sera enregistré dans une nouveau fichier csv :<code data-claire-semantic="text">
 operations_enrichies.csv</code>
 .</p>
 <p id="r-4726866" data-claire-element-id="8609302">

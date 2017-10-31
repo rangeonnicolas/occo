@@ -32,8 +32,8 @@ nouvelle_colonne</code>
 doit ainsi être une liste de 7 valeurs.</p>
 <p id="r-4725881" data-claire-element-id="8606491">
 </p>
-<h3 id="r-4725523" data-claire-element-id="8606683">
-La méthode apply</h3>
+<h3 id="r-4725523" data-claire-element-id="8687922">
+Les méthodes apply et map</h3>
 <p id="r-4725520" data-claire-element-id="8606643">
 Il reste encore à savoir comment remplir<code data-claire-semantic="text">
 nouvelle_colonne</code>
@@ -42,10 +42,14 @@ nom_colonne</code>
 . Ce qu'il nous faut, c'est parcourir chaque valeur de<code data-claire-semantic="text">
 nom_colonne</code>
 , vérifier si elle est correcte ou pas, et la corriger si besoin.</p>
-<p id="r-4725521" data-claire-element-id="8606494">
+<p id="r-4725521" data-claire-element-id="8687921">
 Pour cela, nous utilisons la méthode<code data-claire-semantic="text">
 apply</code>
-. C'est une méthode qui est appelée sur une colonne du dataframe, et qui permet de parcourir toutes ses valeurs. Pour chaque valeur, elle applique une fonction destinée à la vérification/correction :</p>
+. C'est une méthode qui est appelée sur une colonne du dataframe, et qui permet de parcourir toutes ses valeurs. Alternativement, on peut utiliser la méthode<code data-claire-semantic="text">
+map</code>
+, qui lui est (<a href="https://stackoverflow.com/questions/19798153/difference-between-map-applymap-and-apply-methods-in-pandas">
+a peu près</a>
+) équivalente. Pour chaque valeur, elle applique une fonction destinée à la vérification/correction :</p>
 <pre id="r-4725748" data-claire-element-id="8606644">
 <code data-claire-semantic="python">
 import pandas as pd # On importe la librairie Pandas, que l'on surnomme 'pd' def lower_case(value): print('Voici la valeur que je traite:', value) return value.lower() data = pd.DataFrame([['A',1], ['B',2], ['C',3]], columns = ['lettre','position']) nouvelle_colonne = data['lettre'].apply(lower_case) nouvelle_colonne = nouvelle_colonne.values print(nouvelle_colonne) data['lettre'] = nouvelle_colonne print(data)</code>
@@ -96,7 +100,7 @@ Series</code>
 </aside>
 <p id="r-4725755" data-claire-element-id="8606152">
 </p>
-<h3 id="r-4725772" data-claire-element-id="8606723">
+<h3 id="r-4725772" data-claire-element-id="8684523">
 Attaquons !</h3>
 <h4 id="r-4725758" data-claire-element-id="8606156">
 Charger les données</h4>
@@ -176,7 +180,7 @@ len</code>
 . S'il y en a au moins 2, alors on affiche le message des lignes 5 et 6. Finalement, on retourne<code data-claire-semantic="text">
 first_part</code>
 , qui contient le premier email !</p>
-<h4 id="r-4725891" data-claire-element-id="8606722">
+<h4 id="r-4725891" data-claire-element-id="8684522">
 Traiter les tailles</h4>
 <p id="r-4725770" data-claire-element-id="8606657">
 Nous aurons ici 2 fonctions :<code data-claire-semantic="text">
@@ -190,8 +194,8 @@ fill_height</code>
 <code data-claire-semantic="python">
 def convert_height(height): found = re.search('\d\.\d{2}m', height) if found is None: print('{} n\'est pas au bon format. Il sera ignoré.'.format(height)) return np.NaN else: value = height[:-1] # on enlève le dernier caractère, qui est 'm' return float(value) def fill_height(height, replacement): if pd.isnull(height): print('Imputation par la moyenne : {}'.format(replacement)) return replacement return height</code>
 </pre>
-<p id="r-4725961" data-claire-element-id="8606721">
-La première fonction est compliquée. Vous pouvez soit lui accorder une confiance aveugle, soit tenter de percer son mystère dans la section<em>
+<p id="r-4725961" data-claire-element-id="8684521">
+La première fonction est un peu plus élaborée. Vous pouvez soit lui accorder une confiance aveugle, soit tenter de percer son mystère dans la section<em>
 Aller plus loin</em>
 en bas de ce chapitre ;)</p>
 <p id="r-4725906" data-claire-element-id="8606661">
@@ -206,7 +210,7 @@ height</code>
 .</p>
 <p id="r-4725907" data-claire-element-id="8606554">
 </p>
-<h3 id="r-4725912" data-claire-element-id="8607106">
+<h3 id="r-4725912" data-claire-element-id="8687892">
 Appliquons toutes ces fonctions</h3>
 <p id="r-4725909" data-claire-element-id="8606664">
 Maintenant que ces fonctions sont définies, il faut les exécuter ! A la fin de votre programme, ajoutez ceci :</p>
@@ -222,16 +226,18 @@ Aller plus loin</em>
 .</p>
 <p id="r-4725948" data-claire-element-id="8606689">
 Que vous dire d'autre... Vous savez l'essentiel. Bon quelques petites précisions mineures :</p>
-<ul id="r-4725955" data-claire-element-id="8607105">
-<li id="r-4725950" data-claire-element-id="8607102">
-<p id="r-4725949" data-claire-element-id="8607101">
+<ul id="r-4725955" data-claire-element-id="8687873">
+<li id="r-4725950" data-claire-element-id="8687872">
+<p id="r-4725949" data-claire-element-id="8687871">
 <code data-claire-semantic="text">
 t if t&lt;3 else np.NaN</code>
 renvoie<code data-claire-semantic="text">
 t</code>
 si<code data-claire-semantic="text">
 t</code>
-est inférieur à 3, ou renvoie np.NaN sinon. On l'utilise pour supprimer les tailles supérieures à 3m, qui sont aberrantes.</p>
+est inférieur à 3, ou renvoie<code data-claire-semantic="text">
+np.NaN</code>
+sinon. On l'utilise pour supprimer les tailles supérieures à 3m, qui sont aberrantes.</p>
 </li>
 <li id="r-4725952" data-claire-element-id="8606693">
 <p id="r-4725951" data-claire-element-id="8606692">
@@ -250,7 +256,12 @@ pd.NaT</code>
 (c'est le cas de la date de naissance de Radia) .</p>
 </li>
 </ul>
-<p id="r-4725962" data-claire-element-id="8606725">
+<p id="r-4725962" data-claire-element-id="8687891">
+La ligne 9 affiche ici le résultat final :</p>
+<p id="r-4762727" data-claire-element-id="8687876">
+<img id="r-4762726" data-claire-element-id="8687875" src="https://user.oc-static.com/upload/2017/10/30/1509380897808_resultat.png" alt="">
+</p>
+<p id="r-4762728" data-claire-element-id="8687877">
 </p>
 <h3 id="r-4725968" data-claire-element-id="8606762">
 Aller plus loin : Les compréhensions de listes</h3>
@@ -272,7 +283,7 @@ data['taille'] = data['taille'].apply(convert_height)</code>
 </p>
 <p id="r-4725981" data-claire-element-id="8606761">
 </p>
-<h3 id="r-4726112" data-claire-element-id="8614768">
+<h3 id="r-4726112" data-claire-element-id="8687931">
 Aller plus loin : le traitement des tailles</h3>
 <p id="r-4725969" data-claire-element-id="8606751">
 Reprenons la fonction que nous avions laissé de côté :</p>
@@ -294,22 +305,6 @@ ici</a>
 Vous avez normalement toutes les clés en main pour comprendre le reste de cette fonction. Remarquez jusque<code data-claire-semantic="text">
 float(value)</code>
 permet de convertir une chaîne de caractère qui représente un nombre en... un vrai nombre (dont le type est "float") !</p>
-<p id="r-4728461" data-claire-element-id="8614761">
-</p>
-<table id="r-4728466" data-claire-element-id="8614766">
-<tbody id="r-4728465" data-claire-element-id="8614765">
-<tr id="r-4728464" data-claire-element-id="8614764">
-<td id="r-4728463" data-claire-element-id="8614763">
-<p id="r-4728462" data-claire-element-id="8614762">
-donner équivalence apply / map (map est utilisé dans le code sur les relevés de compte). (<a href="https://stackoverflow.com/questions/19798153/difference-between-map-applymap-and-apply-methods-in-pandas">
-https://stackoverflow.com/questions/19798153/difference-between-map-applymap-and-apply-methods-in-pandas</a>
-réponse 2)</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p id="r-4728467" data-claire-element-id="8614767">
-</p>
 </div>
 <div class="js-courseSelementActions sideActions">
 <ul class="sideActions__container">

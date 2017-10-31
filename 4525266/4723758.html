@@ -2,7 +2,7 @@
 <div class="userContent js-userContent">
 <p id="r-4723682" data-claire-element-id="8600111">
 Bon, l’heure est venue de savoir de quoi on parle ! Nous définirons dans ce chapitre les concepts clés du cours, et si vous souhaitez plonger dans le vaste monde de la Data Science, je vous propose un petit tour d’horizon du domaine des statistiques, c’est cadeau !</p>
-<h3 id="r-4723694" data-claire-element-id="8600123">
+<h3 id="r-4723694" data-claire-element-id="8685082">
 Le vocabulaire</h3>
 <p id="r-4723683" data-claire-element-id="8600112">
 En statistiques, on étudie des trucs, des bidules et des choses.</p>
@@ -16,17 +16,17 @@ individus</strong>
 . Ces individus peuvent être des objets, des personnes, des animaux, des mesures physiques, etc. L’individu, c’est l’<em>
 unité d’observation</em>
 .</p>
-<p id="r-4723687" data-claire-element-id="8600116">
+<p id="r-4723687" data-claire-element-id="8685081">
 Des individus ont des caractéristiques : on les appelle des caractères, ou des<strong>
 variables</strong>
 .</p>
-<p id="r-4723688" data-claire-element-id="8600117">
+<p id="r-4723688" data-claire-element-id="8683235">
 L’ensemble des individus s’appelle la<strong>
 population</strong>
 . On note souvent sa taille<math>
 $\(N\)$</math>
-, correspondant au nombre d’individus de la population.</p>
-<p id="r-4723689" data-claire-element-id="8600118">
+, correspondant au nombre d’individus de la population. Il est très fréquent de ne pas connaître la taille exacte d'une population.</p>
+<p id="r-4723689" data-claire-element-id="8683285">
 Lorsque l’on sélectionne certains individus d’une population, on obtient un échantillon. Sa taille est souvent notée<math>
 $\(n\)$</math>
 .</p>
@@ -38,39 +38,34 @@ et<strong>
 échantillon</strong>
 . Normalement, un échantillon est un sous-groupe d’une population ; mais ici, on considérera que l’on travaille toujours sur l’ensemble de la population. Notre échantillon sera toujours l’ensemble de la population.</p>
 </aside>
-<p id="r-4723692" data-claire-element-id="8600121">
+<p id="r-4723692" data-claire-element-id="8683971">
 On utilisera souvent le terme de<strong>
 jeu de données</strong>
 , (ou<strong>
 dataset</strong>
-en anglais). Ces termes ne sont pas très précis, mais dans ce cours, ils seront équivalents à<strong>
+en anglais). Ces termes n'ont pas de définition très précise, mais dans ce cours, ils seront équivalents à<strong>
 échantillon</strong>
 .</p>
 <p id="r-4723693" data-claire-element-id="8600122">
 </p>
-<h3 id="r-4723757" data-claire-element-id="8600381">
+<h3 id="r-4723757" data-claire-element-id="8690304">
 Comment représenter un échantillon ?</h3>
 <p id="r-4723695" data-claire-element-id="8600124">
 On représente en général un échantillon sous forme de tableau, où chaque ligne correspond à un individu, et chaque colonne représente une variable. Cette représentation est à l’origine du format de fichier<a href="https://en.wikipedia.org/wiki/Comma-separated_values">
 CSV</a>
 (comma separated values). Ce format peut être ouvert avec les logiciels tableurs (Microsoft® Excel, Openoffice Calc), et est facilement interprétable par les langages R et Python.</p>
-<table id="r-4723700" data-claire-element-id="8600225">
-<tbody id="r-4723699" data-claire-element-id="8600224">
-<tr id="r-4723698" data-claire-element-id="8600223">
-<td id="r-4723697" data-claire-element-id="8600222">
-<p id="r-4723696" data-claire-element-id="8600221">
-ILLUS</p>
-</td>
-</tr>
-</tbody>
-</table>
+<figure id="r-4762078" data-claire-element-id="8690303">
+<img id="r-4762076" data-claire-element-id="8690301" src="https://user.oc-static.com/upload/2017/10/30/15094032817055_echantillon.png" alt="Représentation d'un échantillon">
+<figcaption>
+Représentation d'un échantillon</figcaption>
+</figure>
 <aside id="r-4723703" data-claire-element-id="8600227" data-claire-semantic="information">
 <p id="r-4723702" data-claire-element-id="8600226">
 Cette représentation est très similaire à<a href="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/decouvrez-le-concept-de-relation">
 celle des bases de données relationnelles</a>
 .</p>
 </aside>
-<p id="r-4723704" data-claire-element-id="8600133">
+<p id="r-4763457" data-claire-element-id="8690283">
 </p>
 <h3 id="r-4723822" data-claire-element-id="8600395">
 Petit tout d’horizon des statistiques</h3>
@@ -128,13 +123,13 @@ empirique</strong>
 Dans ce cours, on ne parlera absolument pas de probabilités, donc nous ne nous embrouillerons pas les pinceaux !</p>
 <p id="r-4723821" data-claire-element-id="8600394">
 </p>
-<h3 id="r-4723832" data-claire-element-id="8612640">
+<h3 id="r-4761697" data-claire-element-id="8690308">
 Les différents domaines de la statistiques</h3>
-<h4 id="r-4723831" data-claire-element-id="8612633">
+<h4 id="r-4761688" data-claire-element-id="8690307">
 Les statistiques descriptives</h4>
 <p id="r-4723729" data-claire-element-id="8600396">
 C’est le sujet ce cours ! Il s’agit de présenter, décrire et résumer le jeu de données, à l’aide de graphiques et de mesures (moyenne, écart-type, etc.). En général, chaque graphique ou mesure est calculé à chaque fois sur 1 ou 2 variables. En effet, représenter les relations entre 2 variables sur un graphique est assez simple sur du papier ou sur un écran, car ceux-ci sont en 2 dimensions (longueur-largeur) : 1 dimension par variable.</p>
-<figure id="r-4723830" data-claire-element-id="8612632">
+<figure id="r-4761687" data-claire-element-id="8690306">
 <img id="r-4723828" data-claire-element-id="8600541" src="https://user.oc-static.com/upload/2017/10/16/1508152103499_Linear_regression.png" alt="Graphique en 2 dimensions avec 1 axe horizontal et 1 axe vertical (source: wikipedia)">
 <figcaption>
 Graphique en 2 dimensions avec 1 axe horizontal et 1 axe vertical (source: wikipedia)</figcaption>
@@ -159,21 +154,11 @@ tests statistiques</strong>
 .</p>
 <p id="r-4723741" data-claire-element-id="8600170">
 </p>
-<h4 id="r-4723900" data-claire-element-id="8612639">
+<h4 id="r-4761696" data-claire-element-id="8685145">
 La modélisation statistique</h4>
-<p id="r-4723749" data-claire-element-id="8600575">
-Il s’agit d’observer les caractéristiques d’un échantillon, puis de formaliser ces observations par des règles mathématiques. Cette formalisation s’appelle un modèle probabiliste.</p>
-<table id="r-4727911" data-claire-element-id="8612638">
-<tbody id="r-4727910" data-claire-element-id="8612637">
-<tr id="r-4727909" data-claire-element-id="8612636">
-<td id="r-4727908" data-claire-element-id="8612635">
-<p id="r-4727907" data-claire-element-id="8612634">
-aspect prédction, aide à la décision,</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p id="r-4724027" data-claire-element-id="8600994">
+<p id="r-4762052" data-claire-element-id="8685144">
+Il s’agit d’observer les caractéristiques d’un échantillon, puis de formaliser ces observations par des règles mathématiques. Cette formalisation s’appelle un modèle probabiliste. Une fois que l'on a décrit un phénomène par un modèle, on peut faire de la prédiction ou de la prévision. Les applications sont très vastes : prévisions météorologiques, prédiction des ventes d'une campagne marketing, analyse d'image, analyse de textes, segmentation des utilisateurs d'un site en plusieurs groupes en fonction de leur comportement, etc. . Ce sont ces même modèles qui sont très employés en intelligence artificielle.</p>
+<p id="r-4761695" data-claire-element-id="8683982">
 </p>
 <h3 id="r-4724029" data-claire-element-id="8600999">
 Aller plus loin : Plus de cours !</h3>
@@ -207,14 +192,16 @@ Modélisation</a>
 </ul>
 <p id="r-4724028" data-claire-element-id="8600998">
 </p>
-<h3 id="r-4724030" data-claire-element-id="8601000">
+<h3 id="r-4761699" data-claire-element-id="8683996">
 Aller plus loin : Data Analyst vs Data Scientist</h3>
 <div id="r-4723898" data-claire-element-id="8600577" data-claire-semantic="question">
 <p id="r-4723897" data-claire-element-id="8600576">
 Quid de la différence entre un Data Scientist et un Data Analyst ?</p>
 </div>
-<p id="r-4723899" data-claire-element-id="8600578">
-La frontière entre ces deux métiers est assez floue, mais on peut dire que le Data Analyst pratique les statistiques descriptives, exploratoires et inférentielles. Le Data Scientist doit maîtriser ces 3 domaines, et est également capable de modéliser des phénomènes.</p>
+<p id="r-4761698" data-claire-element-id="8683995">
+La frontière entre ces deux métiers est assez floue, mais on peut dire que le Data Analyst pratique les statistiques descriptives, exploratoires et inférentielles. Le Data Scientist doit maîtriser ces 3 domaines, et doit également être capable de modéliser des phénomènes. Il a à sa disposition une batterie d'algorithmes qui permettent de trouver la modélisation la plus performante pour le problème qu'il doit traiter. Ces modèles peuvent être utilisés pour faire de la prédiction ou de la prévision, et sont souvent utilisés en intelligence artificielle. Pour avoir un aperçu des applications du travail de Data Scientist, vous pouvez faire un tour<a href="/courses/initiez-vous-au-machine-learning/comment-resoudre-un-probleme-de-data-science">
+ici</a>
+.</p>
 <p id="r-4723753" data-claire-element-id="8600183">
 </p>
 <p id="r-4723754" data-claire-element-id="8600184">
