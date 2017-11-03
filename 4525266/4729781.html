@@ -1,17 +1,5 @@
-<div itemprop="articleBody" data-page-indentifier="" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
+<div itemprop="articleBody" data-page-indentifier="/courses/nettoyez-et-decrivez-votre-jeu-de-donnees/recentrez-vous-avec-les-mesures-de-tendance-centrale" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
 <div class="userContent js-userContent">
-<table id="r-4763495" data-claire-element-id="8690415">
-<tbody id="r-4763494" data-claire-element-id="8690414">
-<tr id="r-4763493" data-claire-element-id="8690413">
-<td id="r-4763492" data-claire-element-id="8690412">
-<p id="r-4763491" data-claire-element-id="8690411">
-INTRODUCTION SUR LES MESURES STATISTIQUES</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p id="r-4737376" data-claire-element-id="8690416">
-</p>
 <p id="r-4763496" data-claire-element-id="8690417">
 Vous devez vous rendre en voiture à un entretient d'embauche, loin de chez vous, dans une autre ville que la vôtre. Vous vous demandez à quelle heure il faut partir pour arriver là bas à 15h. Comme vous avez beaucoup de choses à faire le matin, vous ne souhaitez pas partir trop tôt, mais vous voulez quand même être sûr d'être à l'heure.</p>
 <p id="r-4730252" data-claire-element-id="8619992">
@@ -52,7 +40,7 @@ non ?</p>
 Tout à fait ! Nous arrivons donc à l'objet de ce chapitre : les<strong>
 mesures de tendance centrale</strong>
 . Nous allons en voir 3, et devinez quoi : elles commencent toutes par un M !</p>
-<h3 id="r-4730342" data-claire-element-id="8621636">
+<h3 id="r-4730342" data-claire-element-id="8697314">
 Les mesures de tendance centrale</h3>
 <h4 id="r-4730485" data-claire-element-id="8621573">
 Le mode</h4>
@@ -72,7 +60,7 @@ classe modale</strong>
 est la classe la plus fréquente. Votre ami a découpé sa variable en tranches de 5 minutes, et a déterminé que la tranche la plus fréquente était<math>
 $\([40min;45min[\)$</math>
 .</p>
-<h4 id="r-4730833" data-claire-element-id="8621631">
+<h4 id="r-4730833" data-claire-element-id="8697313">
 La moyenne</h4>
 <p id="r-4730826" data-claire-element-id="8621574">
 Vous répondez donc à votre ami :<em>
@@ -96,19 +84,14 @@ Il est courant d'associer la notion de moyenne à la notion d'équilibre et de c
 <p id="r-4730831" data-claire-element-id="8621623">
 En supposant que le poids du bambou soit négligeable par rapport au poids des balles de golf.</p>
 </aside>
-<table id="r-4730868" data-claire-element-id="8621629">
-<tbody id="r-4730867" data-claire-element-id="8621628">
-<tr id="r-4730866" data-claire-element-id="8621627">
-<td id="r-4730865" data-claire-element-id="8621626">
-<p id="r-4730864" data-claire-element-id="8621625">
-illus</p>
-</td>
-</tr>
-</tbody>
-</table>
+<figure id="r-4765743" data-claire-element-id="8697312">
+<img id="r-4765741" data-claire-element-id="8696411" src="https://user.oc-static.com/upload/2017/10/31/15094709121631_barycentre.jpeg" alt="Le centre de gravité est situé à 30">
+<figcaption>
+Le centre de gravité est situé à 30.</figcaption>
+</figure>
 <p id="r-4730832" data-claire-element-id="8621630">
 Oui mais sur notre bambou... si l'une des valeurs est aberrante, sa balle de golf sera très éloignée des autres sur le bambou : et ce dernier sera totalement déséquilibré, juste à cause d'une seule valeur !</p>
-<h4 id="r-4730854" data-claire-element-id="8621635">
+<h4 id="r-4730854" data-claire-element-id="8697234">
 La médiane</h4>
 <p id="r-4730844" data-claire-element-id="8621594">
 Derrière le problème de bambou déséquilibré, vous aurez reconnu le concept des valeurs aberrante. Comme nous venons de le voir, la moyenne est une mesure<em>
@@ -172,34 +155,87 @@ est pair, la médiane vaut</p>
 <math>
 $\[Med = \frac{1}{2}(x_{(\frac{n}{2})}+x_{(\frac{n}{2}+1)})\]$</math>
 </p>
-<p id="r-4730692" data-claire-element-id="8621150">
-</p>
-<p id="r-4730851" data-claire-element-id="8621603">
-</p>
-<p id="r-4730852" data-claire-element-id="8621604">
-</p>
-<p id="r-4730853" data-claire-element-id="8621605">
-</p>
 <p id="r-4730542" data-claire-element-id="8620894">
 </p>
-<h3 id="r-4730544" data-claire-element-id="8620898">
-Laquelle choisir ?</h3>
-<p id="r-4730543" data-claire-element-id="8620897">
-</p>
-<h3 id="r-4730546" data-claire-element-id="8620900">
+<h3 id="r-4730546" data-claire-element-id="8697316">
 Du côté du code</h3>
-<p id="r-4730545" data-claire-element-id="8620899">
+<p id="r-4730545" data-claire-element-id="8697236">
+Difficile de faire plus simple ici : une ligne de code par indicateur ! Prenons l'exemple de la variable<em>
+montant</em>
+de nos relevés de comptes :</p>
+<pre id="r-4766057" data-claire-element-id="8697237">
+<code data-claire-semantic="python">
+data['montant'].mean() data['montant'].median() data['montant'].mode()</code>
+</pre>
+<p id="r-4766058" data-claire-element-id="8697238">
+Chacune de ses lignes renvoie une valeur, sauf la ligne 3 qui renvoie un<code data-claire-semantic="text">
+pd.Series</code>
+, car une distribution peut avoir plusieurs modes (voir la section<em>
+Aller plus loin</em>
+).</p>
+<p id="r-4766059" data-claire-element-id="8697275">
+Les montants des opérations sont très hétérogènes : il y a des dépenses (à montant négatif) parfois grosses (les loyers par exemple), souvent petites (courses, téléphone, etc.), et il y a des rentrées d'argent (à montant positif), peu fréquentes mais grosses. Difficile donc d'interpréter la moyenne (très sensible aux valeurs atypiques) qui vaut ici<strong>
+2.87€</strong>
+. On a le même problème pour la médiane qui vaut<strong>
+-9.6€</strong>
+. Le fait qu'elle soit négative nous indique cependant qu'il y a plus de dépenses que d'entrées d'argent. Par contre, le mode nous indique que la plupart des opérations tournent autour de -<strong>
+1.6€</strong>
+. Ici, les 3 mesures sont très éloignées les unes des autres.</p>
+<p id="r-4766060" data-claire-element-id="8697256">
+Pour avoir des montants d'opérations plus hétérogènes, je vous propose de calculer ces 3 mesures pour<em>
+chaque</em>
+catégorie d'opération. Au sein d'une catégorie, les montants devraient être moins éparpillés puisque les opérations sont de même nature. Je vous propose donc une boucle for, qui itérera sur chacune des catégories :</p>
+<pre id="r-4766067" data-claire-element-id="8697315">
+<code data-claire-semantic="python">
+for cat in data["categ"].unique(): subset = data[data.categ == cat] # Création du sous-échantillon print("-"*20) print(cat) print("moy:\n",subset['montant'].mean()) print("med:\n",subset['montant'].median()) print("mod:\n",subset['montant'].mode()) subset["montant"].hist() # Crée l'histogramme plt.show() # Affiche l'histogramme</code>
+</pre>
+<p id="r-4766061" data-claire-element-id="8697258">
+Pour chaque catégorie, on crée un sous échantillon (<em>
+subset</em>
+) qui contient uniquement les opérations de la catégorie en cours. On affiche en lignes 5 à 7 les 3 mesures, et on affiche également l'histogramme pour mettre en perspectives les 3 mesures. A vous d'interpréter vos résultats !</p>
+<aside id="r-4766069" data-claire-element-id="8697277" data-claire-semantic="information">
+<p id="r-4766068" data-claire-element-id="8697276">
+Les résultats de la catégorie TRANSPORT sont intéressants. La moyenne et la médiane sont quasiment égales : 53€, ce qui traduit des valeurs assez homogènes. Cependant, le mode est à 73€, ce qui traduit de nombreuses dépenses ayant ce montant. Si vous avez le courage, investiguez sur ces dépenses particulières à partir de l'échantillon originel. ;)</p>
+</aside>
+<p id="r-4766070" data-claire-element-id="8697261">
 </p>
-<h3 id="r-4730547" data-claire-element-id="8621157">
+<h3 id="r-4730547" data-claire-element-id="8696566">
 Aller plus loin : Sur un histogramme</h3>
-<p id="r-4730697" data-claire-element-id="8621156">
+<p id="r-4730697" data-claire-element-id="8696555">
+Sur un histogramme, la médiane est la valeur qui divise la surface en deux. La moyenne est le centre de gravité de la distribution, et le mode est le "point le plus haut" de la distribution, comme sur cette illustration :</p>
+<p id="r-4765792" data-claire-element-id="8696556">
+<a href="https://commons.wikimedia.org/wiki/File:Visualisation_mode_median_mean.svg">
+https://commons.wikimedia.org/wiki/File:Visualisation_mode_median_mean.svg</a>
 </p>
-<h3 id="r-4730698" data-claire-element-id="8621610">
+<table id="r-4765797" data-claire-element-id="8696561">
+<tbody id="r-4765796" data-claire-element-id="8696560">
+<tr id="r-4765795" data-claire-element-id="8696559">
+<td id="r-4765794" data-claire-element-id="8696558">
+<p id="r-4765793" data-claire-element-id="8696557">
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p id="r-4765798" data-claire-element-id="8696562">
+</p>
+<aside id="r-4765800" data-claire-element-id="8696564" data-claire-semantic="information">
+<p id="r-4765799" data-claire-element-id="8696563">
+Ce graphique ne représente pas un histogramme, mais plutôt une courbe lisse et continue. On l'appelle<strong>
+densité de probabilité</strong>
+, mais l'interprétation de ces graphiques est la même avec un histogramme !</p>
+</aside>
+<p id="r-4765801" data-claire-element-id="8696565">
+</p>
+<h3 id="r-4730698" data-claire-element-id="8697319">
 Aller plus loin : Distributions plurimodales</h3>
-<p id="r-4730855" data-claire-element-id="8621608">
-</p>
-<p id="r-4730856" data-claire-element-id="8621609">
-</p>
+<p id="r-4730856" data-claire-element-id="8696445">
+Plus généralement, il arrive que l'on extrapole la définition du mode en l'assimilant au(x) pic(s) d'une distribution. Le mode n’est donc pas obligatoirement unique. Lorsqu’une distribution n’a qu’un seul pic, on parle de distribution unimodale. Il arrive aussi qu’une distribution présente deux ou plusieurs pics : on parle alors de distribution bimodale ou plurimodale. Donner le nombre de modes d'une distribution est dans une statistique intéressante en présence d'une distribution plurimodale.</p>
+<figure id="r-4765759" data-claire-element-id="8697318">
+<img id="r-4765757" data-claire-element-id="8696446" src="https://user.oc-static.com/upload/2017/10/31/15094717834941_plurimodal.png" alt="Une distribution bimodale">
+<figcaption>
+Une distribution bimodale</figcaption>
+</figure>
 </div>
 <div class="js-courseSelementActions sideActions">
 <ul class="sideActions__container">

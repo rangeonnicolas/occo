@@ -1,4 +1,4 @@
-<div itemprop="articleBody" data-page-indentifier="" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
+<div itemprop="articleBody" data-page-indentifier="/courses/nettoyez-et-decrivez-votre-jeu-de-donnees/dispersez-vous-avec-les-mesures-de-dispersion" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
 <div class="userContent js-userContent">
 <aside id="r-4738797" data-claire-element-id="8644202" data-claire-semantic="information">
 <p id="r-4738796" data-claire-element-id="8644201">
@@ -197,21 +197,31 @@ outliers</em>
 <p id="r-4738442" data-claire-element-id="8643213">
 <img id="r-4738441" data-claire-element-id="8643212" src="https://user.oc-static.com/upload/2017/10/24/1508878760102_Boxplot.jpeg" alt="">
 </p>
-<h3 id="r-4738451" data-claire-element-id="8643138">
+<h3 id="r-4738451" data-claire-element-id="8697337">
 Du côté du code</h3>
-<p id="r-4738418" data-claire-element-id="8643063">
-</p>
-<table id="r-4738450" data-claire-element-id="8643137">
-<tbody id="r-4738449" data-claire-element-id="8643136">
-<tr id="r-4738448" data-claire-element-id="8643135">
-<td id="r-4738447" data-claire-element-id="8643134">
-<p id="r-4738446" data-claire-element-id="8643133">
-code</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p id="r-4738034" data-claire-element-id="8642064">
+<p id="r-4738418" data-claire-element-id="8697331">
+Pour la variance empirique et l'écart-type empirique, c'est le même principe qu'au chapitre précédent : on appelle les méthodes<code data-claire-semantic="text">
+var()</code>
+et<code data-claire-semantic="text">
+std()</code>
+sur la variable étudiée. A vrai dire, ces 2 méthodes renverront des résultats un peu différents des calculs faits avec les formules données ci-dessus. C'est une histoire d'estimateur biaisé (pour les motivés, voir la section<em>
+Aller plus loin : variance empirique</em>
+). Pour obtenir les résultats décrits ci-dessus, il faut ajouter<code data-claire-semantic="text">
+ddof=0</code>
+(lignes 8 et 9).</p>
+<p id="r-4766091" data-claire-element-id="8697332">
+Les boîtes à moustaches et les histogrammes ont la même vocation : donner un aperçu d'une distribution empirique. On va donc afficher les boîtes à moustaches avec les histogrammes, pour que vous puissiez les comparer ;). Ligne 12, le mot clé<code data-claire-semantic="text">
+vert=False</code>
+signifie que nous souhaitons que la boîte à moustaches ne soit pas à la verticale (dont à l'horizontale!). En reprenant le code du chapitre précédent, voilà ce que cela donne :</p>
+<pre id="r-4766092" data-claire-element-id="8697333">
+<code data-claire-semantic="python">
+for cat in data["categ"].unique(): subset = data[data.categ == cat] print("-"*20) print(cat) print("moy:\n",subset['montant'].mean()) print("med:\n",subset['montant'].median()) print("mod:\n",subset['montant'].mode()) print("var:\n",subset['montant'].var(ddof=0)) print("ect:\n",subset['montant'].std(ddof=0)) subset["montant"].hist() plt.show() subset.boxplot(column="montant", vert=False) plt.show()</code>
+</pre>
+<aside id="r-4766093" data-claire-element-id="8697335" data-claire-semantic="information">
+<p id="r-4738034" data-claire-element-id="8697334">
+La variance du montant des opération de la catégorie LOYER est nulle, ce qui signifie que le montant du loyer est toujours resté fixe.</p>
+</aside>
+<p id="r-4766094" data-claire-element-id="8697336">
 </p>
 <h3 id="r-4738044" data-claire-element-id="8643096">
 Aller plus loin : variance empirique ?</h3>

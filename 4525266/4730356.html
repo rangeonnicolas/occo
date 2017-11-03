@@ -1,4 +1,4 @@
-<div itemprop="articleBody" data-page-indentifier="" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
+<div itemprop="articleBody" data-page-indentifier="/courses/nettoyez-et-decrivez-votre-jeu-de-donnees/formez-vous-sur-les-mesures-de-forme" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
 <div class="userContent js-userContent">
 <p id="r-4738761" data-claire-element-id="8645881">
 Bon, votre ami vous a donné la moyenne des temps de trajets, ainsi que l’écart-type. Vous êtes déjà plus serein. Mais... il y a quelque chose que vous n'avez pas prévu. Regardez ces 2 distributions :</p>
@@ -76,9 +76,9 @@ $\[\frac{\frac{1}{n}\sum_{i=1}^{n}(x_i-\overline{x})^3}{s^3}\]$</math>
 </p>
 <p id="r-4739005" data-claire-element-id="8644844">
 </p>
-<h3 id="r-4739576" data-claire-element-id="8683516">
+<h3 id="r-4739576" data-claire-element-id="8697412">
 Les mesures de forme</h3>
-<h4 id="r-4739568" data-claire-element-id="8683510">
+<h4 id="r-4739568" data-claire-element-id="8697403">
 Le Skewness empirique</h4>
 <p id="r-4739010" data-claire-element-id="8645841">
 Devinez quoi ! L'indicateur que nous venons de créer es utilisé par les statisticiens, et s'appelle le<strong>
@@ -120,7 +120,7 @@ alors la distribution est étalée à gauche.</p>
 </ul>
 <p id="r-4739058" data-claire-element-id="8645035">
 </p>
-<figure id="r-4739567" data-claire-element-id="8683509">
+<figure id="r-4739567" data-claire-element-id="8697402">
 <img id="r-4739246" data-claire-element-id="8645661" src="https://user.oc-static.com/upload/2017/10/25/15089270573292_ex_Skewness.jpeg" alt="Relation entre la forme de la distribution et le skewness">
 <figcaption>
 Relation entre la forme de la distribution et le skewness</figcaption>
@@ -133,7 +133,7 @@ asymétrie</strong>
 Aller plus loin</em>
 , au bas de ce chapitre. Vous y découvrirez pourquoi comparer la médiane à la moyenne mesure aussi l'asymétrie.</p>
 </aside>
-<h4 id="r-4739575" data-claire-element-id="8683515">
+<h4 id="r-4739575" data-claire-element-id="8697411">
 Le Kurtosis empirique</h4>
 <p id="r-4739407" data-claire-element-id="8647364">
 Le<strong>
@@ -143,7 +143,7 @@ aplatissement</strong>
 . L’aplatissement peut s’interpréter à la condition que la distribution soit symétrique. En fait, on compare l'aplatissement par rapport à la distribution la plus célèbre : appelée<strong>
 distribution normale</strong>
 (parfois "courbe en cloche" ou "courbe de Gauss"). Vous en avez probablement déjà vu, elle ressemble à cela :</p>
-<figure id="r-4739570" data-claire-element-id="8683512">
+<figure id="r-4739570" data-claire-element-id="8697405">
 <img id="r-4739517" data-claire-element-id="8646225" src="https://user.oc-static.com/upload/2017/10/25/15089301229401_norm.png" alt="Distribution normale">
 <figcaption>
 Distribution normale</figcaption>
@@ -174,18 +174,18 @@ Aller plus loin</em>
 </div>
 <p id="r-4739749" data-claire-element-id="8647088">
 Il s’interprète comme ceci :</p>
-<ul id="r-4739756" data-claire-element-id="8647142">
-<li id="r-4739755" data-claire-element-id="8647137">
-<p id="r-4739754" data-claire-element-id="8647136">
+<ul id="r-4739756" data-claire-element-id="8697408">
+<li id="r-4739755" data-claire-element-id="8697387">
+<p id="r-4739754" data-claire-element-id="8697386">
 si<math>
 $\(\gamma_2 = 0\)$</math>
-, alors la distribution a la même aplatissement que la distribution normale.</p>
+, alors la distribution a le même aplatissement que la distribution normale.</p>
 </li>
-<li id="r-4739774" data-claire-element-id="8647139">
-<p id="r-4739773" data-claire-element-id="8647138">
+<li id="r-4739774" data-claire-element-id="8697407">
+<p id="r-4739773" data-claire-element-id="8697406">
 si<math>
 $\(\gamma_2 &gt; 0\)$</math>
-, alors elle est moins aplatie que la distribution normale : les observations sont plus concentrées</p>
+, alors elle est moins aplatie que la distribution normale : les observations sont plus concentrées.</p>
 </li>
 <li id="r-4739776" data-claire-element-id="8647141">
 <p id="r-4739775" data-claire-element-id="8647140">
@@ -194,23 +194,28 @@ $\(\gamma_2 &lt; 0\)$</math>
 , alors les observations sont moins concentrées : la distribution est plus aplatie.</p>
 </li>
 </ul>
-<figure id="r-4739779" data-claire-element-id="8683514">
+<figure id="r-4739779" data-claire-element-id="8697410">
 <img id="r-4739777" data-claire-element-id="8647466" src="https://user.oc-static.com/upload/2017/10/25/15089367850815_ex_Kurtosis.jpeg" alt="Relation entre la forme de la distribution et le kurtosis">
 <figcaption>
 Relation entre la forme de la distribution et le kurtosis</figcaption>
 </figure>
-<h3 id="r-4739785" data-claire-element-id="8647153">
+<h3 id="r-4739785" data-claire-element-id="8697416">
 Du côté du code</h3>
-<table id="r-4739784" data-claire-element-id="8647152">
-<tbody id="r-4739783" data-claire-element-id="8647151">
-<tr id="r-4739782" data-claire-element-id="8647150">
-<td id="r-4739781" data-claire-element-id="8647149">
-<p id="r-4739780" data-claire-element-id="8647148">
-code</p>
-</td>
-</tr>
-</tbody>
-</table>
+<p id="r-4766099" data-claire-element-id="8697370">
+Vous connaissez maintenant le principe ! Au code du chapitre précédent, on ajoute les lignes 10 et 11, qui calculent le skewness empirique et le kurtosis empirique :</p>
+<pre id="r-4766109" data-claire-element-id="8697371">
+<code data-claire-semantic="python">
+for cat in data["categ"].unique(): subset = data[data.categ == cat] print("-"*20) print(cat) print("moy:\n",subset['montant'].mean()) print("med:\n",subset['montant'].median()) print("mod:\n",subset['montant'].mode()) print("var:\n",subset['montant'].var(ddof=0)) print("ect:\n",subset['montant'].std(ddof=0)) print("skw:\n",subset['montant'].skew()) print("kur:\n",subset['montant'].kurtosis()) subset["montant"].hist() plt.show() subset.boxplot(column="montant", vert=False) plt.show()</code>
+</pre>
+<aside id="r-4766104" data-claire-element-id="8697415" data-claire-semantic="information">
+<p id="r-4766100" data-claire-element-id="8697351">
+Pour toutes les opération dont la catégorie regroupe principalement des dépenses (téléphone, courses, etc.), il est fort probable que le skewness empirique soit négatif. La distribution des dépenses s'étale vers la gauche, car on fait fréquemment des petites dépenses, et moins souvent des dépenses qui parfois peuvent être très importantes (donc très à gauche) :</p>
+<figure id="r-4766103" data-claire-element-id="8697414">
+<img id="r-4766101" data-claire-element-id="8697352" src="https://user.oc-static.com/upload/2017/10/31/15094904457243_distrib_courses.png" alt="Distribution empirique des montants des dépenses de catégorie COURSES">
+<figcaption>
+Distribution empirique des montants des dépenses de catégorie COURSES</figcaption>
+</figure>
+</aside>
 <h3 id="r-4739311" data-claire-element-id="8647250">
 Aller plus loin : quels mots sur l'asymétrie</h3>
 <p id="r-4739267" data-claire-element-id="8645737">
