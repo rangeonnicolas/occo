@@ -6,22 +6,14 @@ attente</em>
 et<em>
 montant</em>
 .</p>
-<p id="r-4774677" data-claire-element-id="8722512">
+<p id="r-4774677" data-claire-element-id="8730181">
 La variable<em>
 attente</em>
-est renseignée seulement pour les opérations bancaires de la catégorie COURSES. Lors d’un précédent chapitre, vous avez peut-être renseigné une catégorie COURSES sur certaines de vos opérations bancaires. Si ce n’est pas le cas, je vous invite à y refaire un tour pour y télécharger l’échantillon enrichi<em>
+est renseignée seulement pour les opérations bancaires de la catégorie COURSES. Lors d’un précédent chapitre, vous avez peut-être renseigné une catégorie COURSES sur certaines de vos opérations bancaires. Si ce n’est pas le cas, je vous invite à y refaire<a href="/courses/nettoyez-et-decrivez-votre-jeu-de-donnees/telechargez-les-donnees">
+un tour</a>
+pour y télécharger l’échantillon enrichi<em>
 operations_enrichies.csv</em>
 , ou bien si vous êtes motivé, à reprendre vos 20 derniers tickets de caisse pour recréer un échantillon à la main !</p>
-<table id="r-4774682" data-claire-element-id="8722517">
-<tbody id="r-4774681" data-claire-element-id="8722516">
-<tr id="r-4774680" data-claire-element-id="8722515">
-<td id="r-4774679" data-claire-element-id="8722514">
-<p id="r-4774678" data-claire-element-id="8722513">
-lien chapitre</p>
-</td>
-</tr>
-</tbody>
-</table>
 <p id="r-4774683" data-claire-element-id="8722518">
 La variable<em>
 attente</em>
@@ -38,7 +30,9 @@ attente</em>
 est grande, plus la valeur du<em>
 montant</em>
 soit grande.</p>
-<p id="r-4774688" data-claire-element-id="8722691">
+<h3 id="r-4776987" data-claire-element-id="8730193">
+Modélisons !</h3>
+<p id="r-4776986" data-claire-element-id="8729431">
 Mais nous allons faire mieux que cela : calculer le prix moyen des produits que vous consommez en 1 jour, ainsi que la vitesse à laquelle vous accumulez du stock dans vos placards ! Pour cela, nous allons utiliser un modèle. Vous allez voir, c’est très puissant.</p>
 <p id="r-4774694" data-claire-element-id="8722529">
 Pour le modèle que nous allons créer, nous allons faire plusieurs suppositions. Tout d’abord, nous supposons qu’à chaque fois que vous faites les courses, vous achetez 3 types de produits :</p>
@@ -148,16 +142,9 @@ $\(a\)$</math>
 et<math>
 $\(b\)$</math>
 , alors je déplace la droite sur le graphique. Minimiser l'erreur revient en fait à placer la droite dans l'alignement général des points. Voici une illustration très pédagogique, car les points sont presque dans le même alignement :</p>
-<table id="r-4774771" data-claire-element-id="8722697">
-<tbody id="r-4774770" data-claire-element-id="8722696">
-<tr id="r-4774769" data-claire-element-id="8722695">
-<td id="r-4774768" data-claire-element-id="8722694">
-<p id="r-4774767" data-claire-element-id="8722693">
-ILLUS POLY VINCENT</p>
-</td>
-</tr>
-</tbody>
-</table>
+<p id="r-4777097" data-claire-element-id="8730192">
+<img id="r-4777096" data-claire-element-id="8730191" src="https://user.oc-static.com/upload/2017/11/07/15100617101762_RegressionLineaireSimple1.jpeg" alt="">
+</p>
 <p id="r-4774773" data-claire-element-id="8722721">
 On y voit que pour un point<math>
 $\(i\)$</math>
@@ -210,7 +197,7 @@ Aller plus loin : analyser la qualité du modèle</em>
 </aside>
 <p id="r-4774853" data-claire-element-id="8722946">
 </p>
-<h3 id="r-4774821" data-claire-element-id="8723064">
+<h3 id="r-4774821" data-claire-element-id="8730245">
 Aller plus loin : analyser la qualité du modèle</h3>
 <p id="r-4774797" data-claire-element-id="8722880">
 Imaginons que j'aie effacé par erreur le montant d'une opération bancaire de catégorie COURSES. Je pourrais combler cette valeur manquante par la moyenne des montants des opérations. C'est la solution la plus basique qui soit, et vous vous imaginez qu'elle n'est pas très bonne ! Elle n'est pas très bonne car autour de la moyenne, les valeurs des montants varient, parfois de beaucoup.</p>
@@ -226,18 +213,18 @@ expliquer</strong>
 la totalité des variations. Les variation autour de la moyenne sont mesurées par la<strong>
 variance</strong>
 . Un modèle parfait aurait expliqué 100% de la variation.</p>
-<p id="r-4774855" data-claire-element-id="8722949">
-Ce pourcentage est calculé grâce à la formule de décomposition de la variance (Analysis of variance en anglais : ANOVA) :</p>
-<table id="r-4774860" data-claire-element-id="8722954">
-<tbody id="r-4774859" data-claire-element-id="8722953">
-<tr id="r-4774858" data-claire-element-id="8722952">
-<td id="r-4774857" data-claire-element-id="8722951">
-<p id="r-4774856" data-claire-element-id="8722950">
-formule</p>
-</td>
-</tr>
-</tbody>
-</table>
+<p id="r-4774855" data-claire-element-id="8730241">
+Ce pourcentage est calculé grâce à la formule de décomposition de la variance (Analysis of variance en anglais : ANOVA).</p>
+<p id="r-4777116" data-claire-element-id="8730242">
+<math>
+$\[SCT = SCE + SCR\]$</math>
+</p>
+<p id="r-4777117" data-claire-element-id="8730243">
+<math>
+$\[\sum_{j=1}^{n}(y_j-\overline{y})^2 = \sum_{j=1}^n(\hat{y_j}-\overline{y})^2 + \sum_{j=1}^n(y_j-\overline{y_j})^2\]$</math>
+</p>
+<p id="r-4777118" data-claire-element-id="8730244">
+SCT (Somme des Carrés Totale) traduit la variation totale de Y , SCE (Somme des Carrés Expliquée) traduit la variation expliquée par le modèle et SCR (Somme des Carrés Résiduelle) traduit la variation inexpliquée par le modèle.</p>
 <p id="r-4774818" data-claire-element-id="8722981">
 Pour la régression linéaire, le pourcentage de variation expliquée est donné par le<strong>
 coefficient de détermination</strong>
@@ -266,7 +253,7 @@ $\(y=ax.b\)$</math>
 </p>
 <p id="r-4774820" data-claire-element-id="8722884">
 </p>
-<h3 id="r-4774782" data-claire-element-id="8722763">
+<h3 id="r-4774782" data-claire-element-id="8730204">
 Aller plus loin : estimation de<math>
 $\(a\)$</math>
 et<math>
@@ -278,9 +265,9 @@ $\(a\)$</math>
 et<math>
 $\(b\)$</math>
 :</p>
-<p id="r-4774786" data-claire-element-id="8722752">
+<p id="r-4777101" data-claire-element-id="8730201">
 <math>
-$\(\hat{a}=\frac{s_{X,Y}}{s^2_X} \ \ \ \ \ \text{et}\ \ \ \ \ \hat{b}=\overline{y}-\hat{a}\overline{x}\)$</math>
+$\[\hat{a}=\frac{s_{X,Y}}{s^2_X} \ \ \ \ \ \text{et}\ \ \ \ \ \hat{b}=\overline{y}-\hat{a}\overline{x}\]$</math>
 </p>
 <div id="r-4774788" data-claire-element-id="8722754" data-claire-semantic="question">
 <p id="r-4774787" data-claire-element-id="8722753">
@@ -294,19 +281,11 @@ $\(a\)$</math>
 et<math>
 $\(\hat{b}\)$</math>
 , même si votre comportement de consommation lui, n'aura pas bougé.</p>
-<aside id="r-4774780" data-claire-element-id="8722762" data-claire-semantic="information">
-<p id="r-4774779" data-claire-element-id="8722756">
-Pour la démonstration, c'est par ici.</p>
-<table id="r-4774794" data-claire-element-id="8722761">
-<tbody id="r-4774793" data-claire-element-id="8722760">
-<tr id="r-4774792" data-claire-element-id="8722759">
-<td id="r-4774791" data-claire-element-id="8722758">
-<p id="r-4774790" data-claire-element-id="8722757">
-url</p>
-</td>
-</tr>
-</tbody>
-</table>
+<aside id="r-4774780" data-claire-element-id="8730203" data-claire-semantic="information">
+<p id="r-4774779" data-claire-element-id="8730202">
+Pour la démonstration, c'est<a href="https://fr.wikipedia.org/wiki/R%C3%A9gression_lin%C3%A9aire#Application_dans_le_cas_d.27un_mod.C3.A8le_de_r.C3.A9gression_lin.C3.A9aire_simple">
+par ici</a>
+.</p>
 </aside>
 <p id="r-4774781" data-claire-element-id="8722727">
 </p>

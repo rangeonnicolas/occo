@@ -20,7 +20,7 @@ Si les données ont été saisies par un humain, alors il y a de fortes chances 
 Si les données proviennent de capteurs (exemple : le système de géolocalisation de votre téléphone, le capteur de vitesse de votre véhicule, la machine qui valide votre billet à l'entrée du bus, etc. ), alors il se peut que le capteur se dégrade au cours du temps et ne soit plus étalonné (ex: un thermomètre qui indique 23°c alors que la température réelle est de 25°c) ou bien qu'il ne fonctionne plus (il n'envoie plus de données).</p>
 <p id="r-4726016" data-claire-element-id="8606841">
 </p>
-<h3 id="r-4698251" data-claire-element-id="8610622">
+<h3 id="r-4698251" data-claire-element-id="8729296">
 Les différents types d'erreurs</h3>
 <aside id="r-4698376" data-claire-element-id="8531361" data-claire-semantic="information">
 <p id="r-4697588" data-claire-element-id="8531033">
@@ -222,7 +222,7 @@ Bénin</p>
 </table>
 <p id="r-4698246" data-claire-element-id="8610621">
 Bon... vous voyez que cet échantillon n'est pas vraiment vraiment propre, n'est-ce pas ?</p>
-<ol id="r-4698291" data-claire-element-id="8604793">
+<ol id="r-4698291" data-claire-element-id="8729293">
 <li id="r-4698282" data-claire-element-id="8531212">
 <p id="r-4698281" data-claire-element-id="8531211">
 Tout d'abord, il y a des cases vides pour les variables Pays et Date de naissance. On appelle cela les<em>
@@ -263,28 +263,32 @@ De plus, sur les 2 lignes de Samuel, les tailles sont différentes : 1,67m et 1,
 erreur de contradiction</em>
 .</p>
 </li>
-<li id="r-4698657" data-claire-element-id="8532102">
-<p id="r-4698656" data-claire-element-id="8532101">
-Hanna mesure 3,45m. Cette taille est très différente des tailles usuelles des êtres humains : c'est une<em>
-valeur aberrante</em>
+<li id="r-4698657" data-claire-element-id="8729292">
+<p id="r-4698656" data-claire-element-id="8729291">
+Hanna mesure 3,45m. Cette taille est très différente des tailles usuelles des êtres humains : c'est une valeur qualifiée d'<em>
+outlier</em>
 . Même si nous n'en sommes pas sûrs, il s'agit probablement d'une erreur.</p>
 </li>
 </ol>
-<aside id="r-4724628" data-claire-element-id="8602427" data-claire-semantic="information">
-<p id="r-4724627" data-claire-element-id="8602426">
-En anglais, une valeur aberrante est souvent appelée<strong>
+<aside id="r-4724628" data-claire-element-id="8729295" data-claire-semantic="information">
+<p id="r-4724627" data-claire-element-id="8729294">
+Le terme anglophone d'<strong>
 outlier</strong>
+peut désigner deux choses en français : une<strong>
+valeur atypique</strong>
+ou une<strong>
+valeur aberrante</strong>
 .</p>
 </aside>
 <p id="r-4726017" data-claire-element-id="8606843">
 </p>
-<h3 id="r-4724629" data-claire-element-id="8602430">
+<h3 id="r-4724629" data-claire-element-id="8729300">
 Que faire de toutes ces erreurs ?</h3>
 <p id="r-4697932" data-claire-element-id="8531047">
 Je préfère vous le dire tout de suite, dès que vous devrez nettoyer un jeu de données, il n'y a pas de règle toute faite. Tous les traitements que vous ferez seront en fonction de l'utilisation que vous aurez de vos données. Deux data analysts ne nettoierons pas un même jeu de donnés de la même manière s'ils ont des objectifs différents !</p>
 <p id="r-4698253" data-claire-element-id="8531048">
 Pas de règle donc, mais je peux vous donner quelques pistes :</p>
-<ol id="r-4698351" data-claire-element-id="8532107">
+<ol id="r-4698351" data-claire-element-id="8729299">
 <li id="r-4698344" data-claire-element-id="8531218">
 <p id="r-4698343" data-claire-element-id="8531217">
 Concernant les valeurs manquantes, c'est l'objet du chapitre suivant. ;)</p>
@@ -329,9 +333,9 @@ jour/mois/année</code>
 <p id="r-4698386" data-claire-element-id="8531383">
 Pour le doublon, vous verrez cela dans le chapitre suivant.</p>
 </li>
-<li id="r-4698659" data-claire-element-id="8532106">
-<p id="r-4698658" data-claire-element-id="8532105">
-Pour la valeur aberrante, c'est également dans le chapitre suivant ! ;)</p>
+<li id="r-4698659" data-claire-element-id="8729298">
+<p id="r-4698658" data-claire-element-id="8729297">
+Pour l'outlier, c'est également dans le chapitre suivant ! ;)</p>
 </li>
 </ol>
 <aside id="r-4698384" data-claire-element-id="8531373" data-claire-semantic="information">

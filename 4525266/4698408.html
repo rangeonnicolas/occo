@@ -1,7 +1,7 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/nettoyez-et-decrivez-votre-jeu-de-donnees/valeurs-manquantes-aberrantes-et-doublons-sachez-reagir" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
 <div class="userContent js-userContent">
-<p id="r-4698446" data-claire-element-id="8685681">
-Nous l'avons vu dans le chapitre précédents, un échantillon peut contenir des valeurs manquantes, aberrantes et des doublons. Alors que faire ?</p>
+<p id="r-4698446" data-claire-element-id="8729321">
+Nous l'avons vu dans le chapitre précédents, un échantillon peut contenir des valeurs manquantes, outliers et des doublons. Alors que faire ?</p>
 <aside id="r-4762155" data-claire-element-id="8686262" data-claire-semantic="warning">
 <p id="r-4762154" data-claire-element-id="8686261">
 Certaines des méthodes suivantes suppriment de l'information dans votre échantillon. Faites attention à toujours<em>
@@ -78,35 +78,55 @@ Dans tous les cas, il est nécessaire de toujours préciser quelle méthode vous
 </aside>
 <p id="r-4698407" data-claire-element-id="8599486">
 </p>
-<h3 id="r-4698850" data-claire-element-id="8685963">
-Les valeurs aberrantes</h3>
-<p id="r-4698842" data-claire-element-id="8685875">
-Hanna mesure 3,45m. Vous ne trouvez pas cela aberrant ? Si. C'est aberrant<em>
+<h3 id="r-4698850" data-claire-element-id="8729575">
+Les outliers</h3>
+<p id="r-4698842" data-claire-element-id="8729322">
+Hanna mesure 3,45m. Vous ne trouvez pas cela très gran ? Si. C'est très grand<em>
 comparé</em>
 aux tailles des autres êtres humains.</p>
-<p id="r-4698861" data-claire-element-id="8533302">
-Mais attention, une valeur aberrante ne signifie pas forcément une valeur fausse ! En effet, Hanna mesure peut-être réellement 3,45m. Ok, c'est difficile à concevoir, mais c'est possible.</p>
-<p id="r-4698966" data-claire-element-id="8533303">
-Idéalement, il faudrait vérifier si les valeurs aberrantes sont erronées ou pas. Par exemple, un thermomètre qui mesure les températures en France peut indiquer 40°c, mais il peut s'agir soit d'une défaillance du capteur de température, soit d'une valeur réelle.</p>
-<p id="r-4698967" data-claire-element-id="8602432">
-Dans tous les cas, les valeurs aberrantes méritent toujours que l'on s'y attarde. Dans certains cas, elles peuvent même donner des indications intéressantes</p>
-<p id="r-4724150" data-claire-element-id="8685876">
-Alors que faire avec les valeurs aberrantes ? Si nous sommes sûrs que la valeur est erronée (erreur de saisie ou défaut d’un capteur par exemple), alors il faut la supprimer s’il n’est pas possible de connaître la vraie valeur. Dans les autres cas, nous avons le choix entre :</p>
-<ul id="r-4724155" data-claire-element-id="8685962">
-<li id="r-4724152" data-claire-element-id="8685878">
-<p id="r-4724151" data-claire-element-id="8685877">
-Supprimer la valeur aberrante. On se retrouve alors avec une valeur manquante, à laquelle on peut imputer une valeur comme nous l’avons vu précédemment. L’imputation n’est pas obligatoire.</p>
+<p id="r-4698861" data-claire-element-id="8729323">
+Mais attention, un outlier n'est pas forcément une valeur fausse ! En effet, Hanna mesure peut-être réellement 3,45m. Ok, c'est difficile à concevoir, mais c'est possible.</p>
+<aside id="r-4776952" data-claire-element-id="8729574" data-claire-semantic="warning">
+<p id="r-4776946" data-claire-element-id="8729324">
+Un<strong>
+outlier</strong>
+peut être :</p>
+<ul id="r-4776951" data-claire-element-id="8729573">
+<li id="r-4776948" data-claire-element-id="8729326">
+<p id="r-4776947" data-claire-element-id="8729325">
+une valeur<strong>
+aberrante</strong>
+: c'est une valeur qui est manifestement fausse</p>
 </li>
-<li id="r-4724154" data-claire-element-id="8685961">
-<p id="r-4724156" data-claire-element-id="8685946">
-Conserver la valeur aberrante.</p>
+<li id="r-4776950" data-claire-element-id="8729572">
+<p id="r-4776949" data-claire-element-id="8729571">
+une valeur<strong>
+atypique</strong>
+: c'est une valeur qui "sort du lot", mais pas forcément fausse.</p>
 </li>
 </ul>
-<p id="r-4762209" data-claire-element-id="8685951">
-Comment choisir entre ces deux options ? Tout dépend des traitements que vous appliquerez par la suite. Certaines méthodes sont dites « robustes », car elle ne sont pas déstabilisées par les valeurs aberrantes. Par exemple, nous verrons par la suite que la moyenne est très sensible aux valeurs aberrantes, alors que la médiane de l’est pas. Si vous souhaitez faire une moyenne, créez un sous-échantillons dans lequel vous supprimez les valeurs aberrantes. Mais si vous calculez aussi la médiane, travaillez sur l’échantillon de départ. ;)</p>
-<aside id="r-4724158" data-claire-element-id="8601297" data-claire-semantic="warning">
-<p id="r-4724157" data-claire-element-id="8601296">
-N’hésitez pas, quand vous présentez votre analyse, à citer vos valeurs aberrantes si elles sont intéressantes. Par exemple « les relevés de température contiennent 2 valeurs aberrantes à 42°c, dus à 2 jours de canicule extrême »</p>
+</aside>
+<p id="r-4698966" data-claire-element-id="8729341">
+Idéalement, il faudrait vérifier si les outliers sont erronées ou pas. Par exemple, un thermomètre qui mesure les températures en France peut indiquer 40°c, mais il peut s'agir soit d'une défaillance du capteur de température, soit d'une valeur réelle.</p>
+<p id="r-4698967" data-claire-element-id="8729342">
+Dans tous les cas, les outliers méritent toujours que l'on s'y attarde. Dans certains cas, elles peuvent même donner des indications intéressantes</p>
+<p id="r-4724150" data-claire-element-id="8729343">
+Alors que faire avec les outliers ? Si nous sommes sûrs que la valeur est erronée (erreur de saisie ou défaut d’un capteur par exemple), alors il faut la supprimer s’il n’est pas possible de connaître la vraie valeur. Dans les autres cas, nous avons le choix entre :</p>
+<ul id="r-4724155" data-claire-element-id="8729348">
+<li id="r-4724152" data-claire-element-id="8729345">
+<p id="r-4724151" data-claire-element-id="8729344">
+Supprimer la valeur. On se retrouve alors avec une valeur manquante, à laquelle on peut imputer une valeur comme nous l’avons vu précédemment. L’imputation n’est pas obligatoire.</p>
+</li>
+<li id="r-4724154" data-claire-element-id="8729347">
+<p id="r-4724156" data-claire-element-id="8729346">
+Conserver la valeur.</p>
+</li>
+</ul>
+<p id="r-4762209" data-claire-element-id="8729349">
+Comment choisir entre ces deux options ? Tout dépend des traitements que vous appliquerez par la suite. Certaines méthodes sont dites « robustes », car elle ne sont pas déstabilisées par les outliers. Par exemple, nous verrons par la suite que la moyenne est très sensible aux outliers, alors que la médiane de l’est pas. Si vous souhaitez faire une moyenne, créez un sous-échantillons dans lequel vous supprimez les outliers. Mais si vous calculez aussi la médiane, travaillez sur l’échantillon de départ. ;)</p>
+<aside id="r-4724158" data-claire-element-id="8729351" data-claire-semantic="warning">
+<p id="r-4724157" data-claire-element-id="8729350">
+N’hésitez pas, quand vous présentez votre analyse, à citer les outliers si ils sont intéressantes. Par exemple « les relevés de température contiennent 2 outliers à 42°c, dus à 2 jours de canicule extrême »</p>
 </aside>
 <p id="r-4724159" data-claire-element-id="8601298">
 </p>
