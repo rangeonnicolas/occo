@@ -10,11 +10,13 @@ categ</em>
 par exemple, on pourrait sélectionner la colonne<em>
 categ</em>
 du tableau, et l'afficher telle qu'elle :</p>
-<p id="r-4742286" data-claire-element-id="8690362">
-<img id="r-4763476" data-claire-element-id="8690361" src="https://user.oc-static.com/upload/2017/10/30/15094043712247_categ.png" alt="">
-</p>
-<p id="r-4742287" data-claire-element-id="8656332">
-Mais il faut avouer que c'est bien illisible ! :waw: En plus, il est fréquent d'avoir des échantillons de 1000 individus ou plus. Une colonne avec 1000 valeur dedans, c'est très moche et très difficile à interpréter. Il y a une solution bien meilleure, qui consiste à dire :</p>
+<figure id="r-4789818" data-claire-element-id="8764082">
+<img id="r-4789816" data-claire-element-id="8763981" src="https://user.oc-static.com/upload/2017/10/30/15094043712247_categ.png" alt="La colonne">
+<figcaption>
+La colonne "categ"</figcaption>
+</figure>
+<p id="r-4742287" data-claire-element-id="8763984">
+Mais il faut avouer que c'est assez illisible ! :waw: En plus, il est fréquent d'avoir des échantillons de 1000 individus ou plus. Une colonne avec 1000 valeur dedans, c'est très moche et très difficile à interpréter. Il y a une solution bien meilleure, qui consiste à dire :</p>
 <p id="r-4742321" data-claire-element-id="8654311">
 <em>
 Il y a 39 fois la valeur COURSES, 212 fois la valeur AUTRE, 21 fois la valeur TRANSPORT, etc.</em>
@@ -41,7 +43,7 @@ autre</em>
 observations</strong>
 . Tous ce qui se rapporte aux observations est qualifié d'empirique.</p>
 </aside>
-<h3 id="r-4742336" data-claire-element-id="8729678">
+<h3 id="r-4742336" data-claire-element-id="8764090">
 Représenter une distribution empirique</h3>
 <p id="r-4742326" data-claire-element-id="8655343">
 Les différentes valeurs que peut prendre la variable<em>
@@ -67,7 +69,7 @@ $\(n_{courses} = 39\)$</math>
 .</p>
 <p id="r-4742327" data-claire-element-id="8654253">
 Le distribution empirique d'une variable, c'est l’ensemble des valeurs prises (modalités) par cette variable, et leurs effectifs associées.</p>
-<h4 id="r-4742335" data-claire-element-id="8693605">
+<h4 id="r-4742335" data-claire-element-id="8764005">
 Cas des variables qualitatives</h4>
 <p id="r-4742328" data-claire-element-id="8654273">
 Voici 2 représentations possibles de la distribution de la variable<em>
@@ -92,9 +94,9 @@ transport</em>
 </aside>
 <p id="r-4742346" data-claire-element-id="8654774">
 Si la variable est qualitative ordinale, alors il suffit de classer sur le graphique les modalités en ordre croissant.</p>
-<aside id="r-4742353" data-claire-element-id="8654319" data-claire-semantic="information">
-<p id="r-4742352" data-claire-element-id="8654318">
-Ne retenez que les termes anglais, vous en aurez besoin en R ou en Python. Sauf si vous avez envie de briller en société en sortant<em>
+<aside id="r-4742353" data-claire-element-id="8764004" data-claire-semantic="information">
+<p id="r-4742352" data-claire-element-id="8764003">
+Retenez surtout les termes anglais, vous en aurez besoin en R ou en Python. Sauf si vous avez envie de briller en société en sortant<em>
 Vous savez ce qu'est un diagramme en tuyaux d'orgue ?</em>
 lors d'une soirée.</p>
 </aside>
@@ -107,7 +109,7 @@ Pour les variables discrètes on les représente par un équivalent du diagramme
 <p id="r-4764548" data-claire-element-id="8693607">
 <img id="r-4764547" data-claire-element-id="8693606" src="https://user.oc-static.com/upload/2017/10/31/15094583285296_bar.png" alt="">
 </p>
-<h4 id="r-4742526" data-claire-element-id="8729677">
+<h4 id="r-4742526" data-claire-element-id="8764089">
 Variables continues</h4>
 <p id="r-4742642" data-claire-element-id="8655044">
 Réfléchissons un peu. Prenons la variable<em>
@@ -115,11 +117,11 @@ taille</em>
 d'une population d'humains. Entre les tailles 1.50m et 1.60m, il y a une infinité de valeurs possibles (ex: 1.51939m , 1.50004m , 1.599999920371m, etc.). Comme il y a une infinité de valeurs, la probabilité d'avoir deux humains ayant<em>
 exactement</em>
 la même taille est donc très faible.</p>
-<p id="r-4742643" data-claire-element-id="8655344">
-Si on crée un diagramme en bâtons, et que l'on a un humain qui mesure 1.478m, on va placer un bâton situé à 1.478m sur l'axe horizontal. Quelle sera sa hauteur ? Elle sera au moins de 1, car il y a au moins un humain qui mesure 1.478m. Mais comme la probabilité qu'un 2nd humain mesure exactement la même taille est extrêmement faible, la taille de notre bâton ne dépassera jamais 1. Cependant, on peut avoir un 2nd humain qui mesure<em>
+<p id="r-4742643" data-claire-element-id="8764023">
+Si on crée un diagramme en bâtons, et que l'on a un humain qui mesure 1.478m, on va placer un bâton situé à 1.478m sur l'axe horizontal. Quelle sera sa hauteur ? Elle sera au moins de 1, car il y a au moins un humain qui mesure 1.478m. Mais comme la probabilité qu'un deuxième humain mesure exactement la même taille est extrêmement faible, la taille de notre bâton ne dépassera jamais 1. Cependant, on peut avoir un deuxième humain qui mesure<em>
 presque</em>
-1.478m, par exemple 1.47800000000001m. On placerait donc un 2nd bâton de hauteur 1 très proche du premier bâton. Au final, on se retrouverait avec plein de bâtons très rapprochés, tous de hauteur 1 : je vous laisse imaginer le bazar !</p>
-<h5 id="r-4742881" data-claire-element-id="8729673">
+1.478m, par exemple 1.47800000000001m. On placerait donc un deuxième bâton de hauteur 1 très proche du premier bâton. Au final, on se retrouverait avec plein de bâtons très rapprochés, tous de hauteur 1 : je vous laisse imaginer le bazar !</p>
+<h5 id="r-4742881" data-claire-element-id="8764085">
 Cas agrégé</h5>
 <div id="r-4742645" data-claire-element-id="8655047" data-claire-semantic="question">
 <p id="r-4742644" data-claire-element-id="8655046">
@@ -165,12 +167,12 @@ Aussi, l'effectif de la classe ne sera plus représenté par la hauteur du recta
 surface</em>
 . Cela est dû au fait que les classes n'ont pas forcément la même largeur.</p>
 </aside>
-<figure id="r-4764551" data-claire-element-id="8729672">
+<figure id="r-4764551" data-claire-element-id="8764084">
 <img id="r-4764549" data-claire-element-id="8693609" src="https://user.oc-static.com/upload/2017/10/31/1509458746274_hists.png" alt="A gauche : histogramme de la variable montant, filtrée sur les montants compris entre -100 et 100. A droite, histogramme avec des classes de largeur inégales.">
 <figcaption>
 A gauche : histogramme de la variable montant, filtrée sur les montants compris entre -100 et 100. A droite, histogramme avec des classes de largeur inégales.</figcaption>
 </figure>
-<h5 id="r-4742884" data-claire-element-id="8729676">
+<h5 id="r-4742884" data-claire-element-id="8764088">
 Cas non agrégé</h5>
 <p id="r-4742367" data-claire-element-id="8655683">
 Si cependant, vous ne souhaitez pas agréger les valeurs, il existe une autre solution : représenter la<strong>
@@ -180,7 +182,7 @@ fonction de répartition empirique</strong>
 Gardons provisoirement ces bâtons, et créons un escalier. On parcours l'axe horizontal des petites valeurs vers les grandes valeurs, et à chaque fois que l'on rencontre un bâton, on monte d'une marche. Il y aura donc autant de marches que de bâtons, et d'ailleurs autant que d'individus. Toutes les marches ont la même hauteur.</p>
 <p id="r-4742883" data-claire-element-id="8655685">
 Une fois parcourus tous les bâtons, on aura atteint le haut de l'escalier. On dit (arbitrairement) que le haut de l'escalier est d'une hauteur de 1.</p>
-<figure id="r-4742944" data-claire-element-id="8729675">
+<figure id="r-4742944" data-claire-element-id="8764087">
 <img id="r-4742942" data-claire-element-id="8655853" src="https://user.oc-static.com/upload/2017/10/26/15090279401459_rep_emp.png" alt="Fonction de répartition empirique">
 <figcaption>
 Fonction de répartition empirique</figcaption>
@@ -196,10 +198,6 @@ Pour en savoir plus sur la fonction de répartition, rendez-vous au bas de ce ch
 Aller plus loin</em>
 .</p>
 <p id="r-4742757" data-claire-element-id="8655373">
-</p>
-<p id="r-4742758" data-claire-element-id="8655374">
-</p>
-<p id="r-4742759" data-claire-element-id="8655375">
 </p>
 <h3 id="r-4742527" data-claire-element-id="8693508">
 Du côté du code</h3>
@@ -241,7 +239,7 @@ data[data.montant.abs() &lt; 100]["montant"].hist(bins=20,cumulative=True)</code
 </p>
 <p id="r-4764416" data-claire-element-id="8693211">
 </p>
-<h3 id="r-4742847" data-claire-element-id="8729679">
+<h3 id="r-4742847" data-claire-element-id="8764092">
 Aller plus loin : la fonction de répartition empirique</h3>
 <p id="r-4742886" data-claire-element-id="8655896">
 Si vous souhaitez aller plus loin dans les statistiques, il vous faudra connaître la théorie des probabilités. Dans ce domaine, l'équivalent de la distribution d'une variable quantitative est la<a href="https://fr.wikipedia.org/wiki/Densit%C3%A9_de_probabilit%C3%A9">
@@ -253,7 +251,7 @@ fonction de répartition empirique</strong>
 .</p>
 <p id="r-4742887" data-claire-element-id="8655862">
 Elle s'exprime de la manière suivante :</p>
-<p id="r-4742948" data-claire-element-id="8655863">
+<p id="r-4789859" data-claire-element-id="8764091">
 <math>
 $\[F_{emp}\left( x\right) =\frac{1}{n}\sum_{i=1}^{n}\, I_{\left\{x_{i}\leq x\right\} }\]$</math>
 </p>
