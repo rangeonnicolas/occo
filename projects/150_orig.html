@@ -1,0 +1,74 @@
+<div class="course-content space-bottom-big">
+<div class="userContent userContent--smallCourse js-userContent" data-javascript-enabled>
+<h2>
+Énoncé
+</h2>
+<p><strong> Prérequis</strong></p>
+<p>Pour effectuer ce projet, vous devrez maîtriser la manipulation de données en <strong>Python</strong> ou <strong>R</strong>, connaître la modélisation de type <strong>régression linéaire</strong>, ainsi que les différentes modélisations de <strong>séries temporelles</strong> (AR, MA, ARMA, ARIMA, etc.) </p>
+<h3>Mise en situation</h3>
+<p>Vous êtes employé chez Enercoop, société coopérative qui s'est développée grâce à la libéralisation du marché de l’électricité en France. Elle est spécialisée dans les énergies renouvelables.</p>
+<p>La plupart de ces énergies renouvelables est cependant intermittente, il est donc difficile de prévoir les capacités de production d'électricité. De plus, la demande en électricité des utilisateurs varie au cours du temps, et dépend de paramètres comme la météo (température, luminosité, etc.) Tout le challenge est de mettre en adéquation l'offre et la demande !</p>
+<h3>Les données</h3>
+<p>Vous téléchargerez les données de consommation d'électricité mensuelles à partir de cette page : <a href="http://www.rte-france.com/fr/eco2mix/eco2mix-telechargement">http://www.rte-france.com/fr/eco2mix/eco2mix-telechargement</a></p>
+<p>Les données météo que vous utiliserez pour corriger les données de l'effet température sont présentes ici : <a href="https://cegibat.grdf.fr/simulateur/calcul-dju">https://cegibat.grdf.fr/simulateur/calcul-dju</a></p>
+<h3>Votre mission</h3>
+<p><em>Vous vous concentrerez uniquement sur la prédiction de la demande en électricité.</em></p>
+<ol>
+<li>Corrigez les données de consommation mensuelles de l'effet température (dues au chauffage électrique) en utilisant une régression linéaire.</li>
+<li>Effectuez une désaisonnalisation de la consommation que vous aurez obtenue après correction, grâce aux moyennes mobiles.</li>
+<li>Effectuez une prévision de la consommation (corrigée de l'effet température) sur un an, en utilisant la méthode de Holt Winters (lissage exponentiel) puis la méthode ARMA sur la série temporelle désaisonnalisée.</li>
+</ol>
+<p>Pour chaque traitement effectué (correction de l'effet température, désaisonnalisation, etc.), vous présenterez les 2 séries temporelles avant et après traitement, sur un graphique où les deux séries temporelles seront superposées.</p>
+<h3>Livrable</h3>
+<p>Le livrable attendu est un fichier .zip, contenant :</p>
+<ul>
+<li>Le code en R ou Python permettant de répondre aux questions posées. Merci de bien commenter votre code. Un seul fichier suffit, mais veillez à séparer celui-ci en plusieurs parties correspondant à chacune des trois questions posées.</li>
+<li> Les graphiques au format jpg ou png.</li>
+</ul>
+<h3>Soutenance</h3>
+<p> Voici le déroulement indicatif de la soutenance :</p>
+<table>
+<tbody>
+<tr>
+<td>5min</td>
+<td>Présentation des données utilisées (source, pré-traitements éventuels, choix éventuels, etc.)</td>
+</tr>
+<tr>
+<td>5min</td>
+<td>Détail du programme (explication des lignes de code importantes, des objets manipulés, etc.)</td>
+</tr>
+<tr>
+<td>5min</td>
+<td>Présentation et interprétation des graphiques de la question 1</td>
+</tr>
+<tr>
+<td>5min</td>
+<td>Présentation et interprétation des graphiques de la question 2</td>
+</tr>
+<tr>
+<td>10min</td>
+<td>Présentation et interprétation des graphiques de la question 3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="userContent userContent--smallCourse">
+<h2>
+Compétences à valider
+</h2>
+<ul>
+<li>
+Représenter graphiquement une série temporelle
+</li>
+<li>
+Maitriser la méthode ARMA
+</li>
+<li>
+Maitriser les méthodes de lissage et la méthode de Holt-Winters
+</li>
+<li>
+Maitriser les notions de composantes et de modèles de décomposition
+</li>
+</ul>
+</div>
+</div>

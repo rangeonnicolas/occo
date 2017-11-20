@@ -1,0 +1,120 @@
+<div class="course-content space-bottom-big">
+<div class="userContent userContent--smallCourse js-userContent" data-javascript-enabled>
+<h2>
+Énoncé
+</h2>
+<h3>Prérequis</h3>
+<p>Les prérequis pour ce projets sont de connaître au choix les langages <strong>R</strong> ou <strong>Python</strong>, en sachant manipuler principalement les <em>Dataframes </em>(natifs en R, ou disponibles par la librairie Pandas en python). Il vous faudra également connaître les bases de la statistique descriptive (moyenne, médiane, variance, représentations graphiques, tests de corrélation, analyse bivariée, etc.)</p>
+<p> </p>
+<h3>Mise en situation</h3>
+<p>Vous êtes Data Analyst d'une grande chaîne de librairie, fraîchement embauché depuis une semaine ! Vous avez fait connaissance avec vos collègues, votre nouveau bureau, mais surtout, la machine à café high-tech :</p>
+<figure><img src="https://user.oc-static.com/upload/2017/04/06/14914718586961_shutterstock_191868224.jpeg" alt="Rien que ça !">
+<figcaption>Rien que ça !</figcaption>
+</figure>
+<p>Mais revenons à votre mission : il est temps de mettre les mains dans le cambouis ! Le service informatique vous a donné l’accès à la base de données des ventes. A vous de vous familiariser avec les données, et de les analyser. Votre manager souhaite que vous réalisiez une présentation pour vous "faire la main".</p>
+<p>Comme vous l'avez appris dans vos recherches avant de postuler, votre entreprise, "Rester livres" s'est d'abord développée dans une grande ville de France, avec plusieurs magasins, jusqu'à décider d'ouvrir une boutique en ligne. Son approche de la vente de livres en ligne, basée sur des algorithmes de recommandation, lui a valu un franc succès !</p>
+<h3>Les données</h3>
+<p>Vous avez accès à ces données, extraites directement de la base de l’entreprise vers les fichiers CSV. Voici les fichiers à votre disposition :</p>
+<ul>
+<li>les ventes (appelées “Transactions”)</li>
+<li>la liste des clients</li>
+<li>la liste des produits</li>
+</ul>
+<aside data-claire-semantic="information">
+<p>Téléchargez le jeu de données à <a href="https://s3-eu-west-1.amazonaws.com/static.oc-static.com/prod/courses/files/parcours-data-analyst/dataset_4.zip">cette adresse</a>.</p>
+</aside>
+<h3>Vos missions</h3>
+<h4>Mission n°1</h4>
+<p>Avant de pouvoir entrer dans le vif du sujet, il vous faudra faire un peu de nettoyage ! Par exemple, vous devrez faire des choix quant au traitement des valeurs manquantes et des valeurs aberrantes.</p>
+<h4>Mission n°2</h4>
+<p>Ensuite, vous réaliserez l’analyse des données. Une grande liberté vous est laissée sur ce plan, mais à vous de trouver les informations qui ont du sens pour mieux comprendre les ventes : </p>
+<p>Vous devrez y utiliser au moins :</p>
+<ul>
+<li>des indicateurs de tendance centrale et de dispersion</li>
+<li>une analyse de concentration, via une courbe de Lorenz et un indice de Gini</li>
+<li>des représentations graphiques, dont au moins un histogramme, une représentation avec des "boites à moustaches", et une représentation de série temporelle (c’est à dire un graphique dont l’axe des abscisses représente des dates)</li>
+<li>des analyses bivariées</li>
+</ul>
+<h4>Mission n°3</h4>
+<p>Voici quelques questions supplémentaires, que votre manager vous a posées :</p>
+<ol>
+<li>Y a-t-il une corrélation entre le sexe des clients et les catégories de produits achetés ?</li>
+<li>Y a-t-il une corrélation entre l'âge des clients et :<br>
+<ol>
+<li>le montant total des achats</li>
+<li>la fréquence d’achat</li>
+<li>la taille du panier moyen (en nombre d’articles)</li>
+<li>les catégories de produits achetés</li>
+</ol>
+</li>
+</ol>
+<aside data-claire-semantic="warning">
+<h3>Quelques précisions</h3>
+<ul>
+<li>Vous avez le choix entre 2 langages : R ou Python. Dans les deux cas, vos donnés devront être manipulées via les structures Dataframe ou Matrice (présentes nativement sous R, ou dans la librairie Pandas sous Python).</li>
+<li>Pour plus de simplicité, nous considérons ici que les prix des articles ne varient pas en fonction du temps.</li>
+</ul>
+</aside>
+<h3>Livrables attendus</h3>
+<p>Un fichier .zip contenant ces fichiers :</p>
+<ul>
+<li>Le script destiné à nettoyer le jeu de données.</li>
+<li>Le script contenant les différentes analyses effectuées.</li>
+<li>Les graphiques dans un format image (png ou jpg).</li>
+<li>Un court fichier README, contenant les explications pour lancer vos scripts.</li>
+</ul>
+<p> </p>
+<h3>Modalités de la soutenance</h3>
+<p>Votre soutenance pourra prendre cette forme :</p>
+<table style="width: 706.653px;">
+<tbody>
+<tr>
+<td style="width: 61px;">10 min.</td>
+<td style="width: 644.653px;">Détail du nettoyage des données : quelles valeurs aberrantes et manquantes avez-vous trouvées, comment les avez-vous traitées, avez-vous effectué d'autres nettoyages ? (Mission 1)</td>
+</tr>
+<tr>
+<td style="width: 61px;">10 min.</td>
+<td style="width: 644.653px;">Présentation de l'analyse demandée, à l'aide d'un logiciel de présentation adapté (Mission 2)</td>
+</tr>
+<tr>
+<td style="width: 61px;">10 min.</td>
+<td style="width: 644.653px;">Présentez votre analyse des corrélations (Mission 3)</td>
+</tr>
+</tbody>
+</table>
+<h3><br> Ressources complémentaires</h3>
+<p><a href="https://www.youtube.com/watch?v=jEpyGVpJvY0">https://www.youtube.com/watch?v=jEpyGVpJvY0</a></p>
+<ul>
+<li>Vidéo expliquant la courbe de Lorenz et l’indice de Gini.</li>
+</ul>
+<p><a href="https://hamelg.blogspot.fr/2015/11/python-for-data-analysis-part-19.html">http://hamelg.blogspot.fr/2015/11/python-for-data-analysis-part-19.html</a></p>
+<ul>
+<li>Exemples d’utilisation de matplotlib en Python pour des visualisations d’analyses bivariées.</li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=tlOoKxBeHlY">https://www.youtube.com/watch?v=tlOoKxBeHlY</a></p>
+<ul>
+<li>Série de 4 vidéos en anglais sur l’analyse bivariée en fonction des différents cas de figures.</li>
+</ul>
+<p><a href="https://www.math.univ-toulouse.fr/~besse/Wikistat/pdf/st-scenar-app-idm.pdf">https://www.math.univ-toulouse.fr/~besse/Wikistat/pdf/st-scenar-app-idm.pdf</a></p>
+<ul>
+<li>Cours et exemples d’imputation de données en R (attention, ce cours est de niveau avancé).</li>
+</ul>
+<p><span style="font-family: Verdana, Arial, Helvetica, sans-serif;"><span style="font-size: 11px; background-color: #fbfbfb;"> </span></span></p>
+</div>
+<div class="userContent userContent--smallCourse">
+<h2>
+Compétences à valider
+</h2>
+<ul>
+<li>
+Nettoyer un jeu de données
+</li>
+<li>
+Décrire un jeu de donnée par la statistique descriptive
+</li>
+<li>
+Maîtriser les concepts statistiques fondamentaux
+</li>
+</ul>
+</div>
+</div>

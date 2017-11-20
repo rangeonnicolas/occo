@@ -1,0 +1,72 @@
+<div class="course-content space-bottom-big">
+<div class="userContent userContent--smallCourse js-userContent" data-javascript-enabled>
+<h2>
+Énoncé
+</h2>
+<h3>Prérequis</h3>
+<p>Pour effectuer ce projet, vous devrez maîtriser de la manipulation de données en <strong>Python</strong> ou <strong>R</strong>, appliquer ces langages à la <strong>statistique descriptive</strong> ainsi qu'à la <strong>classification automatique</strong>.</p>
+<p> </p>
+<h3>Mise en situation</h3>
+<p>Votre entreprise d'agroalimentaire souhaite se développer à l'international. Elle est spécialisée dans...</p>
+<p><img src="https://user.oc-static.com/upload/2017/05/11/14945088000673_shutterstock_521042725.jpeg" alt=""></p>
+<p> </p>
+<p>... le poulet !</p>
+<p>L'international, oui, mais pour l'instant, le champ des possibles est bien large : aucun pays particulier ni aucun continent n'est pour le moment choisi. Tous les pays sont envisageables !</p>
+<p>Votre objectif sera d'aider à cibler plus particulièrement certains pays, dans le but d'approfondir ensuite l'étude de marché. Plus particulièrement, l'idéal serait de produire des "groupes" de pays, plus ou moins gros, dont on connaît les caractéristiques.</p>
+<h3>Les données</h3>
+<p>Vous vous souvenez de la FAO, dans l'un de vos précédents projets ? Allez, <a href="http://www.fao.org/faostat/fr/#data">on y retourne</a> ! Vous connaissez déjà l'interface du site, à vous de retrouver les données qui vous seront utiles pour le projet.</p>
+<h3>Votre mission</h3>
+<p>Pour identifier les pays propices à une insertion dans le marché du poulet, il vous a été demandé de cibler les pays. Il vous faudra également étudier les régimes alimentaires de chaque pays, notamment en termes de protéines d'origine animale et en termes de calories.</p>
+<p>Construisez votre échantillon contenant l'ensemble des pays disponibles, chacun caractérisé par ces variables :</p>
+<ul>
+<li>Différence de population entre une année antérieure (au choix) et l'année courante, exprimée en pourcentage.</li>
+<li>Proportion de protéines d'origine animale par rapport à la quantité totale de protéines dans la disponibilité alimentaire du pays.</li>
+<li>Disponibilité alimentaire en protéines par habitant.</li>
+<li>Disponibilité alimentaire en calories par habitant.</li>
+</ul>
+<p>Construisez un dendrogramme contenant l'ensemble des pays étudiés, puis coupez-le afin d'obtenir 5 groupes.</p>
+<p>Caractérisez chacun de ces groupes selon les variables cités précédemment, et facultativement selon d'autres variables que vous jugerez pertinentes (ex : le PIB par habitant). Vous pouvez le faire en calculant la position des centroïdes de chacun des groupes, puis en les commentant et en les critiquant au vue de vos objectifs.</p>
+<p>Donnez une liste de pays à cibler, en présentant leurs caractéristiques. Un découpage plus précis qu'en 5 groupes peut si besoin être effectué pour cibler un nombre raisonnable de pays. </p>
+<h3>Livrables attendus</h3>
+<p>Dans une archive .zip :</p>
+<ul>
+<li>Le dendrogramme dans un format image (.png ou .jpg)</li>
+<li>Le code R ou Python</li>
+<li>Un fichier CSV contenant la liste des pays ainsi que (pour chacun d'entre eux) leur groupe que vous aurez déterminé après avoir découpé le dendrogramme.</li>
+<li>Un ficher CSV contenant les centroïdes des groupes et leurs coordonnées dans chacune des dimensions.</li>
+</ul>
+<h3>Modalités de la soutenance</h3>
+<p>Vous présentez vos résultats à votre hiérarchie, qui vous a demandé une présentation sur des "slides".</p>
+<p>Rappelez en introduction les enjeux, expliquez dans le détail votre démarche (sans avoir peur de rentrer dans les détails mathématiques), et présentez vos résultats et recommandations.</p>
+<p>A vous de bien équilibrer les parties de votre présentation, qui doit durer 20 minutes suivies de 10 minutes d'éventuelles questions de votre hiérarchie.</p>
+<aside data-claire-semantic="warning">
+<p>Si vous le souhaitez, n'hésitez pas à prendre de la liberté quant à l'énoncé (étudier plus de variables, aller plus loin dans l'analyse, etc.), et valorisez-la dans votre soutenance.</p>
+</aside>
+<h3>Ressources complémentaires</h3>
+<p><a href="http://www.jybaudot.fr/Analdonnees/factorielles.html">http://www.jybaudot.fr/Analdonnees/factorielles.html</a></p>
+<ul>
+<li>Cours qui explique l’analyse factorielle (quasiment) sans formules.</li>
+</ul>
+<p><a href="http://factominer.free.fr/index_fr.html">http://factominer.free.fr/index_fr.html</a></p>
+<ul>
+<li>Factominer est un package phare en R spécialisé dans l’analyse exploratoire multivariée (ACP, CAH, etc.) Retrouvez un exemple d’ACP avec Factominer à <a href="http://factominer.free.fr/course/doc/AnaDo_ACP_Facto_Decathlon_Markdown.pdf">cette adresse</a>.</li>
+</ul>
+<p><a href="http://www.sthda.com/english/articles/31-principal-component-methods-in-r-practical-guide/117-hcpc-hierarchical-clustering-on-principal-components-essentials/">http://www.sthda.com/english/articles/31-principal-component-methods-in-r-practical-guide/117-hcpc-hierarchical-clustering-on-principal-components-essentials/</a></p>
+<ul>
+<li>Tutoriel en anglais de clustering avec Factominer.</li>
+</ul>
+</div>
+<div class="userContent userContent--smallCourse">
+<h2>
+Compétences à valider
+</h2>
+<ul>
+<li>
+Construire et lire un dendogramme
+</li>
+<li>
+Interpréter une ACP
+</li>
+</ul>
+</div>
+</div>

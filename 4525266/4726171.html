@@ -1,10 +1,10 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/nettoyez-et-decrivez-votre-jeu-de-donnees/telechargez-les-donnees" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
 <div class="userContent js-userContent">
-<p id="r-4762746" data-claire-element-id="8787601">
+<p id="r-4762746" >
 Pour que ce cours soit plus attrayant, je vous propose d'analyser des données que<strong>
 vous avez générées</strong>
 ! Si vous possédez un compte bancaire consultable en ligne, et qu'il y a sur celui-ci des opérations bancaires fréquentes (c'est le cas notamment si vous utilisez fréquemment une carte bancaire), alors vous pouvez analyser vos comportements de consommation.</p>
-<p id="r-4763441" data-claire-element-id="8690242">
+<p id="r-4763441" >
 Un relevé bancaire est composé de lignes, que l'on appellera<strong>
 opération</strong>
 ,<strong>
@@ -12,149 +12,149 @@ opération bancaire</strong>
 ou<strong>
 transaction</strong>
 . Une opération sera donc un individu.</p>
-<p id="r-4726291" data-claire-element-id="8690243">
+<p id="r-4726291" >
 Je vous propose donc dans ce chapitre de télécharger vos relevés de compte, de les charger dans Python, et d'enrichir votre échantillon de nouvelles variables. Si tout se passe bien, cela ne devrait pas prendre beaucoup de temps. Mais si vous rencontrez des erreurs, il vous sera possible de télécharger un fichier final afin de continuer le cours. ;)</p>
-<aside id="r-4726617" data-claire-element-id="8608343" data-claire-semantic="information">
-<p id="r-4726616" data-claire-element-id="8608342">
+<aside id="r-4726617" data-claire-semantic="information">
+<p id="r-4726616" >
 Ne fuyez pas devant l’apparente longueur de ce chapitre : j'y traite effectivement beaucoup de cas particuliers, mais la réalisation du programme reste cependant rapide !</p>
 </aside>
-<p id="r-4726891" data-claire-element-id="8729651">
+<p id="r-4726891" >
 Si vous n'avez pas de relevé de comptes, commencez par télécharger ce fichier<a href="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/courses/4525266/operations.csv">
 operations.csv</a>
 , qui est un faux relevé, pour lequel tous les libellés d'opération ont été partiellement censurés.</p>
-<h3 id="r-4726335" data-claire-element-id="8607811">
+<h3 id="r-4726335" >
 Ce que nous allons faire</h3>
-<p id="r-4726292" data-claire-element-id="8607572">
+<p id="r-4726292" >
 Tous les relevés bancaires ont en commun (pour chaque opération) 3 informations :</p>
-<ul id="r-4726299" data-claire-element-id="8607579">
-<li id="r-4726294" data-claire-element-id="8607574">
-<p id="r-4726293" data-claire-element-id="8607573">
+<ul id="r-4726299" >
+<li id="r-4726294" >
+<p id="r-4726293" >
 la date de l'opération</p>
 </li>
-<li id="r-4726296" data-claire-element-id="8607576">
-<p id="r-4726295" data-claire-element-id="8607575">
+<li id="r-4726296" >
+<p id="r-4726295" >
 le libellé de l'opération</p>
 </li>
-<li id="r-4726298" data-claire-element-id="8607578">
-<p id="r-4726297" data-claire-element-id="8607577">
+<li id="r-4726298" >
+<p id="r-4726297" >
 le montant de l'opération</p>
 </li>
 </ul>
-<p id="r-4726300" data-claire-element-id="8607580">
+<p id="r-4726300" >
 A partir ce ces 3 informations, nous allons créer plusieurs variables :</p>
-<ul id="r-4726333" data-claire-element-id="8607613">
-<li id="r-4726302" data-claire-element-id="8607582">
-<p id="r-4726301" data-claire-element-id="8607581">
+<ul id="r-4726333" >
+<li id="r-4726302" >
+<p id="r-4726301" >
 <strong>
 date_operation</strong>
 </p>
 </li>
-<li id="r-4726304" data-claire-element-id="8607584">
-<p id="r-4726303" data-claire-element-id="8607583">
+<li id="r-4726304" >
+<p id="r-4726303" >
 <strong>
 libelle</strong>
 </p>
 </li>
-<li id="r-4726306" data-claire-element-id="8607586">
-<p id="r-4726305" data-claire-element-id="8607585">
+<li id="r-4726306" >
+<p id="r-4726305" >
 <strong>
 montant</strong>
 </p>
 </li>
-<li id="r-4726308" data-claire-element-id="8607588">
-<p id="r-4726307" data-claire-element-id="8607587">
+<li id="r-4726308" >
+<p id="r-4726307" >
 <strong>
 sens</strong>
 : indique si l'opération est un crédit ou un débit</p>
 </li>
-<li id="r-4726310" data-claire-element-id="8607590">
-<p id="r-4726309" data-claire-element-id="8607589">
+<li id="r-4726310" >
+<p id="r-4726309" >
 <strong>
 solde_avt_operation</strong>
 : elle indique le solde restant avant que l'opération ne soit effectuée</p>
 </li>
-<li id="r-4726312" data-claire-element-id="8607592">
-<p id="r-4726311" data-claire-element-id="8607591">
+<li id="r-4726312" >
+<p id="r-4726311" >
 <strong>
 categ</strong>
 : qui indique la catégorie de l'opération, par exemple : "courses", "loyer", "facture", etc.</p>
 </li>
-<li id="r-4726314" data-claire-element-id="8607594">
-<p id="r-4726313" data-claire-element-id="8607593">
+<li id="r-4726314" >
+<p id="r-4726313" >
 <strong>
 type</strong>
 : indiquant le type d'opération, exemple : "virement", "paiement par carte", 'retrait", etc.</p>
 </li>
-<li id="r-4726316" data-claire-element-id="8607596">
-<p id="r-4726315" data-claire-element-id="8607595">
+<li id="r-4726316" >
+<p id="r-4726315" >
 <strong>
 tranche_depense</strong>
 : si l'opération est une dépense, indique si celle-ci est petite, moyenne, etc.</p>
 </li>
-<li id="r-4726318" data-claire-element-id="8607598">
-<p id="r-4726317" data-claire-element-id="8607597">
+<li id="r-4726318" >
+<p id="r-4726317" >
 <strong>
 annee</strong>
 : l'année, déduite de<em>
 date_operation</em>
 </p>
 </li>
-<li id="r-4726320" data-claire-element-id="8607600">
-<p id="r-4726319" data-claire-element-id="8607599">
+<li id="r-4726320" >
+<p id="r-4726319" >
 <strong>
 mois</strong>
 : le mois, déduit de<em>
 date_operation</em>
 </p>
 </li>
-<li id="r-4726322" data-claire-element-id="8607602">
-<p id="r-4726321" data-claire-element-id="8607601">
+<li id="r-4726322" >
+<p id="r-4726321" >
 <strong>
 jour</strong>
 <em>
 </em>
 : le jour du mois (compris entre 1 et 31)</p>
 </li>
-<li id="r-4726324" data-claire-element-id="8607604">
-<p id="r-4726323" data-claire-element-id="8607603">
+<li id="r-4726324" >
+<p id="r-4726323" >
 <strong>
 jour_sem</strong>
 : le jour de la semaine (lundi, mardi, etc.)</p>
 </li>
-<li id="r-4726326" data-claire-element-id="8607606">
-<p id="r-4726325" data-claire-element-id="8607605">
+<li id="r-4726326" >
+<p id="r-4726325" >
 <strong>
 jour_sem_num</strong>
 : le numéro du jour de la semaine (compris entre 1 et 7)</p>
 </li>
-<li id="r-4726328" data-claire-element-id="8607608">
-<p id="r-4726327" data-claire-element-id="8607607">
+<li id="r-4726328" >
+<p id="r-4726327" >
 <strong>
 weekend</strong>
 : indique si la date d'opération se situe sur un weekend</p>
 </li>
-<li id="r-4726330" data-claire-element-id="8607610">
-<p id="r-4726329" data-claire-element-id="8607609">
+<li id="r-4726330" >
+<p id="r-4726329" >
 <strong>
 quart_mois</strong>
 : vaut 1,2,3 ou 4, et indique l'avancée dans le mois (1: début, ..., 4: fin de mois)</p>
 </li>
-<li id="r-4726332" data-claire-element-id="8607612">
-<p id="r-4726331" data-claire-element-id="8607611">
+<li id="r-4726332" >
+<p id="r-4726331" >
 <strong>
 attente</strong>
 : indique pour chaque opération de catégorie "courses", la durée (en jours) séparant cette opération de la précédente opération de catégorie "courses".</p>
 </li>
 </ul>
-<p id="r-4726341" data-claire-element-id="8607631">
+<p id="r-4726341" >
 Certaines de ces variables peuvent être calculées automatiquement, mais certaines nécessiterons votre intervention. Par exemple, vous devrez indiquer vous-même les opérations qui sont des courses ou des paiements de loyers. Ne vous inquiétez pas, je vous faciliterai la tâche afin de ne pas faire ceci entièrement "à la main". ;)</p>
-<h3 id="r-4726833" data-claire-element-id="8787625">
+<h3 id="r-4726833" >
 C'est parti !</h3>
-<h4 id="r-4726826" data-claire-element-id="8609031">
+<h4 id="r-4726826" >
 Télécharger les données</h4>
-<p id="r-4726396" data-claire-element-id="8607812">
+<p id="r-4726396" >
 En général, si vous avez accès à vos comptes bancaires à partir d'internet, il existe un endroit où vous pouvez télécharger le relevé de vos opérations.</p>
-<p id="r-4726397" data-claire-element-id="8607813">
+<p id="r-4726397" >
 Si vous avez le choix, choisissez le format CSV, et téléchargez le plus d'opérations possibles. Si seuls les formats de fichiers XLS ou ODS vous sont proposés, alors il faudra ouvrir le fichier dans un tableur (Excel ou<a href="https://fr.wikipedia.org/wiki/Calc_(tableur)">
 OpenOffice Calc</a>
 ), puis l'<em>
@@ -162,17 +162,17 @@ enregistrer sous</em>
 un format CSV. Pour plus de précision, cliquez<a href="https://www.youtube.com/watch?v=e_-YYRuFDA4">
 ici</a>
 .</p>
-<aside id="r-4726399" data-claire-element-id="8607815" data-claire-semantic="warning">
-<p id="r-4726398" data-claire-element-id="8607814">
+<aside id="r-4726399" data-claire-semantic="warning">
+<p id="r-4726398" >
 Vos relevés de comptes peuvent présenter des informations confidentielles, n'utilisez donc pas de convertisseur xls-&gt;csv ou ods-&gt;csv en ligne ! ;)</p>
 </aside>
-<p id="r-4726400" data-claire-element-id="8607816">
+<p id="r-4726400" >
 Une fois votre fichier CSV obtenu, placez-le dans le même répertoire (dossier) que celui dans lequel se trouve votre script (python ou R), ou votre notebook. Ensuite, renommez-le en<code data-claire-semantic="text">
 operations.csv</code>
 .</p>
-<h4 id="r-4726827" data-claire-element-id="8787624">
+<h4 id="r-4726827" >
 Charger vos données dans votre programme</h4>
-<p id="r-4726511" data-claire-element-id="8608251">
+<p id="r-4726511" >
 Vous pouvez ouvrir le fichier CSV avec un éditeur de texte, et non pas avec un tableur ! Sous Windows, utilisez par exemple l'application<em>
 Bloc notes</em>
 , sous Mac<em>
@@ -184,33 +184,33 @@ vim</em>
 ou<em>
 gedit</em>
 .</p>
-<p id="r-4726566" data-claire-element-id="8787611">
+<p id="r-4726566" >
 Votre fichier devrait ressembler à ceci :</p>
-<pre id="r-4726567" data-claire-element-id="8608253">
+<pre id="r-4726567" >
 <code data-claire-semantic="text">
 identifiant_transaction,date_operation,date_valeur,libelle,debit,credit,solde 242,2023-10-06,2023-10-06,FORFAIT COMPTE SUPERBANK XX XX XX XX,-1.92,,2513.79 69,2023-10-06,2023-10-06,CARTE XX XX CHEZ LUC XX,-10.00,,2515.71</code>
 </pre>
-<p id="r-4726568" data-claire-element-id="8608254">
+<p id="r-4726568" >
 Une fois ouvert, il faut y repérer certaines informations :</p>
-<ul id="r-4726527" data-claire-element-id="8787623">
-<li id="r-4726518" data-claire-element-id="8787622">
-<p id="r-4726517" data-claire-element-id="8787621">
+<ul id="r-4726527" >
+<li id="r-4726518" >
+<p id="r-4726517" >
 quelle(s) colonne(s) contiennent des dates ?</p>
 </li>
-<li id="r-4726520" data-claire-element-id="8608186">
-<p id="r-4726519" data-claire-element-id="8608185">
+<li id="r-4726520" >
+<p id="r-4726519" >
 quel est le format des dates ?</p>
 </li>
-<li id="r-4726522" data-claire-element-id="8608188">
-<p id="r-4726521" data-claire-element-id="8608187">
+<li id="r-4726522" >
+<p id="r-4726521" >
 pour les nombres, le délimiteur des décimales est-il la virgule<code data-claire-semantic="text">
 3,24</code>
 ou le point<code data-claire-semantic="text">
 3.24</code>
 ?</p>
 </li>
-<li id="r-4726524" data-claire-element-id="8608190">
-<p id="r-4726523" data-claire-element-id="8608189">
+<li id="r-4726524" >
+<p id="r-4726523" >
 les colonnes sont-elles délimitées par le caractère<code data-claire-semantic="text">
 ,</code>
 ,<code data-claire-semantic="text">
@@ -221,26 +221,26 @@ tabulation</a>
 \t</code>
 ?</p>
 </li>
-<li id="r-4726526" data-claire-element-id="8608192">
-<p id="r-4726525" data-claire-element-id="8608191">
+<li id="r-4726526" >
+<p id="r-4726525" >
 le fichier contient-il une entête ?</p>
 </li>
 </ul>
-<p id="r-4726528" data-claire-element-id="8608255">
+<p id="r-4726528" >
 Souvent, la toute première ligne indique le nom des colonnes (on l'appelle<em>
 entête</em>
 ou<em>
 header</em>
 ), et les suivantes correspondent aux opérations bancaires. Si l'entête est absente, ce n'est pas grave.</p>
-<pre id="r-4726529" data-claire-element-id="8608195">
+<pre id="r-4726529" >
 <code data-claire-semantic="python">
 import pandas as pd data = pd.read_csv("operations.csv",parse_dates=[1,2]) data = pd.read_csv("operations.csv",parse_dates=[1,2],header = None) data = pd.read_csv("operations.csv",parse_dates=[1,2],sep= ';',decimal= ',', dayfirst=True) print(data)</code>
 </pre>
-<p id="r-4726426" data-claire-element-id="8608196">
+<p id="r-4726426" >
 Les lignes 3 à 5 sont des exemples: vous n'aurez besoin d'utiliser<code data-claire-semantic="text">
 read_csv</code>
 qu'une seule fois, pas 3 ! ;)</p>
-<p id="r-4726530" data-claire-element-id="8608197">
+<p id="r-4726530" >
 Dans tous les cas, il faudra indiquer quelles sont les colonnes qui représentent des dates. Attention, en python, on indexe à partir de 0 : ainsi, la première colonne du csv a le numéro 0. Le format des dates sera déduit automatiquement,<em>
 sauf</em>
 si les dates sont au format<code data-claire-semantic="text">
@@ -250,7 +250,7 @@ si les dates sont au format<code data-claire-semantic="text">
 indique le jour ou le mois (en Europe, cette date est interprétée comme "1er février 2020", alors qu'aux USA, ce serait "2 janvier 2020"). Si c'est le jour, alors il faut préciser<code data-claire-semantic="text">
 dayfirst=True</code>
 , comme en ligne 6 ci dessus.</p>
-<p id="r-4726531" data-claire-element-id="8608198">
+<p id="r-4726531" >
 Si vos colonnes ne sont pas séparées par des virgules, ou si le délimiteur des décimales n'est pas le point, alors il faudra préciser les paramètres<code data-claire-semantic="text">
 sep</code>
 et/ou<code data-claire-semantic="text">
@@ -258,19 +258,19 @@ decimal</code>
 , comme en ligne 5. Enfin, si votre fichier ne contient pas d'entête, alors il faudra préciser<code data-claire-semantic="text">
 header=None</code>
 , comme en ligne 4.</p>
-<aside id="r-4726542" data-claire-element-id="8608212" data-claire-semantic="warning">
-<p id="r-4726541" data-claire-element-id="8608211">
+<aside id="r-4726542" data-claire-semantic="warning">
+<p id="r-4726541" >
 Si vous utilisez le fichier fourni dans ce chapitre, alors il faut utiliser la ligne 3.</p>
 </aside>
-<p id="r-4726532" data-claire-element-id="8608199">
+<p id="r-4726532" >
 Vérifiez que l'import s'est bien passé en affichant la variable data (ligne 7), qui affichera un tableau.</p>
-<p id="r-4726586" data-claire-element-id="8608301">
+<p id="r-4726586" >
 Pour utiliser le code qui suivra, nous devons tous avoir les mêmes noms de colonnes dans notre dataframe. Renommons donc nos colonnes :</p>
-<pre id="r-4726587" data-claire-element-id="8608302">
+<pre id="r-4726587" >
 <code data-claire-semantic="python">
 data.columns = ['identifiant_transaction','date_operation','date_valeur', 'libelle','debit','credit','solde']</code>
 </pre>
-<p id="r-4726588" data-claire-element-id="8608303">
+<p id="r-4726588" >
 Adaptez cette ligne à votre cas, mais assurez-vous bien que les colonnes indiquant la date d'opération, le libellé, le montant des débits, et le montant des crédits aient le même nom qu'ici. Si au lieu des colonnes<code data-claire-semantic="text">
 credit</code>
 et<code data-claire-semantic="text">
@@ -278,113 +278,113 @@ debit</code>
 , votre fichier ne contient qu'une unique colonne, appelez-la<code data-claire-semantic="text">
 montant</code>
 .</p>
-<aside id="r-4726428" data-claire-element-id="8692492" data-claire-semantic="information">
-<p id="r-4726427" data-claire-element-id="8692491">
+<aside id="r-4726428" data-claire-semantic="information">
+<p id="r-4726427" >
 Un soucis pour télécharger ou charger vos données ? Parlez-en sur le<a href="/forum/sujet/cours-nettoyez-et-decrivez-votre-jeu-de-donnees">
 forum</a>
 dédié à ce cours (sans y copier-coller vos relevés !). Si votre erreur est fréquente, nous l'ajouterons en bas de ce chapitre</p>
 </aside>
-<h4 id="r-4726828" data-claire-element-id="8763522">
+<h4 id="r-4726828" >
 Détectez les opérations fréquentes</h4>
-<p id="r-4726589" data-claire-element-id="8763521">
+<p id="r-4726589" >
 Vous avez probablement vos habitudes de consommation, par exemple, vous fréquentez sûrement les mêmes endroits pour faire vos courses. Dans ce cas, beaucoup d'opérations auront un libellé contenant le nom de votre magasin préféré.</p>
-<p id="r-4726590" data-claire-element-id="8608306">
+<p id="r-4726590" >
 Nous souhaitons ici déterminer des catégories et des types d'opérations à partir des libellés. Pour cela, je vous ai concocté une petite fonction qui repère les mots les plus fréquents parmi vos libellés. Testez-la, vous m'en direz des nouvelles :</p>
-<pre id="r-4726591" data-claire-element-id="8608307">
+<pre id="r-4726591" >
 <code data-claire-semantic="python">
 from collections import Counter def most_common_words(labels): words = [] for lab in labels: words += lab.split(" ") counter = Counter(words) for word in counter.most_common(100): print(word) most_common_words(data['libelle'].values)</code>
 </pre>
-<p id="r-4726592" data-claire-element-id="8608308">
+<p id="r-4726592" >
 Voici le début de ce qu'elle affiche :</p>
-<pre id="r-4726593" data-claire-element-id="8608309">
+<pre id="r-4726593" >
 <code data-claire-semantic="text">
 ('XX', 1428) ('CARTE', 247) ('VIREMENT', 29) ('LES', 20) ('ANCIENS', 20) ('ROBINSON', 20) ('CHEZ', 16) ('LUC', 16)</code>
 </pre>
-<p id="r-4726594" data-claire-element-id="8608310">
+<p id="r-4726594" >
 Je vois que le mot "carte" est présent 247 fois dans mes relevés. Quand je regarde mes relevés, je vois qu'il s'agit de toutes les opérations qui représentent un paiement par carte bancaire. Nous appellerons le mode de paiement le<strong>
 type</strong>
 d'opération.</p>
-<p id="r-4726595" data-claire-element-id="8608344">
+<p id="r-4726595" >
 Aussi, je vois qu'il y a 16 fois les mots "CHEZ" et "LUC". Dans mes relevés, je vois que j'ai mangé 16 fois au restaurant "CHEZ LUC". Ici, nous dirons que le restaurant est la<strong>
 catégorie</strong>
 de l'opération.</p>
-<p id="r-4726596" data-claire-element-id="8608312">
+<p id="r-4726596" >
 Faites cet exercice à partir de vos relevés, puis créez deux variables :<code data-claire-semantic="text">
 TYPE</code>
 et<code data-claire-semantic="text">
 CATEGS</code>
 , en suivant cet exemple :</p>
-<pre id="r-4726597" data-claire-element-id="8690321">
+<pre id="r-4726597" >
 <code data-claire-semantic="python">
 CATEGS = { 'LOYER': 'LOYER', 'FORFAIT COMPTE SUPERBANK': 'COTISATION BANCAIRE', 'LES ANCIENS ROBINSON': 'COURSES', "L'EPICERIE DENBAS": 'COURSES', 'TELEPHONE': 'FACTURE TELEPHONE', 'LA CCNCF': 'TRANSPORT', 'CHEZ LUC': 'RESTAURANT', 'RAPT': 'TRANSPORT', 'TOUPTIPRI': 'COURSES', 'LA LOUVE': 'COURSES', 'VELOC': 'TRANSPORT' } TYPES = { 'CARTE': 'CARTE', 'VIR': 'VIREMENT', 'VIREMENT': 'VIREMENT', 'RETRAIT': 'RETRAIT', 'PRLV': 'PRELEVEMENT', 'DON': 'DON', }</code>
 </pre>
-<aside id="r-4726607" data-claire-element-id="8608352" data-claire-semantic="warning">
-<p id="r-4726606" data-claire-element-id="8608351">
+<aside id="r-4726607" data-claire-semantic="warning">
+<p id="r-4726606" >
 Choisissez vos propres catégories, mais si vous payez vos courses en carte bancaire, essayez d'avoir au moins la catégorie "COURSES".</p>
 </aside>
-<aside id="r-4726609" data-claire-element-id="8608334" data-claire-semantic="warning">
-<p id="r-4726608" data-claire-element-id="8608333">
+<aside id="r-4726609" data-claire-semantic="warning">
+<p id="r-4726608" >
 Attention aux majuscules et minuscules : en effet, le programme cherchera dans le libellé la chaîne de caractère exacte. Si le libellé d'une opération est<code data-claire-semantic="text">
 paiement 2738 Chez LUC s.a.</code>
 , alors elle ne sera pas classée dans la catégorie restaurant, à cause des minuscules dans "Chez".</p>
 </aside>
-<h4 id="r-4726829" data-claire-element-id="8609034">
+<h4 id="r-4726829" >
 Dernière étape avant le décollage !</h4>
-<p id="r-4726626" data-claire-element-id="8608382">
+<p id="r-4726626" >
 Encore 3 lignes à personnaliser et on pourra lancer le programme :</p>
-<pre id="r-4726627" data-claire-element-id="8608383">
+<pre id="r-4726627" >
 <code data-claire-semantic="python">
 EXPENSES = [80,200] # Bornes des catégories de dépense : petite, moyenne et grosse LAST_BALANCE = 2400 # Solde du compte APRES la dernière opération en date WEEKEND = ["Saturday","Sunday"] # Jours non travaillés</code>
 </pre>
-<p id="r-4726628" data-claire-element-id="8608821">
+<p id="r-4726628" >
 Tout d'abord, les bornes des catégories de dépenses (ligne 1). Ici, j'ai considéré qu'une dépense inférieure à 80€ est une petite dépense, qu'une dépense de plus de 200€ est une grosse dépense, et qu'une dépense moyenne se situe entre ces 2 bornes. Ces 2 valeurs sont subjectives, alors personnalisez-les ! Elles doivent être exprimés dans la même devise que celle de vos relevés de compte : si vos relevés ne sont pas en euros, il vous faudra probablement changer ces valeurs !</p>
-<p id="r-4726629" data-claire-element-id="8608822">
+<p id="r-4726629" >
 Lorsque vous téléchargez vos relevés, retenez-bien la somme d'argent présente sur votre compte<em>
 après</em>
 la dernière opération de votre fichier csv. Si votre fichier contient la toute dernière opération que vous avez effectuée, alors indiquez dans<code data-claire-semantic="text">
 LAST_BALANCE</code>
 la somme d'argent actuellement présente sur votre compte.</p>
-<p id="r-4726746" data-claire-element-id="8608823">
+<p id="r-4726746" >
 Indiquez enfin dans<code data-claire-semantic="text">
 WEEKEND</code>
 s'il y a des jours durant lesquels votre quotidien change. Pour quelqu'un qui travaille du Lundi au Vendredi, le quotidien changera les samedis et dimanches car il ne travaille pas. Vous pouvez laisser cette liste vide en écrivant<code data-claire-semantic="text">
 WEEKEND = []</code>
 . Choisissez ces valeurs parmi celles-ci, en respectant les majuscules/minuscules :</p>
-<pre id="r-4726747" data-claire-element-id="8608824">
+<pre id="r-4726747" >
 <code data-claire-semantic="python">
 ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']</code>
 </pre>
-<h4 id="r-4726832" data-claire-element-id="8690245">
+<h4 id="r-4726832" >
 Décollage !</h4>
-<p id="r-4726748" data-claire-element-id="8608826">
+<p id="r-4726748" >
 C'est quasi-fini ! Il ne vous reste plus qu'à copier-coller ce code les yeux fermés :</p>
-<pre id="r-4726749" data-claire-element-id="8608827">
+<pre id="r-4726749" >
 <code data-claire-semantic="python">
 # Controle des colonnes for c in ['date_operation','libelle','debit','credit']: if c not in data.columns: if c in ['debit','credit'] and 'montant' not in data.columns: msg = "Il vous manque la colonne '{}'. Attention aux majuscules " msg += "et minuscules dans le nom des colonnes!" raise Exception(msg.format(c)) # Suppression des colonnes innutiles for c in data.columns: if c not in ['date_operation','libelle','debit','credit','montant']: del data[c] # Ajout de la colonne 'montant' si besoin if 'montant' not in data.columns: data["debit"] = data["debit"].fillna(0) data["credit"] = data["credit"].fillna(0) data["montant"] = data["debit"] + data["credit"] del data["credit"], data["debit"] # creation de la variable 'solde_avt_ope' data = data.sort_values("date_operation") amount = data["montant"] balance = amount.cumsum() balance = list(balance.values) last_val = balance[-1] balance = [0] + balance[:-1] balance = balance - last_val + LAST_BALANCE data["solde_avt_ope"] = balance # Assignation des operations a une categorie et e un type def detect_words(values, dictionary): result = [] for lib in values: operation_type = "AUTRE" for word, val in dictionary.items(): if word in lib: operation_type = val result.append(operation_type) return result data["categ"] = detect_words(data["libelle"], CATEGS) data["type"] = detect_words(data["libelle"], TYPES) # creation des variables 'tranche_depense' et 'sens' def expense_slice(value): value = -value # Les dépenses sont des nombres négatifs if value &lt; 0: return "(pas une dépense)" elif value &lt; EXPENSES[0]: return "petite" elif value &lt; EXPENSES[1]: return "moyenne" else: return "grosse" data["tranche_depense"] = data["montant"].map(expense_slice) data["sens"] = ["credit" if m &gt; 0 else "debit" for m in data["montant"]] # Creation des autres variables data["annee"] = data["date_operation"].map(lambda d: d.year) data["mois"] = data["date_operation"].map(lambda d: d.month) data["jour"] = data["date_operation"].map(lambda d: d.day) data["jour_sem"] = data["date_operation"].map(lambda d: d.weekday_name) data["jour_sem_num"] = data["date_operation"].map(lambda d: d.weekday()+1) data["weekend"] = data["jour_sem"].isin(WEEKEND) data["quart_mois"] = [int((jour-1)*4/31)+1 for jour in data["jour"]] # Enregistrement au format CSV data.to_csv("operations_enrichies.csv",index=False)</code>
 </pre>
-<p id="r-4726750" data-claire-element-id="8608828">
+<p id="r-4726750" >
 </p>
-<p id="r-4726751" data-claire-element-id="8608829">
+<p id="r-4726751" >
 Ce code supprimera les colonnes dont nous n'avons pas besoin (par exemple<em>
 date_valeur</em>
 ), et vérifiera que votre dataframe contient biens les colonnes dont nous aurons besoin (leur nom doit être correctement orthographié). Ensuite, il créera toutes les variables citées tout en haut du chapitre !</p>
-<p id="r-4726830" data-claire-element-id="8690244">
+<p id="r-4726830" >
 Le résultat sera enregistré dans une nouveau fichier csv :<code data-claire-semantic="text">
 operations_enrichies.csv</code>
 .</p>
-<p id="r-4726866" data-claire-element-id="8609302">
+<p id="r-4726866" >
 Voilà, vous êtes fin prêts à analyser vos comportements de consommation !</p>
-<h3 id="r-4726840" data-claire-element-id="8729653">
+<h3 id="r-4726840" >
 Et si ça a planté ...?</h3>
-<p id="r-4726752" data-claire-element-id="8729652">
+<p id="r-4726752" >
 Si vous rencontrez des erreurs, téléchargez le fichier<a href="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/courses/4525266/operations_enrichies.csv">
 operations_enrichies.csv</a>
 . Faites-nous part de vos erreurs sur le<a href="/forum/sujet/cours-nettoyez-et-decrivez-votre-jeu-de-donnees">
 forum</a>
 de ce cours (sans copier-coller vos relevés !), et si votre erreur est fréquente, nous ajouterons sa solution ci dessous.</p>
-<h4 id="r-4726839" data-claire-element-id="8609045">
+<h4 id="r-4726839" >
 Erreurs fréquentes</h4>
-<p id="r-4726430" data-claire-element-id="8607876">
+<p id="r-4726430" >
 Aucune erreur fréquente recensée à ce jour.</p>
 </div>
 <div class="js-courseSelementActions sideActions">

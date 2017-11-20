@@ -1,0 +1,116 @@
+<div class="course-content space-bottom-big">
+<div class="userContent userContent--smallCourse js-userContent" data-javascript-enabled>
+<h2>
+Énoncé
+</h2>
+<h3>Prérequis</h3>
+<p>Pour ce projet, il sera nécessaire de savoir manipuler des données en <strong>R</strong> ou en <strong>Python</strong>. Également, vous devrez effectuer une analyse de <strong>statistique descriptive</strong>, ainsi qu'une <strong>Analyse en Composantes Principales</strong>, une <strong>classification automatique</strong>, et une modélisation de type <strong>régression logistique</strong>.</p>
+<h3> </h3>
+<h3>Mise en situation</h3>
+<p>Votre société de consulting informatique vous propose une nouvelle mission au ministère de l'intérieur, dans le cadre de la lutte contre la criminalité organisée, à l'<a href="http://www.police-nationale.interieur.gouv.fr/Organisation/Direction-Centrale-de-la-Police-Judiciaire/Lutte-contre-la-criminalite-organisee/Office-central-pour-la-repression-du-faux-monnayage">office central pour la répression du faux monnayage</a> . Votre mission si vous l'acceptez : créer un algorithme de détection de faux billets.</p>
+<p>Vous vous voyez déjà en grand justicier combattant sans relâche la criminalité organisée en pianotant à mains de maîtres votre ordinateur, pour façonner ce fabuleux algorithme  qui traquera la moindre fraude et permettra de mettre à jour les réseaux secrets de fossoyeurs ! La classe, non ?</p>
+<p>... bon, si on retombait les pieds sur terre? Travailler pour la police judiciaire, c'est bien, mais vous allez devoir faire appel à vos connaissances en statistiques, alors on y va !</p>
+<h3>Les données</h3>
+<p>La PJ vous transmet un jeu de données contenant les caractéristiques géométriques de billets de banque. Pour chacun d'eux, nous connaissons :</p>
+<ul>
+<li>La longueur du billet (en mm)</li>
+<li>La hauteur du billet (mesurée sur le côté gauche, en mm)</li>
+<li>La hauteur du billet (mesurée sur le côté droit, en mm)</li>
+<li>La marge entre le bord supérieur du billet et l'image de celui-ci (en mm)</li>
+<li>La marge entre le bord inférieur du billet et l'image de celui-ci (en mm)</li>
+<li>La diagonale du billet (en mm)</li>
+</ul>
+<p><a href="https://s3-eu-west-1.amazonaws.com/static.oc-static.com/prod/courses/files/parcours-data-analyst/billets.csv">Cliquez pour télécharger billets.csv</a></p>
+<h3>Votre mission</h3>
+<h4>Mission 0</h4>
+<p>Afin d'introduire votre analyse, effectuez une brève description des données (analyses univariées et bivariées).</p>
+<h4>Mission 1</h4>
+<p>Vous réaliserez une Analyse en Composantes Principales de l'échantillon, en suivant toutes ces étapes :</p>
+<ul>
+<li>Analyse de l'éboulis des valeurs propres</li>
+<li>Représentation des variables par le cercle des corrélations</li>
+<li>Représentation des individus par les plans factoriels</li>
+<li>Analyser la qualité de représentation et la contribution des individus.</li>
+</ul>
+<p>Pour chacune de ces étapes, commentez les résultats obtenus. La variable donnant la nature Vrai/Faux du billet sera utilisée comme variable illustrative.</p>
+<h4>Mission 2</h4>
+<p>Appliquer un algorithme de classification, puis analysez le résultat obtenu.</p>
+<p>Visualisez la partition obtenue dans le premier plan factoriel de l'ACP, puis analysez-la.</p>
+<h4>Mission 3</h4>
+<p>Modélisez les données à l'aide d'une régression logistique. Grâce à celle-ci, vous créerez un programme capable d'effectuer une prédiction sur un billet, c'est-à-dire de déterminer s'il s'agit d'un vrai ou d'un faux billet. Pour chaque billet, votre algorithme de classification devra donner la probabilité que le billet soit vrai. Si cette probabilité est supérieure ou égale à 0.5, le billet sera considéré comme vrai. Dans le cas contraire, il sera considéré comme faux.</p>
+<aside data-claire-semantic="warning">
+<p>Il vous sera demandé d'utiliser ce programme lors de votre soutenance !</p>
+</aside>
+<h3>Livrables attendus</h3>
+<p>Le livrable attendu est un fichier .zip contenant :</p>
+<ul>
+<li>Le code Python ou R de l’analyse complète (un ou plusieurs fichiers)</li>
+<li>Les graphiques générés par le code, en format image</li>
+</ul>
+<h3>Modalités de la soutenance</h3>
+<p>Lors de la soutenance, l'examinateur vous procurera un fichier CSV contenant 5 caractéristiques de billets. Votre programme devra déterminer si chacun de ces billets est vrai ou faux, en affichant la probabilité associée. Ce fichier sera de la même forme que celui-ci : <a href="https://s3-eu-west-1.amazonaws.com/static.oc-static.com/prod/courses/files/parcours-data-analyst/exemple.csv">cliquez pour télécharger exemple.csv</a></p>
+<aside data-claire-semantic="warning">
+<p>Dans ce fichier d'exemple, chaque billet possède un identifiant (dans colonne "id"). Vérifiez que votre programme affiche bien cet identifiant pour chaque prédiction effectuée.</p>
+</aside>
+<aside data-claire-semantic="warning">
+<p>Assurez-vous que votre programme puisse bien lire ce fichier et effectuer la prédiction pour chacun des billets !</p>
+</aside>
+<p> La soutenance se déroulera comme suit :</p>
+<table>
+<tbody>
+<tr>
+<td>5 min</td>
+<td>Présentation du jeu de données &amp; brèves analyse bivariées et univariées (mission 0)</td>
+</tr>
+<tr>
+<td>10 min</td>
+<td>ACP : détail de l'analyse, avec graphiques à l'appui (mission 1)</td>
+</tr>
+<tr>
+<td>5 min</td>
+<td>Analyse de la classification (mission 2)</td>
+</tr>
+<tr>
+<td>5 min</td>
+<td>Détail de la modélisation (mission 3)</td>
+</tr>
+<tr>
+<td>5 min</td>
+<td>Test du programme avec le jeu de test donné par le mentor-examinateur</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<h3>Ressources complémentaires</h3>
+<p><a href="https://www.youtube.com/watch?v=zAULhNrnuL4">https://www.youtube.com/watch?v=zAULhNrnuL4</a></p>
+<ul>
+<li>Introduction en anglais à la régression logistique.</li>
+</ul>
+<p><a href="/courses/explorez-vos-donnees-avec-des-algorithmes-non-supervises/partitionnez-vos-donnees-avec-dbscan">https://openclassrooms.com/courses/explorez-vos-donnees-avec-des-algorithmes-non-supervises/partitionnez-vos-donnees-avec-dbscan</a></p>
+<ul>
+<li>Cours OpenClassrooms sur l’analyse non supervisée (attention, niveau avancé !)</li>
+</ul>
+</div>
+<div class="userContent userContent--smallCourse">
+<h2>
+Compétences à valider
+</h2>
+<ul>
+<li>
+Modéliser grâce à la régression logistique
+</li>
+<li>
+Utiliser un algorithme de clustering de type Kmeans
+</li>
+<li>
+Réaliser une brève description des données
+</li>
+<li>
+Interpréter une ACP
+</li>
+<li>
+Réaliser une ACP
+</li>
+</ul>
+</div>
+</div>

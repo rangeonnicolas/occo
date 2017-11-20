@@ -1,36 +1,36 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/effectuer-une-recherche-dans-une-chaine-de-caractere" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
 <div class="userContent js-userContent">
-<p id="r-4705621" data-claire-element-id="8548771">
+<p id="r-4705621" >
 Dans une base de données, il arrive souvent que deux chaînes de caractères différentes puissent décrire la même information.</p>
-<p id="r-4705622" data-claire-element-id="8548772">
+<p id="r-4705622" >
 Par exemple, les chaînes de caractères<code data-claire-semantic="text">
 'Jean-Michel'</code>
 et<code data-claire-semantic="text">
 'Jean Michel'</code>
 font référence au même prénom, mais elles diffèrent à cause du tiret.</p>
-<video id="r-4710636" data-claire-element-id="8562791" src="https://vimeo.com/233480806">
+<video id="r-4710636" src="https://vimeo.com/233480806">
 <a href="https://vimeo.com/233480806">
 https://vimeo.com/233480806</a>
 </video>
-<p id="r-4705624" data-claire-element-id="8548774">
+<p id="r-4705624" >
 </p>
-<h3 id="r-4561231" data-claire-element-id="8540986">
+<h3 id="r-4561231" >
 L'opérateur LIKE</h3>
-<p id="r-4560414" data-claire-element-id="8540943">
+<p id="r-4560414" >
 Pour cela, il existe un opérateur très pratique en SQL : c'est<code data-claire-semantic="text">
 LIKE</code>
 .</p>
-<p id="r-4560387" data-claire-element-id="8540944">
+<p id="r-4560387" >
 Celui-ci permet d'effectuer une recherche dans des chaînes de caractères. Il est utilisé lorsque l'on ne connaît qu'une partie de la chaîne de caractères, ou que l'on connaît sa forme générale.</p>
-<aside id="r-4561437" data-claire-element-id="8540946" data-claire-semantic="information">
-<p id="r-4561436" data-claire-element-id="8540945">
+<aside id="r-4561437" data-claire-semantic="information">
+<p id="r-4561436" >
 Ce que j'appelle<em>
 forme générale d'une chaîne de caractères</em>
 est souvent appelé<em>
 pattern</em>
 dans le monde de la programmation informatique.</p>
 </aside>
-<p id="r-4561316" data-claire-element-id="8540947">
+<p id="r-4561316" >
 On utilise<code data-claire-semantic="text">
 LIKE</code>
 avec les caractères<code data-claire-semantic="text">
@@ -38,145 +38,145 @@ _</code>
 et<code data-claire-semantic="text">
 %</code>
 . Le premier est employé pour remplacer un caractère inconnu, le second pour remplacer 0, 1 ou plusieurs caractères inconnus.</p>
-<p id="r-4561317" data-claire-element-id="8540948">
+<p id="r-4561317" >
 Par exemple, pour connaître toutes les sociétés qui commencent par le caractère<code data-claire-semantic="text">
 A</code>
 , nous pouvons écrire ceci :</p>
-<pre id="r-4561318" data-claire-element-id="8180243">
+<pre id="r-4561318" >
 <code data-claire-semantic="sql">
 SELECT * FROM entity WHERE name LIKE 'A%' ;</code>
 </pre>
-<p id="r-4617906" data-claire-element-id="8328861">
+<p id="r-4617906" >
 </p>
-<h4 id="r-4617907" data-claire-element-id="8540985">
+<h4 id="r-4617907" >
 Un peu d'entraînement</h4>
-<p id="r-4561322" data-claire-element-id="8540949">
+<p id="r-4561322" >
 Voici dans ce tableau différentes expressions utilisant<code data-claire-semantic="text">
 LIKE</code>
 (colonne de gauche), ainsi que la valeur renvoyée par l'expression en question (colonne de droite).</p>
-<table id="r-4561369" data-claire-element-id="8180722">
-<tbody id="r-4561368" data-claire-element-id="8180721">
-<tr id="r-4561327" data-claire-element-id="8180637">
-<td id="r-4561324" data-claire-element-id="8180634">
-<p id="r-4561438" data-claire-element-id="8180633">
+<table id="r-4561369" >
+<tbody id="r-4561368" >
+<tr id="r-4561327" >
+<td id="r-4561324" >
+<p id="r-4561438" >
 <strong>
 Expression</strong>
 </p>
 </td>
-<td id="r-4561326" data-claire-element-id="8180636">
-<p id="r-4561439" data-claire-element-id="8180635">
+<td id="r-4561326" >
+<p id="r-4561439" >
 <strong>
 Résultat</strong>
 </p>
 </td>
 </tr>
-<tr id="r-4561442" data-claire-element-id="8180685">
-<td id="r-4561440" data-claire-element-id="8180682">
-<p id="r-4561323" data-claire-element-id="8180681">
+<tr id="r-4561442" >
+<td id="r-4561440" >
+<p id="r-4561323" >
 <code data-claire-semantic="text">
 'OpenClassrooms' LIKE '%Class%'</code>
 </p>
 </td>
-<td id="r-4561441" data-claire-element-id="8180684">
-<p id="r-4561325" data-claire-element-id="8180683">
+<td id="r-4561441" >
+<p id="r-4561325" >
 <code data-claire-semantic="text">
 TRUE</code>
 </p>
 </td>
 </tr>
-<tr id="r-4561332" data-claire-element-id="8180690">
-<td id="r-4561329" data-claire-element-id="8180687">
-<p id="r-4561328" data-claire-element-id="8180686">
+<tr id="r-4561332" >
+<td id="r-4561329" >
+<p id="r-4561328" >
 <code data-claire-semantic="text">
 'OpenClassrooms' LIKE '%Class%ms'</code>
 </p>
 </td>
-<td id="r-4561331" data-claire-element-id="8180689">
-<p id="r-4561330" data-claire-element-id="8180688">
+<td id="r-4561331" >
+<p id="r-4561330" >
 <code data-claire-semantic="text">
 TRUE</code>
 </p>
 </td>
 </tr>
-<tr id="r-4561337" data-claire-element-id="8180695">
-<td id="r-4561334" data-claire-element-id="8180692">
-<p id="r-4561333" data-claire-element-id="8180691">
+<tr id="r-4561337" >
+<td id="r-4561334" >
+<p id="r-4561333" >
 <code data-claire-semantic="text">
 'OpenClassrooms' LIKE '%Class%ms%'</code>
 </p>
 </td>
-<td id="r-4561336" data-claire-element-id="8180694">
-<p id="r-4561335" data-claire-element-id="8180693">
+<td id="r-4561336" >
+<p id="r-4561335" >
 <code data-claire-semantic="text">
 TRUE</code>
 </p>
 </td>
 </tr>
-<tr id="r-4561342" data-claire-element-id="8180700">
-<td id="r-4561339" data-claire-element-id="8180697">
-<p id="r-4561338" data-claire-element-id="8180696">
+<tr id="r-4561342" >
+<td id="r-4561339" >
+<p id="r-4561338" >
 <code data-claire-semantic="text">
 'OpenClassrooms' LIKE 'Open_lassrooms'</code>
 </p>
 </td>
-<td id="r-4561341" data-claire-element-id="8180699">
-<p id="r-4561340" data-claire-element-id="8180698">
+<td id="r-4561341" >
+<p id="r-4561340" >
 <code data-claire-semantic="text">
 TRUE</code>
 </p>
 </td>
 </tr>
-<tr id="r-4561347" data-claire-element-id="8180705">
-<td id="r-4561344" data-claire-element-id="8180702">
-<p id="r-4561343" data-claire-element-id="8180701">
+<tr id="r-4561347" >
+<td id="r-4561344" >
+<p id="r-4561343" >
 <code data-claire-semantic="text">
 'OpenClassrooms' LIKE 'Open__lassrooms'</code>
 </p>
 </td>
-<td id="r-4561346" data-claire-element-id="8180704">
-<p id="r-4561345" data-claire-element-id="8180703">
+<td id="r-4561346" >
+<p id="r-4561345" >
 <code data-claire-semantic="text">
 FALSE</code>
 </p>
 </td>
 </tr>
-<tr id="r-4561352" data-claire-element-id="8180710">
-<td id="r-4561349" data-claire-element-id="8180707">
-<p id="r-4561348" data-claire-element-id="8180706">
+<tr id="r-4561352" >
+<td id="r-4561349" >
+<p id="r-4561348" >
 <code data-claire-semantic="text">
 'OpenClassrooms' LIKE '_OpenClassrooms'</code>
 </p>
 </td>
-<td id="r-4561351" data-claire-element-id="8180709">
-<p id="r-4561350" data-claire-element-id="8180708">
+<td id="r-4561351" >
+<p id="r-4561350" >
 <code data-claire-semantic="text">
 FALSE</code>
 </p>
 </td>
 </tr>
-<tr id="r-4561357" data-claire-element-id="8180715">
-<td id="r-4561354" data-claire-element-id="8180712">
-<p id="r-4561353" data-claire-element-id="8180711">
+<tr id="r-4561357" >
+<td id="r-4561354" >
+<p id="r-4561353" >
 <code data-claire-semantic="text">
 'OpenClassrooms' LIKE 'Op__Cla%'</code>
 </p>
 </td>
-<td id="r-4561356" data-claire-element-id="8180714">
-<p id="r-4561355" data-claire-element-id="8180713">
+<td id="r-4561356" >
+<p id="r-4561355" >
 <code data-claire-semantic="text">
 TRUE</code>
 </p>
 </td>
 </tr>
-<tr id="r-4561362" data-claire-element-id="8180720">
-<td id="r-4561359" data-claire-element-id="8180717">
-<p id="r-4561358" data-claire-element-id="8180716">
+<tr id="r-4561362" >
+<td id="r-4561359" >
+<p id="r-4561358" >
 <code data-claire-semantic="text">
 'OpenClassrooms' LIKE '%OpenClas%srooms%'</code>
 </p>
 </td>
-<td id="r-4561361" data-claire-element-id="8180719">
-<p id="r-4561360" data-claire-element-id="8180718">
+<td id="r-4561361" >
+<p id="r-4561360" >
 <code data-claire-semantic="text">
 TRUE</code>
 </p>
@@ -184,14 +184,14 @@ TRUE</code>
 </tr>
 </tbody>
 </table>
-<aside id="r-4561445" data-claire-element-id="8540984" data-claire-semantic="warning">
-<p id="r-4560416" data-claire-element-id="8540982">
+<aside id="r-4561445" data-claire-semantic="warning">
+<p id="r-4560416" >
 Si vous souhaitez tester ces expressions, écrivez dans votre SGBDR :</p>
-<pre id="r-4561443" data-claire-element-id="8180592">
+<pre id="r-4561443" >
 <code data-claire-semantic="sql">
 SELECT 'OpenClassrooms' LIKE '%Class%' ;</code>
 </pre>
-<p id="r-4561444" data-claire-element-id="8540983">
+<p id="r-4561444" >
 La réponse sera une table d'une ligne et d'une colonne. En fonction de votre SGBDR, la valeur contenue dans cette table peut varier :<code data-claire-semantic="text">
 TRUE</code>
 est par exemple équivalent à<code data-claire-semantic="text">
@@ -206,29 +206,29 @@ en SQLite et<code data-claire-semantic="text">
 f</code>
 en Postgresql.</p>
 </aside>
-<p id="r-4561446" data-claire-element-id="8180595">
+<p id="r-4561446" >
 </p>
-<h3 id="r-4560417" data-claire-element-id="8562743">
+<h3 id="r-4560417" >
 Majuscules et minuscules</h3>
-<div id="r-4561447" data-claire-element-id="8541063" data-claire-semantic="question">
-<p id="r-4560388" data-claire-element-id="8541062">
+<div id="r-4561447" data-claire-semantic="question">
+<p id="r-4560388" >
 Que renvoie l'expression<code data-claire-semantic="text">
 'OpenClassrooms' LIKE 'openclassrooms'</code>
 ?</p>
 </div>
-<p id="r-4561448" data-claire-element-id="8541064">
+<p id="r-4561448" >
 Et bien... cela dépend ! Les SGBDR n'ont pas tous le même comportement, certains vous renverront<code data-claire-semantic="text">
 TRUE</code>
 , d'autres<code data-claire-semantic="text">
 FALSE</code>
 . :'(</p>
-<p id="r-4561449" data-claire-element-id="8180672">
+<p id="r-4561449" >
 Pour ne jamais vous tromper, je vous conseille donc de vous y prendre comme ceci :</p>
-<pre id="r-4561450" data-claire-element-id="8180602">
+<pre id="r-4561450" >
 <code data-claire-semantic="sql">
 SELECT * FROM entity WHERE lower(name) LIKE 'a%' ;</code>
 </pre>
-<p id="r-4561451" data-claire-element-id="8541065">
+<p id="r-4561451" >
 De cette manière, quelle que soit sa valeur,<em>
 name</em>
 sera converti en minuscules grâce à la fonction<code data-claire-semantic="text">
@@ -236,43 +236,43 @@ lower</code>
 . Une fois la conversion faite, écrivez votre pattern sans aucune majuscule (ici le pattern est<code data-claire-semantic="text">
 'a%'</code>
 ).</p>
-<p id="r-4561452" data-claire-element-id="8541066">
+<p id="r-4561452" >
 Cette requête vous renverra toutes les sociétés dont le nom commence par un<code data-claire-semantic="text">
 A</code>
 , qu'il soit en majuscule ou minuscule.</p>
-<p id="r-4710627" data-claire-element-id="8562742">
+<p id="r-4710627" >
 </p>
-<h3 id="r-4560399" data-claire-element-id="8562793">
+<h3 id="r-4560399" >
 Les doublons</h3>
-<p id="r-4560391" data-claire-element-id="8562792">
+<p id="r-4560391" >
 Dans les Panama Papers, il arrive qu'une société ait plusieurs orthographes différentes.</p>
-<p id="r-4561486" data-claire-element-id="8541102">
+<p id="r-4561486" >
 Par exemple, nous avons trouvé un intermédiaire dont le nom est<em>
 Pacher Banking S.A</em>
 .</p>
-<p id="r-4561686" data-claire-element-id="8181342">
+<p id="r-4561686" >
 Recherchons donc s'il existe des doublons :</p>
-<pre id="r-4561687" data-claire-element-id="8181343">
+<pre id="r-4561687" >
 <code data-claire-semantic="sql">
 SELECT * FROM intermediary WHERE lower(name) LIKE '%pacher%banking%' ;</code>
 </pre>
-<p id="r-4560392" data-claire-element-id="8562745">
+<p id="r-4560392" >
 Oui ! Il y a 2 lignes qui ont un nom similaire. Correspondent-elles à la même société ? Comme elles ont la même adresse, nous considérerons ici que oui (même si ce n'est pas une certitude absolue).</p>
-<p id="r-4561691" data-claire-element-id="8541103">
+<p id="r-4561691" >
 Nous pouvons donc adapter la requête du chapitre précédent, en intégrant l'opérateur<code data-claire-semantic="text">
 LIKE</code>
 :</p>
-<pre id="r-4561736" data-claire-element-id="8262241">
+<pre id="r-4561736" >
 <code data-claire-semantic="sql">
 SELECT i.id AS intermediary_id, i.name AS intermediary_name, e.jurisdiction, e.jurisdiction_description, count(*) as cnt FROM intermediary i, assoc_inter_entity a, entity e WHERE a.entity = e.id AND a.inter = i.id AND ( lower(i.name) LIKE '%pacher%banking%' OR lower(i.name) LIKE '%plouf%financial%services%') GROUP BY i.id, i.name, e.jurisdiction, e.jurisdiction_description HAVING count(*) &gt; 100 ;</code>
 </pre>
-<p id="r-4560398" data-claire-element-id="8178193">
+<p id="r-4560398" >
 </p>
-<h3 id="r-4560400" data-claire-element-id="8562795">
+<h3 id="r-4560400" >
 Aller plus loin : gérer les doublons dans les Panama Papers</h3>
-<p id="r-4561371" data-claire-element-id="8541105">
+<p id="r-4561371" >
 Conscients des nombreux doublons dans leur base de données, mais assez prudents pour ne pas fusionner à tort deux sociétés de même nom, les concepteurs de la base des Panama Papers ont ajouté des indications supplémentaires pour nous aiguiller.</p>
-<p id="r-4561737" data-claire-element-id="8181494">
+<p id="r-4561737" >
 Ils ont en effet lié certaines lignes des tables<strong>
 entity</strong>
 ,<strong>
@@ -288,7 +288,7 @@ ou<em>
 ,<em>
 "même adresse que"</em>
 ).</p>
-<p id="r-4710637" data-claire-element-id="8562794">
+<p id="r-4710637" >
 Vous pouvez trouver ces liens dans les tables<strong>
 assoc_intermediaries</strong>
 ,<strong>
@@ -296,29 +296,29 @@ assoc_entities</strong>
 et<strong>
 assoc_officers</strong>
 .</p>
-<p id="r-4617885" data-claire-element-id="8328806">
+<p id="r-4617885" >
 </p>
-<h3 id="r-4637501" data-claire-element-id="8562797">
+<h3 id="r-4637501" >
 Un peu d'entraînement !</h3>
-<p id="r-4637487" data-claire-element-id="8380152">
+<p id="r-4637487" >
 La base de données est en ligne, vous pouvez vous entraîner en réécrivant les requêtes de ce chapitre. N'hésitez pas à les modifier, à jouer avec, pour "voir ce que ça fait". ;)</p>
-<p id="r-4637488" data-claire-element-id="8542382">
+<p id="r-4637488" >
 <a href="https://www.codevolve.com/api/v1/publishable_key/2A9CAA3419124E3E8C3F5AFCE5306292?content_id=ba014daa-d108-4e91-83f1-42154313b2d1">
 Console interactive</a>
 </p>
-<p id="r-4710638" data-claire-element-id="8562796">
+<p id="r-4710638" >
 </p>
-<h3 id="r-4710644" data-claire-element-id="8562803">
+<h3 id="r-4710644" >
 En résumé</h3>
-<ul id="r-4710643" data-claire-element-id="8562802">
-<li id="r-4710640" data-claire-element-id="8562799">
-<p id="r-4710639" data-claire-element-id="8562798">
+<ul id="r-4710643" >
+<li id="r-4710640" >
+<p id="r-4710639" >
 Pour rechercher des chaînes de caractères incomplètes, on utilise<code data-claire-semantic="text">
 LIKE</code>
 .</p>
 </li>
-<li id="r-4710642" data-claire-element-id="8562801">
-<p id="r-4710641" data-claire-element-id="8562800">
+<li id="r-4710642" >
+<p id="r-4710641" >
 On spécifie un<em>
 pattern</em>
 , où<code data-claire-semantic="text">

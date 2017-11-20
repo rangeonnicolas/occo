@@ -1,20 +1,20 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/creez-du-lien-entre-vos-relations-grace-aux-cles-etrangeres" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
 <div class="userContent js-userContent">
-<video id="r-4709396" data-claire-element-id="8559241" src="https://vimeo.com/album/233477149">
+<video id="r-4709396" src="https://vimeo.com/album/233477149">
 <a href="https://vimeo.com/album/233477149">
 https://vimeo.com/album/233477149</a>
 </video>
-<p id="r-4504251" data-claire-element-id="8023051">
+<p id="r-4504251" >
 Nous avons pour le moment une relation qui contient des<strong>
 pommes</strong>
 . C'est bien, mais sachez que dans une base de données, il est très rare de ne trouver qu'une seule table ! Les applications informatiques qui utilisent des bases de données sont en général complexes et nécessitent de nombreuses tables.</p>
-<p id="r-4567261" data-claire-element-id="8193461">
+<p id="r-4567261" >
 </p>
-<h3 id="r-4567262" data-claire-element-id="8537373">
+<h3 id="r-4567262" >
 Réfléchissons...</h3>
-<p id="r-4504252" data-claire-element-id="8336041">
+<p id="r-4504252" >
 En général, les tables d'une base de données ne sont pas indépendantes entre elles, elles sont liées.</p>
-<p id="r-4620606" data-claire-element-id="8336042">
+<p id="r-4620606" >
 Je décide par exemple d'avoir une relation<strong>
 pomme</strong>
 , et également une seconde relation<strong>
@@ -24,151 +24,151 @@ liées</em>
 entre elles, car une pomme<strong>
 est</strong>
 d'une certaine variété. Il y a donc un lien entre la pomme et sa variété.</p>
-<p id="r-4504253" data-claire-element-id="8068521">
+<p id="r-4504253" >
 Dans le contexte d'un magasin de fruits, on peut dire que le prix d'une pomme dépend de sa variété. Le prix au kilogramme est donc une caractéristique propre à la variété. On aura donc dans la relation<strong>
 variété</strong>
 un attribut<em>
 prix_au_kilo</em>
 :</p>
-<table id="r-4504317" data-claire-element-id="8203371">
+<table id="r-4504317" >
 <caption>
 Variete</caption>
-<tbody id="r-4504316" data-claire-element-id="8039937">
-<tr id="r-4504300" data-claire-element-id="8039895">
-<td id="r-4504297" data-claire-element-id="8017403">
-<p id="r-4504296" data-claire-element-id="8017402">
+<tbody id="r-4504316" >
+<tr id="r-4504300" >
+<td id="r-4504297" >
+<p id="r-4504296" >
 <strong>
 libellé</strong>
 </p>
 </td>
-<td id="r-4504299" data-claire-element-id="8017165">
-<p id="r-4504298" data-claire-element-id="8017164">
+<td id="r-4504299" >
+<p id="r-4504298" >
 <strong>
 prix_au_kilo</strong>
 </p>
 </td>
-<td id="r-4511882" data-claire-element-id="8039892">
-<p id="r-4511881" data-claire-element-id="8039891">
+<td id="r-4511882" >
+<p id="r-4511881" >
 <strong>
 maturation</strong>
 </p>
 </td>
-<td id="r-4511884" data-claire-element-id="8039894">
-<p id="r-4511883" data-claire-element-id="8039893">
+<td id="r-4511884" >
+<p id="r-4511883" >
 <strong>
 goût</strong>
 </p>
 </td>
 </tr>
-<tr id="r-4504305" data-claire-element-id="8039902">
-<td id="r-4504302" data-claire-element-id="8039897">
-<p id="r-4504301" data-claire-element-id="8039896">
+<tr id="r-4504305" >
+<td id="r-4504302" >
+<p id="r-4504301" >
 Ariane</p>
 </td>
-<td id="r-4504304" data-claire-element-id="8017170">
-<p id="r-4504303" data-claire-element-id="8017169">
+<td id="r-4504304" >
+<p id="r-4504303" >
 3.19</p>
 </td>
-<td id="r-4511886" data-claire-element-id="8039899">
-<p id="r-4511885" data-claire-element-id="8039898">
+<td id="r-4511886" >
+<p id="r-4511885" >
 tardive</p>
 </td>
-<td id="r-4511888" data-claire-element-id="8039901">
-<p id="r-4511887" data-claire-element-id="8039900">
+<td id="r-4511888" >
+<p id="r-4511887" >
 sucré/acidulé</p>
 </td>
 </tr>
-<tr id="r-4504310" data-claire-element-id="8039909">
-<td id="r-4504307" data-claire-element-id="8039904">
-<p id="r-4504306" data-claire-element-id="8039903">
+<tr id="r-4504310" >
+<td id="r-4504307" >
+<p id="r-4504306" >
 Gala</p>
 </td>
-<td id="r-4504309" data-claire-element-id="8017175">
-<p id="r-4504308" data-claire-element-id="8017174">
+<td id="r-4504309" >
+<p id="r-4504308" >
 3.49</p>
 </td>
-<td id="r-4511890" data-claire-element-id="8039906">
-<p id="r-4511889" data-claire-element-id="8039905">
+<td id="r-4511890" >
+<p id="r-4511889" >
 précoce</p>
 </td>
-<td id="r-4511892" data-claire-element-id="8039908">
-<p id="r-4511891" data-claire-element-id="8039907">
+<td id="r-4511892" >
+<p id="r-4511891" >
 sucré</p>
 </td>
 </tr>
-<tr id="r-4504315" data-claire-element-id="8039918">
-<td id="r-4504312" data-claire-element-id="8039911">
-<p id="r-4504311" data-claire-element-id="8039910">
+<tr id="r-4504315" >
+<td id="r-4504312" >
+<p id="r-4504311" >
 Reinette</p>
 </td>
-<td id="r-4504314" data-claire-element-id="8039913">
-<p id="r-4504313" data-claire-element-id="8039912">
+<td id="r-4504314" >
+<p id="r-4504313" >
 3.19</p>
 </td>
-<td id="r-4511894" data-claire-element-id="8039915">
-<p id="r-4511893" data-claire-element-id="8039914">
+<td id="r-4511894" >
+<p id="r-4511893" >
 mi-saison</p>
 </td>
-<td id="r-4511896" data-claire-element-id="8039917">
-<p id="r-4511895" data-claire-element-id="8039916">
+<td id="r-4511896" >
+<p id="r-4511895" >
 sucré</p>
 </td>
 </tr>
-<tr id="r-4511905" data-claire-element-id="8039927">
-<td id="r-4511898" data-claire-element-id="8039920">
-<p id="r-4511897" data-claire-element-id="8039919">
+<tr id="r-4511905" >
+<td id="r-4511898" >
+<p id="r-4511897" >
 Boskoop</p>
 </td>
-<td id="r-4511900" data-claire-element-id="8039922">
-<p id="r-4511899" data-claire-element-id="8039921">
+<td id="r-4511900" >
+<p id="r-4511899" >
 2.99</p>
 </td>
-<td id="r-4511902" data-claire-element-id="8039924">
-<p id="r-4511901" data-claire-element-id="8039923">
+<td id="r-4511902" >
+<p id="r-4511901" >
 mi-saison</p>
 </td>
-<td id="r-4511904" data-claire-element-id="8039926">
-<p id="r-4511903" data-claire-element-id="8039925">
+<td id="r-4511904" >
+<p id="r-4511903" >
 acidulé</p>
 </td>
 </tr>
-<tr id="r-4511914" data-claire-element-id="8039936">
-<td id="r-4511907" data-claire-element-id="8039929">
-<p id="r-4511906" data-claire-element-id="8039928">
+<tr id="r-4511914" >
+<td id="r-4511907" >
+<p id="r-4511906" >
 [...]</p>
 </td>
-<td id="r-4511909" data-claire-element-id="8039931">
-<p id="r-4511908" data-claire-element-id="8039930">
+<td id="r-4511909" >
+<p id="r-4511908" >
 [...]</p>
 </td>
-<td id="r-4511911" data-claire-element-id="8039933">
-<p id="r-4511910" data-claire-element-id="8039932">
+<td id="r-4511911" >
+<p id="r-4511910" >
 [...]</p>
 </td>
-<td id="r-4511913" data-claire-element-id="8039935">
-<p id="r-4511912" data-claire-element-id="8039934">
+<td id="r-4511913" >
+<p id="r-4511912" >
 [...]</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p id="r-4504318" data-claire-element-id="8336043">
+<p id="r-4504318" >
 Si je prends une pomme, et que je veux connaître son prix au kilo, il faudra d'abord que je connaisse sa variété. Ensuite, à partir de sa variété, il faudra que je retrouve dans la table<strong>
 variété</strong>
 la ligne correspondante pour connaître le prix.</p>
-<div id="r-4504320" data-claire-element-id="8017186" data-claire-semantic="question">
-<p id="r-4504319" data-claire-element-id="8017185">
+<div id="r-4504320" data-claire-semantic="question">
+<p id="r-4504319" >
 Retrouver une ligne dans une table ?!? Ce n'est pas justement le rôle des<strong>
 clés</strong>
 ?</p>
 </div>
-<p id="r-4504321" data-claire-element-id="8537372">
+<p id="r-4504321" >
 Tout à fait ! Cette question nous amène au paragraphe suivant :</p>
-<p id="r-4567306" data-claire-element-id="8193543">
+<p id="r-4567306" >
 </p>
-<h3 id="r-4567308" data-claire-element-id="8559244">
+<h3 id="r-4567308" >
 Les clés étrangères</h3>
-<p id="r-4567307" data-claire-element-id="8354721">
+<p id="r-4567307" >
 Dans notre relation<strong>
 variété</strong>
 , il y a une clé candidate : l'attribut<em>
@@ -178,133 +178,133 @@ pomme</strong>
 nous renseignons le nom de la variété dans une colonne, alors il sera possible, grâce à cette clé, de retrouver le prix au kilo. Voici à quoi pourrait ressembler notre nouvelle table<strong>
 pomme</strong>
 :</p>
-<table id="r-4504378" data-claire-element-id="8354801">
+<table id="r-4504378" >
 <caption>
 Pomme</caption>
-<tbody id="r-4504377" data-claire-element-id="8048900">
-<tr id="r-4504332" data-claire-element-id="8017418">
-<td id="r-4504323" data-claire-element-id="8017409">
-<p id="r-4504322" data-claire-element-id="8017408">
+<tbody id="r-4504377" >
+<tr id="r-4504332" >
+<td id="r-4504323" >
+<p id="r-4504322" >
 <strong>
 identifiant</strong>
 </p>
 </td>
-<td id="r-4504325" data-claire-element-id="8017411">
-<p id="r-4504324" data-claire-element-id="8017410">
+<td id="r-4504325" >
+<p id="r-4504324" >
 <strong>
 masse</strong>
 </p>
 </td>
-<td id="r-4504327" data-claire-element-id="8017413">
-<p id="r-4504326" data-claire-element-id="8017412">
+<td id="r-4504327" >
+<p id="r-4504326" >
 <strong>
 diamètre</strong>
 </p>
 </td>
-<td id="r-4504329" data-claire-element-id="8017415">
-<p id="r-4504328" data-claire-element-id="8017414">
+<td id="r-4504329" >
+<p id="r-4504328" >
 <strong>
 couleur</strong>
 </p>
 </td>
-<td id="r-4504331" data-claire-element-id="8017417">
-<p id="r-4504330" data-claire-element-id="8017416">
+<td id="r-4504331" >
+<p id="r-4504330" >
 <strong>
 nom_variété</strong>
 </p>
 </td>
 </tr>
-<tr id="r-4504343" data-claire-element-id="8048893">
-<td id="r-4504334" data-claire-element-id="8048892">
-<p id="r-4504333" data-claire-element-id="8048891">
+<tr id="r-4504343" >
+<td id="r-4504334" >
+<p id="r-4504333" >
 14</p>
 </td>
-<td id="r-4504336" data-claire-element-id="8017202">
-<p id="r-4504335" data-claire-element-id="8017201">
+<td id="r-4504336" >
+<p id="r-4504335" >
 142 g</p>
 </td>
-<td id="r-4504338" data-claire-element-id="8017204">
-<p id="r-4504337" data-claire-element-id="8017203">
+<td id="r-4504338" >
+<p id="r-4504337" >
 7.3 cm</p>
 </td>
-<td id="r-4504340" data-claire-element-id="8017206">
-<p id="r-4504339" data-claire-element-id="8017205">
+<td id="r-4504340" >
+<p id="r-4504339" >
 rouge</p>
 </td>
-<td id="r-4504342" data-claire-element-id="8039940">
-<p id="r-4504341" data-claire-element-id="8039939">
+<td id="r-4504342" >
+<p id="r-4504341" >
 Ariane</p>
 </td>
 </tr>
-<tr id="r-4504354" data-claire-element-id="8048896">
-<td id="r-4504345" data-claire-element-id="8048895">
-<p id="r-4504344" data-claire-element-id="8048894">
+<tr id="r-4504354" >
+<td id="r-4504345" >
+<p id="r-4504344" >
 25</p>
 </td>
-<td id="r-4504347" data-claire-element-id="8017213">
-<p id="r-4504346" data-claire-element-id="8017212">
+<td id="r-4504347" >
+<p id="r-4504346" >
 182 g</p>
 </td>
-<td id="r-4504349" data-claire-element-id="8017215">
-<p id="r-4504348" data-claire-element-id="8017214">
+<td id="r-4504349" >
+<p id="r-4504348" >
 7.5 cm</p>
 </td>
-<td id="r-4504351" data-claire-element-id="8017217">
-<p id="r-4504350" data-claire-element-id="8017216">
+<td id="r-4504351" >
+<p id="r-4504350" >
 rouge</p>
 </td>
-<td id="r-4504353" data-claire-element-id="8039943">
-<p id="r-4504352" data-claire-element-id="8039942">
+<td id="r-4504353" >
+<p id="r-4504352" >
 Gala</p>
 </td>
 </tr>
-<tr id="r-4504365" data-claire-element-id="8048899">
-<td id="r-4504356" data-claire-element-id="8048898">
-<p id="r-4504355" data-claire-element-id="8048897">
+<tr id="r-4504365" >
+<td id="r-4504356" >
+<p id="r-4504355" >
 16</p>
 </td>
-<td id="r-4504358" data-claire-element-id="8017224">
-<p id="r-4504357" data-claire-element-id="8017223">
+<td id="r-4504358" >
+<p id="r-4504357" >
 140 g</p>
 </td>
-<td id="r-4504360" data-claire-element-id="8017226">
-<p id="r-4504359" data-claire-element-id="8017225">
+<td id="r-4504360" >
+<p id="r-4504359" >
 7.9 cm</p>
 </td>
-<td id="r-4504362" data-claire-element-id="8017228">
-<p id="r-4504361" data-claire-element-id="8017227">
+<td id="r-4504362" >
+<p id="r-4504361" >
 rouge</p>
 </td>
-<td id="r-4504364" data-claire-element-id="8039946">
-<p id="r-4504363" data-claire-element-id="8039945">
+<td id="r-4504364" >
+<p id="r-4504363" >
 Ariane</p>
 </td>
 </tr>
-<tr id="r-4504376" data-claire-element-id="8017242">
-<td id="r-4504367" data-claire-element-id="8017233">
-<p id="r-4504366" data-claire-element-id="8017232">
+<tr id="r-4504376" >
+<td id="r-4504367" >
+<p id="r-4504366" >
 [...]</p>
 </td>
-<td id="r-4504369" data-claire-element-id="8017235">
-<p id="r-4504368" data-claire-element-id="8017234">
+<td id="r-4504369" >
+<p id="r-4504368" >
 [...]</p>
 </td>
-<td id="r-4504371" data-claire-element-id="8017237">
-<p id="r-4504370" data-claire-element-id="8017236">
+<td id="r-4504371" >
+<p id="r-4504370" >
 [...]</p>
 </td>
-<td id="r-4504373" data-claire-element-id="8017239">
-<p id="r-4504372" data-claire-element-id="8017238">
+<td id="r-4504373" >
+<p id="r-4504372" >
 [...]</p>
 </td>
-<td id="r-4504375" data-claire-element-id="8017241">
-<p id="r-4504374" data-claire-element-id="8017240">
+<td id="r-4504375" >
+<p id="r-4504374" >
 [...]</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p id="r-4504426" data-claire-element-id="8537382">
+<p id="r-4504426" >
 Dans la table<strong>
 pomme</strong>
 , la colonne<em>
@@ -314,8 +314,8 @@ quand même</em>
 référence à la clé primaire d'une autre table (la table<strong>
 variété</strong>
 ). On dit donc que :</p>
-<blockquote id="r-4504428" data-claire-element-id="8336047">
-<p id="r-4504427" data-claire-element-id="8336046">
+<blockquote id="r-4504428" >
+<p id="r-4504427" >
 La colonne<em>
 nom_variété</em>
 est une<strong>
@@ -326,15 +326,15 @@ de la table<strong>
 variété</strong>
 .</p>
 </blockquote>
-<p id="r-4504429" data-claire-element-id="8017424">
+<p id="r-4504429" >
 Vous savez maintenant lier des tables grâce à des clés étrangères !</p>
-<figure id="r-4627213" data-claire-element-id="8559243">
-<img id="r-4627211" data-claire-element-id="8354802" src="https://user.oc-static.com/upload/2017/08/28/1503910106308_CLE_ETRANGERE.png" alt="">
+<figure id="r-4627213" >
+<img id="r-4627211" src="https://user.oc-static.com/upload/2017/08/28/1503910106308_CLE_ETRANGERE.png" alt="">
 <figcaption>
 "nom_varieté" est une clé étrangère qui référence la colonne "libellé" de la table variété.</figcaption>
 </figure>
-<aside id="r-4554292" data-claire-element-id="8159792" data-claire-semantic="warning">
-<p id="r-4554291" data-claire-element-id="8159791">
+<aside id="r-4554292" data-claire-semantic="warning">
+<p id="r-4554291" >
 La clé primaire d'une table<em>
 A</em>
 peut être composée de plusieurs colonnes. Si une table<em>
@@ -347,37 +347,37 @@ sera composée d'autant de colonnes que pour la clé primaire de<em>
 A</em>
 .</p>
 </aside>
-<aside id="r-4567366" data-claire-element-id="8193701" data-claire-semantic="information">
-<p id="r-4511915" data-claire-element-id="8159751">
+<aside id="r-4567366" data-claire-semantic="information">
+<p id="r-4511915" >
 Pour indiquer qu'un attribut (ou groupe d'attributs) est une clé étrangère, on peut le spécifier en faisant suivre le nom de cet attribut (ou de chacun de ces attributs) par<em>
 [FK]</em>
 , qui signifie<em>
 foreign key</em>
 (clé étrangère en anglais).</p>
 </aside>
-<p id="r-4620607" data-claire-element-id="8336048">
+<p id="r-4620607" >
 </p>
-<h3 id="r-4620616" data-claire-element-id="8336058">
+<h3 id="r-4620616" >
 En résumé</h3>
-<ul id="r-4620614" data-claire-element-id="8336056">
-<li id="r-4620609" data-claire-element-id="8336051">
-<p id="r-4620608" data-claire-element-id="8336050">
+<ul id="r-4620614" >
+<li id="r-4620609" >
+<p id="r-4620608" >
 Une clé étrangère sert à lier des relations (= des tables) entre elles.</p>
 </li>
-<li id="r-4620611" data-claire-element-id="8336053">
-<p id="r-4620610" data-claire-element-id="8336052">
+<li id="r-4620611" >
+<p id="r-4620610" >
 On dit qu'une clé étrangère d'une table A<strong>
 référence</strong>
 la clé primaire d'une table B.</p>
 </li>
-<li id="r-4620613" data-claire-element-id="8336055">
-<p id="r-4620612" data-claire-element-id="8336054">
+<li id="r-4620613" >
+<p id="r-4620612" >
 Une clé étrangère se dit en anglais<em>
 foreign key</em>
 (FK)</p>
 </li>
 </ul>
-<p id="r-4620615" data-claire-element-id="8336057">
+<p id="r-4620615" >
 </p>
 </div>
 <div class="js-courseSelementActions sideActions">

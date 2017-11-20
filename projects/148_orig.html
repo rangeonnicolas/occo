@@ -1,0 +1,139 @@
+<div class="course-content space-bottom-big">
+<div class="userContent userContent--smallCourse js-userContent" data-javascript-enabled>
+<h2>
+Énoncé
+</h2>
+<h3>Prérequis</h3>
+<p>Pour ce projet, il sera utile de savoir réaliser une analyse de <strong>statistique descriptive</strong> en langages <strong>R</strong> ou <strong>Python</strong> (avec des représentations graphiques). Il faudra également réaliser les principaux <strong>tests statistiques</strong>, ainsi que des modélisations de type <strong>ANOVA</strong> ou <strong>régression linéaire</strong>.</p>
+<p> </p>
+<h3>Mise en situation</h3>
+<p>Vous êtes employé dans une banque, présente dans de nombreux pays à travers le monde. Celle-ci souhaite cibler de nouveaux clients potentiels, plus particulièrement les jeunes en âge d'ouvrir leur tout premier compte bancaire.</p>
+<p>Cependant, elle souhaite cibler les prospects les plus susceptibles d'avoir, plus tard dans leur vie, de hauts revenus.</p>
+<p>L'équipe dans laquelle vous travaillez a donc reçu pour mission de créer un modèle permettant de déterminer le revenu potentiel d'une personne.</p>
+<p>Très bien.</p>
+<p>"Quelles information avons-nous ?" demandez-vous à votre supérieur, qui vous répond : "A vrai dire... quasiment aucune : uniquement le revenu des parents, car nous allons cibler les enfants de nos clients actuels, ainsi que le pays où ils habitent. C'est tout ! Ah oui, une dernière chose : ce modèle doit être valable pour l'ensemble des pays du monde. Je vous laisse méditer là-dessus… Bon courage !"</p>
+<figure></figure>
+<p>Avec aussi peu de données disponibles, cela semble être un sacré challenge !</p>
+<p>Ainsi, vous proposez une régression linéaire avec 3 variables :</p>
+<ul>
+<li>le revenu des parents,</li>
+<li>le revenu moyen du pays dans lequel habite le prospect,</li>
+<li>l'indice de Gini calculé sur les revenus des habitants du pays en question. </li>
+</ul>
+<h3>Les données</h3>
+<p>Voici <a href="/admin/projects/148/prod/courses/files/parcours-data-analyst/projet_7.zip">l'archive à télécharger</a>.</p>
+<p>Elle contient 2 fichiers, dont les données de la World Income Distribution, datée de 2008.</p>
+<p>Cette base de données est composée principalement d'études réalisées au niveau national pour bon nombre de pays, et contient les distributions de revenus des populations concernées.</p>
+<p> Vous téléchargerez également les indices de Gini estimés par la Banque Mondiale, disponibles <a href="http://data.worldbank.org/indicator/SI.POV.GINI">à cette adresse</a>.</p>
+<h3>Vos missions</h3>
+<h4>Mission 1</h4>
+<p>Résumez les données utilisées :</p>
+<ul>
+<li>Année(s) des données utilisées</li>
+<li>Nombre de pays présents</li>
+<li>Population couverte par l'analyse (en termes de pourcentage de la population mondiale)</li>
+</ul>
+<p>Les données disponibles présentent pour chaque pays les quantiles de la distribution des revenus de leur population respective.</p>
+<ul>
+<li>De quel type de quantiles s'agit-il (quartiles, déciles, etc.) ?</li>
+<li>Échantillonner une population en utilisant des quantiles est-il selon vous une bonne méthode ? Pourquoi ?</li>
+</ul>
+<aside data-claire-semantic="information">
+<p>Nous appellerons ici chaque quantile une <em>classe de revenu.</em></p>
+</aside>
+<p>L'unité utilisée est ici le $PPP. Cette unité est calculée par la Banque Mondiale, selon la méthode Eltöte-<br>Köves-Szulc. Après vous être documenté, vous expliquerez à votre mentor <em>très brièvement</em> à quoi correspond cette unité et pourquoi elle est pertinente pour une comparaison de pays différents.</p>
+<aside data-claire-semantic="information">
+<p>Plus précisément, il a été calculé le <em>average per capita amount of PPP dollars</em>, qui correspond au revenu moyen par personnes exprimé en $PPP.</p>
+</aside>
+<h4>Mission 2</h4>
+<ul>
+<li>Montrez la diversité des pays en termes de distribution de revenus à l'aide d'un graphique. Celui-ci représentera le revenu moyen (axe des ordonnées) de chacune des classes de revenus (axe des abscisses) pour 5 à 10 pays que vous aurez choisis pour montrer la diversité des cas.</li>
+<li>Représentez la courbe de Lorenz de chacun des pays choisis.</li>
+<li>Pour chacun de ces pays, représentez l'évolution de l'indice de Gini au fil des ans.</li>
+<li>Classez les pays par indice de Gini. Donnez la moyenne, les 5 pays ayant l'indice de Gini le plus élevé et les 5 pays ayant l'indice de Gini le plus faible. En quelle position se trouve la France ?</li>
+</ul>
+<h4>Mission 3</h4>
+<p>Sur l'échantillon à votre disposition, réalisez quelques tests statistiques :</p>
+<ul>
+<li>un test de comparaison (test d'homogénéité)</li>
+<li>un test de conformité</li>
+<li>un test d'adéquation</li>
+</ul>
+<aside data-claire-semantic="warning">
+<p>Certains nécessitent la vérification d'hypothèses préalables sur les données, ne les oubliez pas !</p>
+</aside>
+<h4>Mission 4</h4>
+<p>Dans l'état actuel, nous avons à disposition deux des trois variables explicatives souhaitées :</p>
+<p><math>\(m_{j}\)</math> le salaire moyen du pays  <math>\(j\)</math></p>
+<p><math>\(G_{j}\)</math> l'indice de Gini du pays <math>\(j\)</math></p>
+<p>Il nous manque donc, pour un individu  <math>\(i\)</math> , la classe de revenu de ses parents.</p>
+<aside data-claire-semantic="information">
+<p>Nous supposons ici que la classe de revenu des parents est unique, quel que soit le nombre de parents de <math>\(i\)</math>  </p>
+</aside>
+<p>Nous allons donc simuler cette information grâce à un coefficient <math>\(\rho_{j}\)</math> (propre à chaque pays <math>\(j\)</math> ) mesurant une corrélation entre le revenu de l'individu <math>\(i\)</math> et le revenu de ses parents. Ce coefficient sera ici appelé <em>coefficient d'élasticité</em>. (Pour plus d'informations sur le calcul du coefficient d'élasticité, consulter <a href="https://s3-eu-west-1.amazonaws.com/static.oc-static.com/prod/courses/files/parcours-data-analyst/2011-measuring-intergenerational-income-mobility-art.pdf">ce document</a>).</p>
+<p>Peu de pays possèdent des statistiques concernant leur coefficient d'élasticité intergénérationnelle. Certaines études éparses se proposent de calculer ce coefficient pour un ou plusieurs pays à la fois. Cependant, comme ces données sont très éparpillées parmi de multiples études, nous utiliserons plutôt une estimation (votre mentor pourra vous communiquer la source si besoin) couvrant l’ensemble des pays du monde, qui se base sur des estimations et des extrapolations, et dont la granularité n’est malheureusement pas très fine (souvent au continent).</p>
+<p>Vous vous baserez donc sur les valeurs contenues dans ce fichier.</p>
+<p>Voici le protocole :</p>
+<ul>
+<li>Pour chaque valeur de ρj , générez un échantillon de valeurs yi distribuées selon une loi normale.</li>
+<li>Pour chacun des revenus enfants / parents, déterminez le quantile correspondant.</li>
+<li>Pour chaque individu de la Word Income Distribution, associez les quartiles enfants / parents qui conviennent.</li>
+</ul>
+<h4>Mission 5</h4>
+<p>Appliquez une ANOVA sur vos données, en n’incluant comme variable explicative que le pays de l’individu. Analysez la performance du modèle.</p>
+<p>Ajoutez maintenant comme variable explicative la classe de revenu des parents de l’individu (variable quantitative), ainsi que son pays (comme variable qualitative). Proposez un modèle et analysez-en les performances.</p>
+<p>Appliquez une régression linéaire sur vos données, en n’incluant comme variables explicatives uniquement le revenu salaire moyen du pays de l’individu et l’indice de Gini du pays de l’individu. Quel est le pourcentage de variance expliquée par votre modèle ?</p>
+<p>Améliorez le modèle précédent en incluant maintenant la classe de revenu des parents. Quel est le pourcentage de variance expliquée par ce nouveau modèle ?</p>
+<p>Toujours selon ce dernier modèle, donnez la décomposition de variance totale expliquée par :</p>
+<ul>
+<li>Le pays de naissance (ie. Le revenu moyen et l’indice de Gini)</li>
+<li>Le revenu des parents</li>
+<li>D’autres facteurs (efforts, chance, etc.)</li>
+</ul>
+<p>En observant le coefficient associé à l’indice de Gini, peut-on affirmer que le fait de vivre dans un pays plus inégalitaire favorise plus de personnes qu’il n’en défavorise ?</p>
+<p> </p>
+<h3>Livrables attendus</h3>
+<p>Voici les livrables attendus, à transmettre dans une archive .zip :</p>
+<ul>
+<li>Le code Python ou R  permettant de répondre à l'ensemble de vos missions. Puisqu'il y a beaucoup de questions, faites attention à ce que votre code soit clair, qu'il délimite bien les différentes parties et questions, et qu'il soit correctement commenté.</li>
+<li>Les graphiques générés, dans un format image .png ou .jpg</li>
+</ul>
+<p> </p>
+<h3>Modalité de la soutenance</h3>
+<p>Pour chacune des missions proposées,<strong> vous détaillerez votre démarche</strong>, en précisant <strong>les éventuels problèmes rencontrés</strong> (ainsi que la manière dont vous y avez fait face) et en répondant à toutes les questions posées dans l'énoncé. <strong>La durée indicative d'une soutenance est de 30 minutes.</strong></p>
+<p> </p>
+<h3> Ressources complémentaires</h3>
+<p><a href="https://bioinfo-fr.net/guide-de-demarrage-pour-ggplot2-un-package-graphique-pour-r">https://bioinfo-fr.net/guide-de-demarrage-pour-ggplot2-un-package-graphique-pour-r</a></p>
+<ul>
+<li>Tutoriel en français sur l’utilisation de ggplot2.</li>
+</ul>
+<p><a href="http://www.sthda.com/french/wiki/anova-analyse-de-variance-avec-r">http://www.sthda.com/french/wiki/anova-analyse-de-variance-avec-r</a></p>
+<ul>
+<li>Petit exemple d’ANOVA sous R.</li>
+</ul>
+<p><a href="https://www.marsja.se/four-ways-to-conduct-one-way-anovas-using-python/">https://www.marsja.se/four-ways-to-conduct-one-way-anovas-using-python/</a></p>
+<ul>
+<li>4 manières de mener une ANOVA en Python.</li>
+</ul>
+<p><a href="https://eric.univ-lyon2.fr/~ricco/cours/slides/ANOVA.pdf">https://eric.univ-lyon2.fr/~ricco/cours/slides/ANOVA.pdf</a></p>
+<ul>
+<li>Cours très complet sur l’ANOVA (attention, niveau avancé).</li>
+</ul>
+</div>
+ <div class="userContent userContent--smallCourse">
+<h2>
+Compétences à valider
+</h2>
+<ul>
+<li>
+Maîtriser les bases de la statistique inférentielle
+</li>
+<li>
+Maîtriser les bases des probabilités
+</li>
+<li>
+Modéliser des données
+</li>
+</ul>
+</div>
+</div>

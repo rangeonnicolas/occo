@@ -1,148 +1,148 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql/decouvrez-le-concept-de-relation" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
 <div class="userContent js-userContent">
-<aside id="r-4702577" data-claire-element-id="8543102" data-claire-semantic="information">
-<p id="r-4702576" data-claire-element-id="8543101">
+<aside id="r-4702577" data-claire-semantic="information">
+<p id="r-4702576" >
 Tout au long de ce cours, nous jonglerons avec le vocabulaire : il n'est pas toujours simple et surtout, plusieurs termes peuvent désigner une même chose. Revenez donc régulièrement au bas de ce chapitre lorsque vous aurez un doute. ;)</p>
 </aside>
-<video id="r-4709393" data-claire-element-id="8559235" src="https://vimeo.com/233476700">
+<video id="r-4709393" src="https://vimeo.com/233476700">
 <a href="https://vimeo.com/233476700">
 https://vimeo.com/233476700</a>
 </video>
-<p id="r-4702579" data-claire-element-id="8543104">
+<p id="r-4702579" >
 </p>
-<h3 id="r-4504518" data-claire-element-id="8354652">
+<h3 id="r-4504518" >
 Un peu d'histoire, pour les motivés !</h3>
-<p id="r-4510201" data-claire-element-id="8354651">
+<p id="r-4510201" >
 C'est un beau jour ensoleillé de 1970 que Monsieur Codd, du laboratoire de recherche d'IBM de San José, crée le<a href="https://fr.wikipedia.org/wiki/Mod%C3%A8le_relationnel">
 modèle relationnel</a>
 .</p>
-<p id="r-4503685" data-claire-element-id="8054261">
+<p id="r-4503685" >
 C'était bien vu, car celui-ci a réussi à s'imposer et se retrouve aujourd'hui dans la majorité des bases de données ! :soleil: En effet, ce modèle a été implémenté dans les systèmes de gestion des bases de données relationnelles (SGBDR) comme le IBM System R, Oracle, DB2 ou MySQL. Il a également donné naissance au langage de manipulation des données SQL.</p>
-<p id="r-4567061" data-claire-element-id="8192761">
+<p id="r-4567061" >
 </p>
-<h3 id="r-4504557" data-claire-element-id="8354656">
+<h3 id="r-4504557" >
 L'objet phare de ce cours : la relation</h3>
-<p id="r-4503687" data-claire-element-id="8017681">
+<p id="r-4503687" >
 L'objet (théorique) que nous manipulerons tout au long de ce cours est appelé<strong>
 relation</strong>
 .</p>
-<aside id="r-4627172" data-claire-element-id="8354654" data-claire-semantic="information">
-<p id="r-4627171" data-claire-element-id="8354653">
+<aside id="r-4627172" data-claire-semantic="information">
+<p id="r-4627171" >
 J'espère que vous aimez les pommes, car tout au long de ce cours, nous illustrerons les concepts avec ce délicieux fruit. Une relation, ce sera un peu comme un panier de pommes.</p>
 </aside>
-<p id="r-4503688" data-claire-element-id="8335638">
+<p id="r-4503688" >
 Une relation, c'est un tableau dans lequel on met des données. Un tableau dans lequel une ligne représente un objet, et où chaque ligne représente des objets de même nature.</p>
-<p id="r-4503689" data-claire-element-id="8354655">
+<p id="r-4503689" >
 Si nous représentons des pommes, nous pouvons les caractériser par leur masse, leur diamètre et leur couleur. Nous pouvons aussi leur attribuer un identifiant, c'est-à-dire un nombre (ou un code)<em>
 unique</em>
 qui permet de les différencier.</p>
-<table id="r-4504556" data-claire-element-id="8022721">
-<tbody id="r-4504555" data-claire-element-id="8022720">
-<tr id="r-4504527" data-claire-element-id="8022719">
-<td id="r-4504520" data-claire-element-id="8022712">
-<p id="r-4504519" data-claire-element-id="8022711">
+<table id="r-4504556" >
+<tbody id="r-4504555" >
+<tr id="r-4504527" >
+<td id="r-4504520" >
+<p id="r-4504519" >
 <strong>
 identifiant</strong>
 </p>
 </td>
-<td id="r-4504522" data-claire-element-id="8022714">
-<p id="r-4504521" data-claire-element-id="8022713">
+<td id="r-4504522" >
+<p id="r-4504521" >
 <strong>
 masse</strong>
 </p>
 </td>
-<td id="r-4504524" data-claire-element-id="8022716">
-<p id="r-4504523" data-claire-element-id="8022715">
+<td id="r-4504524" >
+<p id="r-4504523" >
 <strong>
 diamètre</strong>
 </p>
 </td>
-<td id="r-4504526" data-claire-element-id="8022718">
-<p id="r-4504525" data-claire-element-id="8022717">
+<td id="r-4504526" >
+<p id="r-4504525" >
 <strong>
 couleur</strong>
 </p>
 </td>
 </tr>
-<tr id="r-4504536" data-claire-element-id="8017701">
-<td id="r-4504529" data-claire-element-id="8017694">
-<p id="r-4504528" data-claire-element-id="8017693">
+<tr id="r-4504536" >
+<td id="r-4504529" >
+<p id="r-4504528" >
 1</p>
 </td>
-<td id="r-4504531" data-claire-element-id="8017696">
-<p id="r-4504530" data-claire-element-id="8017695">
+<td id="r-4504531" >
+<p id="r-4504530" >
 151 g</p>
 </td>
-<td id="r-4504533" data-claire-element-id="8017698">
-<p id="r-4504532" data-claire-element-id="8017697">
+<td id="r-4504533" >
+<p id="r-4504532" >
 8.3 cm</p>
 </td>
-<td id="r-4504535" data-claire-element-id="8017700">
-<p id="r-4504534" data-claire-element-id="8017699">
+<td id="r-4504535" >
+<p id="r-4504534" >
 rouge</p>
 </td>
 </tr>
-<tr id="r-4504545" data-claire-element-id="8017710">
-<td id="r-4504538" data-claire-element-id="8017703">
-<p id="r-4504537" data-claire-element-id="8017702">
+<tr id="r-4504545" >
+<td id="r-4504538" >
+<p id="r-4504537" >
 2</p>
 </td>
-<td id="r-4504540" data-claire-element-id="8017705">
-<p id="r-4504539" data-claire-element-id="8017704">
+<td id="r-4504540" >
+<p id="r-4504539" >
 169 g</p>
 </td>
-<td id="r-4504542" data-claire-element-id="8017707">
-<p id="r-4504541" data-claire-element-id="8017706">
+<td id="r-4504542" >
+<p id="r-4504541" >
 9.1 cm</p>
 </td>
-<td id="r-4504544" data-claire-element-id="8017709">
-<p id="r-4504543" data-claire-element-id="8017708">
+<td id="r-4504544" >
+<p id="r-4504543" >
 jaune</p>
 </td>
 </tr>
-<tr id="r-4504554" data-claire-element-id="8017719">
-<td id="r-4504547" data-claire-element-id="8017712">
-<p id="r-4504546" data-claire-element-id="8017711">
+<tr id="r-4504554" >
+<td id="r-4504547" >
+<p id="r-4504546" >
 3</p>
 </td>
-<td id="r-4504549" data-claire-element-id="8017714">
-<p id="r-4504548" data-claire-element-id="8017713">
+<td id="r-4504549" >
+<p id="r-4504548" >
 134 g</p>
 </td>
-<td id="r-4504551" data-claire-element-id="8017716">
-<p id="r-4504550" data-claire-element-id="8017715">
+<td id="r-4504551" >
+<p id="r-4504550" >
 8.0 cm</p>
 </td>
-<td id="r-4504553" data-claire-element-id="8017718">
-<p id="r-4504552" data-claire-element-id="8017717">
+<td id="r-4504553" >
+<p id="r-4504552" >
 jaune</p>
 </td>
 </tr>
 </tbody>
 </table>
-<aside id="r-4514892" data-claire-element-id="8192766" data-claire-semantic="information">
-<p id="r-4514891" data-claire-element-id="8192765">
+<aside id="r-4514892" data-claire-semantic="information">
+<p id="r-4514891" >
 Dans une relation, l'ordre des lignes n'a pas d'importance et pas de signification.</p>
 </aside>
-<p id="r-4567062" data-claire-element-id="8192767">
+<p id="r-4567062" >
 </p>
-<h3 id="r-4514893" data-claire-element-id="8537114">
+<h3 id="r-4514893" >
 Un peu de vocabulaire</h3>
-<aside id="r-4620458" data-claire-element-id="8335640" data-claire-semantic="warning">
-<p id="r-4510226" data-claire-element-id="8054281">
+<aside id="r-4620458" data-claire-semantic="warning">
+<p id="r-4510226" >
 Il est très fréquent de mélanger les termes définis par le<em>
 modèle relationnel</em>
 et les termes propres au jargon des<em>
 bases de données relationnelles</em>
 .</p>
 </aside>
-<p id="r-4510228" data-claire-element-id="8034284">
+<p id="r-4510228" >
 Par exemple, une<strong>
 relation</strong>
 sera souvent appelée<strong>
 table</strong>
 !</p>
-<p id="r-4510229" data-claire-element-id="8537072">
+<p id="r-4510229" >
 De même, le terme<strong>
 tuple</strong>
 désigne ce que l'on appelle une<strong>
@@ -152,7 +152,7 @@ tuple</strong>
 suivant :<code data-claire-semantic="text">
 (2, 169, 9.1, "jaune")</code>
 .</p>
-<p id="r-4510266" data-claire-element-id="8034531">
+<p id="r-4510266" >
 Pour désigner un tuple ou une ligne, vous trouverez aussi parfois les termes<strong>
 n-uplet</strong>
 ,<strong>
@@ -160,7 +160,7 @@ enregistrement</strong>
 ou<strong>
 vecteur</strong>
 . Vous avez l'embarras du choix !</p>
-<p id="r-4510230" data-claire-element-id="8034415">
+<p id="r-4510230" >
 Également, le terme<strong>
 attribut</strong>
 est l'équivalent, dans le vocabulaire des BDD, d'une<strong>
@@ -168,18 +168,18 @@ colonne</strong>
 . Dans l'exemple précédent,<em>
 masse</em>
 est un attribut.</p>
-<p id="r-4510251" data-claire-element-id="8192791">
+<p id="r-4510251" >
 Le<strong>
 schéma</strong>
 est l'ensemble des attributs d'une relation.</p>
-<p id="r-4510231" data-claire-element-id="8054292">
+<p id="r-4510231" >
 Enfin, le<strong>
 domaine</strong>
 désigne l'ensemble des valeurs que peuvent prendre les attributs. Dans le jargon des bases de données, le domaine est assimilé au<strong>
 type de colonne</strong>
 .</p>
-<aside id="r-4510310" data-claire-element-id="8537113" data-claire-semantic="information">
-<p id="r-4510309" data-claire-element-id="8537112">
+<aside id="r-4510310" data-claire-semantic="information">
+<p id="r-4510309" >
 Petite précision sur les domaines. Dans notre exemple, l'attribut<em>
 masse</em>
 peut prendre toute valeur réelle et positive (c'est à dire tout nombre à virgule supérieur à 0). Également, la colonne<em>
@@ -190,25 +190,25 @@ a comme domaine l'ensemble<code data-claire-semantic="text">
 {vert, rouge, jaune}</code>
 .</p>
 </aside>
-<p id="r-4620459" data-claire-element-id="8335643">
+<p id="r-4620459" >
 </p>
-<h3 id="r-4620467" data-claire-element-id="8537120">
+<h3 id="r-4620467" >
 En résumé</h3>
-<ul id="r-4620466" data-claire-element-id="8537119">
-<li id="r-4620461" data-claire-element-id="8335646">
-<p id="r-4620460" data-claire-element-id="8335645">
+<ul id="r-4620466" >
+<li id="r-4620461" >
+<p id="r-4620460" >
 Dans ce cours, on va manipuler des tableaux, appelés<strong>
 relations</strong>
 ou<strong>
 tables</strong>
 .</p>
 </li>
-<li id="r-4620463" data-claire-element-id="8537116">
-<p id="r-4620462" data-claire-element-id="8537115">
+<li id="r-4620463" >
+<p id="r-4620462" >
 Dans ces tableaux, une ligne (= un tuple) représente un objet, et chaque ligne représente des objets de même nature.</p>
 </li>
-<li id="r-4620465" data-claire-element-id="8537118">
-<p id="r-4620464" data-claire-element-id="8537117">
+<li id="r-4620465" >
+<p id="r-4620464" >
 On jonglera souvent entre le vocabulaire de l'<strong>
 algèbre relationnelle</strong>
 et le vocabulaire propre aux<strong>

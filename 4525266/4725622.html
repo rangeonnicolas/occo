@@ -1,32 +1,32 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/nettoyez-et-decrivez-votre-jeu-de-donnees/comment-presenter-les-donnees-en-analyse-bivariee" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
 <div class="userContent js-userContent">
-<p id="r-4773806" data-claire-element-id="8733461">
+<p id="r-4773806" >
 Jusqu'à maintenant, nous avons vu 2 manières de présenter des données en analyse bivariée : le<a href="/courses/nettoyez-et-decrivez-votre-jeu-de-donnees/entrez-dans-le-monde-de-lanalyse-bivariee#r-4727902">
 diagramme de dispersion</a>
 (scatterplot), et le<a href="/courses/nettoyez-et-decrivez-votre-jeu-de-donnees/recherchez-les-correlations#r-4773286">
 tableau de contingence</a>
 .</p>
-<p id="r-4773812" data-claire-element-id="8719217">
+<p id="r-4773812" >
 Le premier est adapté quand les 2 variables sont quantitatives, et le second est adapté quand les 2 variables sont qualitatives.</p>
-<div id="r-4773814" data-claire-element-id="8719219" data-claire-semantic="question">
-<p id="r-4773813" data-claire-element-id="8719218">
+<div id="r-4773814" data-claire-semantic="question">
+<p id="r-4773813" >
 Et quand il y a une variable quantitative et une variable qualitative ?</p>
 </div>
-<p id="r-4773823" data-claire-element-id="8720931">
+<p id="r-4773823" >
 C'est bien, vous avez trouvé le 3e cas possible ! Il reste 4 chapitres à ce cours, durant lesquels nous parcourrons ces 3 cas : ce chapitre et le suivant seront dédiés à l'étude de 2 variables quantitatives, il y aura ensuite un chapitre pour le cas d'une variable quantitative et l'autre qualitative, et le tout dernier sera dédié à l'étude de deux variables qualitatives. Prêts ? C'est parti !</p>
-<h3 id="r-4773946" data-claire-element-id="8789062">
+<h3 id="r-4773946" >
 2 variables quantitatives : graphiques</h3>
-<p id="r-4773831" data-claire-element-id="8719246">
+<p id="r-4773831" >
 Posons-nous la question suivante :</p>
-<blockquote id="r-4774246" data-claire-element-id="8720933">
-<p id="r-4773832" data-claire-element-id="8720932">
+<blockquote id="r-4774246" >
+<p id="r-4773832" >
 <strong>
 <em>
 Êtes-vous moins dépensier lorsque vous avez peu d'argent sur votre compte ?</em>
 </strong>
 </p>
 </blockquote>
-<p id="r-4773825" data-claire-element-id="8720934">
+<p id="r-4773825" >
 Vous l'aurez deviné, les 2 variables à étudier sont :<em>
 montant</em>
 et<em>
@@ -34,25 +34,25 @@ solde_avt_operation</em>
 . Rechercher une corrélation entre ces variables revient à dire :<em>
 "Sachant que le solde de votre compte est petit, peut-on s'attendre à ce que le montant de l'opération soit lui aussi petit ?"</em>
 (ou l'inverse).</p>
-<table id="r-4773936" data-claire-element-id="8719767">
-<tbody id="r-4773935" data-claire-element-id="8719766">
-<tr id="r-4773934" data-claire-element-id="8719765">
-<td id="r-4773933" data-claire-element-id="8719764">
-<p id="r-4773932" data-claire-element-id="8719763">
+<table id="r-4773936" >
+<tbody id="r-4773935" >
+<tr id="r-4773934" >
+<td id="r-4773933" >
+<p id="r-4773932" >
 ILLUS</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p id="r-4773937" data-claire-element-id="8789061">
+<p id="r-4773937" >
 A priori sur ce diagramme de dispersion, il ne semble pas que quand le solde est petit, les montants soient particulièrement petits. ll semble ne pas y avoir de corrélation. Mais vous en trouverez peut-être une dans vos propres relevés ! Cependant, les points sont assez dispersés et nombreux. Il est donc difficile d'y voir très clair. Pour remédier à cela, il existe une représentation qui peut être meilleure. Elle est donnée dans la section<em>
 Aller plus loin</em>
 , tout en bas ;).</p>
-<h3 id="r-4773948" data-claire-element-id="8789083">
+<h3 id="r-4773948" >
 2 variables quantitatives : indicateurs numériques</h3>
-<p id="r-4773947" data-claire-element-id="8719851">
+<p id="r-4773947" >
 C'est bien beau les graphiques, mais je sens que vous êtes en manque de calcul ! Il nous faut un indicateur numériques qui puissent nous dire si les variables sont corrélées ou pas.</p>
-<p id="r-4774221" data-claire-element-id="8720862">
+<p id="r-4774221" >
 Ici, on veut savoir si quand on a un solde (<math>
 $\(X\)$</math>
 ) petit, on a aussi un montant (<math>
@@ -64,11 +64,11 @@ $\(y\)$</math>
 le montant de l'opération. Pour mesurer si x est plus petit que la moyenne<math>
 $\(\overline{x}\)$</math>
 , on peut calculer</p>
-<p id="r-4774222" data-claire-element-id="8720863">
+<p id="r-4774222" >
 <math>
 $\[x - \overline{x}\]$</math>
 </p>
-<p id="r-4774172" data-claire-element-id="8720674">
+<p id="r-4774172" >
 Cette quantité sera négative si x est inférieur à<math>
 $\(\overline{x}\)$</math>
 , et positive dans le cas contraire. De même, on peut calculer<math>
@@ -76,11 +76,11 @@ $\(y - \overline{y}\)$</math>
 pour comparer y à la moyenne<math>
 $\(\overline{y}\)$</math>
 . Maintenant, multiplions-les !</p>
-<p id="r-4774223" data-claire-element-id="8720864">
+<p id="r-4774223" >
 <math>
 $\[a=(x - \overline{x})(y-\overline{y})\]$</math>
 </p>
-<p id="r-4774174" data-claire-element-id="8720676">
+<p id="r-4774174" >
 Si<math>
 $\(x\)$</math>
 est plus petit que la moyenne et que<math>
@@ -92,7 +92,7 @@ $\(y\)$</math>
 aussi, alors<math>
 $\(a\)$</math>
 sera aussi un nombre positif.</p>
-<p id="r-4774175" data-claire-element-id="8720677">
+<p id="r-4774175" >
 Ok, avec cette multiplication, on obtient la quantité<math>
 $\(a\)$</math>
 pour un seule opération bancaire (un seul individu). Mais si les montants sont vraiment petits quand le solde est petit (et inversement), alors les<math>
@@ -102,12 +102,12 @@ $\(a\)$</math>
 , alors on obtiendra encore un nombre positif. La moyenne de tous ces<math>
 $\(a\)$</math>
 s'écrit comme ceci :</p>
-<p id="r-4774224" data-claire-element-id="8720865">
+<p id="r-4774224" >
 <math>
 $\[s_{X,Y} = \frac{1}{n}\sum_{i=1}^{n}(x_i-\overline{x})(y_i-\overline{y})\]$</math>
 </p>
-<aside id="r-4774225" data-claire-element-id="8720867" data-claire-semantic="information">
-<p id="r-4773966" data-claire-element-id="8720866">
+<aside id="r-4774225" data-claire-semantic="information">
+<p id="r-4773966" >
 Au contraire, s'il n'y a pas de corrélation entre le solde et le montant, alors quand<math>
 $\(x\)$</math>
 sera petit,<math>
@@ -122,7 +122,7 @@ sera elle aussi tantôt positive, tantôt négative. Au final, la moyenne de tou
 $\(a\)$</math>
 sera proche de 0.</p>
 </aside>
-<p id="r-4774032" data-claire-element-id="8720868">
+<p id="r-4774032" >
 Résumons : Si<math>
 $\(x\)$</math>
 est petit quand<math>
@@ -148,21 +148,21 @@ $\(s_{X,Y}\)$</math>
 sera négatif. Dans ce dernier cas, il y a corrélation certes, mais on dit que c'est une<em>
 corrélation négative</em>
 .</p>
-<h4 id="r-4774229" data-claire-element-id="8789082">
+<h4 id="r-4774229" >
 La covariance empirique et le coefficient de corrélation</h4>
-<p id="r-4774226" data-claire-element-id="8720961">
+<p id="r-4774226" >
 Devinez quoi ! L'indicateur que nous venons de construire est très utilisé en statistiques ; il s'appelle la<strong>
 covariance empirique</strong>
 de X et Y. Ce terme vous rappelle la variance empirique ? C'est normal : elles sont similaires. Effectivement, si vous calculez la covariance empirique de X et X, vous retombez sur la formule de la variance empirique de X, qui s'écrit<math>
 $\(s^2_X=\frac{1}{n}\sum_{i=1}^{n}(x-\overline{x})^2\)$</math>
 . Magique !</p>
-<p id="r-4774241" data-claire-element-id="8789071">
+<p id="r-4774241" >
 Pour ramener la covariance empirique à une valeur qui soit comprise entre -1 et 1, alors on peut la diviser par le produit des écarts-types. Cette normalisation nous permet de faire des comparaisons. Cela qui nous donne</p>
-<p id="r-4774242" data-claire-element-id="8720914">
+<p id="r-4774242" >
 <math>
 $\[r_{X,Y}=\frac{s_{X,Y}}{s_Xs_Y}\]$</math>
 </p>
-<p id="r-4774228" data-claire-element-id="8720915">
+<p id="r-4774228" >
 Ce coefficient r est appelé<strong>
 coefficient de corrélation</strong>
 , ou<strong>
@@ -170,13 +170,13 @@ coefficient de corrélation linéaire</strong>
 , ou encore<strong>
 coefficient de corrélation de Pearson</strong>
 .</p>
-<div id="r-4774247" data-claire-element-id="8720944" data-claire-semantic="question">
-<p id="r-4774243" data-claire-element-id="8720943">
+<div id="r-4774247" data-claire-semantic="question">
+<p id="r-4774243" >
 Pourquoi<em>
 "linéaire"</em>
 ?</p>
 </div>
-<p id="r-4774248" data-claire-element-id="8789081">
+<p id="r-4774248" >
 Parce que malheureusement, il ne détecte les relations que lorsqu'elles sont<strong>
 linéaires</strong>
 , c'est-à-dire lorsque les points sont plutôt bien alignés sur une ligne droite. Sur le graphique ci-dessous, les deux schémas du haut montrent des points bien alignés : leur<math>
@@ -190,70 +190,70 @@ $\(r\)$</math>
 est donc proche de 0. Cependant sur le 3e graphique, il y a une forte corrélation, mais sa forme n'est pas linéaire : et<math>
 $\(r\)$</math>
 est donc malheureusement proche de 0.</p>
-<p id="r-4777071" data-claire-element-id="8730154">
-<img id="r-4777076" data-claire-element-id="8730153" src="https://user.oc-static.com/upload/2017/11/07/15100615446283_r.jpeg" alt="">
+<p id="r-4777071" >
+<img id="r-4777076" src="https://user.oc-static.com/upload/2017/11/07/15100615446283_r.jpeg" alt="">
 </p>
-<h3 id="r-4774254" data-claire-element-id="8733468">
+<h3 id="r-4774254" >
 Du côté du code</h3>
-<table id="r-4778341" data-claire-element-id="8733467">
-<tbody id="r-4778340" data-claire-element-id="8733466">
-<tr id="r-4778339" data-claire-element-id="8733465">
-<td id="r-4778338" data-claire-element-id="8733464">
-<p id="r-4778336" data-claire-element-id="8733462">
+<table id="r-4778341" >
+<tbody id="r-4778340" >
+<tr id="r-4778339" >
+<td id="r-4778338" >
+<p id="r-4778336" >
 donner la valeur du coeff r et de la cov</p>
-<p id="r-4778337" data-claire-element-id="8733463">
+<p id="r-4778337" >
 code pour scatterplot</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p id="r-4774231" data-claire-element-id="8720891">
+<p id="r-4774231" >
 </p>
-<h3 id="r-4774270" data-claire-element-id="8733473">
+<h3 id="r-4774270" >
 Aller plus loin : alternative au diagramme de dispersion</h3>
-<p id="r-4774256" data-claire-element-id="8720976">
+<p id="r-4774256" >
 Pour avoir une représentation plus efficace que le<em>
 scatter plot</em>
 , il est possible d'agréger la variable X en abscisses (axe horizontal) en différentes classes. Cela équivaut à "découper" au couteau le graphique précédent en tranches verticales. On représente ensuite pour chaque tranche une boîte à moustaches calculée à partir de tous les points présents dans la tranche. Voici donc le nouveau graphique obtenu :</p>
-<table id="r-4774262" data-claire-element-id="8733472">
-<tbody id="r-4774261" data-claire-element-id="8733471">
-<tr id="r-4774260" data-claire-element-id="8733470">
-<td id="r-4774259" data-claire-element-id="8733469">
-<p id="r-4774257" data-claire-element-id="8720977">
+<table id="r-4774262" >
+<tbody id="r-4774261" >
+<tr id="r-4774260" >
+<td id="r-4774259" >
+<p id="r-4774257" >
 ILLUS + interp</p>
 </td>
 </tr>
 </tbody>
 </table>
-<aside id="r-4774264" data-claire-element-id="8721022" data-claire-semantic="information">
-<p id="r-4774263" data-claire-element-id="8721021">
+<aside id="r-4774264" data-claire-semantic="information">
+<p id="r-4774263" >
 A droite, c'est un graphique équivalent qui représente les 1e, 2e et 3e quartiles pour chaque tranche. Il est superposable à celui des boîtes à moustaches, car les 3 quartiles sont aussi visibles sur les boites à moustaches.</p>
 </aside>
-<table id="r-4774269" data-claire-element-id="8720989">
-<tbody id="r-4774268" data-claire-element-id="8720988">
-<tr id="r-4774267" data-claire-element-id="8720987">
-<td id="r-4774266" data-claire-element-id="8720986">
-<p id="r-4774265" data-claire-element-id="8720985">
+<table id="r-4774269" >
+<tbody id="r-4774268" >
+<tr id="r-4774267" >
+<td id="r-4774266" >
+<p id="r-4774265" >
 code</p>
 </td>
 </tr>
 </tbody>
 </table>
-<h3 id="r-4774238" data-claire-element-id="8789096">
+<h3 id="r-4774238" >
 Aller plus loin : propriétés de la covariance empirique</h3>
-<p id="r-4773967" data-claire-element-id="8720894">
+<p id="r-4773967" >
 Très rapidement, voici deux propriétés de la variance empirique :</p>
-<ul id="r-4774236" data-claire-element-id="8789095">
-<li id="r-4774233" data-claire-element-id="8789092">
-<p id="r-4774232" data-claire-element-id="8789091">
+<ul id="r-4774236" >
+<li id="r-4774233" >
+<p id="r-4774232" >
 <math>
 $\(s_{X,Y} = s_{Y,X}\)$</math>
 . C'est la propriété de<strong>
 symétrie</strong>
 .</p>
 </li>
-<li id="r-4774235" data-claire-element-id="8789094">
-<p id="r-4774234" data-claire-element-id="8789093">
+<li id="r-4774235" >
+<p id="r-4774234" >
 si on crée une nouvelle variable Z à partir de 2 variables U et V dont on connaît la covariance empirique, et que<math>
 $\(Z = aU + bV\)$</math>
 , alors<math>
@@ -263,7 +263,7 @@ bi-linéarité</strong>
 .</p>
 </li>
 </ul>
-<p id="r-4774237" data-claire-element-id="8720900">
+<p id="r-4774237" >
 </p>
 </div>
 <div class="js-courseSelementActions sideActions">

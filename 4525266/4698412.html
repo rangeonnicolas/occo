@@ -1,20 +1,20 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/nettoyez-et-decrivez-votre-jeu-de-donnees/tp-nettoyez-votre-jeu-de-donnees" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
 <div class="userContent js-userContent">
-<p id="r-4724178" data-claire-element-id="8606641">
+<p id="r-4724178" >
 Nous allons nettoyer le jeu de données du chapitre précédent. Nous illustrerons ceci en Python. Si vous préférez R, un code équivalent est donné en bas de chapitre ;)</p>
-<p id="r-4725378" data-claire-element-id="8729601">
+<p id="r-4725378" >
 Nous commencerons par charger l'échantillon à partir de<a href="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/courses/4525266/personnes.csv">
 ce fichier csv</a>
 (qu'il vous faut télécharger) dans une variable que nous appellerons<code data-claire-semantic="text">
 data</code>
 . Cette variable sera donc un dataframe.</p>
-<p id="r-4725379" data-claire-element-id="8606642">
+<p id="r-4725379" >
 Ensuite, nous allons parcourir chacune des colonnes pour détecter les erreurs, les corriger, puis actualiser les colonnes en conséquence. Que ce soit en Python ou en R, actualiser un colonne d'un dataframe se fait de cette manière :</p>
-<pre id="r-4725517" data-claire-element-id="8605443">
+<pre id="r-4725517" >
 <code data-claire-semantic="python">
 data["nom_colonne"] = nouvelle_colonne</code>
 </pre>
-<p id="r-4697986" data-claire-element-id="8605444">
+<p id="r-4697986" >
 Ici, on cherche à remplacer les valeurs de la colonne (ou variable)<code data-claire-semantic="text">
 nom_colonne</code>
 . Si la dataframe a 7 lignes, alors la colonne<code data-claire-semantic="text">
@@ -22,11 +22,11 @@ nom_colonne</code>
 contient 7 valeurs. Pour les remplacer,<code data-claire-semantic="text">
 nouvelle_colonne</code>
 doit ainsi être une liste de 7 valeurs.</p>
-<p id="r-4725881" data-claire-element-id="8606491">
+<p id="r-4725881" >
 </p>
-<h3 id="r-4725523" data-claire-element-id="8687922">
+<h3 id="r-4725523" >
 Les méthodes apply et map</h3>
-<p id="r-4725520" data-claire-element-id="8606643">
+<p id="r-4725520" >
 Il reste encore à savoir comment remplir<code data-claire-semantic="text">
 nouvelle_colonne</code>
 . En fait, elle sera calculée à partir de<code data-claire-semantic="text">
@@ -34,7 +34,7 @@ nom_colonne</code>
 . Ce qu'il nous faut, c'est parcourir chaque valeur de<code data-claire-semantic="text">
 nom_colonne</code>
 , vérifier si elle est correcte ou pas, et la corriger si besoin.</p>
-<p id="r-4725521" data-claire-element-id="8687921">
+<p id="r-4725521" >
 Pour cela, nous utilisons la méthode<code data-claire-semantic="text">
 apply</code>
 . C'est une méthode qui est appelée sur une colonne du dataframe, et qui permet de parcourir toutes ses valeurs. Alternativement, on peut utiliser la méthode<code data-claire-semantic="text">
@@ -42,17 +42,17 @@ map</code>
 , qui lui est (<a href="https://stackoverflow.com/questions/19798153/difference-between-map-applymap-and-apply-methods-in-pandas">
 a peu près</a>
 ) équivalente. Pour chaque valeur, elle applique une fonction destinée à la vérification/correction :</p>
-<pre id="r-4725748" data-claire-element-id="8606644">
+<pre id="r-4725748" >
 <code data-claire-semantic="python">
 import pandas as pd # On importe la librairie Pandas, que l'on surnomme 'pd' def lower_case(value): print('Voici la valeur que je traite:', value) return value.lower() data = pd.DataFrame([['A',1], ['B',2], ['C',3]], columns = ['lettre','position']) nouvelle_colonne = data['lettre'].apply(lower_case) nouvelle_colonne = nouvelle_colonne.values print(nouvelle_colonne) data['lettre'] = nouvelle_colonne print(data)</code>
 </pre>
-<p id="r-4725749" data-claire-element-id="8606645">
+<p id="r-4725749" >
 En ligne 7, on crée notre dataframe. Celui-ci est un tableau avec 2 colonnes ('lettre' et 'position') et 3 lignes. En ligne 3, on crée une fonction nommée<code data-claire-semantic="text">
 lower_case</code>
 , qui prend en paramètre une valeur<code data-claire-semantic="text">
 value</code>
 , qui l'affiche (ligne 4), la transforme en minuscules (ligne 5), puis la retourne.</p>
-<p id="r-4725750" data-claire-element-id="8606496">
+<p id="r-4725750" >
 Ensuite, on sélectionne la colonne<code data-claire-semantic="text">
 lettre</code>
 de<code data-claire-semantic="text">
@@ -62,7 +62,7 @@ apply</code>
 , et on spécifie que chacune des valeurs doit être envoyée une à une à la fonction<code data-claire-semantic="text">
 lower_case</code>
 (ligne 13).</p>
-<p id="r-4725752" data-claire-element-id="8606646">
+<p id="r-4725752" >
 En ligne 11,<code data-claire-semantic="text">
 nouvelle_colonne</code>
 est de type "colonne" (car la méthode<code data-claire-semantic="text">
@@ -72,16 +72,16 @@ Series</code>
 . Pour obtenir les valeurs de cette colonne sous forme de liste, on appelle<code data-claire-semantic="text">
 nouvelle_colonne.values</code>
 (ligne 12). Voici ce que ce programme affichera :</p>
-<pre id="r-4725753" data-claire-element-id="8606647">
+<pre id="r-4725753" >
 <code data-claire-semantic="text">
 Voici la valeur que je traite: A Voici la valeur que je traite: B Voici la valeur que je traite: C ['a' 'b' 'c'] lettre position 0 a 1 1 b 2 2 c 3</code>
 </pre>
-<p id="r-4725754" data-claire-element-id="8606648">
+<p id="r-4725754" >
 Les lignes 1 à 3 affichent ce que fait la fonction<code data-claire-semantic="text">
 lower_case</code>
 , la ligne 4 affiche la résultat du traitement, c'est-à-dire les 3 lettres en minuscule, et les autres lignes affichent le dataframe dont la colonne lettre a été actualisée avec les minuscules !</p>
-<aside id="r-4725937" data-claire-element-id="8606682" data-claire-semantic="information">
-<p id="r-4725936" data-claire-element-id="8606681">
+<aside id="r-4725937" data-claire-semantic="information">
+<p id="r-4725936" >
 La ligne 12 convertit<code data-claire-semantic="text">
 nouvelle_colonne</code>
 d'un objet<code data-claire-semantic="text">
@@ -90,29 +90,29 @@ en une liste. Cette ligne est en fait optionnelle, car la syntaxe de la ligne 13
 Series</code>
 !</p>
 </aside>
-<p id="r-4725755" data-claire-element-id="8606152">
+<p id="r-4725755" >
 </p>
-<h3 id="r-4725772" data-claire-element-id="8761783">
+<h3 id="r-4725772" >
 Attaquons !</h3>
-<h4 id="r-4725758" data-claire-element-id="8606156">
+<h4 id="r-4725758" >
 Charger les données</h4>
-<p id="r-4725756" data-claire-element-id="8606154">
+<p id="r-4725756" >
 Commencez par télécharger le fichier csv qui correspond à l'exemple des chapitres précédents (donné en haut de chapitre), puis chargez-le grâce à ces lignes de code :</p>
-<pre id="r-4725757" data-claire-element-id="8606155">
+<pre id="r-4725757" >
 <code data-claire-semantic="python">
 # import des librairies dont nous aurons besoin import pandas as pd import numpy as np import re # chargement et affichage des données data = pd.read_csv('personnes.csv') print(data)</code>
 </pre>
-<h4 id="r-4725765" data-claire-element-id="8606654">
+<h4 id="r-4725765" >
 Traiter les pays</h4>
-<p id="r-4725759" data-claire-element-id="8606500">
+<p id="r-4725759" >
 Vous l'avez compris, il nous faudra une fonction par traitement. Oublions<code data-claire-semantic="text">
 lower_case</code>
 , et écrivons une fonction qui vérifie si les pays présents dans la colonne pays sont corrects. Pour ceci, il nous faut une liste des pays acceptés :</p>
-<pre id="r-4725760" data-claire-element-id="8606158">
+<pre id="r-4725760" >
 <code data-claire-semantic="python">
 VALID_COUNTRIES = ['France', 'Côte d\'ivoire', 'Madagascar', 'Bénin', 'Allemagne' , 'USA'] def check_country(country): if country not in VALID_COUNTRIES: print(' - "{}" n\'est pas un pays valide, nous le supprimons.' \ .format(country)) return np.NaN return country</code>
 </pre>
-<p id="r-4725761" data-claire-element-id="8606652">
+<p id="r-4725761" >
 Ici, si le pays présent dans la variable<code data-claire-semantic="text">
 country</code>
 n'est pas présent dans la liste<code data-claire-semantic="text">
@@ -126,33 +126,33 @@ pandas</code>
 pour spécifier qu'une valeur est inconnue. C'est en quelques sortes un équivalent de<code data-claire-semantic="text">
 None</code>
 .</p>
-<aside id="r-4725883" data-claire-element-id="8606522" data-claire-semantic="information">
-<p id="r-4725882" data-claire-element-id="8606521">
+<aside id="r-4725883" data-claire-semantic="information">
+<p id="r-4725882" >
 Plus précisément, "NaN" signifie "Not a Number" ("pas un nombre" en français). Vous rencontrerez également<code data-claire-semantic="text">
 pd.NaT</code>
 , "not a time" (pour les colonnes de dates).</p>
 </aside>
-<p id="r-4725762" data-claire-element-id="8606653">
+<p id="r-4725762" >
 Sinon, si le pays est valide, on renvoie simplement ce pays (ligne 9)!</p>
-<aside id="r-4725764" data-claire-element-id="8606162" data-claire-semantic="information">
-<p id="r-4725763" data-claire-element-id="8606161">
+<aside id="r-4725764" data-claire-semantic="information">
+<p id="r-4725763" >
 Un petit doute sur la méthode<code data-claire-semantic="text">
 format</code>
 de la ligne 6, allez faire un tour<a href="/courses/demarrez-votre-projet-avec-python/modifiez-des-chaines-de-caracteres">
 ici</a>
 ;)</p>
 </aside>
-<h4 id="r-4725771" data-claire-element-id="8761782">
+<h4 id="r-4725771" >
 Traiter les emails</h4>
-<p id="r-4725766" data-claire-element-id="8606164">
+<p id="r-4725766" >
 Au tour des emails maintenant ! Le problème avec cette colonne, c'est qu'il y a parfois 2 adresses email par ligne. Nous ne souhaitons prendre que la première. Nous créons donc la fonction<code data-claire-semantic="text">
 first</code>
 :</p>
-<pre id="r-4725767" data-claire-element-id="8606165">
+<pre id="r-4725767" >
 <code data-claire-semantic="python">
 def first(string): parts = string.split(',') first_part = parts[0] if len(parts) &gt;= 2: print(' - Il y a plusieures parties dans "{}", ne gardons que {}.'\ .format(parts,first_part)) return first_part</code>
 </pre>
-<p id="r-4725768" data-claire-element-id="8761781">
+<p id="r-4725768" >
 Lorsqu'il y a plusieurs emails par ligne, ceux-ci sont séparés par des virgules. Nous séparons donc la chaîne de caractère de la variable<code data-claire-semantic="text">
 string</code>
 selon les virgules grâce à la méthode<a href="/courses/demarrez-votre-projet-avec-python/modifiez-des-chaines-de-caracteres">
@@ -160,7 +160,7 @@ split</a>
 (ligne 2). Le résultat est donc une liste avec autant d'éléments que d'adresses email: cette liste est placée dans la variable<code data-claire-semantic="text">
 parts</code>
 .</p>
-<p id="r-4725769" data-claire-element-id="8606655">
+<p id="r-4725769" >
 Comme<code data-claire-semantic="text">
 parts</code>
 contient au moins 1 élément, on place celui-ci dans la variable<code data-claire-semantic="text">
@@ -172,9 +172,9 @@ len</code>
 . S'il y en a au moins 2, alors on affiche le message des lignes 5 et 6. Finalement, on retourne<code data-claire-semantic="text">
 first_part</code>
 , qui contient le premier email !</p>
-<h4 id="r-4725891" data-claire-element-id="8684522">
+<h4 id="r-4725891" >
 Traiter les tailles</h4>
-<p id="r-4725770" data-claire-element-id="8606657">
+<p id="r-4725770" >
 Nous aurons ici 2 fonctions :<code data-claire-semantic="text">
 convert_height</code>
 , qui convertira les chaînes de caractère de type<code data-claire-semantic="text">
@@ -182,15 +182,15 @@ convert_height</code>
 en nombre décimal, ainsi que<code data-claire-semantic="text">
 fill_height</code>
 , qui remplacera les valeurs manquantes par la moyenne des tailles de l'échantillon.</p>
-<pre id="r-4725884" data-claire-element-id="8606552">
+<pre id="r-4725884" >
 <code data-claire-semantic="python">
 def convert_height(height): found = re.search('\d\.\d{2}m', height) if found is None: print('{} n\'est pas au bon format. Il sera ignoré.'.format(height)) return np.NaN else: value = height[:-1] # on enlève le dernier caractère, qui est 'm' return float(value) def fill_height(height, replacement): if pd.isnull(height): print('Imputation par la moyenne : {}'.format(replacement)) return replacement return height</code>
 </pre>
-<p id="r-4725961" data-claire-element-id="8684521">
+<p id="r-4725961" >
 La première fonction est un peu plus élaborée. Vous pouvez soit lui accorder une confiance aveugle, soit tenter de percer son mystère dans la section<em>
 Aller plus loin</em>
 en bas de ce chapitre ;)</p>
-<p id="r-4725906" data-claire-element-id="8606661">
+<p id="r-4725906" >
 Passons à la seconde fonction. Ah ! elle prend 2 paramètres :<code data-claire-semantic="text">
 height</code>
 et<code data-claire-semantic="text">
@@ -200,27 +200,27 @@ height</code>
 est manquante (None, NaN ou Nat). Si c'est le cas, on retourne la valeur de remplacement (ligne 13), sinon, on retourne<code data-claire-semantic="text">
 height</code>
 .</p>
-<p id="r-4725907" data-claire-element-id="8606554">
+<p id="r-4725907" >
 </p>
-<h3 id="r-4725912" data-claire-element-id="8687892">
+<h3 id="r-4725912" >
 Appliquons toutes ces fonctions</h3>
-<p id="r-4725909" data-claire-element-id="8606664">
+<p id="r-4725909" >
 Maintenant que ces fonctions sont définies, il faut les exécuter ! A la fin de votre programme, ajoutez ceci :</p>
-<pre id="r-4725910" data-claire-element-id="8606684">
+<pre id="r-4725910" >
 <code data-claire-semantic="python">
 data['email'] = data['email'].apply(first) data['pays'] = data['pays'].apply(check_country) data['taille'] = [convert_height(t) for t in data['taille']] data['taille'] = [t if t&lt;3 else np.NaN for t in data['taille']] mean_height = data['taille'].mean() data['taille'] = [fill_height(t, mean_height) for t in data['taille']] data['date_naissance'] = pd.to_datetime(data['date_naissance'], format='%d/%m/%Y', errors='coerce') print(data)</code>
 </pre>
-<p id="r-4725946" data-claire-element-id="8606724">
+<p id="r-4725946" >
 Vous vous souvenez de la syntaxe que nous avons vu tout en haut de ce chapitre, pour actualiser une colonne ? Nous l'employons ici dans les lignes 1 à 4, 6 et 7. Vous connaissez la syntaxe utilisée dans les lignes 1 et 2. Par contre, pour les lignes 3, 4 et 6 il faudra peut-être vous rafraîchir la mémoire sur les<a href="/courses/pratiques-avancees-et-meconnues-en-python#r-1174227">
 compréhensions de listes</a>
 . Si cela ne vous dit rien, rendez-vous un peu plus bas, dans la section<em>
 Aller plus loin</em>
 .</p>
-<p id="r-4725948" data-claire-element-id="8606689">
+<p id="r-4725948" >
 Que vous dire d'autre... Vous savez l'essentiel. Bon quelques petites précisions mineures :</p>
-<ul id="r-4725955" data-claire-element-id="8687873">
-<li id="r-4725950" data-claire-element-id="8687872">
-<p id="r-4725949" data-claire-element-id="8687871">
+<ul id="r-4725955" >
+<li id="r-4725950" >
+<p id="r-4725949" >
 <code data-claire-semantic="text">
 t if t&lt;3 else np.NaN</code>
 renvoie<code data-claire-semantic="text">
@@ -231,14 +231,14 @@ est inférieur à 3, ou renvoie<code data-claire-semantic="text">
 np.NaN</code>
 sinon. On l'utilise pour supprimer les tailles supérieures à 3m, qui sont aberrantes.</p>
 </li>
-<li id="r-4725952" data-claire-element-id="8606693">
-<p id="r-4725951" data-claire-element-id="8606692">
+<li id="r-4725952" >
+<p id="r-4725951" >
 <code data-claire-semantic="text">
 data['taille'].mean()</code>
 renvoie une unique valeur, qui est la moyenne des tailles.</p>
 </li>
-<li id="r-4725954" data-claire-element-id="8607104">
-<p id="r-4725953" data-claire-element-id="8607103">
+<li id="r-4725954" >
+<p id="r-4725953" >
 La colonne<code data-claire-semantic="text">
 date_naissance</code>
 contient des chaînes de caractères. On les<a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.to_datetime.html">
@@ -248,52 +248,52 @@ pd.NaT</code>
 (c'est le cas de la date de naissance de Radia) .</p>
 </li>
 </ul>
-<p id="r-4725962" data-claire-element-id="8687891">
+<p id="r-4725962" >
 La ligne 9 affiche ici le résultat final :</p>
-<p id="r-4762727" data-claire-element-id="8687876">
-<img id="r-4762726" data-claire-element-id="8687875" src="https://user.oc-static.com/upload/2017/10/30/1509380897808_resultat.png" alt="">
+<p id="r-4762727" >
+<img id="r-4762726" src="https://user.oc-static.com/upload/2017/10/30/1509380897808_resultat.png" alt="">
 </p>
-<p id="r-4762728" data-claire-element-id="8687877">
+<p id="r-4762728" >
 </p>
-<h3 id="r-4725968" data-claire-element-id="8606762">
+<h3 id="r-4725968" >
 Aller plus loin : Les compréhensions de listes</h3>
-<p id="r-4725963" data-claire-element-id="8606727">
+<p id="r-4725963" >
 Les compréhensions de listes, c'est une syntaxe très pratique, car elle permet en une ligne d'écrire une boucle for qui construit une liste. Par exemple, la ligne 3 du tout dernier bout de code ci dessus est équivalente à ces 4 lignes :</p>
-<pre id="r-4725964" data-claire-element-id="8606728">
+<pre id="r-4725964" >
 <code data-claire-semantic="python">
 nouvelle_colonne = [] for t in data['taille']: nouvelle_colonne.append(convert_height(t)) data['taille'] = nouvelle_colonne</code>
 </pre>
-<p id="r-4725965" data-claire-element-id="8606729">
+<p id="r-4725965" >
 On aurait très bien pu utiliser<code data-claire-semantic="text">
 apply</code>
 :</p>
-<pre id="r-4725966" data-claire-element-id="8606730">
+<pre id="r-4725966" >
 <code data-claire-semantic="python">
 data['taille'] = data['taille'].apply(convert_height)</code>
 </pre>
-<p id="r-4725967" data-claire-element-id="8606731">
+<p id="r-4725967" >
 </p>
-<p id="r-4725981" data-claire-element-id="8606761">
+<p id="r-4725981" >
 </p>
-<h3 id="r-4726112" data-claire-element-id="8687931">
+<h3 id="r-4726112" >
 Aller plus loin : le traitement des tailles</h3>
-<p id="r-4725969" data-claire-element-id="8606751">
+<p id="r-4725969" >
 Reprenons la fonction que nous avions laissé de côté :</p>
-<pre id="r-4725976" data-claire-element-id="8606752">
+<pre id="r-4725976" >
 <code data-claire-semantic="python">
 def convert_height(height): found = re.search('\d\.\d{2}m', height) if found is None: print('{} n\'est pas au bon format. Il sera ignoré.'.format(height)) return np.NaN else: value = height[:-1] # on enlève le dernier caractère, qui est 'm' return float(value)</code>
 </pre>
-<p id="r-4725970" data-claire-element-id="8606734">
+<p id="r-4725970" >
 Normalement, pandas détecte automatiquement si une colonne provenant d'un fichier CSV contient des chaînes de caractères ou des nombres. Mais ici, la colonne "taille" contient des "m". Comme c'est une lettre, pandas considère que "1,34m" est une chaîne de caractères, pas un nombre ! Il faudra donc le convertir nous-même.</p>
-<p id="r-4725971" data-claire-element-id="8606735">
+<p id="r-4725971" >
 Alors... c'est vrai, la ligne 2 est difficile à comprendre. Elle vérifie si la taille est bien formatée : un chiffre, suivi d'un point, puis 2 chiffres, puis un "m". Ainsi, "1,34m" est correct, alors que "153cm" n'est pas correct.</p>
-<aside id="r-4725973" data-claire-element-id="8606737" data-claire-semantic="information">
-<p id="r-4725972" data-claire-element-id="8606736">
+<aside id="r-4725973" data-claire-semantic="information">
+<p id="r-4725972" >
 Il s'agit d'une expression régulière. Pas besoin de les maîtriser si vous voulez suivre ce cours, mais sachez quand même que les expressions régulières sont très très très pratiques, et indispensables si vous souhaitez devenir Data Analyst. Heureusement, elles ne sont pas difficiles à comprendre : Céline les a très bien expliquées<a href="/courses/manipulez-des-donnees-avec-python-1/utilisez-des-expressions-regulieres">
 ici</a>
 .</p>
 </aside>
-<p id="r-4726111" data-claire-element-id="8607107">
+<p id="r-4726111" >
 Vous avez normalement toutes les clés en main pour comprendre le reste de cette fonction. Remarquez jusque<code data-claire-semantic="text">
 float(value)</code>
 permet de convertir une chaîne de caractère qui représente un nombre en... un vrai nombre (dont le type est "float") !</p>

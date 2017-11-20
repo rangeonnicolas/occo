@@ -1,26 +1,26 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/nettoyez-et-decrivez-votre-jeu-de-donnees/dispersez-vous-avec-les-mesures-de-dispersion" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
 <div class="userContent js-userContent">
-<aside id="r-4738797" data-claire-element-id="8644202" data-claire-semantic="information">
-<p id="r-4738796" data-claire-element-id="8644201">
+<aside id="r-4738797" data-claire-semantic="information">
+<p id="r-4738796" >
 Il y a des formules mathématiques dans ce chapitre, mais ne vous enfuyez pas, elles sont expliquées pas-à-pas ;)</p>
 </aside>
-<p id="r-4738798" data-claire-element-id="8644203">
+<p id="r-4738798" >
 Au chapitre précédent, votre ami vous a donné une estimation de la durée du trajet. Mais il vous a donné des mesures de tendance centrale, comme par exemple la moyenne, qui est de 60 minutes par trajet.</p>
-<p id="r-4738799" data-claire-element-id="8644204">
+<p id="r-4738799" >
 Ce qui vous manque maintenant, c'est de savoir si les durées que votre ami a effectué sont très "resserrées" autour de 60 min (exemple : [58, 60, 62, 59, 57, ...] ), ou bien si elles s'en écartent beaucoup (exemple : [40, 70, 78, 43, ...] ). Quel intérêt ?</p>
-<p id="r-4737756" data-claire-element-id="8641421">
+<p id="r-4737756" >
 Si les valeurs sont très resserrées autour de 60minutes, alors prévoyez de partir 75 minutes à l'avance. Ainsi, il est probable que vous arriverez 5 ou 10 minutes avant votre entretient. Mais si les valeurs sont très écartées, alors prévoyez plutôt de partir 100 minutes à l'avance, car il est tout à fait possible que le trajet dure 80 minutes !</p>
-<div id="r-4737758" data-claire-element-id="8641423" data-claire-semantic="question">
-<p id="r-4737757" data-claire-element-id="8641422">
+<div id="r-4737758" data-claire-semantic="question">
+<p id="r-4737757" >
 J'ai compris ! Mesurer l'espacement des valeurs... j'imagine qu'il y a une mesure statistique pour cela non?</p>
 </div>
-<p id="r-4737759" data-claire-element-id="8641431">
+<p id="r-4737759" >
 Tout à fait ! :D Il y en a même plusieurs. On les appelle les<strong>
 mesures de dispersion</strong>
 .</p>
-<h3 id="r-4738036" data-claire-element-id="8643493">
+<h3 id="r-4738036" >
 Réfléchissons</h3>
-<p id="r-4737816" data-claire-element-id="8643154">
+<p id="r-4737816" >
 Essayons de construire notre propre indicateur de dispersion, pas-à-pas. Pour illustrer, prenons les valeurs suivantes (70, 60, 50, 55, 55, 65, 65), et donnons leur chacun un nom :<math>
 $\(x_i\)$</math>
 , avec<math>
@@ -30,99 +30,99 @@ $\(x_1\)$</math>
 à<math>
 $\(x_7\)$</math>
 .</p>
-<p id="r-4737817" data-claire-element-id="8641582">
+<p id="r-4737817" >
 Formellement, on écrit<math>
 $\((x_1,...,x_n) = (70, 60, 50, 55, 55, 65, 65)\)$</math>
 avec<math>
 $\(n=7\)$</math>
 .</p>
-<p id="r-4737818" data-claire-element-id="8641722">
+<p id="r-4737818" >
 Remarquons que la moyenne de ces valeurs vaut 60, on la note<math>
 $\(\overline{x}=60\)$</math>
 , et on prononce "x barre".</p>
-<div id="r-4737852" data-claire-element-id="8643156" data-claire-semantic="question">
-<p id="r-4737851" data-claire-element-id="8643155">
+<div id="r-4737852" data-claire-semantic="question">
+<p id="r-4737851" >
 Facile de faire une mesure de dispersion ! Prenons toutes nos valeurs, et calculons pour chacune d'entre elles l'écart qu'elles ont avec la moyenne. Puis additionnons tous ces écarts !</p>
 </div>
-<p id="r-4737820" data-claire-element-id="8641725">
+<p id="r-4737820" >
 C'est un bon début. Comme notre moyenne est de 60, les écarts des<math>
 $\(x_i\)$</math>
 à la moyenne sont :<math>
 $\((x_1-\overline{x},...,x_7-\overline{x}) = (10,0,-10,-5,-5,5,5)\)$</math>
 . Sauf que... si nous faisons la somme de ceux-ci, on obtient 0 ! On peut même le démontrer mathématiquement : quelle que soit la dispersion de vos valeurs, la somme les écarts à la moyenne vaudra toujours 0. Pas très efficace donc...</p>
-<div id="r-4737854" data-claire-element-id="8643158" data-claire-semantic="question">
-<p id="r-4737853" data-claire-element-id="8643157">
+<div id="r-4737854" data-claire-semantic="question">
+<p id="r-4737853" >
 Si ça vaut 0, c'est parce qu’il y a des nombres positifs et des nombres négatifs. Évitons cela, et mettons-les tous au carré. Un nombre mis au carré, c'est toujours positif n'est-ce-pas ?</p>
 </div>
-<p id="r-4737855" data-claire-element-id="8643159">
+<p id="r-4737855" >
 Exact ! Voici ce que cela donne :<math>
 $\(((x_1-\overline{x})^2,...,(x_7-\overline{x})^2) = (100,0,100,25,25,25,25)\)$</math>
 .Maintenant, si on fait la somme de toutes ce valeurs, on obtient 300.</p>
-<aside id="r-4737858" data-claire-element-id="8641922" data-claire-semantic="information">
-<p id="r-4737856" data-claire-element-id="8641862">
+<aside id="r-4737858" data-claire-semantic="information">
+<p id="r-4737856" >
 Ici, on a fait la somme de tous les<math>
 $\((x_i-\overline{x})^2\)$</math>
 , avec<math>
 $\(i\)$</math>
 allant de 1 à 7. Mathématiquement, on note cette somme comme ceci :</p>
-<p id="r-4737946" data-claire-element-id="8641921">
+<p id="r-4737946" >
 <math>
 $\[\sum_{i=1}^{i=7}(x_i-\overline{x})^2\]$</math>
 </p>
 </aside>
-<p id="r-4737859" data-claire-element-id="8641864">
+<p id="r-4737859" >
 Bon. Maintenant, il y a encore un problème. Ici, on a 7 valeurs, tout simplement parce que nous sommes un peu paresseux, et nous n'en avons relevé que 7. Mais en statistiques, plus on fait de relevés, plus on a une idée précise de ce que l'on décrit. Ainsi, on aurait dû retenir 10, 100 ou même 1000 valeurs !</p>
-<p id="r-4737931" data-claire-element-id="8641881">
+<p id="r-4737931" >
 Mais avec 1000 valeurs, notre mesure exploserait ! Il passerait de 300 avec 7 valeurs à peut-être 40000000000 avec 1000 valeurs. C'est problématique.</p>
-<div id="r-4737937" data-claire-element-id="8641883" data-claire-semantic="question">
-<p id="r-4737936" data-claire-element-id="8641882">
+<div id="r-4737937" data-claire-semantic="question">
+<p id="r-4737936" >
 Alors, plutôt que de calculer la somme, et avoir un indicateur qui explose, prenons plutôt la moyenne. Ainsi, qu'il y ait 7 valeurs ou 1000 valeurs, la moyenne n'explosera pas.</p>
 </div>
-<p id="r-4737860" data-claire-element-id="8641923">
+<p id="r-4737860" >
 Bonne idée. la moyenne de (100,0,100,25,25,25,25) est 42.86</p>
-<aside id="r-4737939" data-claire-element-id="8643492" data-claire-semantic="information">
-<p id="r-4737947" data-claire-element-id="8643171">
+<aside id="r-4737939" data-claire-semantic="information">
+<p id="r-4737947" >
 Pour obtenir cette moyenne de 42.86, on a juste divisé 300 par le nombre de valeurs : 7. On a juste multiplié la formule précédente par<math>
 $\(\frac{1}{n}\)$</math>
 , ce qui nous donne</p>
-<p id="r-4738526" data-claire-element-id="8643491">
+<p id="r-4738526" >
 <math>
 $\[\frac{1}{n}\sum_{i=1}^{i=n}(x_i-\overline{x})^2\]$</math>
 </p>
 </aside>
-<h3 id="r-4738326" data-claire-element-id="8788935">
+<h3 id="r-4738326" >
 Les mesures de dispersion</h3>
-<h4 id="r-4738035" data-claire-element-id="8788882">
+<h4 id="r-4738035" >
 La variance empirique</h4>
-<p id="r-4738241" data-claire-element-id="8643181">
+<p id="r-4738241" >
 Devinez quoi ! L'indicateur que nous venons de construire est l'un des plus utilisés en statistiques ! :soleil: Il s'appelle la<strong>
 variance empirique</strong>
 . Comme nous venons de le voir, elle est égale à</p>
-<p id="r-4738251" data-claire-element-id="8642641">
+<p id="r-4738251" >
 <math>
 $\[v = \frac{1}{n}\sum_{i=1}^{n}(x_i-\overline{x})^2\]$</math>
 </p>
-<p id="r-4737940" data-claire-element-id="8788881">
+<p id="r-4737940" >
 Pour approfondir l'aspect calculatoire, rendez-vous à la section<em>
 Aller plus loin</em>
 , au bas du chapitre.</p>
-<h4 id="r-4738278" data-claire-element-id="8643211">
+<h4 id="r-4738278" >
 L'écart-type empirique</h4>
-<p id="r-4738276" data-claire-element-id="8643191">
+<p id="r-4738276" >
 L'écart-type empirique, c'est juste la racine carrée de la variance empirique. En fait, quand on calcule la variance empirique des temps de trajet, le résultat a pour unité la minute<math>
 $\(^2\)$</math>
 , ce qui n'est pas très intelligible. En prenant la racine carrée, l'unité redevient la minute. Ici, notre écart-type vaut 6.55 minutes. On le note<math>
 $\(s\)$</math>
 .</p>
-<p id="r-4738281" data-claire-element-id="8642712">
+<p id="r-4738281" >
 <math>
 $\[s = \sqrt{v}\]$</math>
 </p>
-<h4 id="r-4738357" data-claire-element-id="8788886">
+<h4 id="r-4738357" >
 L'écart inter-quartiles</h4>
-<p id="r-4737803" data-claire-element-id="8643201">
+<p id="r-4737803" >
 Vous vous souvenez de la médiane ? C'est la valeur au dessous de laquelle se trouvent la moitié des valeurs.</p>
-<p id="r-4738361" data-claire-element-id="8788883">
+<p id="r-4738361" >
 Un<strong>
 quartile</strong>
 , c'est la même chose, mais avec la proportion d'un quart. Il existe 3 quartiles, notés<math>
@@ -132,30 +132,30 @@ $\(Q_2\)$</math>
 (deuxième quartile) et<math>
 $\(Q_3\)$</math>
 (troisième quartile). Ainsi :</p>
-<ul id="r-4738368" data-claire-element-id="8642938">
-<li id="r-4738363" data-claire-element-id="8642933">
-<p id="r-4738362" data-claire-element-id="8642932">
+<ul id="r-4738368" >
+<li id="r-4738363" >
+<p id="r-4738362" >
 1/4 des valeurs se trouvent en dessous de<math>
 $\(Q_1\)$</math>
 et 3/4 au dessus</p>
 </li>
-<li id="r-4738365" data-claire-element-id="8642935">
-<p id="r-4738364" data-claire-element-id="8642934">
+<li id="r-4738365" >
+<p id="r-4738364" >
 2/4 se trouvent en dessous de<math>
 $\(Q_2\)$</math>
 , et 2/4 au dessus (<math>
 $\(Q_2\)$</math>
 est la médiane !)</p>
 </li>
-<li id="r-4738367" data-claire-element-id="8642937">
-<p id="r-4738366" data-claire-element-id="8642936">
+<li id="r-4738367" >
+<p id="r-4738366" >
 3/4 se trouvent en dessous de<math>
 $\(Q_3\)$</math>
 , et 1/4 au dessus</p>
 </li>
 </ul>
-<aside id="r-4738391" data-claire-element-id="8788885" data-claire-semantic="information">
-<p id="r-4738369" data-claire-element-id="8788884">
+<aside id="r-4738391" data-claire-semantic="information">
+<p id="r-4738369" >
 La généralisation de ce concept s'appelle le<strong>
 quantile d'ordre<math>
 $\(\alpha\)$</math>
@@ -166,21 +166,21 @@ déciles</strong>
 centiles</strong>
 , aussi appelés percentiles (quantiles d'ordre 0.01, 0.02, etc.).</p>
 </aside>
-<p id="r-4738376" data-claire-element-id="8643033">
+<p id="r-4738376" >
 L'écart inter-quartile est la différence entre la 3e quartile et le 1e quartile :</p>
-<p id="r-4738402" data-claire-element-id="8643034">
+<p id="r-4738402" >
 <math>
 $\[IQ = Q_3-Q_1\]$</math>
 </p>
-<p id="r-4737760" data-claire-element-id="8641425">
+<p id="r-4737760" >
 </p>
-<h4 id="r-4738406" data-claire-element-id="8788934">
+<h4 id="r-4738406" >
 La boîte à moustaches (boxplot)</h4>
-<p id="r-4738411" data-claire-element-id="8788891">
+<p id="r-4738411" >
 Boîte à moustaches, quel nom rigolo ! :lol: Les anglophones l'appellent<em>
 boxplot</em>
 .</p>
-<p id="r-4738416" data-claire-element-id="8788931">
+<p id="r-4738416" >
 Elle permet de représenter schématiquement une distribution, en incluant sa dispersion. La boîte est délimitée par<math>
 $\(Q_1\)$</math>
 et<math>
@@ -190,16 +190,16 @@ $\(Q_1 - 1.5IQ\)$</math>
 ou au dessus de<math>
 $\(Q_3 + 1.5IQ\)$</math>
 , alors on les considère comme des outliers, et on ne les inclut pas dans la moustache :</p>
-<p id="r-4738442" data-claire-element-id="8643213">
-<img id="r-4738441" data-claire-element-id="8643212" src="https://user.oc-static.com/upload/2017/10/24/1508878760102_Boxplot.jpeg" alt="">
+<p id="r-4738442" >
+<img id="r-4738441" src="https://user.oc-static.com/upload/2017/10/24/1508878760102_Boxplot.jpeg" alt="">
 </p>
-<aside id="r-4798592" data-claire-element-id="8788933" data-claire-semantic="information">
-<p id="r-4798591" data-claire-element-id="8788932">
+<aside id="r-4798592" data-claire-semantic="information">
+<p id="r-4798591" >
 Les boîtes à moustaches et les histogrammes ont la même vocation : donner un aperçu d'une distribution empirique. La boîte à moustache est plus grossière que l'histogramme, mais elle permet de comparer plus facilement la distribution de plusieurs variables (deux boîtes à moustaches sont plus simple à comparer que 2 histogrammes)</p>
 </aside>
-<h3 id="r-4738451" data-claire-element-id="8788952">
+<h3 id="r-4738451" >
 Du côté du code</h3>
-<p id="r-4738418" data-claire-element-id="8697331">
+<p id="r-4738418" >
 Pour la variance empirique et l'écart-type empirique, c'est le même principe qu'au chapitre précédent : on appelle les méthodes<code data-claire-semantic="text">
 var()</code>
 et<code data-claire-semantic="text">
@@ -209,55 +209,55 @@ Aller plus loin : variance empirique</em>
 ). Pour obtenir les résultats décrits ci-dessus, il faut ajouter<code data-claire-semantic="text">
 ddof=0</code>
 (lignes 8 et 9).</p>
-<p id="r-4798595" data-claire-element-id="8788951">
+<p id="r-4798595" >
 Nous allons afficher les boîtes à moustaches avec les histogrammes, pour que vous puissiez les comparer ;). Ligne 12, le mot clé<code data-claire-semantic="text">
 vert=False</code>
 signifie que nous souhaitons que la boîte à moustaches ne soit pas à la verticale (dont à l'horizontale!). En reprenant le code du chapitre précédent, voilà ce que cela donne :</p>
-<pre id="r-4766092" data-claire-element-id="8697333">
+<pre id="r-4766092" >
 <code data-claire-semantic="python">
 for cat in data["categ"].unique(): subset = data[data.categ == cat] print("-"*20) print(cat) print("moy:\n",subset['montant'].mean()) print("med:\n",subset['montant'].median()) print("mod:\n",subset['montant'].mode()) print("var:\n",subset['montant'].var(ddof=0)) print("ect:\n",subset['montant'].std(ddof=0)) subset["montant"].hist() plt.show() subset.boxplot(column="montant", vert=False) plt.show()</code>
 </pre>
-<aside id="r-4766093" data-claire-element-id="8697335" data-claire-semantic="information">
-<p id="r-4738034" data-claire-element-id="8697334">
+<aside id="r-4766093" data-claire-semantic="information">
+<p id="r-4738034" >
 La variance du montant des opération de la catégorie LOYER est nulle, ce qui signifie que le montant du loyer est toujours resté fixe.</p>
 </aside>
-<p id="r-4766094" data-claire-element-id="8697336">
+<p id="r-4766094" >
 </p>
-<h3 id="r-4738044" data-claire-element-id="8729831">
+<h3 id="r-4738044" >
 Aller plus loin : variance empirique ?</h3>
-<p id="r-4738037" data-claire-element-id="8642067">
+<p id="r-4738037" >
 Vous vous souvenez que le monde des probabilités et le monde des statistiques sont deux mondes bien distincts ! Le premier n'est fait que de règles théoriques, le second n'est fait que d'observations faites dans le monde réel.</p>
-<p id="r-4738038" data-claire-element-id="8642111">
+<p id="r-4738038" >
 Imaginez qu'il y a quelque part dans un monde parallèle une personne, un programme informatique (ou je ne sais quoi d'autre) qui détermine la taille de chaque personne naissant sur Terre. Ce monde parallèle, c'est le monde des probabilités. La Terre, c'est le monde réel. Il a été décidé dans le monde parallèle d'une taille moyenne à donner aux humains, ainsi que d'une<strong>
 variance</strong>
 qui détermine si les tailles varient beaucoup (ou pas) autour de la moyenne. Les humains n'ont aucun moyen de connaître exactement la valeur de cette variance. Ils considèrent donc que cette variance est théorique.</p>
-<aside id="r-4738067" data-claire-element-id="8642152" data-claire-semantic="information">
-<p id="r-4738066" data-claire-element-id="8642151">
+<aside id="r-4738067" data-claire-semantic="information">
+<p id="r-4738066" >
 Plus précisément, les humains appellent cette variance théorique<em>
 variance de la variable aléatoire</em>
 .</p>
 </aside>
-<p id="r-4738068" data-claire-element-id="8642153">
+<p id="r-4738068" >
 Mais les humains ont plus d'un tour dans leur sac ! Ils vont donc chercher à<strong>
 estimer</strong>
 cette variance. Ils construisent donc un<em>
 estimateur</em>
 . Un estimateur, c'est une formule mathématique qui, à partir d'une série de valeurs, calcule un nombre qui vise à estimer une valeur théorique à laquelle les humains n'auront jamais accès.</p>
-<p id="r-4738081" data-claire-element-id="8642154">
+<p id="r-4738081" >
 La variance que nous avons calculée plus haut provient d'observations dans le monde réel (70, 60, 50, etc.). Ainsi, on l'appelle<strong>
 variance empirique</strong>
 , car elle est construite à partir d'observations réelles.</p>
-<div id="r-4738083" data-claire-element-id="8642156" data-claire-semantic="question">
-<p id="r-4738082" data-claire-element-id="8642155">
+<div id="r-4738083" data-claire-semantic="question">
+<p id="r-4738082" >
 Merci pour cette explication. C'est tout ?</p>
 </div>
-<p id="r-4738071" data-claire-element-id="8642157">
+<p id="r-4738071" >
 Non. Je vais vous dire quelque chose qui va vous faire tomber des nues...<em>
 La meilleure manière d'estimer la variance d'une variable aléatoire (i.e. la variance théorique) n'est pas d'utiliser la variance empirique.</em>
 </p>
-<p id="r-4738084" data-claire-element-id="8642158">
+<p id="r-4738084" >
 Étonnant non ? Oui. En fait, quand on se plonge dans les calculs, on s'aperçoit que la variance empirique donne des valeurs qui (en moyenne) sont inférieurs à la variance de la variable aléatoire.</p>
-<p id="r-4738085" data-claire-element-id="8642159">
+<p id="r-4738085" >
 Il s'agit de la notion de<a href="https://fr.wikipedia.org/wiki/Estimateur_(statistique)#Biais">
 biais</a>
 d'un estimateur. Un estimateur<em>
@@ -265,7 +265,7 @@ sans biais</em>
 est meilleur qu'un estimateur<em>
 biaisé</em>
 . La variance empirique est un estimateur biaisé de la variance de la variable aléatoire.</p>
-<p id="r-4738086" data-claire-element-id="8642612">
+<p id="r-4738086" >
 Pour corriger ce biais, on a créé la<a href="https://fr.wikipedia.org/wiki/Estimateur_(statistique)#Estimateur_de_la_variance_de_Y">
 variance empirique corrigée</a>
 , ou<strong>
@@ -279,21 +279,21 @@ $\(v\)$</math>
 est la variance empirique, et<math>
 $\(n\)$</math>
 la taille de l'échantillon.</p>
-<h3 id="r-4738256" data-claire-element-id="8643216">
+<h3 id="r-4738256" >
 Aller plus loin : calculs avec la variance empirique</h3>
-<p id="r-4738087" data-claire-element-id="8642647">
+<p id="r-4738087" >
 On peut montrer par le calcul que la variance empirique<math>
 $\(v\)$</math>
 peut aussi s'écrire sous une forme très pratique :</p>
-<p id="r-4738261" data-claire-element-id="8642661">
+<p id="r-4738261" >
 <math>
 $\[v=\frac{1}{n}\sum_{i=1}^{n}(x_i-\overline{x})^2 =(\frac{1}{n}\sum_{i=1}^{n}x_i^2)-\overline{x}^2\]$</math>
 </p>
-<p id="r-4738254" data-claire-element-id="8642662">
+<p id="r-4738254" >
 C'est la Théorème de König-Huygens. Pour la démonstration, c'est<a href="https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_K%C3%B6nig-Huygens">
 par ici</a>
 ;)</p>
-<p id="r-4738255" data-claire-element-id="8642671">
+<p id="r-4738255" >
 Si on crée une nouvelle variable<math>
 $\(Y\)$</math>
 à partir d'une variable<math>
@@ -307,55 +307,55 @@ $\(Y\)$</math>
 notée<math>
 $\(v_Y\)$</math>
 ! Elle est donnée par cette relation :</p>
-<p id="r-4738271" data-claire-element-id="8642681">
+<p id="r-4738271" >
 <math>
 $\[v_Y = a^2v_X\]$</math>
 </p>
-<p id="r-4738267" data-claire-element-id="8642691">
+<p id="r-4738267" >
 (<a href="https://fr.wikipedia.org/wiki/Variance_(statistiques_et_probabilit%C3%A9s)#Transformation_affine">
 voir la démonstration</a>
 )</p>
-<h3 id="r-4738463" data-claire-element-id="8644192">
+<h3 id="r-4738463" >
 Aller plus loin : Le coefficient de variation</h3>
-<p id="r-4738461" data-claire-element-id="8643217">
+<p id="r-4738461" >
 Lorsque vous faites un trajet, un écart-type de 6.55 minutes sur un trajet de 1h, ce n'est pas la même chose qu'un écart-type de 6.55 minutes sur un trajet de 24h ! Dans le premier cas, l'écart-type sera vu comme assez grand, alors que dans le second cas, il sera négligeable face aux 24h.</p>
-<p id="r-4738536" data-claire-element-id="8643521">
+<p id="r-4738536" >
 Pour rendre compte de cela, on a créé le<strong>
 coefficient de variation</strong>
 , qui est l'écart-type empirique divisé par la moyenne :</p>
-<p id="r-4738791" data-claire-element-id="8644191">
+<p id="r-4738791" >
 <math>
 $\[CV = \frac{s}{\overline{x}}\]$</math>
 </p>
-<h3 id="r-4738546" data-claire-element-id="8644194">
+<h3 id="r-4738546" >
 Aller plus loin : Autres mesures de dispersion</h3>
-<p id="r-4738538" data-claire-element-id="8643524">
+<p id="r-4738538" >
 Quand au début du chapitre, nous avons dit :</p>
-<blockquote id="r-4738540" data-claire-element-id="8643526">
-<p id="r-4738539" data-claire-element-id="8643525">
+<blockquote id="r-4738540" >
+<p id="r-4738539" >
 <em>
 Mettons-les tous au carré. Un nombre mis au carré, c'est toujours positif n'est-ce-pas ?</em>
 </p>
 </blockquote>
-<p id="r-4738541" data-claire-element-id="8643527">
+<p id="r-4738541" >
 Peut-être vous êtes vous dit :</p>
-<div id="r-4738543" data-claire-element-id="8643529" data-claire-semantic="question">
-<p id="r-4738542" data-claire-element-id="8643528">
+<div id="r-4738543" data-claire-semantic="question">
+<p id="r-4738542" >
 On peut prendre la valeur absolue aussi plutôt que le carré non ?</p>
 </div>
-<p id="r-4738544" data-claire-element-id="8643561">
+<p id="r-4738544" >
 Tout à fait. Quand on fait cela, on calcule l'<strong>
 écart moyen absolu</strong>
 .</p>
-<p id="r-4738545" data-claire-element-id="8643572">
+<p id="r-4738545" >
 Il y a deux versions : l'une où on mesure les écarts à la moyenne, l'autre où on mesure les écarts à la médiane.</p>
-<p id="r-4738556" data-claire-element-id="8643591">
+<p id="r-4738556" >
 Voici la version avec la médiane :</p>
-<p id="r-4738792" data-claire-element-id="8644193">
+<p id="r-4738792" >
 <math>
 $\[EMA = \frac{1}{n}\sum_{i=1}^{n}{|x_i - Med|}\]$</math>
 </p>
-<p id="r-4738558" data-claire-element-id="8643593">
+<p id="r-4738558" >
 Si on souhaite une mesure plus robuste, on définit également le MAD qui est la médiane des écarts absolus par rapport à la médiane.</p>
 </div>
 <div class="js-courseSelementActions sideActions">
