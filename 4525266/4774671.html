@@ -30,7 +30,7 @@ attente</em>
 est grande, plus la valeur du<em>
 montant</em>
 soit grande.</p>
-<h3 id="r-4776987" data-claire-element-id="8730193">
+<h3 id="r-4776987" data-claire-element-id="8789122">
 Modélisons !</h3>
 <p id="r-4776986" data-claire-element-id="8729431">
 Mais nous allons faire mieux que cela : calculer le prix moyen des produits que vous consommez en 1 jour, ainsi que la vitesse à laquelle vous accumulez du stock dans vos placards ! Pour cela, nous allons utiliser un modèle. Vous allez voir, c’est très puissant.</p>
@@ -108,10 +108,10 @@ ILLUS</p>
 </tr>
 </tbody>
 </table>
-<p id="r-4774741" data-claire-element-id="8722622">
+<p id="r-4774741" data-claire-element-id="8789121">
 Ils sont loin d'être alignés ! Cela signifie que l'équation<math>
 $\(y = a\dot{}x + b\)$</math>
-est fausse. En écrivant cette équation, j’admets donc que je commettrai une certaine erreur entre la valeur que j'aurai prédite et la vraie valeur de votre prochain ticket. Mais je peux intégrer cette erreur à l'équation, en l'appelant<math>
+n'est pas tout-à-fait exacte : elle est simpliste. En écrivant cette équation, j’admets que je commettrai une certaine erreur entre la valeur que j'aurai prédite et la vraie valeur du prochain ticket. Mais je peux intégrer cette erreur à l'équation, en l'appelant<math>
 $\(\epsilon\)$</math>
 (<em>
 epsilon</em>
@@ -197,7 +197,7 @@ Aller plus loin : analyser la qualité du modèle</em>
 </aside>
 <p id="r-4774853" data-claire-element-id="8722946">
 </p>
-<h3 id="r-4774821" data-claire-element-id="8730245">
+<h3 id="r-4774821" data-claire-element-id="8789132">
 Aller plus loin : analyser la qualité du modèle</h3>
 <p id="r-4774797" data-claire-element-id="8722880">
 Imaginons que j'aie effacé par erreur le montant d'une opération bancaire de catégorie COURSES. Je pourrais combler cette valeur manquante par la moyenne des montants des opérations. C'est la solution la plus basique qui soit, et vous vous imaginez qu'elle n'est pas très bonne ! Elle n'est pas très bonne car autour de la moyenne, les valeurs des montants varient, parfois de beaucoup.</p>
@@ -235,7 +235,7 @@ $\(R^2\)$</math>
 <math>
 $\[R^2 = \frac{SCE}{SCT}\]$</math>
 </p>
-<aside id="r-4774868" data-claire-element-id="8723063" data-claire-semantic="warning">
+<aside id="r-4774868" data-claire-element-id="8789131" data-claire-semantic="warning">
 <p id="r-4774891" data-claire-element-id="8723062">
 Surprise ! Par le calcul, on s'aperçoit que<math>
 $\(R^2\)$</math>
@@ -244,16 +244,12 @@ coefficient de corrélation linéaire</strong>
 vu au chapitre précédent ! On a<math>
 $\(R^2 = r_{X,Y}^2\)$</math>
 .</p>
-<p id="r-4774876" data-claire-element-id="8723021">
-Il n'est pas étonnant que ces 2 notions soient liées, car nous avons dit que la régression linéaire fait la supposition qu'il existe une corrélation linéaire entre X et Y de la forme<math>
-$\(y=ax.b\)$</math>
-.</p>
 </aside>
 <p id="r-4774819" data-claire-element-id="8722883">
 </p>
 <p id="r-4774820" data-claire-element-id="8722884">
 </p>
-<h3 id="r-4774782" data-claire-element-id="8730204">
+<h3 id="r-4774782" data-claire-element-id="8789135">
 Aller plus loin : estimation de<math>
 $\(a\)$</math>
 et<math>
@@ -273,14 +269,34 @@ $\[\hat{a}=\frac{s_{X,Y}}{s^2_X} \ \ \ \ \ \text{et}\ \ \ \ \ \hat{b}=\overline{
 <p id="r-4774787" data-claire-element-id="8722753">
 Pourquoi les chapeaux sur a et b ?</p>
 </div>
-<p id="r-4774789" data-claire-element-id="8722755">
-C'est encore une histoire d'estimation. On considère que l'on ne peut pas avoir accès directement à vos comportements de consommation, mais que l'on peut les estimer grâce à vos tickets de caisse. Si on rajoute à l'échantillon un nouveau ticket de caisse, celui-ci fera varier un peu<math>
+<p id="r-4774789" data-claire-element-id="8789133">
+C'est une histoire d'estimation. On considère que l'on ne peut pas avoir accès directement à vos comportements de consommation caractérisés par<math>
+$\(a\)$</math>
+et<math>
+$\(b\)$</math>
+, mais que l'on peut tout de même les<em>
+estimer</em>
+grâce à vos tickets de caisse. Ces estimations de<math>
+$\(a\)$</math>
+et de<math>
+$\(b\)$</math>
+sont notées<math>
+$\(\hat{a}\)$</math>
+et<math>
+$\(\hat{b}\)$</math>
+.</p>
+<p id="r-4798626" data-claire-element-id="8789134">
+Si on rajoute à l'échantillon un nouveau ticket de caisse, celui-ci fera varier un peu<math>
 $\(\hat{a}\)$</math>
 <math>
 $\(a\)$</math>
 et<math>
 $\(\hat{b}\)$</math>
-, même si votre comportement de consommation lui, n'aura pas bougé.</p>
+, même si votre comportement de consommation ne bouge pas (c'est-à-dire "même si<math>
+$\(a\)$</math>
+et<math>
+$\(b\)$</math>
+ne bougent pas").</p>
 <aside id="r-4774780" data-claire-element-id="8730203" data-claire-semantic="information">
 <p id="r-4774779" data-claire-element-id="8730202">
 Pour la démonstration, c'est<a href="https://fr.wikipedia.org/wiki/R%C3%A9gression_lin%C3%A9aire#Application_dans_le_cas_d.27un_mod.C3.A8le_de_r.C3.A9gression_lin.C3.A9aire_simple">
