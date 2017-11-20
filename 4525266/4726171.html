@@ -1,9 +1,9 @@
 <div itemprop="articleBody" data-page-indentifier="/courses/nettoyez-et-decrivez-votre-jeu-de-donnees/telechargez-les-donnees" class="js-isRestrictablePage js-course-container js-smilize js-userCanWatchVideo">
 <div class="userContent js-userContent">
-<p id="r-4762746" data-claire-element-id="8761941">
+<p id="r-4762746" data-claire-element-id="8787601">
 Pour que ce cours soit plus attrayant, je vous propose d'analyser des données que<strong>
 vous avez générées</strong>
-! Si vous possédez un compte bancaire consultable en ligne, et qu'il y a sur celui-ci des opérations bancaires fréquentes (c'est le cas si vous utilisez fréquemment une carte bancaire), alors vous pouvez analyser vos comportements de consommation.</p>
+! Si vous possédez un compte bancaire consultable en ligne, et qu'il y a sur celui-ci des opérations bancaires fréquentes (c'est le cas notamment si vous utilisez fréquemment une carte bancaire), alors vous pouvez analyser vos comportements de consommation.</p>
 <p id="r-4763441" data-claire-element-id="8690242">
 Un relevé bancaire est composé de lignes, que l'on appellera<strong>
 opération</strong>
@@ -148,7 +148,7 @@ attente</strong>
 </ul>
 <p id="r-4726341" data-claire-element-id="8607631">
 Certaines de ces variables peuvent être calculées automatiquement, mais certaines nécessiterons votre intervention. Par exemple, vous devrez indiquer vous-même les opérations qui sont des courses ou des paiements de loyers. Ne vous inquiétez pas, je vous faciliterai la tâche afin de ne pas faire ceci entièrement "à la main". ;)</p>
-<h3 id="r-4726833" data-claire-element-id="8763523">
+<h3 id="r-4726833" data-claire-element-id="8787625">
 C'est parti !</h3>
 <h4 id="r-4726826" data-claire-element-id="8609031">
 Télécharger les données</h4>
@@ -170,7 +170,7 @@ Vos relevés de comptes peuvent présenter des informations confidentielles, n'u
 Une fois votre fichier CSV obtenu, placez-le dans le même répertoire (dossier) que celui dans lequel se trouve votre script (python ou R), ou votre notebook. Ensuite, renommez-le en<code data-claire-semantic="text">
 operations.csv</code>
 .</p>
-<h4 id="r-4726827" data-claire-element-id="8692493">
+<h4 id="r-4726827" data-claire-element-id="8787624">
 Charger vos données dans votre programme</h4>
 <p id="r-4726511" data-claire-element-id="8608251">
 Vous pouvez ouvrir le fichier CSV avec un éditeur de texte, et non pas avec un tableur ! Sous Windows, utilisez par exemple l'application<em>
@@ -184,18 +184,18 @@ vim</em>
 ou<em>
 gedit</em>
 .</p>
-<p id="r-4726566" data-claire-element-id="8608252">
-Votre fichier devrait ressembler à cette chose pas très belle :</p>
+<p id="r-4726566" data-claire-element-id="8787611">
+Votre fichier devrait ressembler à ceci :</p>
 <pre id="r-4726567" data-claire-element-id="8608253">
 <code data-claire-semantic="text">
 identifiant_transaction,date_operation,date_valeur,libelle,debit,credit,solde 242,2023-10-06,2023-10-06,FORFAIT COMPTE SUPERBANK XX XX XX XX,-1.92,,2513.79 69,2023-10-06,2023-10-06,CARTE XX XX CHEZ LUC XX,-10.00,,2515.71</code>
 </pre>
 <p id="r-4726568" data-claire-element-id="8608254">
 Une fois ouvert, il faut y repérer certaines informations :</p>
-<ul id="r-4726527" data-claire-element-id="8608193">
-<li id="r-4726518" data-claire-element-id="8608184">
-<p id="r-4726517" data-claire-element-id="8608183">
-quelle(s) colonne(s) représentent des dates ?</p>
+<ul id="r-4726527" data-claire-element-id="8787623">
+<li id="r-4726518" data-claire-element-id="8787622">
+<p id="r-4726517" data-claire-element-id="8787621">
+quelle(s) colonne(s) contiennent des dates ?</p>
 </li>
 <li id="r-4726520" data-claire-element-id="8608186">
 <p id="r-4726519" data-claire-element-id="8608185">

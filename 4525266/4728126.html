@@ -4,7 +4,7 @@
 Il n'y a pas que les histogrammes dans la vie !</p>
 <p id="r-4728146" data-claire-element-id="8690391">
 Il est aussi possible de présenter des variables sous forme de tableau. C'est un peu moins beau certes, mais dans certains cas, cette représentation est mieux adaptée ou complémentaire d'une représentation graphique. Nous allons étudier ici les 4 cas correspondant aux 4 types de variables.</p>
-<h3 id="r-4728205" data-claire-element-id="8613853">
+<h3 id="r-4728205" data-claire-element-id="8788043">
 Donnons des noms à ce que nous étudions</h3>
 <p id="r-4728196" data-claire-element-id="8613621">
 Pour que nous puissions communiquer vous et moi, nous devons parler un langage commun. Nous allons donc nommer les différents objets que nous manipulerons dans ce chapitre.</p>
@@ -36,13 +36,11 @@ $\(n\)$</math>
 . Ainsi, on peut noter ces valeurs<math>
 $\((x_1,...,x_n)\)$</math>
 .</p>
-<aside id="r-4728202" data-claire-element-id="8613627" data-claire-semantic="information">
-<p id="r-4728201" data-claire-element-id="8613626">
-<math>
-$\(X\)$</math>
-est appelé une<strong>
-variable aléatoire</strong>
-, et fait donc partie du monde des probabilités, que nous n'étudions pas ici. Quand on parle de variable, on aime bien nommer ce qui est théorique avec une majuscule, et ce qui est une observation (= une réalisation) par des lettres minuscules. Ici,<math>
+<aside id="r-4728202" data-claire-element-id="8788042" data-claire-semantic="information">
+<p id="r-4728201" data-claire-element-id="8788041">
+Quand on parle de variable, on préfère la nommer avec une majuscule. Par contre, ce qui est une<em>
+observation</em>
+(= une réalisation) de la variable, on le note par des lettres minuscules. Ici,<math>
 $\((x_1,...,x_n)\)$</math>
 est une réalisation observée de la variable aléatoire<math>
 $\(X\)$</math>
@@ -70,7 +68,7 @@ $\(k\)$</math>
 . Ces classes seront notées ainsi :<math>
 $\(\{[a_1',a_2'[,...,[a_k',a_{k+1}'[\}\)$</math>
 </p>
-<h3 id="r-4728244" data-claire-element-id="8690398">
+<h3 id="r-4728244" data-claire-element-id="8788054">
 Présentons !</h3>
 <h4 id="r-4728243" data-claire-element-id="8690393">
 Pour les variables qualitatives</h4>
@@ -111,7 +109,7 @@ Cet exemple vaut pour une variable qualitative. Plus précisément, si elle est 
 $\(\{a_1,...,a_k\}\)$</math>
 dans l'ordre croissant.</p>
 </aside>
-<h4 id="r-4728387" data-claire-element-id="8690397">
+<h4 id="r-4728387" data-claire-element-id="8788053">
 Pour les variables quantitatives</h4>
 <h5 id="r-4728384" data-claire-element-id="8690395">
 Variables discrètes</h5>
@@ -136,16 +134,16 @@ La fréquence cumulée de la dernière modalité (<math>
 $\(a_k\)$</math>
 ) est 1.</p>
 </aside>
-<h5 id="r-4728386" data-claire-element-id="8690396">
+<h5 id="r-4728386" data-claire-element-id="8788052">
 Variables continues</h5>
-<p id="r-4728385" data-claire-element-id="8614554">
-Pour les variables continues, il suffit de remplacer les \{a_1,...,a_k\} par les classes agrégées, comme nous l'avons dit plus haut. Voilà ce que ça donne, avec la variable<em>
+<p id="r-4728385" data-claire-element-id="8788051">
+Pour les variables continues, il suffit de remplacer les \{a_1,...,a_k\} par les classes, comme nous l'avons dit plus haut. Voilà ce que ça donne, avec la variable<em>
 montant</em>
 :</p>
 <p id="r-4728412" data-claire-element-id="8617122">
 <img id="r-4728411" data-claire-element-id="8617121" src="https://user.oc-static.com/upload/2017/10/18/15083433852387_tab3.png" alt="">
 </p>
-<h3 id="r-4728755" data-claire-element-id="8615583">
+<h3 id="r-4728755" data-claire-element-id="8788073">
 Et le code ?</h3>
 <p id="r-4728746" data-claire-element-id="8615574">
 En Python, c'est plutôt simple. Il suffit (presque) d'une ligne de code par colonne. Voici le code qui a généré le tableau récapitulatif de la variable<em>
@@ -159,9 +157,9 @@ effectifs = data["quart_mois"].value_counts() modalites = effectifs.index # l'in
 Pour calculer les effectifs, on fait appel à<code data-claire-semantic="text">
 value_counts()</code>
 sur la variable à étudier. Cette méthode renvoie un objet Series dont les valeurs sont les effectifs, et dont l'index contient les modalités. (lignes 1 et 2)</p>
-<aside id="r-4728750" data-claire-element-id="8615578" data-claire-semantic="information">
-<p id="r-4728749" data-claire-element-id="8615577">
-Besoin d'un petit rappel sur les objets Series et leurs indexes ?<a href="http://pandas.pydata.org/pandas-docs/stable/dsintro.html#series">
+<aside id="r-4728750" data-claire-element-id="8788072" data-claire-semantic="information">
+<p id="r-4728749" data-claire-element-id="8788071">
+Besoin d'un petit rappel sur les objets Series et leurs index ?<a href="http://pandas.pydata.org/pandas-docs/stable/dsintro.html#series">
 C'est par ici</a>
 ;)</p>
 </aside>

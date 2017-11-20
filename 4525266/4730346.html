@@ -90,9 +90,9 @@ $\(\frac{1}{n}\)$</math>
 $\[\frac{1}{n}\sum_{i=1}^{i=n}(x_i-\overline{x})^2\]$</math>
 </p>
 </aside>
-<h3 id="r-4738326" data-claire-element-id="8643243">
+<h3 id="r-4738326" data-claire-element-id="8788935">
 Les mesures de dispersion</h3>
-<h4 id="r-4738035" data-claire-element-id="8643183">
+<h4 id="r-4738035" data-claire-element-id="8788882">
 La variance empirique</h4>
 <p id="r-4738241" data-claire-element-id="8643181">
 Devinez quoi ! L'indicateur que nous venons de construire est l'un des plus utilisés en statistiques ! :soleil: Il s'appelle la<strong>
@@ -102,12 +102,10 @@ variance empirique</strong>
 <math>
 $\[v = \frac{1}{n}\sum_{i=1}^{n}(x_i-\overline{x})^2\]$</math>
 </p>
-<p id="r-4737940" data-claire-element-id="8643182">
+<p id="r-4737940" data-claire-element-id="8788881">
 Pour approfondir l'aspect calculatoire, rendez-vous à la section<em>
 Aller plus loin</em>
-, au bas du chapitre. Vous y découvrirez aussi pourquoi on la qualifie d'<em>
-empirique</em>
-.</p>
+, au bas du chapitre.</p>
 <h4 id="r-4738278" data-claire-element-id="8643211">
 L'écart-type empirique</h4>
 <p id="r-4738276" data-claire-element-id="8643191">
@@ -120,14 +118,14 @@ $\(s\)$</math>
 <math>
 $\[s = \sqrt{v}\]$</math>
 </p>
-<h4 id="r-4738357" data-claire-element-id="8643202">
+<h4 id="r-4738357" data-claire-element-id="8788886">
 L'écart inter-quartiles</h4>
 <p id="r-4737803" data-claire-element-id="8643201">
 Vous vous souvenez de la médiane ? C'est la valeur au dessous de laquelle se trouvent la moitié des valeurs.</p>
-<p id="r-4738361" data-claire-element-id="8643001">
+<p id="r-4738361" data-claire-element-id="8788883">
 Un<strong>
 quartile</strong>
-, c'est la même chose, mais avec la proportion d'un quart. Plus rigoureusement, il existe 3 quartiles, notés<math>
+, c'est la même chose, mais avec la proportion d'un quart. Il existe 3 quartiles, notés<math>
 $\(Q_1\)$</math>
 (premier quartile),<math>
 $\(Q_2\)$</math>
@@ -156,17 +154,17 @@ $\(Q_3\)$</math>
 , et 1/4 au dessus</p>
 </li>
 </ul>
-<aside id="r-4738391" data-claire-element-id="8643012" data-claire-semantic="information">
-<p id="r-4738369" data-claire-element-id="8643011">
+<aside id="r-4738391" data-claire-element-id="8788885" data-claire-semantic="information">
+<p id="r-4738369" data-claire-element-id="8788884">
 La généralisation de ce concept s'appelle le<strong>
 quantile d'ordre<math>
 $\(\alpha\)$</math>
 </strong>
-. Ainsi, la médiane est le quantile d'ordre 0.5, Q1 le quantile d'ordre 0.25, Q3 le quantile d'ordre 0.75. Il y a également le<strong>
-décile</strong>
-(quantile d'ordre 0.1), ou le<strong>
-centile</strong>
-, aussi appelé percentile (quantile d'ordre 0.01).</p>
+. Ainsi, la médiane est le quantile d'ordre 0.5, Q1 le quantile d'ordre 0.25, Q3 le quantile d'ordre 0.75. Il y a également les<strong>
+déciles</strong>
+(quantiles d'ordre 0.1, 0.2, etc), ou les<strong>
+centiles</strong>
+, aussi appelés percentiles (quantiles d'ordre 0.01, 0.02, etc.).</p>
 </aside>
 <p id="r-4738376" data-claire-element-id="8643033">
 L'écart inter-quartile est la différence entre la 3e quartile et le 1e quartile :</p>
@@ -176,13 +174,13 @@ $\[IQ = Q_3-Q_1\]$</math>
 </p>
 <p id="r-4737760" data-claire-element-id="8641425">
 </p>
-<h4 id="r-4738406" data-claire-element-id="8643242">
+<h4 id="r-4738406" data-claire-element-id="8788934">
 La boîte à moustaches (boxplot)</h4>
-<p id="r-4738411" data-claire-element-id="8643051">
-Boîte à moustaches, quel nom rigolo ! :lol: Les anglophones ont été moins originaux sur ce coup là : ils l'appellent<em>
+<p id="r-4738411" data-claire-element-id="8788891">
+Boîte à moustaches, quel nom rigolo ! :lol: Les anglophones l'appellent<em>
 boxplot</em>
 .</p>
-<p id="r-4738416" data-claire-element-id="8643241">
+<p id="r-4738416" data-claire-element-id="8788931">
 Elle permet de représenter schématiquement une distribution, en incluant sa dispersion. La boîte est délimitée par<math>
 $\(Q_1\)$</math>
 et<math>
@@ -191,13 +189,15 @@ $\(Q_3\)$</math>
 $\(Q_1 - 1.5IQ\)$</math>
 ou au dessus de<math>
 $\(Q_3 + 1.5IQ\)$</math>
-, alors on les considère comme des valeurs aberrantes (<em>
-outliers</em>
-), et on ne les inclut pas dans la moustache :</p>
+, alors on les considère comme des outliers, et on ne les inclut pas dans la moustache :</p>
 <p id="r-4738442" data-claire-element-id="8643213">
 <img id="r-4738441" data-claire-element-id="8643212" src="https://user.oc-static.com/upload/2017/10/24/1508878760102_Boxplot.jpeg" alt="">
 </p>
-<h3 id="r-4738451" data-claire-element-id="8697337">
+<aside id="r-4798592" data-claire-element-id="8788933" data-claire-semantic="information">
+<p id="r-4798591" data-claire-element-id="8788932">
+Les boîtes à moustaches et les histogrammes ont la même vocation : donner un aperçu d'une distribution empirique. La boîte à moustache est plus grossière que l'histogramme, mais elle permet de comparer plus facilement la distribution de plusieurs variables (deux boîtes à moustaches sont plus simple à comparer que 2 histogrammes)</p>
+</aside>
+<h3 id="r-4738451" data-claire-element-id="8788952">
 Du côté du code</h3>
 <p id="r-4738418" data-claire-element-id="8697331">
 Pour la variance empirique et l'écart-type empirique, c'est le même principe qu'au chapitre précédent : on appelle les méthodes<code data-claire-semantic="text">
@@ -209,8 +209,8 @@ Aller plus loin : variance empirique</em>
 ). Pour obtenir les résultats décrits ci-dessus, il faut ajouter<code data-claire-semantic="text">
 ddof=0</code>
 (lignes 8 et 9).</p>
-<p id="r-4766091" data-claire-element-id="8697332">
-Les boîtes à moustaches et les histogrammes ont la même vocation : donner un aperçu d'une distribution empirique. On va donc afficher les boîtes à moustaches avec les histogrammes, pour que vous puissiez les comparer ;). Ligne 12, le mot clé<code data-claire-semantic="text">
+<p id="r-4798595" data-claire-element-id="8788951">
+Nous allons afficher les boîtes à moustaches avec les histogrammes, pour que vous puissiez les comparer ;). Ligne 12, le mot clé<code data-claire-semantic="text">
 vert=False</code>
 signifie que nous souhaitons que la boîte à moustaches ne soit pas à la verticale (dont à l'horizontale!). En reprenant le code du chapitre précédent, voilà ce que cela donne :</p>
 <pre id="r-4766092" data-claire-element-id="8697333">

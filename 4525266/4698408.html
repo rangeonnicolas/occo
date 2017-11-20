@@ -2,48 +2,42 @@
 <div class="userContent js-userContent">
 <p id="r-4698446" data-claire-element-id="8732641">
 Nous l'avons vu dans le chapitre précédent, un échantillon peut contenir des valeurs manquantes, des outliers et des doublons. Alors que faire ?</p>
-<aside id="r-4762155" data-claire-element-id="8686262" data-claire-semantic="warning">
-<p id="r-4762154" data-claire-element-id="8686261">
+<aside id="r-4762155" data-claire-element-id="8787382" data-claire-semantic="warning">
+<p id="r-4762154" data-claire-element-id="8787381">
 Certaines des méthodes suivantes suppriment de l'information dans votre échantillon. Faites attention à toujours<em>
-garder une copie de votre échantillon</em>
+conserver une copie de votre échantillon</em>
 . Si vous souhaitez supprimer de l'information, alors créez une copie de l'échantillon, puis supprimez ce que vous voulez : le nouvel échantillon que vous obtenez sera appelé<strong>
 sous-échantillon</strong>
 .</p>
 </aside>
-<p id="r-4762156" data-claire-element-id="8686263">
-Par exemple, prenons ces 2 traitements : calculer une moyenne, puis réaliser une ACP (qui n'est pas au programme ici). Pour calculer votre moyenne, vous pourrez appliquer la méthode<em>
-supprimer des individus</em>
-(donnée ci-dessous) en créant un sous-échantillon. Mais pour votre ACP, il faudra conserver l'ensemble des individus et plutôt réaliser une<em>
-imputation par la moyenne</em>
-sur l'échantillon d'origine.</p>
 <p id="r-4762157" data-claire-element-id="8685688">
 </p>
-<h3 id="r-4727259" data-claire-element-id="8686122">
+<h3 id="r-4727259" data-claire-element-id="8787563">
 Les valeurs manquantes</h3>
 <p id="r-4698447" data-claire-element-id="8684461">
 Lorsque l'échantillon contient des valeurs manquantes, on ne peut malheureusement pas faire de miracle pour les retrouver ! Cependant, plusieurs attitudes sont possibles.</p>
-<h4 id="r-4698660" data-claire-element-id="8685690">
+<h4 id="r-4698660" data-claire-element-id="8787452">
 Ne rien faire et travailler avec un gruyère</h4>
-<p id="r-4698541" data-claire-element-id="8685689">
+<p id="r-4698541" data-claire-element-id="8787451">
 Pour une variable donnée (par exemple d<em>
 ate de naissance</em>
-dans l'exemple du chapitre précédent), si la proportion de valeurs manquantes est faibles, alors on peut les oublier et ne rien faire : on laisse l'échantillon intact. On travaillera alors avec un jeu de données qui contiendra des "trous", comme dans un gruyère. :honte: Selon le traitement statistiques que vous appliquerez, cette solution sera ou non acceptable.</p>
-<h4 id="r-4698661" data-claire-element-id="8685437">
-Supprimer une variable</h4>
-<p id="r-4698542" data-claire-element-id="8685436">
-Cependant, si pour cette même variable, la proportion de valeurs manquantes est beaucoup trop importante, mieux vaut l'oublier, à condition que la variable ne soit pas trop importante pour l'analyse. Cela équivaut à supprimer une colonne dans le tableau du chapitre précédent.</p>
-<h4 id="r-4727258" data-claire-element-id="8686121">
-Supprimer des individus</h4>
-<p id="r-4698543" data-claire-element-id="8685871">
-Si la variable qui contient des données manquantes est cruciale dans l'analyse, alors mieux vaut créer un sous-échantillon et y supprimer les individus pour lesquels cette variable est manquante. Par exemple, si vous analysez vos relevés de comptes bancaires en vous intéressant aux sommes d'argent que vous gagnez/dépensez, la variable "montant de l'opération" sera très importante. S'il arrive que le montant de l'opération soit inconnu pour certaines lignes de votre relevé, alors mieux vaut supprimer la totalité de ces lignes.</p>
+dans l'exemple du chapitre précédent), si la proportion de valeurs manquantes est faibles, alors on peut les oublier et ne rien faire : on laisse l'échantillon intact. On travaillera alors avec un jeu de données qui contiendra des "trous", comme dans un gruyère. :honte: Selon le traitement statistique que vous appliquerez, cette solution sera ou non acceptable.</p>
+<h4 id="r-4698661" data-claire-element-id="8787472">
+Oublier une variable</h4>
+<p id="r-4698542" data-claire-element-id="8787471">
+Cependant, si pour cette même variable, la proportion de valeurs manquantes est beaucoup trop importante, mieux vaut l'oublier, à condition que la variable ne soit pas trop importante pour l'analyse. Cela équivaut à ne pas considérer une colonne dans le tableau du chapitre précédent.</p>
+<h4 id="r-4727258" data-claire-element-id="8787542">
+Oublier des individus</h4>
+<p id="r-4698543" data-claire-element-id="8787541">
+Si la variable qui contient des données manquantes est cruciale dans l'analyse, alors mieux vaut créer un sous-échantillon et y supprimer les individus pour lesquels cette variable est manquante. Par exemple, si vous analysez vos relevés de comptes bancaires en vous intéressant aux sommes d'argent que vous gagnez/dépensez, la variable "montant de l'opération" sera très importante. S'il arrive que le montant de l'opération soit inconnu pour certaines lignes de votre relevé, alors mieux vaut créer un sous-échantillon et y supprimer la totalité de ces lignes.</p>
 <p id="r-4727257" data-claire-element-id="8686101">
 Cette dernière méthode contient cependant des risques. En effet, vous pouvez vous retrouver avec un nombre d'individus (un nombre de lignes) trop petit pour que votre analyse ait encore du sens. De plus, il se peut que votre échantillon ne soit plus représentatif de la population globale. Pour savoir pourquoi, rendez-vous à la section<em>
 Aller plus loin</em>
 au bas de ce chapitre.</p>
-<h4 id="r-4698668" data-claire-element-id="8685944">
+<h4 id="r-4698668" data-claire-element-id="8787562">
 Essayer de deviner quand même !</h4>
-<p id="r-4698663" data-claire-element-id="8685593">
-Une méthode un peu plus aventurière consiste à combler les trous par des valeurs à deviner. C'est un peu la méthode des aventuriers ! :zorro: Bien sûr, ces valeurs seront fausses, mais certaines méthodes permettent de ne pas se tromper de beaucoup. Deviner une valeur manquante s'appelle l'<strong>
+<p id="r-4698663" data-claire-element-id="8787561">
+Une méthode un peu plus aventurière consiste à combler les trous par des valeurs à deviner. C'est un peu la méthode des aventuriers ! :zorro: Bien sûr, ces valeurs ne correspondront pas à la valeur réelle, mais certaines méthodes permettent de ne pas se tromper de beaucoup. Deviner une valeur manquante s'appelle l'<strong>
 imputation</strong>
 .</p>
 <p id="r-4698664" data-claire-element-id="8685594">
@@ -78,7 +72,7 @@ Dans tous les cas, il est nécessaire de toujours préciser quelle méthode vous
 </aside>
 <p id="r-4698407" data-claire-element-id="8599486">
 </p>
-<h3 id="r-4698850" data-claire-element-id="8732682">
+<h3 id="r-4698850" data-claire-element-id="8787592">
 Les outliers</h3>
 <p id="r-4698842" data-claire-element-id="8732681">
 Hanna mesure 3,45m. Vous ne trouvez pas cela très grand ? Si. C'est très grand<em>
@@ -108,8 +102,6 @@ atypique</strong>
 </aside>
 <p id="r-4698966" data-claire-element-id="8729341">
 Idéalement, il faudrait vérifier si les outliers sont erronées ou pas. Par exemple, un thermomètre qui mesure les températures en France peut indiquer 40°c, mais il peut s'agir soit d'une défaillance du capteur de température, soit d'une valeur réelle.</p>
-<p id="r-4698967" data-claire-element-id="8729342">
-Dans tous les cas, les outliers méritent toujours que l'on s'y attarde. Dans certains cas, elles peuvent même donner des indications intéressantes</p>
 <p id="r-4724150" data-claire-element-id="8729343">
 Alors que faire avec les outliers ? Si nous sommes sûrs que la valeur est erronée (erreur de saisie ou défaut d’un capteur par exemple), alors il faut la supprimer s’il n’est pas possible de connaître la vraie valeur. Dans les autres cas, nous avons le choix entre :</p>
 <ul id="r-4724155" data-claire-element-id="8729348">
@@ -122,8 +114,8 @@ Supprimer la valeur. On se retrouve alors avec une valeur manquante, à laquelle
 Conserver la valeur.</p>
 </li>
 </ul>
-<p id="r-4762209" data-claire-element-id="8729349">
-Comment choisir entre ces deux options ? Tout dépend des traitements que vous appliquerez par la suite. Certaines méthodes sont dites « robustes », car elle ne sont pas déstabilisées par les outliers. Par exemple, nous verrons par la suite que la moyenne est très sensible aux outliers, alors que la médiane de l’est pas. Si vous souhaitez faire une moyenne, créez un sous-échantillons dans lequel vous supprimez les outliers. Mais si vous calculez aussi la médiane, travaillez sur l’échantillon de départ. ;)</p>
+<p id="r-4762209" data-claire-element-id="8787591">
+Comment choisir entre ces deux options ? Tout dépend des traitements que vous appliquerez par la suite. Certaines méthodes sont dites « robustes », car elle ne sont pas déstabilisées par les outliers. Par exemple, nous verrons par la suite que la moyenne est très sensible aux outliers, alors que la médiane de l’est pas. Si vous souhaitez faire une moyenne, créez un sous-échantillons dans lequel vous ne considérez pas les outliers. Mais si vous calculez aussi la médiane, travaillez sur l’échantillon de départ. ;)</p>
 <aside id="r-4724158" data-claire-element-id="8729351" data-claire-semantic="warning">
 <p id="r-4724157" data-claire-element-id="8729350">
 N’hésitez pas, quand vous présentez votre analyse, à citer les outliers si ils sont intéressantes. Par exemple « les relevés de température contiennent 2 outliers à 42°c, dus à 2 jours de canicule extrême »</p>
