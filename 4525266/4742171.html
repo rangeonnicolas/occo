@@ -12,8 +12,6 @@ categ</em>
 du tableau, et l'afficher telle qu'elle :</p>
 <figure id="r-4789818" >
 <img id="r-4789816" src="https://user.oc-static.com/upload/2017/10/30/15094043712247_categ.png" alt="La colonne">
-<figcaption>
-La colonne "categ"</figcaption>
 </figure>
 <p id="r-4742287" >
 Mais il faut avouer que c'est assez illisible ! :waw: En plus, il est fréquent d'avoir des échantillons de 1000 individus ou plus. Une colonne avec 1000 valeur dedans, c'est très moche et très difficile à interpréter. Il y a une solution bien meilleure, qui consiste à dire :</p>
@@ -30,7 +28,7 @@ Représenter une distribution empirique</h3>
 <p id="r-4742326" >
 Les différentes "possibilités" que l'on peut observer pour la variable<em>
 categ</em>
-, ce sont les<strong>
+, ce sont ses<strong>
 modalités</strong>
 . Les modalités de la variable<em>
 categ</em>
@@ -42,15 +40,32 @@ transport</em>
 autre</em>
 ,<em>
 loyer</em>
-, etc. On associe à chaque modalité un<strong>
+, etc. Pour une variable quantitative cependant, on les appelle les<strong>
+valeurs</strong>
+possibles. On associe à chaque modalité (ou valeur) un<strong>
 effectif</strong>
 . L'effectif de la modalité<em>
 courses</em>
 est<math>
 $\(n_{courses} = 39\)$</math>
 .</p>
-<p id="r-4742327" >
-Le distribution empirique d'une variable, c'est l’ensemble des valeurs prises (modalités) par cette variable, et leurs effectifs associées.</p>
+<p id="r-4799032" >
+En divisant un effectif par le nombre d'individus de l'échantillon (noté<math>
+$\(n\)$</math>
+), on obtient un<strong>
+fréquence</strong>
+.</p>
+<p id="r-4799033" >
+Le distribution empirique d'une variable, c'est<em>
+l’ensemble des valeurs (ou modalités) prises par cette variable, ainsi que leurs effectifs associées</em>
+. On trouve aussi une autre version :<em>
+l’ensemble des valeurs (ou modalités) prises par cette variable, ainsi que leurs fréquences associées</em>
+. On peut présenter ceci sous forme de tableau. Nous approfondirons cette présentation dans le chapitre suivant :</p>
+<p id="r-4799035" >
+<img id="r-4799034" src="https://s3.eu-west-1.amazonaws.com/user.oc-static.com/upload/2017/11/21/15112589045762_tableau1.png" alt="">
+</p>
+<p id="r-4799137" >
+Passons maintenant aux représentations graphiques.</p>
 <h4 id="r-4742335" >
 Cas des variables qualitatives</h4>
 <p id="r-4742328" >
@@ -58,7 +73,7 @@ Voici 2 représentations possibles de la distribution de la variable<em>
 categ</em>
 :</p>
 <p id="r-4742351" >
-<img id="r-4764546" src="https://user.oc-static.com/upload/2017/10/31/15094582111347_pie_bar.png" alt="">
+<img id="r-4764546" src="https://s3.eu-west-1.amazonaws.com/user.oc-static.com/upload/2017/11/21/15112739298466_pie_bar.png" alt="">
 </p>
 <p id="r-4742342" >
 A gauche, vous avez le diagramme en secteurs, plus connu sous le nom de diagramme en camembert. Si les francophones y voient un camembert (fleuron de la gastronomie française), les anglophones y voient plutôt une tarte, et l'appellent donc<strong>
@@ -67,44 +82,36 @@ pie chart</strong>
 <p id="r-4742521" >
 A droite, c'est le diagramme en tuyaux d'orgue, appelé an anglais<strong>
 bar chart</strong>
-. La hauteur des tuyaux est égale à l'effectif de chaque modalité.</p>
+. La hauteur des tuyaux est égale à l'effectif de chaque modalité, ou bien (au choix) égale à la fréquence de chaque modalité comme c'est le cas ici.</p>
 <aside id="r-4742362" data-claire-semantic="warning">
 <p id="r-4742361" >
-La hauteur des tuyaux représente le nombre d'opérations bancaires d'une catégorie donnée, et non pas la somme de leurs montants. Si vous avez 2 opérations de catégorie<em>
+La hauteur des tuyaux représente le nombre (ou la fréquence) d'opérations bancaires d'une catégorie donnée, et non pas la somme de leurs montants. Si vous avez 2 opérations de catégorie<em>
 transport</em>
-, l'une de 20€ et l'autre de 300€, la hauteur du tuyau sera de 2, pas de 320.</p>
+, l'une de 20€ et l'autre de 300€, la hauteur du tuyau sera de 2 (ou de<math>
+$\(\frac{2}{n}\)$</math>
+), pas de 320.</p>
 </aside>
 <p id="r-4742346" >
 Si la variable est qualitative ordinale, alors il suffit de classer sur le graphique les modalités en ordre croissant.</p>
 <h4 id="r-4742369" >
 Cas des variables quantitatives</h4>
-<h4 id="r-4742523" >
-Variables discrètes</h4>
+<h5 id="r-4799036" >
+Variables discrètes</h5>
 <p id="r-4742522" >
 Pour les variables discrètes on les représente par un équivalent du diagramme en tuyaux d'orgues : le diagramme en bâtons. Cependant, avec les variables qualitatives, on pouvait placer les tuyaux un peu n'importe où sur l'axe horizontal. Mais avec une variable quantitative, on est contraint à placer précisément les bâtons sur l'axe horizontal. Comme on doit être précis, on préfère que les bâtons soient très fins.</p>
 <p id="r-4764548" >
-<img id="r-4764547" src="https://user.oc-static.com/upload/2017/10/31/15094583285296_bar.png" alt="">
+<img id="r-4764547" src="https://s3.eu-west-1.amazonaws.com/user.oc-static.com/upload/2017/11/21/15112739211257_bar.png" alt="">
 </p>
-<h4 id="r-4742526" >
-Variables continues</h4>
-<p id="r-4742642" >
-Réfléchissons un peu. Prenons la variable<em>
-taille</em>
-d'une population d'humains. Entre les tailles 1.50m et 1.60m, il y a une infinité de valeurs possibles (ex: 1.51939m , 1.50004m , 1.599999920371m, etc.). Comme il y a une infinité de valeurs, la probabilité d'avoir deux humains ayant<em>
-exactement</em>
-la même taille est donc très faible.</p>
-<p id="r-4742643" >
-Si on crée un diagramme en bâtons, et que l'on a un humain qui mesure 1.478m, on va placer un bâton situé à 1.478m sur l'axe horizontal. Quelle sera sa hauteur ? Elle sera au moins de 1, car il y a au moins un humain qui mesure 1.478m. Mais comme la probabilité qu'un deuxième humain mesure exactement la même taille est extrêmement faible, la taille de notre bâton ne dépassera jamais 1. Cependant, on peut avoir un deuxième humain qui mesure<em>
-presque</em>
-1.478m, par exemple 1.47800000000001m. On placerait donc un deuxième bâton de hauteur 1 très proche du premier bâton. Au final, on se retrouverait avec plein de bâtons très rapprochés, tous de hauteur 1 : je vous laisse imaginer le bazar !</p>
-<h5 id="r-4742881" >
-Cas agrégé</h5>
+<h5 id="r-4799037" >
+Variables continues</h5>
+<p id="r-4799138" >
+Prenons l'exemple de la taille d'une personne : c'est une variable continue. On peut très bien avoir une personne de taille 1.47801 m et une autre de 1.47802m. Ces deux tailles sont différentes : faut-il alors afficher sur notre graphique 2 bâtons : un pour chacune des 2 tailles ?</p>
 <div id="r-4742645" data-claire-semantic="question">
 <p id="r-4742644" >
-Tu chipotes, 1.478m et 1.47800000000001m, c'est quasiment la même valeur, il faut donc que tu les considères comme égales !</p>
+Tu chipotes, 1.47801m et 1.47802m, c'est quasiment la même valeur, il faut donc que tu les considères comme égales !</p>
 </div>
 <p id="r-4742646" >
-Tout à fait ! Considérer que 1.478m et 1.47800000000001m sont presque égales, c'est<em>
+Tout à fait ! Considérer que 1.47801m et 1.47802m sont presque égales, c'est<em>
 regrouper</em>
 ces valeurs. On dit alors que l'on<strong>
 agrège</strong>
@@ -144,35 +151,25 @@ surface</em>
 . Cela est dû au fait que les classes n'ont pas forcément la même largeur.</p>
 </aside>
 <figure id="r-4764551" >
-<img id="r-4764549" src="https://user.oc-static.com/upload/2017/10/31/1509458746274_hists.png" alt="A gauche : histogramme de la variable montant, filtrée sur les montants compris entre -100 et 100. A droite, histogramme avec des classes de largeur inégales.">
-<figcaption>
-A gauche : histogramme de la variable montant, filtrée sur les montants compris entre -100 et 100. A droite, exemple d'histogramme avec des classes de largeur inégales.</figcaption>
+<img id="r-4764549" src="https://s3.eu-west-1.amazonaws.com/user.oc-static.com/upload/2017/11/21/15112739099318_hists.png" alt="A gauche : histogramme de la variable montant, filtrée sur les montants compris entre -100 et 100. A droite, histogramme avec des classes de largeur inégales.">
 </figure>
-<h5 id="r-4742884" >
-Cas non agrégé</h5>
-<p id="r-4742367" >
+<p id="r-4799248" >
 Si cependant, vous ne souhaitez pas agréger les valeurs, il existe une autre solution : représenter la<strong>
 fonction de répartition empirique</strong>
-. Nous avions dit que pour une variable quantitative continue, la diagramme en bâtons n'était pas adapté, car on aurait plein de bâtons très resserrés, chacun de hauteur 1.</p>
-<p id="r-4742882" >
-Gardons provisoirement ces bâtons, et créons un escalier. On parcours l'axe horizontal des petites valeurs vers les grandes valeurs, et à chaque fois que l'on rencontre un bâton, on monte d'une marche. Il y aura donc autant de marches que de bâtons, et d'ailleurs autant que d'individus. Toutes les marches ont la même hauteur.</p>
+. Il faut vous la représenter comme un escalier. Pour la représenter, on parcours l'axe horizontal des petites valeurs vers les grandes valeurs. A chaque fois que l'on rencontre une valeur qui est présente dans notre échantillon, on monte d'une marche. Il y aura donc autant de marches que de valeurs, et d'ailleurs autant que d'individus. Toutes les marches ont la même hauteur.</p>
 <p id="r-4742883" >
-Une fois parcourus tous les bâtons, on aura atteint le haut de l'escalier. On dit (arbitrairement) que le haut de l'escalier est d'une hauteur de 1.</p>
+Une fois parcourus toutes les valeurs de l'échantillon, on aura atteint le haut de l'escalier. On dit (arbitrairement) que le haut de l'escalier est d'une hauteur de 1.</p>
 <figure id="r-4742944" >
 <img id="r-4742942" src="https://user.oc-static.com/upload/2017/10/26/15090279401459_rep_emp.png" alt="Fonction de répartition empirique">
 <figcaption>
 Fonction de répartition empirique</figcaption>
 </figure>
-<aside id="r-4742946" data-claire-semantic="information">
 <p id="r-4742945" >
-La fonction de répartition empirique est aussi utilisable pour une variable quantitative discrète. Dans ce cas, on l'appelle aussi<strong>
-diagramme des fréquences cumulées</strong>
-.</p>
-</aside>
+</p>
 <p id="r-4742947" >
-Pour en savoir plus sur la fonction de répartition, rendez-vous au bas de ce chapitre, dans la section<em>
+Pour en savoir plus sur la fonction de répartition, rendez-vous au bas de ce chapitre (section<em>
 Aller plus loin</em>
-.</p>
+.)</p>
 <p id="r-4742757" >
 </p>
 <h3 id="r-4742527" >
@@ -181,52 +178,44 @@ Du côté du code</h3>
 Voici le code qui a généré les graphiques ci dessus. Pour chacun des graphiques, 2 lignes suffisent :</p>
 <pre id="r-4764473" >
 <code data-claire-semantic="python">
-import matplotlib.pyplot as plt # VARIABLE QUALITATIVE # Diagramme en secteurs data["categ"].value_counts().plot(kind='pie') # Cette ligne assure que le pie chart est un cercle plutôt qu'une éllipse plt.axis('equal') plt.show() # Affiche le graphique # Diagramme en tuyaux d'orgues data["categ"].value_counts().plot(kind='bar') plt.show() # VARIABLE QUANTITATIVE # Diagramme en bâtons data["quart_mois"].value_counts().plot(kind='bar', width=0.1) plt.show() # Histogramme data["montant"].hist() plt.show() # Histogramme plus beau data[data.montant.abs() &lt; 100]["montant"].hist(bins=20) plt.show()</code>
+import matplotlib.pyplot as plt # VARIABLE QUALITATIVE # Diagramme en secteurs data["categ"].value_counts(normalize=True).plot(kind='pie') # Cette ligne assure que le pie chart est un cercle plutôt qu'une éllipse plt.axis('equal') plt.show() # Affiche le graphique # Diagramme en tuyaux d'orgues data["categ"].value_counts(normalize=True).plot(kind='bar') plt.show() # VARIABLE QUANTITATIVE # Diagramme en bâtons data["quart_mois"].value_counts(normalize=True).plot(kind='bar',width=0.1) plt.show() # Histogramme data["montant"].hist(normed=True) plt.show() # Histogramme plus beau data[data.montant.abs() &lt; 100]["montant"].hist(normed=True,bins=20) plt.show()</code>
 </pre>
 <p id="r-4764414" >
 Ici, nous reprenons le même raisonnement qu'au début de ce chapitre : on commence par sélectionner la colonne souhaitée :<code data-claire-semantic="text">
 data['categ']</code>
 , puis on compte le nombre d'apparitions de chaque modalité :<code data-claire-semantic="text">
 data['categ'].value_counts()</code>
-. On obtient donc la distribution empirique. Pour l'afficher, on fait appel à la méthode plot, à laquelle on spécifie le type de graphique souhaité :<code data-claire-semantic="text">
-data["categ"].value_counts().plot(kind='bar')</code>
-.</p>
+. Pour obtenir les fréquences, on peut optionnellement ajouter<code data-claire-semantic="text">
+normalize=True</code>
+. On obtient donc la distribution empirique. Pour l'afficher, on fait appel à la méthode<code data-claire-semantic="text">
+plot</code>
+, à laquelle on spécifie le type de graphique souhaité (<code data-claire-semantic="text">
+pie</code>
+ou<code data-claire-semantic="text">
+bar</code>
+).</p>
 <p id="r-4764474" >
-Comme nous l'avons dit plus haut, pour une variable quantitative, on regroupe les valeurs plutôt que de compter chaque modalité. Utiliser<code data-claire-semantic="text">
+Comme nous l'avons dit plus haut, pour une variable quantitative, on regroupe les valeurs en classes. Utiliser<code data-claire-semantic="text">
 value_counts()</code>
 n'aurait donc pas vraiment de sens : on utilise donc la méthode<code data-claire-semantic="text">
 hist()</code>
-, qui s'occupe elle même de regrouper les valeurs en classes. La ligne 20 crée un histogramme un peu trop étalé, car il y a des montants très grands et très petits. On préfère donc filtrer les montants compris entre -100€ et 100€ grâce à<code data-claire-semantic="text">
+, qui s'occupe elle même de regrouper les valeurs en classes. La ligne 20 crée un histogramme un peu trop étalé, car il y a des montants très grands et très petits. On filtre donc ici les montants compris entre -100€ et 100€ grâce à<code data-claire-semantic="text">
 data[data.montant.abs() &lt; 100]</code>
 (on utilise pour cela la<a href="https://fr.wikipedia.org/wiki/Valeur_absolue">
 valeur absolue</a>
 ). Enfin, on peut optionnellement spécifier le nombre de classes voulues grâce au mot clé<code data-claire-semantic="text">
 bins</code>
 : ici 20.</p>
-<p id="r-4764415" >
-Ah oui, une dernière chose : pour obtenir une approximation de la répartition empirique, il suffit d'ajouter le mot clé<code data-claire-semantic="text">
-cumulative = True</code>
-dans la méthode hist :</p>
-<pre id="r-4764517" >
-<code data-claire-semantic="python">
-data[data.montant.abs() &lt; 100]["montant"].hist(bins=20,cumulative=True)</code>
-</pre>
+<p id="r-4799289" >
+</p>
 <p id="r-4764518" >
 </p>
 <p id="r-4764416" >
 </p>
 <h3 id="r-4742847" >
 Aller plus loin : la fonction de répartition empirique</h3>
-<p id="r-4742886" >
-Si vous souhaitez aller plus loin dans les statistiques, il vous faudra connaître la théorie des probabilités. Dans ce domaine, l'équivalent de la distribution d'une variable quantitative est la<a href="https://fr.wikipedia.org/wiki/Densit%C3%A9_de_probabilit%C3%A9">
-densité de probabilité</a>
-, que l'on représente par une ligne courbe plutôt que par un histogramme. L'utilisation de la densité de probabilité va souvent de pair avec sa<a href="https://fr.wikipedia.org/wiki/Fonction_de_r%C3%A9partition">
-fonction de répartition</a>
-, qui est plus pratique pour calculer des probabilités. Ainsi, il peut vous être utile de connaître l'équivalent de la fonction de répartition en statistiques, appelée<strong>
-fonction de répartition empirique</strong>
-.</p>
 <p id="r-4742887" >
-Elle s'exprime de la manière suivante :</p>
+La fonction de répartition empirique s'exprime de la manière suivante :</p>
 <p id="r-4789859" >
 <math>
 $\[F_{emp}\left( x\right) =\frac{1}{n}\sum_{i=1}^{n}\, I_{\left\{x_{i}\leq x\right\} }\]$</math>

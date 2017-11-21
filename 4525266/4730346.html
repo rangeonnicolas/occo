@@ -105,7 +105,11 @@ $\[v = \frac{1}{n}\sum_{i=1}^{n}(x_i-\overline{x})^2\]$</math>
 <p id="r-4737940" >
 Pour approfondir l'aspect calculatoire, rendez-vous à la section<em>
 Aller plus loin</em>
-, au bas du chapitre.</p>
+, au bas du chapitre. Aussi, vous trouverez souvent une version "corrigée" de la variance empirique, que l'on qualifie de<em>
+non biaisée</em>
+. Je vous renvoie ici aussi à la section<em>
+Aller plus loin</em>
+.</p>
 <h4 id="r-4738278" >
 L'écart-type empirique</h4>
 <p id="r-4738276" >
@@ -118,6 +122,12 @@ $\(s\)$</math>
 <math>
 $\[s = \sqrt{v}\]$</math>
 </p>
+<p id="r-4798951" >
+Mais lorsque vous faites un trajet, un écart-type de 6.55 minutes sur un trajet de 1h, ce n'est pas la même chose qu'un écart-type de 6.55 minutes sur un trajet de 24h ! On a donc créé la<strong>
+coefficient de variation</strong>
+, disponible dans la section<em>
+Aller plus loin</em>
+.</p>
 <h4 id="r-4738357" >
 L'écart inter-quartiles</h4>
 <p id="r-4737803" >
@@ -224,37 +234,9 @@ La variance du montant des opération de la catégorie LOYER est nulle, ce qui s
 <p id="r-4766094" >
 </p>
 <h3 id="r-4738044" >
-Aller plus loin : variance empirique ?</h3>
-<p id="r-4738037" >
-Vous vous souvenez que le monde des probabilités et le monde des statistiques sont deux mondes bien distincts ! Le premier n'est fait que de règles théoriques, le second n'est fait que d'observations faites dans le monde réel.</p>
-<p id="r-4738038" >
-Imaginez qu'il y a quelque part dans un monde parallèle une personne, un programme informatique (ou je ne sais quoi d'autre) qui détermine la taille de chaque personne naissant sur Terre. Ce monde parallèle, c'est le monde des probabilités. La Terre, c'est le monde réel. Il a été décidé dans le monde parallèle d'une taille moyenne à donner aux humains, ainsi que d'une<strong>
-variance</strong>
-qui détermine si les tailles varient beaucoup (ou pas) autour de la moyenne. Les humains n'ont aucun moyen de connaître exactement la valeur de cette variance. Ils considèrent donc que cette variance est théorique.</p>
-<aside id="r-4738067" data-claire-semantic="information">
-<p id="r-4738066" >
-Plus précisément, les humains appellent cette variance théorique<em>
-variance de la variable aléatoire</em>
-.</p>
-</aside>
-<p id="r-4738068" >
-Mais les humains ont plus d'un tour dans leur sac ! Ils vont donc chercher à<strong>
-estimer</strong>
-cette variance. Ils construisent donc un<em>
-estimateur</em>
-. Un estimateur, c'est une formule mathématique qui, à partir d'une série de valeurs, calcule un nombre qui vise à estimer une valeur théorique à laquelle les humains n'auront jamais accès.</p>
-<p id="r-4738081" >
-La variance que nous avons calculée plus haut provient d'observations dans le monde réel (70, 60, 50, etc.). Ainsi, on l'appelle<strong>
-variance empirique</strong>
-, car elle est construite à partir d'observations réelles.</p>
-<div id="r-4738083" data-claire-semantic="question">
-<p id="r-4738082" >
-Merci pour cette explication. C'est tout ?</p>
-</div>
-<p id="r-4738071" >
-Non. Je vais vous dire quelque chose qui va vous faire tomber des nues...<em>
-La meilleure manière d'estimer la variance d'une variable aléatoire (i.e. la variance théorique) n'est pas d'utiliser la variance empirique.</em>
-</p>
+Aller plus loin : la variance empirique corrigée</h3>
+<p id="r-4798946" >
+Je vais vous dire quelque chose qui va vous faire tomber des nues... La meilleure manière d'estimer la variance d'une variable aléatoire (i.e. la variance théorique) n'est pas d'utiliser la variance empirique.</p>
 <p id="r-4738084" >
 Étonnant non ? Oui. En fait, quand on se plonge dans les calculs, on s'aperçoit que la variance empirique donne des valeurs qui (en moyenne) sont inférieurs à la variance de la variable aléatoire.</p>
 <p id="r-4738085" >
@@ -278,7 +260,7 @@ $\(s'^2\)$</math>
 $\(v\)$</math>
 est la variance empirique, et<math>
 $\(n\)$</math>
-la taille de l'échantillon.</p>
+la taille de l'échantillon. Quand la taille de l'échantillon est grand, la variance empirique et la variance empirique corrigée sont presque égales.</p>
 <h3 id="r-4738256" >
 Aller plus loin : calculs avec la variance empirique</h3>
 <p id="r-4738087" >
