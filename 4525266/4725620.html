@@ -15,34 +15,26 @@ Pourquoi l'analyse bivariée ?</h3>
 Pourquoi étudier les relations entre variables ?</p>
 </div>
 <p id="r-4717668" >
-Petit exemple. Vous travaillez dans un institut de statistiques pendant la campagne présidentielle. Deux candidats (un candidat de droite et un candidat de gauche) vous ont demandé de sonder la population française sur une idée donnée, afin de savoir quel positionnement prendre dans leur programme électoral. L’idée en question n’est à priori ni de droite, ni de gauche. Disons que cette idée est « l’instauration de monnaies locales au niveau régional en France ».</p>
-<aside id="r-4727487" data-claire-semantic="information">
-<p id="r-4717670" >
-En France, il est courant de classer les hommes politiques sur un axe allant de la gauche à la droite, en fonction de leurs idées politiques.</p>
-</aside>
+Petit exemple. Vous travaillez pour un site web de e-commerce. Vous avez accès à la base de données des clients du site, ainsi qu'au données de navigations sur le site. Grâce aux données de navigation, vous pouvez savoir quel client a consulté quelle page sur le site, combien de temps il a passé sur chaque page, etc. Dans le but de créer un algorithme de recommandation (qui proposera de nouveaux produits aux clients), vous décidez de faire une petite étude préliminaire.</p>
+<p id="r-4802421" >
+Grâce aux données de navigation, vous pouvez sélectionner un échantillon de clients qui consultent souvent les derniers albums musicaux de variété française. Vous décidez alors de déterminer l'intérêt qu'ils portent au nouvel album d'un chanteur populaire, en modélisant cet intérêt par un score allant de 0 à 10 sur une échelle continue. Si un client donné n'a jamais visité la page qui présente ce nouvel album, vous lui attribuez le score intermédiaire de 5. S'il a souvent visité la page de cet album, qu'il y est resté longtemps, et qu'il a finalement acheté l'album vous lui attribuez le score de 10. Au contraire, s'il a consulté la page, qu'il n'y est pas resté longtemps, et qu'il n'a pas acheté l'album lors de sa dernière commande sur le site, alors c'est probablement qu'il semble ne pas aimer ce nouvel album. Vous lui attribuez donc le score de 0.</p>
+<p id="r-4802422" >
+Vous connaissez l'âge de chaque client. Vous obtenez donc un échantillon de clients caractérisés par 2 variables : l'âge et le niveau d'intérêt.</p>
 <p id="r-4717673" >
-Vous réalisez donc votre sondage en posant 2 questions :</p>
-<ol id="r-4727492" >
-<li id="r-4727489" >
-<p id="r-4727488" >
-Sur une échelle de 1 à 9, donnez votre position politique (1 : extrême gauche, 5 : centriste, 9 : extrême droite)</p>
-</li>
-<li id="r-4727491" >
-<p id="r-4727490" >
-Sur une échelle de 1 à 10, êtes-vous pour ou contre l’instauration de monnaies locales au niveau régional en France ? (1 : totalement contre, 10 : totalement pour)</p>
-</li>
-</ol>
-<p id="r-4717676" >
-Une fois les réponses reçues, vous étudiez chacune de ces 2 variables séparément. Vous obtenez ces résultats :</p>
+Vous décidez donc d'étudier ces 2 variables séparément, avec des histogrammes :</p>
 <p id="r-4717678" >
 <img id="r-4727901" src="https://user.oc-static.com/upload/2017/10/17/15082584302227_univar.png" alt="">
 </p>
-<p id="r-4717680" >
-Les répartitions nous indiquent qu’il y a à peu près autant de personnes de gauche que de droite, et autant de centristes. Quant aux extrême droite et extrême gauche, ils sont un peu moins représentés. Concernant la monnaie locale, autant de personnes sont pour que contre. C’est déjà bien de savoir cela, mais nous pouvons faire beaucoup mieux !</p>
+<p id="r-4802423" >
+Ces histogrammes montent que les âges sont assez bien répartis sur cet échantillon : il y a à peu près autant de personnes jeunes que de personnes plus âgées. Quant au niveau d'intérêt, il y a également autant de personnes qui s'intéressent au nouvel album que de personnes qui n'y portent pas d'intérêt.</p>
+<p id="r-4802424" >
+Bon. c’est déjà bien de savoir cela, mais nous allons voir que nous pouvons faire beaucoup mieux !</p>
 <p id="r-4717682" >
-Maintenant, plaçons sur un graphique en 2 dimensions les individus de notre échantillon. Chaque point de ce graphique représente une personne qui a répondu au sondage. La position de chaque point peut être repérée selon 2 axes : l’axe des abscisses (horizontal), et l’axe des ordonnées (vertical). L’abscisse d’un point, c’est un nombre. Si ce nombre est grand, alors ce point sera très à droite du graphique, mais s’il est proche de 0, alors il sera très à gauche. C’est pareil pour l’ordonnée du point : si elle est élevée, le point sera très haut, mais si elle est proche de 0, le point sera très bas.</p>
+Maintenant, plaçons sur un graphique en 2 dimensions les individus de notre échantillon. Chaque point de ce graphique représente une personne. La position de chaque point peut être repérée selon 2 axes : l’axe des abscisses (horizontal), et l’axe des ordonnées (vertical). L’abscisse d’un point, c’est un nombre. Si ce nombre est grand, alors ce point sera très à droite du graphique, mais s’il est proche de 0, alors il sera très à gauche. C’est pareil pour l’ordonnée du point : si elle est élevée, le point sera très haut, mais si elle est proche de 0, le point sera très bas.</p>
 <p id="r-4717684" >
-Ici, on place la variable de l’opinion politique en abscisse et celle du pour/contre en ordonnée. Un point qui sera en haut à droite représentera donc une personne politiquement à droite qui est pour l’instauration de la monnaie locale. Au contraire, un point qui sera en bas à gauche représentera une personne politiquement à gauche qui est contre la monnaie locale.</p>
+Ici, on place la variable<em>
+âge</em>
+en abscisse et celle du niveau d'intérêt en ordonnée. Un point qui sera en haut à droite représentera donc une personne plutôt âgée très intéressé par le nouvel album. Au contraire, un point qui sera en bas à gauche représentera une personne jeune n'aimant pas l'album.</p>
 <p id="r-4717686" >
 En fait, plusieurs cas sont possibles. En voici 2 exemples :</p>
 <p id="r-4717688" >
@@ -52,26 +44,14 @@ En fait, plusieurs cas sont possibles. En voici 2 exemples :</p>
 <p id="r-4717689" >
 Remarquons qu'aucun de ces 2 graphiques n'entre en contradiction avec les 2 histogrammes obtenus plus haut !</p>
 </aside>
-<p id="r-4717690" >
+<p id="r-4802426" >
 <strong>
 Dans le cas A</strong>
-, beaucoup de personnes qui sont de droite sont<em>
-pour</em>
-la monnaie locale, et les personnes de gauche sont plutôt<em>
-contre</em>
-. Ainsi, il faudra conseiller au candidat de droite de se positionner<em>
-en faveur</em>
-de la monnaie locale, afin que les électeur de droite aient envie de voter pour lui. Au candidat de gauche, vous conseillerez de se positionner<em>
-contre</em>
-.</p>
+, beaucoup de personnes âgées aiment beaucoup ce nouvel album, et beaucoup de personnes jeunes ne l'aiment pas. Ainsi, votre algorithme de recommandation devra conseiller ce nouvel album aux personnes plutôt âgées, et ne pas le recommander aux personnes jeunes (mieux vaudra leur proposer des produits qu'ils sont plus susceptibles d'aimer).</p>
 <p id="r-4717692" >
 <strong>
 Dans le cas B</strong>
-, c’est l’inverse. Il faut conseiller au candidat de gauche d’être<em>
-en faveur</em>
-de la monnaie locale, et conseiller d’être<em>
-contre</em>
-au candidat de droite</p>
+, c’est l’inverse. Il faut conseiller cet album aux personnes jeunes et ne pas le faire pour les personnes âgées.</p>
 <aside id="r-4727493" data-claire-semantic="information">
 <p id="r-4717697" >
 Chacun de ces 2 graphiques est appelé «<em>
@@ -81,14 +61,16 @@ scatter plot</em>
 » en anglais.</p>
 </aside>
 <p id="r-4717699" >
-Vous l’aurez compris, on tire en général beaucoup plus d’information en étudiant les relations entre 2 variables qu’en étudiant séparément 2 variables ! Sans l’analyse bivariée, vous auriez été incapable de conseiller les candidats.</p>
+Vous l’aurez compris, on tire en général beaucoup plus d’information en étudiant les<em>
+relations</em>
+entre 2 variables qu’en étudiant<em>
+séparément</em>
+2 variables ! Sans l’analyse bivariée, vous auriez été incapable de savoir à qui recommander (ou non) l'album !</p>
 <aside id="r-4727494" data-claire-semantic="information">
 <p id="r-4717701" >
 Ici, étudier la relation entre les 2 variables, c’est se poser la question suivante :<em>
-« Sachant qu’un individu est de gauche, a t’il plus de chances d’être pour ou contre la monnaie locale ? »</em>
-(ou inversement :<em>
-« Sachant qu’un individu est de droite, a t’il plus de chances d’être pour ou contre la monnaie locale ? »</em>
-)</p>
+« Sachant qu’une personne est plutôt jeune (ou plutôt âgée), a-t-elle plus de chances d’aimer ce nouvel album ? »</em>
+</p>
 </aside>
 <h3 id="r-4727504" >
 Aller plus loin : un autre exemple</h3>
