@@ -7,9 +7,13 @@ Il y a des formules mathématiques dans ce chapitre, mais ne vous enfuyez pas, e
 <p id="r-4738798" >
 Au chapitre précédent, votre ami vous a donné une estimation de la durée du trajet. Mais il vous a donné des mesures de tendance centrale, comme par exemple la moyenne, qui est de 60 minutes par trajet.</p>
 <p id="r-4738799" >
-Ce qui vous manque maintenant, c'est de savoir si les durées que votre ami a effectué sont très "resserrées" autour de 60 min (exemple : [58, 60, 62, 59, 57, ...] ), ou bien si elles s'en écartent beaucoup (exemple : [40, 70, 78, 43, ...] ). Quel intérêt ?</p>
+Ce qui vous manque maintenant, c'est de savoir si les durées que votre ami a effectué sont très "resserrées" autour de 60 min (exemple : [58, 60, 62, 59, 57, ...] ), ou bien si elles s'en écartent beaucoup (exemple : [40, 70, 78, 43, ...] ).</p>
+<div id="r-4823077" data-claire-semantic="question">
+<p id="r-4823076" >
+Quel intérêt ?</p>
+</div>
 <p id="r-4737756" >
-Si les valeurs sont très resserrées autour de 60minutes, alors prévoyez de partir 75 minutes à l'avance. Ainsi, il est probable que vous arriverez 5 ou 10 minutes avant votre entretient. Mais si les valeurs sont très écartées, alors prévoyez plutôt de partir 100 minutes à l'avance, car il est tout à fait possible que le trajet dure 80 minutes !</p>
+Si les valeurs sont très resserrées autour de 60 minutes, alors prévoyez de partir 75 minutes à l'avance. Ainsi, il est probable que vous arriverez 5 ou 10 minutes avant votre entretien. Mais si les valeurs sont très écartées, alors prévoyez plutôt de partir 100 minutes à l'avance, car il est tout à fait possible que le trajet dure 80 minutes !</p>
 <div id="r-4737758" data-claire-semantic="question">
 <p id="r-4737757" >
 J'ai compris ! Mesurer l'espacement des valeurs... j'imagine qu'il y a une mesure statistique pour cela non?</p>
@@ -71,7 +75,7 @@ $\[\sum_{i=1}^{i=7}(x_i-\overline{x})^2\]$</math>
 </p>
 </aside>
 <p id="r-4737859" >
-Bon. Maintenant, il y a encore un problème. Ici, on a 7 valeurs, tout simplement parce que nous sommes un peu paresseux, et nous n'en avons relevé que 7. Mais en statistiques, plus on fait de relevés, plus on a une idée précise de ce que l'on décrit. Ainsi, on aurait dû retenir 10, 100 ou même 1000 valeurs !</p>
+Bon. Il y a encore un problème. Ici, on a 7 valeurs, tout simplement parce que nous sommes un peu paresseux, et nous n'en avons relevé que 7. Mais en statistiques, plus on fait de relevés, plus on a une idée précise de ce que l'on décrit. Ainsi, on aurait dû retenir 10, 100 ou même 1000 valeurs !</p>
 <p id="r-4737931" >
 Mais avec 1000 valeurs, notre mesure exploserait ! Il passerait de 300 avec 7 valeurs à peut-être 40000000000 avec 1000 valeurs. C'est problématique.</p>
 <div id="r-4737937" data-claire-semantic="question">
@@ -222,7 +226,7 @@ ddof=0</code>
 <p id="r-4798595" >
 Nous allons afficher les boîtes à moustaches avec les histogrammes, pour que vous puissiez les comparer ;). Ligne 12, le mot clé<code data-claire-semantic="text">
 vert=False</code>
-signifie que nous souhaitons que la boîte à moustaches ne soit pas à la verticale (dont à l'horizontale!). En reprenant le code du chapitre précédent, voilà ce que cela donne :</p>
+signifie que nous souhaitons que la boîte à moustaches ne soit pas à la verticale (donc à l'horizontale!). En reprenant le code du chapitre précédent, voilà ce que cela donne :</p>
 <pre id="r-4766092" >
 <code data-claire-semantic="python">
 for cat in data["categ"].unique(): subset = data[data.categ == cat] print("-"*20) print(cat) print("moy:\n",subset['montant'].mean()) print("med:\n",subset['montant'].median()) print("mod:\n",subset['montant'].mode()) print("var:\n",subset['montant'].var(ddof=0)) print("ect:\n",subset['montant'].std(ddof=0)) subset["montant"].hist() plt.show() subset.boxplot(column="montant", vert=False) plt.show()</code>
@@ -236,9 +240,9 @@ La variance du montant des opération de la catégorie LOYER est nulle, ce qui s
 <h3 id="r-4738044" >
 Aller plus loin : la variance empirique corrigée</h3>
 <p id="r-4798946" >
-Je vais vous dire quelque chose qui va vous faire tomber des nues... La meilleure manière d'estimer la variance d'une variable aléatoire (i.e. la variance théorique) n'est pas d'utiliser la variance empirique.</p>
+La meilleure manière d'estimer la variance d'une variable aléatoire (i.e. la variance théorique) n'est pas d'utiliser la variance empirique.</p>
 <p id="r-4738084" >
-Étonnant non ? Oui. En fait, quand on se plonge dans les calculs, on s'aperçoit que la variance empirique donne des valeurs qui (en moyenne) sont inférieurs à la variance de la variable aléatoire.</p>
+Étonnant, non ? Oui. En fait, quand on se plonge dans les calculs, on s'aperçoit que la variance empirique donne des valeurs qui (en moyenne) sont inférieurs à la variance de la variable aléatoire.</p>
 <p id="r-4738085" >
 Il s'agit de la notion de<a href="https://fr.wikipedia.org/wiki/Estimateur_(statistique)#Biais">
 biais</a>
@@ -322,7 +326,7 @@ Mettons-les tous au carré. Un nombre mis au carré, c'est toujours positif n'es
 </p>
 </blockquote>
 <p id="r-4738541" >
-Peut-être vous êtes vous dit :</p>
+Peut-être vous êtes-vous dit :</p>
 <div id="r-4738543" data-claire-semantic="question">
 <p id="r-4738542" >
 On peut prendre la valeur absolue aussi plutôt que le carré non ?</p>
